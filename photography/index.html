@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>scrocco — photographs</title>
-<meta name="description" content="Street photography by John Santerre, shooting as scrocco.">
+<meta name="description" content="Photography by John Santerre, shooting as scrocco.">
 <style>
   :root {
     --paper: #f7f6f3;
@@ -36,16 +36,13 @@
   footer a:hover { color: var(--ink); }
   footer .copy { margin-left: auto; }
 
-  .albums {
+  .stories {
     padding: 7vh 4vw 10vh;
-    display: grid; gap: 34px;
+    display: grid; gap: 40px 34px;
     grid-template-columns: repeat(auto-fit, minmax(min(460px, 100%), 1fr));
   }
   .tile { display: block; }
-  .tile .frame {
-    overflow: hidden; background: #fff;
-    border: 1px solid var(--hair);
-  }
+  .tile .frame { overflow: hidden; background: #fff; border: 1px solid var(--hair); }
   .tile img {
     width: 100%; aspect-ratio: 3 / 2; object-fit: cover; display: block;
     transition: transform 700ms ease;
@@ -71,8 +68,13 @@
   </span>
 </header>
 
-<main class="albums">
-  <a class="tile" href="bulgaria.html" style="--tile-accent: hsl(164, 30%, 34%)"><span class="frame"><img src="img/bulgaria/dsc00281.jpg" alt="Bulgaria album cover"></span><span class="label"><span class="name">Bulgaria</span><span class="count">50 photographs</span></span></a>
+<main class="stories">
+  <a class="tile" href="bulgaria.html" style="--tile-accent: hsl(164, 30%, 34%)"><span class="frame"><img src="img/bulgaria/dsc00281.jpg" alt="Bulgaria"></span><span class="label"><span class="name">Bulgaria</span><span class="count">50 photographs</span></span></a>
+  <a class="tile" href="guatemala.html" style="--tile-accent: hsl(30, 30%, 34%)"><span class="frame"><img src="img/guatemala/10786201.jpg" alt="Guatemala"></span><span class="label"><span class="name">Guatemala</span><span class="count">5 photographs</span></span></a>
+  <a class="tile" href="haiti.html" style="--tile-accent: hsl(0, 30%, 34%)"><span class="frame"><img src="img/haiti/_mg_4966.jpg" alt="Haiti"></span><span class="label"><span class="name">Haiti</span><span class="count">7 photographs</span></span></a>
+  <a class="tile" href="singles.html" style="--tile-accent: hsl(0, 30%, 34%)"><span class="frame"><img src="img/singles/_mg_2579.jpg" alt="Singles"></span><span class="label"><span class="name">Singles</span><span class="count">2 photographs</span></span></a>
+  <a class="tile" href="thai-cambodia.html" style="--tile-accent: hsl(8, 30%, 34%)"><span class="frame"><img src="img/thai-cambodia/01.jpg" alt="Thai / Cambodia"></span><span class="label"><span class="name">Thai / Cambodia</span><span class="count">39 photographs</span></span></a>
+  <a class="tile" href="venice.html" style="--tile-accent: hsl(25, 30%, 34%)"><span class="frame"><img src="img/venice/02a_mg_4478.jpg" alt="Venice"></span><span class="label"><span class="name">Venice</span><span class="count">8 photographs</span></span></a>
 </main>
 
 <footer>

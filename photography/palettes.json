@@ -5,5 +5,40 @@
   "tint": "hsl(164, 26%, 96.5%)",
   "hairline": "hsl(164, 18%, 87%)",
   "note": "avg sat 5 lum 36 over 50 photos"
+ },
+ "guatemala": {
+  "hue": 30,
+  "accent": "hsl(30, 30%, 34%)",
+  "tint": "hsl(30, 26%, 96.5%)",
+  "hairline": "hsl(30, 18%, 87%)",
+  "note": "avg sat 4 lum 19 over 5 photos"
+ },
+ "haiti": {
+  "hue": 0,
+  "accent": "hsl(0, 30%, 34%)",
+  "tint": "hsl(0, 26%, 96.5%)",
+  "hairline": "hsl(0, 18%, 87%)",
+  "note": "avg sat 0 lum 16 over 7 photos"
+ },
+ "singles": {
+  "hue": 0,
+  "accent": "hsl(0, 30%, 34%)",
+  "tint": "hsl(0, 26%, 96.5%)",
+  "hairline": "hsl(0, 18%, 87%)",
+  "note": "avg sat 0 lum 56 over 2 photos"
+ },
+ "thai-cambodia": {
+  "hue": 8,
+  "accent": "hsl(8, 30%, 34%)",
+  "tint": "hsl(8, 26%, 96.5%)",
+  "hairline": "hsl(8, 18%, 87%)",
+  "note": "avg sat 9 lum 19 over 39 photos"
+ },
+ "venice": {
+  "hue": 25,
+  "accent": "hsl(25, 30%, 34%)",
+  "tint": "hsl(25, 26%, 96.5%)",
+  "hairline": "hsl(25, 18%, 87%)",
+  "note": "avg sat 10 lum 18 over 8 photos"
  }
 }

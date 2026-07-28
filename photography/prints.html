@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Prints — scrocco</title>
-<meta name="description" content="Street photography by John Santerre, shooting as scrocco.">
+<meta name="description" content="Photography by John Santerre, shooting as scrocco.">
 <style>
   :root {
     --paper: #f7f6f3;
@@ -36,34 +36,40 @@
   footer a:hover { color: var(--ink); }
   footer .copy { margin-left: auto; }
 
-  .intro { padding: 7vh 4vw 3vh; max-width: 70ch; }
+  .intro { max-width: 1120px; margin: 0 auto; padding: 8vh 4vw 4vh; }
   .intro h1 {
-    font-weight: 650; font-size: clamp(1.1rem, 2.2vw, 1.5rem);
-    letter-spacing: 0.26em; text-transform: uppercase; color: var(--accent);
+    font-weight: 650; font-size: clamp(1.3rem, 2.6vw, 1.9rem);
+    letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent);
   }
-  .intro p { margin-top: 16px; color: #444; font-size: 1.02rem; line-height: 1.6; }
-  .intro p.small { font-size: 0.88rem; color: var(--dim); }
-  .album-head {
-    padding: 5vh 4vw 14px; font-size: 12px; letter-spacing: 0.3em;
-    text-transform: uppercase; color: var(--dim);
+  .intro p {
+    margin-top: 18px; max-width: 58ch;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.08rem; line-height: 1.7; color: #33312c;
   }
-  .gallery { padding: 0 4vw 4vh; columns: 4; column-gap: 14px; }
-  @media (max-width: 1100px) { .gallery { columns: 3; } }
-  @media (max-width: 800px)  { .gallery { columns: 2; } }
-  .gallery figure {
-    break-inside: avoid; margin: 0 0 14px; background: #fff;
-    border: 1px solid var(--hair); padding: 6px;
+  .editions { max-width: 1120px; margin: 0 auto; padding: 2vh 4vw 10vh; }
+  .edition {
+    display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    gap: 40px; align-items: start;
+    padding: 6vh 0; border-top: 1px solid var(--hair);
   }
-  .gallery img { width: 100%; display: block; }
-  .gallery figcaption {
-    display: flex; align-items: baseline; gap: 8px;
-    padding: 8px 4px 4px; font-size: 11.5px; color: var(--dim);
+  .edition:first-child { border-top: none; }
+  @media (max-width: 760px) { .edition { grid-template-columns: 1fr; } }
+  .edition img { width: 100%; display: block; background: #fff; border: 1px solid var(--hair); padding: 8px; }
+  .edition h2 { font-size: 1.05rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 650; }
+  .edition .ed-meta { margin-top: 10px; font-size: 12.5px; color: var(--dim); letter-spacing: 0.08em; }
+  .edition table { margin-top: 22px; border-collapse: collapse; width: 100%; max-width: 340px; }
+  .edition td { padding: 9px 0; border-bottom: 1px solid var(--hair); font-size: 14px; }
+  .edition td:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+  .edition .acquire {
+    display: inline-block; margin-top: 26px; padding: 11px 22px;
+    border: 1px solid var(--ink); font-size: 12.5px; letter-spacing: 0.14em;
+    text-transform: uppercase;
   }
-  .gallery figcaption a {
-    margin-left: auto; color: var(--accent); letter-spacing: 0.06em;
-    border-bottom: 1px solid var(--hair);
+  .edition .acquire:hover { background: var(--ink); color: var(--paper); }
+  .forthcoming {
+    max-width: 58ch; margin: 4vh auto 14vh; padding: 0 4vw;
+    font-family: Georgia, serif; font-size: 1.05rem; line-height: 1.7; color: var(--dim);
   }
-  .gallery figcaption a:hover { border-color: var(--accent); }
 
 </style>
 </head>
@@ -80,64 +86,13 @@
 
 <section class="intro">
   <h1>Prints</h1>
-  <p>Every photograph here is available as an archival pigment print,
-     produced to order and signed. Tell me which image and the size
-     you're imagining — I'll reply with options and pricing.</p>
-  <p class="small">Editions are small. Framing available on request.</p>
+  <p>A small number of photographs, released as limited editions —
+     archival pigment prints, signed and numbered. When an edition is
+     gone, it is gone.</p>
 </section>
-<div class="album-head">Bulgaria</div>
-<main class="gallery">
-  <figure><img loading="lazy" src="img/bulgaria/dsc00281.jpg" alt=""><figcaption><span>dsc00281</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc00281.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc00570.jpg" alt=""><figcaption><span>dsc00570</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc00570.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc00646.jpg" alt=""><figcaption><span>dsc00646</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc00646.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc00721.jpg" alt=""><figcaption><span>dsc00721</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc00721.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc00802.jpg" alt=""><figcaption><span>dsc00802</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc00802.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc00940.jpg" alt=""><figcaption><span>dsc00940</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc00940.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc00993.jpg" alt=""><figcaption><span>dsc00993</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc00993.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc00995.jpg" alt=""><figcaption><span>dsc00995</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc00995.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc01189.jpg" alt=""><figcaption><span>dsc01189</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc01189.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc01295.jpg" alt=""><figcaption><span>dsc01295</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc01295.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc01437.jpg" alt=""><figcaption><span>dsc01437</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc01437.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc01497.jpg" alt=""><figcaption><span>dsc01497</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc01497.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc01531.jpg" alt=""><figcaption><span>dsc01531</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc01531.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc01545.jpg" alt=""><figcaption><span>dsc01545</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc01545.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc01564.jpg" alt=""><figcaption><span>dsc01564</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc01564.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc01595.jpg" alt=""><figcaption><span>dsc01595</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc01595.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc01611.jpg" alt=""><figcaption><span>dsc01611</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc01611.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc01620.jpg" alt=""><figcaption><span>dsc01620</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc01620.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc01626.jpg" alt=""><figcaption><span>dsc01626</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc01626.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc01636.jpg" alt=""><figcaption><span>dsc01636</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc01636.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc01659.jpg" alt=""><figcaption><span>dsc01659</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc01659.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc01685.jpg" alt=""><figcaption><span>dsc01685</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc01685.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc01733.jpg" alt=""><figcaption><span>dsc01733</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc01733.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc01750.jpg" alt=""><figcaption><span>dsc01750</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc01750.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc01777.jpg" alt=""><figcaption><span>dsc01777</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc01777.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc01786.jpg" alt=""><figcaption><span>dsc01786</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc01786.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc01794.jpg" alt=""><figcaption><span>dsc01794</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc01794.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc01804.jpg" alt=""><figcaption><span>dsc01804</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc01804.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc01946.jpg" alt=""><figcaption><span>dsc01946</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc01946.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc02229.jpg" alt=""><figcaption><span>dsc02229</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc02229.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc02525.jpg" alt=""><figcaption><span>dsc02525</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc02525.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc02558.jpg" alt=""><figcaption><span>dsc02558</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc02558.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc02859.jpg" alt=""><figcaption><span>dsc02859</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc02859.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc02867.jpg" alt=""><figcaption><span>dsc02867</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc02867.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc02907.jpg" alt=""><figcaption><span>dsc02907</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc02907.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc02921.jpg" alt=""><figcaption><span>dsc02921</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc02921.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc07666.jpg" alt=""><figcaption><span>dsc07666</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc07666.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc07759.jpg" alt=""><figcaption><span>dsc07759</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc07759.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc07787.jpg" alt=""><figcaption><span>dsc07787</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc07787.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc07841.jpg" alt=""><figcaption><span>dsc07841</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc07841.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc07858.jpg" alt=""><figcaption><span>dsc07858</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc07858.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc07942.jpg" alt=""><figcaption><span>dsc07942</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc07942.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc08318.jpg" alt=""><figcaption><span>dsc08318</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc08318.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc08347.jpg" alt=""><figcaption><span>dsc08347</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc08347.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc08405.jpg" alt=""><figcaption><span>dsc08405</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc08405.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc08411.jpg" alt=""><figcaption><span>dsc08411</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc08411.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc08592.jpg" alt=""><figcaption><span>dsc08592</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc08592.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc08690.jpg" alt=""><figcaption><span>dsc08690</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc08690.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc08849.jpg" alt=""><figcaption><span>dsc08849</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc08849.jpg">inquire</a></figcaption></figure>
-  <figure><img loading="lazy" src="img/bulgaria/dsc08856.jpg" alt=""><figcaption><span>dsc08856</span><a href="mailto:john.santerre.ai@gmail.com?subject=Print%20inquiry%20—%20bulgaria/dsc08856.jpg">inquire</a></figcaption></figure>
-</main>
+
+<p class="forthcoming">The first editions are being selected now. For early inquiries, <a href="mailto:john.santerre.ai@gmail.com?subject=Print%20editions" style="border-bottom:1px solid var(--hair)">write to me</a>.</p>
+
 <footer>
   <a href="/photography/prints.html">prints</a>
   <a href="https://www.instagram.com/scrocco/">@scrocco</a>
