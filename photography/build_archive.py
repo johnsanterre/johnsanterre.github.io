@@ -40,13 +40,15 @@ STYLE = """
   header .back:hover { color:var(--ink); }
   h2.sec { font-size:12.5px; letter-spacing:0.28em; text-transform:uppercase; color:var(--dim);
     padding:4vh 3vw 14px; }
-  .grid { columns:5; column-gap:10px; padding:0 3vw 3vh; }
-  @media (max-width:1400px){ .grid{columns:4;} }
-  @media (max-width:1000px){ .grid{columns:3;} }
-  @media (max-width:640px){ .grid{columns:2;} }
-  figure { break-inside:avoid; margin:0 0 10px; background:#fff; border:1px solid var(--hair);
+  /* Row-major grid: reads left→right then next row (chronology stays
+     readable). Uniform thumb cells; lightbox shows the full frame. */
+  .grid { display:grid; grid-template-columns:repeat(5, 1fr); gap:10px; padding:0 3vw 3vh; }
+  @media (max-width:1400px){ .grid{grid-template-columns:repeat(4,1fr);} }
+  @media (max-width:1000px){ .grid{grid-template-columns:repeat(3,1fr);} }
+  @media (max-width:640px){ .grid{grid-template-columns:repeat(2,1fr);} }
+  figure { margin:0; background:#fff; border:1px solid var(--hair);
     padding:4px; cursor:zoom-in; }
-  figure img { width:100%; display:block; }
+  figure img { width:100%; aspect-ratio:3/2; object-fit:cover; display:block; }
   figcaption { font-size:9.5px; color:var(--dim); padding:3px 2px 1px; overflow:hidden;
     text-overflow:ellipsis; white-space:nowrap; }
   .albums { display:grid; gap:16px; padding:0 3vw 8vh;
