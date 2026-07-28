@@ -172,12 +172,7 @@ def main():
     index = (
         HEAD.format(title="scrocco — photographs", extra_css=INDEX_CSS)
         + f"""
-<section class="intro">
-  <h1>Streets, walls, and what people leave on them.
-      <span>Photographs by John Santerre.</span></h1>
-</section>
-
-<main class="albums">
+<main class="albums" style="padding-top:7vh">
 {tiles}
 </main>
 """
