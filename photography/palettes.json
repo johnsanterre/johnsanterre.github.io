@@ -1,0 +1,9 @@
+{
+ "bulgaria": {
+  "hue": 164,
+  "accent": "hsl(164, 30%, 34%)",
+  "tint": "hsl(164, 26%, 96.5%)",
+  "hairline": "hsl(164, 18%, 87%)",
+  "note": "avg sat 5 lum 36 over 50 photos"
+ }
+}

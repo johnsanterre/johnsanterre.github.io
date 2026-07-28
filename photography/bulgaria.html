@@ -7,15 +7,16 @@
 <meta name="description" content="Street photography by John Santerre, shooting as scrocco.">
 <style>
   :root {
-    --bg: #0b0b0c;
-    --ink: #e6e4df;
-    --dim: #8a8880;
-    --hair: #232326;
+    --paper: hsl(164, 26%, 96.5%);
+    --ink: #1c1b18;
+    --dim: #8a867c;
+    --hair: hsl(164, 18%, 87%);
+    --accent: hsl(164, 30%, 34%);
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
-    background: var(--bg); color: var(--ink);
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: var(--paper); color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
   }
   a { color: inherit; text-decoration: none; }
@@ -30,29 +31,50 @@
   header .right a:hover { color: var(--ink); }
   footer {
     padding: 5vh 4vw 8vh; border-top: 1px solid var(--hair);
-    display: flex; gap: 24px; font-size: 12.5px; color: var(--dim); letter-spacing: 0.06em;
+    display: flex; flex-wrap: wrap; gap: 12px 24px; font-size: 12.5px; color: var(--dim); letter-spacing: 0.06em;
   }
   footer a:hover { color: var(--ink); }
   footer .copy { margin-left: auto; }
 
-  .intro { padding: 7vh 4vw 5vh; display: flex; align-items: baseline; gap: 20px; }
+  .intro { padding: 7vh 4vw 4vh; display: flex; align-items: baseline; gap: 18px; }
   .intro h1 {
-    font-weight: 300; font-size: clamp(1.4rem, 3vw, 2.1rem);
-    letter-spacing: 0.22em; text-transform: uppercase;
+    font-weight: 650; font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+    letter-spacing: 0.26em; text-transform: uppercase; color: var(--accent);
   }
   .intro .count { color: var(--dim); font-size: 13px; letter-spacing: 0.08em; }
   .intro .back { margin-left: auto; color: var(--dim); font-size: 12.5px; letter-spacing: 0.06em; }
   .intro .back:hover { color: var(--ink); }
-  .gallery { padding: 0 4vw 10vh; columns: 3; column-gap: 14px; }
+  .gallery { padding: 0 4vw 10vh; columns: 3; column-gap: 18px; }
   @media (max-width: 1000px) { .gallery { columns: 2; } }
   @media (max-width: 620px)  { .gallery { columns: 1; } }
-  .gallery figure { break-inside: avoid; margin: 0 0 14px; background: #101012; overflow: hidden; }
-  .gallery img {
-    width: 100%; display: block; opacity: 0;
-    transition: opacity 500ms ease, transform 400ms ease;
+  .gallery figure {
+    break-inside: avoid; margin: 0 0 18px; background: #fff;
+    border: 1px solid var(--hair); padding: 8px; cursor: zoom-in;
   }
+  .gallery img { width: 100%; display: block; opacity: 0; transition: opacity 500ms ease; }
   .gallery img.in { opacity: 1; }
-  .gallery figure:hover img { transform: scale(1.015); }
+
+  /* lightbox */
+  #lb {
+    position: fixed; inset: 0; z-index: 50; display: none;
+    background: color-mix(in srgb, var(--paper) 88%, #000 4%);
+    backdrop-filter: blur(6px);
+    align-items: center; justify-content: center;
+  }
+  #lb.open { display: flex; }
+  #lb img {
+    max-width: 92vw; max-height: 88vh; display: block;
+    background: #fff; padding: 10px; border: 1px solid var(--hair);
+    box-shadow: 0 30px 80px -30px rgba(0,0,0,0.35);
+  }
+  #lb button {
+    position: fixed; background: none; border: none; cursor: pointer;
+    color: var(--ink); font-size: 30px; padding: 18px; opacity: 0.55;
+  }
+  #lb button:hover { opacity: 1; }
+  #lb .close { top: 12px; right: 16px; }
+  #lb .prev { left: 8px; top: 50%; transform: translateY(-50%); }
+  #lb .next { right: 8px; top: 50%; transform: translateY(-50%); }
 
 </style>
 </head>
@@ -61,6 +83,7 @@
 <header>
   <a class="mark" href="/photography/"><b>scrocco</b></a>
   <span class="right">
+    <a href="/photography/prints.html">prints</a>
     <a href="https://www.instagram.com/scrocco/">instagram</a>
     <a href="/">john santerre — the academic side</a>
   </span>
@@ -68,7 +91,7 @@
 
 <section class="intro">
   <h1>Bulgaria</h1>
-  <span class="count">50 photographs</span>
+  <span class="count">50 photographs · click any image to view large</span>
   <a class="back" href="/photography/">← all albums</a>
 </section>
 
@@ -126,11 +149,18 @@
 </main>
 
 <footer>
+  <a href="/photography/prints.html">prints</a>
   <a href="https://www.instagram.com/scrocco/">@scrocco</a>
   <a href="mailto:john.santerre.ai@gmail.com">email</a>
   <span class="copy">© 2026 John Santerre</span>
 </footer>
 
+<div id="lb">
+  <button class="close" aria-label="Close">×</button>
+  <button class="prev" aria-label="Previous">‹</button>
+  <button class="next" aria-label="Next">›</button>
+  <img alt="">
+</div>
 <script>
   const io = new IntersectionObserver((entries) => {
     for (const e of entries) {
@@ -141,7 +171,30 @@
       io.unobserve(img);
     }
   }, { rootMargin: '200px' });
-  document.querySelectorAll('.gallery img').forEach(i => io.observe(i));
+  const imgs = [...document.querySelectorAll('.gallery img')];
+  imgs.forEach(i => io.observe(i));
+
+  const lb = document.getElementById('lb');
+  const lbImg = lb.querySelector('img');
+  let cur = -1;
+  function show(i) {
+    cur = (i + imgs.length) % imgs.length;
+    lbImg.src = imgs[cur].src;
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function hide() { lb.classList.remove('open'); document.body.style.overflow = ''; }
+  imgs.forEach((img, i) => img.closest('figure').addEventListener('click', () => show(i)));
+  lb.querySelector('.close').addEventListener('click', hide);
+  lb.querySelector('.prev').addEventListener('click', (e) => { e.stopPropagation(); show(cur - 1); });
+  lb.querySelector('.next').addEventListener('click', (e) => { e.stopPropagation(); show(cur + 1); });
+  lb.addEventListener('click', (e) => { if (e.target === lb) hide(); });
+  document.addEventListener('keydown', (e) => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') hide();
+    if (e.key === 'ArrowLeft') show(cur - 1);
+    if (e.key === 'ArrowRight') show(cur + 1);
+  });
 </script>
 
 </body>
