@@ -183,14 +183,35 @@ def figs_html(files, prefix):
     )
 
 
+def walk_albums():
+    """Every directory (any depth, skipping voice/) with its DIRECT files.
+    Album id = relative path; nested dirs are their own albums."""
+    out = []
+    def rec(d):
+        rel = str(d.relative_to(INBOX))
+        files = sorted(p.name for p in d.iterdir()
+                       if p.is_file() and p.suffix.lower() in SHOW)
+        raws = sum(1 for p in d.iterdir()
+                   if p.is_file() and p.suffix.lower() in RAW)
+        subs = sorted(p for p in d.iterdir() if p.is_dir())
+        out.append((rel, files, raws, len(subs)))
+        for s_ in subs:
+            rec(s_)
+    for d in sorted(p for p in INBOX.iterdir() if p.is_dir()):
+        if d.name == "voice":
+            continue
+        rec(d)
+    return out
+
+
+def slug(rel):
+    return rel.replace("/", "--").replace(" ", "_")
+
+
 def main():
     global DATES
     DATES = capture_dates()
-    albums = []
-    for d in sorted(p for p in INBOX.iterdir() if p.is_dir()):
-        files = sorted(p.name for p in d.iterdir() if p.suffix.lower() in SHOW)
-        raws = sum(1 for p in d.iterdir() if p.suffix.lower() in RAW)
-        albums.append((d.name, files, raws))
+    albums = walk_albums()
 
     loose = sorted(p.name for p in INBOX.iterdir()
                    if p.is_file() and p.suffix.lower() in SHOW)
@@ -206,40 +227,56 @@ def main():
         unsorted_html = '<p class="empty">Inbox clear — nothing unsorted.</p>'
 
     tiles = []
-    for name, files, raws in albums:
+    for rel, files, raws, nsubs in albums:
+        if not files and not raws and not nsubs:
+            continue
         cover = files[0] if files else None
-        cover_html = (f'<img loading="lazy" src="{name}/{html.escape(cover)}" alt="">'
-                      if cover else '')
+        cover_html = (f'<img loading="lazy" src="{rel}/{html.escape(cover)}" alt="">'
+                      if cover else '<span style="display:block;aspect-ratio:4/3;background:var(--paper)"></span>')
         tag = ('<span class="tag pub">published</span>'
-               if name in PUBLISHED else '<span class="tag">private</span>')
-        count = f'{len(files)}' + (f' +{raws} raw' if raws else '')
+               if rel in PUBLISHED else '<span class="tag">private</span>')
+        bits = [str(len(files))] if files else []
+        if raws: bits.append(f'+{raws} raw')
+        if nsubs: bits.append(f'{nsubs} sub')
         tiles.append(
-            f'<a class="alb" href="archive-{name}.html">{cover_html}'
-            f'<span class="row"><span class="name">{html.escape(name)}</span>'
-            f'{tag}<span class="n">{count}</span></span></a>'
+            f'<a class="alb" href="archive-{slug(rel)}.html">{cover_html}'
+            f'<span class="row"><span class="name">{html.escape(rel)}</span>'
+            f'{tag}<span class="n">{" · ".join(bits)}</span></span></a>'
         )
     albums_html = ('<h2 class="sec">Albums</h2>\n<div class="albums">\n'
                    + "\n".join(tiles) + "\n</div>")
 
-    total = len(loose) + sum(len(f) for _, f, _ in albums)
-    raw_total = loose_raw + sum(r for _, _, r in albums)
+    total = len(loose) + sum(len(f) for _, f, _, _ in albums)
+    raw_total = loose_raw + sum(r for _, _, r, _ in albums)
     home = page("Archive — private",
                 f'<span class="note">{total} photographs · {raw_total} RAW stored</span>',
                 unsorted_html + "\n" + albums_html)
     (INBOX / "archive.html").write_text(home, encoding="utf-8")
 
-    # --- album pages ---
-    for name, files, raws in albums:
-        body = (f'<h2 class="sec">{html.escape(name)} — {len(files)} photographs'
-                f'{f" · {raws} RAW stored" if raws else ""}</h2>\n'
-                f'<div class="grid">\n{figs_html(files, f"{name}/")}\n</div>'
-                if files else
-                f'<p class="empty">{html.escape(name)} — no viewable photos'
-                f'{f" ({raws} RAW stored)" if raws else ""}.</p>')
-        p = page(f"{name} — archive",
+    # --- album pages (nested dirs get their own pages + sub links) ---
+    for rel, files, raws, nsubs in albums:
+        subs = [a for a in albums if a[0].startswith(rel + "/")
+                and a[0].count("/") == rel.count("/") + 1]
+        sub_html = ""
+        if subs:
+            sub_tiles = "".join(
+                f'<a class="alb" href="archive-{slug(r)}.html">'
+                + (f'<img loading="lazy" src="{r}/{html.escape(f2[0])}" alt="">' if f2 else "")
+                + f'<span class="row"><span class="name">{html.escape(r.split("/")[-1])}</span>'
+                  f'<span class="n">{len(f2)}{f" +{rw} raw" if rw else ""}</span></span></a>'
+                for r, f2, rw, _ in subs)
+            sub_html = f'<div class="albums" style="padding-top:2vh">{sub_tiles}</div>'
+        body = f'<h2 class="sec">{html.escape(rel)} — {len(files)} photographs' \
+               f'{f" · {raws} RAW stored" if raws else ""}</h2>\n' + sub_html
+        if files:
+            body += f'\n<div class="grid">\n{figs_html(files, f"{rel}/")}\n</div>'
+        elif not subs:
+            body = f'<p class="empty">{html.escape(rel)} — no viewable photos' \
+                   f'{f" ({raws} RAW stored)" if raws else ""}.</p>'
+        p = page(f"{rel} — archive",
                  '<a class="back" href="archive.html">← all albums</a>',
                  body)
-        (INBOX / f"archive-{name}.html").write_text(p, encoding="utf-8")
+        (INBOX / f"archive-{slug(rel)}.html").write_text(p, encoding="utf-8")
 
     print(f"archive rebuilt: home ({len(loose)} unsorted) + {len(albums)} album pages")
 
