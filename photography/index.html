@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>scrocco — photographs</title>
-<meta name="description" content="Street photography and walls — John Santerre, shooting as scrocco.">
+<meta name="description" content="Street photography by John Santerre, shooting as scrocco.">
 <style>
   :root {
     --bg: #0b0b0c;
@@ -19,60 +19,56 @@
     -webkit-font-smoothing: antialiased;
   }
   a { color: inherit; text-decoration: none; }
-
   header {
     display: flex; align-items: baseline; gap: 20px;
     padding: 26px 4vw 22px;
     border-bottom: 1px solid var(--hair);
   }
-  .mark {
-    font-size: 15px; letter-spacing: 0.34em; text-transform: lowercase;
-    font-weight: 400;
-  }
+  .mark { font-size: 15px; letter-spacing: 0.34em; text-transform: lowercase; font-weight: 400; }
   .mark b { font-weight: 700; }
   header .right { margin-left: auto; display: flex; gap: 22px; font-size: 12.5px; color: var(--dim); letter-spacing: 0.06em; }
   header .right a:hover { color: var(--ink); }
-
-  .intro { padding: 9vh 4vw 6vh; }
-  .intro h1 {
-    font-weight: 300; font-size: clamp(1.3rem, 2.6vw, 1.9rem);
-    letter-spacing: 0.01em; color: var(--ink); max-width: 34ch; line-height: 1.45;
-  }
-  .intro h1 span { color: var(--dim); }
-
-  .gallery { padding: 0 4vw 10vh; }
-  .gallery .album {
-    font-size: 12.5px; letter-spacing: 0.3em; text-transform: uppercase;
-    font-weight: 400; color: var(--dim); margin: 6vh 0 18px;
-  }
-  .gallery .album:first-child { margin-top: 0; }
-  .album-grid { columns: 3; column-gap: 14px; }
-  @media (max-width: 1000px) { .album-grid { columns: 2; } }
-  @media (max-width: 620px)  { .album-grid { columns: 1; } }
-  .gallery figure {
-    break-inside: avoid; margin: 0 0 14px;
-    background: #101012; overflow: hidden;
-  }
-  .gallery img {
-    width: 100%; display: block; opacity: 0;
-    transition: opacity 500ms ease, transform 400ms ease;
-  }
-  .gallery img.in { opacity: 1; }
-  .gallery figure:hover img { transform: scale(1.015); }
-  .empty { color: var(--dim); font-size: 14px; letter-spacing: 0.08em; }
-
   footer {
     padding: 5vh 4vw 8vh; border-top: 1px solid var(--hair);
     display: flex; gap: 24px; font-size: 12.5px; color: var(--dim); letter-spacing: 0.06em;
   }
   footer a:hover { color: var(--ink); }
   footer .copy { margin-left: auto; }
+
+  .intro { padding: 9vh 4vw 6vh; }
+  .intro h1 {
+    font-weight: 300; font-size: clamp(1.3rem, 2.6vw, 1.9rem);
+    letter-spacing: 0.01em; max-width: 34ch; line-height: 1.45;
+  }
+  .intro h1 span { color: var(--dim); }
+  .albums {
+    padding: 0 4vw 10vh;
+    display: grid; gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr));
+  }
+  .tile { position: relative; display: block; overflow: hidden; background: #101012; }
+  .tile img {
+    width: 100%; aspect-ratio: 3 / 2; object-fit: cover; display: block;
+    transition: transform 600ms ease, opacity 400ms ease;
+  }
+  .tile:hover img { transform: scale(1.03); }
+  .tile .label {
+    position: absolute; left: 0; right: 0; bottom: 0;
+    padding: 40px 22px 18px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.72));
+    display: flex; align-items: baseline; gap: 14px;
+  }
+  .tile .name {
+    font-size: 15px; letter-spacing: 0.26em; text-transform: uppercase; font-weight: 600;
+  }
+  .tile .count { font-size: 12px; color: #bdbab2; letter-spacing: 0.08em; }
+
 </style>
 </head>
 <body>
 
 <header>
-  <a class="mark" href="./"><b>scrocco</b></a>
+  <a class="mark" href="/photography/"><b>scrocco</b></a>
   <span class="right">
     <a href="https://www.instagram.com/scrocco/">instagram</a>
     <a href="/">john santerre — the academic side</a>
@@ -84,62 +80,8 @@
       <span>Photographs by John Santerre.</span></h1>
 </section>
 
-<main class="gallery">
-<!-- GALLERY:BEGIN -->
-  <h2 class="album">Bulgaria</h2>
-  <div class="album-grid">
-    <figure><img loading="lazy" src="img/bulgaria/dsc00281.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc00570.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc00646.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc00721.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc00802.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc00940.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc00993.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc00995.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc01189.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc01295.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc01437.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc01497.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc01531.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc01545.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc01564.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc01595.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc01611.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc01620.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc01626.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc01636.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc01659.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc01685.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc01733.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc01750.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc01777.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc01786.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc01794.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc01804.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc01946.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc02229.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc02525.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc02558.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc02859.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc02867.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc02907.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc02921.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc07666.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc07759.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc07787.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc07841.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc07858.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc07942.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc08318.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc08347.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc08405.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc08411.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc08592.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc08690.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc08849.jpg" alt=""></figure>
-    <figure><img loading="lazy" src="img/bulgaria/dsc08856.jpg" alt=""></figure>
-  </div>
-<!-- GALLERY:END -->
+<main class="albums">
+  <a class="tile" href="bulgaria.html"><img src="img/bulgaria/dsc00281.jpg" alt="Bulgaria album cover"><span class="label"><span class="name">Bulgaria</span><span class="count">50 photographs</span></span></a>
 </main>
 
 <footer>
@@ -147,20 +89,6 @@
   <a href="mailto:john.santerre.ai@gmail.com">email</a>
   <span class="copy">© 2026 John Santerre</span>
 </footer>
-
-<script>
-  // Fade images in as they load/enter view.
-  const io = new IntersectionObserver((entries) => {
-    for (const e of entries) {
-      if (!e.isIntersecting) continue;
-      const img = e.target;
-      if (img.complete) img.classList.add('in');
-      else img.addEventListener('load', () => img.classList.add('in'), { once: true });
-      io.unobserve(img);
-    }
-  }, { rootMargin: '200px' });
-  document.querySelectorAll('.gallery img').forEach(i => io.observe(i));
-</script>
 
 </body>
 </html>
