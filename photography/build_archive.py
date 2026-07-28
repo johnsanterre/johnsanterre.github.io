@@ -14,6 +14,8 @@ Run after any reorganizing:  python3 photography/build_archive.py
 """
 
 import html
+import json
+import subprocess
 from pathlib import Path
 
 HERE = Path(__file__).parent
@@ -58,6 +60,12 @@ STYLE = """
     border-radius:3px; border:1px solid var(--hair); color:var(--dim); }
   .tag.pub { color:#2e6b45; border-color:#bcd8c6; }
   .empty { padding:2vh 3vw 4vh; color:var(--dim); font-size:13.5px; }
+  .sortbar { display:flex; gap:8px; align-items:baseline; padding:14px 3vw 0;
+    font-size:11.5px; color:var(--dim); }
+  .sortbar button { font-size:11px; padding:3px 10px; border:1px solid var(--hair);
+    background:none; border-radius:99px; cursor:pointer; color:var(--dim); letter-spacing:0.06em; }
+  .sortbar button.on { border-color:var(--ink); color:var(--ink); }
+  .cap-date { float:right; opacity:0.75; }
   #lb { position:fixed; inset:0; z-index:50; display:none; background:rgba(247,246,243,0.95);
     align-items:center; justify-content:center; }
   #lb.open { display:flex; }
@@ -70,12 +78,32 @@ STYLE = """
 """
 
 LIGHTBOX = """
+<div class="sortbar"><span>sort:</span>
+  <button data-mode="date" class="on">date captured</button>
+  <button data-mode="name">filename</button>
+</div>
 <div id="lb">
   <button class="close">×</button><button class="prev">‹</button><button class="next">›</button>
   <img alt=""><div class="name"></div>
 </div>
 <script>
-  const figs = [...document.querySelectorAll('figure')];
+  // sort every grid by capture date (default) or filename
+  function applySort(mode) {
+    document.querySelectorAll('.grid').forEach(g => {
+      [...g.children]
+        .sort((a, b) => mode === 'date'
+          ? (a.dataset.date || '9').localeCompare(b.dataset.date || '9')
+          : (a.dataset.name || '').localeCompare(b.dataset.name || ''))
+        .forEach(el => g.appendChild(el));
+    });
+    document.querySelectorAll('.sortbar button').forEach(b =>
+      b.classList.toggle('on', b.dataset.mode === mode));
+    rebind();
+  }
+  document.querySelectorAll('.sortbar button').forEach(b =>
+    b.addEventListener('click', () => applySort(b.dataset.mode)));
+
+  let figs = [];
   const lb = document.getElementById('lb');
   const lbImg = lb.querySelector('img');
   const lbName = lb.querySelector('.name');
@@ -89,7 +117,11 @@ LIGHTBOX = """
     lb.classList.add('open'); document.body.style.overflow = 'hidden';
   }
   function hide() { lb.classList.remove('open'); document.body.style.overflow = ''; }
-  figs.forEach((f, i) => f.addEventListener('click', () => show(i)));
+  function rebind() {
+    figs = [...document.querySelectorAll('figure')];
+    figs.forEach((f, i) => { f.onclick = () => show(i); });
+  }
+  applySort('date');
   lb.querySelector('.close').addEventListener('click', hide);
   lb.querySelector('.prev').addEventListener('click', e => { e.stopPropagation(); show(cur - 1); });
   lb.querySelector('.next').addEventListener('click', e => { e.stopPropagation(); show(cur + 1); });
@@ -125,15 +157,33 @@ def page(title, header_extra, body):
 """
 
 
+def capture_dates():
+    """relpath -> ISO capture datetime (EXIF, falling back to mtime)."""
+    try:
+        out = subprocess.run(
+            ["node", str(HERE / "scan_dates.js")],
+            capture_output=True, text=True, timeout=600, check=True)
+        return json.loads(out.stdout)
+    except Exception:
+        return {}
+
+
+DATES = {}
+
+
 def figs_html(files, prefix):
     return "\n".join(
-        f'  <figure><img loading="lazy" src="{prefix}{html.escape(f)}" alt="">'
-        f'<figcaption>{html.escape(f)}</figcaption></figure>'
+        f'  <figure data-date="{DATES.get(prefix + f, "")}" data-name="{html.escape(f)}">'
+        f'<img loading="lazy" src="{prefix}{html.escape(f)}" alt="">'
+        f'<figcaption>{html.escape(f)}'
+        f'<span class="cap-date">{DATES.get(prefix + f, "")[:10]}</span></figcaption></figure>'
         for f in files
     )
 
 
 def main():
+    global DATES
+    DATES = capture_dates()
     albums = []
     for d in sorted(p for p in INBOX.iterdir() if p.is_dir()):
         files = sorted(p.name for p in d.iterdir() if p.suffix.lower() in SHOW)
