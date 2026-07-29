@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research — John Santerre, PhD</title>
+<meta name="description" content="John Santerre's research: machine learning applied to hard problems in planetary science, genomics, and health — plus open-source AI tooling and the ideas behind the work.">
+<link rel="icon" href="/AI_MindMap/assets/home_map_emblem.svg">
+<style>
+  :root {
+    --bg: #fafaf8;
+    --ink: #141414;
+    --muted: #6b6b66;
+    --line: #e4e2dc;
+    --accent: #7C2530;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg); color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased; line-height: 1.55;
+  }
+  a { color: inherit; text-decoration: none; }
+  nav {
+    display: flex; align-items: baseline; gap: 28px;
+    padding: 20px 5vw; border-bottom: 1px solid var(--line);
+  }
+  nav .name { font-weight: 700; letter-spacing: -0.01em; }
+  nav .links { margin-left: auto; display: flex; gap: 22px; font-size: 14px; color: var(--muted); }
+  nav .links a:hover { color: var(--ink); }
+
+  header { max-width: 820px; margin: 0 auto; padding: 9vh 5vw 2vh; }
+  h1 { font-size: clamp(2rem, 4.6vw, 3.2rem); line-height: 1.06; letter-spacing: -0.03em; font-weight: 750; }
+  h1 em { font-style: normal; color: var(--accent); }
+  .lede { margin-top: 22px; font-size: 1.14rem; color: #333; max-width: 62ch; }
+  .lede + .lede { margin-top: 14px; font-size: 1.02rem; color: #444; }
+
+  main { max-width: 820px; margin: 0 auto; padding: 2vh 5vw 4vh; }
+  section { margin-top: 6vh; }
+  h2 {
+    font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 6px;
+  }
+  .arc-sub { font-size: 1.28rem; letter-spacing: -0.02em; font-weight: 700; margin-bottom: 6px; }
+  .arc-desc { color: #444; max-width: 62ch; margin-bottom: 18px; }
+  .papers { display: grid; gap: 10px; }
+  .paper {
+    border: 1px solid var(--line); background: #fff; border-radius: 9px;
+    padding: 14px 16px; display: block;
+    transition: transform 150ms ease, box-shadow 150ms ease;
+  }
+  a.paper:hover { transform: translateY(-2px); box-shadow: 0 12px 26px -16px rgba(20,20,20,0.25); }
+  .paper .t { font-weight: 600; letter-spacing: -0.01em; }
+  .paper .m { font-size: 0.86rem; color: var(--muted); margin-top: 3px; }
+  .tag {
+    display: inline-block; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--accent); font-weight: 650; border: 1px solid var(--line);
+    border-radius: 999px; padding: 2px 9px; margin-left: 8px; vertical-align: 1px;
+  }
+  .stats {
+    margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 12px;
+  }
+  .stats span {
+    border: 1px solid var(--line); background: #fff; border-radius: 999px;
+    padding: 7px 15px; font-size: 0.9rem; color: #3a3a36;
+  }
+  .more { margin-top: 14px; font-size: 0.95rem; }
+  .more a { color: var(--accent); border-bottom: 1px solid var(--line); }
+  .more a:hover { border-color: var(--accent); }
+  footer {
+    max-width: 820px; margin: 4vh auto 0; padding: 5vh 5vw 8vh;
+    border-top: 1px solid var(--line);
+    display: flex; flex-wrap: wrap; gap: 10px 26px; font-size: 14.5px; color: var(--muted);
+  }
+  footer a { border-bottom: 1px solid var(--line); padding-bottom: 1px; }
+  footer a:hover { color: var(--ink); border-color: var(--ink); }
+</style>
+<script data-goatcounter="https://johnsanterre.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+
+<nav>
+  <a class="name" href="/">John Santerre</a>
+  <span class="links">
+    <a href="/#students">For Students</a>
+    <a href="/AI_MindMap/map.html">Mind Map</a>
+    <a href="/photography/">Photography</a>
+    <a href="/work-with-me/">Work With Me</a>
+  </span>
+</nav>
+
+<header>
+  <h1>Research — <em>the ideas endure</em>.</h1>
+  <p class="lede">Code is becoming a commodity; ideas are not. My work sits where machine
+     learning meets a genuinely hard problem — a moon's clouds, a genome's resistance, a
+     failing heart — and asks what mathematical structure makes the problem tractable.
+     The tools change every year. The thinking is the durable part.</p>
+  <p class="lede">Below: three research arcs, a strand of open-source tooling, and the
+     through-line that connects them. Full list on
+     <a href="https://scholar.google.com/citations?user=S-pQwpgAAAAJ" style="color:var(--accent);border-bottom:1px solid var(--line)">Google Scholar</a>.</p>
+</header>
+
+<main>
+
+  <section>
+    <h2>Arc I</h2>
+    <div class="arc-sub">Planetary science, with NASA</div>
+    <p class="arc-desc">Teaching machines to see across the solar system — instance segmentation
+       and transfer learning applied to spacecraft imagery, so scientists can measure in seconds
+       what once took months. Work with a NASA Goddard planetary-science team.</p>
+    <div class="papers">
+      <a class="paper" href="https://scholar.google.com/citations?user=S-pQwpgAAAAJ">
+        <div class="t">Rapid automated mapping of clouds on Titan with instance segmentation</div>
+        <div class="m">Yahn, Trent, Duncan, Seignovert, Santerre, Nixon · JGR: Machine Learning & Computation, 2025</div>
+      </a>
+      <div class="paper">
+        <div class="t">Grid-oriented normalization for analysis of spherical areas from 2-D imagery<span class="tag">US Patent 12,620,126</span></div>
+        <div class="m">Nixon, Yahn, Trent, Santerre · granted 2026</div>
+      </div>
+      <div class="paper">
+        <div class="t">Enhanced detection of Martian dust devils from rover images using machine learning</div>
+        <div class="m">Hatfield, Santerre, Nixon · JGR: Planets, 2026</div>
+      </div>
+      <div class="paper">
+        <div class="t">Detection and segmentation of ice blocks in Europa's chaos regions using deep learning</div>
+        <div class="m">Europa chaos-terrain work · LPSC / AGU / DPS, 2022–2023</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Arc II</h2>
+    <div class="arc-sub">Genomics &amp; antimicrobial resistance</div>
+    <p class="arc-desc">The genotype-to-phenotype problem: predicting the behavior of an organism
+       from its DNA. My most-cited work, built during my PhD, brought machine learning to
+       antibiotic-resistance prediction at scale.</p>
+    <div class="papers">
+      <a class="paper" href="https://scholar.google.com/citations?user=S-pQwpgAAAAJ">
+        <div class="t">Antimicrobial resistance prediction in PATRIC and RAST</div>
+        <div class="m">Davis, Boisvert, Brettin, … Santerre, et al. · Scientific Reports, 2016 · cited 288×</div>
+      </a>
+      <div class="paper">
+        <div class="t">Machine learning for antimicrobial resistance</div>
+        <div class="m">Santerre, Davis, Xia, Stevens · arXiv:1607.01224, 2016</div>
+      </div>
+      <div class="paper">
+        <div class="t">Machine learning for the genotype-to-phenotype problem</div>
+        <div class="m">Santerre · PhD thesis, University of Chicago, 2017 (advisor: Rick Stevens)</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Arc III</h2>
+    <div class="arc-sub">Applied ML — health, signals &amp; the world</div>
+    <p class="arc-desc">Machine learning pointed at practical, human problems, much of it done
+       alongside graduate students I advise: physiological signals, medical imaging, and a long
+       tail of applied studies.</p>
+    <div class="papers">
+      <a class="paper" href="https://scholar.google.com/citations?user=S-pQwpgAAAAJ">
+        <div class="t">sEMG gesture recognition with a simple model of attention</div>
+        <div class="m">Josephs, Drake, Heroy, Santerre · Machine Learning for Health, 2020 · cited 61×</div>
+      </a>
+      <div class="paper">
+        <div class="t">Quantification of ECG instability prior to cardiac arrest in single-ventricle physiology</div>
+        <div class="m">Savorgnan, Crouthamel, Heroy, Santerre, Acosta · Journal of Electrocardiology, 2022–2023</div>
+      </div>
+      <div class="paper">
+        <div class="t">Deep learning image analysis of S-phase stages in human cells</div>
+        <div class="m">Boyd, Mitra, Santerre, Sansam · SMU Data Science Review, 2023</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Also</h2>
+    <div class="arc-sub">Open-source AI tooling</div>
+    <p class="arc-desc">Ideas become useful when they ship. I've contributed to widely used
+       open-source AI libraries — the kind of practical tooling that puts capable models in more
+       developers' hands.</p>
+    <div class="papers">
+      <a class="paper" href="https://github.com/andrewyng/aisuite">
+        <div class="t">aisuite — a unified interface to many LLM providers</div>
+        <div class="m">Contributor · one string swaps provider &amp; model across OpenAI, Anthropic, Google, AWS, and more</div>
+      </a>
+      <a class="paper" href="https://github.com/andrewyng/translation-agent">
+        <div class="t">translation-agent — agentic machine translation</div>
+        <div class="m">Contributor · a translate → reflect → refine workflow for steerable translation</div>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2>The through-line</h2>
+    <p class="arc-desc" style="max-width:64ch;font-size:1.05rem;color:#333;">
+      Whether the data is a spacecraft's camera, a bacterial genome, or a child's heartbeat, the
+      move is the same: find the structure the problem is hiding, and let the model exploit it.
+      That belief — that the mathematics is the enduring layer, and code is increasingly the
+      commodity around it — is what I teach, what I build, and what I look for in the problems
+      worth taking on.</p>
+    <div class="stats">
+      <span>PhD, University of Chicago</span>
+      <span>h-index 8</span>
+      <span>peer-reviewed across 3 fields</span>
+      <span>US patent holder</span>
+      <span>NASA research advisor</span>
+    </div>
+    <p class="more"><a href="https://scholar.google.com/citations?user=S-pQwpgAAAAJ">Full publication list on Google Scholar &rarr;</a></p>
+  </section>
+
+</main>
+
+<footer>
+  <a href="/">Home</a>
+  <a href="/work-with-me/">Work with me</a>
+  <a href="https://scholar.google.com/citations?user=S-pQwpgAAAAJ">Google Scholar</a>
+  <a href="https://github.com/johnsanterre">GitHub</a>
+  <span style="margin-left:auto">© 2026 John Santerre</span>
+</footer>
+
+</body>
+</html>
