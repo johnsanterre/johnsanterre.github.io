@@ -129,12 +129,16 @@
   .about {
     max-width: 1140px; margin: 3vh auto 0; padding: 6vh 5vw;
     border-top: 1px solid var(--line);
-    display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: 40px;
   }
-  .about p { max-width: 62ch; color: #333; font-size: 1.05rem; }
-  .about p + p { margin-top: 16px; }
-  .about .headshot { width: 100%; max-width: 220px; border-radius: 12px; display: block; margin-top: 16px; border: 1px solid var(--line); }
-  @media (max-width: 760px) { .about { grid-template-columns: 1fr; } .about .headshot { max-width: 160px; } }
+  .about-top { display: flex; align-items: center; gap: 26px; margin: 6px 0 40px; }
+  .about-top .headshot { width: 116px; height: 116px; object-fit: cover; border-radius: 12px; border: 1px solid var(--line); flex: none; }
+  .about-top .intro { font-size: 1.2rem; color: #2c2a25; max-width: 52ch; letter-spacing: -0.01em; }
+  .profiles { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; }
+  .profile h3 { font-size: 1.08rem; letter-spacing: -0.01em; margin-bottom: 3px; }
+  .profile .yrs { display: block; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); font-weight: 650; margin-bottom: 12px; }
+  .profile p { color: #333; font-size: 1rem; max-width: 60ch; }
+  .profile p + p { margin-top: 12px; }
+  @media (max-width: 760px) { .profiles { grid-template-columns: 1fr; } .about-top { flex-direction: column; align-items: flex-start; } }
 
   footer {
     padding: 4vh 5vw 5vh;
@@ -270,30 +274,39 @@
 </main>
 
 <section class="about" id="about">
-  <div>
-    <h2>About</h2>
+  <h2>About</h2>
+  <div class="about-top">
     <img class="headshot" src="/assets/photos/headshot.jpg" alt="John Santerre">
+    <p class="intro">Two careers, one instinct: take something complex and make it legible.
+       I've been building with technology since the dial-up era, and doing applied machine
+       learning since 2009.</p>
   </div>
-  <div>
-    <p>I hold a PhD in computer science from the University of Chicago, where I worked on
-       machine learning — a strange place to land for someone whose bachelor's was a double
-       major in English and film. It isn't: both are the study of structure and story. I've
-       spent my career at the seam between research, teaching, and industry — graduate machine
-       learning at UC Berkeley and SMU, and a standing obsession with the mathematical structure
-       underneath it all. I actively advise companies on AI — I've served as CTO and Chief AI
-       Officer, and as technical advisor to startups from first pitch through scale — <a href="/work-with-me/" style="border-bottom:1px solid var(--line)">work with me</a>.</p>
-    <p>That advising rests on operating roles: today I'm CTO of TAP, a deep-tech innovation company; before
-       that I founded and led Silicon Valley Bank's AI Lab, ran special projects alongside Andrew
-       Ng at DeepLearning.AI, led the SAP–MIT Sloan collaboration as a principal data scientist at
-       SAP, and was the first hire and chief data scientist at a venture-backed health startup
-       (covered by MIT Technology Review). I also advise a NASA Goddard planetary-science team on
-       computer vision for the exploration of Europa and Titan.</p>
-    <p>The through-line in everything here is legibility: a field this important shouldn't
-       require a decoder ring. Courses, the mind map, workbooks, talks — they're all the
-       same project in different forms.</p>
-    <p>Before the academy I was a photojournalist — Haiti, Thailand, Cambodia, and elsewhere.
-       That work continues as <a href="/photography/" style="border-bottom:1px solid var(--line)">scrocco</a>,
-       and it turns out to be the same discipline: choosing what to leave out.</p>
+  <div class="profiles">
+    <div class="profile">
+      <h3>Academic &amp; AI</h3>
+      <span class="yrs">Applied ML since 2009</span>
+      <p>I hold a PhD in computer science from the University of Chicago and teach graduate
+         machine learning at UC Berkeley and SMU. I advise companies on AI as a CTO and Chief
+         AI Officer — today at the deep-tech company TAP — and have founded and led Silicon
+         Valley Bank's AI Lab, run special projects alongside Andrew Ng at DeepLearning.AI, led
+         the SAP–MIT Sloan collaboration, and was the first hire at a venture-backed health
+         startup covered by MIT Technology Review.</p>
+      <p>Today I also advise a NASA Goddard team on computer vision for the exploration of
+         Europa and Titan. The through-line is legibility: a field this important shouldn't
+         require a decoder ring. <a href="/work-with-me/" style="border-bottom:1px solid var(--line)">Work with me &rarr;</a></p>
+    </div>
+    <div class="profile">
+      <h3>Photography &amp; media</h3>
+      <span class="yrs">Since the dial-up era</span>
+      <p>My other life is visual. I first got online telneting to a public library in Nebraska
+         over a 2,400-baud modem, ran BBSs in the '90s, and cut film on Media 100, Avid, Final
+         Cut, and Premiere — a natural home for a Middlebury double major in English and film.</p>
+      <p>As a photojournalist and multimedia producer — including work with the agency VII
+         Photo — I've had prints displayed in the lobby of the United Nations and films screened
+         in its General Assembly, both in New York. That work continues today as
+         <a href="/photography/" style="border-bottom:1px solid var(--line)">scrocco</a>. It's the
+         same discipline as the science: choosing what to leave out.</p>
+    </div>
   </div>
 </section>
 
