@@ -47,6 +47,15 @@
     margin-top: 28px; max-width: 52ch;
     font-size: clamp(1rem, 1.6vw, 1.2rem); color: var(--muted);
   }
+  .hero .cta {
+    display: inline-block; margin-top: 30px;
+    background: var(--accent); color: #fff;
+    padding: 12px 22px; border-radius: 8px;
+    font-weight: 650; font-size: 0.98rem;
+    transition: transform 150ms ease, box-shadow 150ms ease;
+  }
+  .hero .cta:hover { transform: translateY(-2px); box-shadow: 0 14px 30px -14px rgba(124,37,48,0.55); }
+  .hero .cta-side { margin-left: 14px; font-size: 0.92rem; color: var(--muted); }
 
   .work { padding: 0 5vw 6vh; }
   .work h2, .about h2 {
@@ -107,6 +116,7 @@
     <a href="#work">Work</a>
     <a href="/photography/">Photography</a>
     <a href="#about">About</a>
+    <a href="/updates/">Updates</a>
     <a href="#contact">Contact</a>
   </span>
 </nav>
@@ -116,6 +126,8 @@
   <p>I'm John Santerre — PhD in artificial intelligence, educator at UC Berkeley and SMU,
      founder of the nonprofit Free Focus. I build courses, maps, and tools that make
      hard ideas navigable.</p>
+  <a class="cta" href="/updates/">Get updates by email &rarr;</a>
+  <span class="cta-side">new lectures, videos, and tools — occasional, no filler</span>
 </header>
 
 <main class="work" id="work">
@@ -238,7 +250,7 @@
   <a href="https://scholar.google.com/citations?user=S-pQwpgAAAAJ">Google Scholar</a>
   <a href="https://www.youtube.com/channel/UC-y9ujtuX7OLibT436zoo9A">YouTube</a>
   <a href="/photography/">Photography</a>
-  <a href="mailto:john.santerre.ai@gmail.com?subject=Subscribe&amp;body=Please%20add%20me%20to%20the%20mailing%20list.%20%28Feel%20free%20to%20add%20your%20name%20and%20how%20you%20found%20the%20site.%29">Mailing list</a>
+  <a href="/updates/">Mailing list</a>
   <span class="copy">© 2026 John Santerre</span>
 </footer>
 
