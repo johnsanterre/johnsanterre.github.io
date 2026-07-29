@@ -1,0 +1,25 @@
+# haiti — captions (from Instagram / scrocco)
+
+- **haiti_01.jpg** (Mar 05, 2017) — Sri Lankan UN soldiers patrol the streets of Haiti in 2008. Series of 22
+- **haiti_02.jpg** (Mar 05, 2017) — Downtown Port-au-Prince Haiti in 2008. Photo 1 of 22
+- **haiti_03.jpg** (Mar 05, 2017) — Downtown Port-au-Prince Haiti in 2008. Photo 2 of 22
+- **haiti_04.jpg** (Mar 06, 2017) — Open air grocery store in downtown Port-au-Prince Haiti in 2008. Photo 3 of 22
+- **haiti_05.jpg** (Mar 06, 2017) — Open grocery store in downtown Port-au-Prince Haiti in 2008. Photo 4 of 22
+- **haiti_06.jpg** (Mar 07, 2017) — Open grocery store in downtown Port-au-Prince Haiti in 2008. Photo 5 of 22
+- **haiti_07.jpg** (Mar 09, 2017) — Open grocery store in downtown Port-au-Prince Haiti in 2008. Photo 6 of 22
+- **haiti_08.jpg** (Mar 09, 2017) — Keeping cool in a church in Haiti in 2008. Photo 7 of 22
+- **haiti_09.jpg** (Mar 10, 2017) — Protests in downtown Port-au-Prince Haiti in 2008. Photo 8 of 22
+- **haiti_10.jpg** (Mar 11, 2017) — Protests in downtown Port-au-Prince Haiti in 2008. Photo 9 of 22
+- **haiti_11.jpg** (Mar 11, 2017) — Protests in downtown Port-au-Prince Haiti in 2008. Photo 10 of 22
+- **haiti_12.jpg** (Mar 12, 2017) — Protests in downtown Port-au-Prince Haiti in 2008. Photo 11 of 22
+- **haiti_13.jpg** (Mar 12, 2017) — Sri Lankan soldiers working for the UN relax in Haiti in 2008. I was told this gig was a reward for them. It offered better pay and was less dangerous then their previous assignment fighting Tamil Tigers in northern Sri Lanka. Photo 12 of 22
+- **haiti_14.jpg** (Mar 13, 2017) — Sri Lankan soldiers working for the UN prepare for patrol in Haiti in 2008. The lack of separation(in all ways other than linguistic) between the UN force and the locals struck me over and over. Photo 13 of 22
+- **haiti_15.jpg** (Mar 14, 2017) — Sri Lankan soldiers working for the UN photograph me in return. Photo 14 of 22
+- **haiti_16.jpg** (Mar 14, 2017) — Sri Lankan soldiers working for the UN patrol in and around Cite Soleil in Port au Prince Haiti in 2008. I think this was west or southwest of city center. I road in a truck a bunch and we walked a fair bit. Photo 15 of 22
+- **haiti_17.jpg** (Mar 15, 2017) — A Sri Lankan soldier working for the UN patrols in and around Cite Soleil in Port au Prince Haiti in 2008. Photo 16 of 22
+- **haiti_18.jpg** (Mar 15, 2017) — A Sri Lankan soldier working for the UN patrols in and around Cite Soleil in Port au Prince Haiti in 2008. Photo 17 of 22
+- **haiti_19.jpg** (Mar 15, 2017) — Blurry Sri Lankan soldier working for the UN patrol in and around Cite Soleil in Port au Prince Haiti in 2008. Photo 18 of 22 Trying hard to finish this series before next trip to join the six deities covered in green and blue feathers lying in primordial waters
+- **haiti_20.jpg** (Mar 16, 2017) — A Sri Lankan soldier working for the UN patrols in and around Cite Soleil in Port au Prince Haiti in 2008. Photo 19 of 22 Even before the earthquake Haiti felt unstable. The "threat vectors" felt 360 degrees and harder to evaluate. Kidnappings were common. Everyone paid and nearly all went home after. Two foot ballers were taken near my hotel while I was there
+- **haiti_21.jpg** (Mar 16, 2017) — A Sri Lankan soldier working for the UN patrols in and around Cite Soleil in Port au Prince Haiti in 2008. Photo 20 of 22
+- **haiti_22.jpg** (Mar 16, 2017) — A Sri Lankan soldier working for the UN patrols in and around Cite Soleil in Port au Prince Haiti in 2008. Photo 21of 22 zero packing and I leave in 7 hours. what a night
+- **haiti_23.jpg** (Mar 17, 2017) — A Sri Lankan soldier working for the UN patrols in and around Cite Soleil in Port au Prince Haiti in 2008. Photo 22 of 22. Done!

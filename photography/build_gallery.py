@@ -134,6 +134,12 @@ STORY_CSS = """
 
   .ph { margin: 0 0 26px; cursor: zoom-in; }
   .ph img { width: 100%; display: block; background: #fff; border: 1px solid var(--hair); padding: 8px; }
+  .ph figcaption {
+    margin-top: 9px; max-width: 62ch;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.98rem; line-height: 1.55; color: #4a463f; font-style: italic;
+  }
+  .row2 .ph figcaption { font-size: 0.9rem; }
   .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; margin-bottom: 26px; }
   .row2 .ph { margin: 0; }
   @media (max-width: 700px) { .row2 { grid-template-columns: 1fr; gap: 0; } .row2 .ph { margin-bottom: 26px; } }
@@ -254,6 +260,21 @@ def read_story_text(album_dir):
     return (paras[0], paras[1:]) if paras else (None, [])
 
 
+def load_captions(d):
+    """Parse an album's captions.md -> {filename: caption}."""
+    f = d / "captions.md"
+    caps = {}
+    if f.exists():
+        import re as _re
+        for ln in f.read_text(encoding="utf-8").splitlines():
+            m = _re.match(r"- \*\*(.+?)\*\* \([^)]*\) \u2014 (.*)", ln)
+            if not m:
+                m = _re.match(r"- \*\*(.+?)\*\* \([^)]*\) - (.*)", ln)
+            if m:
+                caps[m.group(1).strip()] = m.group(2).strip()
+    return caps
+
+
 def main():
     palettes = load_json("palettes.json", {})
     editions = load_json("editions.json", [])
@@ -269,7 +290,8 @@ def main():
             continue
         cover = "cover.jpg" if "cover.jpg" in photos else photos[0]
         dek, paras = read_story_text(d)
-        stories.append((d.name, photos, cover, dek, paras))
+        caps = load_captions(d)
+        stories.append((d.name, photos, cover, dek, paras, caps))
 
     # --- index ---
     tiles = "\n".join(
@@ -278,7 +300,7 @@ def main():
         f'<span class="frame"><img src="img/{name}/{cover}" alt="{story_title(name)}"></span>'
         f'<span class="label"><span class="name">{story_title(name)}</span>'
         f'<span class="count">{len(photos)} photographs</span></span></a>'
-        for name, photos, cover, dek, paras in stories
+        for name, photos, cover, dek, paras, caps in stories
     )
     index = (
         HEAD.format(title="scrocco — photographs", extra_css=INDEX_CSS,
@@ -289,13 +311,15 @@ def main():
     (HERE / "index.html").write_text(index, encoding="utf-8")
 
     # --- story pages: hero, then rhythm [full, 2up] with prose interleaved ---
-    for name, photos, cover, dek, paras in stories:
+    for name, photos, cover, dek, paras, caps in stories:
         pal = palettes.get(name, DEFAULT_PAL)
         rest = [p for p in photos if p != cover and p != "cover.jpg"]
 
         def fig(p):
+            cap = caps.get(p, "")
+            caphtml = f'<figcaption>{cap}</figcaption>' if cap else ""
             return (f'<figure class="ph"><img loading="lazy" '
-                    f'src="img/{name}/{p}" alt=""></figure>')
+                    f'src="img/{name}/{p}" alt="{cap[:120]}">{caphtml}</figure>')
 
         # group photos: alternating single / pair
         groups, i, toggle = [], 0, True
