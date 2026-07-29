@@ -133,7 +133,8 @@
   }
   .about p { max-width: 62ch; color: #333; font-size: 1.05rem; }
   .about p + p { margin-top: 16px; }
-  @media (max-width: 760px) { .about { grid-template-columns: 1fr; } }
+  .about .headshot { width: 100%; max-width: 220px; border-radius: 12px; display: block; margin-top: 16px; border: 1px solid var(--line); }
+  @media (max-width: 760px) { .about { grid-template-columns: 1fr; } .about .headshot { max-width: 160px; } }
 
   footer {
     padding: 4vh 5vw 5vh;
@@ -269,7 +270,10 @@
 </main>
 
 <section class="about" id="about">
-  <h2>About</h2>
+  <div>
+    <h2>About</h2>
+    <img class="headshot" src="/assets/photos/headshot.jpg" alt="John Santerre">
+  </div>
   <div>
     <p>I hold a PhD in computer science from the University of Chicago, where I worked on
        machine learning — a strange place to land for someone whose bachelor's was a double
