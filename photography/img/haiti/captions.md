@@ -1,6 +1,5 @@
 # haiti — captions (from Instagram / scrocco)
 
-- **haiti_01.jpg** (Mar 05, 2017) — Sri Lankan UN soldiers patrol the streets of Haiti in 2008. Series of 22
 - **haiti_02.jpg** (Mar 05, 2017) — Downtown Port-au-Prince Haiti in 2008. Photo 1 of 22
 - **haiti_03.jpg** (Mar 05, 2017) — Downtown Port-au-Prince Haiti in 2008. Photo 2 of 22
 - **haiti_04.jpg** (Mar 06, 2017) — Open air grocery store in downtown Port-au-Prince Haiti in 2008. Photo 3 of 22
