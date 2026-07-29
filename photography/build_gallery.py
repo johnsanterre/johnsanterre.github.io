@@ -257,8 +257,11 @@ def main():
     palettes = load_json("palettes.json", {})
     editions = load_json("editions.json", [])
 
+    # Explicit front-page order; anything not listed follows alphabetically.
+    ORDER = ["thai-cambodia", "haiti"]
+    rank = lambda p: (ORDER.index(p.name) if p.name in ORDER else len(ORDER), p.name)
     stories = []
-    for d in sorted(p for p in IMG.iterdir() if p.is_dir()):
+    for d in sorted((p for p in IMG.iterdir() if p.is_dir()), key=rank):
         photos = sorted(p.name for p in d.iterdir()
                         if p.suffix.lower() in (".jpg", ".jpeg", ".png", ".webp"))
         if not photos:
