@@ -1,6 +1,6 @@
 # palestine — captions (from Instagram / scrocco)
 
-- **palestine_01.jpg** (Jan 22, 2017) — Since 2005 weekly protests have occured in the Palestinian town of Bil'in in the West Bank. First image of a series of photos from 2011. I was lucky enough to have @heidi_levine to enable this access and so much more during my trip
+- **palestine_01.jpg** (Jan 22, 2017) — Since 2005 weekly protests have occured in the Palestinian town of Bil'in in the West Bank. First image of a series of photos from 2011. I was lucky enough to have to enable this access and so much more during my trip
 - **palestine_02.jpg** (Jan 23, 2017) — Since 2005 weekly protests have occured in the Palestinian town of Bil'in in the West Bank. Second image of a series of photos from 2011
 - **palestine_03.jpg** (Jan 24, 2017) — Tear gas trails down near the Palestinian town of Bil'in in the West Bank. Protestors, hiding behind trees, were throwing rocks at IDP soldiers at the border fence. Third image of a series of photos from 2011
 - **palestine_04.jpg** (Jan 25, 2017) — Protestors seeking protection from tear gas near the Palestinian town of Bil'in in the West Bank. Protestors were having a regularly scheduled protest throwing rocks at IDP soldiers at the border fence. Forth image of a series of photos from 2011
@@ -11,4 +11,4 @@
 - **palestine_09.jpg** (Jan 29, 2017) — Claiming to have torn down another section of the wall, protestors carry it to throw at the IDF soldiers protecting the wall near the Palestinian town of Bil'in in the West Bank. Protestors were having a regularly scheduled protest throwing rocks at IDP soldiers at the border fence. Ninth image of a series of photos from 2011
 - **palestine_10.jpg** (Jan 30, 2017) — Using an improvised gas mask a protestor stands near the Palestinian town of Bil'in in the West Bank. Protestors were having a regularly scheduled protest throwing rocks at IDP soldiers at the border fence. Tenth image of a series of photos from 2011
 - **palestine_11.jpg** (Jan 30, 2017) — Ending the protest photos here, it's important to understand the theatrical quality of both sides participating. Even the kind gesture of offering me flowers for my bullet proof vest is not without a sense of context and also genuine appriciation for journalists who's simple presence gives the elaborately set stage an audience. Eleventh and final image of a series of photos from 2011
-- **palestine_12.jpg** — Some Santa's do more than carrying coal — with the indomitable Heidi Levine (Bil'in, West Bank).
+- **palestine_12.jpg** — Some Santa's do more than carrying coal — with the indomitable (Bil'in, West Bank)
