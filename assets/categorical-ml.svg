@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" font-family="Georgia, 'Times New Roman', serif">
+  <rect width="800" height="400" fill="#FDFAF4"/>
+  <rect x="6" y="6" width="788" height="388" fill="none" stroke="#D4C5A9" stroke-width="2"/>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#5C3D1E"/>
+    </marker>
+    <marker id="arB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#7C2530"/>
+    </marker>
+  </defs>
+
+  <!-- Category C -->
+  <ellipse cx="200" cy="200" rx="130" ry="120" fill="none" stroke="#C4A87A" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="200" y="96" text-anchor="middle" font-size="22" font-style="italic" fill="#5C3D1E">C</text>
+
+  <circle cx="145" cy="170" r="7" fill="#2D5A8E"/>
+  <text x="126" y="160" text-anchor="middle" font-size="17" font-style="italic" fill="#2D5A8E">A</text>
+  <circle cx="262" cy="170" r="7" fill="#2D5A8E"/>
+  <text x="281" y="160" text-anchor="middle" font-size="17" font-style="italic" fill="#2D5A8E">B</text>
+  <circle cx="203" cy="268" r="7" fill="#2D5A8E"/>
+  <text x="203" y="298" text-anchor="middle" font-size="17" font-style="italic" fill="#2D5A8E">X</text>
+
+  <line x1="155" y1="170" x2="251" y2="170" stroke="#5C3D1E" stroke-width="1.6" marker-end="url(#ar)"/>
+  <text x="203" y="158" text-anchor="middle" font-size="15" font-style="italic" fill="#5C3D1E">f</text>
+  <line x1="150" y1="179" x2="196" y2="260" stroke="#5C3D1E" stroke-width="1.6" marker-end="url(#ar)"/>
+  <text x="158" y="228" text-anchor="middle" font-size="15" font-style="italic" fill="#5C3D1E">g</text>
+  <line x1="256" y1="179" x2="211" y2="260" stroke="#5C3D1E" stroke-width="1.6" marker-end="url(#ar)"/>
+  <text x="248" y="228" text-anchor="middle" font-size="15" font-style="italic" fill="#5C3D1E">g∘f</text>
+
+  <!-- identity loop on A -->
+  <path d="M 138 163 C 118 138, 152 130, 148 158" fill="none" stroke="#C4A87A" stroke-width="1.4" marker-end="url(#ar)"/>
+  <text x="136" y="128" text-anchor="middle" font-size="12" font-style="italic" fill="#8a7357">id</text>
+
+  <!-- Functor F -->
+  <path d="M 350 190 C 380 168, 420 168, 450 190" fill="none" stroke="#7C2530" stroke-width="2.6" marker-end="url(#arB)"/>
+  <text x="400" y="158" text-anchor="middle" font-size="24" font-style="italic" fill="#7C2530">F</text>
+  <text x="400" y="238" text-anchor="middle" font-size="13" font-style="italic" fill="#8a7357">structure-preserving</text>
+
+  <!-- Category D -->
+  <ellipse cx="600" cy="200" rx="130" ry="120" fill="none" stroke="#C4A87A" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="600" y="96" text-anchor="middle" font-size="22" font-style="italic" fill="#5C3D1E">D</text>
+
+  <circle cx="545" cy="170" r="7" fill="#7C2530"/>
+  <text x="521" y="160" text-anchor="middle" font-size="16" font-style="italic" fill="#7C2530">F(A)</text>
+  <circle cx="662" cy="170" r="7" fill="#7C2530"/>
+  <text x="686" y="160" text-anchor="middle" font-size="16" font-style="italic" fill="#7C2530">F(B)</text>
+  <circle cx="603" cy="268" r="7" fill="#7C2530"/>
+  <text x="603" y="298" text-anchor="middle" font-size="16" font-style="italic" fill="#7C2530">F(X)</text>
+
+  <line x1="555" y1="170" x2="651" y2="170" stroke="#5C3D1E" stroke-width="1.6" marker-end="url(#ar)"/>
+  <text x="603" y="158" text-anchor="middle" font-size="15" font-style="italic" fill="#5C3D1E">F(f)</text>
+  <line x1="550" y1="179" x2="596" y2="260" stroke="#5C3D1E" stroke-width="1.6" marker-end="url(#ar)"/>
+  <line x1="656" y1="179" x2="611" y2="260" stroke="#5C3D1E" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <text x="400" y="360" text-anchor="middle" font-size="14" font-style="italic" fill="#8a7357">objects, morphisms, and the functors that carry one world into another</text>
+</svg>

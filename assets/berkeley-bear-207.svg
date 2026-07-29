@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" font-family="Georgia, 'Times New Roman', serif">
+  <rect width="800" height="400" fill="#FDFAF4"/>
+  <rect x="6" y="6" width="788" height="388" fill="none" stroke="#D4C5A9" stroke-width="2"/>
+
+  <!-- walking bear, Berkeley blue -->
+  <g transform="translate(400 205)">
+    <path fill="#1F4E79" d="
+      M -150 30
+      C -160 -6, -140 -42, -100 -52
+      C -60 -62, 20 -64, 70 -54
+      C 92 -50, 108 -44, 118 -34
+      C 124 -46, 136 -52, 150 -50
+      C 168 -48, 180 -36, 182 -22
+      C 190 -20, 196 -14, 196 -6
+      C 196 2, 188 8, 176 10
+      C 170 22, 156 30, 140 30
+      C 130 30, 122 27, 116 22
+      C 104 34, 88 40, 74 42
+      L 76 74 C 76 82, 70 86, 62 86 L 50 86 C 44 86, 40 82, 40 76 L 38 44
+      L -20 44 L -22 76 C -22 82, -27 86, -34 86 L -46 86 C -53 86, -57 82, -57 75 L -56 42
+      C -76 40, -96 36, -110 28
+      L -112 74 C -112 81, -117 86, -124 86 L -136 86 C -143 86, -147 81, -147 74 L -150 30 Z"/>
+    <!-- ear -->
+    <circle cx="150" cy="-56" r="12" fill="#1F4E79"/>
+    <!-- eye -->
+    <circle cx="158" cy="-30" r="4" fill="#FDFAF4"/>
+    <!-- gold ground -->
+    <rect x="-190" y="92" width="400" height="5" fill="#C79A2E" rx="2.5"/>
+  </g>
+
+  <text x="400" y="352" text-anchor="middle" font-size="15" font-style="italic" fill="#8a7357">DATASCI 207 · UC Berkeley</text>
+</svg>
