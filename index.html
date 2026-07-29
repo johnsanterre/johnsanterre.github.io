@@ -36,7 +36,42 @@
   nav .links { margin-left: auto; display: flex; gap: 22px; font-size: 14px; color: var(--muted); }
   nav .links a:hover { color: var(--ink); }
 
-  header.hero { padding: 6vh 5vw 5vh; }
+  header.hero {
+    position: relative; overflow: hidden;
+    min-height: 74vh; display: flex; flex-direction: column; justify-content: center;
+    padding: 6vh 5vw 5vh;
+  }
+  #heromap { position: absolute; inset: 0; width: 100%; height: 100%; cursor: crosshair; }
+  .hero-inner {
+    position: relative; z-index: 2; pointer-events: none; max-width: 640px;
+  }
+  .hero-inner a { pointer-events: auto; }
+  .hero-inner::before {
+    content: ""; position: absolute; inset: -60px -80px;
+    background: radial-gradient(ellipse at 30% 45%, rgba(250,250,248,0.94) 35%, rgba(250,250,248,0.55) 65%, rgba(250,250,248,0) 100%);
+    z-index: -1;
+  }
+  .hero .whoami {
+    margin-top: 14px; font-size: 0.95rem; letter-spacing: 0.02em; color: #3a3a36;
+  }
+  .hero .whoami b { font-weight: 650; }
+  .hero .whoami .sep { color: var(--accent); padding: 0 7px; }
+  .maphint {
+    position: absolute; right: 5vw; bottom: 18px; z-index: 2;
+    font-size: 12px; letter-spacing: 0.08em; color: var(--muted);
+  }
+  .maphint:hover { color: var(--ink); }
+
+  .photostrip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
+  .photostrip img { width: 100%; height: 170px; object-fit: cover; display: block; filter: saturate(0.96); transition: filter 300ms ease, opacity 300ms ease; }
+  .photostrip:hover img { filter: saturate(1.05); }
+  .photostrip img:hover { opacity: 0.92; }
+  @media (max-width: 700px) { .photostrip { grid-template-columns: repeat(2, 1fr); } .photostrip img { height: 120px; } }
+  .photocap {
+    display: block; text-align: right; padding: 8px 5vw 0;
+    font-size: 12px; letter-spacing: 0.12em; text-transform: lowercase; color: var(--muted);
+  }
+  .photocap:hover { color: var(--ink); }
   .hero h1 {
     font-size: clamp(2.1rem, 4.8vw, 4rem);
     line-height: 1.02; letter-spacing: -0.035em; font-weight: 750;
@@ -44,8 +79,8 @@
   }
   .hero h1 em { font-style: normal; color: var(--accent); }
   .hero p {
-    margin-top: 18px; max-width: 52ch;
-    font-size: clamp(1rem, 1.6vw, 1.2rem); color: var(--muted);
+    margin-top: 18px; max-width: 46ch;
+    font-size: clamp(0.98rem, 1.5vw, 1.12rem); color: #4a4a45;
   }
   .hero .cta {
     display: inline-block; margin-top: 22px;
@@ -127,13 +162,23 @@
 </nav>
 
 <header class="hero">
-  <h1>Machine learning, <em>made legible</em>.</h1>
-  <p>I'm John Santerre — PhD in artificial intelligence, educator at UC Berkeley and SMU,
-     founder of the nonprofit Free Focus. I build courses, maps, and tools that make
-     hard ideas navigable.</p>
-  <a class="cta" href="/updates/">Get updates by email &rarr;</a>
-  <span class="cta-side">new lectures, videos, and tools — occasional, no filler</span>
+  <canvas id="heromap" aria-label="Live map of 739 machine learning concepts — click to explore"></canvas>
+  <div class="hero-inner">
+    <h1>Machine learning, <em>made legible</em>.</h1>
+    <p class="whoami"><b>John Santerre, PhD</b><span class="sep">·</span>teaching at UC Berkeley &amp; SMU<span class="sep">·</span>photojournalist before the academy</p>
+    <p>Every point behind this text is a concept I teach; every line, a connection I drew.</p>
+    <a class="cta" href="/updates/">Get updates by email &rarr;</a>
+  </div>
+  <a class="maphint" href="/AI_MindMap/map.html">739 concepts · 1,777 links &rarr;</a>
 </header>
+
+<a class="photostrip" href="/photography/" aria-label="Photography — scrocco">
+  <img src="/photography/img/thai-cambodia/01.jpg" alt="Thailand">
+  <img src="/photography/img/haiti/_mg_4966.jpg" alt="Haiti">
+  <img src="/photography/img/venice/02a_mg_4478.jpg" alt="Venice">
+  <img src="/photography/img/haiti/_mg_5979.jpg" alt="Haiti">
+</a>
+<a class="photocap" href="/photography/">scrocco — haiti · thailand · cambodia · venice &rarr;</a>
 
 <main class="work" id="work">
 
@@ -250,5 +295,108 @@
   <span class="copy">© 2026 John Santerre</span>
 </footer>
 
+
+<script src="/assets/map-hero-data.js"></script>
+<script>
+(function () {
+  const cv = document.getElementById('heromap');
+  const ctx = cv.getContext('2d');
+  const keep = MAP.n.map((n, i) => [n, i]).filter(([n]) => n[1] > 100);
+  const remap = new Map(keep.map(([, old], i) => [old, i]));
+  const N = keep.map(([n]) => n);
+  const E = MAP.e.filter(([a, b]) => remap.has(a) && remap.has(b)).map(([a, b]) => [remap.get(a), remap.get(b)]);
+  const xs = N.map(n => n[0]), ys = N.map(n => n[1]);
+  const x0 = Math.min(...xs), y0 = Math.min(...ys);
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let W, H, scale;
+  const worldW = Math.max(...xs) - x0, worldH = Math.max(...ys) - y0;
+  let mx = -1e4, my = -1e4, nearest = -1;
+
+  function resize() {
+    const r = cv.getBoundingClientRect();
+    W = cv.width = r.width * devicePixelRatio;
+    H = cv.height = r.height * devicePixelRatio;
+    scale = (H / worldH) * 1.38;
+  }
+  resize(); addEventListener('resize', resize);
+
+  function draw(t) {
+    ctx.clearRect(0, 0, W, H);
+    const span = worldW * scale - W;
+    const camX = span > 0 ? (0.5 + 0.5 * Math.sin(t / 42000)) * span : -(W - worldW * scale) / 2;
+    const camY = -(H - worldH * scale) / 2;
+    const pts = new Array(N.length);
+    for (let i = 0; i < N.length; i++) {
+      const n = N[i];
+      const wob = reduced ? 0 : 1;
+      pts[i] = [
+        (n[0] - x0) * scale - camX + wob * Math.sin(t / 3100 + i * 1.7) * 2.2 * devicePixelRatio,
+        (n[1] - y0) * scale + camY + wob * Math.cos(t / 3600 + i * 2.3) * 2.2 * devicePixelRatio
+      ];
+    }
+    // nearest node to cursor
+    nearest = -1; let best = 70 * devicePixelRatio;
+    for (let i = 0; i < pts.length; i++) {
+      const dx = pts[i][0] - mx, dy = pts[i][1] - my;
+      const d = Math.hypot(dx, dy);
+      if (d < best) { best = d; nearest = i; }
+    }
+    // edges
+    ctx.lineWidth = devicePixelRatio * 0.6;
+    ctx.strokeStyle = 'rgba(30,30,28,0.055)';
+    ctx.beginPath();
+    for (const [a, b] of E) {
+      if (a === nearest || b === nearest) continue;
+      ctx.moveTo(pts[a][0], pts[a][1]); ctx.lineTo(pts[b][0], pts[b][1]);
+    }
+    ctx.stroke();
+    // highlighted edges
+    if (nearest >= 0) {
+      ctx.strokeStyle = 'rgba(124,37,48,0.4)';
+      ctx.lineWidth = devicePixelRatio * 0.9;
+      ctx.beginPath();
+      for (const [a, b] of E) {
+        if (a !== nearest && b !== nearest) continue;
+        ctx.moveTo(pts[a][0], pts[a][1]); ctx.lineTo(pts[b][0], pts[b][1]);
+      }
+      ctx.stroke();
+    }
+    // nodes
+    for (let i = 0; i < pts.length; i++) {
+      const d = N[i][2];
+      const r = (1.1 + Math.log(d + 1) * 0.75) * devicePixelRatio;
+      const dx = pts[i][0] - mx, dy = pts[i][1] - my;
+      const near = Math.hypot(dx, dy) < 130 * devicePixelRatio;
+      ctx.fillStyle = i === nearest ? '#7C2530' : near ? 'rgba(124,37,48,0.55)' : 'rgba(92,61,30,0.35)';
+      ctx.beginPath();
+      ctx.arc(pts[i][0], pts[i][1], i === nearest ? r + 1.5 * devicePixelRatio : r, 0, 7);
+      ctx.fill();
+    }
+    // label
+    if (nearest >= 0) {
+      ctx.font = `${12 * devicePixelRatio}px -apple-system, Helvetica, sans-serif`;
+      const label = N[nearest][3];
+      const tw = ctx.measureText(label).width;
+      let lx = pts[nearest][0] + 12 * devicePixelRatio, ly = pts[nearest][1] - 10 * devicePixelRatio;
+      if (lx + tw > W - 10) lx = pts[nearest][0] - tw - 12 * devicePixelRatio;
+      ctx.fillStyle = 'rgba(250,250,248,0.85)';
+      ctx.fillRect(lx - 4 * devicePixelRatio, ly - 12 * devicePixelRatio, tw + 8 * devicePixelRatio, 17 * devicePixelRatio);
+      ctx.fillStyle = '#7C2530';
+      ctx.fillText(label, lx, ly);
+    }
+  }
+
+  cv.addEventListener('pointermove', e => {
+    const r = cv.getBoundingClientRect();
+    mx = (e.clientX - r.left) * devicePixelRatio;
+    my = (e.clientY - r.top) * devicePixelRatio;
+  });
+  cv.addEventListener('pointerleave', () => { mx = my = -1e4; });
+  cv.addEventListener('click', () => { location.href = '/AI_MindMap/map.html'; });
+
+  if (reduced) { draw(10000); }
+  else { (function loop(t) { draw(t || 0); requestAnimationFrame(loop); })(); }
+})();
+</script>
 </body>
 </html>
