@@ -132,8 +132,9 @@ STORY_CSS = """
   .story-head .back { color: var(--dim); font-size: 12.5px; letter-spacing: 0.06em; }
   .story-head .back:hover { color: var(--ink); }
 
-  .ph { margin: 0 0 26px; cursor: zoom-in; }
-  .ph img { width: 100%; display: block; background: #fff; border: 1px solid var(--hair); padding: 8px; }
+  .ph { margin: 0 0 40px; cursor: zoom-in; }
+  .ph img { width: auto; max-width: 100%; max-height: 90vh; margin: 0 auto;
+    display: block; background: #fff; border: 1px solid var(--hair); padding: 8px; }
   .ph figcaption {
     margin-top: 9px; max-width: 62ch;
     font-family: Georgia, "Times New Roman", serif;
@@ -321,15 +322,9 @@ def main():
             return (f'<figure class="ph"><img loading="lazy" '
                     f'src="img/{name}/{p}" alt="{cap[:120]}">{caphtml}</figure>')
 
-        # group photos: alternating single / pair
-        groups, i, toggle = [], 0, True
-        while i < len(rest):
-            if toggle or i == len(rest) - 1:
-                groups.append(fig(rest[i])); i += 1
-            else:
-                groups.append(f'<div class="row2">{fig(rest[i])}{fig(rest[i+1])}</div>')
-                i += 2
-            toggle = not toggle
+        # one photo per row, full width — each image is its own statement
+        # (no horizontal-next-to-vertical pairing)
+        groups = [fig(p) for p in rest]
 
         # interleave prose paragraphs roughly evenly between groups
         blocks = []
