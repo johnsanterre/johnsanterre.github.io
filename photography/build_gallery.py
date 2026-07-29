@@ -69,6 +69,7 @@ HEAD = """<!DOCTYPE html>
   footer .copy {{ margin-left: auto; }}
 {extra_css}
 </style>
+<script data-goatcounter="https://johnsanterre.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
 
