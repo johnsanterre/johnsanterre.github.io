@@ -36,7 +36,7 @@ HEAD = """<!DOCTYPE html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
-<meta name="description" content="Photography by John Santerre, shooting as scrocco.">
+<meta name="description" content="scrocco — the photojournalism of John Santerre. Haiti, Thailand, Cambodia, and street work, before and alongside the academic career.">
 <style>
   :root {{
     --paper: {paper};
