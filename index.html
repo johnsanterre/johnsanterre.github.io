@@ -38,7 +38,7 @@
 
   header.hero {
     position: relative; overflow: hidden;
-    min-height: 74vh; display: flex; flex-direction: column; justify-content: center;
+    min-height: 66vh; display: flex; flex-direction: column; justify-content: center;
     padding: 6vh 5vw 5vh;
   }
   #heromap { position: absolute; inset: 0; width: 100%; height: 100%; cursor: crosshair; }
@@ -316,14 +316,16 @@
     const r = cv.getBoundingClientRect();
     W = cv.width = r.width * devicePixelRatio;
     H = cv.height = r.height * devicePixelRatio;
-    scale = (H / worldH) * 1.38;
+    scale = (H / worldH) * 1.32;
   }
   resize(); addEventListener('resize', resize);
 
   function draw(t) {
     ctx.clearRect(0, 0, W, H);
-    const span = worldW * scale - W;
-    const camX = span > 0 ? (0.5 + 0.5 * Math.sin(t / 42000)) * span : -(W - worldW * scale) / 2;
+    const mapW = worldW * scale;
+    const span = mapW - W;
+    // anchor the cloud to the right edge; pan gently only when it overflows
+    const camX = span > 0 ? (0.5 + 0.5 * Math.sin(t / 42000)) * span : -(W - mapW);
     const camY = -(H - worldH * scale) / 2;
     const pts = new Array(N.length);
     for (let i = 0; i < N.length; i++) {
@@ -347,6 +349,15 @@
     ctx.beginPath();
     for (const [a, b] of E) {
       if (a === nearest || b === nearest) continue;
+      if (N[a][2] > 32 || N[b][2] > 32) continue;
+      ctx.moveTo(pts[a][0], pts[a][1]); ctx.lineTo(pts[b][0], pts[b][1]);
+    }
+    ctx.stroke();
+    ctx.strokeStyle = 'rgba(30,30,28,0.028)';
+    ctx.beginPath();
+    for (const [a, b] of E) {
+      if (a === nearest || b === nearest) continue;
+      if (N[a][2] <= 32 && N[b][2] <= 32) continue;
       ctx.moveTo(pts[a][0], pts[a][1]); ctx.lineTo(pts[b][0], pts[b][1]);
     }
     ctx.stroke();
