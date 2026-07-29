@@ -133,12 +133,13 @@
   .about-top { display: flex; align-items: center; gap: 26px; margin: 6px 0 40px; }
   .about-top .headshot { width: 116px; height: 116px; object-fit: cover; border-radius: 12px; border: 1px solid var(--line); flex: none; }
   .about-top .intro { font-size: 1.2rem; color: #2c2a25; max-width: 52ch; letter-spacing: -0.01em; }
-  .profiles { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; }
+  .profiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
   .profile h3 { font-size: 1.08rem; letter-spacing: -0.01em; margin-bottom: 3px; }
   .profile .yrs { display: block; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); font-weight: 650; margin-bottom: 12px; }
   .profile p { color: #333; font-size: 1rem; max-width: 60ch; }
   .profile p + p { margin-top: 12px; }
-  @media (max-width: 760px) { .profiles { grid-template-columns: 1fr; } .about-top { flex-direction: column; align-items: flex-start; } }
+  @media (max-width: 900px) { .profiles { grid-template-columns: 1fr; } }
+  @media (max-width: 760px) { .about-top { flex-direction: column; align-items: flex-start; } }
 
   footer {
     padding: 4vh 5vw 5vh;
@@ -277,8 +278,8 @@
   <h2>About</h2>
   <div class="about-top">
     <img class="headshot" src="/assets/photos/headshot.jpg" alt="John Santerre">
-    <p class="intro">Two careers, one instinct: take something complex and make it legible.
-       I've been building with technology since the dial-up era, and doing applied machine
+    <p class="intro">A few threads, one instinct: take something complex and make it legible.
+       I've been building with technology since the dial-up era and doing applied machine
        learning since 2009.</p>
   </div>
   <div class="profiles">
@@ -296,16 +297,26 @@
          require a decoder ring. <a href="/work-with-me/" style="border-bottom:1px solid var(--line)">Work with me &rarr;</a></p>
     </div>
     <div class="profile">
+      <h3>Technical</h3>
+      <span class="yrs">Before I had the name for it</span>
+      <p>I got online telneting to a public library in Nebraska over a 2,400-baud modem and ran
+         BBSs in the '90s. Long before I formally studied AI, the instincts were already there:
+         I automated a biology PhD student's data extraction from her cell strains using
+         Photoshop filters, and proposed decision trees to answer a Columbia master's student's
+         questions about energy use.</p>
+      <p>They were machine-learning problems before I had the name for them — the habit of
+         reaching for the right tool, or building one, came first.</p>
+    </div>
+    <div class="profile">
       <h3>Photography &amp; media</h3>
-      <span class="yrs">Since the dial-up era</span>
-      <p>My other life is visual. I first got online telneting to a public library in Nebraska
-         over a 2,400-baud modem, ran BBSs in the '90s, and cut film on Media 100, Avid, Final
-         Cut, and Premiere — a natural home for a Middlebury double major in English and film.</p>
-      <p>As a photojournalist and multimedia producer — including work with the agency VII
-         Photo — I've had prints displayed in the lobby of the United Nations and films screened
-         in its General Assembly, both in New York. That work continues today as
-         <a href="/photography/" style="border-bottom:1px solid var(--line)">scrocco</a>. It's the
-         same discipline as the science: choosing what to leave out.</p>
+      <span class="yrs">A previous life</span>
+      <p>My other life is visual — a natural home for a Middlebury double major in English and
+         film. I cut film on Media 100, Avid, Final Cut, and Premiere as a photojournalist and
+         multimedia producer, including work with the agency VII Photo.</p>
+      <p>I've had prints displayed in the lobby of the United Nations and films screened in its
+         General Assembly, both in New York. That work continues today as
+         <a href="/photography/" style="border-bottom:1px solid var(--line)">scrocco</a> — the same
+         discipline as the science: choosing what to leave out.</p>
     </div>
   </div>
 </section>
