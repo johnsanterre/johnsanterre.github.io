@@ -92,7 +92,7 @@
   .hero .cta:hover { transform: translateY(-2px); box-shadow: 0 14px 30px -14px rgba(124,37,48,0.55); }
   .hero .cta-side { margin-left: 14px; font-size: 0.92rem; color: var(--muted); }
 
-  .work { padding: 0 5vw 6vh; }
+  .work { max-width: 1140px; margin: 0 auto; padding: 5vh 5vw 6vh; }
   .work h2, .about h2 {
     font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;
     color: var(--muted); margin-bottom: 18px;
@@ -103,7 +103,7 @@
   }
   .grid {
     display: grid; gap: 16px;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 350px));
   }
   .card {
     display: block; background: #fff;
@@ -127,7 +127,7 @@
   .card p { font-size: 0.86rem; color: var(--muted); }
 
   .about {
-    padding: 6vh 5vw; margin-top: 3vh;
+    max-width: 1140px; margin: 3vh auto 0; padding: 6vh 5vw;
     border-top: 1px solid var(--line);
     display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: 40px;
   }
