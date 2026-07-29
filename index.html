@@ -62,6 +62,10 @@
     font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;
     color: var(--muted); margin-bottom: 26px;
   }
+  .work section + section { margin-top: 7vh; }
+  .work .lede {
+    margin: -16px 0 26px; font-size: 0.98rem; color: var(--muted); max-width: 60ch;
+  }
   .grid {
     display: grid; gap: 26px;
     grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
@@ -113,7 +117,8 @@
 <nav>
   <span class="name">John Santerre</span>
   <span class="links">
-    <a href="#work">Work</a>
+    <a href="#students">For Students</a>
+    <a href="#watch">Watch</a>
     <a href="/photography/">Photography</a>
     <a href="#about">About</a>
     <a href="/updates/">Updates</a>
@@ -131,55 +136,73 @@
 </header>
 
 <main class="work" id="work">
-  <h2>Selected Work</h2>
-  <div class="grid">
 
+  <section id="students">
+    <h2>For My Students</h2>
+    <p class="lede">Taking one of my courses? Your material lives here — slides, notebooks, and workbooks, kept current through the semester.</p>
+    <div class="grid">
+    <a class="card" href="https://johnsanterre.github.io/datasci-207/">
+      <img src="/AI_MindMap/assets/supervised_learning.svg" alt="Supervised learning diagram">
+      <div class="meta">
+        <span class="kicker">UC Berkeley · MIDS</span>
+        <h3>DATASCI 207 — Applied Machine Learning</h3>
+        <p>Graduate applied ML for the Master of Information and Data Science program.</p>
+      </div>
+    </a>
+    <a class="card" href="/ml_website/">
+      <img src="/AI_MindMap/assets/neural_networks.svg" alt="Neural network layers diagram">
+      <div class="meta">
+        <span class="kicker">SMU · ML1 &amp; ML2</span>
+        <h3>Machine Learning Course Series</h3>
+        <p>The two-course ML sequence: foundations through modern deep learning.</p>
+      </div>
+    </a>
+    <a class="card" href="/SMU_Machine_Learning_2_Workbook/">
+      <img src="/AI_MindMap/assets/gradient_descent.svg" alt="Gradient descent diagram">
+      <div class="meta">
+        <span class="kicker">SMU · Workbook</span>
+        <h3>Machine Learning 2 Workbook</h3>
+        <p>Hands-on companion workbook for the second ML course.</p>
+      </div>
+    </a>
+    <a class="card" href="/smu-applied-ai-masters/">
+      <img src="/AI_MindMap/assets/mathematical_concepts.svg" alt="Mathematical building blocks diagram">
+      <div class="meta">
+        <span class="kicker">SMU Lyle · Program</span>
+        <h3>Masters in Applied AI</h3>
+        <p>Program site for SMU's applied artificial intelligence masters.</p>
+      </div>
+    </a>
+    </div>
+  </section>
+
+  <section id="explore">
+    <h2>Explore the Field</h2>
+    <p class="lede">Everything the courses teach, connected into one navigable map — start anywhere, follow the links, see how it all fits.</p>
+    <div class="grid">
     <a class="card flagship" href="/AI_MindMap/map.html">
       <img src="/AI_MindMap/assets/home_map_emblem.svg" alt="Abstract map of linked knowledge cards">
       <div class="meta">
         <span class="kicker">Interactive · Knowledge Map</span>
         <h3>The AI Mind Map</h3>
-        <p>739 interlinked concepts across machine learning, mathematics, and statistics —
-           explorable as one map. Pan the whole field, light up topics, read any card in place.</p>
+        <p>739 interlinked concepts across machine learning, mathematics, and statistics — explorable as one map. Pan the whole field, light up topics, read any card in place.</p>
       </div>
     </a>
+    </div>
+  </section>
 
-    <a class="card" href="https://johnsanterre.github.io/datasci-207/">
-      <img src="/AI_MindMap/assets/supervised_learning.svg" alt="Supervised learning diagram">
+  <section id="watch">
+    <h2>Watch</h2>
+    <p class="lede">Lectures and talks, for when reading isn't the mood.</p>
+    <div class="grid">
+    <a class="card" href="https://www.youtube.com/channel/UC-y9ujtuX7OLibT436zoo9A">
+      <img src="/AI_MindMap/assets/ml_people_constellation.svg" alt="Constellation of connected figures">
       <div class="meta">
-        <span class="kicker">Teaching · UC Berkeley</span>
-        <h3>DATASCI 207 — Applied Machine Learning</h3>
-        <p>Graduate applied ML for the Master of Information and Data Science program.</p>
+        <span class="kicker">YouTube · Channel</span>
+        <h3>Lectures &amp; Talks</h3>
+        <p>Recorded lectures and talks as they're published.</p>
       </div>
     </a>
-
-    <a class="card" href="/ml_website/">
-      <img src="/AI_MindMap/assets/neural_networks.svg" alt="Neural network layers diagram">
-      <div class="meta">
-        <span class="kicker">Teaching · SMU</span>
-        <h3>Machine Learning Course Series</h3>
-        <p>The two-course ML sequence: foundations through modern deep learning.</p>
-      </div>
-    </a>
-
-    <a class="card" href="/smu-applied-ai-masters/">
-      <img src="/AI_MindMap/assets/mathematical_concepts.svg" alt="Mathematical building blocks diagram">
-      <div class="meta">
-        <span class="kicker">Program · SMU Lyle</span>
-        <h3>Masters in Applied AI</h3>
-        <p>Program site for SMU's applied artificial intelligence masters.</p>
-      </div>
-    </a>
-
-    <a class="card" href="/categorical-ml/">
-      <img src="/AI_MindMap/assets/ai_topics.svg" alt="Applied mathematics bridge diagram">
-      <div class="meta">
-        <span class="kicker">Research</span>
-        <h3>Categorical Foundations of ML</h3>
-        <p>Category theory as a lens on machine learning's structure.</p>
-      </div>
-    </a>
-
     <a class="card" href="/LLMProgression/">
       <img src="/AI_MindMap/assets/attention_mechanisms.svg" alt="Attention mechanism diagram">
       <div class="meta">
@@ -188,16 +211,21 @@
         <p>How to think about LLMs in production — a talk for practitioners.</p>
       </div>
     </a>
+    </div>
+  </section>
 
-    <a class="card" href="/drugs-and-data-science/">
-      <img src="/AI_MindMap/assets/bayes_theorem.svg" alt="Bayes theorem diagram">
+  <section id="reference">
+    <h2>Reference Shelf</h2>
+    <p class="lede">Deeper and adjacent material — research, applied courses for working professionals, and the nonprofit.</p>
+    <div class="grid">
+    <a class="card" href="/categorical-ml/">
+      <img src="/AI_MindMap/assets/ai_topics.svg" alt="Applied mathematics bridge diagram">
       <div class="meta">
-        <span class="kicker">Teaching</span>
-        <h3>Rx→AI — Drugs &amp; Data Science</h3>
-        <p>Where pharmaceutical science meets machine learning.</p>
+        <span class="kicker">Research</span>
+        <h3>Categorical Foundations of ML</h3>
+        <p>Category theory as a lens on machine learning's structure.</p>
       </div>
     </a>
-
     <a class="card" href="/FinanceForTechnologists/">
       <img src="/AI_MindMap/assets/time_series.svg" alt="Time series diagram">
       <div class="meta">
@@ -206,16 +234,14 @@
         <p>Continuing-learning course on finance for a technical audience.</p>
       </div>
     </a>
-
-    <a class="card" href="/SMU_Machine_Learning_2_Workbook/">
-      <img src="/AI_MindMap/assets/gradient_descent.svg" alt="Gradient descent diagram">
+    <a class="card" href="/drugs-and-data-science/">
+      <img src="/AI_MindMap/assets/bayes_theorem.svg" alt="Bayes theorem diagram">
       <div class="meta">
-        <span class="kicker">Workbook · SMU</span>
-        <h3>Machine Learning 2 Workbook</h3>
-        <p>Hands-on companion workbook for the second ML course.</p>
+        <span class="kicker">Teaching</span>
+        <h3>Rx&rarr;AI — Drugs &amp; Data Science</h3>
+        <p>Where pharmaceutical science meets machine learning.</p>
       </div>
     </a>
-
     <a class="card" href="https://freefocus.org">
       <img src="/AI_MindMap/assets/institutes_landscape.svg" alt="Stylized skyline of institutions">
       <div class="meta">
@@ -224,8 +250,9 @@
         <p>A 501(c)(3) bringing computer science, AI, and photography services to nonprofits.</p>
       </div>
     </a>
+    </div>
+  </section>
 
-  </div>
 </main>
 
 <section class="about" id="about">
