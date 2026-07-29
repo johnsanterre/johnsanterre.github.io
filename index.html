@@ -133,13 +133,12 @@
   .about-top { display: flex; align-items: center; gap: 26px; margin: 6px 0 40px; }
   .about-top .headshot { width: 116px; height: 116px; object-fit: cover; border-radius: 12px; border: 1px solid var(--line); flex: none; }
   .about-top .intro { font-size: 1.2rem; color: #2c2a25; max-width: 52ch; letter-spacing: -0.01em; }
-  .profiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+  .profiles { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
   .profile h3 { font-size: 1.08rem; letter-spacing: -0.01em; margin-bottom: 3px; }
   .profile .yrs { display: block; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); font-weight: 650; margin-bottom: 12px; }
   .profile p { color: #333; font-size: 1rem; max-width: 60ch; }
   .profile p + p { margin-top: 12px; }
-  @media (max-width: 900px) { .profiles { grid-template-columns: 1fr; } }
-  @media (max-width: 760px) { .about-top { flex-direction: column; align-items: flex-start; } }
+  @media (max-width: 760px) { .profiles { grid-template-columns: 1fr; } .about-top { flex-direction: column; align-items: flex-start; } }
 
   footer {
     padding: 4vh 5vw 5vh;
@@ -284,28 +283,20 @@
   </div>
   <div class="profiles">
     <div class="profile">
-      <h3>Academic &amp; AI</h3>
+      <h3>Technical &amp; academic</h3>
       <span class="yrs">Applied ML since 2009</span>
-      <p>I hold a PhD in computer science from the University of Chicago and teach graduate
-         machine learning at UC Berkeley and SMU. I advise companies on AI as a CTO and Chief
-         AI Officer — today at the deep-tech company TAP — and have founded and led Silicon
-         Valley Bank's AI Lab, run special projects alongside Andrew Ng at DeepLearning.AI, led
-         the SAP–MIT Sloan collaboration, and was the first hire at a venture-backed health
-         startup covered by MIT Technology Review.</p>
-      <p>Today I also advise a NASA Goddard team on computer vision for the exploration of
-         Europa and Titan. The through-line is legibility: a field this important shouldn't
-         require a decoder ring. <a href="/work-with-me/" style="border-bottom:1px solid var(--line)">Work with me &rarr;</a></p>
-    </div>
-    <div class="profile">
-      <h3>Technical</h3>
-      <span class="yrs">Before I had the name for it</span>
       <p>I got online telneting to a public library in Nebraska over a 2,400-baud modem and ran
-         BBSs in the '90s. Long before I formally studied AI, the instincts were already there:
-         I automated a biology PhD student's data extraction from her cell strains using
-         Photoshop filters, and proposed decision trees to answer a Columbia master's student's
-         questions about energy use.</p>
-      <p>They were machine-learning problems before I had the name for them — the habit of
-         reaching for the right tool, or building one, came first.</p>
+         BBSs in the '90s. Long before I formally studied AI, the instincts were there — I
+         automated a biology PhD student's data extraction from her cell strains using Photoshop
+         filters, and proposed decision trees for a Columbia master's student's questions about
+         energy use. They were machine-learning problems before I had the name for them.</p>
+      <p>Then the formal path: a PhD in computer science from the University of Chicago, applied
+         machine learning since 2009, and graduate teaching at UC Berkeley and SMU. I advise
+         companies as a CTO and Chief AI Officer — today at the deep-tech company TAP — and have
+         founded and led Silicon Valley Bank's AI Lab, run special projects alongside Andrew Ng
+         at DeepLearning.AI, led the SAP–MIT Sloan collaboration, and advise a NASA Goddard team
+         on computer vision for Europa and Titan. The through-line is legibility.
+         <a href="/work-with-me/" style="border-bottom:1px solid var(--line)">Work with me &rarr;</a></p>
     </div>
     <div class="profile">
       <h3>Photography &amp; media</h3>
