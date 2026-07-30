@@ -76,7 +76,6 @@ HEAD = """<!DOCTYPE html>
 <header>
   <a class="mark" href="/photography/"><b>scrocco</b></a>
   <span class="right">
-    <a href="/photography/prints.html">prints</a>
     <a href="https://www.instagram.com/scrocco/">instagram</a>
     <a href="/">john santerre — the academic side</a>
   </span>
@@ -85,7 +84,6 @@ HEAD = """<!DOCTYPE html>
 
 FOOT = """
 <footer>
-  <a href="/photography/prints.html">prints</a>
   <a href="https://www.instagram.com/scrocco/">@scrocco</a>
   <a href="mailto:john.santerre.ai@gmail.com">email</a>
   <span class="copy">© 2026 John Santerre</span>
