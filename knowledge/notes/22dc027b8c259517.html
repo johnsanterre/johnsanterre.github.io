@@ -1,0 +1,29 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Archie Markup Language (ArchieML)</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#0f6b5c;--card:#ffffff;--line:#e3e1dc;--code:#eef2f0}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#4fc3ad;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 1rem}h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+ul{padding-left:1.2rem}li{margin:.25rem 0}
+.meta{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}
+.tag{display:inline-block;background:var(--code);border-radius:999px;padding:.05rem .6rem;font-size:.78rem;margin:0 .25rem .25rem 0;color:var(--muted)}
+.src{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>Archie Markup Language (ArchieML)</h1><div><span class="tag">archieml</span><span class="tag">markup-language</span><span class="tag">structured-data</span><span class="tag">google-docs</span><span class="tag">journalism</span><span class="tag">data-format</span></div><p><strong>Abstraction:</strong> NYT-created lenient markup language for structured data in Google Docs</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>Created at The New York Times to tag structured data in Google Docs for use in interactive news graphics, supporting concurrent editing by non-technical staff</li>
+<li>Key design choices: whitespace is not significant (unlike YAML), unstructured text is ignored without parse errors (unlike JSON/YAML), list notation uses asterisks instead of hyphens</li>
+<li>Supports key/value pairs, nested objects (dot-notation), regular arrays, &quot;simple&quot; flat arrays of strings, and &quot;freeform&quot; arrays that preserve order of mixed-type items</li>
+<li>Multi-line values delimited by <code>:end</code>; blocks can be skipped with <code>:skip</code>/<code>:endskip</code>; parsing halts entirely at <code>:ignore</code></li>
+<li>Created by Michael Strickland, Archie Tse, Matthew Ericson, and Tom Giratikanon; parsers available in JavaScript (archieml-js npm) and Ruby</li>
+</ul>
+<p><strong>Connections:</strong> <a href="../entities/new-york-times.html">New York Times</a> · <a href="../concepts/markup-language.html">Markup Language</a> · <a href="../concepts/structured-data.html">Structured Data</a></p>
+<p class="src">Source: <a href="http://archieml.org/" rel="noopener">http://archieml.org/</a></p></main></body></html>

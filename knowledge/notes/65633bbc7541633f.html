@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tx-LLM: Supporting therapeutic development with large language models</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#0f6b5c;--card:#ffffff;--line:#e3e1dc;--code:#eef2f0}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#4fc3ad;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 1rem}h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+ul{padding-left:1.2rem}li{margin:.25rem 0}
+.meta{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}
+.tag{display:inline-block;background:var(--code);border-radius:999px;padding:.05rem .6rem;font-size:.78rem;margin:0 .25rem .25rem 0;color:var(--muted)}
+.src{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>Tx-LLM: Supporting therapeutic development with large language models</h1><div><span class="tag">drug-discovery</span><span class="tag">bioinformatics</span><span class="tag">llm</span><span class="tag">google-deepmind</span></div><p><strong>Abstraction:</strong> PaLM-2 fine-tuned on 66 drug discovery tasks across full pipeline</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>Tx-LLM is fine-tuned from PaLM-2 on 66 datasets from the Therapeutic Data Commons (TDC), spanning target identification to clinical trial approval</li>
+<li>Achieves competitive performance on 43 of 66 tasks and exceeds state-of-the-art specialist models on 22; drug development typically costs $1-2B and 10-15 years</li>
+<li>Particularly strong on tasks combining small molecules with textual data (e.g., predicting clinical trial approval given drug + disease name)</li>
+<li>Positive transfer observed between protein and small-molecule tasks despite their differences — multi-task training helps across domains</li>
+<li>Predictions binned into integers 0-1000 to stabilize numeric output, addressing known LLM struggles with math</li>
+<li>Current limitations: not instruction-tuned for natural language explanations; integration with Gemini family planned</li>
+</ul>
+<p><strong>Connections:</strong> <a href="../entities/google.html">Google</a> · <a href="../entities/google-deepmind.html">Google Deepmind</a> · <a href="../entities/palm-2.html">Palm 2</a> · <a href="../concepts/large-language-models.html">Large Language Models</a> · <a href="../concepts/fine-tuning.html">Fine Tuning</a></p>
+<p class="src">Source: <a href="https://research.google/blog/tx-llm-supporting-therapeutic-development-with-large-language-models/" rel="noopener">https://research.google/blog/tx-llm-supporting-therapeutic-development-with-large-language-models/</a></p></main></body></html>

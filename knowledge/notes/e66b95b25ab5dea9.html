@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Python Time Complexity Reference</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#0f6b5c;--card:#ffffff;--line:#e3e1dc;--code:#eef2f0}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#4fc3ad;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 1rem}h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+ul{padding-left:1.2rem}li{margin:.25rem 0}
+.meta{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}
+.tag{display:inline-block;background:var(--code);border-radius:999px;padding:.05rem .6rem;font-size:.78rem;margin:0 .25rem .25rem 0;color:var(--muted)}
+.src{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>Python Time Complexity Reference</h1><div><span class="tag">python</span><span class="tag">time-complexity</span><span class="tag">big-o</span><span class="tag">data-structures</span><span class="tag">cpython</span></div><p><strong>Abstraction:</strong> Big-O complexity of CPython built-in data structure operations</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>List: O(1) for append, get/set item, get length; O(n) for insert, delete, pop-intermediate, copy, iteration; append is amortized O(1) due to dynamic resizing</li>
+<li>Deque: O(1) for append/appendleft/pop/popleft at both ends; O(n) for remove from middle</li>
+<li>Dict: O(1) average for get/set/delete/lookup; O(n) worst case due to hash collisions; worst-case n is maximum size ever achieved, not current size</li>
+<li>Set difference s-t (O(len(s))) vs s.difference_update(t) (O(len(t))) have different complexities depending on direction; choose based on which set is larger</li>
+<li>Set membership x in s: O(1) average, O(n) worst case; set intersection O(min(len(s),len(t))) average</li>
+<li>Negative list indices in R remove elements; in Python they index from the end — know your language</li>
+</ul>
+<p><strong>Connections:</strong> <a href="../entities/python.html">Python</a> · <a href="../concepts/algorithm-complexity.html">Algorithm Complexity</a> · <a href="../concepts/data-structures.html">Data Structures</a></p>
+<p class="src">Source: <a href="https://wiki.python.org/moin/TimeComplexity" rel="noopener">https://wiki.python.org/moin/TimeComplexity</a></p></main></body></html>

@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hugging Face Introduces StackLLaMA: A 7B Parameter Language Model Based on LLaMA and Trained on Data from Stack Exchange Using RLHF</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#0f6b5c;--card:#ffffff;--line:#e3e1dc;--code:#eef2f0}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#4fc3ad;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 1rem}h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+ul{padding-left:1.2rem}li{margin:.25rem 0}
+.meta{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}
+.tag{display:inline-block;background:var(--code);border-radius:999px;padding:.05rem .6rem;font-size:.78rem;margin:0 .25rem .25rem 0;color:var(--muted)}
+.src{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>Hugging Face Introduces StackLLaMA: A 7B Parameter Language Model Based on LLaMA and Trained on Data from Stack Exchange Using RLHF</h1><div><span class="tag">rlhf</span><span class="tag">llama</span><span class="tag">hugging-face</span><span class="tag">language-model</span><span class="tag">stack-exchange</span></div><p><strong>Abstraction:</strong> Hugging Face RLHF fine-tuning of LLaMA 7B on Stack Exchange Q&amp;A data</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>StackLLaMA is a 7B parameter model fine-tuned from Meta&#x27;s LLaMA using three stages: supervised fine-tuning (SFT), reward/preference modeling (RM), and RLHF via the TRL library</li>
+<li>Training data: StackExchange dataset with 10M+ question-answer pairs including Stack Overflow code; upvote counts and accepted-answer labels served as reward signals</li>
+<li>Reward model achieved 67% accuracy — considered strong given the difficulty of the task even for human annotators</li>
+<li>To prevent reward hacking (model generating gibberish that tricks the reward model), a KL divergence penalty was added to the reward signal</li>
+<li>Released publicly for educational/research purposes; user prompts are being collected for further fine-tuning (sensitive data warning issued)</li>
+<li>Demonstrates a complete open-source RLHF pipeline comparable to what powers ChatGPT, GPT-4, and Claude</li>
+</ul>
+<p><strong>Connections:</strong> <a href="../entities/hugging-face.html">Hugging Face</a> · <a href="../entities/llama.html">Llama</a> · <a href="../entities/stack-exchange.html">Stack Exchange</a> · <a href="../concepts/reinforcement-learning.html">Reinforcement Learning</a> · <a href="../concepts/large-language-models.html">Large Language Models</a> · <a href="../concepts/rlhf.html">RLHF</a></p>
+<p class="src">Source: <a href="https://www.marktechpost.com/2023/04/12/hugging-face-introduces-stackllama-a-7b-parameter-language-model-based-on-llama-and-trained-on-data-from-stack-exchange-using-rlhf/" rel="noopener">https://www.marktechpost.com/2023/04/12/hugging-face-introduces-stackllama-a-7b-parameter-language-model-based-on-llama-and-trained-on-data-from-stack-exchange-using-rlhf/</a></p></main></body></html>

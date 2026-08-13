@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Goal-directed graph construction using reinforcement learning</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#0f6b5c;--card:#ffffff;--line:#e3e1dc;--code:#eef2f0}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#4fc3ad;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 1rem}h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+ul{padding-left:1.2rem}li{margin:.25rem 0}
+.meta{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}
+.tag{display:inline-block;background:var(--code);border-radius:999px;padding:.05rem .6rem;font-size:.78rem;margin:0 .25rem .25rem 0;color:var(--muted)}
+.src{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>Goal-directed graph construction using reinforcement learning</h1><div><span class="tag">reinforcement-learning</span><span class="tag">graph-neural-networks</span><span class="tag">graph-optimization</span><span class="tag">network-robustness</span></div><p><strong>Abstraction:</strong> RL agent with GNNs constructs graphs optimizing target structural properties</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>Formulates graph construction and improvement as a sequential decision-making (MDP) problem where a central agent adds edges and receives rewards proportional to a target objective</li>
+<li>Proposes algorithm combining reinforcement learning and graph neural networks to learn reusable construction and improvement policies</li>
+<li>Core case study targets network robustness to failures and attacks, a critical property for infrastructure and communication networks</li>
+<li>Outperforms existing heuristic methods on synthetic and real-world graphs with lower evaluation cost</li>
+<li>Generalizes to out-of-sample graphs and, in some cases, to larger out-of-distribution graphs</li>
+<li>Framework is general: applicable to any differentiable global structural graph property; submitted Jan 2020, final version Oct 2021</li>
+</ul>
+<p><strong>Connections:</strong> <a href="../concepts/reinforcement-learning.html">Reinforcement Learning</a> · <a href="../concepts/graph-neural-networks.html">Graph Neural Networks</a> · <a href="../concepts/graph-optimization.html">Graph Optimization</a></p>
+<p class="src">Source: <a href="https://arxiv.org/abs/2001.11279" rel="noopener">https://arxiv.org/abs/2001.11279</a></p></main></body></html>

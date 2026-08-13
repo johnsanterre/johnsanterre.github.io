@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Running PyTorch on the M1 GPU</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#0f6b5c;--card:#ffffff;--line:#e3e1dc;--code:#eef2f0}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#4fc3ad;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 1rem}h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+ul{padding-left:1.2rem}li{margin:.25rem 0}
+.meta{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}
+.tag{display:inline-block;background:var(--code);border-radius:999px;padding:.05rem .6rem;font-size:.78rem;margin:0 .25rem .25rem 0;color:var(--muted)}
+.src{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>Running PyTorch on the M1 GPU</h1><div><span class="tag">pytorch</span><span class="tag">apple-silicon</span><span class="tag">gpu-training</span><span class="tag">deep-learning</span><span class="tag">benchmark</span></div><p><strong>Abstraction:</strong> Benchmark of PyTorch M1 GPU support via MPS backend for deep learning training</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>PyTorch officially added M1 GPU support via the <code>torch.device(&quot;mps&quot;)</code> backend (May 2022, nightly release; targeting v1.12 stable)</li>
+<li>M1 Pro GPU trains VGG16/CIFAR-10 3.5x faster than M1 Pro CPU; inference is 5x faster (1.69 min vs 8.51 min)</li>
+<li>PyTorch&#x27;s own benchmark showed M1 Ultra GPU ~8x faster than M1 Ultra CPU for training, ~21x faster for inference</li>
+<li>M1 GPU still significantly slower than modern Nvidia GPUs (RTX 3060, 3080); M1 Ultra Mac Studio (~$5K) comes closest to competitive GPU performance</li>
+<li>Convolutional networks consume notably more RAM on M1 GPU vs CUDA GPU; swapping is a risk on memory-constrained MacBooks</li>
+<li>PyTorch MPS installer is ~45 MB vs ~750 MB for the CUDA 10.2 version; early release had a memory leak fixed in the May 22 nightly</li>
+</ul>
+<p><strong>Connections:</strong> <a href="../entities/pytorch.html">Pytorch</a> · <a href="../entities/apple.html">Apple</a> · <a href="../concepts/gpu-acceleration.html">GPU Acceleration</a> · <a href="../concepts/deep-learning.html">Deep Learning</a> · <a href="../concepts/apple-silicon.html">Apple Silicon</a></p>
+<p class="src">Source: <a href="https://sebastianraschka.com/blog/2022/pytorch-m1-gpu.html" rel="noopener">https://sebastianraschka.com/blog/2022/pytorch-m1-gpu.html</a></p></main></body></html>

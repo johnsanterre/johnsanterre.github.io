@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Operator norm - Wikipedia</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#0f6b5c;--card:#ffffff;--line:#e3e1dc;--code:#eef2f0}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#4fc3ad;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 1rem}h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+ul{padding-left:1.2rem}li{margin:.25rem 0}
+.meta{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}
+.tag{display:inline-block;background:var(--code);border-radius:999px;padding:.05rem .6rem;font-size:.78rem;margin:0 .25rem .25rem 0;color:var(--muted)}
+.src{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>Operator norm - Wikipedia</h1><div><span class="tag">functional-analysis</span><span class="tag">linear-algebra</span><span class="tag">normed-spaces</span><span class="tag">operator-theory</span></div><p><strong>Abstraction:</strong> Norm measuring maximum vector lengthening factor of bounded linear operators</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>Operator norm of a linear map T is the infimum of all c such that ||Tv|| &lt;= c||v||; equivalently, the supremum of ||Tv|| over unit vectors</li>
+<li>For matrices with Euclidean norm, operator norm equals the largest singular value (square root of largest eigenvalue of A^T A)</li>
+<li>Operator norm is sub-multiplicative: ||ST|| &lt;= ||S||*||T||; convergence in operator norm implies uniform convergence on bounded sets</li>
+<li>Spectral radius is bounded above by operator norm; equality holds for normal matrices (spectral theorem); violated for non-normal matrices (e.g., Jordan blocks)</li>
+<li>Some induced matrix norms are NP-hard to compute; most can be computed in O(n^2) operations except the 2-norm which needs O(n^3) or approximation</li>
+<li>Space of bounded operators on L2 with operator norm topology is not separable; bounded operators on a Hilbert space form a C*-algebra</li>
+</ul>
+<p><strong>Connections:</strong> <a href="../concepts/operator-norm.html">Operator Norm</a> · <a href="../concepts/bounded-operators.html">Bounded Operators</a> · <a href="../concepts/functional-analysis.html">Functional Analysis</a> · <a href="../concepts/spectral-radius.html">Spectral Radius</a></p>
+<p class="src">Source: <a href="http://en.wikipedia.org/wiki/Operator_norm" rel="noopener">http://en.wikipedia.org/wiki/Operator_norm</a></p></main></body></html>

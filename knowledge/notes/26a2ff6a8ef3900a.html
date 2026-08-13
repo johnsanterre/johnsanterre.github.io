@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sparse approximation - Wikipedia</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#0f6b5c;--card:#ffffff;--line:#e3e1dc;--code:#eef2f0}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#4fc3ad;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 1rem}h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+ul{padding-left:1.2rem}li{margin:.25rem 0}
+.meta{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}
+.tag{display:inline-block;background:var(--code);border-radius:999px;padding:.05rem .6rem;font-size:.78rem;margin:0 .25rem .25rem 0;color:var(--muted)}
+.src{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>Sparse approximation - Wikipedia</h1><div><span class="tag">signal-processing</span><span class="tag">optimization</span><span class="tag">machine-learning</span><span class="tag">compressed-sensing</span></div><p><strong>Abstraction:</strong> Finding fewest-nonzero-coefficient signal representation in a dictionary</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>Sparse approximation seeks the sparsest solution x to y = Dx where D is an underdetermined dictionary matrix; the ℓ₀ pseudo-norm minimization problem is NP-hard.</li>
+<li>Basis pursuit relaxes ℓ₀ to ℓ₁ (convex), solvable by linear programming; matching pursuit (MP) and orthogonal matching pursuit (OMP) are greedy alternatives.</li>
+<li>Under conditions on the dictionary (restricted isometry property, mutual coherence, or spark), the sparse solution is unique and BP/OMP recover it exactly.</li>
+<li>Structured sparsity extensions: block/group sparsity (atoms picked in groups), collaborative sparse coding (joint support across multiple signals).</li>
+<li>Applications span image processing, medical imaging, machine learning, array processing, and convolutional neural network analysis via sparse coding.</li>
+<li>Stage-wise greedy methods (CoSaMP, Subspace Pursuit) improve upon basic OMP by adding groups of atoms and including pruning steps per iteration.</li>
+</ul>
+<p><strong>Connections:</strong> <a href="../concepts/sparse-approximation.html">Sparse Approximation</a> · <a href="../concepts/basis-pursuit.html">Basis Pursuit</a> · <a href="../concepts/matching-pursuit.html">Matching Pursuit</a> · <a href="../concepts/compressed-sensing.html">Compressed Sensing</a></p>
+<p class="src">Source: <a href="http://en.wikipedia.org/wiki/Sparse_approximation" rel="noopener">http://en.wikipedia.org/wiki/Sparse_approximation</a></p></main></body></html>

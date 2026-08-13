@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Implementation differences in LSTM layers- Tensorflow vs Pytorch | Towards Data Science</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#0f6b5c;--card:#ffffff;--line:#e3e1dc;--code:#eef2f0}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#4fc3ad;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 1rem}h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+ul{padding-left:1.2rem}li{margin:.25rem 0}
+.meta{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}
+.tag{display:inline-block;background:var(--code);border-radius:999px;padding:.05rem .6rem;font-size:.78rem;margin:0 .25rem .25rem 0;color:var(--muted)}
+.src{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>Implementation differences in LSTM layers- Tensorflow vs Pytorch | Towards Data Science</h1><div><span class="tag">lstm</span><span class="tag">tensorflow</span><span class="tag">pytorch</span><span class="tag">recurrent-neural-networks</span><span class="tag">framework-comparison</span></div><p><strong>Abstraction:</strong> API and parameter differences in LSTM layer implementations across TF and PyTorch</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>Default input shape differs: TF expects (batch, timesteps, features); PyTorch expects (timesteps, batch, features) unless <code>batch_first=True</code></li>
+<li>TF default output is last-timestep hidden state only; PyTorch always returns a tuple: (all-timestep outputs, (h_T, c_T))</li>
+<li>PyTorch uses two bias vectors per gate equation instead of TF&#x27;s one, adding 4×n_h extra parameters per LSTM layer</li>
+<li>TF exposes activation customization (<code>activation</code>, <code>recurrent_activation</code> params); PyTorch LSTM activations are fixed</li>
+<li>PyTorch <code>num_layers=k</code> creates a stacked LSTM block in one object; TF requires manually stacking layers</li>
+<li>Recovering cell state cT: TF requires <code>return_state=True</code> at init; PyTorch always provides it in the output tuple</li>
+</ul>
+<p><strong>Connections:</strong> <a href="../entities/tensorflow.html">Tensorflow</a> · <a href="../entities/pytorch.html">Pytorch</a> · <a href="../concepts/recurrent-neural-networks.html">Recurrent Neural Networks</a> · <a href="../concepts/deep-learning-frameworks.html">Deep Learning Frameworks</a></p>
+<p class="src">Source: <a href="https://towardsdatascience.com/lstm-by-example-using-tensorflow-feb0c1968537" rel="noopener">https://towardsdatascience.com/lstm-by-example-using-tensorflow-feb0c1968537</a></p></main></body></html>

@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Understanding the FFT Algorithm</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#0f6b5c;--card:#ffffff;--line:#e3e1dc;--code:#eef2f0}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#4fc3ad;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 1rem}h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+ul{padding-left:1.2rem}li{margin:.25rem 0}
+.meta{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}
+.tag{display:inline-block;background:var(--code);border-radius:999px;padding:.05rem .6rem;font-size:.78rem;margin:0 .25rem .25rem 0;color:var(--muted)}
+.src{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>Understanding the FFT Algorithm</h1><div><span class="tag">signal-processing</span><span class="tag">algorithms</span><span class="tag">python</span><span class="tag">numpy</span></div><p><strong>Abstraction:</strong> Cooley-Tukey FFT algorithm mechanics explained with Python implementations</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>DFT is O(N^2); the Cooley-Tukey FFT reduces this to O(N log N) by recursively splitting the transform into even- and odd-indexed sub-problems (divide-and-conquer).</li>
+<li>Key symmetry exploited: X_{N+k} = X_k, allowing half of sub-problem computations to be reused at each recursion level.</li>
+<li>Recursive Python implementation requires input size to be a power of 2 (radix-2 FFT); falls back to direct DFT when sub-array size ≤ 32.</li>
+<li>Vectorized NumPy version avoids Python recursion overhead, achieving within ~10x of numpy&#x27;s FFTPACK (Fortran) benchmark.</li>
+<li>For N=10^6, FFT completes in ~50 ms vs. ~20 hours for naive O(N^2) DFT.</li>
+<li>Extensions beyond radix-2 (Bluestein&#x27;s, Rader&#x27;s algorithms) enable FFTs on arrays whose size is not a power of two.</li>
+</ul>
+<p><strong>Connections:</strong> <a href="../entities/jake-vanderplas.html">Jake Vanderplas</a> · <a href="../entities/numpy.html">Numpy</a> · <a href="../concepts/fast-fourier-transform.html">Fast Fourier Transform</a> · <a href="../concepts/signal-processing.html">Signal Processing</a> · <a href="../concepts/divide-and-conquer.html">Divide And Conquer</a></p>
+<p class="src">Source: <a href="http://jakevdp.github.io/blog/2013/08/28/understanding-the-fft/" rel="noopener">http://jakevdp.github.io/blog/2013/08/28/understanding-the-fft/</a></p></main></body></html>

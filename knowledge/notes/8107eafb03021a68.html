@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Find minimum s-t cut in a flow network - GeeksforGeeks</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#0f6b5c;--card:#ffffff;--line:#e3e1dc;--code:#eef2f0}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#4fc3ad;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 1rem}h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+ul{padding-left:1.2rem}li{margin:.25rem 0}
+.meta{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}
+.tag{display:inline-block;background:var(--code);border-radius:999px;padding:.05rem .6rem;font-size:.78rem;margin:0 .25rem .25rem 0;color:var(--muted)}
+.src{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>Find minimum s-t cut in a flow network - GeeksforGeeks</h1><div><span class="tag">graph-algorithms</span><span class="tag">min-cut</span><span class="tag">max-flow</span><span class="tag">ford-fulkerson</span><span class="tag">network-flow</span></div><p><strong>Abstraction:</strong> Ford-Fulkerson-based algorithm to identify minimum capacity cut edges in a flow network</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>An s-t cut separates source and sink into different vertex subsets; cut capacity = sum of capacities of edges crossing from source side to sink side</li>
+<li>Max-flow min-cut theorem: the maximum flow value equals the capacity of the minimum cut</li>
+<li>Algorithm: (1) run Ford-Fulkerson to saturation, (2) DFS from source on residual graph to find reachable vertices, (3) report all original edges from reachable to non-reachable vertices</li>
+<li>Example: 6-vertex graph has minimum cut {1-3, 4-3, 4-5} with total capacity 12+7+4=23</li>
+<li>Time complexity O(V * E^2), space complexity O(V^2) using adjacency matrix representation</li>
+<li>Implementations provided in C++, Java, Python, C#, and JavaScript</li>
+</ul>
+<p><strong>Connections:</strong> <a href="../entities/geeksforgeeks.html">Geeksforgeeks</a> · <a href="../concepts/graph-algorithms.html">Graph Algorithms</a> · <a href="../concepts/max-flow-min-cut.html">Max Flow Min Cut</a> · <a href="../concepts/ford-fulkerson-algorithm.html">Ford Fulkerson Algorithm</a> · <a href="../concepts/network-flow.html">Network Flow</a></p>
+<p class="src">Source: <a href="https://www.geeksforgeeks.org/minimum-cut-in-a-directed-graph/" rel="noopener">https://www.geeksforgeeks.org/minimum-cut-in-a-directed-graph/</a></p></main></body></html>

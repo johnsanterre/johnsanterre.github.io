@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>contents</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#0f6b5c;--card:#ffffff;--line:#e3e1dc;--code:#eef2f0}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#4fc3ad;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 1rem}h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+ul{padding-left:1.2rem}li{margin:.25rem 0}
+.meta{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}
+.tag{display:inline-block;background:var(--code);border-radius:999px;padding:.05rem .6rem;font-size:.78rem;margin:0 .25rem .25rem 0;color:var(--muted)}
+.src{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>contents</h1><div><span class="tag">vim</span><span class="tag">text-editor</span><span class="tag">cheat-sheet</span><span class="tag">keyboard-shortcuts</span><span class="tag">linux</span></div><p><strong>Abstraction:</strong> Vim command reference for navigation, editing, and search/replace</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>Navigation: <code>h/j/k/l</code> for character/line movement; <code>0</code>/<code>^</code>/<code>$</code> for line start/first-non-whitespace/end; <code>H/M/L</code> for screen top/middle/bottom; <code>:n</code> to jump to line n</li>
+<li>Insert modes: <code>i</code> before cursor, <code>a</code> after, <code>o</code> new line below, <code>O</code> above, <code>R</code> overwrite mode; ESC returns to command mode</li>
+<li>Visual mode: <code>v</code> for character selection, <code>V</code> for line selection; operations include yank (<code>y</code>), delete (<code>d</code>), indent (<code>&gt;</code>/<code>&lt;</code>), case toggle (<code>~</code>)</li>
+<li>Undo/redo: <code>u</code> undo last action, <code>U</code> undo all changes on current line, <code>Ctrl+r</code> redo</li>
+<li>Search: <code>/pattern</code> forward search, <code>n</code>/<code>N</code> next/previous match</li>
+<li>Replace syntax: <code>:%s/foo/bar/g</code> replaces all occurrences in file; flags include <code>g</code> (all on line), <code>i</code> (ignore case), <code>c</code> (confirm each substitution)</li>
+</ul>
+<p><strong>Connections:</strong> <a href="../entities/vim.html">Vim</a> · <a href="../concepts/vim.html">Vim</a> · <a href="../concepts/text-editor.html">Text Editor</a></p>
+<p class="src">Source: <a href="http://www.tuxfiles.org/linuxhelp/vimcheat.html" rel="noopener">http://www.tuxfiles.org/linuxhelp/vimcheat.html</a></p></main></body></html>

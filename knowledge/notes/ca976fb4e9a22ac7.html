@@ -1,0 +1,29 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Scaling Recommender Transformers to a Billion Parameters | Towards Data Science</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#0f6b5c;--card:#ffffff;--line:#e3e1dc;--code:#eef2f0}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#4fc3ad;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 1rem}h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+ul{padding-left:1.2rem}li{margin:.25rem 0}
+.meta{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}
+.tag{display:inline-block;background:var(--code);border-radius:999px;padding:.05rem .6rem;font-size:.78rem;margin:0 .25rem .25rem 0;color:var(--muted)}
+.src{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>Scaling Recommender Transformers to a Billion Parameters | Towards Data Science</h1><div><span class="tag">recommender-systems</span><span class="tag">transformers</span><span class="tag">scaling</span><span class="tag">reinforcement-learning</span><span class="tag">two-tower</span></div><p><strong>Abstraction:</strong> ARGUS autoregressive recommender transformer scaled to one billion parameters</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>ARGUS (AutoRegressive Generative User Sequential Modeling) trains on two simultaneous tasks: next-item prediction (including negative interactions) and feedback prediction, unlike SASRec&#x27;s positive-only next-item approach</li>
+<li>Scaling study over four configs (3.2M to 1.007B parameters) shows linear quality improvement on log-parameter scale; HSTU architecture from Meta&#x27;s &quot;Actions Speak Louder than Words&quot; matched but did not beat standard transformers</li>
+<li>Training dataset for music streaming exceeded 300 billion listens; autoregressive pretraining processes the entire year of user history in a single transformer pass — orders of magnitude faster than per-impression runs</li>
+<li>History length of 8,000+ events (vs. previous 1,500–2,000) enabled by the new approach produces noticeable quality gains</li>
+<li>First ARGUS deployment achieved about the same metric gains as all previous transformer model generations combined; Unfamiliar setting saw +12% total listening time</li>
+</ul>
+<p><strong>Connections:</strong> <a href="../entities/yandex.html">Yandex</a> · <a href="../concepts/recommender-systems.html">Recommender Systems</a> · <a href="../concepts/transformers.html">Transformers</a> · <a href="../concepts/reinforcement-learning.html">Reinforcement Learning</a> · <a href="../concepts/scaling-laws.html">Scaling Laws</a></p>
+<p class="src">Source: <a href="https://towardsdatascience.com/scaling-recommender-transformers-to-a-billion-parameters/" rel="noopener">https://towardsdatascience.com/scaling-recommender-transformers-to-a-billion-parameters/</a></p></main></body></html>

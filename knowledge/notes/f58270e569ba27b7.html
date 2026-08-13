@@ -1,0 +1,29 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Transformer Explainer: LLM Transformer Model Visually Explained</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#0f6b5c;--card:#ffffff;--line:#e3e1dc;--code:#eef2f0}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#4fc3ad;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 1rem}h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+ul{padding-left:1.2rem}li{margin:.25rem 0}
+.meta{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}
+.tag{display:inline-block;background:var(--code);border-radius:999px;padding:.05rem .6rem;font-size:.78rem;margin:0 .25rem .25rem 0;color:var(--muted)}
+.src{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>Transformer Explainer: LLM Transformer Model Visually Explained</h1><div><span class="tag">transformers</span><span class="tag">gpt-2</span><span class="tag">self-attention</span><span class="tag">neural-networks</span><span class="tag">visualization</span><span class="tag">education</span></div><p><strong>Abstraction:</strong> Interactive visual walkthrough of Transformer/GPT-2 architecture</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>Interactive tool running a live GPT-2 (small) model — 124M params, 12 Transformer blocks, 12 attention heads, 768-dim embeddings, 50,257-token vocabulary — in-browser via ONNX Runtime, built from Andrej Karpathy&#x27;s nanoGPT; created at Georgia Tech (Aeree Cho et al.).</li>
+<li>Three key components: Embedding (tokenize → 768-dim token embeddings from a ~39M-param matrix + positional encoding), Transformer Blocks (multi-head self-attention + MLP), and Output Probabilities (linear + softmax over vocab).</li>
+<li>Self-attention uses Query/Key/Value (search-engine analogy); Q·K dot product gives attention scores, scaled and masked (upper triangle → −∞ to block future tokens), softmax + dropout, then multiplied by V and concatenated across heads.</li>
+<li>MLP expands 768→3072 (4x) then back to 768 with GELU activation, processing each token independently; auxiliary features: layer normalization (twice per block), dropout, residual connections (from ResNet, 2015).</li>
+<li>Sampling controlled by temperature (&gt;1 = more creative/random, &lt;1 = deterministic), plus top-k and top-p sampling; transformer from &quot;Attention is All You Need&quot; (2017), core to GPT, Llama, Gemini.</li>
+</ul>
+<p><strong>Connections:</strong> <a href="../entities/gpt-2.html">GPT-2</a> · <a href="../entities/andrej-karpathy.html">Andrej Karpathy</a> · <a href="../entities/georgia-tech.html">Georgia Tech</a> · <a href="../concepts/transformers.html">Transformers</a> · <a href="../concepts/self-attention.html">Self Attention</a> · <a href="../concepts/large-language-models.html">Large Language Models</a> · <a href="../concepts/tokenization.html">Tokenization</a></p>
+<p class="src">Source: <a href="https://poloclub.github.io/transformer-explainer/?ref=sentiers.media" rel="noopener">https://poloclub.github.io/transformer-explainer/?ref=sentiers.media</a></p></main></body></html>

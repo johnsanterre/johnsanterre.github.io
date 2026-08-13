@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Running Python and R inside Emacs</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#0f6b5c;--card:#ffffff;--line:#e3e1dc;--code:#eef2f0}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#4fc3ad;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 1rem}h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+ul{padding-left:1.2rem}li{margin:.25rem 0}
+.meta{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}
+.tag{display:inline-block;background:var(--code);border-radius:999px;padding:.05rem .6rem;font-size:.78rem;margin:0 .25rem .25rem 0;color:var(--muted)}
+.src{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>Running Python and R inside Emacs</h1><div><span class="tag">emacs</span><span class="tag">org-mode</span><span class="tag">literate-programming</span><span class="tag">python</span><span class="tag">r</span></div><p><strong>Abstraction:</strong> Emacs org-mode babel executing code blocks inline with output</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>org-mode lets you embed, execute, and display output of source code blocks inside plain-text documents</li>
+<li>Supports 35+ languages; blocks delimited by <code>#+begin_src &lt;lang&gt;</code> / <code>#+end_src</code>; run with C-c C-c</li>
+<li>Python requires an explicit <code>return</code> statement to produce a value; R returns implicitly</li>
+<li>Use <code>:results output :session</code> to capture multi-line REPL-style output including print statements</li>
+<li>Only Emacs Lisp is enabled by default; other languages must be activated via <code>org-babel-do-load-languages</code></li>
+<li>Underpins literate programming and reproducible research workflows (see J. Stat. Software v46/i03)</li>
+</ul>
+<p><strong>Connections:</strong> <a href="../entities/emacs.html">Emacs</a> · <a href="../entities/python.html">Python</a> · <a href="../entities/r-language.html">R Language</a> · <a href="../concepts/literate-programming.html">Literate Programming</a> · <a href="../concepts/org-mode.html">Org Mode</a> · <a href="../concepts/reproducible-research.html">Reproducible Research</a></p>
+<p class="src">Source: <a href="http://www.johndcook.com/blog/2012/02/09/python-org-mode/" rel="noopener">http://www.johndcook.com/blog/2012/02/09/python-org-mode/</a></p></main></body></html>

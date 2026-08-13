@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Variables</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#0f6b5c;--card:#ffffff;--line:#e3e1dc;--code:#eef2f0}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#4fc3ad;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 1rem}h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+ul{padding-left:1.2rem}li{margin:.25rem 0}
+.meta{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}
+.tag{display:inline-block;background:var(--code);border-radius:999px;padding:.05rem .6rem;font-size:.78rem;margin:0 .25rem .25rem 0;color:var(--muted)}
+.src{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>Variables</h1><div><span class="tag">jekyll</span><span class="tag">liquid</span><span class="tag">variables</span><span class="tag">static-site-generator</span><span class="tag">documentation</span></div><p><strong>Abstraction:</strong> Jekyll Liquid variable reference for site, page, and paginator</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>Global variables: <code>site</code> (config + collections), <code>page</code> (current file), <code>layout</code> (current layout), <code>jekyll</code> (version/env), <code>content</code> (rendered body in layouts)</li>
+<li><code>site.*</code> exposes all <code>_config.yml</code> keys plus <code>site.posts</code>, <code>site.pages</code>, <code>site.collections</code>, <code>site.data</code>, <code>site.tags</code>, <code>site.categories</code></li>
+<li><code>page.*</code> includes title, url, date, id, categories, tags, path, slug, ext, next, previous; custom front matter keys also accessible as <code>page.custom_key</code></li>
+<li><code>layout.*</code> exposes front matter from the current layout file</li>
+<li>Paginator variables (page number, per_page, posts, total_posts, total_pages, previous/next path) available only in index files</li>
+<li><code>jekyll.version</code> and <code>jekyll.environment</code> expose build metadata; <code>theme.*</code> exposes gem-based theme metadata (version, authors, description)</li>
+</ul>
+<p><strong>Connections:</strong> <a href="../entities/jekyll.html">Jekyll</a> · <a href="../entities/liquid.html">Liquid</a> · <a href="../concepts/static-site-generation.html">Static Site Generation</a> · <a href="../concepts/template-language.html">Template Language</a></p>
+<p class="src">Source: <a href="http://jekyllrb.com/docs/variables/" rel="noopener">http://jekyllrb.com/docs/variables/</a></p></main></body></html>

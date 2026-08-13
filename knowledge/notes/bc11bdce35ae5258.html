@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Radix tree - Wikipedia</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#0f6b5c;--card:#ffffff;--line:#e3e1dc;--code:#eef2f0}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#4fc3ad;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 1rem}h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+ul{padding-left:1.2rem}li{margin:.25rem 0}
+.meta{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}
+.tag{display:inline-block;background:var(--code);border-radius:999px;padding:.05rem .6rem;font-size:.78rem;margin:0 .25rem .25rem 0;color:var(--muted)}
+.src{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>Radix tree - Wikipedia</h1><div><span class="tag">data-structures</span><span class="tag">radix-tree</span><span class="tag">trie</span><span class="tag">patricia-tree</span><span class="tag">algorithms</span></div><p><strong>Abstraction:</strong> Space-optimized trie merging single-child nodes for efficient string storage</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>Radix tree (compact prefix tree) merges nodes with only one child into their parent; edges labeled with string sequences not just single characters</li>
+<li>All operations (lookup, insert, delete) run in O(k) where k is maximum string length, independent of tree size n</li>
+<li>Comparison with balanced trees: BST comparisons are O(k) worst-case due to long common prefixes; radix tree comparisons are O(1) per node but requires m comparisons for length-m string</li>
+<li>Primary applications: IP routing tables, inverted indexes for information retrieval, Linux kernel page cache</li>
+<li>PATRICIA trie (radix-2): stores only the first differentiating bit position per node, not full keys; one node per unique key; requires one full key comparison at the end to confirm match</li>
+<li>Adaptive Radix Tree (ART) uses variable-size nodes based on number of children, improving space efficiency; published 2013 by Leis et al. for main-memory databases</li>
+</ul>
+<p><strong>Connections:</strong> <a href="../entities/donald-knuth.html">Donald Knuth</a> · <a href="../concepts/radix-tree.html">Radix Tree</a> · <a href="../concepts/trie.html">Trie</a> · <a href="../concepts/data-structures.html">Data Structures</a></p>
+<p class="src">Source: <a href="http://en.wikipedia.org/wiki/Radix_tree" rel="noopener">http://en.wikipedia.org/wiki/Radix_tree</a></p></main></body></html>

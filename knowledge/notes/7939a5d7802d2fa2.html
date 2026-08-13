@@ -1,0 +1,29 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GitHub - recommenders-team/recommenders: Best Practices on Recommendation Systems</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#0f6b5c;--card:#ffffff;--line:#e3e1dc;--code:#eef2f0}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#4fc3ad;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 1rem}h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+ul{padding-left:1.2rem}li{margin:.25rem 0}
+.meta{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}
+.tag{display:inline-block;background:var(--code);border-radius:999px;padding:.05rem .6rem;font-size:.78rem;margin:0 .25rem .25rem 0;color:var(--muted)}
+.src{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>GitHub - recommenders-team/recommenders: Best Practices on Recommendation Systems</h1><div><span class="tag">recommendation-systems</span><span class="tag">microsoft</span><span class="tag">machine-learning</span><span class="tag">deep-learning</span><span class="tag">collaborative-filtering</span><span class="tag">content-based-filtering</span></div><p><strong>Abstraction:</strong> Microsoft open-source repository of recommendation algorithm best practices</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>20,000+ GitHub stars; under Linux Foundation of AI and Data; covers 5 tasks: data prep, modeling, evaluation, hyperparameter optimization, operationalization on Azure</li>
+<li>30+ algorithms including ALS, NCF, SAR, NRMS, LSTUR, NAML, NPA, DKN, xDeepFM, LightGCN, BPR, BiVAE, SASRec, Wide and Deep, VAE variants — many invented/contributed by Microsoft (marked *)</li>
+<li>Benchmark on MovieLens 100k (15 epochs): BiVAE MAP=0.146 best; BPR MAP=0.133; NCF MAP=0.108; ALS MAP=0.005 (underperforms at CF ranking)</li>
+<li>Recommended setup: uv for env management (10-100x faster than conda/pip), Python 3.11; GPU/Spark extras available</li>
+<li>Provides utilities for data loading, evaluation (MAP, nDCG@k, Precision@k, Recall@k, RMSE), train/test splits, and production deployment</li>
+</ul>
+<p><strong>Connections:</strong> <a href="../entities/microsoft.html">Microsoft</a> · <a href="../entities/microsoft-recommenders.html">Microsoft Recommenders</a> · <a href="../entities/github.html">Github</a> · <a href="../concepts/recommendation-systems.html">Recommendation Systems</a> · <a href="../concepts/collaborative-filtering.html">Collaborative Filtering</a> · <a href="../concepts/content-based-filtering.html">Content Based Filtering</a></p>
+<p class="src">Source: <a href="https://github.com/Microsoft/Recommenders" rel="noopener">https://github.com/Microsoft/Recommenders</a></p></main></body></html>

@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Build Your Own Face Recognition Tool With Python – Real Python</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#0f6b5c;--card:#ffffff;--line:#e3e1dc;--code:#eef2f0}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#4fc3ad;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 1rem}h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+ul{padding-left:1.2rem}li{margin:.25rem 0}
+.meta{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}
+.tag{display:inline-block;background:var(--code);border-radius:999px;padding:.05rem .6rem;font-size:.78rem;margin:0 .25rem .25rem 0;color:var(--muted)}
+.src{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>Build Your Own Face Recognition Tool With Python – Real Python</h1><div><span class="tag">face-recognition</span><span class="tag">python</span><span class="tag">face-detection</span><span class="tag">machine-learning</span><span class="tag">tutorial</span></div><p><strong>Abstraction:</strong> End-to-end Python face recognition app using face_recognition library</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>Uses the <code>face_recognition</code> library (backed by dlib) with HOG (CPU) or CNN (GPU) model for face location</li>
+<li>Training encodes known faces as 128-dimensional numeric vectors saved to <code>encodings.pkl</code> via pickle, enabling reuse without re-computation</li>
+<li>Recognition uses <code>compare_faces()</code> + <code>Counter</code> voting: each known encoding casts a vote, most votes wins; unmatched faces labeled &quot;Unknown&quot;</li>
+<li>Bounding boxes and name labels drawn on output images using Pillow&#x27;s <code>ImageDraw</code></li>
+<li>CLI built with <code>argparse</code> supports <code>--train</code>, <code>--validate</code>, and <code>--test -f &lt;image&gt;</code> subcommands</li>
+<li>Validation loop runs <code>recognize_faces()</code> over all images in <code>validation/</code> directory to assess model accuracy</li>
+</ul>
+<p><strong>Connections:</strong> <a href="../entities/dlib.html">Dlib</a> · <a href="../concepts/face-recognition.html">Face Recognition</a> · <a href="../concepts/face-detection.html">Face Detection</a> · <a href="../concepts/transfer-learning.html">Transfer Learning</a></p>
+<p class="src">Source: <a href="https://realpython.com/face-recognition-with-python/" rel="noopener">https://realpython.com/face-recognition-with-python/</a></p></main></body></html>

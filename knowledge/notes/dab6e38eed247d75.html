@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Salesforce AI Research Proposes &#x27;DeepTime,&#x27; A Deep Time-Index Based Model Trained Via A Meta-Learning Formulation To Automatically Learn A Representation Function From Time-Series Data</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#0f6b5c;--card:#ffffff;--line:#e3e1dc;--code:#eef2f0}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#4fc3ad;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 1rem}h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+ul{padding-left:1.2rem}li{margin:.25rem 0}
+.meta{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}
+.tag{display:inline-block;background:var(--code);border-radius:999px;padding:.05rem .6rem;font-size:.78rem;margin:0 .25rem .25rem 0;color:var(--muted)}
+.src{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>Salesforce AI Research Proposes &#x27;DeepTime,&#x27; A Deep Time-Index Based Model Trained Via A Meta-Learning Formulation To Automatically Learn A Representation Function From Time-Series Data</h1><div><span class="tag">time-series</span><span class="tag">meta-learning</span><span class="tag">forecasting</span><span class="tag">salesforce</span><span class="tag">non-stationary</span></div><p><strong>Abstraction:</strong> Deep time-index meta-learning model for non-stationary time-series forecasting</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>DeepTime extends traditional time-index models by substituting the hand-specified function with a deep neural network, allowing the model to learn the time-to-value mapping from data</li>
+<li>Addresses non-stationarity via a locally stationary distribution assumption: a long non-stationary series is split into shorter windows (tasks) treated as stationary</li>
+<li>Uses a meta-learning formulation with inner/outer loops; only the final ridge regressor layer is adapted in the inner loop, making training fast and avoiding overfitting</li>
+<li>Ridge regression enables an exact one-step closed-form solution rather than an iterative approximation, improving prediction accuracy</li>
+<li>Achieves state-of-the-art on 20 of 24 benchmark settings (MSE metric) across six real-world datasets spanning diverse domains and forecast horizons</li>
+<li>Outperforms all benchmarks in memory and runtime efficiency, potentially reducing carbon footprint for forecasting deployments</li>
+</ul>
+<p><strong>Connections:</strong> <a href="../entities/salesforce.html">Salesforce</a> · <a href="../concepts/time-series-forecasting.html">Time Series Forecasting</a> · <a href="../concepts/meta-learning.html">Meta Learning</a> · <a href="../concepts/deep-learning.html">Deep Learning</a></p>
+<p class="src">Source: <a href="https://www.marktechpost.com/2022/10/17/salesforce-ai-research-proposes-deeptime-a-deep-time-index-based-model-trained-via-a-meta-learning-formulation-to-automatically-learn-a-representation-function-from-time-series-data/" rel="noopener">https://www.marktechpost.com/2022/10/17/salesforce-ai-research-proposes-deeptime-a-deep-time-index-based-model-trained-via-a-meta-learning-formulation-to-automatically-learn-a-representation-function-from-time-series-data/</a></p></main></body></html>

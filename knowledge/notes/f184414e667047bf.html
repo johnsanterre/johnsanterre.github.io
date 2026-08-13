@@ -1,0 +1,29 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Casual Shadertoy Path Tracing 1: Basic Camera, Diffuse, Emissive</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#0f6b5c;--card:#ffffff;--line:#e3e1dc;--code:#eef2f0}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#4fc3ad;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 1rem}h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+ul{padding-left:1.2rem}li{margin:.25rem 0}
+.meta{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}
+.tag{display:inline-block;background:var(--code);border-radius:999px;padding:.05rem .6rem;font-size:.78rem;margin:0 .25rem .25rem 0;color:var(--muted)}
+.src{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>Casual Shadertoy Path Tracing 1: Basic Camera, Diffuse, Emissive</h1><div><span class="tag">path-tracing</span><span class="tag">ray-tracing</span><span class="tag">shadertoy</span><span class="tag">glsl</span><span class="tag">computer-graphics</span><span class="tag">rendering</span></div><p><strong>Abstraction:</strong> Beginner path tracing tutorial implemented in Shadertoy GLSL shaders</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>Path tracing is ray tracing with recursive random bounces; pixels accumulate emissive * throughput where throughput is multiplied by each surface&#x27;s albedo on each bounce</li>
+<li>Camera ray setup: pixel coordinates mapped to -1..+1, aspect ratio correction applied, FOV controls imaginary pixel plane distance (1 unit = 90° FOV)</li>
+<li>Cosine-weighted hemisphere sampling for diffuse bounce: get random unit vector, add to surface normal, normalize — equivalent to importance sampling of the cosine term</li>
+<li>Random number generation uses Wang hash (fast bit-manipulation hash) seeded per pixel and frame; random unit vectors generated from random spherical coordinates</li>
+<li>Multi-pass averaging: Buffer A accumulates per-frame renders using <code>mix(lastFrame, currentFrame, 1/(frameN+1))</code>; 8 bounces, emissive sphere as light source, environment cubemap for missed rays</li>
+</ul>
+<p><strong>Connections:</strong> <a href="../entities/shadertoy.html">Shadertoy</a> · <a href="../concepts/path-tracing.html">Path Tracing</a> · <a href="../concepts/ray-tracing.html">Ray Tracing</a> · <a href="../concepts/computer-graphics.html">Computer Graphics</a></p>
+<p class="src">Source: <a href="https://blog.demofox.org/2020/05/25/casual-shadertoy-path-tracing-1-basic-camera-diffuse-emissive/" rel="noopener">https://blog.demofox.org/2020/05/25/casual-shadertoy-path-tracing-1-basic-camera-diffuse-emissive/</a></p></main></body></html>

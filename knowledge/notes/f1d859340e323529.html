@@ -1,0 +1,29 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A string of unexpected lengths - Blog - Recurse Center</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#0f6b5c;--card:#ffffff;--line:#e3e1dc;--code:#eef2f0}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#4fc3ad;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 1rem}h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+ul{padding-left:1.2rem}li{margin:.25rem 0}
+.meta{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}
+.tag{display:inline-block;background:var(--code);border-radius:999px;padding:.05rem .6rem;font-size:.78rem;margin:0 .25rem .25rem 0;color:var(--muted)}
+.src{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>A string of unexpected lengths - Blog - Recurse Center</h1><div><span class="tag">unicode</span><span class="tag">python</span><span class="tag">string-encoding</span><span class="tag">terminal</span><span class="tag">text-formatting</span></div><p><strong>Abstraction:</strong> Three ways string byte-length diverges from terminal display width</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>Multi-byte encodings: a single visible character like <code>Ä</code> may occupy 2+ bytes; Python 2 byte strings report <code>len()</code> as byte count, not character count; switching to Unicode strings fixes this for most cases</li>
+<li>ANSI escape codes: color sequences like <code>\x1b[31m</code> inflate <code>len()</code> beyond visible width — e.g., a 4-char colored string reports length 13; Python&#x27;s <code>clint</code> library tracks visual width but breaks on concatenation</li>
+<li>Fullwidth Unicode characters (e.g., CJK ideographs <code>扶桑</code>) display as double-width but count as 1 code point each; combining characters (e.g., <code>Fusō</code>) add no width but increase <code>len()</code></li>
+<li>POSIX <code>wcswidth</code> function correctly computes display width for Unicode strings; Python binding available via <code>wcwidth</code> package</li>
+<li>Python &lt; 3.3 &quot;narrow&quot; builds may report <code>len() == 2</code> for code points above U+FFFF (check via <code>sys.maxunicode</code>)</li>
+</ul>
+<p><strong>Connections:</strong> <a href="../entities/recurse-center.html">Recurse Center</a> · <a href="../entities/python.html">Python</a> · <a href="../concepts/unicode.html">Unicode</a> · <a href="../concepts/character-encoding.html">Character Encoding</a> · <a href="../concepts/string-handling.html">String Handling</a></p>
+<p class="src">Source: <a href="https://www.hackerschool.com/blog/74-a-string-of-unexpected-lengths" rel="noopener">https://www.hackerschool.com/blog/74-a-string-of-unexpected-lengths</a></p></main></body></html>

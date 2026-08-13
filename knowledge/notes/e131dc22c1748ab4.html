@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Frequentism and Bayesianism IV: How to be a Bayesian in Python</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#0f6b5c;--card:#ffffff;--line:#e3e1dc;--code:#eef2f0}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#4fc3ad;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 1rem}h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+ul{padding-left:1.2rem}li{margin:.25rem 0}
+.meta{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}
+.tag{display:inline-block;background:var(--code);border-radius:999px;padding:.05rem .6rem;font-size:.78rem;margin:0 .25rem .25rem 0;color:var(--muted)}
+.src{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>Frequentism and Bayesianism IV: How to be a Bayesian in Python</h1><div><span class="tag">bayesian-statistics</span><span class="tag">mcmc</span><span class="tag">python</span><span class="tag">statistics</span></div><p><strong>Abstraction:</strong> Comparing emcee, PyMC, and PyStan for Bayesian MCMC in Python</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>Three Python MCMC packages compared on a 3-parameter linear regression with nuisance scatter: emcee, PyMC (v2), and PyStan</li>
+<li>emcee is pure Python, lightweight, uses affine-invariant ensemble sampling; installs easily via pip; ~6 sec for 100k samples</li>
+<li>PyMC2 uses Metropolis-Hastings, requires Fortran compiler, Pythonic API with decorator syntax; ~17 sec; PyMC3 (alpha) is a complete rewrite with much better performance</li>
+<li>PyStan wraps Stan (C++), uses No-U-Turn Sampler, requires learning Stan model language, ~20 sec compilation + ~6 sec; most powerful but steepest learning curve</li>
+<li>Flat priors are not always uninformative; Jeffreys prior (1/σ for scale parameters; (1+β²)^{-3/2} for slope) is preferred for symmetry/maximum entropy reasons</li>
+<li>All three packages agree on posterior contours; true parameters (25, 0.5) fall within 1-σ error ellipse</li>
+</ul>
+<p><strong>Connections:</strong> <a href="../entities/jake-vanderplas.html">Jake Vanderplas</a> · <a href="../entities/pymc.html">Pymc</a> · <a href="../entities/pystan.html">Pystan</a> · <a href="../concepts/bayesian-statistics.html">Bayesian Statistics</a> · <a href="../concepts/mcmc.html">Mcmc</a></p>
+<p class="src">Source: <a href="http://jakevdp.github.io/blog/2014/06/14/frequentism-and-bayesianism-4-bayesian-in-python/" rel="noopener">http://jakevdp.github.io/blog/2014/06/14/frequentism-and-bayesianism-4-bayesian-in-python/</a></p></main></body></html>

@@ -1,0 +1,29 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Revisiting Knuth&#x27;s &quot;Premature Optimization&quot; Paper</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#0f6b5c;--card:#ffffff;--line:#e3e1dc;--code:#eef2f0}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#4fc3ad;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 1rem}h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+ul{padding-left:1.2rem}li{margin:.25rem 0}
+.meta{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}
+.tag{display:inline-block;background:var(--code);border-radius:999px;padding:.05rem .6rem;font-size:.78rem;margin:0 .25rem .25rem 0;color:var(--muted)}
+.src{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>Revisiting Knuth&#x27;s &quot;Premature Optimization&quot; Paper</h1><div><span class="tag">performance-optimization</span><span class="tag">algorithms</span><span class="tag">computer-science</span><span class="tag">knuth</span><span class="tag">benchmarking</span></div><p><strong>Abstraction:</strong> Contextual reanalysis of Knuth premature optimization quote and its misuse</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>Knuth&#x27;s &quot;premature optimization is the root of all evil&quot; appears in &quot;Structured Programming with go to Statements&quot; (1974), which is about when goto statements are necessary for structured programming — not a general warning against optimization</li>
+<li>The full quote continues: &quot;Yet we should not pass up our opportunities in that critical 3%&quot; — the second half is routinely omitted when the quote is cited</li>
+<li>Knuth argued immediately before the quote that a 12% loop-unrolling speedup IS worth doing in library/critical code, explicitly rejecting the &quot;10% improvement is marginal&quot; conventional wisdom</li>
+<li>Modern CPUs with instruction-level parallelism change Knuth&#x27;s 1974 instruction-counting cost model: an extra instruction may have zero effect until the loop saturates the pipeline (~4 IPC limit)</li>
+<li>Compilers (Clang, GCC) do not reliably apply even straightforward optimizations like iterating a loop down to zero; author needed hand-written assembly to confirm Knuth&#x27;s improvement</li>
+</ul>
+<p><strong>Connections:</strong> <a href="../entities/donald-knuth.html">Donald Knuth</a> · <a href="../concepts/premature-optimization.html">Premature Optimization</a> · <a href="../concepts/algorithm-design.html">Algorithm Design</a> · <a href="../concepts/performance-optimization.html">Performance Optimization</a></p>
+<p class="src">Source: <a href="https://probablydance.com/2025/06/19/revisiting-knuths-premature-optimization-paper/" rel="noopener">https://probablydance.com/2025/06/19/revisiting-knuths-premature-optimization-paper/</a></p></main></body></html>

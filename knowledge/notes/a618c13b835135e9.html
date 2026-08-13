@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>When Whole-Genome Alignments Just Won&#x27;t Work: kSNP v2 Software for Alignment-Free SNP Discovery and Phylogenetics of Hundreds of Microbial Genomes</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#0f6b5c;--card:#ffffff;--line:#e3e1dc;--code:#eef2f0}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#4fc3ad;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 1rem}h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+ul{padding-left:1.2rem}li{margin:.25rem 0}
+.meta{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}
+.tag{display:inline-block;background:var(--code);border-radius:999px;padding:.05rem .6rem;font-size:.78rem;margin:0 .25rem .25rem 0;color:var(--muted)}
+.src{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>When Whole-Genome Alignments Just Won&#x27;t Work: kSNP v2 Software for Alignment-Free SNP Discovery and Phylogenetics of Hundreds of Microbial Genomes</h1><div><span class="tag">bioinformatics</span><span class="tag">snp</span><span class="tag">phylogenetics</span><span class="tag">microbial-genomics</span><span class="tag">k-mer</span></div><p><strong>Abstraction:</strong> Alignment-free k-mer SNP discovery tool for hundreds of microbial genomes</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>kSNP v2 finds SNPs and builds phylogenies across hundreds of bacterial/viral genomes without a reference genome or multiple sequence alignment</li>
+<li>Uses k-mer analysis (typically k=19-21 for bacteria, 13-15 for viruses); includes Kchooser script to select optimal k</li>
+<li>Analyzed 212 Salmonella genomes in 6.9 hours on a 48 GB/12-CPU node; handles raw unassembled reads</li>
+<li>Builds Maximum Likelihood, Neighbor Joining, and parsimony trees from all SNPs, core SNPs, or user-specified fraction</li>
+<li>Annotates SNPs with GenBank gene/protein/amino-acid data downloaded automatically from NCBI</li>
+<li>Cannot distinguish sequencing errors from true SNPs; does not detect indels</li>
+</ul>
+<p><strong>Connections:</strong> <a href="../entities/ksnp.html">Ksnp</a> · <a href="../entities/ncbi.html">Ncbi</a> · <a href="../concepts/snp-discovery.html">Snp Discovery</a> · <a href="../concepts/phylogenetics.html">Phylogenetics</a> · <a href="../concepts/k-mer-analysis.html">K Mer Analysis</a></p>
+<p class="src">Source: <a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0081760" rel="noopener">http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0081760</a></p></main></body></html>

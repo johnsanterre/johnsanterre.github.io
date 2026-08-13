@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Numba vs. Cython: Take 2</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#0f6b5c;--card:#ffffff;--line:#e3e1dc;--code:#eef2f0}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#4fc3ad;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 1rem}h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+ul{padding-left:1.2rem}li{margin:.25rem 0}
+.meta{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}
+.tag{display:inline-block;background:var(--code);border-radius:999px;padding:.05rem .6rem;font-size:.78rem;margin:0 .25rem .25rem 0;color:var(--muted)}
+.src{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>Numba vs. Cython: Take 2</h1><div><span class="tag">numba</span><span class="tag">cython</span><span class="tag">python</span><span class="tag">performance</span><span class="tag">scientific-computing</span><span class="tag">jit</span><span class="tag">benchmark</span></div><p><strong>Abstraction:</strong> Python performance benchmark comparing Numba JIT and Cython for pairwise distance computation</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>Benchmark task: pairwise distance on 1000 points in 3D — Python loop=13.4s, numpy broadcast=111ms, Cython=9.87ms, Numba=9.12ms</li>
+<li>Numba uses LLVM JIT; wrapping plain Python with <code>autojit</code> decorator achieves ~1400x speedup with no type annotations needed</li>
+<li>Cython requires explicit type declarations and is a Python/C hybrid; despite full optimization, was ~8% slower than Numba here</li>
+<li>scipy <code>cdist</code> (C): 12.9ms; sklearn <code>euclidean_distances</code> (Cython): 35.6ms; Fortran/f2py: 16.7ms — all slower than Numba</li>
+<li>numpy broadcasting allocates large temporary arrays (M<em>M</em>N elements), causing memory overhead vs. loop-based approach</li>
+<li>PyPy excluded: does not support NumPy, making it unsuitable for scientific Python workflows</li>
+</ul>
+<p><strong>Connections:</strong> <a href="../entities/numba.html">Numba</a> · <a href="../entities/cython.html">Cython</a> · <a href="../entities/numpy.html">Numpy</a> · <a href="../entities/scipy.html">Scipy</a> · <a href="../entities/scikit-learn.html">Scikit Learn</a> · <a href="../concepts/python-performance-optimization.html">Python Performance Optimization</a> · <a href="../concepts/jit-compilation.html">Jit Compilation</a> · <a href="../concepts/scientific-computing.html">Scientific Computing</a></p>
+<p class="src">Source: <a href="http://nbviewer.ipython.org/url/jakevdp.github.io/downloads/notebooks/NumbaCython.ipynb" rel="noopener">http://nbviewer.ipython.org/url/jakevdp.github.io/downloads/notebooks/NumbaCython.ipynb</a></p></main></body></html>

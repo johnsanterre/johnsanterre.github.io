@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MCP: The Missing Link Between AI Agents and APIs</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#0f6b5c;--card:#ffffff;--line:#e3e1dc;--code:#eef2f0}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#4fc3ad;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 1rem}h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+ul{padding-left:1.2rem}li{margin:.25rem 0}
+.meta{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}
+.tag{display:inline-block;background:var(--code);border-radius:999px;padding:.05rem .6rem;font-size:.78rem;margin:0 .25rem .25rem 0;color:var(--muted)}
+.src{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>MCP: The Missing Link Between AI Agents and APIs</h1><div><span class="tag">mcp</span><span class="tag">api</span><span class="tag">ai-agents</span><span class="tag">model-context-protocol</span><span class="tag">speakeasy</span></div><p><strong>Abstraction:</strong> MCP standardizes how AI agents access external APIs</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>MCP (Model Context Protocol) is an open-source standard launched by Anthropic in November 2024 that acts as a thin client-server layer above APIs, enabling AI agents to query and interact with external services via natural language.</li>
+<li>Unlike OpenAPI (a static spec), an MCP server is a live, running instance AI agents can query in real time — the jump from OpenAPI to MCP is described as &quot;very small.&quot;</li>
+<li>Pre-built MCP servers exist for Google Drive, Slack, GitHub, Git, Postgres, and Puppeteer; MCP clients include Claude, Cursor, and Windsurf.</li>
+<li>Speakeasy launched MCP Server Generation to automate creation of TypeScript-based MCP servers; Python support planned given AI ecosystem dominance.</li>
+<li>Real-world use cases: marketing teams query Dub&#x27;s MCP server for link analytics without leaving chat; e-commerce AI agents can pull sales data and generate reports autonomously.</li>
+<li>Potential &quot;schema wars&quot; ahead — OpenAI&#x27;s function calling is a competing approach, and standards are still in flux.</li>
+</ul>
+<p><strong>Connections:</strong> <a href="../entities/anthropic.html">Anthropic</a> · <a href="../entities/speakeasy.html">Speakeasy</a> · <a href="../concepts/model-context-protocol.html">Model Context Protocol</a> · <a href="../concepts/ai-agents.html">AI Agents</a> · <a href="../concepts/agentic-coding.html">Agentic Coding</a></p>
+<p class="src">Source: <a href="https://thenewstack.io/mcp-the-missing-link-between-ai-agents-and-apis/" rel="noopener">https://thenewstack.io/mcp-the-missing-link-between-ai-agents-and-apis/</a></p></main></body></html>

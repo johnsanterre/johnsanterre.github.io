@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Heuristics for lab robotics, and where its future may go</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#0f6b5c;--card:#ffffff;--line:#e3e1dc;--code:#eef2f0}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#4fc3ad;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 1rem}h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+ul{padding-left:1.2rem}li{margin:.25rem 0}
+.meta{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}
+.tag{display:inline-block;background:var(--code);border-radius:999px;padding:.05rem .6rem;font-size:.78rem;margin:0 .25rem .25rem 0;color:var(--muted)}
+.src{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>Heuristics for lab robotics, and where its future may go</h1><div><span class="tag">lab-automation</span><span class="tag">robotics</span><span class="tag">biotech</span><span class="tag">drug-discovery</span><span class="tag">cloud-lab</span></div><p><strong>Abstraction:</strong> Three ideological camps driving wet-lab automation future</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>Box robots (liquid handlers, plate readers) are mature but siloed; arm robots connect boxes into &quot;workcells&quot; but most protocols aren&#x27;t run enough times to justify the $4,000+ setup cost</li>
+<li>Three camps: translation layer (Synthace, Briefly Bio, Tetsuwan) lowering protocol-to-robot friction; hardware integration (Automata LINQ bench, Ginkgo RACs); intelligence/perception for error recovery and adaptation (Medra, Zeon Systems)</li>
+<li>Near-term intelligence thesis = perception + error recovery; far-term autonomous science remains distant given lab work being out-of-distribution for current robotics foundation models</li>
+<li>All roads lead to &quot;cloud labs&quot; (Transcriptic model): centralized facilities batch experiments, vertically integrate reagent production, and drive per-experiment costs toward chemical + energy + labor only</li>
+<li>First-generation cloud labs (Transcriptic, folded 2023) failed partly by being too general — Plasmidsaurus succeeded by doing one workflow (plasmid sequencing) frictionlessly</li>
+<li>Jack Scannell&#x27;s research: a 0.1 increase in predictive validity correlation matters more than screening 10x-100x more candidates — automation&#x27;s real value is enabling better experiments, not just more of them</li>
+</ul>
+<p><strong>Connections:</strong> <a href="../entities/ginkgo-bioworks.html">Ginkgo Bioworks</a> · <a href="../entities/medra.html">Medra</a> · <a href="../concepts/lab-automation.html">Lab Automation</a> · <a href="../concepts/drug-discovery.html">Drug Discovery</a> · <a href="../concepts/cloud-lab.html">Cloud Lab</a></p>
+<p class="src">Source: <a href="https://www.owlposting.com/p/heuristics-for-lab-robotics-and-where" rel="noopener">https://www.owlposting.com/p/heuristics-for-lab-robotics-and-where</a></p></main></body></html>

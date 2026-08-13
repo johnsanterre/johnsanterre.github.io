@@ -1,0 +1,29 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Symbolic Mathematics Finally Yields to Neural Networks</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#0f6b5c;--card:#ffffff;--line:#e3e1dc;--code:#eef2f0}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#4fc3ad;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 1rem}h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+ul{padding-left:1.2rem}li{margin:.25rem 0}
+.meta{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}
+.tag{display:inline-block;background:var(--code);border-radius:999px;padding:.05rem .6rem;font-size:.78rem;margin:0 .25rem .25rem 0;color:var(--muted)}
+.src{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>Symbolic Mathematics Finally Yields to Neural Networks</h1><div><span class="tag">symbolic-math</span><span class="tag">neural-networks</span><span class="tag">integration</span><span class="tag">differential-equations</span><span class="tag">facebook-ai</span><span class="tag">sequence-to-sequence</span></div><p><strong>Abstraction:</strong> Facebook AI neural network solves symbolic integrals and ODEs via sequence translation</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>Guillaume Lample and François Charton (Facebook AI, Paris) reframed symbolic math as a language translation problem; mathematical expressions are encoded as trees (operators = junctions, variables/numbers = leaves)</li>
+<li>Trained on ~200 million tree-shaped equations; the neural net solved nearly 100% of 5,000 integration test problems in under 1 second, outperforming Mathematica and Matlab on some problems</li>
+<li>Training data only covered single-variable equations from elementary functions — a &quot;thin slice&quot; of possible expressions; Bessel and error functions not tested</li>
+<li>The system doesn&#x27;t understand math; it develops pattern-recognition instinct (&quot;math was our original language&quot;) — but its implicit rules handle exceptions that stumped rule-based CAS tools</li>
+<li>Proposed future uses: automated theorem generation, mathematician&#x27;s assistant for conjecture identification, and using math problems to reverse-engineer how neural networks reason internally</li>
+</ul>
+<p><strong>Connections:</strong> <a href="../entities/facebook-ai.html">Facebook AI</a> · <a href="../entities/wolfram.html">Wolfram</a> · <a href="../concepts/symbolic-mathematics.html">Symbolic Mathematics</a> · <a href="../concepts/neural-networks.html">Neural Networks</a> · <a href="../concepts/sequence-to-sequence.html">Sequence To Sequence</a></p>
+<p class="src">Source: <a href="https://www.quantamagazine.org/symbolic-mathematics-finally-yields-to-neural-networks-20200520/" rel="noopener">https://www.quantamagazine.org/symbolic-mathematics-finally-yields-to-neural-networks-20200520/</a></p></main></body></html>

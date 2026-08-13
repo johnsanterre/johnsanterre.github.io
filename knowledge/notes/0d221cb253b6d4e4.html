@@ -1,0 +1,28 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>How I Organize Posts In Jekyll</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#0f6b5c;--card:#ffffff;--line:#e3e1dc;--code:#eef2f0}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#4fc3ad;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 1rem}h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+ul{padding-left:1.2rem}li{margin:.25rem 0}
+.meta{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}
+.tag{display:inline-block;background:var(--code);border-radius:999px;padding:.05rem .6rem;font-size:.78rem;margin:0 .25rem .25rem 0;color:var(--muted)}
+.src{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>How I Organize Posts In Jekyll</h1><div><span class="tag">jekyll</span><span class="tag">blogging</span><span class="tag">categories</span><span class="tag">static-site</span><span class="tag">ruby</span></div><p><strong>Abstraction:</strong> Jekyll post organization with categories, counts, and related posts</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>Categories defined per post in YAML Front Matter; category pages generated dynamically by a custom plugin from a single <code>category.html</code> template</li>
+<li><code>site.sorted_categories</code> plugin builds a list of categories sorted descending by post count for use in navigation templates</li>
+<li>Related posts for each post computed as N most recent posts in the same category, stored in <code>post.related</code></li>
+<li>Author migrated from self-hosted WordPress to Jekyll 0.7.0 in November 2010, preserving existing URL structure</li>
+</ul>
+<p><strong>Connections:</strong> <a href="../entities/jekyll.html">Jekyll</a> · <a href="../entities/wordpress.html">Wordpress</a> · <a href="../concepts/static-site-generation.html">Static Site Generation</a> · <a href="../concepts/web-development.html">Web Development</a></p>
+<p class="src">Source: <a href="http://www.somic.org/2011/03/04/how-i-organize-posts-in-jekyll/" rel="noopener">http://www.somic.org/2011/03/04/how-i-organize-posts-in-jekyll/</a></p></main></body></html>

@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>DS-STAR: A state-of-the-art versatile data science agent</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#0f6b5c;--card:#ffffff;--line:#e3e1dc;--code:#eef2f0}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#4fc3ad;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 1rem}h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+ul{padding-left:1.2rem}li{margin:.25rem 0}
+.meta{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}
+.tag{display:inline-block;background:var(--code);border-radius:999px;padding:.05rem .6rem;font-size:.78rem;margin:0 .25rem .25rem 0;color:var(--muted)}
+.src{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>DS-STAR: A state-of-the-art versatile data science agent</h1><div><span class="tag">data-science-agent</span><span class="tag">ds-star</span><span class="tag">dabstep</span><span class="tag">iterative-planning</span><span class="tag">llm-judge</span><span class="tag">heterogeneous-data</span></div><p><strong>Abstraction:</strong> Iterative plan-verify data science agent handling heterogeneous file formats</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>DS-STAR introduces three innovations: (1) a Data File Analyzer that extracts context from varied formats (JSON, unstructured text, markdown); (2) an LLM-based Verifier judge assessing plan sufficiency at each step; (3) a Router agent that corrects existing steps rather than just appending new ones</li>
+<li>Framework loop: Planner creates high-level plan → Coder implements → Verifier judges sufficiency → Router refines; max 10 rounds</li>
+<li>Achieves SOTA on DABStep (45.2% vs 41.0%), KramaBench (44.7% vs 39.8%), DA-Code (38.5% vs 37.0%) vs best prior methods</li>
+<li>Hard tasks average 5.6 refinement rounds; easy tasks average 3.0, with over half solved in a single round</li>
+<li>Removing the Data File Analyzer drops accuracy on hard DABStep tasks to 26.98%, showing rich data context is critical</li>
+<li>Framework generalizes across base models: tested with both Gemini-2.5-Pro and GPT-5 with complementary strengths</li>
+</ul>
+<p><strong>Connections:</strong> <a href="../entities/google.html">Google</a> · <a href="../concepts/ai-agents.html">AI Agents</a> · <a href="../concepts/large-language-models.html">Large Language Models</a></p>
+<p class="src">Source: <a href="https://research.google/blog/ds-star-a-state-of-the-art-versatile-data-science-agent/" rel="noopener">https://research.google/blog/ds-star-a-state-of-the-art-versatile-data-science-agent/</a></p></main></body></html>

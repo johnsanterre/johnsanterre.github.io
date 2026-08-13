@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>sed &amp; awk</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#0f6b5c;--card:#ffffff;--line:#e3e1dc;--code:#eef2f0}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#4fc3ad;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 1rem}h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+ul{padding-left:1.2rem}li{margin:.25rem 0}
+.meta{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}
+.tag{display:inline-block;background:var(--code);border-radius:999px;padding:.05rem .6rem;font-size:.78rem;margin:0 .25rem .25rem 0;color:var(--muted)}
+.src{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>sed &amp; awk</h1><div><span class="tag">sed</span><span class="tag">awk</span><span class="tag">unix</span><span class="tag">text-processing</span><span class="tag">multiline</span><span class="tag">pattern-space</span></div><p><strong>Abstraction:</strong> Advanced sed multiline pattern space commands N, P, D for complex text transformations</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>Three multiline commands: N (append next input line to pattern space), P (print first line of pattern space), D (delete first line and restart)</li>
+<li>N differs from n: lowercase n outputs current pattern space before reading next line; N appends without outputting</li>
+<li>Match embedded newlines with <code>\n</code> in regex; insert newline in replacement using backslash followed by literal newline (not <code>\n</code>)</li>
+<li>Classic use case: match a phrase split across two lines by reading next line into pattern space then substituting across the embedded newline</li>
+<li>D command removes only the first line of pattern space and passes remainder back to top of script, enabling a sliding-window processing loop</li>
+<li>N/P/D combination: output current line (P), remove it (D), next iteration processes formerly-second line as current</li>
+</ul>
+<p><strong>Connections:</strong> <a href="../concepts/sed.html">Sed</a> · <a href="../concepts/text-processing.html">Text Processing</a> · <a href="../concepts/unix-tools.html">Unix Tools</a></p>
+<p class="src">Source: <a href="http://docstore.mik.ua/orelly/unix/sedawk/ch06_01.htm" rel="noopener">http://docstore.mik.ua/orelly/unix/sedawk/ch06_01.htm</a></p></main></body></html>

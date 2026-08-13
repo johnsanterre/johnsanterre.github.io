@@ -1,0 +1,29 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>I&#x27;m running a 120B local LLM on 24GB of VRAM, and now it powers my smart home</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#0f6b5c;--card:#ffffff;--line:#e3e1dc;--code:#eef2f0}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#4fc3ad;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 1rem}h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+ul{padding-left:1.2rem}li{margin:.25rem 0}
+.meta{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}
+.tag{display:inline-block;background:var(--code);border-radius:999px;padding:.05rem .6rem;font-size:.78rem;margin:0 .25rem .25rem 0;color:var(--muted)}
+.src{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>I&#x27;m running a 120B local LLM on 24GB of VRAM, and now it powers my smart home</h1><div><span class="tag">local-llm</span><span class="tag">mixture-of-experts</span><span class="tag">self-hosting</span><span class="tag">home-assistant</span><span class="tag">gpu</span><span class="tag">quantization</span></div><p><strong>Abstraction:</strong> Running gpt-oss-120b locally on 24GB VRAM via MoE</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>Runs gpt-oss-120b (OpenAI&#x27;s largest open-weight model, 117B params / 5.1B active MoE) on an RTX 4090 (24GB VRAM) + 64GB system RAM, hitting ~20 tokens/sec — usable for a voice assistant.</li>
+<li>Setup: Proxmox LXCs for llama.cpp and Whisper; Nvidia driver installed on host, LXC given hardware access via cgroup2/mount entries (no full GPU passthrough needed).</li>
+<li>Uses Unsloth Q4_K_S GGUF (~60GB); expert (FFN) layers pinned to CPU/system RAM via <code>-ot &quot;.ffn_.*_exps.=CPU&quot;</code>, GPU handles attention + dense layers + KV cache. Default context 131,072; can drop to 16K/32K with q4_0 KV cache quantization.</li>
+<li>Wired into Home Assistant via HACS &quot;Local LLMs&quot; integration (OpenAI-compatible endpoint) + Whisper STT for a voice pipeline.</li>
+<li>Speed trick: only the small activation tensor crosses PCIe per token (not full expert weight matrices); low active param count + quantized experts keep bandwidth bounded. Mixtral 8x7B and gpt-oss are standout MoE models for this CPU/GPU split.</li>
+</ul>
+<p><strong>Connections:</strong> <a href="../concepts/mixture-of-experts.html">Mixture Of Experts</a> · <a href="../entities/gpt-oss.html">GPT Oss</a> · <a href="../entities/llama-cpp.html">Llama Cpp</a> · <a href="../entities/home-assistant.html">Home Assistant</a> · <a href="../concepts/quantization.html">Quantization</a></p>
+<p class="src">Source: <a href="https://www.xda-developers.com/running-120b-local-llm-24gb-vram-smart-home/" rel="noopener">https://www.xda-developers.com/running-120b-local-llm-24gb-vram-smart-home/</a></p></main></body></html>

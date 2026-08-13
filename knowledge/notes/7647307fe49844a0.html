@@ -1,0 +1,29 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ReAct: Synergizing Reasoning and Acting in Language Models</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#0f6b5c;--card:#ffffff;--line:#e3e1dc;--code:#eef2f0}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#4fc3ad;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 1rem}h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+ul{padding-left:1.2rem}li{margin:.25rem 0}
+.meta{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}
+.tag{display:inline-block;background:var(--code);border-radius:999px;padding:.05rem .6rem;font-size:.78rem;margin:0 .25rem .25rem 0;color:var(--muted)}
+.src{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>ReAct: Synergizing Reasoning and Acting in Language Models</h1><div><span class="tag">react</span><span class="tag">reasoning</span><span class="tag">acting</span><span class="tag">llm-agents</span><span class="tag">chain-of-thought</span></div><p><strong>Abstraction:</strong> Interleaved reasoning traces and external actions improve LLM agent reliability</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>ReAct interleaves reasoning traces (chain-of-thought) with task-specific actions in a single LLM prompt, allowing each to reinforce the other</li>
+<li>On HotpotQA and Fever, ReAct overcomes hallucination and error propagation prevalent in chain-of-thought-only reasoning by querying Wikipedia mid-reasoning</li>
+<li>On interactive decision-making benchmarks ALFWorld and WebShop, outperforms imitation learning and RL methods by 34% and 10% absolute success rate respectively</li>
+<li>Requires only 1-2 in-context examples; generates human-interpretable, auditable task-solving trajectories</li>
+<li>Reasoning traces help the model induce, track, and update action plans and handle exceptions; actions allow grounding via external knowledge bases or environments</li>
+</ul>
+<p><strong>Connections:</strong> <a href="../entities/princeton.html">Princeton</a> · <a href="../entities/google.html">Google</a> · <a href="../concepts/ai-agents.html">AI Agents</a> · <a href="../concepts/chain-of-thought.html">Chain Of Thought</a> · <a href="../concepts/large-language-models.html">Large Language Models</a> · <a href="../concepts/reasoning.html">Reasoning</a></p>
+<p class="src">Source: <a href="https://arxiv.org/abs/2210.03629" rel="noopener">https://arxiv.org/abs/2210.03629</a></p></main></body></html>

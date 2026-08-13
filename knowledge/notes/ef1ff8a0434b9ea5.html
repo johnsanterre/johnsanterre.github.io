@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>How a Russian mathematician constructed a decision tree - by hand - to solve a medical problem</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#0f6b5c;--card:#ffffff;--line:#e3e1dc;--code:#eef2f0}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#4fc3ad;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 1rem}h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+ul{padding-left:1.2rem}li{margin:.25rem 0}
+.meta{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}
+.tag{display:inline-block;background:var(--code);border-radius:999px;padding:.05rem .6rem;font-size:.78rem;margin:0 .25rem .25rem 0;color:var(--muted)}
+.src{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>How a Russian mathematician constructed a decision tree - by hand - to solve a medical problem</h1><div><span class="tag">decision-trees</span><span class="tag">medical-ml</span><span class="tag">knowledge-elicitation</span><span class="tag">history-of-ml</span></div><p><strong>Abstraction:</strong> 1980s hand-built decision tree for kidney transplant rejection diagnosis</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>Edward Frenkel (mathematician, then student) built a decision tree in 1980s Soviet Russia by interrogating doctor Sergei Arutyunyan about kidney transplant rejection decisions</li>
+<li>Dataset: ~270 patients, ~40 parameters each; Frenkel set aside 30 as training set and used 240 for testing</li>
+<li>Method: replayed patient cases to the doctor and recorded question-order patterns to reverse-engineer his decision logic</li>
+<li>Resulting tree uses only 4 parameters (including peripheral resistance index) with at most 4 binary questions per path</li>
+<li>Achieved ~95% accuracy on the held-out 240 patients; Sergei always reached correct diagnosis within 3-4 questions</li>
+<li>Excerpt from Frenkel&#x27;s book &quot;Love and Math&quot;; illustrates knowledge elicitation as a precursor to modern ML</li>
+</ul>
+<p><strong>Connections:</strong> <a href="../entities/edward-frenkel.html">Edward Frenkel</a> · <a href="../concepts/decision-trees.html">Decision Trees</a> · <a href="../concepts/knowledge-elicitation.html">Knowledge Elicitation</a> · <a href="../concepts/machine-learning.html">Machine Learning</a></p>
+<p class="src">Source: <a href="http://fastml.com/how-a-russian-mathematician-constructed-a-decision-tree-by-hand-to-solve-a-medical-problem/" rel="noopener">http://fastml.com/how-a-russian-mathematician-constructed-a-decision-tree-by-hand-to-solve-a-medical-problem/</a></p></main></body></html>

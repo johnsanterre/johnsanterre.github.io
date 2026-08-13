@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NBEAM: How I Wrote an Ultra-Fast DNA Sequence Alignment Algorithm in JavaScript</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#0f6b5c;--card:#ffffff;--line:#e3e1dc;--code:#eef2f0}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#4fc3ad;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 1rem}h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+ul{padding-left:1.2rem}li{margin:.25rem 0}
+.meta{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}
+.tag{display:inline-block;background:var(--code);border-radius:999px;padding:.05rem .6rem;font-size:.78rem;margin:0 .25rem .25rem 0;color:var(--muted)}
+.src{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>NBEAM: How I Wrote an Ultra-Fast DNA Sequence Alignment Algorithm in JavaScript</h1><div><span class="tag">bioinformatics</span><span class="tag">sequence-alignment</span><span class="tag">javascript</span><span class="tag">bitwise</span><span class="tag">performance</span><span class="tag">dna</span></div><p><strong>Abstraction:</strong> Bitwise-optimized ungapped degenerate DNA sequence alignment in JavaScript</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>NBEAM (Nucleotide Bitwise Exhaustive Alignment Mapping) encodes 8 degenerate nucleotides per 32-bit integer using 4 bits each (A=1000, T=0100, G=0010, C=0001); degenerate symbols use bitwise OR (W = A|T = 1100)</li>
+<li>Nucleotide matching uses bitwise AND — any non-zero result is a match; allows comparing 8 positions per CPU cycle</li>
+<li>ArrayBuffers (Uint32Array) used for binary data; bit-shifting aggregates 8 match flags into a single byte for lookup in a 256-entry table</li>
+<li>Achieves 6-7x speedup over naive string comparison; 100M nucleotides at 25% match: 233ms vs 1249ms naive on 2.4GHz (2015)</li>
+<li>Time complexity remains O(n²) — speed gain is from constant-factor optimization via bit parallelism, not algorithmic improvement</li>
+<li>Full library NtSeq available on GitHub (keithwhor/NtSeq); MIT licensed; does not implement substitution matrices</li>
+</ul>
+<p><strong>Connections:</strong> <a href="../entities/google-v8.html">Google V8</a> · <a href="../concepts/bioinformatics.html">Bioinformatics</a> · <a href="../concepts/sequence-alignment.html">Sequence Alignment</a> · <a href="../concepts/bit-manipulation.html">Bit Manipulation</a></p>
+<p class="src">Source: <a href="https://medium.com/@keithwhor/nbeam-how-i-wrote-an-ultra-fast-dna-sequence-alignment-algorithm-in-javascript-c199e936da" rel="noopener">https://medium.com/@keithwhor/nbeam-how-i-wrote-an-ultra-fast-dna-sequence-alignment-algorithm-in-javascript-c199e936da</a></p></main></body></html>

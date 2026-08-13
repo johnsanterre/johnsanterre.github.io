@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MLOps: Continuous delivery and automation pipelines in machine learning</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#0f6b5c;--card:#ffffff;--line:#e3e1dc;--code:#eef2f0}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#4fc3ad;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 1rem}h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+ul{padding-left:1.2rem}li{margin:.25rem 0}
+.meta{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}
+.tag{display:inline-block;background:var(--code);border-radius:999px;padding:.05rem .6rem;font-size:.78rem;margin:0 .25rem .25rem 0;color:var(--muted)}
+.src{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>MLOps: Continuous delivery and automation pipelines in machine learning</h1><div><span class="tag">mlops</span><span class="tag">cicd</span><span class="tag">continuous-training</span><span class="tag">ml-pipelines</span><span class="tag">google-cloud</span><span class="tag">automation</span><span class="tag">devops</span></div><p><strong>Abstraction:</strong> Google Cloud reference guide for three MLOps maturity levels with CI/CD/CT pipelines</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>MLOps extends DevOps with Continuous Training (CT) — unique to ML — automating model retraining when data distributions shift (concept drift)</li>
+<li>Three maturity levels: Level 0 (fully manual), Level 1 (automated ML pipeline with CT), Level 2 (full CI/CD pipeline automation)</li>
+<li>Only a small fraction of an ML system is ML code; surrounding infrastructure (data validation, serving, monitoring) dominates</li>
+<li>Feature store is a key Level 1 component: centralizes feature definitions, prevents training-serving skew, and supports both batch and low-latency serving</li>
+<li>Metadata management tracks pipeline versions, execution times, artifact pointers, and evaluation metrics for reproducibility and rollback</li>
+<li>ML pipeline triggers include: on demand, scheduled, new data arrival, model performance degradation, and significant data distribution changes</li>
+</ul>
+<p><strong>Connections:</strong> <a href="../entities/google-cloud.html">Google Cloud</a> · <a href="../concepts/mlops.html">Mlops</a> · <a href="../concepts/continuous-delivery.html">Continuous Delivery</a> · <a href="../concepts/ml-pipelines.html">ML Pipelines</a> · <a href="../concepts/feature-store.html">Feature Store</a></p>
+<p class="src">Source: <a href="https://cloud.google.com/architecture/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning" rel="noopener">https://cloud.google.com/architecture/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning</a></p></main></body></html>

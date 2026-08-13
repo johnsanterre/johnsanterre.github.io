@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MCP doesn&#x27;t move data. It moves trust</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#0f6b5c;--card:#ffffff;--line:#e3e1dc;--code:#eef2f0}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#4fc3ad;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 1rem}h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+ul{padding-left:1.2rem}li{margin:.25rem 0}
+.meta{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}
+.tag{display:inline-block;background:var(--code);border-radius:999px;padding:.05rem .6rem;font-size:.78rem;margin:0 .25rem .25rem 0;color:var(--muted)}
+.src{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>MCP doesn&#x27;t move data. It moves trust</h1><div><span class="tag">model-context-protocol</span><span class="tag">enterprise-ai</span><span class="tag">governance</span><span class="tag">control-plane</span><span class="tag">trust</span><span class="tag">autonomy</span></div><p><strong>Abstraction:</strong> MCP as AI governance and intent-control layer over APIs</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>MCP uses JSON-RPC 2.0; the model is a client sending structured requests — the MCP server validates, applies policy, executes, and logs; credentials never touch the model</li>
+<li>MCP is a control layer, not a transport layer: it defines what AI can do, under what rules, with full auditability; APIs remain the mechanism for actual execution</li>
+<li>Key advantages: governance (every tool call logged and revocable), safety (no direct production system access), interoperability (any MCP-speaking model uses approved tools consistently)</li>
+<li>MCP enables tool discovery — models can query the server for available capabilities, enabling safer self-aware enterprise tool use</li>
+<li>Without APIs, MCP can only recommend; without MCP, APIs are open highways with no traffic rules — autonomy requires both layers</li>
+<li>Risks include malicious connectors, misconfigured policies, and audit fatigue; security teams must extend oversight to connectors, not just models</li>
+</ul>
+<p><strong>Connections:</strong> <a href="../concepts/model-context-protocol.html">Model Context Protocol</a> · <a href="../concepts/ai-agents.html">AI Agents</a> · <a href="../concepts/ai-safety.html">AI Safety</a> · <a href="../entities/anthropic.html">Anthropic</a> · <a href="../entities/openai.html">Openai</a></p>
+<p class="src">Source: <a href="https://www.cio.com/article/4089407/mcp-doesnt-move-data-it-moves-trust.html" rel="noopener">https://www.cio.com/article/4089407/mcp-doesnt-move-data-it-moves-trust.html</a></p></main></body></html>

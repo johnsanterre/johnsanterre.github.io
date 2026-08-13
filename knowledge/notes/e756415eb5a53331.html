@@ -1,0 +1,29 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>An Introduction to Building Custom Reinforcement Learning Environments Using OpenAI Gym</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#0f6b5c;--card:#ffffff;--line:#e3e1dc;--code:#eef2f0}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#4fc3ad;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 1rem}h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+ul{padding-left:1.2rem}li{margin:.25rem 0}
+.meta{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}
+.tag{display:inline-block;background:var(--code);border-radius:999px;padding:.05rem .6rem;font-size:.78rem;margin:0 .25rem .25rem 0;color:var(--muted)}
+.src{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>An Introduction to Building Custom Reinforcement Learning Environments Using OpenAI Gym</h1><div><span class="tag">reinforcement-learning</span><span class="tag">openai-gym</span><span class="tag">tutorial</span><span class="tag">python</span><span class="tag">stable-baselines3</span><span class="tag">environments</span></div><p><strong>Abstraction:</strong> Tutorial for building custom OpenAI Gym RL environment</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>Beginner tutorial building a custom OpenAI Gym environment: a 6x6 grid game where a blue agent moves up/down/left/right to reach a green (win, +1) square while avoiding red (lose, −1); every non-terminal move gives −0.01 to encourage short paths.</li>
+<li>RL fundamentals: environment + agent, with state, actions, and rewards; reward design matters (a badly chosen reward could make the agent blow itself up).</li>
+<li>Gym requires numeric state (grid flattened to a 36-element row via matrix flattening); observation_space as spaces.Box(0,3,[36]) and action_space as spaces.Discrete(4).</li>
+<li>A Gym environment class subclasses Env and implements four functions: __init__, step(action) → (state, reward, done, info), reset(), and render().</li>
+<li>Uses stable_baselines3 to train models without writing algorithms; check_env validates Gym compatibility. (Author Paul Swenson, 2022; code on GitHub.)</li>
+</ul>
+<p><strong>Connections:</strong> <a href="../entities/openai-gym.html">Openai Gym</a> · <a href="../entities/stable-baselines3.html">Stable Baselines3</a> · <a href="../concepts/reinforcement-learning.html">Reinforcement Learning</a> · <a href="../concepts/rl-environments.html">RL Environments</a> · <a href="../concepts/markov-decision-process.html">Markov Decision Process</a></p>
+<p class="src">Source: <a href="https://medium.com/@paulswenson2/an-introduction-to-building-custom-reinforcement-learning-environment-using-openai-gym-d8a5e7cf07ea" rel="noopener">https://medium.com/@paulswenson2/an-introduction-to-building-custom-reinforcement-learning-environment-using-openai-gym-d8a5e7cf07ea</a></p></main></body></html>

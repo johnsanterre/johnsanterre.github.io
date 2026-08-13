@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>VIKOR method - Wikipedia</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#0f6b5c;--card:#ffffff;--line:#e3e1dc;--code:#eef2f0}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#4fc3ad;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 1rem}h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+ul{padding-left:1.2rem}li{margin:.25rem 0}
+.meta{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}
+.tag{display:inline-block;background:var(--code);border-radius:999px;padding:.05rem .6rem;font-size:.78rem;margin:0 .25rem .25rem 0;color:var(--muted)}
+.src{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>VIKOR method - Wikipedia</h1><div><span class="tag">multi-criteria-decision-making</span><span class="tag">operations-research</span><span class="tag">optimization</span></div><p><strong>Abstraction:</strong> Multi-criteria compromise ranking method minimizing group utility and individual regret</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>Developed by Serafim Opricović (1979 dissertation, 1980 publication); name is Serbian acronym for &quot;Multicriteria Optimization and Compromise Solution&quot;</li>
+<li>Computes S (weighted normalized Manhattan distance to ideal) and R (weighted normalized Chebyshev distance) for each alternative</li>
+<li>Final score Q = v<em>(S-S</em>)/(S^-S<em>) + (1-v)</em>(R-R<em>)/(R^-R</em>); v weights group utility vs individual regret; v=0.5 for consensus</li>
+<li>Compromise solution requires two conditions: acceptable advantage gap Q(A2)-Q(A1) &gt;= 1/(J-1), and stability (A1 best in S or R)</li>
+<li>Compared to TOPSIS, ELECTRE, PROMETHEE; Fuzzy VIKOR extension handles imprecise criteria using triangular fuzzy numbers</li>
+<li>Most cited MCDM paper in Economics (Science Watch, April 2009) was the 2004 Opricović-Tzeng VIKOR vs TOPSIS comparison</li>
+</ul>
+<p><strong>Connections:</strong> <a href="../concepts/multi-criteria-decision-making.html">Multi Criteria Decision Making</a> · <a href="../concepts/compromise-ranking.html">Compromise Ranking</a> · <a href="../concepts/vikor.html">Vikor</a></p>
+<p class="src">Source: <a href="http://en.wikipedia.org/wiki/VIKOR_method" rel="noopener">http://en.wikipedia.org/wiki/VIKOR_method</a></p></main></body></html>

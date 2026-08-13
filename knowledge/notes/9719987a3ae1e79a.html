@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Finding Clandestine Graves: Using Geospatial Analysis to Search for Missing Persons in Baja California, Mexico</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#0f6b5c;--card:#ffffff;--line:#e3e1dc;--code:#eef2f0}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#4fc3ad;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 1rem}h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+ul{padding-left:1.2rem}li{margin:.25rem 0}
+.meta{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}
+.tag{display:inline-block;background:var(--code);border-radius:999px;padding:.05rem .6rem;font-size:.78rem;margin:0 .25rem .25rem 0;color:var(--muted)}
+.src{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>Finding Clandestine Graves: Using Geospatial Analysis to Search for Missing Persons in Baja California, Mexico</h1><div><span class="tag">geospatial-analysis</span><span class="tag">machine-learning</span><span class="tag">human-rights</span><span class="tag">remote-sensing</span><span class="tag">missing-persons</span></div><p><strong>Abstraction:</strong> Three-method geospatial ML framework to prioritize search areas for clandestine graves</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>Over 100,000 people are missing in Mexico; 2,000+ clandestine graves recorded since 2007; Baja California has 12,000 disappearances since 2007</li>
+<li>Study uses 52 georeferenced grave sites (from freedom-of-information requests) as training data for three combined spatial methods</li>
+<li>Point pattern analysis (ANN + Ripley&#x27;s K) found graves cluster significantly: observed mean distance 7 km vs. expected 16 km; new graves likely 18-28 km from known sites</li>
+<li>Accessibility + viewshed analysis defines &quot;clandestine space&quot; as high-accessibility/low-visibility areas; 41 of 52 known graves fall in this zone, covering 32% of Baja California territory</li>
+<li>Hyperspectral analysis uses Sentinel-2A/B satellite imagery to compute a Nitrogen Accumulation Index (NAI) detecting accelerated plant chlorophyll growth from decomposing remains</li>
+<li>Combining all three methods reduces the potential search zone by an additional 10%; results integrated into a Google Earth Engine visualization app</li>
+</ul>
+<p><strong>Connections:</strong> <a href="../entities/amnesty-international.html">Amnesty International</a> · <a href="../entities/sentinel-2.html">Sentinel 2</a> · <a href="../concepts/geospatial-analysis.html">Geospatial Analysis</a> · <a href="../concepts/machine-learning.html">Machine Learning</a> · <a href="../concepts/remote-sensing.html">Remote Sensing</a></p>
+<p class="src">Source: <a href="https://citizenevidence.org/2022/06/30/finding-clandestine-graves-using-geospatial-analysis-to-search-for-missing-persons-in-baja-california-mexico/" rel="noopener">https://citizenevidence.org/2022/06/30/finding-clandestine-graves-using-geospatial-analysis-to-search-for-missing-persons-in-baja-california-mexico/</a></p></main></body></html>

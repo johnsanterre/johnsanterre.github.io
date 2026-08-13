@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Statistical Natural Language Processing in Python</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#0f6b5c;--card:#ffffff;--line:#e3e1dc;--code:#eef2f0}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#4fc3ad;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 1rem}h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+ul{padding-left:1.2rem}li{margin:.25rem 0}
+.meta{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}
+.tag{display:inline-block;background:var(--code);border-radius:999px;padding:.05rem .6rem;font-size:.78rem;margin:0 .25rem .25rem 0;color:var(--muted)}
+.src{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>Statistical Natural Language Processing in Python</h1><div><span class="tag">nlp</span><span class="tag">python</span><span class="tag">statistical-language-models</span><span class="tag">spelling-correction</span></div><p><strong>Abstraction:</strong> Peter Norvig&#x27;s Python NLP notebook covering probabilistic language models and tasks</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>Covers bag-of-words model, unigram and bigram language models using Python Counter; 1M-word corpus from Project Gutenberg; Zipf&#x27;s Law demonstrated on log-log word frequency plot</li>
+<li>Spelling corrector uses edit distance (0, 1, 2 edits: deletions, transpositions, replacements, insertions) with ~24K candidates at edit distance 2; selects correction maximizing unigram count</li>
+<li>Word segmentation via dynamic programming with memoization: splits unseparated text by maximizing Pwords over all possible first-word / rest splits; segment2 uses bigram model and outperforms unigram version</li>
+<li>Smoothing techniques covered: Laplace additive smoothing, Good-Turing smoothing (re-estimates zero-count probabilities from one-count word length distribution), and interpolation smoothing</li>
+<li>Kneser-Ney smoothing concept introduced: words appearing in more diverse bigram contexts get higher probability as second word in unseen bigrams</li>
+<li>Caesar/rotation cipher decoding via exhaustive search over 26 candidates, combined with word segmentation to handle space-stripped ciphertext</li>
+</ul>
+<p><strong>Connections:</strong> <a href="../entities/peter-norvig.html">Peter Norvig</a> · <a href="../concepts/natural-language-processing.html">Natural Language Processing</a> · <a href="../concepts/statistical-language-models.html">Statistical Language Models</a> · <a href="../concepts/spelling-correction.html">Spelling Correction</a></p>
+<p class="src">Source: <a href="http://nbviewer.ipython.org/url/norvig.com/ipython/How%20to%20Do%20Things%20with%20Words.ipynb" rel="noopener">http://nbviewer.ipython.org/url/norvig.com/ipython/How%20to%20Do%20Things%20with%20Words.ipynb</a></p></main></body></html>

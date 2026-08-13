@@ -1,0 +1,29 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Genetic Programming: Evolution of Mona Lisa</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#0f6b5c;--card:#ffffff;--line:#e3e1dc;--code:#eef2f0}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#4fc3ad;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 1rem}h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+ul{padding-left:1.2rem}li{margin:.25rem 0}
+.meta{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}
+.tag{display:inline-block;background:var(--code);border-radius:999px;padding:.05rem .6rem;font-size:.78rem;margin:0 .25rem .25rem 0;color:var(--muted)}
+.src{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>Genetic Programming: Evolution of Mona Lisa</h1><div><span class="tag">genetic-programming</span><span class="tag">evolutionary-algorithms</span><span class="tag">computational-art</span><span class="tag">optimization</span></div><p><strong>Abstraction:</strong> Evolving Mona Lisa replica using 50 semi-transparent polygons</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>Program maintains a DNA string encoding polygon parameters; each generation copies and slightly mutates the DNA, renders it to canvas, and keeps the mutation only if it reduces pixel-level distance to the source image</li>
+<li>Challenge: approximate the Mona Lisa using only 50 semi-transparent polygons</li>
+<li>Selection criterion is purely fitness-based (closeness to target image pixel comparison); no crossover, a simple (1+1) evolution strategy</li>
+<li>Images at various generation counts show progressive convergence from noise toward recognizable portrait features</li>
+<li>Demonstrates that hill-climbing mutation with a simple fitness function can produce visually compelling results over many generations</li>
+</ul>
+<p><strong>Connections:</strong> <a href="../concepts/genetic-programming.html">Genetic Programming</a> · <a href="../concepts/evolutionary-algorithms.html">Evolutionary Algorithms</a> · <a href="../concepts/computational-art.html">Computational Art</a></p>
+<p class="src">Source: <a href="http://rogeralsing.com/2008/12/07/genetic-programming-evolution-of-mona-lisa/?hn" rel="noopener">http://rogeralsing.com/2008/12/07/genetic-programming-evolution-of-mona-lisa/?hn</a></p></main></body></html>

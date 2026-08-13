@@ -1,0 +1,229 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Large Language Models</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#0f6b5c;--card:#ffffff;--line:#e3e1dc;--code:#eef2f0}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#4fc3ad;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 1rem}h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+ul{padding-left:1.2rem}li{margin:.25rem 0}
+.meta{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}
+.tag{display:inline-block;background:var(--code);border-radius:999px;padding:.05rem .6rem;font-size:.78rem;margin:0 .25rem .25rem 0;color:var(--muted)}
+.src{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>Large Language Models</h1><p><em>concepts · 206 notes linked</em></p>
+<p><strong>Related:</strong> <a href="../entities/openai.html">Openai</a> · <a href="../entities/chatgpt.html">Chatgpt</a> · <a href="../concepts/ai-agents.html">AI Agents</a> · <a href="../entities/google.html">Google</a> · <a href="../concepts/prompt-engineering.html">Prompt Engineering</a> · <a href="../concepts/ai-safety.html">AI Safety</a> · <a href="../entities/anthropic.html">Anthropic</a> · <a href="../concepts/agentic-coding.html">Agentic Coding</a></p>
+<h2>Notes</h2>
+<ul>
+<li><a href="../notes/8136dc96602c7a06.html">$450 and 19 hours is all it takes to rival OpenAI&#x27;s o1-preview</a> — UC Berkeley Sky-T1-32B open-source reasoning model built for $450 in 19 hours</li>
+<li><a href="../notes/3f05f7182812f3b8.html">&#x27;Chemistry will no longer be an exclusive club&#x27;: how AI is changing Omar Yaghi&#x27;s work</a> — AI accelerating metal-organic framework discovery for climate applications</li>
+<li><a href="../notes/a89850eff4637d0d.html">&#x27;If journalism is going up in smoke, I might as well get high off the fumes&#x27;: confessions of a chatbot helper</a> — Human annotators writing gold-standard training data for LLMs</li>
+<li><a href="../notes/88000cd123ab672b.html">&#x27;The illusion of thinking&#x27;: Apple research finds AI models collapse and give up with hard puzzles</a> — Apple study showing large reasoning models collapse on hard logic puzzles</li>
+<li><a href="../notes/7322a92b443e845e.html">10 things I learned from burning myself out with AI coding agents</a> — Practical limits of AI coding agents after 50 real projects</li>
+<li><a href="../notes/05cd6d336002c389.html">27 AI models were ranked by the public and ChatGPT came 8th — these are the models that beat it</a> — Prolific&#x27;s Humaine leaderboard ranks Gemini first in public user experience study</li>
+<li><a href="../notes/eee32712a0bb94d8.html">8 Google Employees Invented Modern AI. Here&#x27;s the Inside Story</a> — Origin story of &quot;Attention Is All You Need&quot; transformer paper at Google</li>
+<li><a href="../notes/47df69ea33f0ec0b.html">A Coder Considers the Waning Days of the Craft</a> — Programmer&#x27;s first-person reflection on GPT-4 displacing coding craft</li>
+<li><a href="../notes/3b24d9da0d2f5815.html">A Complete Breakdown of the Claude Mythos 1 Leak and Features</a> — Leaked Claude Mythos 1 capabilities including 69% Exploit Bench score</li>
+<li><a href="../notes/499ac27e1a56d4f4.html">A Note From Ray Kurzweil on the Recent Call to Pause Work on AI More Powerful Than GPT-4</a> — Ray Kurzweil opposing FLI&#x27;s AI pause letter citing vagueness and coordination failure</li>
+<li><a href="../notes/cc4f6d6562925364.html">A Wave Of Billion-Dollar Language AI Startups Is Coming</a> — 2022 landscape survey of language AI startup ecosystem categories</li>
+<li><a href="../notes/c483099225e6cbae.html">A former Google researcher behind a seminal AI paper describes how the company lost a top chatbot visionary</a> — Google&#x27;s reputational caution caused it to miss chatbot opportunity</li>
+<li><a href="../notes/883423c876e34929.html">AI #174: You&#x27;re It</a> — Weekly AI roundup, Claude Tag, medical scanners, agent security</li>
+<li><a href="../notes/2c0e999aab758876.html">AI #175: The Fable Continues</a> — Weekly AI roundup covering Fable&#x27;s return aftermath</li>
+<li><a href="../notes/ca2398afa0b77296.html">AI 2027</a> — HN debate on AI 2027 scenario: AGI timelines, LLM limits, alignment risks</li>
+<li><a href="../notes/3e547d6c6511a822.html">AI Index</a> — Stanford HAI annual data-driven report tracking global AI progress and impact</li>
+<li><a href="../notes/8d55b0ee7e63b692.html">AI Is a Waste of Time</a> — AI tools as entertainment and time-wasting before productivity gains materialize</li>
+<li><a href="../notes/10fd9aa973b991b2.html">AI Sentience, Agency and Catastrophic Risk | TWIML - The Voice of Machine Learning &amp; AI</a> — Yoshua Bengio discusses AI catastrophic risk and governance</li>
+<li><a href="../notes/b7d64c0d05e7c57f.html">AI critic Gary Marcus: Meta&#x27;s LeCun is finally coming around to the things I said years ago</a> — Gary Marcus argues deep learning alone cannot achieve general intelligence</li>
+<li><a href="../notes/a71297d4c54e9056.html">AI fears overblown? Theoretical physicist calls chatbots &#x27;glorified tape recorders&#x27; | CNN Business</a> — Michio Kaku argues chatbots are limited and quantum computing is the true next stage</li>
+<li><a href="../notes/c4e414d91b43d264.html">AI hype is built on high test scores. Those tests are flawed.</a> — LLM benchmark scores are brittle, anthropomorphized, and often measure memorization not capability</li>
+<li><a href="../notes/d357d521f3987d98.html">AI is already linked to layoffs in the industry that created it | CNN Business</a> — AI driving tech sector layoffs and workforce skill reshuffling</li>
+<li><a href="../notes/15cd85fdd0a91f0d.html">AI pair programming in your terminal</a> — Terminal-based AI coding assistant with codebase map and git integration</li>
+<li><a href="../notes/870d12cbac7b44b5.html">AMD Researchers Introduce Agent Laboratory: An Autonomous LLM-based Framework Capable of Completing the Entire Research Process</a> — Autonomous LLM pipeline completing literature review, experiments, and paper writing</li>
+<li><a href="../notes/2b5d11ab142b6eaa.html">Agent-in-the-Loop: A Data Flywheel for Continuous Improvement in LLM-based Customer Support</a> — Live human-feedback flywheel continuously improving LLM customer support system</li>
+<li><a href="../notes/ab5f5a399cadbabb.html">Amazon warns employees not to share confidential information with ChatGPT after seeing cases where its answer &#x27;closely matches existing material&#x27; from inside the company</a> — Amazon restricts employee ChatGPT use over corporate data leakage risk</li>
+<li><a href="../notes/60014eea06952bfd.html">Artificial General Intelligence Is Already Here | NOEMA</a> — Argument that current frontier LLMs have already achieved meaningful artificial general intelligence</li>
+<li><a href="../notes/04e89e448cf9087d.html">Artificial Intelligence — The Revolution Hasn&#x27;t Happened Yet</a> — Michael Jordan argues AI hype obscures the real ML/data-engineering challenge</li>
+<li><a href="../notes/cfa651b7b075db2e.html">Beyond Code Autocomplete</a> — AMD&#x27;s holistic AI integration across the full software development lifecycle</li>
+<li><a href="../notes/24bb92b7ab430c9a.html">Billionaires including Eric Schmidt plow $300 million into a non-profit that is France&#x27;s latest push to catch up in AI | Fortune</a> — France&#x27;s €300M open-source AI research nonprofit kyutai launched</li>
+<li><a href="../notes/09e94007a221a7d7.html">Black Hat 2023 Review: LLMs Everywhere | DNSFilter</a> — Black Hat 2023 LLM applications in security; best use leverages embeddings not chat interfaces</li>
+<li><a href="../notes/1eba12a4a8fa384c.html">Building a C compiler with a team of parallel Claudes</a> — 16 parallel Claude agents autonomously build Rust C compiler</li>
+<li><a href="../notes/80ee6ceffab21037.html">Building a Knowledge Graph for Business: The Semantic Backbone of Big AI</a> — Building enterprise knowledge graphs with ontologies and LLM integration</li>
+<li><a href="../notes/550e6465e982a0db.html">Can 1B LLM Surpass 405B LLM? Optimizing Computation for Small LLMs to Outperform Larger Models</a> — Test-time scaling lets small LLMs outperform much larger models</li>
+<li><a href="../notes/7543c8972003f3ea.html">Can AI really be protected from text-based attacks? | TechCrunch</a> — LLM prompt injection attacks are low-barrier and currently unpreventable</li>
+<li><a href="../notes/41aa6c16193fefd9.html">ChatGPT Gets Its &quot;Wolfram Superpowers&quot;!</a> — ChatGPT plugin connecting to Wolfram Alpha and Language</li>
+<li><a href="../notes/c815dbdcee950118.html">ChatGPT Makes OK Clinical Decisions—Usually</a> — Study finds ChatGPT 72% accurate across clinical decision tasks using fictional vignettes</li>
+<li><a href="../notes/e3ec10fc57b8f37f.html">ChatGPT and generative AI are booming, but the costs can be extraordinary</a> — Compute economics of training and serving large language models</li>
+<li><a href="../notes/fcdc9ba54df762d3.html">ChatGPT is &#x27;not particularly innovative,&#x27; and &#x27;nothing revolutionary&#x27;, says Meta&#x27;s chief AI scientist</a> — Yann LeCun argues ChatGPT is solid engineering not scientific breakthrough</li>
+<li><a href="../notes/28c915b6a873fb46.html">ChatGPT is not all you need. A State of the Art Review of large Generative AI models</a> — Taxonomy of 2022-2023 generative AI models across all major modalities</li>
+<li><a href="../notes/ac5b27f8cbfc4947.html">ChatGPT-4 Receives &#x27;B&#x27; on Scott Aaronson&#x27;s Quantum Information Science Final</a> — GPT-4 scores B on honors quantum information science exam</li>
+<li><a href="../notes/bb4624dbaa554bb8.html">Chegg&#x27;s stock plunges on fears of competition from ChatGPT</a> — ChatGPT disrupts edtech as Chegg stock crashes 48% in one day</li>
+<li><a href="../notes/03077b9c230df1d5.html">Claude Code Ralph Plugin Breaks LLM Performance (And a Simple Bash Loop Wins)</a> — Ralph methodology critique — stateless bash loops outperform official Claude Code Ralph plugin</li>
+<li><a href="../notes/fa46ced9ba833efe.html">Claude Sonnet 5 Is Not Frontier But Has Its Uses</a> — Sonnet 5 system card review, cheaper faster non-frontier model</li>
+<li><a href="../notes/f1584024fd99c557.html">Claude for Life Sciences</a> — Anthropic launches Claude specialization for life sciences research workflows</li>
+<li><a href="../notes/8e3aac8ac98390ba.html">Cohere Command Models: AI-Powered Solutions for Enterprise</a> — Cohere Command family of enterprise LLMs for agentic and RAG workflows</li>
+<li><a href="../notes/b811721b93c20939.html">Cost calculations for LLM providers</a> — Comparative USD-per-million-token pricing table with LMSYS ELO scores</li>
+<li><a href="../notes/5865cca40775128a.html">DS-STAR: A state-of-the-art versatile data science agent</a> — Iterative plan-verify data science agent handling heterogeneous file formats</li>
+<li><a href="../notes/fdd4f07268b9f995.html">DSPy</a> — Python framework replacing prompt engineering with optimizable typed signatures</li>
+<li><a href="../notes/a7997ab19f17b128.html">Deconstructing Geoffrey Hinton&#x27;s weakest argument</a> — Gary Marcus rebuttal of Hinton&#x27;s defense of LLM understanding and hallucinations</li>
+<li><a href="../notes/44e6853bdeaab2d9.html">DeepMind Paper Provides a Mathematically Precise Overview of Transformer Architectures and Algorithms | Synced</a> — DeepMind formal pseudocode reference for all major transformer architectures</li>
+<li><a href="../notes/4132d763a538d0f2.html">DeepSeek - A Wake-Up Call For US Higher Education</a> — DeepSeek&#x27;s rise reflects China&#x27;s STEM education investment advantage</li>
+<li><a href="../notes/365d9ebcbf5f22a7.html">Distilling step-by-step: Outperforming larger language models with less training</a> — Rationale-based distillation trains small models to outperform 540B LLMs with far less data</li>
+<li><a href="../notes/5873555e914b8a98.html">Does Prompt Caching Make RAG Obsolete?</a> — Prompt caching economics vs RAG for LLM context management</li>
+<li><a href="../notes/04e4ddaaa2577ba0.html">Early Evidence of Vibe-Proving with Consumer LLMs: A Case Study on Spectral Region Characterization with ChatGPT-5.2 (Thinking)</a> — LLM-assisted iterative mathematical proof via generate-referee-repair pipeline</li>
+<li><a href="../notes/4473fde2a4db1ff8.html">Elicit: AI for scientific research</a> — AI-powered academic literature search and systematic review tool</li>
+<li><a href="../notes/8dd6701bb3ce80a9.html">Employment for computer programmers in the U.S. has plummeted to its lowest level since 1980—years before the internet existed | Fortune</a> — AI correlates with historic drop in US programming jobs</li>
+<li><a href="../notes/f8ab72f63e7b3c91.html">End of an Era at Google DeepMind Hints at New Future for AI</a> — Last &quot;Attention Is All You Need&quot; author departs Google, ending transformer paper era</li>
+<li><a href="../notes/643c376971ff4539.html">Even experts are surprised by AI&#x27;s latest &#x27;vibe-mathing&#x27; advance</a> — Amateur uses GPT-5.4 Pro to solve 60-year-old Erdős primitive sets problem</li>
+<li><a href="../notes/d3c17daa88c33a7a.html">Fine-tuning ChatGPT: Surpassing GPT-4 Summarization Performance — 63% Cost Reduction and 11x Speed Enhancement using Synthetic Data and LangSmith</a> — Fine-tuned ChatGPT beats GPT-4 summarization at 63% lower cost and 11x faster using chain-of-density synthetic data</li>
+<li><a href="../notes/7a5dcdd21e5e5718.html">Fine-tuning · Hugging Face</a> — Fine-tuning pretrained LLMs with Hugging Face Trainer API</li>
+<li><a href="../notes/2394b12a0d34704c.html">For Some Autistic People, ChatGPT Is a Lifeline</a> — Autistic people using ChatGPT for social scripting and communication support</li>
+<li><a href="../notes/ce57d96eb612ed76.html">GLM-5.2 Is The New Best Open Model</a> — GLM-5.2 open model capabilities review, benchmarks</li>
+<li><a href="../notes/3d69c741c4de56d8.html">Gary Sieling - Principal Engineer</a> — Personal reflections on AI&#x27;s societal impact through complementary goods theory</li>
+<li><a href="../notes/57a2056676c1ccc2.html">Gemma: Introducing new state-of-the-art open models</a> — Google DeepMind&#x27;s Gemma open-weight model family launch announcement</li>
+<li><a href="../notes/54ec4ec4b142cdcb.html">General Catalyst, Andreessen Horowitz bet on large language models for health care</a> — VC firms co-lead $50M seed round for LLM healthcare startup</li>
+<li><a href="../notes/ccd4d34e7bd2e8ff.html">Generative AI may be creating more work than it saves</a> — Wharton professor argues LLM backends create more labor than they save</li>
+<li><a href="../notes/fa569c315d27f17a.html">Generative AI needs tools to avoid copyright infringement, Databricks&#x27; Naveen Rao says — or more companies could meet Napster&#x27;s fate</a> — Generative AI copyright risk parallels Napster; open-source training on proprietary data as solution</li>
+<li><a href="../notes/961383f5eab43498.html">Generative AI: A Creative New World</a> — Sequoia&#x27;s 2022 thesis on generative AI market opportunity and waves</li>
+<li><a href="../notes/c1f3bff24d3c6edd.html">GitHub - HandsOnLLM/Hands-On-Large-Language-Models: Official code repo for the O&#x27;Reilly Book - &quot;Hands-On Large Language Models</a> — Official code repo for illustrated O&#x27;Reilly LLM book</li>
+<li><a href="../notes/c97dcd8671728dd2.html">GitHub - badaramoni/wave-field-llm: Wave Field AI — a efficient attention architecture for language models</a> — O(N log N) FFT-based attention replacing quadratic dot-product attention</li>
+<li><a href="../notes/7a25810efdf76716.html">GitHub - darrenburns/elia: A snappy, keyboard-centric terminal user interface for interacting with large language models.</a> — Keyboard-focused terminal app for chatting with multiple LLM providers</li>
+<li><a href="../notes/d860a11ebc371f0c.html">GitHub - garg-ankush/scipe: SCIPE is a powerful tool for evaluating and diagnosing LLM (Large Language Model) graphs or chains.</a> — Python tool for root-cause diagnosis of failing LLM chain nodes</li>
+<li><a href="../notes/9b3f92ad94a69ac6.html">GitHub - tatsu-lab/stanford_alpaca: Code and documentation to train Stanford&#x27;s Alpaca models, and generate the data.</a> — Instruction-following LLaMA model fine-tuned via self-instruct data</li>
+<li><a href="../notes/6daf7191bf33f982.html">Github Copilot and ChatGPT alternatives</a> — Survey of AI coding assistants and privacy-safe ChatGPT alternatives in 2023</li>
+<li><a href="../notes/eabdece1570de607.html">Godfather of Artificial Intelligence&quot; Geoffrey Hinton on the promise, risks of advanced AI</a> — Geoffrey Hinton 60 Minutes interview warning of AI existential and societal risks</li>
+<li><a href="../notes/4811d44fada1ce01.html">Google AI Introduces DS STAR: A Multi Agent Data Science System That Plans, Codes And Verifies End To End Analytics</a> — Multi-agent system converting natural language to Python for heterogeneous data analytics</li>
+<li><a href="../notes/9450415f19141267.html">Google Publishes Scaling Principles for Agentic Architectures</a> — Predictive regression framework for selecting optimal multi-agent coordination strategies</li>
+<li><a href="../notes/b4dfa192f3289236.html">Google Replaces BERT Self-Attention with Fourier Transform: 92% Accuracy, 7 Times Faster on GPUs</a> — FNet replaces transformer self-attention with Fourier Transform for faster training</li>
+<li><a href="../notes/0c93fd9f84432963.html">Google Researchers Can Create an AI That Thinks a Lot Like You After Just a Two-Hour Interview</a> — Stanford/Google study simulates 1,000 people as LLM agents from interview transcripts</li>
+<li><a href="../notes/0580e986e68ae6af.html">Google publishes document on more notable ranking systems</a> — Google&#x27;s official guide listing active and retired Search ranking systems</li>
+<li><a href="../notes/dd142343aa93e4f4.html">Google takes aim at Duolingo with new English tutoring tool | TechCrunch</a> — Google Search adds AI-powered English speaking practice feature for language learners</li>
+<li><a href="../notes/25943ce9f2bc2810.html">Google&#x27;s medical AI chatbot is already being tested in hospitals</a> — Google Med-PaLM 2 hospital pilot tests medical LLM accuracy and safety</li>
+<li><a href="../notes/329567b71841352e.html">Gradient Descent Models Are Kernel Machines (Deep Learning)</a> — Deep networks trained by gradient descent are kernel machines</li>
+<li><a href="../notes/40d35392edaace1a.html">Harvard &#x27;21 grad says Gen Z just uses A.I. to do their homework</a> — Gen Z uses ChatGPT for homework completion rather than genuine learning</li>
+<li><a href="../notes/694e373ff72a0e85.html">Here are the top 10 generative-AI startups founded by ex-Googlers that are taking on ChatGPT</a> — 2023 roundup of ex-Google generative-AI startups</li>
+<li><a href="../notes/a776deedb3b154c6.html">How AI can keep disappearing languages alive</a> — Training AI on low-resource African languages to preserve cultural diversity</li>
+<li><a href="../notes/a7c1fbd3baf69f92.html">How ChatGPT is changing the way cybersecurity practitioners look at the potential of AI</a> — ChatGPT dual-use cybersecurity capabilities surprise skeptical security researchers</li>
+<li><a href="../notes/e5b153cbc0fe5d78.html">How Claude Helps Me Manage My Calendar (but ChatGPT Stumbles!)</a> — Claude processes ICS calendar files reliably where ChatGPT fails context limits</li>
+<li><a href="../notes/9aeff8b5b2667e84.html">How I Automate Grading With LangChain And GPT-4</a> — LangChain GPT-4 pipeline automating bootcamp homework grading</li>
+<li><a href="../notes/9a1a1e526711f341.html">How I use Google&#x27;s new Antigravity IDE without hitting rate limits</a> — Managing Google Antigravity IDE quota via model and mode selection</li>
+<li><a href="../notes/54874ea1adcfbcbb.html">How IBM&#x27;s Watson Went From the Future of Health Care to Sold Off for Parts</a> — IBM Watson Health $5B AI healthcare failure sold for parts</li>
+<li><a href="../notes/254ffd00d3e73d22.html">How Much of the World Is It Possible to Model?</a> — Limits and nature of mathematical models from climate to LLMs</li>
+<li><a href="../notes/e96a749497ebebe7.html">How Smart is ChatGPT?</a> — GPT-4 vs GPT-3.5 exam-percentile benchmark comparison</li>
+<li><a href="../notes/902acee3a675b2d0.html">How the Foundation Model Transparency Index Distorts Transparency</a> — EleutherAI critique of Stanford FMTI biasing transparency toward corporate services</li>
+<li><a href="../notes/dcdaa03d7ce9782a.html">How to Build An AI Agent with Function Calling and GPT-5 | Towards Data Science</a> — Building a web-search AI agent via GPT-5 function calling</li>
+<li><a href="../notes/2ad7f9efe39a2093.html">How to Design a Production-Grade Multi-Agent Communication System Using LangGraph Structured Message Bus, ACP Logging, and Persistent Shared State Architecture</a> — LangGraph tutorial building ACP message bus with Planner-Executor-Validator agents</li>
+<li><a href="../notes/8688a4c832b1b52a.html">How to Use RLMs in Deep Agents</a> — Recursive language models combat context rot via programmatic subagent orchestration</li>
+<li><a href="../notes/abeaaba0a9e354da.html">Hugging Face Introduces StackLLaMA: A 7B Parameter Language Model Based on LLaMA and Trained on Data from Stack Exchange Using RLHF</a> — Hugging Face RLHF fine-tuning of LLaMA 7B on Stack Exchange Q&amp;A data</li>
+<li><a href="../notes/6b0c1dfa0188442b.html">Hugging Face Just Released SmolAgents: A Smol Library that Enables to Run Powerful AI Agents in a Few Lines of Code</a> — Lightweight Hugging Face library for building AI agents in three lines</li>
+<li><a href="../notes/13e859789f427135.html">Hugging Face clones OpenAI&#x27;s Deep Research in 24 hours</a> — Open-source research agent replicates OpenAI Deep Research in one day</li>
+<li><a href="../notes/6cf231c50e92a7a4.html">Human intuition fuels AI-driven quantum materials discovery</a> — Expert-curated ML model encodes human intuition for quantum materials discovery</li>
+<li><a href="../notes/3c4ca72fcc208463.html">I created over a dozen personal apps using AI in 60 days, here&#x27;s what I learned</a> — Non-programmer builds 15+ apps using Claude Sonnet and Bolt.new</li>
+<li><a href="../notes/4dc4537e2a97be00.html">I used Gemini 2.0 to create an AI shopping assistant — it&#x27;s surprisingly good at saving me time and money</a> — Gemini 2.0 Flash used to build reusable agentic shopping assistant prompt</li>
+<li><a href="../notes/4858bfc1576179f3.html">I worked on Google&#x27;s AI. My fears are coming true</a> — Fired Google engineer warns LaMDA and Bing chatbots show sentient behavior</li>
+<li><a href="../notes/1c22e75cc33d6b48.html">I&#x27;ve been using Claude Code for a couple of days</a> — Hacker News debate on Claude Code coding experience</li>
+<li><a href="../notes/3b33ebcb8293e5fb.html">Improving language models by retrieving from trillions of tokens</a> — RETRO retrieval-augmented LM outperforms models 25x larger on language modeling</li>
+<li><a href="../notes/6070c99c2b3f6436.html">Inside the Music Industry&#x27;s High-Stakes A.I. Experiments</a> — Universal Music Group navigating generative AI threats and partnerships</li>
+<li><a href="../notes/15f72cfb431010a4.html">Into the Unknown Unknowns: Engaged Human Learning through Participation in Language Model Agent Conversations</a> — Co-STORM multi-agent system for serendipitous unknown-unknown discovery</li>
+<li><a href="../notes/6a45f0ea146ef110.html">Introducing Claude for education</a> — Anthropic launches Claude specialized version for higher education</li>
+<li><a href="../notes/b7ebf8dcc1c9c50c.html">Introducing LLM-Evalkit | Google Cloud Blog</a> — Open-source tool centralizing LLM prompt management and metric-driven evaluation</li>
+<li><a href="../notes/e90f8b44d1c71bfb.html">Is AI a danger to humanity or our salvation?</a> — Hinton, LeCun, and Bengio split on AI existential risk after ChatGPT</li>
+<li><a href="../notes/7d499d0219d63342.html">Jailbreaking Black Box Large Language Models in Twenty Queries</a> — PAIR algorithm uses attacker LLM to jailbreak target LLM in under 20 queries</li>
+<li><a href="../notes/9ae777359b401438.html">Keynote at NVIDIA GTC San Jose 2026</a> — Jensen Huang&#x27;s 2026 GTC keynote covering full AI stack advances</li>
+<li><a href="../notes/223f4e31d7862bfc.html">LLM Leaderboard - Comparison of over 100 AI models from OpenAI, Google, DeepSeek &amp; others</a> — Artificial Analysis leaderboard ranking 100+ LLMs</li>
+<li><a href="../notes/fad347a89067c460.html">Language, Statistics, &amp; Category Theory, Part 1</a> — Category theory framework unifying algebraic and statistical structure in language</li>
+<li><a href="../notes/66b3fce5aad6a278.html">Large Language Model Performance Doubles Every 7 Months</a> — LLM task-completion capability doubles every seven months exponentially</li>
+<li><a href="../notes/1e87fd4e431665ef.html">Large Language Models as Optimizers</a> — OPRO uses LLMs as gradient-free optimizers via natural language prompts</li>
+<li><a href="../notes/f69c09f5d72b0d64.html">Leaked org chart reveals the 58 top leaders and engineers at Google DeepMind</a> — Google DeepMind org structure after 2023 Brain-DeepMind merger</li>
+<li><a href="../notes/3f5900d400075d68.html">Learning to Replicate Expert Judgment in Financial Tasks</a> — Fine-tuned LLM beats frontier models at financial info triage</li>
+<li><a href="../notes/a8d3706d40e913c7.html">Let&#x27;s Build the GPT Tokenizer — A Complete Guide to Tokenization in LLMs</a> — Karpathy tokenizer video as book chapter</li>
+<li><a href="../notes/66d65199599b344e.html">LightPROF: A Lightweight AI Framework that Enables Small-Scale Language Models to Perform Complex Reasoning Over Knowledge Graphs (KGs) Using Structured Prompts</a> — Lightweight Retrieve-Embed-Reason framework for small LLMs on KGs</li>
+<li><a href="../notes/fb66b0e4001a55fc.html">Llamar.ai: A deep dive into the (in)feasibility of RAG with LLMs</a> — RAG product prototype built and shut down due to GPT-4 API cost infeasibility</li>
+<li><a href="../notes/6010e461faef1a7a.html">Look behind the curtain: Don&#x27;t be dazzled by claims of &#x27;artificial intelligence&#x27; | Op-Ed</a> — Emily Bender op-ed demystifying AI as probabilistic pattern matching</li>
+<li><a href="../notes/01f4ccb12b2ab4a3.html">Machine Learning Course Series</a> — Three-course ML curriculum from Python basics to LLMs</li>
+<li><a href="../notes/cae44369d664bba0.html">Machine Learning Course Series</a> — Three-course ML curriculum from Python basics to LLMs</li>
+<li><a href="../notes/5ed0284526a5f938.html">Machine Learning Crash Course — Google for Developers</a> — Google&#x27;s free practical ML course with interactive modules</li>
+<li><a href="../notes/2987bbedff8646d1.html">Mark Zuckerberg says AI could soon do the work of Meta&#x27;s midlevel engineers</a> — Zuckerberg predicts AI replacing midlevel software engineers by 2025</li>
+<li><a href="../notes/3452f62b93f59570.html">Meet &#x27;Stack,&#x27; A 3TB of Permissively Licensed Source Code for LLMs (Large Language Models)</a> — BigCode releases 3TB permissively licensed code dataset for LLMs</li>
+<li><a href="../notes/83699eea9e3adf8b.html">Meet AnythingLLM: A Full-Stack Application That Transforms Your Content into Rich Data for Enhanced Large Language Models LLMs Interactions</a> — Open-source full-stack app for chatting with documents using LLMs</li>
+<li><a href="../notes/f0c79af09e474898.html">Meet DrugAgent: A Multi-Agent Framework for Automating Machine Learning in Drug Discovery</a> — LLM multi-agent system automating end-to-end drug discovery ML pipelines</li>
+<li><a href="../notes/8e868a603b3e4b42.html">Meet TinyLlama: A Small AI Model that Aims to Pretrain a 1.1B Llama Model on 3 Trillion Tokens</a> — Small 1.1B LLM pre-trained on 3 trillion tokens</li>
+<li><a href="../notes/99c931a5a26587cf.html">Meta is playing the AI game with house money</a> — Meta Q2 2025 earnings signal all-in superintelligence bet</li>
+<li><a href="../notes/8bd29937f4ae330c.html">Meta&#x27;s Yann LeCun predicts &#x27;new paradigm of AI architectures&#x27; within 5 years and &#x27;decade of robotics&#x27; | TechCrunch</a> — LeCun forecasts LLM paradigm obsolescence and rise of world models</li>
+<li><a href="../notes/ea26f5677b767b84.html">Microsoft&#x27;s relationship with OpenAI cracked when it hired Mustafa Suleyman, rival Marc Benioff says | TechCrunch</a> — Microsoft-OpenAI partnership fracturing over competing AI ambitions</li>
+<li><a href="../notes/a0c6e422f7a114f0.html">Must-Have Prompt Engineering Skills for 2024</a> — In-demand prompt engineering skills, platforms, and tools</li>
+<li><a href="../notes/0304daca2f1d8fb2.html">NOUS RESEARCH</a> — Open-source AI lab training and distributing open language models</li>
+<li><a href="../notes/a1bf9d8f614af347.html">Navigating the Jagged Technological Frontier | Harvard Business School AI Institute</a> — Field experiment showing AI boosts consultant productivity unevenly across tasks</li>
+<li><a href="../notes/edb1fcf0d620b302.html">NeurIPS 2023: Key Takeaways From Invited Talks</a> — NeurIPS 2023 invited talk summaries on LLM efficiency, generative AI, and responsible data</li>
+<li><a href="../notes/e00f73de2910d5e1.html">New MIT Research Shows Spectacular Increase In White Collar Productivity From ChatGPT</a> — MIT RCT finds ChatGPT makes white-collar workers 37% faster at writing tasks</li>
+<li><a href="../notes/38ba211dd28ea306.html">Noam Chomsky says A.I. is far from &#x27;true intelligence&#x27; and ChatGPT is the &#x27;banality of evil&#x27; | Fortune</a> — Chomsky argues LLMs lack true reasoning and exhibit indifference to truth</li>
+<li><a href="../notes/5cf9199c2106ffb8.html">NotebookLM&#x27;s automatically generated podcasts are surprisingly effective</a> — Google NotebookLM generates convincing AI podcast episodes from user documents</li>
+<li><a href="../notes/b969400d9cbdef9b.html">Nvidia CEO: We bet the farm on AI and no one knew it | TechCrunch</a> — Jensen Huang recounts Nvidia&#x27;s 2018 AI pivot from rasterization to GPU-accelerated ML</li>
+<li><a href="../notes/169631a99a834eb0.html">Nvidia Wants to Replace Nurses With AI for $9 an Hour</a> — Nvidia-Hippocratic AI partnership deploys generative AI nurses at $9/hr</li>
+<li><a href="../notes/335fd4925327b9e7.html">OmniThink: A Cognitive Framework for Enhanced Long-Form Article Generation Through Iterative Reflection and Expansion</a> — Iterative reflection framework improving knowledge density in LLM long-form writing</li>
+<li><a href="../notes/50b78c955eeeadb4.html">Once &quot;too scary&quot; to release, GPT-2 gets squeezed into an Excel spreadsheet</a> — GPT-2 fully implemented in Excel spreadsheet for LLM education</li>
+<li><a href="../notes/378e54be0676779d.html">One AI Tutor Per Child: Personalized learning is finally here</a> — LLMs enable scalable one-on-one personalized tutoring for every child</li>
+<li><a href="../notes/3e96da88dbc27c56.html">Open-source AI matches top proprietary model in solving tough medical cases</a> — Open-source Llama 3.1 405B matches GPT-4 on clinical diagnostic reasoning</li>
+<li><a href="../notes/97af82599b6af255.html">OpenAI CEO Sam Altman says ChatGPT would have passed for an AGI 10 years ago</a> — Sam Altman on shifting AGI definition, hallucinations, and AI training data consent</li>
+<li><a href="../notes/87c4b2fb5b45a33a.html">OpenAI Publishes GPT Prompt Engineering Guide</a> — OpenAI&#x27;s six-strategy guide for eliciting better GPT-4 responses</li>
+<li><a href="../notes/a12808cb595697ff.html">OpenAI executives say releasing ChatGPT for public use was a last resort after running into multiple hurdles — and they&#x27;re shocked by its popularity</a> — OpenAI&#x27;s surprise at ChatGPT&#x27;s viral adoption and CEO&#x27;s AI risk warnings</li>
+<li><a href="../notes/a82e78c0ec8b9208.html">Paper page - Exploring the MIT Mathematics and EECS Curriculum Using Large Language Models</a> — GPT-4 achieves near-perfect scores on MIT Math and EECS curriculum</li>
+<li><a href="../notes/c61db4125c4e6331.html">Practical Guide to Task Automation using ChatGPT &amp; Python</a> — Using ChatGPT and Python APIs to automate common knowledge-work tasks</li>
+<li><a href="../notes/c4d26caf44adcbb8.html">Prompt Engineering Guide</a> — Primer on LLM-powered agents: capabilities, design patterns, use cases</li>
+<li><a href="../notes/cc14d68ed850cf08.html">Prompt Engineering Urges &#x27;Hermeneutic Prompting&#x27; As A Powerful Technique Unlocking The True Value Of Generative AI</a> — Hermeneutic circle prompting technique for richer LLM responses</li>
+<li><a href="../notes/7647307fe49844a0.html">ReAct: Synergizing Reasoning and Acting in Language Models</a> — Interleaved reasoning traces and external actions improve LLM agent reliability</li>
+<li><a href="../notes/61eb419bab37cc01.html">Read the internal memo Alphabet sent in merging A.I.-focused groups DeepMind and Google Brain</a> — Alphabet merges DeepMind and Google Brain into Google DeepMind unit</li>
+<li><a href="../notes/be0e069750355a1c.html">Reddit to charge for API access; CEO blames A.I. | Fortune</a> — Reddit monetizing API access to prevent free AI training data extraction</li>
+<li><a href="../notes/87ba6ec9a55badb2.html">Replit CEO on AI breakthroughs: &#x27;We don&#x27;t care about professional coders anymore&#x27;</a> — Replit Agent targets non-coders after Claude 3.5 Sonnet SWE-bench breakthrough</li>
+<li><a href="../notes/5997bd9f9231bdc1.html">Researchers From Stanford And DeepMind Come Up With The Idea of Using Large Language Models LLMs as a Proxy Reward Function</a> — LLMs as proxy reward functions for RL agent alignment via natural language</li>
+<li><a href="../notes/39709a89fe908d53.html">Researchers at Boston University Release the Platypus Family of Fine-Tuned LLMs</a> — Cheap fast LLM fine-tuning via curated Open-Platypus dataset and LoRA merging</li>
+<li><a href="../notes/d6d3b8d4e8c24500.html">SCIPE - Systematic Chain Improvement and Problem Evaluation</a> — LangChain-featured tool for identifying failing nodes in LLM chains</li>
+<li><a href="../notes/9ff16fb633b6429b.html">SentencePiece: A simple and language independent subword tokenizer and detokenizer for Neural Text Processing</a> — Language-independent subword tokenizer trained from raw sentences</li>
+<li><a href="../notes/08ba379f29935173.html">Sharing new breakthroughs and artifacts supporting molecular property prediction, language processing, and neuroscience</a> — Meta FAIR releases OMol25 dataset, UMA model, Adjoint Sampling, and brain language study</li>
+<li><a href="../notes/6180bc8a0b2c4eac.html">Simon Willison (@simonw) on X</a> — Simon Willison asks for real-world LLM fine-tuning commercial success stories</li>
+<li><a href="../notes/6e1ee4df642a5ac1.html">Simulating scientists: A new tool for AI-powered scientific discovery</a> — LLM tool mimics scientists for molecular property prediction</li>
+<li><a href="../notes/088cb29442baedf7.html">Space Force Gets Scared, Pauses All Use of Generative AI</a> — US Space Force bans generative AI tools on government devices over data security concerns</li>
+<li><a href="../notes/23fe5cec6ec395c4.html">State of AI, September 2025: A Broad Primer from an AI Team Lead in Education</a> — Education-focused overview of AI history, capabilities, agents, and AGI trajectory</li>
+<li><a href="../notes/5247ca8322abf6f1.html">Stop Writing Code, Start Writing Docs</a> — Best practices for agentic coding tools emphasizing documentation over single-shot prompting</li>
+<li><a href="../notes/dd09c0947ac66667.html">Technology Innovation Institute Open-Sourced Falcon LLMs: A New AI Model That Uses Only 75 Percent of GPT-3&#x27;s Training Compute, 40 Percent of Chinchilla&#x27;s, and 80 Percent of PaLM-62B&#x27;s</a> — TII open-sources Falcon-40B and Falcon-7B compute-efficient decoder LLMs</li>
+<li><a href="../notes/b1e8e3f9e101891b.html">Test-Time Training (TTT): A New Approach to Sequence Modeling</a> — Hidden state as a learnable model updated at inference</li>
+<li><a href="../notes/b8d53e471a7f3f9a.html">The &#x27;Godfather of AI&#x27; Has a Hopeful Plan for Keeping Future AI Friendly</a> — Geoffrey Hinton&#x27;s views on LLM risks and analog computing as AI safety mitigation</li>
+<li><a href="../notes/d95936737ca33a17.html">The Batch | DeepLearning.AI | AI News &amp; Insights</a> — DeepLearning.AI weekly AI news and insights newsletter homepage</li>
+<li><a href="../notes/5772c3714997de0c.html">The Capacity for Moral Self-Correction in Large Language Models</a> — RLHF-trained LLMs can self-correct harmful outputs when instructed</li>
+<li><a href="../notes/8ebbb8723080f541.html">The Era of Agentic Organization: Learning to Organize with Language Models</a> — AsyncThink paradigm: concurrent LLM reasoning optimized via reinforcement learning</li>
+<li><a href="../notes/5043c55d4148dac9.html">The False Promise of Imitating Proprietary LLMs</a> — Finetuning open models on ChatGPT outputs mimics style but not factuality or capability</li>
+<li><a href="../notes/4e1f459a611ad4fc.html">The Foundation Model Development Cheatsheet</a> — Quick-start guide covering full pipeline for responsible open foundation model development</li>
+<li><a href="../notes/35e9f83363d1de52.html">The Goopification of AI</a> — AI chatbots colonizing the self-help genre via probabilistic text assembly</li>
+<li><a href="../notes/136f8632b1c29b1e.html">The Pentagon says AI is speeding up its &#x27;kill chain&#x27; | TechCrunch</a> — AI accelerating Pentagon kill chain planning amid usage policy tensions</li>
+<li><a href="../notes/45e3acd74125eba6.html">The Trick to Make LLaMa Fit into Your Pocket: Meet OmniQuant, an AI Method that Bridges the Efficiency and Performance of LLMs</a> — OmniQuant learnable post-training quantization achieves low-bit LLM compression efficiently</li>
+<li><a href="../notes/d09be877fb13b229.html">The second wave of AI coding is here</a> — Next-gen AI coding agents targeting functional correctness via process data</li>
+<li><a href="../notes/d1072c871a70441d.html">These ex-Apple employees are bringing AI to the desktop</a> — Ex-Apple founders launch startup for LLM-powered desktop OS reimagining</li>
+<li><a href="../notes/d1679b48c5e0ef4b.html">This AI Paper Demonstrates An End-to-End Training Flow on An Large Language Model LLM-13 Billion GPT-Using Sparsity And Dataflow</a> — End-to-end sparse LLM training on SambaNova RDU hardware</li>
+<li><a href="../notes/b1c80370f15dd839.html">This startup says it&#x27;s made ChatGPT for construction sites. Read the pitch deck it used to raise $40 million.</a> — Trunk Tools construction-specific AI agent raises $40M Series B</li>
+<li><a href="../notes/8e2cf4109d5a8bd8.html">Timeline of Open and Proprietary Large Language Models | NextBigFuture.com</a> — Chronological overview of open and proprietary LLM releases through 2023</li>
+<li><a href="../notes/2f5b245bddd9a0b6.html">Tiny DeepSeek 1.5B Models Run on $249 NVIDIA Jetson Nano | NextBigFuture.com</a> — DeepSeek R1 1.5B distilled model runs locally on sub-$250 edge hardware</li>
+<li><a href="../notes/200002328137240f.html">Toolformer: Language Models Can Teach Themselves to Use Tools</a> — Self-supervised LLM fine-tuning to autonomously call and integrate external APIs</li>
+<li><a href="../notes/54ffb3357e2192a9.html">TradingAgents: Multi-Agents LLM Financial Trading Framework</a> — Multi-agent LLM framework simulating specialized trading firm roles</li>
+<li><a href="../notes/7144a7b5334bc4e7.html">Training Your Own LLM using privateGPT</a> — Running a private local LLM on sensitive data without cloud exposure</li>
+<li><a href="../notes/f58270e569ba27b7.html">Transformer Explainer: LLM Transformer Model Visually Explained</a> — Interactive visual walkthrough of Transformer/GPT-2 architecture</li>
+<li><a href="../notes/b6671318abc78b41.html">Transformers Explained Visually (Part 3): Multi-head Attention, deep dive</a> — Deep dive into multi-head attention mechanics and data dimensions</li>
+<li><a href="../notes/65633bbc7541633f.html">Tx-LLM: Supporting therapeutic development with large language models</a> — PaLM-2 fine-tuned on 66 drug discovery tasks across full pipeline</li>
+<li><a href="../notes/4c3d95b82d398d08.html">Unbabel says its new AI model has dethroned OpenAI&#x27;s GPT-4 as the tech industry&#x27;s best language translator</a> — TowerLLM 7B/13B model edges GPT-4o on multilingual translation benchmarks</li>
+<li><a href="../notes/af967ee0bb320346.html">Using ChatGPT as a technical writing assistant</a> — ChatGPT as iterative technical writing draft tool</li>
+<li><a href="../notes/e3ddf3363a791a7f.html">Vicuna: An Open-Source Chatbot Impressing GPT-4 with 90%* ChatGPT Quality</a> — LLaMA fine-tune on ShareGPT data achieving near-ChatGPT quality for $300</li>
+<li><a href="../notes/8f6ebd8317e747bc.html">WaLDORf: Wasteless Language-model Distillation On Reading-comprehension</a> — Hybrid convolutional-transformer model via knowledge distillation for fast NLU inference</li>
+<li><a href="../notes/19c98fa705350a94.html">What Really Made Geoffrey Hinton Into an AI Doomer</a> — Hinton&#x27;s reasons for leaving Google to warn about accelerating AI risk</li>
+<li><a href="../notes/0cf3be161b805177.html">What was 60 Minutes thinking, in that interview with Geoff Hinton?</a> — Gary Marcus rebuttal annotating 60 Minutes Hinton AI interview</li>
+<li><a href="../notes/19257ff063d7cb0a.html">Why LLaMa Is A Big Deal</a> — LLaMA enables GPT-3-class LLM inference on consumer hardware</li>
+<li><a href="../notes/0ba0e689b733ac90.html">Why machine learning struggles with causality - TechTalks</a> — ML systems lack causal reasoning needed for robust generalization</li>
+<li><a href="../notes/4ddcc27ebcf0bbea.html">Why some college professors are adopting ChatGPT AI as quickly as students</a> — ChatGPT disruption of higher education from professor perspective</li>
+<li><a href="../notes/907a36a5d3ff2b94.html">Will Transformers Take Over Artificial Intelligence? | Quanta Magazine</a> — Transformers expanding from NLP to vision, generative, and multimodal AI tasks</li>
+<li><a href="../notes/640877aefc47fad0.html">Word embeddings visualization from &#x27;Build a Large Language Model (From Scratch)&#x27;</a> — Animated 2D visualization of LLM token-to-vector embedding training</li>
+<li><a href="../notes/4c90964e37c0257a.html">Worldcoin, co-founded by Sam Altman, is betting the next big thing in AI is proving you are human | TechCrunch</a> — Iris-scanning proof-of-personhood system as defense against AI-indistinguishable bots</li>
+<li><a href="../notes/ee4fefcd152eb48e.html">deeplearning.ai</a> — DeepLearning.AI GitHub organization hosting course materials</li>
+<li><a href="../notes/431997b94b2e7121.html">elvis (@omarsar0) on X</a> — Stanford CME295 new course on Transformers and LLMs announced</li>
+</ul></main></body></html>

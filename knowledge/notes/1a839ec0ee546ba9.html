@@ -1,0 +1,29 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Meta-Q-Learning</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#0f6b5c;--card:#ffffff;--line:#e3e1dc;--code:#eef2f0}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#4fc3ad;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 1rem}h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+ul{padding-left:1.2rem}li{margin:.25rem 0}
+.meta{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}
+.tag{display:inline-block;background:var(--code);border-radius:999px;padding:.05rem .6rem;font-size:.78rem;margin:0 .25rem .25rem 0;color:var(--muted)}
+.src{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>Meta-Q-Learning</h1><div><span class="tag">meta-reinforcement-learning</span><span class="tag">q-learning</span><span class="tag">off-policy</span><span class="tag">continuous-control</span></div><p><strong>Abstraction:</strong> Off-policy meta-RL via Q-learning with trajectory context variable</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>Meta-Q-Learning (MQL) is an off-policy meta-RL algorithm presented at ICLR 2020</li>
+<li>Q-learning with a context variable (representation of past trajectory) matches state-of-the-art meta-RL if given that context</li>
+<li>Multi-task objective maximizes average reward across training tasks as effective meta-training signal</li>
+<li>Propensity estimation applied to recycle past replay buffer data for off-policy adaptation on new tasks, amplifying available data</li>
+<li>Evaluated on standard continuous-control benchmarks; compares favorably to prior meta-RL methods</li>
+</ul>
+<p><strong>Connections:</strong> <a href="../concepts/meta-reinforcement-learning.html">Meta Reinforcement Learning</a> · <a href="../concepts/q-learning.html">Q Learning</a> · <a href="../concepts/off-policy-learning.html">Off Policy Learning</a></p>
+<p class="src">Source: <a href="https://iclr.cc/virtual_2020/poster_SJeD3CEFPH.html" rel="noopener">https://iclr.cc/virtual_2020/poster_SJeD3CEFPH.html</a></p></main></body></html>
