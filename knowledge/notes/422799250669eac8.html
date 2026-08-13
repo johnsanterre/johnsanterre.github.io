@@ -16,7 +16,7 @@ ul{padding-left:1.2rem}li{margin:.25rem 0}
 #hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
 .count{color:var(--muted);font-size:.85rem}
 .cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
-</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>Adam Drake — Command-line Tools can be 235x Faster than your Hadoop Cluster</h1><div><span class="tag">shell</span><span class="tag">data-engineering</span><span class="tag">hadoop</span><span class="tag">performance</span><span class="tag">unix-tools</span></div><p><strong>Abstraction:</strong> Shell pipelines outperform Hadoop by 235x on single-machine data tasks</p>
+</style></head><body><main><nav><a href="../index.html">News Bank</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>Adam Drake — Command-line Tools can be 235x Faster than your Hadoop Cluster</h1><div><span class="tag">shell</span><span class="tag">data-engineering</span><span class="tag">hadoop</span><span class="tag">performance</span><span class="tag">unix-tools</span></div><p><strong>Abstraction:</strong> Shell pipelines outperform Hadoop by 235x on single-machine data tasks</p>
 <p><strong>Key points:</strong></p>
 <ul>
 <li>Processing 3.46GB of chess PGN files: <code>find | xargs -P4 mawk | mawk</code> pipeline ran in ~12 seconds (~270 MB/sec) vs Hadoop cluster&#x27;s ~26 minutes (~1.14 MB/sec) — 235x speedup</li>

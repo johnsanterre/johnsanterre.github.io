@@ -149,6 +149,24 @@
   footer a { border-bottom: 1px solid var(--line); padding-bottom: 1px; }
   footer a:hover { color: var(--ink); border-color: var(--ink); }
   footer .copy { margin-left: auto; }
+
+  /* ---------- mobile (added 2026-08-05) ---------- */
+  @media (max-width: 640px) {
+    nav { flex-wrap: wrap; row-gap: 4px; padding: 12px 5vw; }
+    nav .name { white-space: nowrap; }
+    nav .links {
+      margin-left: 0; width: 100%; flex-wrap: wrap;
+      gap: 6px 16px; font-size: 13px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    header.hero { min-height: 46vh; padding-top: 4vh; }
+    .about-top { flex-direction: column; align-items: flex-start; gap: 16px; }
+    .about-top .intro { font-size: 1.05rem; }
+    .profiles { grid-template-columns: 1fr; gap: 28px; }
+    .maphint { display: none; }
+  }
 </style>
 <script data-goatcounter="https://johnsanterre.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
@@ -221,6 +239,14 @@
         <span class="kicker">Interactive · Knowledge Map</span>
         <h3>The AI Mind Map</h3>
         <p>739 interlinked concepts across machine learning, mathematics, and statistics — explorable as one map. Pan the whole field, light up topics, read any card in place.</p>
+      </div>
+    </a>
+    <a class="card" href="/knowledge/">
+      <img src="/assets/knowledge-bank.svg" alt="Linked note cards forming a graph">
+      <div class="meta">
+        <span class="kicker">Reading Archive · Wiki</span>
+        <h3>The News Bank</h3>
+        <p>1,534 field notes distilled from years of reading, linked through 1,976 concepts and 1,323 entities. Search it, follow the graph, and every note points back to its original source.</p>
       </div>
     </a>
     </div>

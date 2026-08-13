@@ -16,7 +16,7 @@ ul{padding-left:1.2rem}li{margin:.25rem 0}
 #hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
 .count{color:var(--muted);font-size:.85rem}
 .cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
-</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>A string of unexpected lengths - Blog - Recurse Center</h1><div><span class="tag">unicode</span><span class="tag">python</span><span class="tag">string-encoding</span><span class="tag">terminal</span><span class="tag">text-formatting</span></div><p><strong>Abstraction:</strong> Three ways string byte-length diverges from terminal display width</p>
+</style></head><body><main><nav><a href="../index.html">News Bank</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>A string of unexpected lengths - Blog - Recurse Center</h1><div><span class="tag">unicode</span><span class="tag">python</span><span class="tag">string-encoding</span><span class="tag">terminal</span><span class="tag">text-formatting</span></div><p><strong>Abstraction:</strong> Three ways string byte-length diverges from terminal display width</p>
 <p><strong>Key points:</strong></p>
 <ul>
 <li>Multi-byte encodings: a single visible character like <code>Ä</code> may occupy 2+ bytes; Python 2 byte strings report <code>len()</code> as byte count, not character count; switching to Unicode strings fixes this for most cases</li>

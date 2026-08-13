@@ -16,7 +16,7 @@ ul{padding-left:1.2rem}li{margin:.25rem 0}
 #hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
 .count{color:var(--muted);font-size:.85rem}
 .cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
-</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>Why is 10000 used as the denominator in Positional Encodings in the Transformer Model?</h1><div><span class="tag">transformers</span><span class="tag">positional-encoding</span><span class="tag">hyperparameters</span></div><p><strong>Abstraction:</strong> Rationale for the 10000 base constant in Transformer positional encoding</p>
+</style></head><body><main><nav><a href="../index.html">News Bank</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>Why is 10000 used as the denominator in Positional Encodings in the Transformer Model?</h1><div><span class="tag">transformers</span><span class="tag">positional-encoding</span><span class="tag">hyperparameters</span></div><p><strong>Abstraction:</strong> Rationale for the 10000 base constant in Transformer positional encoding</p>
 <p><strong>Key points:</strong></p>
 <ul>
 <li>n=10000 ensures cosine distance between position vectors is a monotonically increasing function of position index; smaller n values break this property</li>

@@ -16,7 +16,7 @@ ul{padding-left:1.2rem}li{margin:.25rem 0}
 #hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
 .count{color:var(--muted);font-size:.85rem}
 .cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
-</style></head><body><main><nav><a href="../index.html">Knowledge</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>How to get Linux console window width in Python</h1><div><span class="tag">python</span><span class="tag">terminal</span><span class="tag">linux</span><span class="tag">console</span></div><p><strong>Abstraction:</strong> Python methods to query terminal console column width at runtime</p>
+</style></head><body><main><nav><a href="../index.html">News Bank</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>How to get Linux console window width in Python</h1><div><span class="tag">python</span><span class="tag">terminal</span><span class="tag">linux</span><span class="tag">console</span></div><p><strong>Abstraction:</strong> Python methods to query terminal console column width at runtime</p>
 <p><strong>Key points:</strong></p>
 <ul>
 <li>Python 3.3+ canonical approach: <code>shutil.get_terminal_size()</code> or <code>os.get_terminal_size()</code>; shutil wraps os with fallback but breaks when piping — use <code>os.get_terminal_size(0)</code> with stdin fd to handle pipes</li>
