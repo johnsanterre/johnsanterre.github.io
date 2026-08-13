@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI History Battle — John Santerre, PhD</title>
+<meta name="description" content="AI History Battle — an NFC tap-to-battle game teaching the history of AI and statistics, built for the UC Berkeley MIDS immersion. 151 historical figures, 300 problems, 15,170 pre-scored matchups.">
+<link rel="icon" href="/assets/santerre-ai-logo.svg">
+<style>
+  :root { --bg:#fafaf8; --ink:#141414; --muted:#6b6b66; --line:#e4e2dc; --accent:#7C2530; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased; line-height:1.55; }
+  a { color:inherit; text-decoration:none; }
+  nav { position:sticky; top:0; z-index:10; display:flex; align-items:baseline; gap:28px;
+    padding:20px 5vw; background:color-mix(in srgb, var(--bg) 92%, transparent);
+    backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
+  nav .name { font-weight:700; letter-spacing:-0.01em; }
+  nav .links { margin-left:auto; display:flex; gap:22px; font-size:14px; color:var(--muted); }
+  nav .links a:hover { color:var(--ink); }
+  main { max-width:760px; margin:0 auto; padding:6vh 5vw 8vh; }
+  .kicker { font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); font-weight:650; }
+  h1 { font-size:clamp(1.9rem,4vw,2.6rem); letter-spacing:-0.03em; line-height:1.05; margin:8px 0 14px; }
+  .strip { width:100%; border-radius:10px; border:1px solid var(--line); display:block; margin:22px 0 6px; }
+  .stripcap { font-size:12px; color:var(--muted); letter-spacing:0.04em; margin-bottom:26px; }
+  .lede { font-size:1.08rem; color:#3a3a36; max-width:60ch; }
+  .cta { display:inline-block; margin:20px 0 8px; background:var(--accent); color:#fff;
+    padding:10px 18px; border-radius:8px; font-weight:650; font-size:0.98rem; }
+  .cta:hover { transform:translateY(-1px); }
+  .ctanote { font-size:0.85rem; color:var(--muted); margin-bottom:10px; }
+  h2 { font-size:13px; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); margin:44px 0 12px; }
+  h3 { font-size:1.02rem; margin:22px 0 6px; letter-spacing:-0.01em; }
+  p { margin:10px 0; max-width:66ch; color:#333; }
+  ul { padding-left:1.2em; max-width:66ch; }
+  li { margin:6px 0; color:#333; }
+  .stats { display:flex; flex-wrap:wrap; gap:10px 28px; margin:18px 0 6px; }
+  .stat b { display:block; font-size:1.4rem; letter-spacing:-0.02em; }
+  .stat span { font-size:0.8rem; color:var(--muted); letter-spacing:0.06em; text-transform:uppercase; }
+  footer { border-top:1px solid var(--line); padding:3vh 5vw; font-size:14px; color:var(--muted); }
+</style>
+<script data-goatcounter="https://johnsanterre.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+
+<nav>
+  <a class="name" href="/" style="display:inline-flex;align-items:center;gap:9px"><img src="/assets/santerre-ai-logo.svg" alt="" width="26" height="26" style="display:block">John Santerre</a>
+  <span class="links"><a href="/#resources">Resources</a><a href="/#explore">Explore</a><a href="/knowledge/">News Bank</a></span>
+</nav>
+
+<main>
+  <span class="kicker">Teaching Project · UC Berkeley MIDS Immersion</span>
+  <h1>AI History Battle</h1>
+
+  <p class="lede">An in-person game that teaches the history of AI and statistics
+  by letting students <em>be</em> it. Each student taps an NFC sticker to claim a
+  historical figure — Bayes to Turing to the researchers publishing today — then
+  battles classmates by tapping their stickers. Every outcome is decided by real
+  history: whose methods genuinely apply to the drawn problem, explained after
+  every battle.</p>
+
+  <a class="cta" href="https://aihb-jxrvaxfjgq-uc.a.run.app" rel="noopener">Visit the game server &rarr;</a>
+  <div class="ctanote">Hosted on Google Cloud Run. Battling requires a physical NFC sticker at the event — the site is live for browsing personas, the leaderboard, and the interaction graph.</div>
+
+  <img class="strip" src="/assets/aihb-portraits.jpg" alt="Sixteen of the game's personas, Bayes to Gebru">
+  <div class="stripcap">Sixteen of the 151 playable figures, spanning three centuries of the field.</div>
+
+  <div class="stats">
+    <div class="stat"><b>151</b><span>historical figures</span></div>
+    <div class="stat"><b>300</b><span>problems</span></div>
+    <div class="stat"><b>15,170</b><span>scored matchups</span></div>
+    <div class="stat"><b>152</b><span>NFC stickers</span></div>
+  </div>
+
+  <h2>The short version</h2>
+  <p>AI History Battle is a multi-day event game for ~100 graduate students.
+  Every student carries an NFC sticker linked to a pseudonymous persona: a
+  famous statistician, mathematician, or AI researcher. Tapping another
+  player's sticker creates a battle — the system draws a problem the pair
+  hasn't fought over, scores both personas from a precomputed
+  persona-by-problem matrix grounded in real intellectual history, and the
+  tapper's phone shows the result with a historical justification. Students
+  learn the field's history through play: who solved what, whose methods
+  reach furthest, and why a 1920s statistician can still beat a deep-learning
+  pioneer on the right problem.</p>
+
+  <h2>The long version</h2>
+
+  <h3>Pedagogy</h3>
+  <p>Graduate ML curricula teach methods; they rarely teach lineage. The game
+  makes lineage playable. Each of the 300 problems spans 18 categories of the
+  field, and each battle result carries an 85–160 word explanation of why the
+  winning figure's methods genuinely apply — so every tap is a micro-lesson,
+  and losing is as instructive as winning. Personas are pseudonymous, which
+  lowers social stakes: the leaderboard knows Fisher, not the student.</p>
+
+  <h3>The cast and the content matrix</h3>
+  <ul>
+    <li><strong>151 personas</strong> spanning three centuries — deep
+      historical statisticians through currently publishing researchers, with
+      era coverage guaranteeing the old guard their winning problems.</li>
+    <li><strong>300 problems</strong> across 18 categories, with each persona
+      assigned a ~100-problem list; all 11,325 persona pairs verified to share
+      at least 15 problems (median ~32).</li>
+    <li><strong>15,170 pre-scored cells</strong>, each with a written
+      historical justification, validated for exact problem-carrier match,
+      score spread, and explanation length.</li>
+    <li><strong>Event simulation</strong> at full scale — 2,500 battles across
+      100 students — verified healthy dynamics: every persona wins somewhere,
+      no one is stuck, repeat matchups stay near 21%.</li>
+    <li><strong>152 stylized portraits</strong>, one per figure.</li>
+  </ul>
+
+  <h3>The mechanic</h3>
+  <ul>
+    <li>Each NFC sticker stores one static URL. First tap claims the persona,
+      protected by a student-set PIN. A tap on another player's sticker is
+      intent — no confirmation step; the battle resolves immediately.</li>
+    <li>Problems are drawn without replacement per pair, so rematches always
+      land on fresh ground. Only the tapper's phone shows the result; a
+      reverse tap is a new, independent battle.</li>
+    <li>A live leaderboard and a live interaction graph show the room's play
+      as it happens.</li>
+  </ul>
+
+  <h3>The system</h3>
+  <p>Node/Express on Google Cloud Run with Cloud SQL (Postgres) and Secret
+  Manager; an admin console handles coin management, battle voiding,
+  event freeze/unfreeze, and an NFC write desk used to program all 152
+  stickers from a phone via Web NFC. The full content layer — roster,
+  problems, score matrix, biographies, portraits — was generated through an
+  LLM pipeline with validation gates and an owner review pass at each stage.</p>
+
+  <h3>Status</h3>
+  <p>Built summer 2026; content pipeline complete and validated; all 152
+  stickers written; debuting at the UC Berkeley MIDS immersion, August 2026.</p>
+</main>
+
+<footer>John Santerre · <a href="/">johnsanterre.github.io</a></footer>
+</body>
+</html>
