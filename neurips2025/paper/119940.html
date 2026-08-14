@@ -1,0 +1,21 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SpecEdge: Scalable Edge-Assisted Serving Framework for Interactive LLMs · NeurIPS 2025</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#7C2530;--card:#fff;--line:#e3e1dc;--code:#f0ede8}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#e58896;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.45rem;line-height:1.3;margin:.4rem 0 .8rem}h2{font-size:1.1rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+.meta{color:var(--muted);font-size:.9rem;margin:.2rem 0 1rem}
+.chip{display:inline-block;background:var(--code);border-radius:999px;padding:.1rem .7rem;font-size:.8rem;margin:0 .3rem .35rem 0}
+a.chip{color:var(--ink)}a.chip:hover{color:var(--accent);text-decoration:none}
+.abstract{margin-top:1rem}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+ul{padding-left:1.2rem}li{margin:.3rem 0}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+.def{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:.8rem 1rem;margin:.6rem 0}
+</style></head><body><main><nav><a href="../index.html">NeurIPS 2025 Explorer</a><a href="../concepts.html">Concepts</a><a href="../authors.html">Authors</a><a href="../glossary.html">Glossary</a><a href="https://johnsanterre.github.io/">johnsanterre.github.io</a></nav><h1>SpecEdge: Scalable Edge-Assisted Serving Framework for Interactive LLMs</h1><div class="meta">Jinwoo Park <span class="count">(Korea Advanced Institute of Science &amp;amp; Technology)</span> · Seunggeun Cho <span class="count">(KAIST)</span> · Dongsu Han <span class="count">(KAIST, Korea Advanced Institute of Science &amp;amp; Technology)</span></div><div><span class="chip">consumer-grade gpus</span><a class="chip" href="../concept/cost-efficiency-5802.html">cost efficiency</a><span class="chip">edge and server gpus</span><span class="chip">edge-assisted inference</span><span class="chip">inter token latency</span><span class="chip">pipeline-aware scheduling</span><span class="chip">proactive edge drafting</span><a class="chip" href="../concept/resource-intensive.html">resource-intensive</a><span class="chip">scalable paradigm</span><span class="chip">server throughput</span><span class="chip">server verification</span><a class="chip" href="../concept/speculative-decoding.html">speculative decoding</a><span class="chip">token outputs</span><span class="chip">user requests</span><span class="chip">workload splitting</span></div><p class="abstract">Large language models (LLMs) power many modern applications, but serving them at scale remains costly and resource-intensive. Current server-centric systems overlook consumer-grade GPUs at the edge. We introduce SpecEdge, an edge-assisted inference framework that splits LLM workloads between edge and server GPUs using a speculative decoding scheme, exchanging only token outputs over the network. SpecEdge employs proactive edge drafting to overlap edge token creation with server verification and pipeline-aware scheduling that interleaves multiple user requests to increase server-side throughput. Experiments show SpecEdge enhances overall cost efficiency by **1.91×** through achieving **2.22×** server throughput, and reduces inter token latency by **11.24\%** compared to a server-only baseline, introducing a scalable, cost-effective paradigm for LLM serving. The code is available at https://github.com/kaist-ina/specedge</p></main></body></html>

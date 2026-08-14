@@ -1,0 +1,21 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Non-Stationary Lipschitz Bandits · NeurIPS 2025</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#7C2530;--card:#fff;--line:#e3e1dc;--code:#f0ede8}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#e58896;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.45rem;line-height:1.3;margin:.4rem 0 .8rem}h2{font-size:1.1rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+.meta{color:var(--muted);font-size:.9rem;margin:.2rem 0 1rem}
+.chip{display:inline-block;background:var(--code);border-radius:999px;padding:.1rem .7rem;font-size:.8rem;margin:0 .3rem .35rem 0}
+a.chip{color:var(--ink)}a.chip:hover{color:var(--accent);text-decoration:none}
+.abstract{margin-top:1rem}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+ul{padding-left:1.2rem}li{margin:.3rem 0}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+.def{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:.8rem 1rem;margin:.6rem 0}
+</style></head><body><main><nav><a href="../index.html">NeurIPS 2025 Explorer</a><a href="../concepts.html">Concepts</a><a href="../authors.html">Authors</a><a href="../glossary.html">Glossary</a><a href="https://johnsanterre.github.io/">johnsanterre.github.io</a></nav><h1>Non-Stationary Lipschitz Bandits</h1><div class="meta">Nicolas Nguyen <span class="count">(Uni Tübingen)</span> · Solenne Gaucher <span class="count">(Université Paris-Saclay)</span> · <a href="../author/claire-vernade.html">Claire Vernade</a> <span class="count">(University of Tuebingen)</span></div><div><a class="chip" href="../concept/action-space.html">action space</a><span class="chip">adaptive tracking</span><a class="chip" href="../concept/algorithm-design.html">algorithm design</a><span class="chip">cumulative reward function</span><span class="chip">dynamic regret bound</span><span class="chip">hierarchical discretization</span><span class="chip">infinite actions</span><span class="chip">large deviations</span><a class="chip" href="../concept/minimax-optimal.html">minimax-optimal</a><span class="chip">non-stationary lipschitz bandits</span><span class="chip">optimal guarantee</span><a class="chip" href="../concept/prior-knowledge.html">prior knowledge</a><a class="chip" href="../concept/reward-function.html">reward function</a><span class="chip">significant shifts</span><span class="chip">time-varying rewards</span></div><p class="abstract">We study the problem of non-stationary Lipschitz bandits, where the number of actions is infinite and the reward function, satisfying a Lipschitz assumption, can change arbitrarily over time. We design an algorithm that adaptively tracks the recently introduced notion of significant shifts, defined by large deviations of the cumulative reward function. To detect such reward changes, our algorithm leverages a hierarchical discretization of the action space. Without requiring any prior knowledge of the non-stationarity, our algorithm achieves a minimax-optimal dynamic regret bound of  $\mathcal{\widetilde{O}}(\tilde{L}^{1/3}T^{2/3})$, where $\tilde{L}$ is the number of significant shifts and $T$ the horizon. This result provides the first optimal guarantee in this setting.</p></main></body></html>

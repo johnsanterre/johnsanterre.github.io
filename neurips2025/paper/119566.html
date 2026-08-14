@@ -1,0 +1,21 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Optimal kernel regression bounds under energy-bounded noise · NeurIPS 2025</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#7C2530;--card:#fff;--line:#e3e1dc;--code:#f0ede8}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#e58896;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.45rem;line-height:1.3;margin:.4rem 0 .8rem}h2{font-size:1.1rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+.meta{color:var(--muted);font-size:.9rem;margin:.2rem 0 1rem}
+.chip{display:inline-block;background:var(--code);border-radius:999px;padding:.1rem .7rem;font-size:.8rem;margin:0 .3rem .35rem 0}
+a.chip{color:var(--ink)}a.chip:hover{color:var(--accent);text-decoration:none}
+.abstract{margin-top:1rem}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+ul{padding-left:1.2rem}li{margin:.3rem 0}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+.def{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:.8rem 1rem;margin:.6rem 0}
+</style></head><body><main><nav><a href="../index.html">NeurIPS 2025 Explorer</a><a href="../concepts.html">Concepts</a><a href="../authors.html">Authors</a><a href="../glossary.html">Glossary</a><a href="https://johnsanterre.github.io/">johnsanterre.github.io</a></nav><h1>Optimal kernel regression bounds under energy-bounded noise</h1><div class="meta">Amon Lahr <span class="count">(ETH Zurich)</span> · Johannes Köhler <span class="count">(ETHZ - ETH Zurich)</span> · Anna Scampicchio <span class="count">(ETHZ - ETH Zurich)</span> · Melanie Zeilinger <span class="count">(ETH Zurich)</span></div><div><span class="chip">correlated noise sequences</span><span class="chip">easy-to-compute bounds</span><span class="chip">estimation algorithm</span><a class="chip" href="../concept/gaussian-process.html">gaussian process</a><a class="chip" href="../concept/hypothesis-class.html">hypothesis class</a><span class="chip">kernel-based estimates</span><span class="chip">kernel-based estimation</span><span class="chip">measurement noise covariance</span><span class="chip">non-asymptotic uncertainty bound</span><span class="chip">non-conservative uncertainty bounds</span><span class="chip">norm-boundedness assumption</span><span class="chip">posterior mean</span><span class="chip">rigorous analysis</span><span class="chip">safety-critical contexts</span><a class="chip" href="../concept/tight-bounds.html">tight bounds</a><span class="chip">worst-case function realization</span></div><p class="abstract">Non-conservative uncertainty bounds are key for both assessing an estimation algorithm’s accuracy and in view of downstream tasks, such as its deployment in safety-critical contexts. In this paper, we derive a tight, non-asymptotic uncertainty bound for kernel-based estimation, which can also handle correlated noise sequences. Its computation relies on a mild norm-boundedness assumption on the unknown function and the noise, returning the worst-case function realization within the hypothesis class at an arbitrary query input location. The value of this function is shown to be given in terms of the posterior mean and covariance of a Gaussian process for an optimal choice of the measurement noise covariance. By rigorously analyzing the proposed approach and comparing it with other results in the literature, we show its effectiveness in returning tight and easy-to-compute bounds for kernel-based estimates.</p></main></body></html>

@@ -1,0 +1,21 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Towards Fully FP8 GEMM LLM Training at Scale · NeurIPS 2025</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#7C2530;--card:#fff;--line:#e3e1dc;--code:#f0ede8}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#e58896;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.45rem;line-height:1.3;margin:.4rem 0 .8rem}h2{font-size:1.1rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+.meta{color:var(--muted);font-size:.9rem;margin:.2rem 0 1rem}
+.chip{display:inline-block;background:var(--code);border-radius:999px;padding:.1rem .7rem;font-size:.8rem;margin:0 .3rem .35rem 0}
+a.chip{color:var(--ink)}a.chip:hover{color:var(--accent);text-decoration:none}
+.abstract{margin-top:1rem}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+ul{padding-left:1.2rem}li{margin:.3rem 0}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+.def{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:.8rem 1rem;margin:.6rem 0}
+</style></head><body><main><nav><a href="../index.html">NeurIPS 2025 Explorer</a><a href="../concepts.html">Concepts</a><a href="../authors.html">Authors</a><a href="../glossary.html">Glossary</a><a href="https://johnsanterre.github.io/">johnsanterre.github.io</a></nav><h1>Towards Fully FP8 GEMM LLM Training at Scale</h1><div class="meta"><a href="../author/martin-jaggi.html">Martin Jaggi</a> <span class="count">(EPFL)</span> · Alejandro Hernández Cano <span class="count">(EPFL - EPF Lausanne)</span> · Dhia Garbaya <span class="count">(EPFL)</span> · Imanol Schlag <span class="count">(ETH Zürich AI Center)</span></div><div><a class="chip" href="../concept/architecture-design.html">architecture design</a><span class="chip">attention projections</span><span class="chip">backward passes</span><span class="chip">bf16 training</span><span class="chip">fine-grained kernels</span><span class="chip">fp8 data formats</span><span class="chip">low-precision training</span><span class="chip">matrix multiplications</span><span class="chip">monitoring metrics</span><span class="chip">outlier activations</span><a class="chip" href="../concept/pre-training.html">pre-training</a><span class="chip">stability at scale</span><span class="chip">throughput gains</span><a class="chip" href="../concept/transformer-blocks.html">transformer blocks</a></div><p class="abstract">Despite the significant potential of FP8 data formats for large language model (LLM) pre-training, their adoption has been limited due to challenges in maintaining stability at scale. Existing approaches often rely on suboptimal fine-grained FP8 kernels or fall back to higher-precision matrix multiplications (GEMMs) in sensitive components, such as attention projections, compromising potential throughput gains. We introduce a new class of LLM architectures that, for the first time, support FP8 computation for all GEMMs within transformer blocks during both forward and backward passes. This enables unprecedented throughput gains, particularly at scale, while matching the downstream performance of standard BF16 training. Our architecture design reduces large outlier activations, promoting stable long-term FP8 training. Additionally, we identify key metrics for monitoring low-precision training and predicting potential future divergences.</p></main></body></html>

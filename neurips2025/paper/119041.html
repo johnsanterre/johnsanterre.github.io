@@ -1,0 +1,21 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SpectraLDS: Provable Distillation for Linear Dynamical Systems · NeurIPS 2025</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#7C2530;--card:#fff;--line:#e3e1dc;--code:#f0ede8}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#e58896;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.45rem;line-height:1.3;margin:.4rem 0 .8rem}h2{font-size:1.1rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+.meta{color:var(--muted);font-size:.9rem;margin:.2rem 0 1rem}
+.chip{display:inline-block;background:var(--code);border-radius:999px;padding:.1rem .7rem;font-size:.8rem;margin:0 .3rem .35rem 0}
+a.chip{color:var(--ink)}a.chip:hover{color:var(--accent);text-decoration:none}
+.abstract{margin-top:1rem}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+ul{padding-left:1.2rem}li{margin:.3rem 0}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+.def{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:.8rem 1rem;margin:.6rem 0}
+</style></head><body><main><nav><a href="../index.html">NeurIPS 2025 Explorer</a><a href="../concepts.html">Concepts</a><a href="../authors.html">Authors</a><a href="../glossary.html">Glossary</a><a href="https://johnsanterre.github.io/">johnsanterre.github.io</a></nav><h1>SpectraLDS: Provable Distillation for Linear Dynamical Systems</h1><div class="meta">Sofiia Druchyna <span class="count">(Princeton University)</span> · <a href="../author/elad-hazan.html">Elad Hazan</a> <span class="count">(Princeton University)</span> · Devan Shah <span class="count">(Princeton University)</span> · Shlomo Fortgang <span class="count">(Princeton University)</span></div><div><span class="chip">accuracy guarantees</span><span class="chip">constant-space inference</span><span class="chip">constant-time inference</span><a class="chip" href="../concept/convex-optimization.html">convex optimization</a><span class="chip">convolutions</span><span class="chip">effective memory</span><a class="chip" href="../concept/inference-efficiency.html">inference efficiency</a><span class="chip">invert representation</span><a class="chip" href="../concept/predictive-accuracy.html">predictive accuracy</a><span class="chip">sequence prediction architectures</span><span class="chip">spectral transform</span><span class="chip">spectral transformations</span><span class="chip">state dimension</span><span class="chip">symmetric linear dynamical systems</span></div><p class="abstract">We present the first provable method for identifying symmetric linear dynamical systems (LDS) with accuracy guarantees that are independent of the system’s state dimension or effective memory. Our approach builds upon recent work that represents symmetric LDSs as convolutions learnable via fixed spectral transformations. We show how to invert this representation—recovering an LDS model from its spectral transform—yielding an end-to-end convex optimization procedure. This distillation preserves predictive accuracy while enabling constant-time and constant-space inference per token, independent of sequence length. We evaluate our method, SpectraLDS, as a component in sequence prediction architectures and demonstrate that accuracy is preserved while inference efficiency is improved on tasks such as language modeling.</p></main></body></html>
