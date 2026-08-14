@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" role="img" aria-label="NeurIPS 2025 Explorer — papers as a graph">
+  <rect width="400" height="260" fill="#f6f4ef"/>
+  <g stroke="#b9b2a4" stroke-width="1.1" fill="none">
+    <line x1="200" y1="130" x2="80" y2="60"/><line x1="200" y1="130" x2="320" y2="58"/>
+    <line x1="200" y1="130" x2="70" y2="190"/><line x1="200" y1="130" x2="330" y2="196"/>
+    <line x1="200" y1="130" x2="200" y2="34"/><line x1="200" y1="130" x2="200" y2="226"/>
+    <line x1="80" y1="60" x2="200" y2="34"/><line x1="320" y1="58" x2="200" y2="34"/>
+    <line x1="70" y1="190" x2="200" y2="226"/><line x1="330" y1="196" x2="200" y2="226"/>
+  </g>
+  <g fill="#fffdf8" stroke="#8a8271" stroke-width="1.4">
+    <rect x="164" y="98" width="72" height="60" rx="6"/>
+  </g>
+  <g stroke="#c8c1b2" stroke-width="3" stroke-linecap="round">
+    <line x1="174" y1="114" x2="226" y2="114"/><line x1="174" y1="126" x2="218" y2="126"/>
+    <line x1="174" y1="138" x2="222" y2="138"/>
+  </g>
+  <g fill="#7C2530">
+    <circle cx="80" cy="60" r="7"/><circle cx="320" cy="58" r="7"/>
+    <circle cx="70" cy="190" r="7"/><circle cx="330" cy="196" r="7"/>
+    <circle cx="200" cy="34" r="7"/><circle cx="200" cy="226" r="7"/>
+  </g>
+  <g fill="#8a8271" font-family="Helvetica,Arial,sans-serif" font-size="13" text-anchor="middle">
+    <text x="80" y="46">concept</text><text x="320" y="44">author</text>
+    <text x="70" y="212">paper</text><text x="330" y="218">paper</text>
+  </g>
+</svg>
