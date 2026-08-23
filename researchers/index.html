@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>John's Researcher Map</title>
+<!-- PERSONAL map — same construction as the knowledge-bank/PSW graphs:
+     one local file, canvas, deterministic layout, drag persists locally.
+     Data lives in data.js (people, topics, papers); edges are derived
+     from shared authorship, weight = number of shared papers. -->
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; overflow: hidden; }
+  body { background: #0a1429; color: #f3f6fc;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, sans-serif; }
+  #c { position: fixed; inset: 0; cursor: grab; }
+  #hdr { position: fixed; top: 14px; left: 18px; z-index: 10; pointer-events: none; }
+  #hdr .t { font-size: 20px; font-weight: 800; }
+  #hdr .s { font-size: 13px; color: #9fb0cc; margin-top: 2px; }
+  #panel {
+    position: fixed; top: 0; right: 0; bottom: 0; width: 340px; z-index: 20;
+    background: rgba(10,20,41,.96); border-left: 1px solid rgba(159,176,204,.25);
+    padding: 22px; overflow-y: auto; transform: translateX(100%);
+    transition: transform .25s ease;
+  }
+  #panel.open { transform: none; }
+  #panel .name { font-size: 22px; font-weight: 800; }
+  #panel .affil { font-size: 14px; color: #9fb0cc; margin: 4px 0 12px; }
+  #panel .topic { display: inline-block; font-size: 11px; letter-spacing: .15em;
+    text-transform: uppercase; font-weight: 800; padding: 3px 10px;
+    border-radius: 999px; border: 1px solid; margin-bottom: 12px; }
+  #panel .why { font-size: 14px; line-height: 1.5; color: #d7dfee; margin-bottom: 16px; }
+  #panel h4 { font-size: 12px; letter-spacing: .18em; text-transform: uppercase;
+    color: #9fb0cc; margin: 14px 0 8px; }
+  #panel .paper { font-size: 13px; line-height: 1.4; margin: 8px 0;
+    padding-left: 10px; border-left: 2px solid rgba(159,176,204,.35); }
+  #panel .paper a { color: #19c2c2; text-decoration: none; }
+  #panel .paper .meta { color: #9fb0cc; }
+  #panel .close { position: absolute; top: 12px; right: 14px; cursor: pointer;
+    color: #9fb0cc; font-size: 20px; background: none; border: none; }
+  #hint { position: fixed; bottom: 12px; left: 18px; font-size: 12px;
+    color: #9fb0cc; z-index: 10; }
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="hdr"><div class="t">John's Researcher Map</div>
+  <div class="s">people · papers as edges · topics as territories — personal, interest-seeded</div></div>
+<div id="hint">drag a node to move it (saved locally) · drag background to pan · scroll to zoom · click a node for details</div>
+<div id="panel"><button class="close" onclick="closePanel()">×</button><div id="pbody"></div></div>
+
+<script src="data.js"></script>
+<script>
+const cv = document.getElementById("c"), cx = cv.getContext("2d");
+let W, H, dpr = window.devicePixelRatio || 1;
+function resize() {
+  W = innerWidth; H = innerHeight;
+  cv.width = W * dpr; cv.height = H * dpr;
+  cv.style.width = W + "px"; cv.style.height = H + "px";
+  draw();
+}
+addEventListener("resize", resize);
+
+// ---- derived model ----
+const byId = Object.fromEntries(PEOPLE.map(p => [p.id, p]));
+const edges = {};                      // "a|b" -> {a, b, papers: []}
+for (const paper of PAPERS) {
+  const a = paper.authors.filter(id => byId[id]);
+  for (let i = 0; i < a.length; i++) for (let j = i + 1; j < a.length; j++) {
+    const key = [a[i], a[j]].sort().join("|");
+    (edges[key] ||= { a: a[i], b: a[j], papers: [] }).papers.push(paper);
+  }
+}
+const paperCount = Object.fromEntries(PEOPLE.map(p =>
+  [p.id, PAPERS.filter(x => x.authors.includes(p.id)).length]));
+
+// Auto-place anyone without hand-set coordinates: a deterministic
+// golden-angle spiral around their topic anchor (same result every
+// load — data order decides, no physics).
+const placed = {};
+for (const p of PEOPLE) {
+  if (p.x !== undefined) continue;
+  const t = TOPICS[p.topic];
+  const i = (placed[p.topic] = (placed[p.topic] || 0) + 1);
+  const ang = i * 2.399963;                 // golden angle
+  const rad = 70 + 46 * Math.sqrt(i);
+  p.x = t.x + rad * Math.cos(ang);
+  p.y = t.y + rad * Math.sin(ang);
+}
+
+// local overrides (one node at a time, drag-to-taste)
+const saved = JSON.parse(localStorage.getItem("researcher-map-pos") || "{}");
+for (const p of PEOPLE) { if (saved[p.id]) { p.x = saved[p.id][0]; p.y = saved[p.id][1]; } }
+
+// ---- view transform ----
+let vx = 0, vy = 0, scale = 1;
+function fit() {
+  const xs = PEOPLE.map(p => p.x), ys = PEOPLE.map(p => p.y);
+  const minx = Math.min(...xs) - 160, maxx = Math.max(...xs) + 160;
+  const miny = Math.min(...ys) - 120, maxy = Math.max(...ys) + 120;
+  scale = Math.min(W / (maxx - minx), H / (maxy - miny));
+  vx = (W - (minx + maxx) * scale) / 2;
+  vy = (H - (miny + maxy) * scale) / 2;
+}
+const w2s = (x, y) => [x * scale + vx, y * scale + vy];
+const s2w = (x, y) => [(x - vx) / scale, (y - vy) / scale];
+
+// ---- draw ----
+let hover = null, selected = null;
+function draw() {
+  cx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  cx.clearRect(0, 0, W, H);
+
+  // topic territories: soft radial blobs + labels
+  for (const [id, t] of Object.entries(TOPICS)) {
+    const members = PEOPLE.filter(p => p.topic === id);
+    if (!members.length) continue;
+    const mx = members.reduce((s, p) => s + p.x, 0) / members.length;
+    const my = members.reduce((s, p) => s + p.y, 0) / members.length;
+    const r = Math.max(120, ...members.map(p => Math.hypot(p.x - mx, p.y - my) + 90));
+    const [sx, sy] = w2s(mx, my);
+    const g = cx.createRadialGradient(sx, sy, 0, sx, sy, r * scale);
+    g.addColorStop(0, t.color + "26"); g.addColorStop(1, t.color + "00");
+    cx.fillStyle = g;
+    cx.beginPath(); cx.arc(sx, sy, r * scale, 0, 7); cx.fill();
+    cx.fillStyle = t.color + "aa";
+    cx.font = `800 ${Math.max(10, 12 * scale)}px -apple-system, sans-serif`;
+    cx.textAlign = "center";
+    cx.fillText(t.label.toUpperCase(), sx, sy - r * scale * 0.75);
+  }
+
+  // edges: width = shared-paper count
+  for (const e of Object.values(edges)) {
+    const A = byId[e.a], B = byId[e.b];
+    const [ax, ay] = w2s(A.x, A.y), [bx, by] = w2s(B.x, B.y);
+    const active = hover && (hover.id === e.a || hover.id === e.b);
+    cx.strokeStyle = active ? "rgba(255,122,24,.85)" : "rgba(159,176,204,.30)";
+    cx.lineWidth = (1 + e.papers.length * 1.6) * scale;
+    cx.beginPath(); cx.moveTo(ax, ay); cx.lineTo(bx, by); cx.stroke();
+  }
+
+  // nodes: radius from paper count
+  for (const p of PEOPLE) {
+    const [x, y] = w2s(p.x, p.y);
+    const r = (12 + paperCount[p.id] * 4) * scale;
+    const col = TOPICS[p.topic].color;
+    cx.beginPath(); cx.arc(x, y, r, 0, 7);
+    cx.fillStyle = "#0d1a35"; cx.fill();
+    cx.lineWidth = (p === hover || p === selected ? 3.5 : 2) * scale;
+    cx.strokeStyle = col; cx.stroke();
+    cx.fillStyle = "#f3f6fc";
+    cx.font = `700 ${Math.max(10, 14 * scale)}px -apple-system, sans-serif`;
+    cx.textAlign = "center";
+    cx.fillText(p.name, x, y + r + 16 * scale);
+    cx.fillStyle = "#9fb0cc";
+    cx.font = `400 ${Math.max(8, 11 * scale)}px -apple-system, sans-serif`;
+    cx.fillText(p.affil, x, y + r + 31 * scale);
+  }
+}
+
+// ---- interaction ----
+function pick(mx, my) {
+  const [wx, wy] = s2w(mx, my);
+  return PEOPLE.find(p =>
+    Math.hypot(p.x - wx, p.y - wy) < (14 + paperCount[p.id] * 4) + 8);
+}
+let drag = null, panning = false, lx = 0, ly = 0, moved = false;
+cv.addEventListener("mousedown", e => {
+  lx = e.clientX; ly = e.clientY; moved = false;
+  drag = pick(e.clientX, e.clientY);
+  panning = !drag;
+});
+addEventListener("mousemove", e => {
+  const dx = e.clientX - lx, dy = e.clientY - ly;
+  if (drag) {                                  // one node only — no reflow
+    drag.x += dx / scale; drag.y += dy / scale;
+    lx = e.clientX; ly = e.clientY; moved = true; draw();
+  } else if (panning) {
+    vx += dx; vy += dy; lx = e.clientX; ly = e.clientY; moved = true; draw();
+  } else {
+    const h = pick(e.clientX, e.clientY);
+    if (h !== hover) { hover = h; cv.style.cursor = h ? "pointer" : "grab"; draw(); }
+  }
+});
+addEventListener("mouseup", e => {
+  if (drag && moved) {
+    saved[drag.id] = [drag.x, drag.y];
+    localStorage.setItem("researcher-map-pos", JSON.stringify(saved));
+  }
+  if (!moved) { const p = pick(e.clientX, e.clientY); if (p) openPanel(p); else closePanel(); }
+  drag = null; panning = false;
+});
+cv.addEventListener("wheel", e => {
+  e.preventDefault();
+  const f = Math.exp(-e.deltaY * 0.0015);
+  const [wx, wy] = s2w(e.clientX, e.clientY);
+  scale *= f;
+  vx = e.clientX - wx * scale; vy = e.clientY - wy * scale;
+  draw();
+}, { passive: false });
+
+// ---- detail panel ----
+function openPanel(p) {
+  selected = p;
+  const t = TOPICS[p.topic];
+  const papers = PAPERS.filter(x => x.authors.includes(p.id));
+  const coll = Object.values(edges).filter(e => e.a === p.id || e.b === p.id)
+    .map(e => byId[e.a === p.id ? e.b : e.a].name);
+  document.getElementById("pbody").innerHTML = `
+    <div class="name">${p.name}</div>
+    <div class="affil">${p.affil}</div>
+    <div class="topic" style="color:${t.color};border-color:${t.color}">${t.label}</div>
+    <div class="why">${p.why}</div>
+    ${coll.length ? `<h4>Connected to</h4><div class="why">${coll.join(" · ")}</div>` : ""}
+    <h4>Papers on the map</h4>
+    ${papers.map(x => `<div class="paper"><a href="${x.link}" target="_blank">${x.title}</a>
+      <div class="meta">${x.venue} ${x.year}${x.note ? " — " + x.note : ""}</div></div>`).join("")}`;
+  document.getElementById("panel").classList.add("open");
+  draw();
+}
+function closePanel() {
+  selected = null;
+  document.getElementById("panel").classList.remove("open");
+  draw();
+}
+
+resize(); fit(); draw();
+</script>
+</body>
+</html>
