@@ -151,6 +151,8 @@ const PEOPLE = [
     why: "Deep RL for robotics; apprenticeship learning lineage." },
   { id: "hassabis", name: "Demis Hassabis", affil: "DeepMind", topic: "rl",
     why: "AlphaGo to AlphaFold - RL as an institution; Nobel 2024." },
+  { id: "veloso", name: "Manuela Veloso", affil: "CMU / JPMorgan AI", topic: "rl",
+    why: "RoboCup co-founder; CoBots and symbiotic autonomy - robots that ask for help; planning+learning for multi-agent systems; Herbert Simon University Professor at CMU, then head of AI research at JPMorgan. Hand-picked 2026-08-27." },
 
   { id: "newell", name: "Allen Newell", affil: "CMU (d. 1992)", topic: "classic-ai",
     why: "Logic Theorist, SOAR, Human Problem Solving with Simon." },
