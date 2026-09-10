@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terms of Service — Lecture Uploader — John Santerre, PhD</title>
+<meta name="description" content="Terms of service for Lecture Uploader, a private single-user API client that uploads John Santerre's own course lecture videos to his own YouTube channel.">
+<link rel="icon" href="/assets/santerre-ai-logo.svg">
+<style>
+  :root {
+    --bg: #fafaf8;
+    --ink: #141414;
+    --muted: #6b6b66;
+    --line: #e4e2dc;
+    --accent: #7C2530;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+  }
+  a { color: inherit; }
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    display: flex; align-items: baseline; gap: 28px;
+    padding: 20px 5vw; background: var(--bg);
+    border-bottom: 1px solid var(--line);
+  }
+  nav a { text-decoration: none; }
+  nav .name { font-weight: 600; font-size: 17px; }
+  nav .links { display: flex; gap: 22px; font-size: 15px; color: var(--muted); }
+  nav .links a:hover { color: var(--accent); }
+  main { max-width: 720px; margin: 0 auto; padding: 56px 5vw 90px; }
+  h1 { font-size: 34px; line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 10px; }
+  .dek { color: var(--muted); font-size: 17px; margin-bottom: 8px; }
+  .updated { color: var(--muted); font-size: 14px; margin-bottom: 40px;
+             padding-bottom: 22px; border-bottom: 1px solid var(--line); }
+  h2 { font-size: 20px; margin: 38px 0 12px; letter-spacing: -0.01em; }
+  p { margin-bottom: 14px; font-size: 16.5px; }
+  ul { margin: 0 0 16px 22px; font-size: 16.5px; }
+  li { margin-bottom: 8px; }
+  .box { background: #fff; border: 1px solid var(--line); border-left: 3px solid var(--accent);
+         padding: 18px 22px; margin: 24px 0; font-size: 16px; }
+  footer { border-top: 1px solid var(--line); padding: 26px 5vw; color: var(--muted); font-size: 14px; }
+</style>
+<script data-goatcounter="https://johnsanterre.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+
+<nav>
+  <a class="name" href="/" style="display:inline-flex;align-items:center;gap:9px"><img src="/assets/santerre-ai-logo.svg" alt="" width="26" height="26" style="display:block">John Santerre</a>
+  <span class="links">
+    <a href="/work-with-me/">Work With Me</a>
+    <a href="/research/">Research</a>
+    <a href="/#resources">Resources</a>
+    <a href="/photography/">Photography</a>
+    <a href="/#about">About</a>
+    <a href="/updates/">Updates</a>
+  </span>
+</nav>
+
+<main>
+  <h1>Terms of Service</h1>
+  <p class="dek">Lecture Uploader, a private API client</p>
+  <p class="updated">Last updated 9 September 2026</p>
+
+  <div class="box">
+    <b>Lecture Uploader</b> is a private command line tool with one user, who is also its
+    author. It is not distributed, sold, or offered as a service to anybody. These terms
+    exist because the YouTube API Services Terms of Service require an API client to publish
+    them.
+  </div>
+
+  <h2>1. What this client is</h2>
+  <p>Lecture Uploader is a command line program written and operated by John Santerre. It
+    uploads video files from a personal computer to the YouTube channel that authorises it,
+    setting a title, description, tags, and privacy status for each.</p>
+  <p>The videos are recorded lectures for university courses the author teaches. The author
+    produced them, holds the rights to them, and uploads them to his own channel.</p>
+
+  <h2>2. Who may use it</h2>
+  <p>The author, and nobody else. The client is not published, has no installer, no account
+    system, and no interface for a second person. If that changes, these terms will be
+    rewritten before it does.</p>
+
+  <h2>3. YouTube API Services</h2>
+  <p>This client uses the YouTube API Services. By authorising it you are also agreeing to
+    the <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a>. Google's
+    handling of data on its side is described in the
+    <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
+  <p>The client requests one scope,
+    <code>https://www.googleapis.com/auth/youtube.upload</code>, and requests no other.</p>
+
+  <h2>4. What the client will not do</h2>
+  <ul>
+    <li>It will not collect, store, or process data about YouTube users.</li>
+    <li>It will not scrape, index, or bulk-download YouTube content.</li>
+    <li>It will not access any channel other than the one that authorised it.</li>
+    <li>It will not sell, share, or transfer authorised data to any third party.</li>
+    <li>It will not be used to circumvent any YouTube feature, policy, or restriction.</li>
+    <li>It will not display advertising or be operated for commercial gain.</li>
+  </ul>
+
+  <h2>5. Content</h2>
+  <p>The author is responsible for the videos uploaded and warrants that he holds the
+    necessary rights to them. Uploaded content is subject to YouTube's
+    <a href="https://www.youtube.com/howyoutubeworks/policies/community-guidelines/">Community
+    Guidelines</a> and to YouTube's own moderation, over which this client has no influence.</p>
+
+  <h2>6. Revoking access</h2>
+  <p>Authorisation may be withdrawn at any time at
+    <a href="https://myaccount.google.com/permissions">https://myaccount.google.com/permissions</a>,
+    without notice and without contacting the author. The client stops working immediately.</p>
+
+  <h2>7. No warranty</h2>
+  <p>The client is provided as is, to its single user, with no warranty of any kind. The
+    author accepts no liability for its use, since the author is the only person who uses it.</p>
+
+  <h2>8. Changes</h2>
+  <p>These terms may be updated. The date at the top records when. Because the client has one
+    user, there is no notification mechanism and none is required.</p>
+
+  <h2>9. Contact</h2>
+  <p><a href="mailto:john.santerre.ai@gmail.com">john.santerre.ai@gmail.com</a></p>
+
+  <p style="margin-top:34px"><a href="/api-privacy/">Privacy policy for this client &rarr;</a></p>
+</main>
+
+<footer>
+  &copy; 2026 John Santerre &middot;
+  <a href="/">santerre.ai</a> &middot;
+  <a href="mailto:john.santerre.ai@gmail.com">john.santerre.ai@gmail.com</a>
+</footer>
+
+</body>
+</html>
