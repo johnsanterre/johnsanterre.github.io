@@ -45,6 +45,8 @@
   #panel .nums div { font-size: 12px; color: #9fb0cc; }
   #panel .nums b { display: block; font-size: 18px; color: #f3f6fc; }
   #panel .why { font-size: 14px; line-height: 1.5; color: #d7dfee; margin-bottom: 10px; }
+  #panel .cardlink { display: inline-block; margin: 6px 0 4px; padding: 5px 12px; border: 1px solid #f0c04a; border-radius: 6px; color: #f0c04a; font-weight: 700; text-decoration: none; }
+  #panel .cardlink:hover { background: #f0c04a; color: #0b1020; }
   #panel h4 { font-size: 11.5px; letter-spacing: .18em; text-transform: uppercase; color: #9fb0cc; margin: 16px 0 8px; }
   #panel .paper { font-size: 13px; line-height: 1.4; margin: 8px 0; padding-left: 10px; border-left: 2px solid rgba(159,176,204,.35); }
   #panel .paper a, #panel a { color: #19c2c2; text-decoration: none; }
@@ -68,6 +70,7 @@
   <input id="search" type="text" placeholder="Search a person (name)…" autocomplete="off" />
   <div id="results"></div>
   <div id="ctl">
+    <div class="row"><label>Arrange</label><select id="arr"><option value="topic">by topic</option><option value="uni">by university</option></select></div>
     <div class="row"><label>University</label><select id="uni"><option value="">all</option></select>
       <label>min h</label><input id="hmin" type="range" min="0" max="150" value="0" style="width:90px" /><span id="hminv">0</span></div>
     <div class="row"><label>Edges</label><select id="emode"><option value="hover">on hover</option><option value="strong">shared ≥ 2 works</option><option value="all">all co-authorship</option><option value="none">none</option></select>
@@ -80,11 +83,15 @@
 <div id="panel"><button class="close" onclick="closePanel()">×</button><div id="pbody"></div></div>
 
 <script src="data.js"></script>
+<script src="cards/oa-index.js"></script>
 <script>
 const cv = document.getElementById("c"), cx = cv.getContext("2d");
 let W, H, dpr = window.devicePixelRatio || 1;
 const N = PEOPLE.length;
 PEOPLE.forEach((p, i) => { p.i = i; p.r = 2.5 + 0.075 * p.h; });
+// a dot with a researcher card links to it, and takes the card's sourced university over OpenAlex's (OpenAlex lags moves)
+const CARDS_URL = "./";
+for (const p of PEOPLE) { const k = (window.OA_CARD || {})[p.id]; if (k) { p.card = k[0]; if (k[1]) { p.cu = k[1]; p.u = k[1]; } } }
 const byId = Object.fromEntries(PEOPLE.map(p => [p.id, p]));
 document.getElementById("sub").textContent =
   `${META.people.toLocaleString()} researchers · node size = OpenAlex h-index · domains as territories · ` +
@@ -100,11 +107,13 @@ for (const e of EDGES) { adj[e[0]].push(e); adj[e[1]].push(e); }
 // ---- filters ----
 const domOn = Object.fromEntries(Object.keys(DOMAINS).map(d => [d, true]));
 let uniSel = "", hMin = 0, emode = "hover", showLin = true, verifOnly = false;
-function visible(p) { return domOn[p.d] && p.h >= hMin && (!uniSel || p.u === uniSel) && (!verifOnly || p.v); }
+let arrange = "topic";
+function visible(p) { return (arrange === "topic" || (p.u && p.u !== "Industry")) && domOn[p.d] && p.h >= hMin && (!uniSel || p.u === uniSel) && (!verifOnly || p.v); }
 
 const uniEl = document.getElementById("uni");
-for (const [u, n] of META.universities) { const o = document.createElement("option"); o.value = u; o.textContent = `${u} (${n})`; uniEl.appendChild(o); }
-uniEl.onchange = () => { uniSel = uniEl.value; draw(); };
+const uniCount = {}; for (const p of PEOPLE) if (p.u && p.u !== "Industry") uniCount[p.u] = (uniCount[p.u] || 0) + 1;
+for (const [u, n] of Object.entries(uniCount).sort((a, b) => b[1] - a[1])) { const o = document.createElement("option"); o.value = u; o.textContent = `${u} (${n})`; uniEl.appendChild(o); }
+uniEl.onchange = () => { uniSel = uniEl.value; fit(); draw(); };   // frame the chosen university's people; with few people on screen every name shows
 const hminEl = document.getElementById("hmin");
 hminEl.oninput = () => { hMin = +hminEl.value; document.getElementById("hminv").textContent = hMin; draw(); };
 document.getElementById("emode").onchange = e => { emode = e.target.value; draw(); };
@@ -123,8 +132,34 @@ for (const [d, t] of Object.entries(DOMAINS)) {
   c.dataset.d = d; leg.appendChild(c);
 }
 
+// ---- arrange by university (John, 2026-11-03: "map should sort by university affiliation like it does by topic") ----
+// Each university is a territory sized by its head count; its people sit inside on a sunflower spiral, highest h-index at
+// the centre. Dot colours still show the topic. People with no university (and industry) are left out of this view.
+for (const p of PEOPLE) { p.tx = p.x; p.ty = p.y; }
+const UNI_TERR = (() => {
+  const by = {};
+  for (const p of PEOPLE) if (p.u && p.u !== "Industry") (by[p.u] ||= []).push(p);
+  const unis = Object.entries(by).map(([u, ps]) => ({ label: u, ps: ps.sort((a, b) => b.h - a.h), r: 26 * Math.sqrt(ps.length) + 40 }))
+    .sort((a, b) => b.ps.length - a.ps.length);
+  const width = Math.sqrt(unis.reduce((s, u) => s + 4 * u.r * u.r, 0)) * 1.15;
+  let x = 0, y = 0, rowH = 0;
+  for (const u of unis) {
+    if (x + 2 * u.r > width && x > 0) { x = 0; y += rowH + 30; rowH = 0; }
+    u.x = x + u.r; u.y = y + u.r; x += 2 * u.r + 30; rowH = Math.max(rowH, 2 * u.r);
+    u.ps.forEach((p, k) => { const a = k * 2.39996, d = 26 * Math.sqrt(k + 0.5); p.ux = u.x + d * Math.cos(a); p.uy = u.y + d * Math.sin(a); });
+    u.color = "#9fb0cc";
+  }
+  return unis;
+})();
+document.getElementById("arr").onchange = e => {
+  arrange = e.target.value;
+  for (const p of PEOPLE) { if (arrange === "uni" && p.ux != null) { p.x = p.ux; p.y = p.uy; } else { p.x = p.tx; p.y = p.ty; } }
+  fitScale = 1; uniSelPrev = uniSel; uniSel = ""; fit(); uniSel = uniSelPrev; if (uniSel) fit(); draw();
+};
+let uniSelPrev = "";
+
 // ---- view transform ----
-let vx = 0, vy = 0, scale = 1;
+let vx = 0, vy = 0, scale = 1, fitScale = 1;   // fitScale: the whole-map view; names appear only when zoomed in past it (John, 2026-11-03)
 function fit() {
   const vis = PEOPLE.filter(visible); const pts = vis.length ? vis : PEOPLE;
   let minx = 1e9, maxx = -1e9, miny = 1e9, maxy = -1e9;
@@ -132,6 +167,7 @@ function fit() {
   minx -= 150; maxx += 150; miny -= 150; maxy += 150;
   scale = Math.min((W - 360) / (maxx - minx), H / (maxy - miny));
   vx = 340 + ((W - 340) - (minx + maxx) * scale) / 2; vy = (H - (miny + maxy) * scale) / 2;
+  if (!uniSel && hMin === 0) fitScale = scale;   // names key off the whole-map view, not a filtered one
 }
 const w2s = (x, y) => [x * scale + vx, y * scale + vy];
 const s2w = (x, y) => [(x - vx) / scale, (y - vy) / scale];
@@ -147,16 +183,23 @@ function draw() { if (!raf) raf = requestAnimationFrame(() => { raf = 0; paint()
 function paint() {
   cx.setTransform(dpr, 0, 0, dpr, 0, 0);
   cx.clearRect(0, 0, W, H);
-  // territories
-  for (const [d, t] of Object.entries(DOMAINS)) {
-    if (!domOn[d]) continue;
+  // territories; a territory label that would overlap an earlier one moves down a line
+  const domBoxes = [];
+  const terr = arrange === "uni" ? UNI_TERR.filter(t => !uniSel || t.label === uniSel) : Object.entries(DOMAINS).filter(([d]) => domOn[d]).map(([, t]) => t);
+  for (const t of terr) {
     const [sx, sy] = w2s(t.x, t.y); const R = t.r * scale;
+    if (arrange === "uni" && R < 28) continue;   // a small university's name waits until you zoom in
     const g = cx.createRadialGradient(sx, sy, 0, sx, sy, R);
     g.addColorStop(0, t.color + "2a"); g.addColorStop(0.8, t.color + "10"); g.addColorStop(1, t.color + "00");
     cx.fillStyle = g; cx.beginPath(); cx.arc(sx, sy, R, 0, 7); cx.fill();
     cx.fillStyle = t.color + "bb"; cx.textAlign = "center";
-    cx.font = `800 ${Math.max(11, Math.min(26, 0.045 * R))}px -apple-system, sans-serif`;
-    cx.fillText(t.label.toUpperCase(), sx, sy - R * 0.92);
+    const dfs = Math.max(11, Math.min(26, 0.045 * R));
+    cx.font = `800 ${dfs}px -apple-system, sans-serif`;
+    const txt = t.label.toUpperCase(), tw = cx.measureText(txt).width;
+    let ly = sy - R * 0.92;
+    for (let tries = 0; tries < 6 && domBoxes.some(b => overlaps(b, [sx - tw / 2, ly - dfs, tw, dfs * 1.2])); tries++) ly += dfs * 1.3;
+    domBoxes.push([sx - tw / 2, ly - dfs, tw, dfs * 1.2]);
+    cx.fillText(txt, sx, ly);
   }
   const focus = hover || selected;
   // edges
@@ -176,7 +219,9 @@ function paint() {
   cx.setLineDash([]);
   // nodes
   const neighbours = new Set(); if (focus) for (const e of adj[focus.i]) neighbours.add(e[0] === focus.i ? e[1] : e[0]);
-  const labelPx = 6;
+  const zoom = scale / fitScale, cands = [];
+  let nVis = 0; for (const p of PEOPLE) if (visible(p) && ++nVis > 150) break;
+  const few = nVis <= 150;   // a university or a high h cut-off leaves room for every name
   for (let k = N - 1; k >= 0; k--) {           // small nodes first, big on top
     const p = PEOPLE[k]; if (!visible(p)) continue;
     const [x, y] = w2s(p.x, p.y); const r = p.r * scale;
@@ -186,16 +231,28 @@ function paint() {
     cx.fillStyle = hot ? col : col + (focus ? "55" : "99"); cx.fill();
     if (r > 2.5) { cx.lineWidth = hot ? 2.5 : 1; cx.strokeStyle = hot ? "#fff" : col; cx.stroke(); }
     if (p.v && r > 3) { cx.beginPath(); cx.arc(x, y, r + 2.5, 0, 7); cx.lineWidth = 1; cx.strokeStyle = "rgba(255,255,255,.55)"; cx.stroke(); }
-    // labels thin out with zoom: the top few names of each territory when zoomed out, everyone when zoomed well in
-    const showLabel = hot || (scale > 2.2) || (scale > 1.0 && (r >= 7 || p.rank <= 80)) || (scale > 0.45 && p.rank <= 25) || (scale > 0.18 && p.rank <= 8) || p.rank <= 3;
-    if (showLabel) {
-      const fs = Math.max(10, Math.min(15, 10 * Math.sqrt(scale) + 4));
-      cx.fillStyle = hot ? "#fff" : "rgba(243,246,252,.88)"; cx.font = `${hot ? 800 : 600} ${fs}px -apple-system, sans-serif`; cx.textAlign = "center";
-      cx.fillText(p.n, x, y + r + fs);
-      if (scale > 2.2 || hot) { cx.fillStyle = "#9fb0cc"; cx.font = `400 ${fs - 2}px -apple-system, sans-serif`; cx.fillText((p.u || p.a || "") + " · h " + p.h, x, y + r + 2 * fs - 1); }
-    }
+    // names: none on the whole-map view; the top names of each territory from 2x zoom, more as you zoom, everyone from 8x
+    if (hot || few || (zoom >= 2 && p.rank <= 5) || (zoom >= 4 && p.rank <= 25) || zoom >= 8) cands.push({ p, x, y, r, hot });
+  }
+  // place names in priority order (hovered and selected first, then by h-index rank) and skip any that would overlap a placed one
+  cands.sort((a, b) => (b.hot - a.hot) || (a.p.rank - b.p.rank));
+  const boxes = [], fs = Math.max(10, Math.min(15, 10 * Math.sqrt(zoom) + 2)), detail = zoom >= 8;
+  cx.textAlign = "center";
+  for (const { p, x, y, r, hot } of cands) {
+    cx.font = `${hot ? 800 : 600} ${fs}px -apple-system, sans-serif`;
+    const sub = (detail || hot) ? (p.u || p.a || "") + " · h " + p.h : "";
+    const w = Math.max(cx.measureText(p.n).width, sub ? cx.measureText(sub).width * 0.85 : 0) + 6;
+    const hgt = (sub ? 2 : 1) * fs + 4;
+    const below = [x - w / 2, y + r + 2, w, hgt], above = [x - w / 2, y - r - 2 - hgt, w, hgt];   // below the dot, or above it when below is taken
+    const box = hot || !boxes.some(b => overlaps(b, below)) ? below : !boxes.some(b => overlaps(b, above)) ? above : null;
+    if (!box) continue;
+    boxes.push(box);
+    cx.fillStyle = hot ? "#fff" : "rgba(243,246,252,.92)";
+    cx.fillText(p.n, x, box[1] + fs - 2);
+    if (sub) { cx.fillStyle = "#9fb0cc"; cx.font = `400 ${fs - 2}px -apple-system, sans-serif`; cx.fillText(sub, x, box[1] + 2 * fs - 3); }
   }
 }
+const overlaps = (a, b) => a[0] < b[0] + b[2] && b[0] < a[0] + a[2] && a[1] < b[1] + b[3] && b[1] < a[1] + a[3];
 
 // ---- interaction ----
 function pick(mx, my) {
@@ -258,10 +315,11 @@ function withProfile(p, fn) {
 }
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const fmt = n => n == null ? "–" : Number(n).toLocaleString();
+const cardLink = p => p.card ? `<a class="cardlink" href="${CARDS_URL}#${encodeURIComponent(p.card)}">Open the full card →</a>` : `<div class="meta">No researcher card for this person yet.</div>`;
 function openPanel(p) {
   selected = p; location.hash = "id=" + p.id; draw();
   const t = DOMAINS[p.d];
-  document.getElementById("pbody").innerHTML = `<div class="name">${esc(p.n)}</div><div class="affil">${esc(p.a || "")}</div>
+  document.getElementById("pbody").innerHTML = `<div class="name">${esc(p.n)}</div>${cardLink(p)}<div class="affil">${esc(p.cu || p.a || "")}</div>
     <div class="dom" style="color:${t.color};border-color:${t.color}">${esc(t.label)}</div><div class="meta">loading profile…</div>`;
   document.getElementById("panel").classList.add("open");
   withProfile(p, pr => renderProfile(p, pr));
@@ -272,8 +330,8 @@ function renderProfile(p, pr) {
   const jump = q => `<span class="link" onclick="jumpTo('${q.id}')">${esc(q.name)}</span>`;
   const home = pr && pr.home ? pr.home : { name: p.a };
   const scholar = `https://scholar.google.com/scholar?q=${encodeURIComponent('author:"' + p.n + '"')}`;
-  let html = `<div class="name">${esc(p.n)}</div>
-    <div class="affil">${esc(home.name || "affiliation unknown")}${home.years && home.years.length ? ` <span class="meta">(${home.years[0]}–${home.years[home.years.length - 1]})</span>` : ""}${pr && pr.curated && pr.curated.dept ? `<br>${esc(pr.curated.title || "")} ${esc(pr.curated.dept)}` : ""}</div>
+  let html = `<div class="name">${esc(p.n)}</div>${cardLink(p)}
+    <div class="affil">${p.cu ? `${esc(p.cu)} <span class="meta">(from the researcher card; OpenAlex lists ${esc(home.name || "none")})</span>` : esc(home.name || "affiliation unknown")}${home.years && home.years.length ? ` <span class="meta">(${home.years[0]}–${home.years[home.years.length - 1]})</span>` : ""}${pr && pr.curated && pr.curated.dept ? `<br>${esc(pr.curated.title || "")} ${esc(pr.curated.dept)}` : ""}</div>
     <div class="dom" style="color:${t.color};border-color:${t.color}">${esc(t.label)}</div>${p.v ? `<span class="dom" style="color:#fff;border-color:#fff">verified layer</span>` : ""}
     <div class="nums"><div><b>${fmt(p.h)}</b>h-index</div><div><b>${fmt(p.c)}</b>citations</div><div><b>${fmt(p.w)}</b>works</div>${pr && pr.i10 != null ? `<div><b>${fmt(pr.i10)}</b>i10</div>` : ""}</div>`;
   if (!pr) { html += `<div class="meta">No profile file for this domain yet (run build.py).</div>`; }
