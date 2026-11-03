@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Machine Learning Academics Map</title>
+<!-- Same construction as the Researcher Map and the PSW Atlas: one local file, a canvas, a deterministic
+     layout computed by build.py, no server. data.js carries the people, domains and edges; profiles/<domain>.js
+     files carry the full per-person profiles and are loaded the first time a node of that domain is opened. -->
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; overflow: hidden; }
+  body { background: #0a1429; color: #f3f6fc;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, sans-serif; }
+  #c { position: fixed; inset: 0; cursor: grab; }
+  #hdr { position: fixed; top: 12px; left: 16px; z-index: 10; width: 330px; }
+  #hdr .t { font-size: 19px; font-weight: 800; }
+  #hdr .s { font-size: 12px; color: #9fb0cc; margin: 2px 0 8px; line-height: 1.4; }
+  #search { width: 100%; padding: 8px 10px; border-radius: 8px; border: 1px solid rgba(159,176,204,.35);
+    background: rgba(13,26,53,.95); color: #f3f6fc; font-size: 14px; outline: none; }
+  #search:focus { border-color: #19c2c2; }
+  #results { background: rgba(13,26,53,.98); border: 1px solid rgba(159,176,204,.25); border-radius: 8px;
+    margin-top: 4px; max-height: 300px; overflow-y: auto; display: none; }
+  #results div { padding: 6px 10px; font-size: 13px; cursor: pointer; display: flex; justify-content: space-between; gap: 8px; }
+  #results div:hover, #results div.sel { background: rgba(25,194,194,.18); }
+  #results .m { color: #9fb0cc; font-size: 11px; white-space: nowrap; }
+  #ctl { margin-top: 8px; font-size: 12px; color: #d7dfee; }
+  #ctl .row { display: flex; gap: 6px; align-items: center; margin: 5px 0; flex-wrap: wrap; }
+  #ctl select, #ctl input[type=range] { background: rgba(13,26,53,.95); color: #f3f6fc; border: 1px solid rgba(159,176,204,.35);
+    border-radius: 6px; padding: 3px 6px; font-size: 12px; max-width: 200px; }
+  #ctl label { color: #9fb0cc; }
+  #legend { margin-top: 6px; display: flex; flex-wrap: wrap; gap: 4px; }
+  #legend .chip { font-size: 10.5px; padding: 2px 8px; border-radius: 999px; border: 1px solid; cursor: pointer;
+    user-select: none; opacity: .95; }
+  #legend .chip.off { opacity: .3; }
+  #panel { position: fixed; top: 0; right: 0; bottom: 0; width: 400px; z-index: 20;
+    background: rgba(10,20,41,.97); border-left: 1px solid rgba(159,176,204,.25);
+    padding: 22px; overflow-y: auto; transform: translateX(100%); transition: transform .22s ease; }
+  #panel.open { transform: none; }
+  #panel .name { font-size: 22px; font-weight: 800; padding-right: 28px; }
+  #panel .affil { font-size: 14px; color: #9fb0cc; margin: 4px 0 10px; line-height: 1.4; }
+  #panel .dom { display: inline-block; font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; font-weight: 800;
+    padding: 3px 10px; border-radius: 999px; border: 1px solid; margin: 0 6px 10px 0; }
+  #panel .nums { display: flex; gap: 14px; margin: 6px 0 12px; }
+  #panel .nums div { font-size: 12px; color: #9fb0cc; }
+  #panel .nums b { display: block; font-size: 18px; color: #f3f6fc; }
+  #panel .why { font-size: 14px; line-height: 1.5; color: #d7dfee; margin-bottom: 10px; }
+  #panel h4 { font-size: 11.5px; letter-spacing: .18em; text-transform: uppercase; color: #9fb0cc; margin: 16px 0 8px; }
+  #panel .paper { font-size: 13px; line-height: 1.4; margin: 8px 0; padding-left: 10px; border-left: 2px solid rgba(159,176,204,.35); }
+  #panel .paper a, #panel a { color: #19c2c2; text-decoration: none; }
+  #panel .paper .meta, #panel .meta { color: #9fb0cc; font-size: 12px; }
+  #panel .link { cursor: pointer; color: #58b8ff; }
+  #panel .tag { display: inline-block; font-size: 11px; color: #d7dfee; background: rgba(159,176,204,.15); border-radius: 6px;
+    padding: 2px 7px; margin: 2px 3px 2px 0; }
+  #panel .prov { font-size: 11px; color: #7f90ac; line-height: 1.45; margin-top: 16px; border-top: 1px solid rgba(159,176,204,.2); padding-top: 10px; }
+  #panel .close { position: absolute; top: 12px; right: 14px; cursor: pointer; color: #9fb0cc; font-size: 22px; background: none; border: none; }
+  #hint { position: fixed; bottom: 10px; left: 16px; font-size: 11.5px; color: #9fb0cc; z-index: 10; }
+  @media (max-width: 700px) { #panel { width: 100%; } #hdr { width: calc(100% - 32px); } }
+</style>
+<script data-goatcounter="https://johnsanterre.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="hdr">
+  <div class="t">Machine Learning Academics Map</div>
+  <div class="s"><a href="./" style="color:inherit">Researcher cards</a></div>
+  <div class="s" id="sub"></div>
+  <input id="search" type="text" placeholder="Search a person (name)…" autocomplete="off" />
+  <div id="results"></div>
+  <div id="ctl">
+    <div class="row"><label>University</label><select id="uni"><option value="">all</option></select>
+      <label>min h</label><input id="hmin" type="range" min="0" max="150" value="0" style="width:90px" /><span id="hminv">0</span></div>
+    <div class="row"><label>Edges</label><select id="emode"><option value="hover">on hover</option><option value="strong">shared ≥ 2 works</option><option value="all">all co-authorship</option><option value="none">none</option></select>
+      <label><input id="lin" type="checkbox" checked /> advisor edges</label>
+      <label><input id="verif" type="checkbox" /> verified only</label></div>
+    <div id="legend"></div>
+  </div>
+</div>
+<div id="hint">scroll to zoom · drag to pan · click a node for the profile · click a name in the profile to jump · Esc closes · / searches</div>
+<div id="panel"><button class="close" onclick="closePanel()">×</button><div id="pbody"></div></div>
+
+<script src="data.js"></script>
+<script>
+const cv = document.getElementById("c"), cx = cv.getContext("2d");
+let W, H, dpr = window.devicePixelRatio || 1;
+const N = PEOPLE.length;
+PEOPLE.forEach((p, i) => { p.i = i; p.r = 2.5 + 0.075 * p.h; });
+const byId = Object.fromEntries(PEOPLE.map(p => [p.id, p]));
+document.getElementById("sub").textContent =
+  `${META.people.toLocaleString()} researchers · node size = OpenAlex h-index · domains as territories · ` +
+  `${META.coauthor_edges.toLocaleString()} co-authorship pairs · ${META.lineage_edges.toLocaleString()} advisor edges · built ${META.generated}`;
+
+// domain rank (PEOPLE is sorted by h desc) so the top names of each domain keep their labels when zoomed out
+const domRank = {}; for (const p of PEOPLE) { p.rank = (domRank[p.d] = (domRank[p.d] || 0) + 1); }
+
+// adjacency
+const adj = Array.from({ length: N }, () => []);
+for (const e of EDGES) { adj[e[0]].push(e); adj[e[1]].push(e); }
+
+// ---- filters ----
+const domOn = Object.fromEntries(Object.keys(DOMAINS).map(d => [d, true]));
+let uniSel = "", hMin = 0, emode = "hover", showLin = true, verifOnly = false;
+function visible(p) { return domOn[p.d] && p.h >= hMin && (!uniSel || p.u === uniSel) && (!verifOnly || p.v); }
+
+const uniEl = document.getElementById("uni");
+for (const [u, n] of META.universities) { const o = document.createElement("option"); o.value = u; o.textContent = `${u} (${n})`; uniEl.appendChild(o); }
+uniEl.onchange = () => { uniSel = uniEl.value; draw(); };
+const hminEl = document.getElementById("hmin");
+hminEl.oninput = () => { hMin = +hminEl.value; document.getElementById("hminv").textContent = hMin; draw(); };
+document.getElementById("emode").onchange = e => { emode = e.target.value; draw(); };
+document.getElementById("lin").onchange = e => { showLin = e.target.checked; draw(); };
+document.getElementById("verif").onchange = e => { verifOnly = e.target.checked; draw(); };
+const leg = document.getElementById("legend");
+for (const [d, t] of Object.entries(DOMAINS)) {
+  const c = document.createElement("span"); c.className = "chip"; c.textContent = `${t.label} (${t.n})`;
+  c.style.color = t.color; c.style.borderColor = t.color;
+  c.onclick = ev => {
+    if (ev.shiftKey) { for (const k in domOn) domOn[k] = (k === d); }
+    else domOn[d] = !domOn[d];
+    for (const el of leg.children) el.classList.toggle("off", !domOn[el.dataset.d]);
+    draw();
+  };
+  c.dataset.d = d; leg.appendChild(c);
+}
+
+// ---- view transform ----
+let vx = 0, vy = 0, scale = 1;
+function fit() {
+  const vis = PEOPLE.filter(visible); const pts = vis.length ? vis : PEOPLE;
+  let minx = 1e9, maxx = -1e9, miny = 1e9, maxy = -1e9;
+  for (const p of pts) { minx = Math.min(minx, p.x); maxx = Math.max(maxx, p.x); miny = Math.min(miny, p.y); maxy = Math.max(maxy, p.y); }
+  minx -= 150; maxx += 150; miny -= 150; maxy += 150;
+  scale = Math.min((W - 360) / (maxx - minx), H / (maxy - miny));
+  vx = 340 + ((W - 340) - (minx + maxx) * scale) / 2; vy = (H - (miny + maxy) * scale) / 2;
+}
+const w2s = (x, y) => [x * scale + vx, y * scale + vy];
+const s2w = (x, y) => [(x - vx) / scale, (y - vy) / scale];
+function resize() {
+  W = innerWidth; H = innerHeight; cv.width = W * dpr; cv.height = H * dpr;
+  cv.style.width = W + "px"; cv.style.height = H + "px"; draw();
+}
+addEventListener("resize", resize);
+
+// ---- draw ----
+let hover = null, selected = null, highlight = null, raf = 0;
+function draw() { if (!raf) raf = requestAnimationFrame(() => { raf = 0; paint(); }); }
+function paint() {
+  cx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  cx.clearRect(0, 0, W, H);
+  // territories
+  for (const [d, t] of Object.entries(DOMAINS)) {
+    if (!domOn[d]) continue;
+    const [sx, sy] = w2s(t.x, t.y); const R = t.r * scale;
+    const g = cx.createRadialGradient(sx, sy, 0, sx, sy, R);
+    g.addColorStop(0, t.color + "2a"); g.addColorStop(0.8, t.color + "10"); g.addColorStop(1, t.color + "00");
+    cx.fillStyle = g; cx.beginPath(); cx.arc(sx, sy, R, 0, 7); cx.fill();
+    cx.fillStyle = t.color + "bb"; cx.textAlign = "center";
+    cx.font = `800 ${Math.max(11, Math.min(26, 0.045 * R))}px -apple-system, sans-serif`;
+    cx.fillText(t.label.toUpperCase(), sx, sy - R * 0.92);
+  }
+  const focus = hover || selected;
+  // edges
+  const drawEdge = (e, strong) => {
+    const A = PEOPLE[e[0]], B = PEOPLE[e[1]];
+    if (!visible(A) || !visible(B)) return;
+    const [ax, ay] = w2s(A.x, A.y), [bx, by] = w2s(B.x, B.y);
+    if (e[3] === 1) { cx.setLineDash([6, 5]); cx.strokeStyle = strong ? "rgba(240,192,74,.95)" : "rgba(240,192,74,.28)"; cx.lineWidth = strong ? 2 : 1; }
+    else { cx.setLineDash([]); cx.strokeStyle = strong ? "rgba(255,122,24,.9)" : `rgba(159,176,204,${Math.min(.5, .06 + .05 * e[2])})`; cx.lineWidth = strong ? Math.min(6, 1 + e[2]) : Math.min(4, (0.6 + 0.6 * e[2]) * Math.sqrt(scale)); }
+    cx.beginPath(); cx.moveTo(ax, ay); cx.lineTo(bx, by); cx.stroke();
+  };
+  if (emode !== "none" && emode !== "hover") for (const e of EDGES) {
+    if (e[3] === 1) { if (showLin) drawEdge(e, false); }
+    else if (emode === "all" || e[2] >= 2) drawEdge(e, false);
+  } else if (showLin && emode !== "none") for (const e of EDGES) if (e[3] === 1) drawEdge(e, false);
+  if (focus) for (const e of adj[focus.i]) { if (e[3] === 1 && !showLin) continue; drawEdge(e, true); }
+  cx.setLineDash([]);
+  // nodes
+  const neighbours = new Set(); if (focus) for (const e of adj[focus.i]) neighbours.add(e[0] === focus.i ? e[1] : e[0]);
+  const labelPx = 6;
+  for (let k = N - 1; k >= 0; k--) {           // small nodes first, big on top
+    const p = PEOPLE[k]; if (!visible(p)) continue;
+    const [x, y] = w2s(p.x, p.y); const r = p.r * scale;
+    if (x < -40 || y < -40 || x > W + 40 || y > H + 40) continue;
+    const col = DOMAINS[p.d].color; const hot = p === focus || neighbours.has(p.i) || p === highlight;
+    cx.beginPath(); cx.arc(x, y, Math.max(1.2, r), 0, 7);
+    cx.fillStyle = hot ? col : col + (focus ? "55" : "99"); cx.fill();
+    if (r > 2.5) { cx.lineWidth = hot ? 2.5 : 1; cx.strokeStyle = hot ? "#fff" : col; cx.stroke(); }
+    if (p.v && r > 3) { cx.beginPath(); cx.arc(x, y, r + 2.5, 0, 7); cx.lineWidth = 1; cx.strokeStyle = "rgba(255,255,255,.55)"; cx.stroke(); }
+    // labels thin out with zoom: the top few names of each territory when zoomed out, everyone when zoomed well in
+    const showLabel = hot || (scale > 2.2) || (scale > 1.0 && (r >= 7 || p.rank <= 80)) || (scale > 0.45 && p.rank <= 25) || (scale > 0.18 && p.rank <= 8) || p.rank <= 3;
+    if (showLabel) {
+      const fs = Math.max(10, Math.min(15, 10 * Math.sqrt(scale) + 4));
+      cx.fillStyle = hot ? "#fff" : "rgba(243,246,252,.88)"; cx.font = `${hot ? 800 : 600} ${fs}px -apple-system, sans-serif`; cx.textAlign = "center";
+      cx.fillText(p.n, x, y + r + fs);
+      if (scale > 2.2 || hot) { cx.fillStyle = "#9fb0cc"; cx.font = `400 ${fs - 2}px -apple-system, sans-serif`; cx.fillText((p.u || p.a || "") + " · h " + p.h, x, y + r + 2 * fs - 1); }
+    }
+  }
+}
+
+// ---- interaction ----
+function pick(mx, my) {
+  const [wx, wy] = s2w(mx, my); let best = null, bd = 1e9;
+  for (const p of PEOPLE) { if (!visible(p)) continue; const d = Math.hypot(p.x - wx, p.y - wy) - p.r; if (d < bd && d < 6 / scale + 2) { bd = d; best = p; } }
+  return best;
+}
+let panning = false, lx = 0, ly = 0, moved = false;
+cv.addEventListener("mousedown", e => { lx = e.clientX; ly = e.clientY; moved = false; panning = true; });
+addEventListener("mousemove", e => {
+  if (panning) { vx += e.clientX - lx; vy += e.clientY - ly; lx = e.clientX; ly = e.clientY; moved = true; draw(); return; }
+  const h = pick(e.clientX, e.clientY); if (h !== hover) { hover = h; cv.style.cursor = h ? "pointer" : "grab"; draw(); }
+});
+addEventListener("mouseup", e => {
+  if (panning && !moved) { const p = pick(e.clientX, e.clientY); if (p) openPanel(p); else closePanel(); }
+  panning = false;
+});
+cv.addEventListener("wheel", e => {
+  e.preventDefault(); const f = Math.exp(-e.deltaY * 0.0015); const [wx, wy] = s2w(e.clientX, e.clientY);
+  scale = Math.max(0.01, Math.min(12, scale * f)); vx = e.clientX - wx * scale; vy = e.clientY - wy * scale; draw();
+}, { passive: false });
+addEventListener("keydown", e => {
+  if (e.key === "Escape") { closePanel(); document.getElementById("results").style.display = "none"; }
+  if (e.key === "/" && document.activeElement !== searchEl) { e.preventDefault(); searchEl.focus(); }
+});
+
+// ---- search ----
+const searchEl = document.getElementById("search"), resEl = document.getElementById("results");
+const norm = s => s.normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase();
+const names = PEOPLE.map(p => norm(p.n));
+let selIdx = -1, hits = [];
+searchEl.addEventListener("input", () => {
+  const q = norm(searchEl.value.trim()); hits = []; selIdx = -1;
+  if (q.length >= 2) {
+    for (let i = 0; i < N && hits.length < 14; i++) if (names[i].includes(q)) hits.push(PEOPLE[i]);
+  }
+  resEl.innerHTML = hits.map((p, k) => `<div data-k="${k}"><span>${p.n}</span><span class="m">${p.u || p.a || ""} · h ${p.h}</span></div>`).join("");
+  resEl.style.display = hits.length ? "block" : "none";
+  for (const el of resEl.children) el.onclick = () => go(hits[+el.dataset.k]);
+});
+searchEl.addEventListener("keydown", e => {
+  if (e.key === "ArrowDown") { selIdx = Math.min(hits.length - 1, selIdx + 1); } else if (e.key === "ArrowUp") { selIdx = Math.max(0, selIdx - 1); }
+  else if (e.key === "Enter") { if (hits[Math.max(0, selIdx)]) go(hits[Math.max(0, selIdx)]); return; } else return;
+  e.preventDefault(); [...resEl.children].forEach((el, k) => el.classList.toggle("sel", k === selIdx));
+});
+function go(p) {
+  resEl.style.display = "none"; searchEl.value = p.n; searchEl.blur();
+  scale = Math.max(scale, 1.6); vx = (W - 400) / 2 - p.x * scale; vy = H / 2 - p.y * scale;
+  highlight = p; openPanel(p);
+}
+
+// ---- profiles, loaded per domain on demand ----
+const PROFILES = {}; const loaded = {}; const waiting = {};
+window.__profiles = (d, obj) => { Object.assign(PROFILES, obj); loaded[d] = true; (waiting[d] || []).forEach(fn => fn()); waiting[d] = []; };
+function withProfile(p, fn) {
+  if (PROFILES[p.id]) return fn(PROFILES[p.id]);
+  if (loaded[p.d]) return fn(null);
+  (waiting[p.d] ||= []).push(() => fn(PROFILES[p.id] || null));
+  if (waiting[p.d].length === 1) { const s = document.createElement("script"); s.src = `profiles/${p.d}.js`; s.onerror = () => { loaded[p.d] = true; waiting[p.d].forEach(f => f()); waiting[p.d] = []; }; document.head.appendChild(s); }
+}
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const fmt = n => n == null ? "–" : Number(n).toLocaleString();
+function openPanel(p) {
+  selected = p; location.hash = "id=" + p.id; draw();
+  const t = DOMAINS[p.d];
+  document.getElementById("pbody").innerHTML = `<div class="name">${esc(p.n)}</div><div class="affil">${esc(p.a || "")}</div>
+    <div class="dom" style="color:${t.color};border-color:${t.color}">${esc(t.label)}</div><div class="meta">loading profile…</div>`;
+  document.getElementById("panel").classList.add("open");
+  withProfile(p, pr => renderProfile(p, pr));
+}
+function renderProfile(p, pr) {
+  if (selected !== p) return;
+  const t = DOMAINS[p.d];
+  const jump = q => `<span class="link" onclick="jumpTo('${q.id}')">${esc(q.name)}</span>`;
+  const home = pr && pr.home ? pr.home : { name: p.a };
+  const scholar = `https://scholar.google.com/scholar?q=${encodeURIComponent('author:"' + p.n + '"')}`;
+  let html = `<div class="name">${esc(p.n)}</div>
+    <div class="affil">${esc(home.name || "affiliation unknown")}${home.years && home.years.length ? ` <span class="meta">(${home.years[0]}–${home.years[home.years.length - 1]})</span>` : ""}${pr && pr.curated && pr.curated.dept ? `<br>${esc(pr.curated.title || "")} ${esc(pr.curated.dept)}` : ""}</div>
+    <div class="dom" style="color:${t.color};border-color:${t.color}">${esc(t.label)}</div>${p.v ? `<span class="dom" style="color:#fff;border-color:#fff">verified layer</span>` : ""}
+    <div class="nums"><div><b>${fmt(p.h)}</b>h-index</div><div><b>${fmt(p.c)}</b>citations</div><div><b>${fmt(p.w)}</b>works</div>${pr && pr.i10 != null ? `<div><b>${fmt(pr.i10)}</b>i10</div>` : ""}</div>`;
+  if (!pr) { html += `<div class="meta">No profile file for this domain yet (run build.py).</div>`; }
+  else {
+    if (pr.curated && pr.curated.why && pr.curated.why.length) html += `<div class="why">${pr.curated.why.map(esc).join("<br><br>")}</div>`;
+    if (pr.topics && pr.topics.length) html += `<h4>Topics (OpenAlex, works per topic)</h4><div>${pr.topics.map(x => `<span class="tag">${esc(x.name)} · ${x.count}</span>`).join("")}</div>`;
+    if (pr.curated && pr.curated.topics && pr.curated.topics.length) html += `<div class="meta" style="margin-top:4px">Verified-layer tags: ${pr.curated.topics.map(esc).join(", ")}</div>`;
+    if ((pr.advisors && pr.advisors.length) || (pr.students && pr.students.length)) {
+      html += `<h4>Lineage</h4>`;
+      if (pr.advisors.length) html += `<div class="why">Doctoral advisor: ${pr.advisors.map(jump).join(", ")}</div>`;
+      if (pr.students.length) html += `<div class="why">Students on the map: ${pr.students.map(jump).join(" · ")}</div>`;
+    }
+    if (pr.coauthors && pr.coauthors.length) html += `<h4>Co-authors on the map</h4><div class="why">${pr.coauthors.map(q => `${jump(q)} <span class="meta">(${q.w})</span>`).join(" · ")}</div>`;
+    if (pr.curated_papers && pr.curated_papers.length) {
+      html += `<h4>Landmark papers (hand-verified)</h4>` + pr.curated_papers.map(w => `<div class="paper">${w.link ? `<a href="${esc(w.link)}" target="_blank" rel="noopener">${esc(w.title)}</a>` : esc(w.title)}
+        <div class="meta">${esc(w.venue || "")} ${w.year || ""}${w.note ? " — " + esc(w.note) : ""}</div></div>`).join("");
+    }
+    if (pr.works && pr.works.length) {
+      html += `<h4>Most cited works (OpenAlex)</h4>` + pr.works.map(w => `<div class="paper">${w.doi ? `<a href="${esc(w.doi)}" target="_blank" rel="noopener">${esc(w.title)}</a>` : esc(w.title)}
+        <div class="meta">${esc(w.venue || "")} ${w.year || ""} · ${fmt(w.cites)} citations · ${w.authors.map(esc).join(", ")}${w.n > w.authors.length ? ` and ${w.n - w.authors.length} more` : ""}</div></div>`).join("");
+    }
+    if (pr.affiliations && pr.affiliations.length > 1) html += `<h4>Affiliation history (OpenAlex)</h4><div class="meta">${pr.affiliations.map(a => `${esc(a.name)} (${a.years.length ? a.years[0] + "–" + a.years[a.years.length - 1] : "?"})`).join(" · ")}</div>`;
+    html += `<h4>Links</h4><div class="meta"><a href="${pr.links.openalex}" target="_blank" rel="noopener">OpenAlex</a>${pr.links.orcid ? ` · <a href="${esc(pr.links.orcid)}" target="_blank" rel="noopener">ORCID</a>` : ""}${pr.curated && pr.curated.homepage ? ` · <a href="${esc(pr.curated.homepage)}" target="_blank" rel="noopener">homepage</a>` : ""} · <a href="${scholar}" target="_blank" rel="noopener">Google Scholar search</a></div>`;
+    html += `<div class="prov">Provenance: h-index, citations, topics, affiliations and the most-cited works come from OpenAlex (fetched ${esc(pr.fetched)}); the home affiliation is the one with the most recent years in that record and can lag a move.${pr.curated ? ` The description, verified tags and landmark papers come from the ${esc((pr.curated.sources || []).length)} page(s) a crawl agent opened on 2026-11-01${pr.curated.sources && pr.curated.sources.length ? ": " + pr.curated.sources.slice(0, 4).map(s => `<a href="${esc(s)}" target="_blank" rel="noopener">${esc(s.replace(/^https?:\/\//, "").slice(0, 48))}</a>`).join(", ") : ""}.` : " No hand-verified layer yet."}${pr.domain_scores ? ` Domain scores: ${Object.entries(pr.domain_scores).map(([k, v]) => k + " " + v).join(", ")} (mapped share ${pr.mapped_share}).` : ""}</div>`;
+  }
+  document.getElementById("pbody").innerHTML = html;
+}
+function jumpTo(id) { const p = byId[id]; if (p) go(p); }
+function closePanel() { selected = null; highlight = null; document.getElementById("panel").classList.remove("open"); if (location.hash) history.replaceState(null, "", location.pathname); draw(); }
+
+resize(); fit(); draw();
+const m = location.hash.match(/id=(A\d+)/); if (m && byId[m[1]]) go(byId[m[1]]);
+</script>
+</body>
+</html>

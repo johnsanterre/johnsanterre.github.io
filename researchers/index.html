@@ -1,229 +1,175 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<title>John's Researcher Map</title>
-<!-- PERSONAL map — same construction as the knowledge-bank/PSW graphs:
-     one local file, canvas, deterministic layout, drag persists locally.
-     Data lives in data.js (people, topics, papers); edges are derived
-     from shared authorship, weight = number of shared papers. -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Researcher Cards</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body { height: 100%; overflow: hidden; }
-  body { background: #0a1429; color: #f3f6fc;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, sans-serif; }
-  #c { position: fixed; inset: 0; cursor: grab; }
-  #hdr { position: fixed; top: 14px; left: 18px; z-index: 10; pointer-events: none; }
-  #hdr .t { font-size: 20px; font-weight: 800; }
-  #hdr .s { font-size: 13px; color: #9fb0cc; margin-top: 2px; }
-  #panel {
-    position: fixed; top: 0; right: 0; bottom: 0; width: 340px; z-index: 20;
-    background: rgba(10,20,41,.96); border-left: 1px solid rgba(159,176,204,.25);
-    padding: 22px; overflow-y: auto; transform: translateX(100%);
-    transition: transform .25s ease;
-  }
-  #panel.open { transform: none; }
-  #panel .name { font-size: 22px; font-weight: 800; }
-  #panel .affil { font-size: 14px; color: #9fb0cc; margin: 4px 0 12px; }
-  #panel .topic { display: inline-block; font-size: 11px; letter-spacing: .15em;
-    text-transform: uppercase; font-weight: 800; padding: 3px 10px;
-    border-radius: 999px; border: 1px solid; margin-bottom: 12px; }
-  #panel .why { font-size: 14px; line-height: 1.5; color: #d7dfee; margin-bottom: 16px; }
-  #panel h4 { font-size: 12px; letter-spacing: .18em; text-transform: uppercase;
-    color: #9fb0cc; margin: 14px 0 8px; }
-  #panel .paper { font-size: 13px; line-height: 1.4; margin: 8px 0;
-    padding-left: 10px; border-left: 2px solid rgba(159,176,204,.35); }
-  #panel .paper a { color: #19c2c2; text-decoration: none; }
-  #panel .paper .meta { color: #9fb0cc; }
-  #panel .close { position: absolute; top: 12px; right: 14px; cursor: pointer;
-    color: #9fb0cc; font-size: 20px; background: none; border: none; }
-  #hint { position: fixed; bottom: 12px; left: 18px; font-size: 12px;
-    color: #9fb0cc; z-index: 10; }
+:root{--bg:#14121f;--panel:#1d1a2c;--panel2:#25213a;--ink:#ece9f6;--muted:#a49fbd;--line:#37314f;--accent:#c792ea;--ok:#7fd1a8;--warn:#f0b470;--bad:#ef8a8a;--link:#9ccfff}
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]){--bg:#f6f5fa;--panel:#fff;--panel2:#f0eef7;--ink:#1d1a2c;--muted:#615c78;--line:#dcd8ea;--accent:#7b3fb3;--ok:#1f8a5a;--warn:#a8650f;--bad:#b23a3a;--link:#1d5fa8}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif}
+a{color:var(--link);text-decoration:none}a:hover{text-decoration:underline}
+header{padding:16px;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+header h1{font-size:18px;margin:0 12px 0 0}
+header .meta{color:var(--muted);font-size:13px;flex-basis:100%}
+input,select{background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:7px 9px;font:inherit;font-size:14px}
+input[type=search]{flex:1;min-width:200px}
+main{display:grid;grid-template-columns:minmax(260px,360px) 1fr;height:calc(100vh - 100px)}
+#list{overflow:auto;border-right:1px solid var(--line)}
+.row{padding:9px 14px;border-bottom:1px solid var(--line);cursor:pointer}
+.row:hover,.row.sel{background:var(--panel2)}
+.row .n{font-weight:600}.row .s{color:var(--muted);font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.row .h{float:right;color:var(--muted);font-size:12px}
+#card{overflow:auto;padding:20px 28px 60px}
+.card h2{margin:0;font-size:26px}
+.one{color:var(--muted);margin:4px 0 10px}
+.chips span{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:1px 9px;margin:0 6px 6px 0;font-size:12.5px}
+.chips .ok{border-color:var(--ok);color:var(--ok)}.chips .warn{border-color:var(--warn);color:var(--warn)}.chips .bad{border-color:var(--bad);color:var(--bad)}
+section{margin-top:18px;padding-top:12px;border-top:1px solid var(--line)}
+section h3{margin:0 0 8px;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+section .gap{color:var(--muted);font-style:italic}
+.src{font-size:12px;color:var(--muted)}.src a{color:var(--muted);text-decoration:underline}
+ul{margin:4px 0;padding-left:18px}li{margin:3px 0}
+.stats{display:flex;gap:26px;flex-wrap:wrap}.stats b{display:block;font-size:22px}.stats small{color:var(--muted)}
+.tag{font-size:11.5px;border-radius:4px;padding:0 5px;margin-left:6px;border:1px solid var(--line);color:var(--muted)}
+.tag.ok{color:var(--ok);border-color:var(--ok)}.tag.bad{color:var(--bad);border-color:var(--bad)}
+@media (max-width:760px){main{grid-template-columns:minmax(0,1fr);height:auto}#list{max-height:40vh}#card{padding:16px;overflow-wrap:anywhere}input[type=search]{min-width:0;flex-basis:100%}select{max-width:100%;min-width:0}}
 </style>
+<script data-goatcounter="https://johnsanterre.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
-<canvas id="c"></canvas>
-<div id="hdr"><div class="t">John's Researcher Map</div>
-  <div class="s">people · papers as edges · topics as territories — personal, interest-seeded</div></div>
-<div id="hint">drag a node to move it (saved locally) · drag background to pan · scroll to zoom · click a node for details</div>
-<div id="panel"><button class="close" onclick="closePanel()">×</button><div id="pbody"></div></div>
-
-<script src="data.js"></script>
+<header>
+  <h1>Researcher Cards</h1>
+  <a class="navlink" href="map.html" style="color:inherit;white-space:nowrap">Map of 5,091 academics</a> <a class="navlink" href="classic/" style="color:inherit;white-space:nowrap">Classic hand-picked map</a>
+  <input type="search" id="q" placeholder="Search name, university, topic, award…" autocomplete="off">
+  <select id="uni"><option value="">All universities</option></select>
+  <select id="filt">
+    <option value="">All cards</option><option value="crawl">With a verified record</option><option value="awards">With awards</option>
+    <option value="flags">Flagged for checking</option><option value="nameonly">Name only (nothing sourced yet)</option><option value="rmap">On John's Researcher Map</option><option value="bfs">Added by the breadth-first expansion</option><option value="notinf">Extended list</option><option value="core">Hide the extended list</option>
+  </select>
+  <select id="sort"><option value="h">Sort: OpenAlex h-index</option><option value="name">Sort: name</option><option value="scholar">Sort: Google Scholar citations</option><option value="awards">Sort: awards</option></select>
+  <div class="meta" id="meta"></div>
+</header>
+<main><div id="list"></div><div id="card"></div></main>
+<script src="cards/cards.js"></script>
 <script>
-const cv = document.getElementById("c"), cx = cv.getContext("2d");
-let W, H, dpr = window.devicePixelRatio || 1;
-function resize() {
-  W = innerWidth; H = innerHeight;
-  cv.width = W * dpr; cv.height = H * dpr;
-  cv.style.width = W + "px"; cv.style.height = H + "px";
-  draw();
-}
-addEventListener("resize", resize);
+const C = window.CARDS || [], M = window.CARDS_META || {};
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const host = u => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch (e) { return u; } };
+const src = (u, label) => u ? `<span class="src">source: <a href="${esc(u)}" target="_blank" rel="noopener">${esc(label || host(u))}</a></span>` : "";
+const uniOf = c => c.where?.university || c.where?.csrankings?.affiliation || "";
+const hay = c => [c.name, ...(c.aliases||[]), uniOf(c), c.where?.dept, ...(c.topics||[]), ...(c.recognition||[]).map(a => a.award), c.one_line].join(" ").toLowerCase();
+C.forEach(c => c._hay = hay(c));
+const byId = Object.fromEntries(C.map(c => [c.id, c]));
+$("#meta").textContent = `${M.count} cards · ${M.with_crawl_record} with a verified record · ${M.with_metrics} with confirmed OpenAlex metrics · ${M.with_scholar || 0} with a Google Scholar profile · ${M.papers_with_arxiv || 0} arXiv links · ${M.name_only} name only · ${M.on_researcher_map || 0} on John's Researcher Map · built ${M.generated}` + (M.audit_generated ? ` · source re-check ${M.audit_generated}` : "");
+[...new Set(C.map(uniOf).filter(Boolean))].sort().forEach(u => $("#uni").insertAdjacentHTML("beforeend", `<option>${esc(u)}</option>`));
 
-// ---- derived model ----
-const byId = Object.fromEntries(PEOPLE.map(p => [p.id, p]));
-const edges = {};                      // "a|b" -> {a, b, papers: []}
-for (const paper of PAPERS) {
-  const a = paper.authors.filter(id => byId[id]);
-  for (let i = 0; i < a.length; i++) for (let j = i + 1; j < a.length; j++) {
-    const key = [a[i], a[j]].sort().join("|");
-    (edges[key] ||= { a: a[i], b: a[j], papers: [] }).papers.push(paper);
+function list() {
+  const q = $("#q").value.trim().toLowerCase(), u = $("#uni").value, f = $("#filt").value, s = $("#sort").value;
+  let r = C.filter(c => (!q || q.split(/\s+/).every(t => c._hay.includes(t))) && (!u || uniOf(c) === u)
+    && (!f || (f === "crawl" && c.verification.crawl_records.length) || (f === "awards" && c.recognition.length)
+        || (f === "flags" && c.flags.length) || (f === "nameonly" && c.verification.memory_seed_only) || (f === "rmap" && c.researcher_map) || (f === "bfs" && c.added_by?.linked_to) || (f === "notinf" && c.influence_note !== null && c.influence_note !== undefined) || (f === "core" && !c.flags.includes("extended list"))));
+  if (s === "name") r.sort((a, b) => a.name.localeCompare(b.name));
+  if (s === "awards") r.sort((a, b) => b.recognition.length - a.recognition.length);
+  if (s === "scholar") r.sort((a, b) => (b.sort_scholar || 0) - (a.sort_scholar || 0));
+  $("#list").innerHTML = r.map(c => `<div class="row" data-id="${esc(c.id)}"><span class="h">${c.metrics ? "h " + c.metrics.h : ""}</span>
+    <div class="n">${esc(c.name)}</div><div class="s">${esc(c.one_line || uniOf(c) || "—")}</div></div>`).join("") || `<div class="row">No match</div>`;
+}
+function sec(title, body) { return `<section><h3>${title}</h3>${body}</section>`; }
+const gap = t => `<div class="gap">${t}</div>`;
+
+function show(id) {
+  const c = C.find(x => x.id === id); if (!c) return;
+  document.querySelectorAll(".row").forEach(r => r.classList.toggle("sel", r.dataset.id === id));
+  history.replaceState(null, "", "#" + id);
+  const chips = [];
+  if (c.status) chips.push(`<span>${esc(c.status)}</span>`);
+  if (c.domain?.label) chips.push(`<span>${esc(c.domain.label)}</span>`);
+  (c.topics || []).forEach(t => chips.push(`<span>${esc(t)}</span>`));
+  if (c.verification.crawl_records.length && !c.flags.length) chips.push(`<span class="ok">sourced, no flags</span>`);
+  c.flags.forEach(f => chips.push(`<span class="${/memory|audit/.test(f) ? "bad" : "warn"}">${esc(f)}</span>`));
+  let h = `<div class="card"><h2>${esc(c.name)}</h2><div class="one">${esc(c.one_line || "")}</div><div class="chips">${chips.join("")}</div>`;
+
+  // 2. why they matter
+  const chk = k => k.checked === "supported" ? `<span class="tag ok">re-checked on source</span>` : k.checked === "trimmed" ? `<span class="tag ok">trimmed to what the source states</span>` : k.checked === "unverifiable" ? `<span class="tag bad">source would not open on re-check</span>` : "";
+  let w = (c.known_for || []).map(k => `<p>${esc(k.text)}<br>${src(k.sources?.[0])} ${chk(k)}</p>`).join("");
+  if (c.researcher_map) w += `<p><b>On John's Researcher Map</b> (${esc(c.researcher_map.affil)}): ${esc(c.researcher_map.why)}<br>${src(c.researcher_map.source, "santerre.ai/researchers")}</p>`;
+  if (c.known_for_list) w += `<p>Known for (Wikipedia): ${c.known_for_list.items.map(esc).join("; ")}<br>${src(c.known_for_list.source, "Wikipedia")}</p>`;
+  if (c.also_described?.length) w += `<details><summary class="src">${c.also_described.length} other description(s)</summary>${c.also_described.map(k => `<p>${esc(k.text)}<br>${src(k.sources?.[0])}</p>`).join("")}</details>`;
+  h += sec("Why they matter", w || gap("No sourced description yet."));
+
+  // 3. where they work
+  const W = c.where || {};
+  let wh = "";
+  if (W.university) wh += `<p><b>${esc(W.university)}</b>${W.dept ? " · " + esc(W.dept) : ""}${c.who?.title ? " · " + esc(c.who.title) : ""}<br>${src(W.sources?.[0])}</p>`;
+  if (W.csrankings) wh += `<p>CSRankings lists: ${esc(W.csrankings.affiliation)} ${src("https://csrankings.org", "CSRankings")}</p>`;
+  if (W.conflict) wh += `<p class="src">⚠ ${esc(W.conflict)}</p>`;
+  if (c.posts?.length) wh += `<p>Posts on record:</p><ul>${c.posts.map(p => `<li>${esc(p.name)}${p.years ? ` (${p.years[0]}–${p.years[1]})` : ""} ${src(p.source, p.source?.includes("openalex") ? "OpenAlex" : "Wikipedia")}</li>`).join("")}</ul>`;
+  h += sec("Where they work", wh || gap("No sourced affiliation yet."));
+
+  // 4. training and lineage
+  let t = "";
+  if (c.training) {
+    if (c.training.education?.length) t += `<p>Education: ${c.training.education.map(esc).join("; ")}</p>`;
+    if (c.training.thesis) t += `<p>Thesis: <i>${esc(c.training.thesis)}</i>${c.training.thesis_year ? " (" + esc(c.training.thesis_year) + ")" : ""}</p>`;
+    if (t) t += src(c.training.source, "Wikipedia");
   }
-}
-const paperCount = Object.fromEntries(PEOPLE.map(p =>
-  [p.id, PAPERS.filter(x => x.authors.includes(p.id)).length]));
+  if (c.advisors?.length) t += `<p>Doctoral advisor: ${c.advisors.map(a => `${esc(a.name)} ${src(a.source)}`).join("; ")}</p>`;
+  if (c.students?.length) t += `<p>Doctoral students recorded (${c.students.length}):</p><ul>${c.students.slice(0, 40).map(s => `<li>${esc(s.name)} ${src(s.source)}</li>`).join("")}</ul>${c.students.length > 40 ? `<div class="src">and ${c.students.length - 40} more</div>` : ""}`;
+  h += sec("Training and lineage", t || gap("No sourced training or advisor yet."));
 
-// Auto-place anyone without hand-set coordinates: a deterministic
-// golden-angle spiral around their topic anchor (same result every
-// load — data order decides, no physics).
-const placed = {};
-for (const p of PEOPLE) {
-  if (p.x !== undefined) continue;
-  const t = TOPICS[p.topic];
-  const i = (placed[p.topic] = (placed[p.topic] || 0) + 1);
-  const ang = i * 2.399963;                 // golden angle
-  const rad = 70 + 46 * Math.sqrt(i);
-  p.x = t.x + rad * Math.cos(ang);
-  p.y = t.y + rad * Math.sin(ang);
-}
+  // 5. signature work
+  const P = c.papers || [];
+  const G = c.scholar;
+  const top = G?.top_articles?.length ? `<p>Most cited on Google Scholar:</p><ul>${G.top_articles.map(a => `<li><a href="${esc(a.link)}" target="_blank" rel="noopener">${esc(a.title)}</a> (${esc(a.year || "")}) · ${(a.cited||0).toLocaleString()} citations<br><span class="src">${esc(a.authors || "")}${a.venue ? " · " + esc(a.venue) : ""}</span></li>`).join("")}</ul>${src(G.url, "Google Scholar profile, read " + G.fetched)}` : "";
+  h += sec("Signature work", (P.length ? `<ul>${P.map(p => `<li><b>${p.link ? `<a href="${esc(p.link)}" target="_blank" rel="noopener">${esc(p.title)}</a>` : esc(p.title)}</b> (${esc(p.venue || "?")} ${esc(p.year || "")})${p.note ? `<br>${esc(p.note)}` : ""}${p.arxiv ? ` · <a href="${esc(p.arxiv)}" target="_blank" rel="noopener">arXiv</a>` : ""}${p.audit ? `<span class="tag ${p.audit === "pass" ? "ok" : "bad"}">authors ${p.audit === "pass" ? "re-checked" : esc(p.audit)}</span>` : ""}</li>`).join("")}</ul>` : (top ? "" : gap("No landmark papers recorded yet."))) + top);
 
-// local overrides (one node at a time, drag-to-taste)
-const saved = JSON.parse(localStorage.getItem("researcher-map-pos") || "{}");
-for (const p of PEOPLE) { if (saved[p.id]) { p.x = saved[p.id][0]; p.y = saved[p.id][1]; } }
+  // 6. recognition
+  let rc = "";
+  if (c.recognition?.length) rc += `<ul>${c.recognition.map(a => `<li><b>${esc(a.award)}</b>${a.year ? ", " + esc(a.year) : ""}${a.paper ? ` — <i>${esc(a.paper)}</i>` : ""}${a.citation ? `<br>${esc(a.citation)}` : ""} ${src(a.source)}${/another/.test(a.match) ? `<span class="tag bad">check: namesake possible</span>` : ""}</li>`).join("")}</ul>`;
+  if (c.awards_wikipedia) rc += `<p>Wikipedia infobox lists: ${c.awards_wikipedia.items.map(esc).join("; ")}<br>${src(c.awards_wikipedia.source, "Wikipedia")}</p>`;
+  h += sec("Recognition", rc || gap("No sourced awards yet."));
 
-// ---- view transform ----
-let vx = 0, vy = 0, scale = 1;
-function fit() {
-  const xs = PEOPLE.map(p => p.x), ys = PEOPLE.map(p => p.y);
-  const minx = Math.min(...xs) - 160, maxx = Math.max(...xs) + 160;
-  const miny = Math.min(...ys) - 120, maxy = Math.max(...ys) + 120;
-  scale = Math.min(W / (maxx - minx), H / (maxy - miny));
-  vx = (W - (minx + maxx) * scale) / 2;
-  vy = (H - (miny + maxy) * scale) / 2;
-}
-const w2s = (x, y) => [x * scale + vx, y * scale + vy];
-const s2w = (x, y) => [(x - vx) / scale, (y - vy) / scale];
+  // 7. connections
+  h += sec("Connections on the map", c.coauthors_on_map?.length ? `<p>${c.coauthors_on_map.map(x => `${esc(x.name)} (${x.w})`).join(", ")}</p><div class="src">co-authors on the map, by number of shared works</div>` : gap("No co-authors on the map yet."));
 
-// ---- draw ----
-let hover = null, selected = null;
-function draw() {
-  cx.setTransform(dpr, 0, 0, dpr, 0, 0);
-  cx.clearRect(0, 0, W, H);
+  // 8. scale
+  let sc = "";
+  if (c.metrics) sc += `<div class="stats"><div><b>${c.metrics.h}</b><small>h-index</small></div><div><b>${(c.metrics.cited||0).toLocaleString()}</b><small>citations</small></div><div><b>${(c.metrics.works||0).toLocaleString()}</b><small>works</small></div></div><p>${src(c.metrics.source.split(" ")[1], "OpenAlex")} <span class="src">· identity: ${esc(c.metrics.identity)}</span></p>`;
+  if (G) sc += `<div class="stats"><div><b>${G.h}</b><small>h-index (Scholar)</small></div><div><b>${(G.citations||0).toLocaleString()}</b><small>citations (Scholar)</small></div><div><b>${(G.citations_recent||0).toLocaleString()}</b><small>since 2021</small></div><div><b>${G.i10}</b><small>i10</small></div></div><p>${src(G.url, "Google Scholar profile")} <span class="src">· read ${esc(G.fetched)} · profile name "${esc(G.name)}", ${esc(G.affiliation || "")}</span></p>`;
+  if (c.csrankings) sc += `<p>${c.csrankings.ml_papers} papers at NeurIPS, ICML and ICLR, ${c.csrankings.years[0]}–${c.csrankings.years[1]} (author-adjusted ${c.csrankings.ml_adjusted}) ${src("https://csrankings.org", "CSRankings")}</p>`;
+  h += sec("Scale", sc || gap("No confirmed metrics yet."));
 
-  // topic territories: soft radial blobs + labels
-  for (const [id, t] of Object.entries(TOPICS)) {
-    const members = PEOPLE.filter(p => p.topic === id);
-    if (!members.length) continue;
-    const mx = members.reduce((s, p) => s + p.x, 0) / members.length;
-    const my = members.reduce((s, p) => s + p.y, 0) / members.length;
-    const r = Math.max(120, ...members.map(p => Math.hypot(p.x - mx, p.y - my) + 90));
-    const [sx, sy] = w2s(mx, my);
-    const g = cx.createRadialGradient(sx, sy, 0, sx, sy, r * scale);
-    g.addColorStop(0, t.color + "26"); g.addColorStop(1, t.color + "00");
-    cx.fillStyle = g;
-    cx.beginPath(); cx.arc(sx, sy, r * scale, 0, 7); cx.fill();
-    cx.fillStyle = t.color + "aa";
-    cx.font = `800 ${Math.max(10, 12 * scale)}px -apple-system, sans-serif`;
-    cx.textAlign = "center";
-    cx.fillText(t.label.toUpperCase(), sx, sy - r * scale * 0.75);
+  // 9. links
+  const L = c.links || {};
+  const links = [["Homepage", L.homepage], ["Google Scholar", L.scholar], ["Wikipedia", c.wikipedia], ["OpenAlex", L.openalex], ["ORCID", L.orcid], ["On the map", L.map]].filter(x => x[1]);
+  h += sec("Links", links.length ? links.map(([k, v]) => `<a href="${esc(v)}" target="_blank" rel="noopener">${k}</a>`).join(" · ") : gap("No links yet."));
+
+  // 10. provenance and gaps
+  const A = c.added_by;
+  if (A) {
+    let ab = "";
+    if (A.linked_to?.length) ab += `<p>Added in the breadth-first expansion: linked to ${A.linked_to.map(l => `<a href="#${esc(l.card)}">${esc(byId[l.card]?.name || l.card)}</a> (${esc(l.via)}) ${src(l.source)}`).join("; ")}</p>`;
+    const sg = A.signals || {};
+    if (sg.landmark_papers?.length) ab += `<p>Landmark papers on our lists: ${sg.landmark_papers.map(esc).join("; ")}</p>`;
+    if (sg.awards?.length) ab += `<p>Awards on our lists: ${sg.awards.map(esc).join("; ")}</p>`;
+    if (sg.students_with_cards?.length) ab += `<p>Doctoral students with cards: ${sg.students_with_cards.map(esc).join(", ")}</p>`;
+    if (A.awards_basis?.length) ab += `<p>Added as an award winner: ${A.awards_basis.map(a => `${esc(a.award)}${a.year ? " " + esc(a.year) : ""} ${src(a.source)}`).join("; ")}</p>`;
+    h += sec("Why this person was added", ab || gap("—"));
   }
-
-  // edges: width = shared-paper count
-  for (const e of Object.values(edges)) {
-    const A = byId[e.a], B = byId[e.b];
-    const [ax, ay] = w2s(A.x, A.y), [bx, by] = w2s(B.x, B.y);
-    const active = hover && (hover.id === e.a || hover.id === e.b);
-    cx.strokeStyle = active ? "rgba(255,122,24,.85)" : "rgba(159,176,204,.30)";
-    cx.lineWidth = (1 + e.papers.length * 1.6) * scale;
-    cx.beginPath(); cx.moveTo(ax, ay); cx.lineTo(bx, by); cx.stroke();
-  }
-
-  // nodes: radius from paper count
-  for (const p of PEOPLE) {
-    const [x, y] = w2s(p.x, p.y);
-    const r = (12 + paperCount[p.id] * 4) * scale;
-    const col = TOPICS[p.topic].color;
-    cx.beginPath(); cx.arc(x, y, r, 0, 7);
-    cx.fillStyle = "#0d1a35"; cx.fill();
-    cx.lineWidth = (p === hover || p === selected ? 3.5 : 2) * scale;
-    cx.strokeStyle = col; cx.stroke();
-    cx.fillStyle = "#f3f6fc";
-    cx.font = `700 ${Math.max(10, 14 * scale)}px -apple-system, sans-serif`;
-    cx.textAlign = "center";
-    cx.fillText(p.name, x, y + r + 16 * scale);
-    cx.fillStyle = "#9fb0cc";
-    cx.font = `400 ${Math.max(8, 11 * scale)}px -apple-system, sans-serif`;
-    cx.fillText(p.affil, x, y + r + 31 * scale);
-  }
+  const V = c.verification;
+  let pv = `<p>Records: ${V.crawl_records.length ? V.crawl_records.map(r => `${esc(r.slice)}${r.verified ? "" : " (unverified)"}`).join(", ") : "none"}</p>`;
+  if (V.audit.length) pv += `<p>Source re-check: ${V.audit.map(a => `${esc(a.slice)} <span class="tag ${a.verdict === "pass" ? "ok" : "bad"}">${esc(a.verdict)}</span>`).join(" ")}</p>`;
+  if (V.memory_seed_only) pv += `<p>This card is a name from the seed list only; nothing about the person has been sourced yet.</p>`;
+  if (c.gaps.length) pv += `<p>Gaps: ${c.gaps.map(esc).join("; ")}</p>`;
+  h += sec("Provenance and gaps", pv) + `</div>`;
+  $("#card").innerHTML = h; $("#card").scrollTop = 0;
 }
-
-// ---- interaction ----
-function pick(mx, my) {
-  const [wx, wy] = s2w(mx, my);
-  return PEOPLE.find(p =>
-    Math.hypot(p.x - wx, p.y - wy) < (14 + paperCount[p.id] * 4) + 8);
-}
-let drag = null, panning = false, lx = 0, ly = 0, moved = false;
-cv.addEventListener("mousedown", e => {
-  lx = e.clientX; ly = e.clientY; moved = false;
-  drag = pick(e.clientX, e.clientY);
-  panning = !drag;
-});
-addEventListener("mousemove", e => {
-  const dx = e.clientX - lx, dy = e.clientY - ly;
-  if (drag) {                                  // one node only — no reflow
-    drag.x += dx / scale; drag.y += dy / scale;
-    lx = e.clientX; ly = e.clientY; moved = true; draw();
-  } else if (panning) {
-    vx += dx; vy += dy; lx = e.clientX; ly = e.clientY; moved = true; draw();
-  } else {
-    const h = pick(e.clientX, e.clientY);
-    if (h !== hover) { hover = h; cv.style.cursor = h ? "pointer" : "grab"; draw(); }
-  }
-});
-addEventListener("mouseup", e => {
-  if (drag && moved) {
-    saved[drag.id] = [drag.x, drag.y];
-    localStorage.setItem("researcher-map-pos", JSON.stringify(saved));
-  }
-  if (!moved) { const p = pick(e.clientX, e.clientY); if (p) openPanel(p); else closePanel(); }
-  drag = null; panning = false;
-});
-cv.addEventListener("wheel", e => {
-  e.preventDefault();
-  const f = Math.exp(-e.deltaY * 0.0015);
-  const [wx, wy] = s2w(e.clientX, e.clientY);
-  scale *= f;
-  vx = e.clientX - wx * scale; vy = e.clientY - wy * scale;
-  draw();
-}, { passive: false });
-
-// ---- detail panel ----
-function openPanel(p) {
-  selected = p;
-  const t = TOPICS[p.topic];
-  const papers = PAPERS.filter(x => x.authors.includes(p.id));
-  const coll = Object.values(edges).filter(e => e.a === p.id || e.b === p.id)
-    .map(e => byId[e.a === p.id ? e.b : e.a].name);
-  document.getElementById("pbody").innerHTML = `
-    <div class="name">${p.name}</div>
-    <div class="affil">${p.affil}</div>
-    <div class="topic" style="color:${t.color};border-color:${t.color}">${t.label}</div>
-    <div class="why">${p.why}</div>
-    ${coll.length ? `<h4>Connected to</h4><div class="why">${coll.join(" · ")}</div>` : ""}
-    <h4>Papers on the map</h4>
-    ${papers.map(x => `<div class="paper"><a href="${x.link}" target="_blank">${x.title}</a>
-      <div class="meta">${x.venue} ${x.year}${x.note ? " — " + x.note : ""}</div></div>`).join("")}`;
-  document.getElementById("panel").classList.add("open");
-  draw();
-}
-function closePanel() {
-  selected = null;
-  document.getElementById("panel").classList.remove("open");
-  draw();
-}
-
-resize(); fit(); draw();
+$("#list").addEventListener("click", e => { const r = e.target.closest(".row"); if (r?.dataset.id) show(r.dataset.id); });
+["#q", "#uni", "#filt", "#sort"].forEach(s => $(s).addEventListener("input", list));
+list(); show(location.hash.slice(1) || C[0]?.id);
 </script>
 </body>
 </html>
