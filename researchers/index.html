@@ -70,7 +70,7 @@ ul{margin:4px 0;padding-left:18px}li{margin:4px 0}
 <body>
 <header>
   <h1>Researchers</h1>
-  <a class="navlink nav" href="map.html">Map of 5,091 academics</a>
+  <a class="navlink nav" href="map.html">Co-authorship map</a>
   <div class="meta" id="meta"></div>
   <div class="controls">
     <input type="search" id="q" placeholder="Search name, university, topic, award…" autocomplete="off">
@@ -99,7 +99,7 @@ C.forEach(c => c._hay = hay(c));
 const byId = Object.fromEntries(C.map(c => [c.id, c]));
 const CATS = ["Statistics", "Applied mathematics", "Scientific computing", "Complex systems", "Computer science", "AI", "Machine learning", "Deep learning", "Other fields"];
 const STAGE = { senior: "senior researcher", mid: "mid-career", early: "up and coming" };
-$("#meta").textContent = `${num(M.count)} researchers. Every fact links to its source. Built ${M.generated}.`;
+$("#meta").textContent = `${num(M.count)} researchers have a card here. The co-authorship map shows ${num(M.map_people)} people from OpenAlex, and ${num(M.on_map)} of them have a card. Every fact links to its source. Built ${M.generated}.`;
 CATS.forEach(k => $("#cat").insertAdjacentHTML("beforeend", `<option value="${k}">${k} (${C.filter(c => (c.categories || []).includes(k)).length})</option>`));
 $("#cat").insertAdjacentHTML("beforeend", `<option value="none">Not yet classified (${C.filter(c => !(c.categories || []).length).length})</option>`);
 [...new Set(C.map(uniOf).filter(Boolean))].sort().forEach(u => $("#uni").insertAdjacentHTML("beforeend", `<option>${esc(u)}</option>`));

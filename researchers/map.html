@@ -94,7 +94,7 @@ const CARDS_URL = "./";
 for (const p of PEOPLE) { const k = (window.OA_CARD || {})[p.id]; if (k) { p.card = k[0]; if (k[1]) { p.cu = k[1]; p.u = k[1]; } } }
 const byId = Object.fromEntries(PEOPLE.map(p => [p.id, p]));
 document.getElementById("sub").textContent =
-  `${META.people.toLocaleString()} researchers · node size = OpenAlex h-index · domains as territories · ` +
+  `${META.people.toLocaleString()} people from OpenAlex, ${PEOPLE.filter(p => p.card).length.toLocaleString()} of them with a researcher card · node size = OpenAlex h-index · domains as territories · ` +
   `${META.coauthor_edges.toLocaleString()} co-authorship pairs · ${META.lineage_edges.toLocaleString()} advisor edges · built ${META.generated}`;
 
 // domain rank (PEOPLE is sorted by h desc) so the top names of each domain keep their labels when zoomed out
