@@ -34,6 +34,10 @@ ul{margin:4px 0;padding-left:18px}li{margin:3px 0}
 .stats{display:flex;gap:26px;flex-wrap:wrap}.stats b{display:block;font-size:22px}.stats small{color:var(--muted)}
 .tag{font-size:11.5px;border-radius:4px;padding:0 5px;margin-left:6px;border:1px solid var(--line);color:var(--muted)}
 .tag.ok{color:var(--ok);border-color:var(--ok)}.tag.bad{color:var(--bad);border-color:var(--bad)}
+.star{background:none;border:0;padding:0 6px 0 0;margin:0;font:inherit;font-size:17px;line-height:1;color:var(--muted);cursor:pointer;vertical-align:-1px}
+.star.on{color:var(--warn)}.star:hover{color:var(--warn)}
+h2 .star{font-size:24px;vertical-align:2px}
+#dl{color:inherit;white-space:nowrap}
 @media (max-width:760px){main{grid-template-columns:minmax(0,1fr);height:auto}#list{max-height:40vh}#card{padding:16px;overflow-wrap:anywhere}input[type=search]{min-width:0;flex-basis:100%}select{max-width:100%;min-width:0}}
 </style>
 <script data-goatcounter="https://johnsanterre.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
@@ -42,10 +46,11 @@ ul{margin:4px 0;padding-left:18px}li{margin:3px 0}
 <header>
   <h1>Researcher Cards</h1>
   <a class="navlink" href="map.html" style="color:inherit;white-space:nowrap">Map of 5,091 academics</a> <a class="navlink" href="classic/" style="color:inherit;white-space:nowrap">Classic hand-picked map</a>
+  <a id="dl" href="#" hidden>Download starred</a>
   <input type="search" id="q" placeholder="Search name, university, topic, award…" autocomplete="off">
   <select id="uni"><option value="">All universities</option></select>
   <select id="filt">
-    <option value="">All cards</option><option value="crawl">With a verified record</option><option value="awards">With awards</option>
+    <option value="">All cards</option><option value="starred">Starred (0)</option><option value="crawl">With a verified record</option><option value="awards">With awards</option>
     <option value="flags">Flagged for checking</option><option value="nameonly">Name only (nothing sourced yet)</option><option value="rmap">On John's Researcher Map</option><option value="bfs">Added by the breadth-first expansion</option><option value="notinf">Extended list</option><option value="core">Hide the extended list</option>
   </select>
   <select id="sort"><option value="h">Sort: OpenAlex h-index</option><option value="name">Sort: name</option><option value="scholar">Sort: Google Scholar citations</option><option value="awards">Sort: awards</option></select>
@@ -63,25 +68,43 @@ const uniOf = c => c.where?.university || c.where?.csrankings?.affiliation || ""
 const hay = c => [c.name, ...(c.aliases||[]), uniOf(c), c.where?.dept, ...(c.topics||[]), ...(c.recognition||[]).map(a => a.award), c.one_line].join(" ").toLowerCase();
 C.forEach(c => c._hay = hay(c));
 const byId = Object.fromEntries(C.map(c => [c.id, c]));
+// Stars live in this browser only (localStorage); the download link exports them.
+const SK = "researcher-cards-stars";
+let stars = new Set(), cur = null;
+try { stars = new Set(JSON.parse(localStorage.getItem(SK) || "[]")); } catch (e) {}
+const starBtn = id => `<button class="star${stars.has(id) ? " on" : ""}" data-star="${esc(id)}" aria-pressed="${stars.has(id)}" title="Star this researcher">${stars.has(id) ? "★" : "☆"}</button>`;
+function refreshStars() {
+  $("#filt option[value=starred]").textContent = `Starred (${stars.size})`;
+  $("#dl").hidden = !stars.size;
+  document.querySelectorAll("[data-star]").forEach(b => { const on = stars.has(b.dataset.star); b.classList.toggle("on", on); b.textContent = on ? "★" : "☆"; b.setAttribute("aria-pressed", on); });
+}
+function toggleStar(id) {
+  stars.has(id) ? stars.delete(id) : stars.add(id);
+  try { localStorage.setItem(SK, JSON.stringify([...stars])); } catch (e) {}
+  if ($("#filt").value === "starred") list();
+  refreshStars();
+}
 $("#meta").textContent = `${M.count} cards · ${M.with_crawl_record} with a verified record · ${M.with_metrics} with confirmed OpenAlex metrics · ${M.with_scholar || 0} with a Google Scholar profile · ${M.papers_with_arxiv || 0} arXiv links · ${M.name_only} name only · ${M.on_researcher_map || 0} on John's Researcher Map · built ${M.generated}` + (M.audit_generated ? ` · source re-check ${M.audit_generated}` : "");
 [...new Set(C.map(uniOf).filter(Boolean))].sort().forEach(u => $("#uni").insertAdjacentHTML("beforeend", `<option>${esc(u)}</option>`));
 
 function list() {
   const q = $("#q").value.trim().toLowerCase(), u = $("#uni").value, f = $("#filt").value, s = $("#sort").value;
   let r = C.filter(c => (!q || q.split(/\s+/).every(t => c._hay.includes(t))) && (!u || uniOf(c) === u)
-    && (!f || (f === "crawl" && c.verification.crawl_records.length) || (f === "awards" && c.recognition.length)
+    && (!f || (f === "starred" && stars.has(c.id)) || (f === "crawl" && c.verification.crawl_records.length) || (f === "awards" && c.recognition.length)
         || (f === "flags" && c.flags.length) || (f === "nameonly" && c.verification.memory_seed_only) || (f === "rmap" && c.researcher_map) || (f === "bfs" && c.added_by?.linked_to) || (f === "notinf" && c.influence_note !== null && c.influence_note !== undefined) || (f === "core" && !c.flags.includes("extended list"))));
   if (s === "name") r.sort((a, b) => a.name.localeCompare(b.name));
   if (s === "awards") r.sort((a, b) => b.recognition.length - a.recognition.length);
   if (s === "scholar") r.sort((a, b) => (b.sort_scholar || 0) - (a.sort_scholar || 0));
-  $("#list").innerHTML = r.map(c => `<div class="row" data-id="${esc(c.id)}"><span class="h">${c.metrics ? "h " + c.metrics.h : ""}</span>
-    <div class="n">${esc(c.name)}</div><div class="s">${esc(c.one_line || uniOf(c) || "—")}</div></div>`).join("") || `<div class="row">No match</div>`;
+  $("#list").innerHTML = r.map(c => `<div class="row${c.id === cur ? " sel" : ""}" data-id="${esc(c.id)}"><span class="h">${c.metrics ? "h " + c.metrics.h : ""}</span>
+    <div class="n">${starBtn(c.id)}${esc(c.name)}</div><div class="s">${esc(c.one_line || uniOf(c) || "—")}</div></div>`).join("") || `<div class="row">${f === "starred" ? "No starred researchers yet. Click the star next to a name to add one." : "No match"}</div>`;
+  refreshStars();
 }
 function sec(title, body) { return `<section><h3>${title}</h3>${body}</section>`; }
 const gap = t => `<div class="gap">${t}</div>`;
 
 function show(id) {
   const c = C.find(x => x.id === id); if (!c) return;
+  cur = id;
   document.querySelectorAll(".row").forEach(r => r.classList.toggle("sel", r.dataset.id === id));
   history.replaceState(null, "", "#" + id);
   const chips = [];
@@ -90,7 +113,7 @@ function show(id) {
   (c.topics || []).forEach(t => chips.push(`<span>${esc(t)}</span>`));
   if (c.verification.crawl_records.length && !c.flags.length) chips.push(`<span class="ok">sourced, no flags</span>`);
   c.flags.forEach(f => chips.push(`<span class="${/memory|audit/.test(f) ? "bad" : "warn"}">${esc(f)}</span>`));
-  let h = `<div class="card"><h2>${esc(c.name)}</h2><div class="one">${esc(c.one_line || "")}</div><div class="chips">${chips.join("")}</div>`;
+  let h = `<div class="card"><h2>${starBtn(c.id)}${esc(c.name)}</h2><div class="one">${esc(c.one_line || "")}</div><div class="chips">${chips.join("")}</div>`;
 
   // 2. why they matter
   const chk = k => k.checked === "supported" ? `<span class="tag ok">re-checked on source</span>` : k.checked === "trimmed" ? `<span class="tag ok">trimmed to what the source states</span>` : k.checked === "unverifiable" ? `<span class="tag bad">source would not open on re-check</span>` : "";
@@ -167,7 +190,15 @@ function show(id) {
   h += sec("Provenance and gaps", pv) + `</div>`;
   $("#card").innerHTML = h; $("#card").scrollTop = 0;
 }
-$("#list").addEventListener("click", e => { const r = e.target.closest(".row"); if (r?.dataset.id) show(r.dataset.id); });
+$("#list").addEventListener("click", e => { const b = e.target.closest("[data-star]"); if (b) { toggleStar(b.dataset.star); return; } const r = e.target.closest(".row"); if (r?.dataset.id) show(r.dataset.id); });
+$("#card").addEventListener("click", e => { const b = e.target.closest("[data-star]"); if (b) toggleStar(b.dataset.star); });
+$("#dl").addEventListener("click", e => {
+  e.preventDefault();
+  const rows = [...stars].map(id => ({ id, name: byId[id]?.name || id, university: byId[id] ? uniOf(byId[id]) : "" }));
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([JSON.stringify({ starred: rows, exported: new Date().toISOString() }, null, 1)], { type: "application/json" }));
+  a.download = "starred-researchers.json"; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+});
 ["#q", "#uni", "#filt", "#sort"].forEach(s => $(s).addEventListener("input", list));
 list(); show(location.hash.slice(1) || C[0]?.id);
 </script>
