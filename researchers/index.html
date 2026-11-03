@@ -99,7 +99,7 @@ C.forEach(c => c._hay = hay(c));
 const byId = Object.fromEntries(C.map(c => [c.id, c]));
 const CATS = ["Statistics", "Applied mathematics", "Scientific computing", "Complex systems", "Computer science", "AI", "Machine learning", "Deep learning", "Other fields"];
 const STAGE = { senior: "senior researcher", mid: "mid-career", early: "up and coming" };
-$("#meta").textContent = `${num(M.count)} researchers have a card here. The co-authorship map shows ${num(M.map_people)} people from OpenAlex, and ${num(M.on_map)} of them have a card. Every fact links to its source. Built ${M.generated}.`;
+$("#meta").textContent = `${num(M.count)} researchers${M.on_map === M.count ? ", every one on the co-authorship map" : `, ${num(M.on_map)} of them on the co-authorship map`}. Every fact links to its source. Built ${M.generated}.`;
 CATS.forEach(k => $("#cat").insertAdjacentHTML("beforeend", `<option value="${k}">${k} (${C.filter(c => (c.categories || []).includes(k)).length})</option>`));
 $("#cat").insertAdjacentHTML("beforeend", `<option value="none">Not yet classified (${C.filter(c => !(c.categories || []).length).length})</option>`);
 [...new Set(C.map(uniOf).filter(Boolean))].sort().forEach(u => $("#uni").insertAdjacentHTML("beforeend", `<option>${esc(u)}</option>`));

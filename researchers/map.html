@@ -87,18 +87,49 @@
 <script>
 const cv = document.getElementById("c"), cx = cv.getContext("2d");
 let W, H, dpr = window.devicePixelRatio || 1;
+// garbled OpenAlex display names end in stray letters ("Christof Koch A"); the letters are dropped (John, 2026-11-03)
+for (const p of PEOPLE) { const c = p.n.replace(/(\s[A-Z])+$/, ""); if (c.split(/\s+/).length >= 2) p.n = c; }
+// a dot with a researcher card links to it, and takes the card's sourced university over OpenAlex's (OpenAlex lags moves);
+// records shared by several people with one name, and business and marketing statistics, are left off (John, 2026-11-03)
+const CARDS_URL = "./";
+const IGNORE = new Set(window.MAP_IGNORE || []);
+for (const p of PEOPLE) { if (IGNORE.has(p.id)) p.ignored = true; const k = (window.OA_CARD || {})[p.id]; if (k) { p.card = k[0]; if (k[1]) { p.cu = k[1]; p.u = k[1]; } } }
+// every card with no OpenAlex record is placed by category (John chose this, 2026-11-03): inside its topic's territory, near
+// the edge, or in a new territory for applied mathematics, scientific computing, complex systems and other fields
+(() => {
+  const NEW = { "applied-math": ["Applied Mathematics", "#6f9fd8"], "sci-comp": ["Scientific Computing", "#d8a56f"], "complex": ["Complex Systems", "#7fc97f"], "other": ["Other Fields", "#a8a8a8"] };
+  const EX = window.MAP_EXTRA || [], byT = {};
+  for (const e of EX) (byT[DOMAINS[e[2]] || NEW[e[2]] ? e[2] : "other"] ||= []).push(e);
+  let minx = 1e9, maxy = -1e9;
+  for (const t of Object.values(DOMAINS)) { minx = Math.min(minx, t.x - t.r); maxy = Math.max(maxy, t.y + t.r); }
+  let x = minx;
+  for (const [k, [label, color]] of Object.entries(NEW)) {
+    const n = (byT[k] || []).length; if (!n) continue;
+    const r = 26 * Math.sqrt(n) + 60;
+    DOMAINS[k] = { label, color, x: x + r, y: maxy + 160 + r, r, n: 0 };
+    x += 2 * r + 120;
+  }
+  for (const [k, list] of Object.entries(byT)) {
+    const t = DOMAINS[k];
+    list.sort((a, b) => b[3] - a[3]).forEach((e, j) => {
+      const ang = j * 2.39996;
+      const d = NEW[k] ? 26 * Math.sqrt(j + 0.5) : t.r * (0.88 + 0.16 * ((j * 0.618) % 1));
+      PEOPLE.push({ id: "card:" + e[0], n: e[1], d: k, h: e[3] || 0, u: e[4] || null, a: e[4] || "", x: t.x + d * Math.cos(ang), y: t.y + d * Math.sin(ang), card: e[0], cu: e[4] || null, extra: true, c: null, w: null });
+    });
+  }
+})();
 const N = PEOPLE.length;
 PEOPLE.forEach((p, i) => { p.i = i; p.r = 2.5 + 0.075 * p.h; });
-// a dot with a researcher card links to it, and takes the card's sourced university over OpenAlex's (OpenAlex lags moves)
-const CARDS_URL = "./";
-for (const p of PEOPLE) { const k = (window.OA_CARD || {})[p.id]; if (k) { p.card = k[0]; if (k[1]) { p.cu = k[1]; p.u = k[1]; } } }
 const byId = Object.fromEntries(PEOPLE.map(p => [p.id, p]));
+const shown = PEOPLE.filter(p => !p.ignored), nCard = shown.filter(p => p.card).length;
+const okEdge = e => !PEOPLE[e[0]].ignored && !PEOPLE[e[1]].ignored;
 document.getElementById("sub").textContent =
-  `${META.people.toLocaleString()} people from OpenAlex, ${PEOPLE.filter(p => p.card).length.toLocaleString()} of them with a researcher card · node size = OpenAlex h-index · domains as territories · ` +
-  `${META.coauthor_edges.toLocaleString()} co-authorship pairs · ${META.lineage_edges.toLocaleString()} advisor edges · built ${META.generated}`;
+  `${shown.length.toLocaleString()} researchers on the map, ${nCard.toLocaleString()} with a card and ${(shown.length - nCard).toLocaleString()} without · node size = h-index · ` +
+  `${EDGES.filter(e => e[3] === 0 && okEdge(e)).length.toLocaleString()} co-authorship pairs · ${EDGES.filter(e => e[3] === 1 && okEdge(e)).length.toLocaleString()} advisor edges · built ${META.generated}`;
 
-// domain rank (PEOPLE is sorted by h desc) so the top names of each domain keep their labels when zoomed out
-const domRank = {}; for (const p of PEOPLE) { p.rank = (domRank[p.d] = (domRank[p.d] || 0) + 1); }
+// domain rank by h-index, so the top names of each territory keep their labels first as you zoom in
+const domRank = {}; [...shown].sort((a, b) => b.h - a.h).forEach(p => { p.rank = (domRank[p.d] = (domRank[p.d] || 0) + 1); });
+for (const t of Object.values(DOMAINS)) t.n = 0; for (const p of shown) DOMAINS[p.d].n++;
 
 // adjacency
 const adj = Array.from({ length: N }, () => []);
@@ -108,10 +139,10 @@ for (const e of EDGES) { adj[e[0]].push(e); adj[e[1]].push(e); }
 const domOn = Object.fromEntries(Object.keys(DOMAINS).map(d => [d, true]));
 let uniSel = "", hMin = 0, emode = "hover", showLin = true, verifOnly = false;
 let arrange = "topic";
-function visible(p) { return (arrange === "topic" || (p.u && p.u !== "Industry")) && domOn[p.d] && p.h >= hMin && (!uniSel || p.u === uniSel) && (!verifOnly || p.v); }
+function visible(p) { return !p.ignored && (arrange === "topic" || (p.u && p.u !== "Industry")) && domOn[p.d] && p.h >= hMin && (!uniSel || p.u === uniSel) && (!verifOnly || p.v); }
 
 const uniEl = document.getElementById("uni");
-const uniCount = {}; for (const p of PEOPLE) if (p.u && p.u !== "Industry") uniCount[p.u] = (uniCount[p.u] || 0) + 1;
+const uniCount = {}; for (const p of PEOPLE) if (!p.ignored && p.u && p.u !== "Industry") uniCount[p.u] = (uniCount[p.u] || 0) + 1;
 for (const [u, n] of Object.entries(uniCount).sort((a, b) => b[1] - a[1])) { const o = document.createElement("option"); o.value = u; o.textContent = `${u} (${n})`; uniEl.appendChild(o); }
 uniEl.onchange = () => { uniSel = uniEl.value; fit(); draw(); };   // frame the chosen university's people; with few people on screen every name shows
 const hminEl = document.getElementById("hmin");
@@ -138,7 +169,7 @@ for (const [d, t] of Object.entries(DOMAINS)) {
 for (const p of PEOPLE) { p.tx = p.x; p.ty = p.y; }
 const UNI_TERR = (() => {
   const by = {};
-  for (const p of PEOPLE) if (p.u && p.u !== "Industry") (by[p.u] ||= []).push(p);
+  for (const p of PEOPLE) if (!p.ignored && p.u && p.u !== "Industry") (by[p.u] ||= []).push(p);
   const unis = Object.entries(by).map(([u, ps]) => ({ label: u, ps: ps.sort((a, b) => b.h - a.h), r: 26 * Math.sqrt(ps.length) + 40 }))
     .sort((a, b) => b.ps.length - a.ps.length);
   const width = Math.sqrt(unis.reduce((s, u) => s + 4 * u.r * u.r, 0)) * 1.15;
@@ -287,7 +318,7 @@ let selIdx = -1, hits = [];
 searchEl.addEventListener("input", () => {
   const q = norm(searchEl.value.trim()); hits = []; selIdx = -1;
   if (q.length >= 2) {
-    for (let i = 0; i < N && hits.length < 14; i++) if (names[i].includes(q)) hits.push(PEOPLE[i]);
+    for (let i = 0; i < N && hits.length < 14; i++) if (!PEOPLE[i].ignored && names[i].includes(q)) hits.push(PEOPLE[i]);
   }
   resEl.innerHTML = hits.map((p, k) => `<div data-k="${k}"><span>${p.n}</span><span class="m">${p.u || p.a || ""} · h ${p.h}</span></div>`).join("");
   resEl.style.display = hits.length ? "block" : "none";
@@ -334,7 +365,7 @@ function renderProfile(p, pr) {
     <div class="affil">${p.cu ? `${esc(p.cu)} <span class="meta">(from the researcher card; OpenAlex lists ${esc(home.name || "none")})</span>` : esc(home.name || "affiliation unknown")}${home.years && home.years.length ? ` <span class="meta">(${home.years[0]}–${home.years[home.years.length - 1]})</span>` : ""}${pr && pr.curated && pr.curated.dept ? `<br>${esc(pr.curated.title || "")} ${esc(pr.curated.dept)}` : ""}</div>
     <div class="dom" style="color:${t.color};border-color:${t.color}">${esc(t.label)}</div>${p.v ? `<span class="dom" style="color:#fff;border-color:#fff">verified layer</span>` : ""}
     <div class="nums"><div><b>${fmt(p.h)}</b>h-index</div><div><b>${fmt(p.c)}</b>citations</div><div><b>${fmt(p.w)}</b>works</div>${pr && pr.i10 != null ? `<div><b>${fmt(pr.i10)}</b>i10</div>` : ""}</div>`;
-  if (!pr) { html += `<div class="meta">No profile file for this domain yet (run build.py).</div>`; }
+  if (!pr) { if (!p.extra) html += `<div class="meta">No OpenAlex profile loaded for this person.</div>`; }
   else {
     if (pr.curated && pr.curated.why && pr.curated.why.length) html += `<div class="why">${pr.curated.why.map(esc).join("<br><br>")}</div>`;
     if (pr.topics && pr.topics.length) html += `<h4>Topics (OpenAlex, works per topic)</h4><div>${pr.topics.map(x => `<span class="tag">${esc(x.name)} · ${x.count}</span>`).join("")}</div>`;
