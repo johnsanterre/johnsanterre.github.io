@@ -4,60 +4,84 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Researcher Cards</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#14121f;--panel:#1d1a2c;--panel2:#25213a;--ink:#ece9f6;--muted:#a49fbd;--line:#37314f;--accent:#c792ea;--ok:#7fd1a8;--warn:#f0b470;--bad:#ef8a8a;--link:#9ccfff}
-@media (prefers-color-scheme: light){:root:not([data-theme="dark"]){--bg:#f6f5fa;--panel:#fff;--panel2:#f0eef7;--ink:#1d1a2c;--muted:#615c78;--line:#dcd8ea;--accent:#7b3fb3;--ok:#1f8a5a;--warn:#a8650f;--bad:#b23a3a;--link:#1d5fa8}}
+/* Print style (John, 2026-10-12, msai/visual/STYLE.md, after Edward Tufte): white ground, black and grey only, Source Serif 4.
+   Layout (John, 2026-11-03): the IEL overview first, the full record in sections that open on a click. */
+:root{--bg:#fff;--ink:#111;--grey:#8a8a8a;--dim:#5e5e5e;--hair:#b5b5b5;--form:#ededed;--sel:#f4f4f4}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif}
-a{color:var(--link);text-decoration:none}a:hover{text-decoration:underline}
-header{padding:16px;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-header h1{font-size:18px;margin:0 12px 0 0}
-header .meta{color:var(--muted);font-size:13px;flex-basis:100%}
-input,select{background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:7px 9px;font:inherit;font-size:14px}
-input[type=search]{flex:1;min-width:200px}
-main{display:grid;grid-template-columns:minmax(260px,360px) 1fr;height:calc(100vh - 100px)}
-#list{overflow:auto;border-right:1px solid var(--line)}
-.row{padding:9px 14px;border-bottom:1px solid var(--line);cursor:pointer}
-.row:hover,.row.sel{background:var(--panel2)}
-.row .n{font-weight:600}.row .s{color:var(--muted);font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.row .h{float:right;color:var(--muted);font-size:12px}
-#card{overflow:auto;padding:20px 28px 60px}
-.card h2{margin:0;font-size:26px}
-.one{color:var(--muted);margin:4px 0 10px}
-.chips span{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:1px 9px;margin:0 6px 6px 0;font-size:12.5px}
-.chips .ok{border-color:var(--ok);color:var(--ok)}.chips .warn{border-color:var(--warn);color:var(--warn)}.chips .bad{border-color:var(--bad);color:var(--bad)}
-section{margin-top:18px;padding-top:12px;border-top:1px solid var(--line)}
-section h3{margin:0 0 8px;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
-section .gap{color:var(--muted);font-style:italic}
-.src{font-size:12px;color:var(--muted)}.src a{color:var(--muted);text-decoration:underline}
-ul{margin:4px 0;padding-left:18px}li{margin:3px 0}
-.stats{display:flex;gap:26px;flex-wrap:wrap}.stats b{display:block;font-size:22px}.stats small{color:var(--muted)}
-.tag{font-size:11.5px;border-radius:4px;padding:0 5px;margin-left:6px;border:1px solid var(--line);color:var(--muted)}
-.tag.ok{color:var(--ok);border-color:var(--ok)}.tag.bad{color:var(--bad);border-color:var(--bad)}
-.star{background:none;border:0;padding:0 6px 0 0;margin:0;font:inherit;font-size:17px;line-height:1;color:var(--muted);cursor:pointer;vertical-align:-1px}
-.star.on{color:var(--warn)}.jstar{color:var(--accent);font-size:12px;margin-left:6px}
-.jnote{border-left:3px solid var(--accent);background:var(--panel2);padding:8px 12px;margin:12px 0;border-radius:4px}.jnote b{color:var(--accent)}
-.jp{font-size:13px;color:var(--muted);white-space:nowrap}.hidebtn{background:none;border:1px solid var(--line);color:var(--muted);border-radius:6px;font:inherit;font-size:12px;padding:2px 8px;cursor:pointer;margin-left:10px;vertical-align:4px}
-.life{color:var(--muted);font-size:15px;font-weight:400;margin-left:8px}.star:hover{color:var(--warn)}
-h2 .star{font-size:24px;vertical-align:2px}
-#dl{color:inherit;white-space:nowrap}
-@media (max-width:760px){main{grid-template-columns:minmax(0,1fr);height:auto}#list{max-height:40vh}#card{padding:16px;overflow-wrap:anywhere}input[type=search]{min-width:0;flex-basis:100%}select{max-width:100%;min-width:0}}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 "Source Serif 4",Georgia,serif;font-variant-numeric:oldstyle-nums}
+a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--hair);text-underline-offset:2px}a:hover{text-decoration-color:var(--ink)}
+header{padding:18px 20px 12px;border-bottom:1px solid var(--hair);display:flex;flex-wrap:wrap;gap:8px 12px;align-items:baseline}
+header h1{font-size:26px;font-weight:600;margin:0 14px 0 0;letter-spacing:-.01em}
+header .nav{font-size:14px;color:var(--dim);white-space:nowrap}
+header .meta{color:var(--dim);font-size:13.5px;flex-basis:100%;font-style:italic}
+.controls{flex-basis:100%;min-width:0;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+input,select{background:var(--bg);color:var(--ink);border:1px solid var(--hair);border-radius:3px;padding:6px 8px;font:inherit;font-size:14.5px}
+input[type=search]{flex:1 1 260px;min-width:0}
+label.jp{font-size:14px;color:var(--dim);white-space:nowrap}
+#dl{font-size:14px;color:var(--dim)}
+main{display:grid;grid-template-columns:minmax(260px,340px) 1fr;height:calc(100vh - 150px)}
+#list{overflow:auto;border-right:1px solid var(--hair)}
+.row{padding:8px 14px 8px 12px;border-bottom:1px solid var(--form);cursor:pointer}
+.row:hover{background:var(--sel)}.row.sel{background:var(--form)}
+.row .n{font-weight:600}.row .s{color:var(--dim);font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.row .h{float:right;color:var(--grey);font-size:13px;font-variant-numeric:lining-nums tabular-nums}
+.jmark{font-size:12px;font-style:italic;color:var(--dim);margin-left:6px;font-weight:400}
+.star{background:none;border:0;padding:0 5px 0 0;margin:0;font:inherit;font-size:16px;line-height:1;color:var(--grey);cursor:pointer}
+.star.on{color:var(--ink)}.star:hover{color:var(--ink)}
+#card{overflow:auto;padding:26px 40px 80px}
+.card{max-width:46rem}
+.card h2{margin:0;font-size:38px;line-height:1.1;font-weight:600;letter-spacing:-.015em}
+.card h2 .star{font-size:26px;vertical-align:4px}
+.life{color:var(--grey);font-size:20px;font-weight:400;margin-left:10px;font-variant-numeric:lining-nums}
+.hidebtn{float:right;margin-top:10px;background:none;border:1px solid var(--hair);color:var(--dim);border-radius:3px;font:inherit;font-size:13px;padding:2px 9px;cursor:pointer}
+.one{color:var(--dim);font-size:17px;margin:6px 0 4px}
+.cats{font-variant:small-caps;letter-spacing:.04em;color:var(--dim);font-size:15px}
+.jnote{border-left:2px solid var(--ink);padding:2px 0 2px 12px;margin:14px 0;font-style:italic}
+.figs{display:flex;flex-wrap:wrap;gap:8px 30px;align-items:flex-end;margin:22px 0 6px;padding:14px 0;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+.fig b{display:block;font-size:30px;font-weight:600;line-height:1;font-variant-numeric:lining-nums tabular-nums}
+.fig small{display:block;color:var(--dim);font-size:13px;font-variant:small-caps;letter-spacing:.04em;margin-top:4px}
+.spark small{display:block;color:var(--dim);font-size:12.5px;font-style:italic;font-variant:normal;letter-spacing:0}
+.desc{font-size:18px;line-height:1.55;margin:18px 0 6px}
+.src{font-size:12.5px;color:var(--grey);text-decoration-color:var(--form)}
+.gap{color:var(--grey);font-style:italic}
+.quiet{color:var(--dim)}
+dl.facts{display:grid;grid-template-columns:8.5rem 1fr;gap:8px 16px;margin:18px 0 8px}
+dl.facts dt{font-variant:small-caps;letter-spacing:.04em;color:var(--dim)}
+dl.facts dd{margin:0}
+details{border-top:1px solid var(--form);padding:9px 0}
+details:last-of-type{border-bottom:1px solid var(--form)}
+summary{cursor:pointer;font-variant:small-caps;letter-spacing:.05em;font-size:16px;color:var(--ink);list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"\25B8";display:inline-block;width:1.1em;color:var(--grey);transition:transform .15s}
+details[open] summary::before{transform:rotate(90deg)}
+summary .ct{color:var(--grey);font-variant:normal;letter-spacing:0;font-size:14px}
+details .in{padding:6px 0 4px 1.1em;font-size:15.5px}
+ul{margin:4px 0;padding-left:18px}li{margin:4px 0}
+.tag{font-size:12.5px;font-style:italic;color:var(--grey);margin-left:6px}
+.flag{display:inline-block;font-size:13px;border:1px solid var(--hair);border-radius:3px;padding:0 6px;margin:0 6px 6px 0;color:var(--dim)}
+@media (prefers-reduced-motion:reduce){summary::before{transition:none}}
+@media (max-width:760px){main{grid-template-columns:minmax(0,1fr);height:auto}#list{max-height:40vh;border-right:0;border-bottom:1px solid var(--hair)}#card{padding:18px 16px 60px;overflow-wrap:anywhere}.card h2{font-size:30px}dl.facts{grid-template-columns:1fr;gap:2px 0}dl.facts dd{margin-bottom:8px}select{max-width:100%;min-width:0}#q,#uni{flex:1 1 100%;width:100%}.figs svg{max-width:100%}}
 </style>
 <script data-goatcounter="https://johnsanterre.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
 <header>
-  <h1>Researcher Cards</h1>
-  <a class="navlink" href="map.html" style="color:inherit;white-space:nowrap">Map of 5,091 academics</a> <a class="navlink" href="classic/" style="color:inherit;white-space:nowrap">Classic hand-picked map</a>
-  <label class="jp"><input type="checkbox" id="jp" checked> Show John's stars and notes</label>
-  <a id="dl" href="#" hidden>Download my stars</a>
-  <input type="search" id="q" placeholder="Search name, university, topic, award…" autocomplete="off">
-  <select id="cat"><option value="">All categories</option></select>
-  <select id="uni"><option value="">All universities</option></select>
-  <select id="stage"><option value="">All career stages</option><option value="senior">Senior researchers</option><option value="mid">Mid-career</option><option value="early">Up and coming</option><option value="none">Career stage not known</option></select>
-  <select id="show"><option value="">Everyone</option><option value="john">John's picks</option><option value="mine">My stars</option><option value="hidden">People I hid</option></select>
-  <select id="sort"><option value="h">Sort: OpenAlex h-index</option><option value="name">Sort: name</option><option value="scholar">Sort: Google Scholar citations</option><option value="awards">Sort: awards</option></select>
+  <h1>Researchers</h1>
+  <a class="navlink nav" href="map.html">Map of 5,091 academics</a> <a class="navlink nav" href="classic/">Classic hand-picked map</a>
   <div class="meta" id="meta"></div>
+  <div class="controls">
+    <input type="search" id="q" placeholder="Search name, university, topic, award…" autocomplete="off">
+    <select id="cat"><option value="">All categories</option></select>
+    <select id="uni"><option value="">All universities</option></select>
+    <select id="stage"><option value="">All career stages</option><option value="senior">Senior researchers</option><option value="mid">Mid-career</option><option value="early">Up and coming</option><option value="none">Career stage not known</option></select>
+    <select id="show"><option value="">Everyone</option><option value="john">John's picks</option><option value="mine">My stars</option><option value="hidden">People I hid</option></select>
+    <select id="sort"><option value="h">Sort: h-index</option><option value="name">Sort: name</option><option value="scholar">Sort: Google Scholar citations</option><option value="awards">Sort: awards</option></select>
+    <label class="jp"><input type="checkbox" id="jp" checked> Show John's stars and notes</label>
+    <a id="dl" href="#" hidden>Download my stars</a>
+  </div>
 </header>
 <main><div id="list"></div><div id="card"></div></main>
 <script src="cards/cards.js"></script>
@@ -66,19 +90,28 @@ const C = window.CARDS || [], M = window.CARDS_META || {};
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const host = u => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch (e) { return u; } };
-const src = (u, label) => u ? `<span class="src">source: <a href="${esc(u)}" target="_blank" rel="noopener">${esc(label || host(u))}</a></span>` : "";
+const src = (u, label) => u ? ` <a class="src" href="${esc(u)}" target="_blank" rel="noopener">${esc(label || host(u))}</a>` : "";
+const num = n => (n || 0).toLocaleString();
+const slugOf = n => String(n || "").normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 const uniOf = c => c.where?.university || c.where?.csrankings?.affiliation || "";
-const hay = c => [c.name, ...(c.aliases||[]), uniOf(c), c.where?.dept, ...(c.topics||[]), ...(c.recognition||[]).map(a => a.award), c.one_line].join(" ").toLowerCase();
+const hay = c => [c.name, ...(c.aliases||[]), uniOf(c), c.where?.dept, ...(c.topics||[]), ...(c.categories||[]), ...(c.recognition||[]).map(a => a.award), c.one_line].join(" ").toLowerCase();
 C.forEach(c => c._hay = hay(c));
 const byId = Object.fromEntries(C.map(c => [c.id, c]));
-// Stars live in this browser only (localStorage); the download link exports them.
-const SK = "researcher-cards-stars";
-const HK = "researcher-cards-hidden", JK = "researcher-cards-show-john";
+const CATS = ["Statistics", "Applied mathematics", "Scientific computing", "Computer science", "AI", "Machine learning", "Deep learning", "Other fields"];
+const STAGE = { senior: "senior researcher", mid: "mid-career", early: "up and coming" };
+$("#meta").textContent = `${num(M.count)} researchers. Every fact links to its source. Built ${M.generated}.`;
+CATS.forEach(k => $("#cat").insertAdjacentHTML("beforeend", `<option value="${k}">${k} (${C.filter(c => (c.categories || []).includes(k)).length})</option>`));
+$("#cat").insertAdjacentHTML("beforeend", `<option value="none">Not yet classified (${C.filter(c => !(c.categories || []).length).length})</option>`);
+[...new Set(C.map(uniOf).filter(Boolean))].sort().forEach(u => $("#uni").insertAdjacentHTML("beforeend", `<option>${esc(u)}</option>`));
+
+// Visitors' own stars and hidden people live in this browser only (localStorage). John's stars and notes come with the
+// cards (c.john, from store/johns-picks.json), and a visitor can switch them off.
+const SK = "researcher-cards-stars", HK = "researcher-cards-hidden", JK = "researcher-cards-show-john";
 let stars = new Set(), hidden = new Set(), cur = null;
 try { stars = new Set(JSON.parse(localStorage.getItem(SK) || "[]")); hidden = new Set(JSON.parse(localStorage.getItem(HK) || "[]")); if (localStorage.getItem(JK) === "0") $("#jp").checked = false; } catch (e) {}
 const showJohn = () => $("#jp").checked;
 const nJohn = C.filter(c => c.john).length;
-const starBtn = id => `<button class="star${stars.has(id) ? " on" : ""}" data-star="${esc(id)}" aria-pressed="${stars.has(id)}" title="Star this researcher">${stars.has(id) ? "★" : "☆"}</button>`;
+const starBtn = id => `<button class="star${stars.has(id) ? " on" : ""}" data-star="${esc(id)}" aria-pressed="${stars.has(id)}" title="Star this researcher (kept in your browser)">${stars.has(id) ? "★" : "☆"}</button>`;
 function refreshStars() {
   $("#show option[value=mine]").textContent = `My stars (${stars.size})`;
   $("#show option[value=hidden]").textContent = `People I hid (${hidden.size})`;
@@ -98,12 +131,6 @@ function toggleHide(id) {
   try { localStorage.setItem(HK, JSON.stringify([...hidden])); } catch (e) {}
   list(); show(id);
 }
-$("#meta").textContent = `${M.count.toLocaleString()} researchers · every fact links to its source · built ${M.generated}`;
-const CATS = ["Statistics", "Computer science", "AI", "Machine learning", "Deep learning", "Other fields"];
-CATS.forEach(k => $("#cat").insertAdjacentHTML("beforeend", `<option value="${k}">${k} (${C.filter(c => (c.categories || []).includes(k)).length})</option>`));
-$("#cat").insertAdjacentHTML("beforeend", `<option value="none">Not yet classified (${C.filter(c => !(c.categories || []).length).length})</option>`);
-const STAGE = { senior: "Senior researcher", mid: "Mid-career", early: "Up and coming" };
-[...new Set(C.map(uniOf).filter(Boolean))].sort().forEach(u => $("#uni").insertAdjacentHTML("beforeend", `<option>${esc(u)}</option>`));
 
 function list() {
   const q = $("#q").value.trim().toLowerCase(), u = $("#uni").value, k = $("#cat").value, g = $("#stage").value, sh = $("#show").value, s = $("#sort").value;
@@ -112,113 +139,131 @@ function list() {
     && (!g || (g === "none" ? !c.stage : c.stage === g))
     && (sh === "hidden" ? hidden.has(c.id) : !hidden.has(c.id))
     && (sh !== "mine" || stars.has(c.id)) && (sh !== "john" || (showJohn() && c.john)));
-  const f = sh === "mine" ? "starred" : sh;
   if (s === "name") r.sort((a, b) => a.name.localeCompare(b.name));
   if (s === "awards") r.sort((a, b) => b.recognition.length - a.recognition.length);
   if (s === "scholar") r.sort((a, b) => (b.sort_scholar || 0) - (a.sort_scholar || 0));
+  const empty = sh === "mine" ? "No starred researchers yet. Click the star next to a name to add one." : sh === "hidden" ? "You have not hidden anyone." : sh === "john" ? "John has not starred anyone yet." : "No match.";
   $("#list").innerHTML = r.map(c => `<div class="row${c.id === cur ? " sel" : ""}" data-id="${esc(c.id)}"><span class="h">${c.metrics ? "h " + c.metrics.h : ""}</span>
-    <div class="n">${starBtn(c.id)}${esc(c.name)}${showJohn() && c.john ? `<span class="jstar" title="John's pick">★ John</span>` : ""}</div><div class="s">${esc(c.one_line || uniOf(c) || "—")}</div></div>`).join("") || `<div class="row">${f === "starred" ? "No starred researchers yet. Click the star next to a name to add one." : f === "hidden" ? "You have not hidden anyone." : f === "john" ? "John has not starred anyone yet." : "No match"}</div>`;
+    <div class="n">${starBtn(c.id)}${esc(c.name)}${showJohn() && c.john ? `<span class="jmark">John's pick</span>` : ""}</div><div class="s">${esc(c.one_line || uniOf(c) || (c.categories || []).join(", ") || "")}</div></div>`).join("") || `<div class="row gap">${empty}</div>`;
   refreshStars();
 }
+
 function lifeOf(c) {
   const y = s => (String(s || "").match(/\b(1[5-9]\d\d|20\d\d)\b/) || [])[0];
   const b = y(c.life?.born), d = y(c.life?.died);
   return b || d ? `<span class="life">${b ? (d ? `${b}–${d}` : "born " + b) : "died " + d}</span>` : "";
 }
-function sec(title, body) { return `<section><h3>${title}</h3>${body}</section>`; }
-const gap = t => `<div class="gap">${t}</div>`;
+// works per year as a sparkline with a range frame: a hairline under the data only, the first and last year at its ends, the peak marked
+function spark(by) {
+  if (!by || by.length < 3) return "";
+  const W = 220, H = 38, y0 = by[0][0], y1 = by[by.length - 1][0], mx = Math.max(...by.map(d => d[1])) || 1;
+  const X = y => (y - y0) / Math.max(1, y1 - y0) * W, Y = w => H - w / mx * (H - 4);
+  const pk = by.reduce((a, d) => d[1] > a[1] ? d : a);
+  const pts = by.map(d => `${X(d[0]).toFixed(1)},${Y(d[1]).toFixed(1)}`).join(" ");
+  const F = `font-family="Source Serif 4, Georgia, serif" font-size="11" fill="#5e5e5e"`;
+  const px = X(pk[0]), right = px > W - 60;
+  return `<div class="fig spark"><svg width="${W + 4}" height="${H + 30}" viewBox="-2 -14 ${W + 4} ${H + 30}" role="img" aria-label="Works per year, ${y0} to ${y1}, peak ${pk[1]} in ${pk[0]}">
+    <line x1="0" y1="${H + 1}" x2="${W}" y2="${H + 1}" stroke="#b5b5b5" stroke-width="1"/>
+    <polyline points="${pts}" fill="none" stroke="#111" stroke-width="1.1"/>
+    <circle cx="${px.toFixed(1)}" cy="${Y(pk[1]).toFixed(1)}" r="2.2" fill="#111"/>
+    <text x="${px.toFixed(1)}" y="${(Y(pk[1]) - 5).toFixed(1)}" text-anchor="${right ? "end" : "middle"}" ${F}>${pk[1]} in ${pk[0]}</text>
+    <text x="0" y="${H + 13}" ${F}>${y0}</text>
+    <text x="${W}" y="${H + 13}" text-anchor="end" ${F}>${y1}</text>
+  </svg><small>works per year (OpenAlex)</small></div>`;
+}
+const det = (title, count, body) => body ? `<details><summary>${title}${count ? ` <span class="ct">(${count})</span>` : ""}</summary><div class="in">${body}</div></details>` : "";
+const chk = k => k.checked === "supported" ? `<span class="tag">re-checked on source</span>` : k.checked === "trimmed" ? `<span class="tag">trimmed to what the source states</span>` : k.checked === "unverifiable" ? `<span class="tag">source would not open on re-check</span>` : "";
+const person = n => byId[slugOf(n)] ? `<a href="#${esc(slugOf(n))}">${esc(n)}</a>` : esc(n);
 
 function show(id) {
-  const c = C.find(x => x.id === id); if (!c) return;
+  const c = byId[id]; if (!c) return;
   cur = id;
   document.querySelectorAll(".row").forEach(r => r.classList.toggle("sel", r.dataset.id === id));
   history.replaceState(null, "", "#" + id);
-  const chips = [];
-  (c.categories || []).forEach(k => chips.push(`<span class="ok">${esc(k)}</span>`));
-  if (c.stage) chips.push(`<span title="based on ${esc(c.stage_basis || "")}">${STAGE[c.stage]}</span>`);
-  if (c.status && c.status !== "deceased") chips.push(`<span>${esc(c.status)}</span>`);
-  if (c.domain?.label) chips.push(`<span>${esc(c.domain.label)}</span>`);
-  (c.topics || []).forEach(t => chips.push(`<span>${esc(t)}</span>`));
-  if (c.verification.crawl_records.length && !c.flags.length) chips.push(`<span class="ok">sourced, no flags</span>`);
-  c.flags.forEach(f => chips.push(`<span class="${/memory|audit/.test(f) ? "bad" : "warn"}">${esc(f)}</span>`));
-  let h = `<div class="card"><h2>${starBtn(c.id)}${esc(c.name)}${lifeOf(c)}<button class="hidebtn" data-hide="${esc(c.id)}">${hidden.has(c.id) ? "Unhide" : "Hide"}</button></h2><div class="one">${esc(c.one_line || "")}</div><div class="chips">${chips.join("")}</div>`;
-  if (showJohn() && c.john) h += `<div class="jnote"><b>★ John's pick</b>${c.john.note ? " · " + esc(c.john.note) : ""}</div>`;
+  const W = c.where || {}, G = c.scholar, Mx = c.metrics, P = c.papers || [], R = c.recognition || [], T = c.training || {};
 
-  // 2. why they matter
-  const chk = k => k.checked === "supported" ? `<span class="tag ok">re-checked on source</span>` : k.checked === "trimmed" ? `<span class="tag ok">trimmed to what the source states</span>` : k.checked === "unverifiable" ? `<span class="tag bad">source would not open on re-check</span>` : "";
-  let w = (c.known_for || []).map(k => `<p>${esc(k.text)}<br>${src(k.sources?.[0])} ${chk(k)}</p>`).join("");
-  if (c.researcher_map) w += `<p>${esc(c.researcher_map.why)}<br>${src(c.researcher_map.source, "the classic map")}</p>`;
-  if (c.known_for_list) w += `<p>Known for (Wikipedia): ${c.known_for_list.items.map(esc).join("; ")}<br>${src(c.known_for_list.source, "Wikipedia")}</p>`;
-  if (c.also_described?.length) w += `<details><summary class="src">${c.also_described.length} other description(s)</summary>${c.also_described.map(k => `<p>${esc(k.text)}<br>${src(k.sources?.[0])}</p>`).join("")}</details>`;
-  h += sec("Why they matter", w || gap("No sourced description yet."));
+  // overview (the IEL model): who, one line, categories, John's note, figures, description, key facts
+  let h = `<div class="card"><button class="hidebtn" data-hide="${esc(c.id)}">${hidden.has(c.id) ? "Unhide" : "Hide"}</button>
+    <h2>${starBtn(c.id)}${esc(c.name)}${lifeOf(c)}</h2><div class="one">${esc(c.one_line || "")}</div>`;
+  const cl = (c.categories || []).map(x => esc(x).toLowerCase());
+  if (c.stage) cl.push(`<span title="Career stage based on ${esc(c.stage_basis || "")}">${STAGE[c.stage]}</span>`);
+  if (c.status === "emeritus" || c.status === "industry") cl.push(esc(c.status));
+  if (cl.length) h += `<div class="cats">${cl.join(" · ")}</div>`;
+  if (showJohn() && c.john) h += `<div class="jnote">John's pick${c.john.note ? ". " + esc(c.john.note) : "."}</div>`;
 
-  // 3. where they work
-  const W = c.where || {};
-  let wh = "";
-  if (W.university) wh += `<p><b>${esc(W.university)}</b>${W.dept ? " · " + esc(W.dept) : ""}${c.who?.title ? " · " + esc(c.who.title) : ""}<br>${src(W.sources?.[0])}</p>`;
-  if (W.csrankings) wh += `<p>CSRankings lists: ${esc(W.csrankings.affiliation)} ${src("https://csrankings.org", "CSRankings")}</p>`;
-  if (W.conflict) wh += `<p class="src">⚠ ${esc(W.conflict)}</p>`;
-  if (c.posts?.length) wh += `<p>Posts on record:</p><ul>${c.posts.map(p => `<li>${esc(p.name)}${p.years ? ` (${p.years[0]}–${p.years[1]})` : ""} ${src(p.source, p.source?.includes("openalex") ? "OpenAlex" : "Wikipedia")}</li>`).join("")}</ul>`;
-  h += sec("Where they work", wh || gap("No sourced affiliation yet."));
+  const figs = [];
+  if (Mx) figs.push([Mx.h, "h-index"], [num(Mx.cited), "citations"], [num(Mx.works), "works"]);
+  else if (G) figs.push([G.h, "h-index, Scholar"], [num(G.citations), "citations, Scholar"]);
+  if (R.length) figs.push([R.length, R.length === 1 ? "award" : "awards"]);
+  if (c.students?.length) figs.push([c.students.length, "doctoral students"]);
+  const sp = spark(c.by_year);
+  if (figs.length || sp) h += `<div class="figs">${figs.map(([v, l]) => `<div class="fig"><b>${v}</b><small>${l}</small></div>`).join("")}${sp}</div>`;
 
-  // 4. training and lineage
-  let t = "";
-  if (c.training) {
-    if (c.training.education?.length) t += `<p>Education: ${c.training.education.map(esc).join("; ")}</p>`;
-    if (c.training.thesis) t += `<p>Thesis: <i>${esc(c.training.thesis)}</i>${c.training.thesis_year ? " (" + esc(c.training.thesis_year) + ")" : ""}</p>`;
-    if (t) t += src(c.training.source, "Wikipedia");
-  }
-  if (c.advisors?.length) t += `<p>Doctoral advisor: ${c.advisors.map(a => `${esc(a.name)} ${src(a.source)}`).join("; ")}</p>`;
-  if (c.students?.length) t += `<p>Doctoral students recorded (${c.students.length}):</p><ul>${c.students.slice(0, 40).map(s => `<li>${esc(s.name)} ${src(s.source)}</li>`).join("")}</ul>${c.students.length > 40 ? `<div class="src">and ${c.students.length - 40} more</div>` : ""}`;
-  h += sec("Training and lineage", t || gap("No sourced training or advisor yet."));
+  const kf = (c.known_for || [])[0];
+  if (kf) h += `<p class="desc">${esc(kf.text)}${src(kf.sources?.[0])}${chk(kf)}</p>`;
+  else if (c.researcher_map) h += `<p class="desc">${esc(c.researcher_map.why)}${src(c.researcher_map.source, "the classic map")}</p>`;
+  else h += `<p class="desc gap">No sourced description yet.</p>`;
 
-  // 5. signature work
-  const P = c.papers || [];
-  const G = c.scholar;
-  const top = G?.top_articles?.length ? `<p>Most cited on Google Scholar:</p><ul>${G.top_articles.map(a => `<li><a href="${esc(a.link)}" target="_blank" rel="noopener">${esc(a.title)}</a> (${esc(a.year || "")}) · ${(a.cited||0).toLocaleString()} citations<br><span class="src">${esc(a.authors || "")}${a.venue ? " · " + esc(a.venue) : ""}</span></li>`).join("")}</ul>${src(G.url, "Google Scholar profile, read " + G.fetched)}` : "";
-  h += sec("Signature work", (P.length ? `<ul>${P.map(p => `<li><b>${p.link ? `<a href="${esc(p.link)}" target="_blank" rel="noopener">${esc(p.title)}</a>` : esc(p.title)}</b> (${esc(p.venue || "?")} ${esc(p.year || "")})${p.note ? `<br>${esc(p.note)}` : ""}${p.arxiv ? ` · <a href="${esc(p.arxiv)}" target="_blank" rel="noopener">arXiv</a>` : ""}${p.audit ? `<span class="tag ${p.audit === "pass" ? "ok" : "bad"}">authors ${p.audit === "pass" ? "re-checked" : esc(p.audit)}</span>` : ""}</li>`).join("")}</ul>` : (top ? "" : gap("No landmark papers recorded yet."))) + top);
+  const facts = [];
+  if (W.university) facts.push(["Where", `${esc(W.university)}${W.dept ? ", " + esc(W.dept) : ""}${c.who?.title ? `<br><span class="quiet">${esc(c.who.title)}</span>` : ""}${src(W.sources?.[0])}`]);
+  else if (W.csrankings) facts.push(["Where", `${esc(W.csrankings.affiliation)}${src("https://csrankings.org", "CSRankings")}`]);
+  if (T.education?.length) facts.push(["Trained", T.education.map(esc).join("; ") + src(T.source, "Wikipedia")]);
+  if (c.advisors?.length) facts.push(["Advisor", c.advisors.map(a => person(a.name) + src(a.source)).join("; ")]);
+  if (c.known_for_list) facts.push(["Known for", c.known_for_list.items.map(esc).join("; ") + src(c.known_for_list.source, "Wikipedia")]);
+  if (R.length) facts.push(["Honors", R.slice(0, 3).map(a => `${esc(a.award)}${a.year ? ", " + esc(a.year) : ""}`).join("; ") + (R.length > 3 ? `; <span class="quiet">and ${R.length - 3} more below</span>` : "")]);
+  const sig = P.length ? P.slice(0, 3).map(p => `${p.link ? `<a href="${esc(p.link)}" target="_blank" rel="noopener">${esc(p.title)}</a>` : esc(p.title)} <span class="quiet">(${esc(p.venue || "")} ${esc(p.year || "")})</span>`)
+    : (G?.top_articles || []).slice(0, 3).map(a => `<a href="${esc(a.link)}" target="_blank" rel="noopener">${esc(a.title)}</a> <span class="quiet">(${esc(a.year || "")}, ${num(a.cited)} citations)</span>`);
+  if (sig.length) facts.push(["Signature work", sig.join("<br>")]);
+  if (facts.length) h += `<dl class="facts">${facts.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("")}</dl>`;
 
-  // 6. recognition
-  let rc = "";
-  if (c.recognition?.length) rc += `<ul>${c.recognition.map(a => `<li><b>${esc(a.award)}</b>${a.year ? ", " + esc(a.year) : ""}${a.paper ? ` — <i>${esc(a.paper)}</i>` : ""}${a.citation ? `<br>${esc(a.citation)}` : ""} ${src(a.source)}${/another/.test(a.match) ? `<span class="tag bad">check: namesake possible</span>` : ""}</li>`).join("")}</ul>`;
-  if (c.awards_wikipedia) rc += `<p>Wikipedia infobox lists: ${c.awards_wikipedia.items.map(esc).join("; ")}<br>${src(c.awards_wikipedia.source, "Wikipedia")}</p>`;
-  h += sec("Recognition", rc || gap("No sourced awards yet."));
+  // the full record, folded
+  let rc = R.length ? `<ul>${R.map(a => `<li><b>${esc(a.award)}</b>${a.year ? ", " + esc(a.year) : ""}${a.paper ? `, for <i>${esc(a.paper)}</i>` : ""}${a.citation ? `<br>${esc(a.citation)}` : ""}${src(a.source)}${/another/.test(a.match) ? `<span class="tag">check: a namesake is possible</span>` : ""}</li>`).join("")}</ul>` : "";
+  if (c.awards_wikipedia) rc += `<p>Wikipedia lists: ${c.awards_wikipedia.items.map(esc).join("; ")}${src(c.awards_wikipedia.source, "Wikipedia")}</p>`;
+  h += det("Recognition", R.length, rc);
 
-  // 7. connections
-  h += sec("Connections on the map", c.coauthors_on_map?.length ? `<p>${c.coauthors_on_map.map(x => `${esc(x.name)} (${x.w})`).join(", ")}</p><div class="src">co-authors on the map, by number of shared works</div>` : gap("No co-authors on the map yet."));
+  let pw = P.length ? `<ul>${P.map(p => `<li>${p.link ? `<a href="${esc(p.link)}" target="_blank" rel="noopener">${esc(p.title)}</a>` : esc(p.title)} (${esc(p.venue || "?")} ${esc(p.year || "")})${p.note ? `<br>${esc(p.note)}` : ""}${p.arxiv ? ` · <a href="${esc(p.arxiv)}" target="_blank" rel="noopener">arXiv</a>` : ""}${p.audit ? `<span class="tag">authors ${p.audit === "pass" ? "re-checked" : esc(p.audit)}</span>` : ""}</li>`).join("")}</ul>` : "";
+  if (G?.top_articles?.length) pw += `<p>Most cited on Google Scholar:</p><ul>${G.top_articles.map(a => `<li><a href="${esc(a.link)}" target="_blank" rel="noopener">${esc(a.title)}</a> (${esc(a.year || "")}), ${num(a.cited)} citations<br><span class="quiet">${esc(a.authors || "")}${a.venue ? ", " + esc(a.venue) : ""}</span></li>`).join("")}</ul>${src(G.url, "Google Scholar profile, read " + G.fetched)}`;
+  if (Mx) pw += `<p>OpenAlex: h-index ${Mx.h}, ${num(Mx.cited)} citations, ${num(Mx.works)} works.${src(Mx.source.split(" ")[1], "OpenAlex")} <span class="tag">identity: ${esc(Mx.identity)}</span></p>`;
+  if (G) pw += `<p>Google Scholar: h-index ${G.h}, ${num(G.citations)} citations (${num(G.citations_recent)} since 2021), i10 ${G.i10}.${src(G.url, "Google Scholar profile")} <span class="tag">read ${esc(G.fetched)}; profile name "${esc(G.name)}"</span></p>`;
+  if (c.csrankings) pw += `<p>${c.csrankings.ml_papers} papers at NeurIPS, ICML and ICLR, ${c.csrankings.years[0]}–${c.csrankings.years[1]} (author-adjusted ${c.csrankings.ml_adjusted}).${src("https://csrankings.org", "CSRankings")}</p>`;
+  h += det("Papers and citations", P.length || "", pw);
 
-  // 8. scale
-  let sc = "";
-  if (c.metrics) sc += `<div class="stats"><div><b>${c.metrics.h}</b><small>h-index</small></div><div><b>${(c.metrics.cited||0).toLocaleString()}</b><small>citations</small></div><div><b>${(c.metrics.works||0).toLocaleString()}</b><small>works</small></div></div><p>${src(c.metrics.source.split(" ")[1], "OpenAlex")} <span class="src">· identity: ${esc(c.metrics.identity)}</span></p>`;
-  if (G) sc += `<div class="stats"><div><b>${G.h}</b><small>h-index (Scholar)</small></div><div><b>${(G.citations||0).toLocaleString()}</b><small>citations (Scholar)</small></div><div><b>${(G.citations_recent||0).toLocaleString()}</b><small>since 2021</small></div><div><b>${G.i10}</b><small>i10</small></div></div><p>${src(G.url, "Google Scholar profile")} <span class="src">· read ${esc(G.fetched)} · profile name "${esc(G.name)}", ${esc(G.affiliation || "")}</span></p>`;
-  if (c.csrankings) sc += `<p>${c.csrankings.ml_papers} papers at NeurIPS, ICML and ICLR, ${c.csrankings.years[0]}–${c.csrankings.years[1]} (author-adjusted ${c.csrankings.ml_adjusted}) ${src("https://csrankings.org", "CSRankings")}</p>`;
-  h += sec("Scale", sc || gap("No confirmed metrics yet."));
+  let tl = "";
+  if (T.education?.length) tl += `<p>Education: ${T.education.map(esc).join("; ")}</p>`;
+  if (T.thesis) tl += `<p>Thesis: <i>${esc(T.thesis)}</i>${T.thesis_year ? " (" + esc(T.thesis_year) + ")" : ""}</p>`;
+  if (tl) tl += src(T.source, "Wikipedia");
+  if (c.advisors?.length) tl += `<p>Doctoral advisor: ${c.advisors.map(a => person(a.name) + src(a.source)).join("; ")}</p>`;
+  if (c.students?.length) tl += `<p>Doctoral students on record (${c.students.length}):</p><ul>${c.students.slice(0, 40).map(s => `<li>${person(s.name)}${src(s.source)}</li>`).join("")}</ul>${c.students.length > 40 ? `<p class="gap">and ${c.students.length - 40} more</p>` : ""}`;
+  h += det("Training and lineage", c.students?.length || "", tl);
 
-  // 9. links
+  let cr = "";
+  if (W.conflict) cr += `<p class="gap">${esc(W.conflict)}</p>`;
+  if (c.posts?.length) cr += `<ul>${c.posts.map(p => `<li>${esc(p.name)}${p.years ? ` (${p.years[0]}–${p.years[1]})` : ""}${src(p.source, p.source?.includes("openalex") ? "OpenAlex" : "Wikipedia")}</li>`).join("")}</ul>`;
+  if (W.csrankings) cr += `<p>CSRankings lists ${esc(W.csrankings.affiliation)}.${src("https://csrankings.org", "CSRankings")}</p>`;
+  h += det("Career", c.posts?.length || "", cr);
+
+  if (c.coauthors_on_map?.length) h += det("Co-authors on the map", c.coauthors_on_map.length, `<p>${c.coauthors_on_map.map(x => `${esc(x.name)} (${x.w})`).join(", ")}</p><p class="gap">by number of shared works</p>`);
+  if (c.also_described?.length) h += det("Other descriptions", c.also_described.length, c.also_described.map(k => `<p>${esc(k.text)}${src(k.sources?.[0])}</p>`).join(""));
   const L = c.links || {};
   const links = [["Homepage", L.homepage], ["Google Scholar", L.scholar], ["Wikipedia", c.wikipedia], ["OpenAlex", L.openalex], ["ORCID", L.orcid], ["On the map", L.map]].filter(x => x[1]);
-  h += sec("Links", links.length ? links.map(([k, v]) => `<a href="${esc(v)}" target="_blank" rel="noopener">${k}</a>`).join(" · ") : gap("No links yet."));
+  h += det("Links", links.length, links.map(([k, v]) => `<a href="${esc(v)}" target="_blank" rel="noopener">${k}</a>`).join(" · "));
 
-  // 10. provenance and gaps
-  const A = c.added_by;
+  const V = c.verification, A = c.added_by;
+  let pv = "";
+  if (c.stage) pv += `<p>Career stage: ${STAGE[c.stage]}, based on ${esc(c.stage_basis || "")}.</p>`;
   if (A) {
-    let ab = "";
-    if (A.linked_to?.length) ab += `<p>Added in the breadth-first expansion: linked to ${A.linked_to.map(l => `<a href="#${esc(l.card)}">${esc(byId[l.card]?.name || l.card)}</a> (${esc(l.via)}) ${src(l.source)}`).join("; ")}</p>`;
-    const sg = A.signals || {};
-    if (sg.landmark_papers?.length) ab += `<p>Landmark papers on our lists: ${sg.landmark_papers.map(esc).join("; ")}</p>`;
-    if (sg.awards?.length) ab += `<p>Awards on our lists: ${sg.awards.map(esc).join("; ")}</p>`;
-    if (sg.students_with_cards?.length) ab += `<p>Doctoral students with cards: ${sg.students_with_cards.map(esc).join(", ")}</p>`;
-    if (A.awards_basis?.length) ab += `<p>Added as an award winner: ${A.awards_basis.map(a => `${esc(a.award)}${a.year ? " " + esc(a.year) : ""} ${src(a.source)}`).join("; ")}</p>`;
-    h += sec("Why this person was added", ab || gap("—"));
+    if (A.linked_to?.length) pv += `<p>Added in the breadth-first expansion: linked to ${A.linked_to.map(l => `<a href="#${esc(l.card)}">${esc(byId[l.card]?.name || l.card)}</a> (${esc(l.via)})${src(l.source)}`).join("; ")}</p>`;
+    if (A.awards_basis?.length) pv += `<p>Added as an award winner: ${A.awards_basis.map(a => `${esc(a.award)}${a.year ? " " + esc(a.year) : ""}${src(a.source)}`).join("; ")}</p>`;
   }
-  const V = c.verification;
-  let pv = `<p>Records: ${V.crawl_records.length ? V.crawl_records.map(r => `${esc(r.slice)}${r.verified ? "" : " (unverified)"}`).join(", ") : "none"}</p>`;
-  if (V.audit.length) pv += `<p>Source re-check: ${V.audit.map(a => `${esc(a.slice)} <span class="tag ${a.verdict === "pass" ? "ok" : "bad"}">${esc(a.verdict)}</span>`).join(" ")}</p>`;
-  if (V.memory_seed_only) pv += `<p>This card is a name from the seed list only; nothing about the person has been sourced yet.</p>`;
-  if (c.gaps.length) pv += `<p>Gaps: ${c.gaps.map(esc).join("; ")}</p>`;
-  h += sec("Provenance and gaps", pv) + `</div>`;
+  if (c.review) pv += `<p>Kept in the main set by John's rule: ${esc(c.review.rule)}${c.review.basis ? ", " + esc(c.review.basis) : ""}.</p>`;
+  pv += `<p>Records: ${V.crawl_records.length ? V.crawl_records.map(r => `${esc(r.slice)}${r.verified ? "" : " (unverified)"}`).join(", ") : "none"}</p>`;
+  if (V.audit.length) pv += `<p>Source re-check: ${V.audit.map(a => `${esc(a.slice)} ${esc(a.verdict)}`).join("; ")}</p>`;
+  if (c.flags.length) pv += `<p>${c.flags.map(f => `<span class="flag">${esc(f)}</span>`).join("")}</p>`;
+  if (c.gaps.length) pv += `<p class="gap">Not yet on record: ${c.gaps.map(esc).join("; ")}</p>`;
+  h += det("Sources and checks", "", pv) + `</div>`;
   $("#card").innerHTML = h; $("#card").scrollTop = 0;
 }
+
 $("#list").addEventListener("click", e => { const b = e.target.closest("[data-star]"); if (b) { toggleStar(b.dataset.star); return; } const r = e.target.closest(".row"); if (r?.dataset.id) show(r.dataset.id); });
 $("#card").addEventListener("click", e => { const b = e.target.closest("[data-star]"); if (b) toggleStar(b.dataset.star); const hb = e.target.closest("[data-hide]"); if (hb) toggleHide(hb.dataset.hide); });
 $("#jp").addEventListener("change", () => { try { localStorage.setItem(JK, showJohn() ? "1" : "0"); } catch (e) {} if (!showJohn() && $("#show").value === "john") $("#show").value = ""; list(); if (cur) show(cur); });
@@ -230,7 +275,7 @@ $("#dl").addEventListener("click", e => {
   a.download = "starred-researchers.json"; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
 });
 ["#q", "#uni", "#cat", "#stage", "#show", "#sort"].forEach(s => $(s).addEventListener("input", list));
-// the map links here as #oa:<OpenAlex id>
+// the map links here as #<card id>, older links as #oa:<OpenAlex id>
 const h0 = decodeURIComponent(location.hash.slice(1)), oa = h0.startsWith("oa:") ? C.find(c => (c.links?.openalex || "").endsWith("/" + h0.slice(3))) : null;
 list(); show(oa?.id || h0 || C[0]?.id);
 addEventListener("hashchange", () => { const id = decodeURIComponent(location.hash.slice(1)); if (byId[id] && id !== cur) show(id); });
