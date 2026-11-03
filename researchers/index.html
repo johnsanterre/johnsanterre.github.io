@@ -97,7 +97,7 @@ const uniOf = c => c.where?.university || c.where?.csrankings?.affiliation || ""
 const hay = c => [c.name, ...(c.aliases||[]), uniOf(c), c.where?.dept, ...(c.topics||[]), ...(c.categories||[]), ...(c.recognition||[]).map(a => a.award), c.one_line].join(" ").toLowerCase();
 C.forEach(c => c._hay = hay(c));
 const byId = Object.fromEntries(C.map(c => [c.id, c]));
-const CATS = ["Statistics", "Applied mathematics", "Scientific computing", "Computer science", "AI", "Machine learning", "Deep learning", "Other fields"];
+const CATS = ["Statistics", "Applied mathematics", "Scientific computing", "Complex systems", "Computer science", "AI", "Machine learning", "Deep learning", "Other fields"];
 const STAGE = { senior: "senior researcher", mid: "mid-career", early: "up and coming" };
 $("#meta").textContent = `${num(M.count)} researchers. Every fact links to its source. Built ${M.generated}.`;
 CATS.forEach(k => $("#cat").insertAdjacentHTML("beforeend", `<option value="${k}">${k} (${C.filter(c => (c.categories || []).includes(k)).length})</option>`));
