@@ -253,3 +253,42 @@ footer .separator { margin: 0 var(--space-sm); }
   body { background: #fff; font-size: 11pt; }
   a { color: inherit; }
 }
+
+/* ---------------------------------------------------------------- knowledge check (assets/quiz.js) */
+.kc-set { margin: var(--space-lg) 0 var(--space-xl); }
+.kc-item { max-width: var(--text); margin: 0 0 var(--space-lg); }
+.kc-item h3 { margin-bottom: var(--space-xs); }
+.kc-options { display: grid; gap: 8px; margin: var(--space-sm) 0; }
+.kc-opt { background: var(--card); border: 1.5px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.kc-option { display: flex; align-items: flex-start; gap: 12px; width: 100%; text-align: left; background: none; border: 0; padding: 12px 14px; font: inherit; color: var(--ink); cursor: pointer; line-height: 1.45; }
+.kc-option:hover { background: var(--sand); }
+.kc-option:focus-visible { outline: 3px solid var(--gold); outline-offset: -3px; }
+.kc-item.is-done .kc-option { cursor: default; }
+.kc-item.is-done .kc-option:hover { background: none; }
+.kc-letter { flex: 0 0 auto; display: inline-flex; width: 26px; height: 26px; align-items: center; justify-content: center; border-radius: 50%; background: var(--sand); color: var(--forest); font-weight: 650; font-size: 14px; }
+.kc-letter::before { content: attr(data-letter); }
+.kc-text { flex: 1 1 auto; }
+.kc-text code { font-size: 0.9em; }
+.kc-opt.is-chosen.is-right { border-color: var(--green); background: #f1f8f3; }
+.kc-opt.is-chosen.is-right .kc-letter { background: var(--green); color: #fff; }
+.kc-opt.is-chosen.is-wrong { border-color: var(--red); background: #fff6f7; }
+.kc-opt.is-chosen.is-wrong .kc-letter { background: var(--red); color: #fff; }
+.kc-item.is-done .kc-opt.is-answer:not(.is-chosen) { border-color: var(--green); }
+.kc-item.is-done .kc-opt.is-answer:not(.is-chosen) .kc-letter { background: var(--green); color: #fff; }
+.kc-option::after { flex: 0 0 auto; margin-left: auto; font-size: 13px; font-weight: 650; padding-top: 3px; }
+.kc-opt.is-chosen.is-right .kc-option::after { content: "Right"; color: var(--green); }
+html[data-lang="nl"] .kc-opt.is-chosen.is-right .kc-option::after { content: "Juist"; }
+.kc-opt.is-chosen.is-wrong .kc-option::after { content: "Not this one"; color: var(--red); }
+html[data-lang="nl"] .kc-opt.is-chosen.is-wrong .kc-option::after { content: "Niet deze"; }
+.kc-item.is-done .kc-opt.is-answer:not(.is-chosen) .kc-option::after { content: "The answer"; color: var(--green); }
+html[data-lang="nl"] .kc-item.is-done .kc-opt.is-answer:not(.is-chosen) .kc-option::after { content: "Het antwoord"; }
+.kc-fb { display: none; margin: 0; padding: 10px 14px 12px 52px; font-size: 15px; line-height: 1.5; color: var(--ink); border-top: 1px solid var(--line); background: #fbfaf6; }
+.kc-opt.is-open .kc-fb { display: block; }
+.kc-score { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; max-width: var(--text); margin: var(--space-sm) 0 0; padding: 12px 16px; background: var(--sand); border-radius: var(--radius); font-weight: 500; }
+.kc-set.is-complete .kc-score { background: var(--forest); color: #fff; }
+.kc-set.is-complete .kc-score .kc-reset { color: var(--gold); }
+.kc-reset { background: none; border: 0; padding: 0; font: inherit; font-size: 14px; font-weight: 650; color: var(--green); cursor: pointer; text-decoration: underline; margin-left: auto; }
+@media (max-width: 600px) {
+  .kc-option { padding: 10px 12px; gap: 10px; }
+  .kc-fb { padding-left: 12px; }
+}
