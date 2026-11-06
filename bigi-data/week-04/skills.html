@@ -15,7 +15,7 @@
 <body>
 <header class="nav-header"><div class="container">
 <a href="../index.html" class="site-title"><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><polygon fill="#ecc81d" points="50,4 61,38 97,38 68,59 79,94 50,73 21,94 32,59 3,38 39,38"/></svg>BiGi Data</a>
-<nav class="nav-links"><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a>
+<nav class="nav-links"><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a>
 <button id="lang-btn" class="lang-btn" type="button">Nederlands</button></nav>
 </div></header>
 <div class="stripes"></div>
@@ -30,7 +30,12 @@
 
     </div></section>
 <main><div class="container">
-<h2 lang="en">What you will be able to do</h2>
+<figure class="video"><video controls preload="none" poster="../media/w04-overview.jpg"><source src="../media/w04-overview.mp4" type="video/mp4"></video><figcaption><span lang="en">The week in a few minutes.</span><span lang="nl">De week in een paar minuten.</span></figcaption></figure>
+
+    <figure class="audio"><audio controls preload="none" src="../media/w04-orientation.m4a"></audio><figcaption><span lang="en">Play this before you read. It names what to listen for, the one idea to hold on to, and the trap to watch for.</span><span lang="nl">Speel dit af voordat je gaat lezen. Het noemt waar je op let, het ene idee om vast te houden, en de valkuil om te vermijden.</span></figcaption></figure>
+
+
+    <h2 lang="en">What you will be able to do</h2>
 <h2 lang="nl">Wat je na deze week kunt</h2>
 
     <ul>
@@ -43,6 +48,19 @@
 <li><span lang="en">Redraw a misleading chart with an honest axis and the same numbers.</span><span lang="nl">Een misleidende grafiek opnieuw tekenen met een eerlijke as en dezelfde getallen.</span></li>
 <li><span lang="en">Test an AI assistant's chart and its description against numbers you computed.</span><span lang="nl">De grafiek en de beschrijving van een AI-assistent toetsen aan getallen die je zelf berekende.</span></li>
 </ul>
+
+
+    <h2 lang="en">Lectures</h2>
+<h2 lang="nl">Colleges</h2>
+
+    <p lang="en">Three short lectures teach the lesson. Each one covers one idea and ends with a task you work yourself.</p>
+<p lang="nl">Drie korte colleges behandelen de les. Elk college behandelt één idee en eindigt met een opdracht die je zelf uitwerkt.</p>
+
+    <figure class="video"><video controls preload="none" poster="../media/w04-part1.jpg"><source src="../media/w04-part1.mp4" type="video/mp4"></video><figcaption><span lang="en">Lecture 1 covers the five-second test, the choice between bars, lines and a small table, and the honesty kit.</span><span lang="nl">College 1 behandelt de vijfsecondentest, de keuze tussen staven, lijnen en een kleine tabel, en de eerlijkheidsset.</span></figcaption></figure>
+
+    <figure class="video"><video controls preload="none" poster="../media/w04-part2.jpg"><source src="../media/w04-part2.mp4" type="video/mp4"></video><figcaption><span lang="en">Lecture 2 computes the exaggeration factor of a cut axis and catches the AI's misleading bakery chart.</span><span lang="nl">College 2 berekent de overdrijvingsfactor van een afgesneden as en betrapt de misleidende bakkerijgrafiek van de AI.</span></figcaption></figure>
+
+    <figure class="video"><video controls preload="none" poster="../media/w04-part3.jpg"><source src="../media/w04-part3.mp4" type="video/mp4"></video><figcaption><span lang="en">Lecture 3 covers honest zooms, percentage points against percent, and the start of the window.</span><span lang="nl">College 3 behandelt eerlijk inzoomen, procentpunten tegenover procent, en het begin van de periode.</span></figcaption></figure>
 
 
     <h2 lang="en">A chart acts before you think</h2>
@@ -158,6 +176,49 @@
     <p><a class="button" lang="en" href="https://colab.research.google.com/github/johnsanterre/johnsanterre.github.io/blob/main/bigi-data/notebooks/skills-04-en.ipynb" target="_blank" rel="noopener">Open in Colab</a><a class="button" lang="nl" href="https://colab.research.google.com/github/johnsanterre/johnsanterre.github.io/blob/main/bigi-data/notebooks/skills-04-nl.ipynb" target="_blank" rel="noopener">Openen in Colab</a><a class="button secondary" lang="en" href="../notebooks/skills-04-en.ipynb" download>Download</a><a class="button secondary" lang="nl" href="../notebooks/skills-04-nl.ipynb" download>Downloaden</a></p>
 
 
+    <h2 lang="en">Go deeper</h2>
+<h2 lang="nl">Verdieping</h2>
+
+    <div class="deeper">
+    <h3 lang="en">Devices beyond the cut axis</h3>
+<h3 lang="nl">Trucs naast de afgesneden as</h3>
+
+    <p lang="en">The cut axis is the most common way to mislead with true numbers. It is not the only one. A reader who can name each device can remove it in a redraw, and can say what the original chart wanted its reader to think.</p>
+<p lang="nl">De afgesneden as is de meest gebruikte manier om met kloppende getallen te misleiden, maar niet de enige. Een lezer die elke truc kan benoemen, kan hem bij het opnieuw tekenen weghalen, en kan zeggen wat de oorspronkelijke grafiek de lezer wilde laten denken.</p>
+
+    <ul>
+<li><span lang="en"><b>A stretched chart changes the slope.</b> A narrow, tall line chart steepens every rise and fall, and a wide, short one flattens them. The data has no natural shape, so the chart maker chooses how dramatic the line looks.</span><span lang="nl"><b>Een uitgerekte grafiek verandert de helling.</b> Een smalle, hoge lijngrafiek maakt elke stijging en daling steiler, en een brede, lage grafiek maakt ze vlakker. De data heeft geen natuurlijke vorm, dus de grafiekmaker kiest hoe dramatisch de lijn eruitziet.</span></li>
+<li><span lang="en"><b>Two value axes let the maker place a crossing.</b> A chart with one series on a left axis and another on a right axis lets the maker set each scale freely. Moving either scale moves the point where the lines cross. The crossing therefore carries no meaning.</span><span lang="nl"><b>Twee waarde-assen laten de maker een kruising plaatsen.</b> Een grafiek met de ene reeks op een linkeras en de andere op een rechteras laat de maker elke schaal vrij kiezen. Wie een van de schalen verschuift, verschuift het punt waar de lijnen elkaar kruisen, dus die kruising betekent niets.</span></li>
+<li><span lang="en"><b>A picture that grows in two directions exaggerates.</b> When an icon grows in both height and width to show a larger number, its area grows much faster than the number. The eye reads the area and sees a bigger gap than the data holds.</span><span lang="nl"><b>Een plaatje dat in twee richtingen groeit, overdrijft.</b> Als een pictogram zowel in hoogte als in breedte groeit om een groter getal te tonen, groeit de oppervlakte veel sneller dan het getal. Het oog leest de oppervlakte en ziet een groter verschil dan de data bevat.</span></li>
+<li><span lang="en"><b>The window decides the trend.</b> The same series measured from its best month and from its worst month can tell opposite stories. The harder exercise below measures every possible start. It shows how much room a chart maker has.</span><span lang="nl"><b>De periode bepaalt de trend.</b> Dezelfde reeks, gemeten vanaf de beste maand en vanaf de slechtste maand, kan tegengestelde verhalen vertellen. De moeilijkere opdracht hieronder meet vanaf elk mogelijk begin, zodat je ziet hoeveel ruimte een grafiekmaker heeft.</span></li>
+</ul>
+
+    <p lang="en">Research supports caution even about a marked zoom. Michael Correll, Enrico Bertini and Steven Franconeri ran crowd-sourced experiments in which a cut axis made readers judge effects as larger. Visual signs that marked the cut did not remove the effect.</p>
+<p lang="nl">Onderzoek pleit voor voorzichtigheid, ook bij een gemarkeerde zoom. Michael Correll, Enrico Bertini en Steven Franconeri deden experimenten met deelnemers via internet, waarin een afgesneden as lezers effecten groter liet inschatten. Zichtbare tekens die de afsnijding markeerden, haalden dat effect niet weg.</p>
+
+    <p lang="en">Experts still disagree about line charts. Claus Wilke holds that bars on a linear scale always start at zero. Kieran Healy shows a line chart without a zero baseline that he judges clearer than its zero-based twin. This lesson follows both of them. Bars start at zero every time, and a line may zoom when the chart says so and the text beside it states the real size of the change.</p>
+<p lang="nl">Experts zijn het over lijngrafieken nog niet eens. Claus Wilke stelt dat staven op een lineaire schaal altijd bij nul beginnen. Kieran Healy laat een lijngrafiek zonder nullijn zien die hij duidelijker vindt dan de tweeling vanaf nul. Deze les volgt hen allebei. Staven beginnen altijd bij nul, en een lijn mag inzoomen als de grafiek dat zegt en de tekst ernaast de echte grootte van de verandering noemt.</p>
+
+
+    <h3 lang="en">A harder exercise</h3>
+<h3 lang="nl">Een moeilijkere opdracht</h3>
+
+    <p lang="en">Section 13 of the notebook, the window hunt, measures the bus share's change from every possible start month to the last month. You find the harshest start, the kindest start and the number of starts that make the share look as if it rose. You then chart every change as a bar from zero. Finally, you write two true headlines that point in opposite directions and a third sentence that a careful reader could trust. A CHECK cell tells you when your numbers are right.</p>
+<p lang="nl">Deel 13 van het notebook, de jacht op de periode, meet de verandering van het aandeel bussen op tijd vanaf elke mogelijke beginmaand tot de laatste maand. Je zoekt het strengste begin, het mildste begin en het aantal beginmaanden waarvandaan het aandeel lijkt te stijgen. Daarna teken je elke verandering als een staaf vanaf nul. Tot slot schrijf je twee kloppende koppen die in tegengestelde richtingen wijzen, en een derde zin die een zorgvuldige lezer kan vertrouwen. Een CHECK-cel vertelt je wanneer je getallen kloppen.</p>
+
+
+    <h3 lang="en">Readings</h3>
+<h3 lang="nl">Leesstof</h3>
+
+    <ul>
+<li><span lang="en">Claus O. Wilke (2019). <a href="https://clauswilke.com/dataviz/proportional-ink.html">The principle of proportional ink</a>, chapter 17 of <i>Fundamentals of Data Visualization</i>, free to read online. The chapter gives the clearest short case for bars from zero, with charts that break the rule and their redraws.</span><span lang="nl">Claus O. Wilke (2019). <a href="https://clauswilke.com/dataviz/proportional-ink.html">The principle of proportional ink</a>, hoofdstuk 17 van <i>Fundamentals of Data Visualization</i>, gratis online te lezen. Het hoofdstuk geeft de helderste korte onderbouwing van staven vanaf nul, met grafieken die de regel breken en hun verbeterde versies.</span></li>
+<li><span lang="en">Michael Correll, Enrico Bertini and Steven Franconeri (2020). <a href="https://arxiv.org/abs/1907.02035">Truncating the Y-Axis: Threat or Menace?</a>, a paper from the CHI 2020 conference, free on arXiv. Its experiments show that a cut axis inflates the effect readers see, even when the chart marks the cut.</span><span lang="nl">Michael Correll, Enrico Bertini en Steven Franconeri (2020). <a href="https://arxiv.org/abs/1907.02035">Truncating the Y-Axis: Threat or Menace?</a>, een artikel van de CHI-conferentie van 2020, gratis op arXiv. De experimenten laten zien dat een afgesneden as het effect dat lezers zien vergroot, ook als de grafiek de afsnijding markeert.</span></li>
+<li><span lang="en">Kieran Healy (2018; second edition draft 2026). <a href="https://socviz.co/01-look-at-data.html">Look at Data</a>, chapter 1 of <i>Data Visualization: A Practical Introduction</i>, free to read online. Healy argues with examples when a line chart may leave out zero, and explains how the eye reads position, length, angle and area.</span><span lang="nl">Kieran Healy (2018; concept van de tweede editie 2026). <a href="https://socviz.co/01-look-at-data.html">Look at Data</a>, hoofdstuk 1 van <i>Data Visualization: A Practical Introduction</i>, gratis online te lezen. Healy laat met voorbeelden zien wanneer een lijngrafiek nul mag weglaten, en legt uit hoe het oog positie, lengte, hoek en oppervlakte leest.</span></li>
+<li><span lang="en">The Financial Times Visual Journalism Team (undated). <a href="https://github.com/Financial-Times/chart-doctor/tree/main/visual-vocabulary">Visual Vocabulary</a>, a free poster in several languages. The poster sorts chart types by the question they answer, which makes it a fast guide to choosing the form.</span><span lang="nl">Het Visual Journalism Team van de Financial Times (zonder datum). <a href="https://github.com/Financial-Times/chart-doctor/tree/main/visual-vocabulary">Visual Vocabulary</a>, een gratis poster in meerdere talen. De poster ordent grafieksoorten naar de vraag die ze beantwoorden, en is daardoor een snelle gids bij het kiezen van de vorm.</span></li>
+</ul>
+
+    </div>
+
     <h2 lang="en">Check yourself</h2>
 <h2 lang="nl">Test jezelf</h2>
 
@@ -213,7 +274,7 @@
 
     <footer><p><span lang="en"><a href="index.html">Back to week 4</a><span class="separator">|</span><a href="../materials.html">All materials</a></span><span lang="nl"><a href="index.html">Terug naar week 4</a><span class="separator">|</span><a href="../materials.html">Al het lesmateriaal</a></span></p></footer>
 </div></main>
-<div class="site-footer"><div class="container"><div><span lang="en">BiGi Data is a <a href="https://freefocus.org">Free Focus</a> program.</span><span lang="nl">BiGi Data is een programma van <a href="https://freefocus.org">Free Focus</a>.</span></div><div><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><span class="separator"> &middot; </span><a href="../credits.html"><span lang="en">Image credits</span><span lang="nl">Fotoverantwoording</span></a></div></div></div>
+<div class="site-footer"><div class="container"><div><span lang="en">BiGi Data is a <a href="https://freefocus.org">Free Focus</a> program.</span><span lang="nl">BiGi Data is een programma van <a href="https://freefocus.org">Free Focus</a>.</span></div><div><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a><span class="separator"> &middot; </span><a href="../credits.html"><span lang="en">Image credits</span><span lang="nl">Fotoverantwoording</span></a></div></div></div>
 <script data-goatcounter="https://johnsanterre.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

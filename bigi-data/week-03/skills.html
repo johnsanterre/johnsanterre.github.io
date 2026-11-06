@@ -15,7 +15,7 @@
 <body>
 <header class="nav-header"><div class="container">
 <a href="../index.html" class="site-title"><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><polygon fill="#ecc81d" points="50,4 61,38 97,38 68,59 79,94 50,73 21,94 32,59 3,38 39,38"/></svg>BiGi Data</a>
-<nav class="nav-links"><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a>
+<nav class="nav-links"><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a>
 <button id="lang-btn" class="lang-btn" type="button">Nederlands</button></nav>
 </div></header>
 <div class="stripes"></div>
@@ -27,10 +27,17 @@
     <p lang="en" class="muted">About 10 hours across the week, at your own pace.</p>
 <p lang="nl" class="muted">Ongeveer 10 uur verspreid over de week, in je eigen tempo.</p>
 
-
     </div></section>
 <main><div class="container">
-<h2 lang="en">What you will be able to do</h2>
+<figure class="video"><video controls preload="none" poster="../media/w03-overview.jpg"><source src="../media/w03-overview.mp4" type="video/mp4"></video><figcaption><span lang="en">This video gives the week in about three minutes.</span><span lang="nl">Deze video geeft de week in ongeveer drie minuten.</span></figcaption></figure>
+
+    <p lang="en">Play the orientation before you read. It says what to listen for, the one idea to hold on to and the trap to watch for.</p>
+<p lang="nl">Speel de inleiding af voordat je gaat lezen. Ze zegt waar je op moet letten, welk idee je moet vasthouden en voor welke valkuil je moet oppassen.</p>
+
+    <figure class="audio"><audio controls preload="none" src="../media/w03-orientation.m4a"></audio><figcaption><span lang="en">The orientation for week 3 lasts about two minutes.</span><span lang="nl">De inleiding op week 3 duurt ongeveer twee minuten.</span></figcaption></figure>
+
+
+    <h2 lang="en">What you will be able to do</h2>
 <h2 lang="nl">Wat je na deze week kunt</h2>
 
     <ul>
@@ -42,6 +49,19 @@
 <li><span lang="en">State what a gap in a series prevents you from saying, and report the stretches the data does cover.</span><span lang="nl">Zeggen wat een gat in een reeks je belet te zeggen, en de stukken rapporteren die de data wel dekt.</span></li>
 <li><span lang="en">Keep a cleaning log that records every change to a table and its reason.</span><span lang="nl">Een opschoonlogboek bijhouden met elke verandering aan een tabel en de reden ervoor.</span></li>
 </ul>
+
+
+    <h2 lang="en">Lectures</h2>
+<h2 lang="nl">Colleges</h2>
+
+    <p lang="en">Five short lectures teach the reading below, one idea each. Each one works an example from the notebook and ends with one for you to try.</p>
+<p lang="nl">Vijf korte colleges behandelen de tekst hieronder, elk met één idee. Elk college werkt een voorbeeld uit het notebook uit en eindigt met een voorbeeld dat je zelf probeert.</p>
+
+    <figure class="video"><video controls preload="none" poster="../media/w03-part1.jpg"><source src="../media/w03-part1.mp4" type="video/mp4"></video><figcaption><span lang="en">Lecture 1 shows that every value has a type, why a small type can roll over, and how an AI read a decimal comma as a thousands separator.</span><span lang="nl">College 1 laat zien dat elke waarde een type heeft, waarom een klein type kan overlopen, en hoe een AI een decimale komma las als scheidingsteken voor duizendtallen.</span></figcaption></figure>
+<figure class="video"><video controls preload="none" poster="../media/w03-part2.jpg"><source src="../media/w03-part2.mp4" type="video/mp4"></video><figcaption><span lang="en">Lecture 2 puts grams and kilograms into one unit and compares prices per kilogram instead of per bag.</span><span lang="nl">College 2 brengt grammen en kilogrammen terug tot één eenheid en vergelijkt prijzen per kilogram in plaats van per zak.</span></figcaption></figure>
+<figure class="video"><video controls preload="none" poster="../media/w03-part3.jpg"><source src="../media/w03-part3.mp4" type="video/mp4"></video><figcaption><span lang="en">Lecture 3 reads percentages as growth factors and shows why adding twelve monthly changes falls short of the year's rise.</span><span lang="nl">College 3 leest procenten als groeifactoren en laat zien waarom twaalf maandelijkse veranderingen optellen te weinig oplevert voor het jaar.</span></figcaption></figure>
+<figure class="video"><video controls preload="none" poster="../media/w03-part4.jpg"><source src="../media/w03-part4.mp4" type="video/mp4"></video><figcaption><span lang="en">Lecture 4 finds missing values hidden as empty cells, words and code numbers, and keeps a cleaning log of each change.</span><span lang="nl">College 4 vindt ontbrekende waarden die zich verbergen als lege cellen, woorden en codegetallen, en houdt een opschoonlogboek bij van elke verandering.</span></figcaption></figure>
+<figure class="video"><video controls preload="none" poster="../media/w03-part5.jpg"><source src="../media/w03-part5.mp4" type="video/mp4"></video><figcaption><span lang="en">Lecture 5 shows what pandas assumes when it skips a missing month, and how to report the stretches the record covers.</span><span lang="nl">College 5 laat zien wat pandas aanneemt als het een ontbrekende maand overslaat, en hoe je de stukken rapporteert die de gegevens dekken.</span></figcaption></figure>
 
 
     <h2 lang="en">Every value has a type</h2>
@@ -132,8 +152,8 @@
     <h2 lang="en">Practise in the notebook</h2>
 <h2 lang="nl">Oefen in het notebook</h2>
 
-    <p lang="en">The notebook works through every idea above with a made-up shop and a made-up price list. It holds three tasks you complete with your AI assistant. A CHECK cell after each task tells you when your answer is right. The third task is built so that code which quietly skips the missing months fails its CHECK.</p>
-<p lang="nl">Het notebook werkt alle ideeën hierboven uit met een verzonnen winkel en een verzonnen prijslijst. Het bevat drie opdrachten die je samen met je AI-assistent maakt. Een CHECK-cel na elke opdracht vertelt je wanneer je antwoord klopt. De derde opdracht is zo gebouwd dat code die de ontbrekende maanden stilletjes overslaat, voor de CHECK zakt.</p>
+    <p lang="en">The notebook works through every idea above with a made-up shop and a made-up price list. It holds three tasks you complete with your AI assistant, and a harder optional fourth at the end. A CHECK cell after each task tells you when your answer is right. The third task is built so that code which quietly skips the missing months fails its CHECK.</p>
+<p lang="nl">Het notebook werkt alle ideeën hierboven uit met een verzonnen winkel en een verzonnen prijslijst. Het bevat drie opdrachten die je samen met je AI-assistent maakt, en aan het eind een moeilijkere vierde die niet verplicht is. Een CHECK-cel na elke opdracht vertelt je wanneer je antwoord klopt. De derde opdracht is zo gebouwd dat code die de ontbrekende maanden stilletjes overslaat, voor de CHECK zakt.</p>
 
     <p><a class="button" lang="en" href="https://colab.research.google.com/github/johnsanterre/johnsanterre.github.io/blob/main/bigi-data/notebooks/skills-03-en.ipynb" target="_blank" rel="noopener">Open in Colab</a><a class="button" lang="nl" href="https://colab.research.google.com/github/johnsanterre/johnsanterre.github.io/blob/main/bigi-data/notebooks/skills-03-nl.ipynb" target="_blank" rel="noopener">Openen in Colab</a><a class="button secondary" lang="en" href="../notebooks/skills-03-en.ipynb" download>Download</a><a class="button secondary" lang="nl" href="../notebooks/skills-03-nl.ipynb" download>Downloaden</a></p>
 
@@ -184,9 +204,49 @@
 <p lang="nl">Het tweede antwoord klopt. Een kleinere stijging is nog steeds een stijging. Prijzen dalen pas als de procentuele verandering onder nul ligt.</p>
 </details>
 
+
+    <div class="deeper">
+    <h2 lang="en">Go deeper</h2>
+<h2 lang="nl">Verdieping</h2>
+
+    <h3 lang="en">The bytes do not say what they mean</h3>
+<h3 lang="nl">De bytes zeggen niet wat ze betekenen</h3>
+
+    <p lang="en">A computer's memory holds bits and nothing else, and no bit records how the others should be read. Every pattern of eight bits is a valid value under every agreement a program might apply. No bit is free to act as a label, because a label stored somewhere else would be bits as well, and something would have to agree on how to read it.</p>
+<p lang="nl">Het geheugen van een computer bevat bits en verder niets, en geen enkele bit legt vast hoe de andere gelezen moeten worden. Elk patroon van acht bits is een geldige waarde volgens elke afspraak die een programma kan toepassen. Geen enkele bit kan als label dienen, want een label dat ergens anders staat, bestaat ook uit bits, en iets moet afspreken hoe je die leest.</p>
+
+    <p lang="en">The program that reads the bits makes the choice, through the type it declares for them. The notebook's byte 11001000 shows the choice at work. Declared as an unsigned whole number, which is never negative, it reads as 200. Declared as a signed whole number, the same eight bits read as -56. The type also sets the rules for operations, which is why the same characters gave 77 when joined as text and 14 when added as numbers.</p>
+<p lang="nl">Het programma dat de bits leest, maakt de keuze, via het type dat het voor die bits opgeeft. De byte 11001000 in het notebook laat die keuze zien. Opgegeven als heel getal zonder teken, dat nooit negatief is, leest hij als 200. Opgegeven als heel getal met teken, lezen dezelfde acht bits als -56. Het type bepaalt ook de regels voor bewerkingen, en daarom gaven dezelfde tekens 77 als tekst aan elkaar gezet en 14 als getallen opgeteld.</p>
+
+    <p lang="en">When a reader applies a different agreement from the writer's, the reading still succeeds. The word café has 4 characters and takes 5 bytes in UTF-8, the agreement most of the web uses for text. Read one byte per character under an older agreement, the same bytes print as cafÃ©, and no error appears. Nonsense like that is easy to notice. A plausible wrong number is not, and the decimal comma in the notebook produced exactly such a number.</p>
+<p lang="nl">Als een lezer een andere afspraak toepast dan de schrijver, lukt het lezen toch. Het woord café heeft 4 tekens en neemt 5 bytes in beslag in UTF-8, de afspraak die het grootste deel van het web voor tekst gebruikt. Lees je volgens een oudere afspraak één teken per byte, dan drukken dezelfde bytes af als cafÃ©, en er verschijnt geen foutmelding. Zulke onzin valt snel op. Een aannemelijk fout getal niet, en de decimale komma in het notebook leverde precies zo'n getal op.</p>
+
+    <p lang="en">Protection therefore has to come from outside the data. Inside a program, the declared type protects you. Between programs and people, an agreement has to travel with the data, such as a file's settings, a note on its encoding or a codebook that says what -1 means. Any of these can be wrong, which is why the habit of reading one row by hand never retires.</p>
+<p lang="nl">Bescherming moet dus van buiten de data komen. Binnen een programma beschermt het opgegeven type je. Tussen programma's en mensen moet er een afspraak met de data meereizen, zoals de instellingen van een bestand, een notitie over de codering of een codeboek dat zegt wat -1 betekent. Elk daarvan kan fout zijn, en daarom gaat de gewoonte om één rij met de hand te lezen nooit met pensioen.</p>
+
+
+    <h3 lang="en">A harder exercise</h3>
+<h3 lang="nl">Een moeilijkere opdracht</h3>
+
+    <p lang="en">The skills notebook ends with two optional sections. Section 15 reads one byte under two agreements and reads a word with an accent under the wrong one. Section 16 asks you to turn the made-up list of monthly changes into a price level that stops where the record stops, and then to give year 2 as a range under two named assumptions. Its CHECK cell fails if your price level carries on past the gap, which is what pandas does by default.</p>
+<p lang="nl">Het notebook voor vaardigheden eindigt met twee delen die niet verplicht zijn. Deel 15 leest één byte volgens twee afspraken en leest een woord met een accent volgens de verkeerde afspraak. Deel 16 vraagt je de verzonnen lijst met maandelijkse veranderingen om te zetten in een prijsniveau dat ophoudt waar de gegevens ophouden, en daarna jaar 2 te geven als bandbreedte onder twee genoemde aannames. De CHECK-cel faalt als je prijsniveau na het gat gewoon doorloopt, en dat is precies wat pandas standaard doet.</p>
+
+
+    <h3 lang="en">Readings</h3>
+<h3 lang="nl">Leesstof</h3>
+
+    <ul>
+<li><span lang="en"><a href="https://kbroman.org/dataorg/" target="_blank" rel="noopener">Data organization in spreadsheets</a>, by Karl Broman and Kara Woo (2018, <i>The American Statistician</i>, free online version). The authors set out short rules for a spreadsheet a program can read, including one fixed code for missing values and a warning against number codes such as -999.</span><span lang="nl"><a href="https://kbroman.org/dataorg/" target="_blank" rel="noopener">Data organization in spreadsheets</a>, door Karl Broman en Kara Woo (2018, <i>The American Statistician</i>, gratis online versie). De auteurs geven korte regels voor een spreadsheet die een programma kan lezen, waaronder één vaste code voor ontbrekende waarden en een waarschuwing tegen codegetallen zoals -999.</span></li>
+<li><span lang="en"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4994289/" target="_blank" rel="noopener">Gene name errors are widespread in the scientific literature</a>, by Mark Ziemann, Yotam Eren and Assam El-Osta (2016, <i>Genome Biology</i>). The authors found gene names that a spreadsheet had silently turned into dates in 704 of 3,597 published papers with gene lists, a real case of a type changed without warning.</span><span lang="nl"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4994289/" target="_blank" rel="noopener">Gene name errors are widespread in the scientific literature</a>, door Mark Ziemann, Yotam Eren en Assam El-Osta (2016, <i>Genome Biology</i>). De auteurs vonden in 704 van 3.597 gepubliceerde artikelen met genlijsten gennamen die een spreadsheet stilletjes in datums had veranderd, een echt geval van een type dat zonder waarschuwing veranderde.</span></li>
+<li><span lang="en"><a href="https://pandas.pydata.org/docs/user_guide/missing_data.html" target="_blank" rel="noopener">Working with missing data</a>, by the pandas development team (user guide, current edition). The official guide shows how pandas marks, finds and fills missing values. It also states that a sum treats a missing value as zero and a product treats it as one.</span><span lang="nl"><a href="https://pandas.pydata.org/docs/user_guide/missing_data.html" target="_blank" rel="noopener">Working with missing data</a>, door het ontwikkelteam van pandas (gebruikershandleiding, huidige editie). De officiële handleiding laat zien hoe pandas ontbrekende waarden aangeeft, vindt en invult. Ze zegt ook dat een som een ontbrekende waarde als nul telt en een product als één.</span></li>
+<li><span lang="en">The Python Software Foundation's tutorial chapter on <a href="https://docs.python.org/3/tutorial/floatingpoint.html" target="_blank" rel="noopener">floating-point arithmetic, its issues and its limitations</a> (Python 3, current edition) is short. It explains why a decimal such as 0.1 cannot be stored exactly in binary, and what that means when you add or compare decimals.</span><span lang="nl">Het hoofdstuk van de Python Software Foundation over <a href="https://docs.python.org/3/tutorial/floatingpoint.html" target="_blank" rel="noopener">rekenen met drijvende komma, de problemen en de grenzen ervan</a> (Python 3-tutorial, huidige editie) is kort. Het legt uit waarom een decimaal getal zoals 0,1 niet precies in binaire vorm kan worden opgeslagen, en wat dat betekent als je decimalen optelt of vergelijkt.</span></li>
+<li><span lang="en"><a href="https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html" target="_blank" rel="noopener">What every computer scientist should know about floating-point arithmetic</a>, by David Goldberg (1991, <i>ACM Computing Surveys</i>, free reprint). This long paper is the standard account of how decimal numbers are stored and rounded. Read its first sections for the ideas and leave the proofs for later.</span><span lang="nl"><a href="https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html" target="_blank" rel="noopener">What every computer scientist should know about floating-point arithmetic</a>, door David Goldberg (1991, <i>ACM Computing Surveys</i>, gratis herdruk). Dit lange artikel is de standaardbeschrijving van hoe decimale getallen worden opgeslagen en afgerond. Lees de eerste delen voor de ideeën en bewaar de bewijzen voor later.</span></li>
+</ul>
+
+    </div>
     <footer><p><span lang="en"><a href="index.html">Back to week 3</a><span class="separator">|</span><a href="../materials.html">All materials</a></span><span lang="nl"><a href="index.html">Terug naar week 3</a><span class="separator">|</span><a href="../materials.html">Al het lesmateriaal</a></span></p></footer>
 </div></main>
-<div class="site-footer"><div class="container"><div><span lang="en">BiGi Data is a <a href="https://freefocus.org">Free Focus</a> program.</span><span lang="nl">BiGi Data is een programma van <a href="https://freefocus.org">Free Focus</a>.</span></div><div><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><span class="separator"> &middot; </span><a href="../credits.html"><span lang="en">Image credits</span><span lang="nl">Fotoverantwoording</span></a></div></div></div>
+<div class="site-footer"><div class="container"><div><span lang="en">BiGi Data is a <a href="https://freefocus.org">Free Focus</a> program.</span><span lang="nl">BiGi Data is een programma van <a href="https://freefocus.org">Free Focus</a>.</span></div><div><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a><span class="separator"> &middot; </span><a href="../credits.html"><span lang="en">Image credits</span><span lang="nl">Fotoverantwoording</span></a></div></div></div>
 <script data-goatcounter="https://johnsanterre.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
