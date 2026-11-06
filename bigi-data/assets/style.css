@@ -188,8 +188,8 @@ figure.audio audio { width: 100%; }
 .deeper { background: var(--sand); border-radius: var(--radius); padding: var(--space-md) var(--space-lg); margin: var(--space-lg) 0; }
 .deeper h3:first-child { margin-top: var(--space-sm); }
 
-.schedule { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: var(--space-sm) var(--space-lg) var(--space-md); margin: var(--space-lg) 0; box-shadow: var(--shadow); }
-.schedule h3 { margin-top: var(--space-sm); }
+details.schedule { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: var(--space-sm) var(--space-lg); margin: 0 0 var(--space-lg); max-width: none; }
+details.schedule summary { font-family: var(--font-display); font-size: 18px; color: var(--forest); }
 .schedule table { margin: var(--space-sm) 0; box-shadow: none; }
 .stages { display: flex; flex-wrap: wrap; gap: 8px; margin: var(--space-lg) 0; }
 .stages a { background: var(--sand); color: var(--forest); text-decoration: none; padding: 8px 14px; border-radius: 999px; font-size: 14px; font-weight: 650; }
