@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Week 1: Your AI partner and your first table - BiGi Data">
+<meta name="description" content="Week 1: Your AI partner and your first table - Emerald">
 <meta name="robots" content="noindex, nofollow">
-<title data-en="Week 1: Your AI partner and your first table - BiGi Data" data-nl="Week 1: Je AI-partner en je eerste tabel - BiGi Data">Week 1: Your AI partner and your first table - BiGi Data</title>
+<title data-en="Week 1: Your AI partner and your first table - Emerald" data-nl="Week 1: Je AI-partner en je eerste tabel - Emerald">Week 1: Your AI partner and your first table - Emerald</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;650;700&display=swap" rel="stylesheet">
@@ -15,7 +15,7 @@
 </head>
 <body>
 <header class="nav-header"><div class="container">
-<a href="../index.html" class="site-title"><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><polygon fill="#ecc81d" points="50,4 61,38 97,38 68,59 79,94 50,73 21,94 32,59 3,38 39,38"/></svg>BiGi Data</a>
+<a href="../index.html" class="site-title"><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><polygon fill="#ecc81d" points="50,4 61,38 97,38 68,59 79,94 50,73 21,94 32,59 3,38 39,38"/></svg>Emerald</a>
 <nav class="nav-links"><a href="../calendar.html"><span lang="en">Calendar</span><span lang="nl">Kalender</span></a>
 <button id="lang-btn" class="lang-btn" type="button">Nederlands</button></nav>
 </div></header>
@@ -79,10 +79,10 @@
 <p lang="nl">Google Colab is een website die notebooks gratis uitvoert. De code draait niet op je laptop. Ze draait op een computer in een gebouw van Google, en het resultaat reist ongeveer een seconde later terug naar je browser. Je hoeft niets te installeren, en niets wat je typt kan je eigen machine beschadigen. Je logt in met een Google-account, opent de notebooklink op deze pagina en bewaart een kopie in je eigen Drive, zodat je wijzigingen van jou zijn.</p>
 <p lang="en">Every code cell has a play button on its left edge. Click it, or hold Shift and press Enter, to run the cell. The first cell of this week's notebook prints a greeting and a small calculation.</p>
 <p lang="nl">Elke codecel heeft links een afspeelknop. Klik erop, of houd Shift ingedrukt en druk op Enter, en de cel wordt uitgevoerd. De eerste cel van het notebook van deze week drukt een groet en een kleine berekening af.</p>
-<pre><code>print("Hello from BiGi Data")
+<pre><code>print("Hello from Emerald")
 print(60 * 24, "minutes in a day")</code></pre>
-<p lang="en">Under the cell you see two lines, <code>Hello from BiGi Data</code> and <code>1440 minutes in a day</code>. The second line shows the pattern you will see all week. The computer did the arithmetic, sixty times twenty-four, and printed the result next to a label you wrote. You read the output and judge whether it makes sense. An hour has sixty minutes and a day has twenty-four hours. The number is right.</p>
-<p lang="nl">Onder de cel zie je twee regels, <code>Hello from BiGi Data</code> en <code>1440 minutes in a day</code>. De tweede regel toont het patroon dat je de hele week zult zien. De computer deed het rekenwerk, zestig maal vierentwintig, en drukte het resultaat af naast een label dat jij schreef. Jij leest de uitvoer en beoordeelt of ze klopt. Een uur heeft zestig minuten en een dag vierentwintig uur, dus het getal is juist.</p>
+<p lang="en">Under the cell you see two lines, <code>Hello from Emerald</code> and <code>1440 minutes in a day</code>. The second line shows the pattern you will see all week. The computer did the arithmetic, sixty times twenty-four, and printed the result next to a label you wrote. You read the output and judge whether it makes sense. An hour has sixty minutes and a day has twenty-four hours. The number is right.</p>
+<p lang="nl">Onder de cel zie je twee regels, <code>Hello from Emerald</code> en <code>1440 minutes in a day</code>. De tweede regel toont het patroon dat je de hele week zult zien. De computer deed het rekenwerk, zestig maal vierentwintig, en drukte het resultaat af naast een label dat jij schreef. Jij leest de uitvoer en beoordeelt of ze klopt. Een uur heeft zestig minuten en een dag vierentwintig uur, dus het getal is juist.</p>
 <p lang="en">Cells remember. When a cell creates a table called <code>sales</code>, every cell you run afterwards can use <code>sales</code>, even a cell higher up the page. The notebook keeps this memory, which programmers call state, for as long as the session lives. State is what makes a notebook convenient. It is also the source of the most common confusion of the first week. Cells run in the order you click them, and the page order is only a suggestion. If you run cell six before cell five, cell six may complain that a name does not exist yet, or worse, it may use an older version of a table that a later cell has since replaced.</p>
 <p lang="nl">Cellen onthouden. Als een cel een tabel met de naam <code>sales</code> maakt, kan elke cel die je daarna uitvoert <code>sales</code> gebruiken, ook een cel hoger op de pagina. Het notebook bewaart dit geheugen, dat programmeurs de toestand noemen, zolang de sessie leeft. De toestand maakt een notebook handig, en ze is ook de bron van de meest voorkomende verwarring in de eerste week. Cellen worden uitgevoerd in de volgorde waarin je erop klikt, en de volgorde op de pagina is maar een suggestie. Als je cel zes vóór cel vijf uitvoert, kan cel zes klagen dat een naam nog niet bestaat, of erger, een oudere versie van een tabel gebruiken die een latere cel inmiddels heeft vervangen.</p>
 <figure class="fig"><img src="../media/w01-fig-workbench.svg" alt="A script as one tall file run top to bottom beside a notebook of three cells with output under each and a dashed state box holding the table sales" loading="lazy"><figcaption><span lang="en">A script runs as one piece and stops at its first error; a notebook runs one cell at a time, prints the output under each, and keeps what the cells made, here the table <code>sales</code>, in a state that every later cell can use.</span><span lang="nl">Een script draait als één geheel en stopt bij de eerste fout; een notebook voert één cel tegelijk uit, drukt de uitvoer onder elke cel af en bewaart wat de cellen maakten, hier de tabel <code>sales</code>, in een toestand die elke latere cel kan gebruiken.</span></figcaption></figure>
@@ -444,7 +444,7 @@ print("Average units sold per day:", round(average_units, 2))</code></pre>
 </section>
 <footer><p><span lang="en"><a href="../calendar.html">Calendar</a></span><span lang="nl"><a href="../calendar.html">Kalender</a></span></p></footer>
 </div></main>
-<div class="site-footer"><div class="container"><div><span lang="en">BiGi Data is a <a href="https://freefocus.org">Free Focus</a> program.</span><span lang="nl">BiGi Data is een programma van <a href="https://freefocus.org">Free Focus</a>.</span></div><div><a href="../calendar.html"><span lang="en">Calendar</span><span lang="nl">Kalender</span></a><span class="separator"> &middot; </span><a href="../credits.html"><span lang="en">Image credits</span><span lang="nl">Fotoverantwoording</span></a></div></div></div>
+<div class="site-footer"><div class="container"><div><span lang="en">Emerald is a <a href="https://freefocus.org">Free Focus</a> program.</span><span lang="nl">Emerald is een programma van <a href="https://freefocus.org">Free Focus</a>.</span></div><div><a href="../calendar.html"><span lang="en">Calendar</span><span lang="nl">Kalender</span></a><span class="separator"> &middot; </span><a href="../credits.html"><span lang="en">Image credits</span><span lang="nl">Fotoverantwoording</span></a></div></div></div>
 <script data-goatcounter="https://johnsanterre.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
