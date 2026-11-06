@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Fellows' guide: Week 3 - BiGi Data">
+<meta name="robots" content="noindex, nofollow">
+<title data-en="Fellows' guide: Week 3 - BiGi Data" data-nl="Lesgids fellows: Week 3 - BiGi Data">Fellows' guide: Week 3 - BiGi Data</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;650;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/lang.js"></script>
+</head>
+<body>
+<header class="nav-header"><div class="container">
+<a href="../index.html" class="site-title"><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><polygon fill="#ecc81d" points="50,4 61,38 97,38 68,59 79,94 50,73 21,94 32,59 3,38 39,38"/></svg>BiGi Data</a>
+<nav class="nav-links"><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a>
+<button id="lang-btn" class="lang-btn" type="button">Nederlands</button></nav>
+</div></header>
+<div class="stripes"></div>
+<section class="page-hero" style="background-image:url(../assets/img/waterkant.jpg)"><div class="container">
+<nav class="breadcrumb"><a href="../index.html"><span lang="en">Home</span><span lang="nl">Home</span></a><span class="separator">/</span><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a><span class="separator">/</span><a href="index.html"><span lang="en">Week 3</span><span lang="nl">Week 3</span></a><span class="separator">/</span><span><span lang="en">Fellows' guide</span><span lang="nl">Lesgids fellows</span></span></nav>
+<h1 lang="en">Fellows' session guide, week 3</h1>
+<h1 lang="nl">Lesgids voor fellows, week 3</h1>
+
+    <p lang="en" class="lead">This guide is for the teaching fellows. It sets the goal of the week, the plan for each workshop, what to look for in the studio, and how to run the Friday review.</p>
+<p lang="nl" class="lead">Deze gids is voor de fellows die lesgeven. Hij beschrijft het doel van de week, het plan voor elke workshop, waar je in de studio op let, en hoe je de vrijdagbespreking leidt.</p>
+
+
+    </div></section>
+<main><div class="container">
+<h2 lang="en">The goal of the week</h2>
+<h2 lang="nl">Het doel van de week</h2>
+
+    <p lang="en">By Friday, every student can say what each number in a table measures: its type, its unit and the year it is compared with. Every student can turn a percentage into a growth factor and compound a chain of them. Every student can also say plainly what a gap in the record prevents them from saying, without filling the gap.</p>
+<p lang="nl">Op vrijdag kan elke student zeggen wat elk getal in een tabel meet: het type, de eenheid en het jaar waarmee het wordt vergeleken. Elke student kan een percentage omzetten in een groeifactor en een keten ervan vermenigvuldigen. Elke student kan ook duidelijk zeggen wat een gat in de gegevens hem belet te zeggen, zonder het gat op te vullen.</p>
+
+
+    <h2 lang="en">Before Monday</h2>
+<h2 lang="nl">Vóór maandag</h2>
+
+    <ul>
+<li><span lang="en">Run both notebooks yourself from a fresh Colab session, and read the solution notebook you received separately.</span><span lang="nl">Draai beide notebooks zelf in een nieuwe Colab-sessie, en lees het oplossingsnotebook dat je apart hebt ontvangen.</span></li>
+<li><span lang="en">Save a small spreadsheet as CSV on a computer set to Dutch, and confirm that the file uses semicolons and decimal commas. Monday's workshop opens with it.</span><span lang="nl">Sla op een computer met Nederlandse instellingen een kleine spreadsheet op als CSV, en controleer of het bestand puntkomma's en decimale komma's gebruikt. De workshop van maandag begint ermee.</span></li>
+<li><span lang="en">Ask students to bring a phone with a calculator to Tuesday's workshop.</span><span lang="nl">Vraag studenten een telefoon met rekenmachine mee te nemen naar de workshop van dinsdag.</span></li>
+<li><span lang="en">Post this week's roles. The data checker's job this week is to keep every number on the price sheet inside the years the series covers.</span><span lang="nl">Maak de rollen van deze week bekend. De datacontroleur zorgt er deze week voor dat elk getal op het prijzenblad binnen de jaren blijft die de reeks dekt.</span></li>
+<li><span lang="en">Tell the teams on Monday who this week's work is for: a community group that supports older people living on a fixed pension. Test every decision in the studio against what that group can use.</span><span lang="nl">Vertel de teams op maandag voor wie het werk van deze week is: een buurtorganisatie die ouderen met een vast pensioen ondersteunt. Toets elke beslissing in de studio aan wat die organisatie kan gebruiken.</span></li>
+</ul>
+
+
+    <h2 lang="en">The four workshops</h2>
+<h2 lang="nl">De vier workshops</h2>
+
+    <h3><span lang="en">Monday: every value has a type (2 hours)</span><span lang="nl">Maandag: elke waarde heeft een type (2 uur)</span></h3>
+    <ul>
+<li><span lang="en"><b>15 minutes.</b> Type <code>"7" + "7"</code> and <code>7 + 7</code> live. The room predicts each result before you run it.</span><span lang="nl"><b>15 minuten.</b> Typ live <code>"7" + "7"</code> en <code>7 + 7</code>. De zaal voorspelt elke uitkomst voordat je de code draait.</span></li>
+<li><span lang="en"><b>15 minutes.</b> Show the 8-bit column from the notebook, and ask the room why a computer gives each number a fixed size.</span><span lang="nl"><b>15 minuten.</b> Laat de kolom van 8 bits uit het notebook zien, en vraag de zaal waarom een computer elk getal een vaste grootte geeft.</span></li>
+<li><span lang="en"><b>40 minutes.</b> Load the file you saved in Dutch settings with a plain <code>pd.read_csv</code>, read the types aloud, then load it again with the right separator and decimal mark.</span><span lang="nl"><b>40 minuten.</b> Laad het bestand dat je met Nederlandse instellingen opsloeg met een gewone <code>pd.read_csv</code>, lees de typen hardop voor, en laad het daarna opnieuw met het juiste scheidingsteken en decimaalteken.</span></li>
+<li><span lang="en"><b>35 minutes.</b> Pairs ask an AI assistant to convert a text column with decimal commas. Each pair checks one row by hand and reports what the AI did.</span><span lang="nl"><b>35 minuten.</b> Tweetallen vragen een AI-assistent een tekstkolom met decimale komma's om te zetten. Elk tweetal controleert één rij met de hand en meldt wat de AI deed.</span></li>
+<li><span lang="en"><b>15 minutes.</b> The room lists every way a number arrived as text this week, and you write the list on the board.</span><span lang="nl"><b>15 minuten.</b> De zaal noemt elke manier waarop een getal deze week als tekst binnenkwam, en jij schrijft de lijst op het bord.</span></li>
+</ul>
+
+    <h3><span lang="en">Tuesday: percent, fraction and times (2 hours)</span><span lang="nl">Dinsdag: procent, fractie en keer (2 uur)</span></h3>
+    <ul>
+<li><span lang="en"><b>20 minutes.</b> Write one change three ways, as a percentage, a fraction and a growth factor, using the examples from the skills notebook. The room converts each one in both directions.</span><span lang="nl"><b>20 minuten.</b> Schrijf één verandering op drie manieren, als percentage, als fractie en als groeifactor, met de voorbeelden uit het vaardighedennotebook. De zaal rekent elk voorbeeld in beide richtingen om.</span></li>
+<li><span lang="en"><b>30 minutes.</b> Each student starts from a price of 100 and applies three changes of their own choosing in turn on a phone calculator, then compares the result with the three percentages added.</span><span lang="nl"><b>30 minuten.</b> Elke student begint bij een prijs van 100, past op de rekenmachine van zijn telefoon om de beurt drie zelfgekozen veranderingen toe, en vergelijkt de uitkomst met de drie percentages opgeteld.</span></li>
+<li><span lang="en"><b>30 minutes.</b> Work through a rise followed by a fall of the same size, and ask why the price ends lower than it started.</span><span lang="nl"><b>30 minuten.</b> Werk een stijging uit, gevolgd door een even grote daling, en vraag waarom de prijs lager eindigt dan hij begon.</span></li>
+<li><span lang="en"><b>25 minutes.</b> Pairs ask an AI assistant to total a list of yearly percentage changes, then check whether it added or compounded them.</span><span lang="nl"><b>25 minuten.</b> Tweetallen vragen een AI-assistent een lijst met jaarlijkse procentuele veranderingen op te tellen tot een totaal, en controleren daarna of hij ze optelde of vermenigvuldigde.</span></li>
+<li><span lang="en"><b>15 minutes.</b> State the rule together. Changes over time multiply, and a percentage becomes a growth factor before it is combined.</span><span lang="nl"><b>15 minuten.</b> Formuleer samen de regel. Veranderingen in de tijd vermenigvuldigen zich, en een percentage wordt eerst een groeifactor voordat je het combineert.</span></li>
+</ul>
+
+    <h3><span lang="en">Wednesday: missing is not zero (2 hours)</span><span lang="nl">Woensdag: ontbrekend is geen nul (2 uur)</span></h3>
+    <ul>
+<li><span lang="en"><b>20 minutes.</b> Find the three disguises of a missing value in the skills notebook's purchase book with the room.</span><span lang="nl"><b>20 minuten.</b> Zoek met de zaal de drie vermommingen van een ontbrekende waarde in het inkoopboek uit het vaardighedennotebook.</span></li>
+<li><span lang="en"><b>30 minutes.</b> Run <code>mean()</code>, <code>sum()</code> and <code>prod()</code> on a column with a gap, first as pandas does by default and then with <code>skipna=False</code>. Ask the room what each default assumed.</span><span lang="nl"><b>30 minuten.</b> Draai <code>mean()</code>, <code>sum()</code> en <code>prod()</code> op een kolom met een gat, eerst zoals pandas standaard doet en daarna met <code>skipna=False</code>. Vraag de zaal wat elke standaard aannam.</span></li>
+<li><span lang="en"><b>30 minutes.</b> Replay the notebook's year with two missing months. Put the skipped answer next to the refused answer, and ask which one a reader would believe.</span><span lang="nl"><b>30 minuten.</b> Herhaal het jaar met twee ontbrekende maanden uit het notebook. Zet het antwoord met het gat overgeslagen naast het geweigerde antwoord, en vraag welk van de twee een lezer zou geloven.</span></li>
+<li><span lang="en"><b>25 minutes.</b> Each team writes a cleaning log for its project table, listing every decision about 2018 and 2019.</span><span lang="nl"><b>25 minuten.</b> Elk team schrijft een opschoonlogboek voor de projecttabel, met elke beslissing over 2018 en 2019.</span></li>
+<li><span lang="en"><b>15 minutes.</b> Two teams read their logs aloud. The room asks each team one question.</span><span lang="nl"><b>15 minuten.</b> Twee teams lezen hun logboek hardop voor. De zaal stelt elk team één vraag.</span></li>
+</ul>
+
+    <h3><span lang="en">Thursday: saying what the data cannot say (2 hours)</span><span lang="nl">Donderdag: zeggen wat de data niet kan zeggen (2 uur)</span></h3>
+    <ul>
+<li><span lang="en"><b>20 minutes.</b> Draw the years 2010 to 2025 on the board with an arrow between each pair. Each arrow is one value in the series. Ask which arrows a rise from 2010 to 2025 needs, and which two are missing.</span><span lang="nl"><b>20 minuten.</b> Teken de jaren 2010 tot en met 2025 op het bord, met een pijl tussen elk paar. Elke pijl is één waarde in de reeks. Vraag welke pijlen een stijging van 2010 tot 2025 nodig heeft, en welke twee ontbreken.</span></li>
+<li><span lang="en"><b>30 minutes.</b> Introduce a bound with a stated assumption. The room writes the sentence that gives the lowest possible rise and names the assumption in the same sentence.</span><span lang="nl"><b>30 minuten.</b> Introduceer een grens met een genoemde aanname. De zaal schrijft de zin die de laagst mogelijke stijging geeft en de aanname in dezelfde zin noemt.</span></li>
+<li><span lang="en"><b>30 minutes.</b> Write three misleading sentences on the board, such as one that says prices fell because inflation was lower than the year before. Teams rewrite each one so the data supports it.</span><span lang="nl"><b>30 minuten.</b> Schrijf drie misleidende zinnen op het bord, zoals een zin die zegt dat de prijzen daalden omdat de inflatie lager was dan het jaar ervoor. Teams herschrijven elke zin zodat de data hem steunt.</span></li>
+<li><span lang="en"><b>25 minutes.</b> Teams draft the paragraph of their price sheet that explains the gap, in words an older listener can follow. They then swap drafts with another team, which checks every number against its notebook.</span><span lang="nl"><b>25 minuten.</b> Teams schrijven een eerste versie van de alinea op hun prijzenblad die het gat uitlegt, in woorden die een oudere luisteraar kan volgen. Daarna ruilen ze die met een ander team, dat elk getal controleert tegen het eigen notebook.</span></li>
+<li><span lang="en"><b>15 minutes.</b> Read two of the improved paragraphs aloud, and name what made each one honest.</span><span lang="nl"><b>15 minuten.</b> Lees twee van de verbeterde alinea's hardop voor, en benoem wat elke alinea eerlijk maakte.</span></li>
+</ul>
+
+
+    <h2 lang="en">In the studio</h2>
+<h2 lang="nl">In de studio</h2>
+
+    <p lang="en">Visit every team twice a day. Ask the same three questions each time, so the teams learn to ask them of themselves.</p>
+<p lang="nl">Bezoek elk team twee keer per dag. Stel elke keer dezelfde drie vragen, zodat de teams leren die vragen aan zichzelf te stellen.</p>
+
+    <ul>
+<li><span lang="en">Which years does this number use, and which years does it need?</span><span lang="nl">Welke jaren gebruikt dit getal, en welke jaren heeft het nodig?</span></li>
+<li><span lang="en">What does one value in this column measure, and against which year?</span><span lang="nl">Wat meet één waarde in deze kolom, en ten opzichte van welk jaar?</span></li>
+<li><span lang="en">What did the AI claim, and which cell of your notebook tests it?</span><span lang="nl">Wat beweerde de AI, en welke cel in je notebook toetst dat?</span></li>
+</ul>
+
+
+    <h2 lang="en">What to watch for this week</h2>
+<h2 lang="nl">Waar je deze week op let</h2>
+
+    <ul>
+<li><span lang="en">Teams that start the rise from 2010 with the 2010 value. That value lies outside the rise because it compares 2010 with 2009. CHECK 4 catches the mistake and explains it in its message.</span><span lang="nl">Teams die de stijging vanaf 2010 laten beginnen met de waarde voor 2010. Die waarde valt buiten de stijging, omdat ze 2010 met 2009 vergelijkt. CHECK 4 vangt de fout op en legt hem uit in de melding.</span></li>
+<li><span lang="en">Teams that add the percentages. The sum looks reasonable and is far too small, because each year's rise applies to prices that earlier years already raised.</span><span lang="nl">Teams die de percentages optellen. De som ziet er redelijk uit en is veel te klein, omdat de stijging van elk jaar werkt op prijzen die eerdere jaren al hadden verhoogd.</span></li>
+<li><span lang="en">Code that calls <code>prod()</code> or <code>cumprod()</code> without <code>skipna=False</code>. pandas then skips 2018 and 2019 as if prices had not changed in those years. The result looks like a complete answer.</span><span lang="nl">Code die <code>prod()</code> of <code>cumprod()</code> aanroept zonder <code>skipna=False</code>. pandas slaat dan 2018 en 2019 over, alsof de prijzen in die jaren niet veranderden. De uitkomst ziet eruit als een volledig antwoord.</span></li>
+<li><span lang="en">Teams that fill 2018 and 2019 with <code>interpolate()</code>, <code>fillna()</code> or values the AI supplied. Any value for those years that does not come from a named source the team has opened is invented. A team that finds another published source for those years may use it, provided the price sheet names the source and keeps that answer apart from the World Bank answer.</span><span lang="nl">Teams die 2018 en 2019 invullen met <code>interpolate()</code>, <code>fillna()</code> of waarden die de AI gaf. Elke waarde voor die jaren die niet uit een genoemde bron komt die het team zelf heeft geopend, is verzonnen. Een team dat een andere gepubliceerde bron voor die jaren vindt, mag die gebruiken, op voorwaarde dat het prijzenblad de bron noemt en dat antwoord gescheiden houdt van het antwoord volgens de Wereldbank.</span></li>
+<li><span lang="en">Teams that read a percentage as a multiple, so that a rise of p percent becomes p times. CHECK 3 catches this in the code, and the AI log should catch it in the AI's prose.</span><span lang="nl">Teams die een percentage lezen als een veelvoud, zodat een stijging van p procent p keer wordt. CHECK 3 vangt dit op in de code, en het AI-logboek hoort het op te vangen in de tekst van de AI.</span></li>
+<li><span lang="en">Price sheets that say prices fell in a year when inflation fell. Lower inflation means prices rose more slowly, and prices fell only in a year with a value below zero.</span><span lang="nl">Prijzenbladen die zeggen dat de prijzen daalden in een jaar waarin de inflatie daalde. Lagere inflatie betekent dat de prijzen langzamer stegen, en de prijzen daalden alleen in een jaar met een waarde onder nul.</span></li>
+<li><span lang="en">Price sheets that give one total for 2010 to 2025 without the gap and the assumption beside it.</span><span lang="nl">Prijzenbladen die één totaal geven voor 2010 tot 2025, zonder het gat en de aanname erbij.</span></li>
+<li><span lang="en">Price sheets written for the room rather than for the group. Words such as factor, interpolate or compound mean nothing to most listeners, and a sheet that uses them has not reached its audience.</span><span lang="nl">Prijzenbladen die voor de zaal zijn geschreven in plaats van voor de organisatie. Woorden als factor, interpoleren of samenstellen zeggen de meeste luisteraars niets, en een blad dat ze gebruikt, heeft zijn publiek niet bereikt.</span></li>
+</ul>
+
+
+    <h2 lang="en">The Friday review</h2>
+<h2 lang="nl">De vrijdagbespreking</h2>
+
+    <ul>
+<li><span lang="en"><b>Before the review.</b> Students in the audience write one question for each team on a card while it presents.</span><span lang="nl"><b>Vóór de bespreking.</b> Studenten in het publiek schrijven tijdens elke presentatie één vraag voor dat team op een kaartje.</span></li>
+<li><span lang="en"><b>Each team.</b> The team gets five minutes to present. The presenter opens by reading the price sheet aloud as a volunteer would read it to the group. The presenter then shows the three parts behind it: the rise the team can measure, the gap, and the assumption behind any lowest figure. Five minutes of questions from the cards follow, and a fellow asks the last question.</span><span lang="nl"><b>Elk team.</b> Het team krijgt vijf minuten om te presenteren. De presentator begint met het voorlezen van het prijzenblad, zoals een vrijwilliger het aan de organisatie zou voorlezen, en laat daarna de drie delen erachter zien: de stijging die het team kan meten, het gat, en de aanname achter een laagste cijfer. Daarna volgen vijf minuten vragen van de kaartjes, en een fellow stelt de laatste vraag.</span></li>
+<li><span lang="en"><b>After the presentations.</b> The room compares the AI answers from every team and sorts them by the mistake each one matched: added, skipped, filled or none.</span><span lang="nl"><b>Na de presentaties.</b> De zaal vergelijkt de antwoorden van de AI van elk team en deelt ze in naar de fout waarmee elk antwoord overeenkwam: opgeteld, overgeslagen, ingevuld of geen.</span></li>
+<li><span lang="en"><b>To close.</b> Announce next week's roles.</span><span lang="nl"><b>Ter afsluiting.</b> Maak de rollen voor volgende week bekend.</span></li>
+</ul>
+
+    <footer><p><span lang="en"><a href="index.html">Back to week 3</a><span class="separator">|</span><a href="../materials.html">All materials</a></span><span lang="nl"><a href="index.html">Terug naar week 3</a><span class="separator">|</span><a href="../materials.html">Al het lesmateriaal</a></span></p></footer>
+</div></main>
+<div class="site-footer"><div class="container"><div><span lang="en">BiGi Data is a <a href="https://freefocus.org">Free Focus</a> program.</span><span lang="nl">BiGi Data is een programma van <a href="https://freefocus.org">Free Focus</a>.</span></div><div><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><span class="separator"> &middot; </span><a href="../credits.html"><span lang="en">Image credits</span><span lang="nl">Fotoverantwoording</span></a></div></div></div>
+<script data-goatcounter="https://johnsanterre.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

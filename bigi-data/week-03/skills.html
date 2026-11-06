@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Skills: Week 3 - BiGi Data">
+<meta name="robots" content="noindex, nofollow">
+<title data-en="Skills: Week 3 - BiGi Data" data-nl="Vaardigheden: Week 3 - BiGi Data">Skills: Week 3 - BiGi Data</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;650;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/lang.js"></script>
+</head>
+<body>
+<header class="nav-header"><div class="container">
+<a href="../index.html" class="site-title"><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><polygon fill="#ecc81d" points="50,4 61,38 97,38 68,59 79,94 50,73 21,94 32,59 3,38 39,38"/></svg>BiGi Data</a>
+<nav class="nav-links"><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a>
+<button id="lang-btn" class="lang-btn" type="button">Nederlands</button></nav>
+</div></header>
+<div class="stripes"></div>
+<section class="page-hero" style="background-image:url(../assets/img/forest.jpg)"><div class="container">
+<nav class="breadcrumb"><a href="../index.html"><span lang="en">Home</span><span lang="nl">Home</span></a><span class="separator">/</span><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a><span class="separator">/</span><a href="index.html"><span lang="en">Week 3</span><span lang="nl">Week 3</span></a><span class="separator">/</span><span><span lang="en">Skills</span><span lang="nl">Vaardigheden</span></span></nav>
+<h1 lang="en">Skills, week 3: types, units and missing values</h1>
+<h1 lang="nl">Vaardigheden, week 3: typen, eenheden en ontbrekende waarden</h1>
+
+    <p lang="en" class="muted">About 10 hours across the week, at your own pace.</p>
+<p lang="nl" class="muted">Ongeveer 10 uur verspreid over de week, in je eigen tempo.</p>
+
+
+    </div></section>
+<main><div class="container">
+<h2 lang="en">What you will be able to do</h2>
+<h2 lang="nl">Wat je na deze week kunt</h2>
+
+    <ul>
+<li><span lang="en">Identify the type of each column in a table, and convert numbers stored as text into numbers on purpose.</span><span lang="nl">Het type van elke kolom in een tabel herkennen, en getallen die als tekst zijn opgeslagen bewust omzetten in getallen.</span></li>
+<li><span lang="en">Explain why the same characters give different results as text and as numbers, and why a number in a small type can wrap around.</span><span lang="nl">Uitleggen waarom dezelfde tekens als tekst en als getal verschillende uitkomsten geven, en waarom een getal in een klein type kan overlopen.</span></li>
+<li><span lang="en">Convert a column that mixes units into one unit, and name the unit of every column.</span><span lang="nl">Een kolom die eenheden mengt omrekenen naar één eenheid, en de eenheid van elke kolom noemen.</span></li>
+<li><span lang="en">Turn a percentage change into a growth factor, and compound a series of changes instead of adding them.</span><span lang="nl">Een procentuele verandering omzetten in een groeifactor, en een reeks veranderingen vermenigvuldigen in plaats van ze op te tellen.</span></li>
+<li><span lang="en">Find missing values in three disguises, namely empty cells, words and code numbers, and treat each one as missing rather than zero.</span><span lang="nl">Ontbrekende waarden vinden in drie vermommingen, namelijk lege cellen, woorden en codegetallen, en elk ervan behandelen als ontbrekend in plaats van als nul.</span></li>
+<li><span lang="en">State what a gap in a series prevents you from saying, and report the stretches the data does cover.</span><span lang="nl">Zeggen wat een gat in een reeks je belet te zeggen, en de stukken rapporteren die de data wel dekt.</span></li>
+<li><span lang="en">Keep a cleaning log that records every change to a table and its reason.</span><span lang="nl">Een opschoonlogboek bijhouden met elke verandering aan een tabel en de reden ervoor.</span></li>
+</ul>
+
+
+    <h2 lang="en">Every value has a type</h2>
+<h2 lang="nl">Elke waarde heeft een type</h2>
+
+    <p lang="en">A computer stores every value as a pattern of bits. The type is the agreement that says how to read the pattern. Text, whole numbers, decimal numbers and dates are different types. The same characters can be text or a number, and Python treats them differently.</p>
+<p lang="nl">Een computer slaat elke waarde op als een patroon van bits. Het type is de afspraak die zegt hoe je het patroon leest. Tekst, hele getallen, decimale getallen en datums zijn verschillende typen. Dezelfde tekens kunnen tekst of een getal zijn, en Python behandelt ze verschillend.</p>
+
+    <p lang="en">In the notebook, the text "7" joined to the text "7" gives 77. The number 7 added to the number 7 gives 14. Inside the computer, the character 7 is stored as the code 55. The type tells the program which reading to use.</p>
+<p lang="nl">In het notebook geeft de tekst "7" aan de tekst "7" vastgemaakt 77. Het getal 7 opgeteld bij het getal 7 geeft 14. In de computer wordt het teken 7 opgeslagen als de code 55. Het type vertelt het programma welke lezing het moet gebruiken.</p>
+
+    <p lang="en">A type also has a size. An 8-bit column holds only the whole numbers from 0 to 255. When the notebook adds 100 to 200 in such a column, the result wraps around and comes out as 44, with no warning. This is rare, because most data tools store whole numbers in 64 bits. When it does happen, the wrong answer looks ordinary.</p>
+<p lang="nl">Een type heeft ook een grootte. Een kolom van 8 bits bevat alleen de hele getallen van 0 tot en met 255. Als het notebook in zo'n kolom 100 bij 200 optelt, loopt de uitkomst over en komt die uit op 44, zonder waarschuwing. Dit is zeldzaam, omdat de meeste datatools hele getallen opslaan in 64 bits. Als het toch gebeurt, ziet het foute antwoord er gewoon uit.</p>
+
+
+    <h2 lang="en">Numbers that arrive as text</h2>
+<h2 lang="nl">Getallen die als tekst binnenkomen</h2>
+
+    <p lang="en">A column of numbers often arrives as text. One word in the column, such as <i>unknown</i>, is enough to make pandas read the whole column as text, which it marks as <code>object</code>. Currency signs, units written in the cell and decimal commas do the same.</p>
+<p lang="nl">Een kolom met getallen komt vaak binnen als tekst. Eén woord in de kolom, zoals <i>unknown</i>, is genoeg om pandas de hele kolom als tekst te laten lezen, en pandas geeft die aan als <code>object</code>. Valutatekens, eenheden in de cel en decimale komma's hebben hetzelfde effect.</p>
+
+    <p lang="en">Read the types before you calculate anything, and convert text to numbers on purpose. <code>pd.to_numeric</code> with <code>errors="coerce"</code> turns every value it cannot read into a missing value without a warning, so list the values it will drop first. When a file uses a comma as the decimal mark, tell pandas when you load it, with <code>sep=";"</code> and <code>decimal=","</code>.</p>
+<p lang="nl">Bekijk de typen voordat je iets berekent, en zet tekst bewust om in getallen. <code>pd.to_numeric</code> met <code>errors="coerce"</code> maakt van elke waarde die het niet kan lezen een ontbrekende waarde, zonder waarschuwing, dus maak eerst een lijst van de waarden die verdwijnen. Als een bestand een komma als decimaalteken gebruikt, vertel dat pandas bij het laden, met <code>sep=";"</code> en <code>decimal=","</code>.</p>
+
+
+    <h2 lang="en">Every number has a unit</h2>
+<h2 lang="nl">Elk getal heeft een eenheid</h2>
+
+    <p lang="en">A number without its unit cannot be checked. The same bag can be written in grams or in kilograms, and a column that mixes the two cannot be added, averaged or compared. Convert every column to one unit, and put the unit in the column's name, as in <code>bag_kg</code> or <code>price_per_kg</code>.</p>
+<p lang="nl">Een getal zonder eenheid kun je niet controleren. Dezelfde zak kan in grammen of in kilogrammen staan, en een kolom die die twee mengt, kun je niet optellen, middelen of vergelijken. Reken elke kolom om naar één eenheid, en zet de eenheid in de naam van de kolom, zoals in <code>bag_kg</code> of <code>price_per_kg</code>.</p>
+
+    <p lang="en">A price carries a unit as well, namely money per something. A price per bag cannot compare a small bag with a large one, and a price per kilogram can.</p>
+<p lang="nl">Ook een prijs heeft een eenheid, namelijk geld per iets. Met een prijs per zak kun je een kleine zak niet vergelijken met een grote, en met een prijs per kilogram wel.</p>
+
+
+    <h2 lang="en">Percentages multiply</h2>
+<h2 lang="nl">Procenten vermenigvuldigen zich</h2>
+
+    <p lang="en">A percentage change is a unit of its own. A rise of 55 percent multiplies a price by 1.55, a number called the growth factor. A price that becomes 2.5 times as high has risen by 150 percent. Read every percentage as a growth factor before you combine it with another one.</p>
+<p lang="nl">Een procentuele verandering is een eenheid op zich. Een stijging van 55 procent vermenigvuldigt een prijs met 1,55, een getal dat de groeifactor heet. Een prijs die 2,5 keer zo hoog wordt, is met 150 procent gestegen. Lees elk percentage als groeifactor voordat je het combineert met een ander percentage.</p>
+
+    <p lang="en">Over several periods, growth factors multiply. Two rises of 20 percent in a row leave a price 1.44 times as high, which is more than the two percentages added together. A rise of 50 percent followed by a fall of 50 percent leaves the price at 0.75 of where it started.</p>
+<p lang="nl">Over meerdere perioden vermenigvuldigen groeifactoren zich. Twee stijgingen van 20 procent na elkaar maken een prijs 1,44 keer zo hoog, en dat is meer dan de twee percentages bij elkaar opgeteld. Een stijging van 50 procent gevolgd door een daling van 50 procent laat de prijs achter op 0,75 van waar hij begon.</p>
+
+    <p lang="en">The notebook's made-up price list shows the size of the error. Its twelve monthly changes for year 1 add up to 47.6 percent. Compounded, the same changes give a rise of 59.0 percent.</p>
+<p lang="nl">De verzonnen prijslijst in het notebook laat zien hoe groot de fout is. De twaalf maandelijkse veranderingen van jaar 1 tellen op tot 47,6 procent. Vermenigvuldigd geven dezelfde veranderingen een stijging van 59,0 procent.</p>
+
+
+    <h2 lang="en">Missing values come in disguises</h2>
+<h2 lang="nl">Ontbrekende waarden komen vermomd</h2>
+
+    <p lang="en">A missing value means nobody recorded it, which is different from zero. It does not always look like an empty cell. It can also be a word, such as <i>unknown</i>, or a code number, such as -1, that the person keeping the record used for a value nobody knew.</p>
+<p lang="nl">Een ontbrekende waarde betekent dat niemand hem opschreef, en dat is iets anders dan nul. Hij ziet er niet altijd uit als een lege cel. Het kan ook een woord zijn, zoals <i>unknown</i>, of een codegetal, zoals -1, dat degene die de gegevens bijhield gebruikte voor een waarde die niemand wist.</p>
+
+    <p lang="en">The code number is the most dangerous disguise, because it is a number and every tool will average it. In the notebook, the average number of bags per purchase is 3.81 with the code -1 left in. With the code treated as missing, the average is 4.09.</p>
+<p lang="nl">Het codegetal is de gevaarlijkste vermomming, want het is een getal en elk programma neemt het mee in het gemiddelde. In het notebook is het gemiddelde aantal zakken per aankoop 3,81 met de code -1 erin. Met de code als ontbrekende waarde is het gemiddelde 4,09.</p>
+
+
+    <h2 lang="en">A gap breaks a chain</h2>
+<h2 lang="nl">Een gat breekt een keten</h2>
+
+    <p lang="en">When one period in a chain of changes is missing, the total change across it is unknown. pandas does not say so. Its <code>sum()</code> and <code>prod()</code> skip missing values, which quietly assumes that nothing changed in the missing period. The gap stays in view when you pass <code>skipna=False</code>, because pandas then returns a missing value.</p>
+<p lang="nl">Als één periode in een keten van veranderingen ontbreekt, is de totale verandering daaroverheen onbekend. pandas zegt dat niet. <code>sum()</code> en <code>prod()</code> slaan ontbrekende waarden over, en dat neemt stilzwijgend aan dat er in de ontbrekende periode niets veranderde. Het gat blijft zichtbaar als je <code>skipna=False</code> meegeeft, omdat pandas dan een ontbrekende waarde teruggeeft.</p>
+
+    <p lang="en">The honest report has two parts. For each stretch with no gap, it gives the exact change. Across the gap, it gives only what a named assumption would imply. If prices did not fall during the gap, for example, the total rise was at least the rise of the stretches on either side of it.</p>
+<p lang="nl">Het eerlijke verslag heeft twee delen. Voor elk stuk zonder gat geeft het de precieze verandering. Over het gat heen geeft het alleen wat een genoemde aanname zou betekenen. Als de prijzen tijdens het gat bijvoorbeeld niet daalden, was de totale stijging minstens de stijging van de stukken aan weerszijden ervan.</p>
+
+
+    <h2 lang="en">Keep a cleaning log</h2>
+<h2 lang="nl">Houd een opschoonlogboek bij</h2>
+
+    <p lang="en">Every change to a table changes the answers it gives. A cleaning log lists each change in order with its reason: which values became missing, which units were converted and which columns were read as numbers. A cleaned table without a log asks the reader to trust changes they cannot see. With a log, a reader can check every step.</p>
+<p lang="nl">Elke verandering aan een tabel verandert de antwoorden die de tabel geeft. Een opschoonlogboek noemt elke verandering op volgorde, met de reden ervoor: welke waarden ontbrekend werden, welke eenheden werden omgerekend en welke kolommen als getallen werden gelezen. Een opgeschoonde tabel zonder logboek vraagt de lezer veranderingen te vertrouwen die hij niet kan zien. Met een logboek kan een lezer elke stap controleren.</p>
+
+
+    <h2 lang="en">When the AI is wrong</h2>
+<h2 lang="nl">Wanneer de AI zich vergist</h2>
+
+    <div class="panel warn">
+    <p lang="en">In the notebook, an AI assistant was asked to turn a column of prices into numbers and give the average price per bag. Its code ran without an error and reported an average of 2095.28. Read correctly, the prices average 20.95. The assistant's answer was 100 times too large.</p>
+<p lang="nl">In het notebook werd een AI-assistent gevraagd een kolom met prijzen om te zetten in getallen en de gemiddelde prijs per zak te geven. De code draaide zonder fout en gaf een gemiddelde van 2095,28. Goed gelezen komen de prijzen gemiddeld uit op 20,95. Het antwoord van de assistent was 100 keer te groot.</p>
+
+    <p lang="en">The file used a comma as the decimal mark, as spreadsheets set to Dutch do. The assistant's code deleted every comma as if each one separated thousands. The first row's price of 5,62 became 562. One check would have caught it: read one row by hand and compare it with the converted number.</p>
+<p lang="nl">Het bestand gebruikte een komma als decimaalteken, zoals spreadsheets met Nederlandse instellingen doen. De code van de assistent verwijderde elke komma, alsof die duizendtallen scheidde. De prijs van 5,62 in de eerste rij werd 562. Eén controle had de fout gevonden: lees één rij met de hand en vergelijk die met het omgezette getal.</p>
+
+    </div>
+
+    <h2 lang="en">Practise in the notebook</h2>
+<h2 lang="nl">Oefen in het notebook</h2>
+
+    <p lang="en">The notebook works through every idea above with a made-up shop and a made-up price list. It holds three tasks you complete with your AI assistant. A CHECK cell after each task tells you when your answer is right. The third task is built so that code which quietly skips the missing months fails its CHECK.</p>
+<p lang="nl">Het notebook werkt alle ideeën hierboven uit met een verzonnen winkel en een verzonnen prijslijst. Het bevat drie opdrachten die je samen met je AI-assistent maakt. Een CHECK-cel na elke opdracht vertelt je wanneer je antwoord klopt. De derde opdracht is zo gebouwd dat code die de ontbrekende maanden stilletjes overslaat, voor de CHECK zakt.</p>
+
+    <p><a class="button" lang="en" href="https://colab.research.google.com/github/johnsanterre/bigi-data-notebooks/blob/main/notebooks/skills-03-en.ipynb" target="_blank" rel="noopener">Open in Colab</a><a class="button" lang="nl" href="https://colab.research.google.com/github/johnsanterre/bigi-data-notebooks/blob/main/notebooks/skills-03-nl.ipynb" target="_blank" rel="noopener">Openen in Colab</a><a class="button secondary" lang="en" href="../notebooks/skills-03-en.ipynb" download>Download</a><a class="button secondary" lang="nl" href="../notebooks/skills-03-nl.ipynb" download>Downloaden</a></p>
+
+
+    <h2 lang="en">Check yourself</h2>
+<h2 lang="nl">Test jezelf</h2>
+
+    <h3><span lang="en">Question</span><span lang="nl">Vraag</span> 1</h3>
+<p lang="en">A column of counts shows the type object. What is the most likely reason?</p>
+<p lang="nl">Een kolom met aantallen heeft het type object. Wat is de meest waarschijnlijke reden?</p>
+<ol class="options" type="a"><li><span lang="en">The counts are too large for a number type.</span><span lang="nl">De aantallen zijn te groot voor een getaltype.</span></li><li><span lang="en">At least one cell holds text, such as a word, so pandas read the whole column as text.</span><span lang="nl">Minstens één cel bevat tekst, zoals een woord, dus pandas las de hele kolom als tekst.</span></li><li><span lang="en">pandas stores every whole number as text.</span><span lang="nl">pandas slaat elk heel getal op als tekst.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The second answer is right. One cell holding the word unknown was enough to make pandas read the notebook's whole bags column as text.</p>
+<p lang="nl">Het tweede antwoord klopt. Eén cel met het woord unknown was genoeg om pandas de hele kolom bags in het notebook als tekst te laten lezen.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 2</h3>
+<p lang="en">A file uses a semicolon between columns and a comma as the decimal mark. Which line reads its prices as numbers?</p>
+<p lang="nl">Een bestand gebruikt een puntkomma tussen de kolommen en een komma als decimaalteken. Welke regel leest de prijzen als getallen?</p>
+<ol class="options" type="a"><li><span lang="en"><code>pd.read_csv(f, sep=";", decimal=",")</code></span><span lang="nl"><code>pd.read_csv(f, sep=";", decimal=",")</code></span></li><li><span lang="en"><code>pd.read_csv(f, sep=";")</code>, followed by <code>.str.replace(",", "")</code></span><span lang="nl"><code>pd.read_csv(f, sep=";")</code>, gevolgd door <code>.str.replace(",", "")</code></span></li><li><span lang="en"><code>pd.read_csv(f)</code></span><span lang="nl"><code>pd.read_csv(f)</code></span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The first answer is right. The second deletes the decimal comma, so every price becomes 100 times too large, as the AI's code did in the notebook. The third splits each line at the wrong character.</p>
+<p lang="nl">Het eerste antwoord klopt. Het tweede verwijdert de decimale komma, zodat elke prijs 100 keer te groot wordt, zoals de code van de AI in het notebook deed. Het derde splitst elke regel bij het verkeerde teken.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 3</h3>
+<p lang="en">A price rises by 20 percent one year and by 20 percent the next. How much higher is it after the two years?</p>
+<p lang="nl">Een prijs stijgt het ene jaar met 20 procent en het volgende jaar weer met 20 procent. Hoeveel hoger is de prijs na de twee jaar?</p>
+<ol class="options" type="a"><li><span lang="en">40 percent higher</span><span lang="nl">40 procent hoger</span></li><li><span lang="en">44 percent higher</span><span lang="nl">44 procent hoger</span></li><li><span lang="en">20 percent higher</span><span lang="nl">20 procent hoger</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">44 percent is right. The growth factors multiply, and 1.2 times 1.2 is 1.44. Adding the percentages ignores that the second rise applies to a price the first rise already raised.</p>
+<p lang="nl">44 procent klopt. De groeifactoren vermenigvuldigen zich, en 1,2 maal 1,2 is 1,44. Wie de procenten optelt, negeert dat de tweede stijging werkt op een prijs die de eerste stijging al had verhoogd.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 4</h3>
+<p lang="en">A survey writes -1 when a person did not give an age. What should you do with the -1 values before you average the ages?</p>
+<p lang="nl">Een enquête schrijft -1 op als iemand geen leeftijd opgaf. Wat doe je met de waarden -1 voordat je het gemiddelde van de leeftijden neemt?</p>
+<ol class="options" type="a"><li><span lang="en">Keep them, because they are numbers.</span><span lang="nl">Laat ze staan, want het zijn getallen.</span></li><li><span lang="en">Replace them with 0.</span><span lang="nl">Vervang ze door 0.</span></li><li><span lang="en">Treat them as missing, and record the change in the cleaning log.</span><span lang="nl">Behandel ze als ontbrekend, en noteer de verandering in het opschoonlogboek.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The third answer is right. The code -1 means nobody recorded an age, and left in, it pulls the average down. In the notebook, the code -1 lowered the average number of bags per purchase from 4.09 to 3.81.</p>
+<p lang="nl">Het derde antwoord klopt. De code -1 betekent dat niemand een leeftijd opschreef, en als hij blijft staan, trekt hij het gemiddelde omlaag. In het notebook verlaagde de code -1 het gemiddelde aantal zakken per aankoop van 4,09 naar 3,81.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 5</h3>
+<p lang="en">In the notebook, months 17 and 18 have no value. What does <code>factor(change.loc[13:24]).prod()</code> return?</p>
+<p lang="nl">In het notebook hebben de maanden 17 en 18 geen waarde. Wat geeft <code>factor(change.loc[13:24]).prod()</code> terug?</p>
+<ol class="options" type="a"><li><span lang="en">A missing value.</span><span lang="nl">Een ontbrekende waarde.</span></li><li><span lang="en">The product of the recorded months, as if prices did not change in months 17 and 18.</span><span lang="nl">Het product van de gemeten maanden, alsof de prijzen in de maanden 17 en 18 niet veranderden.</span></li><li><span lang="en">An error.</span><span lang="nl">Een foutmelding.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The second answer is right. pandas skips missing values unless you pass <code>skipna=False</code>, which quietly assumes no change in the missing months.</p>
+<p lang="nl">Het tweede antwoord klopt. pandas slaat ontbrekende waarden over, tenzij je <code>skipna=False</code> meegeeft, en dat neemt stilzwijgend aan dat er in de ontbrekende maanden niets veranderde.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 6</h3>
+<p lang="en">A shop's prices rose more slowly this year than last year. What happened to its prices this year?</p>
+<p lang="nl">De prijzen van een winkel stegen dit jaar langzamer dan vorig jaar. Wat gebeurde er dit jaar met de prijzen?</p>
+<ol class="options" type="a"><li><span lang="en">They fell.</span><span lang="nl">Ze daalden.</span></li><li><span lang="en">They still rose, by less than last year.</span><span lang="nl">Ze stegen nog steeds, maar minder dan vorig jaar.</span></li><li><span lang="en">They stayed the same.</span><span lang="nl">Ze bleven gelijk.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The second answer is right. A smaller rise is still a rise. Prices fall only when the percentage change is below zero.</p>
+<p lang="nl">Het tweede antwoord klopt. Een kleinere stijging is nog steeds een stijging. Prijzen dalen pas als de procentuele verandering onder nul ligt.</p>
+</details>
+
+    <footer><p><span lang="en"><a href="index.html">Back to week 3</a><span class="separator">|</span><a href="../materials.html">All materials</a></span><span lang="nl"><a href="index.html">Terug naar week 3</a><span class="separator">|</span><a href="../materials.html">Al het lesmateriaal</a></span></p></footer>
+</div></main>
+<div class="site-footer"><div class="container"><div><span lang="en">BiGi Data is a <a href="https://freefocus.org">Free Focus</a> program.</span><span lang="nl">BiGi Data is een programma van <a href="https://freefocus.org">Free Focus</a>.</span></div><div><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><span class="separator"> &middot; </span><a href="../credits.html"><span lang="en">Image credits</span><span lang="nl">Fotoverantwoording</span></a></div></div></div>
+<script data-goatcounter="https://johnsanterre.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

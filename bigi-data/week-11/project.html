@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Project 11: Week 11 - BiGi Data">
+<meta name="robots" content="noindex, nofollow">
+<title data-en="Project 11: Week 11 - BiGi Data" data-nl="Project 11: Week 11 - BiGi Data">Project 11: Week 11 - BiGi Data</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;650;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/lang.js"></script>
+</head>
+<body>
+<header class="nav-header"><div class="container">
+<a href="../index.html" class="site-title"><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><polygon fill="#ecc81d" points="50,4 61,38 97,38 68,59 79,94 50,73 21,94 32,59 3,38 39,38"/></svg>BiGi Data</a>
+<nav class="nav-links"><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a>
+<button id="lang-btn" class="lang-btn" type="button">Nederlands</button></nav>
+</div></header>
+<div class="stripes"></div>
+<section class="page-hero" style="background-image:url(../assets/img/market.jpg)"><div class="container">
+<nav class="breadcrumb"><a href="../index.html"><span lang="en">Home</span><span lang="nl">Home</span></a><span class="separator">/</span><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a><span class="separator">/</span><a href="index.html"><span lang="en">Week 11</span><span lang="nl">Week 11</span></a><span class="separator">/</span><span><span lang="en">Project 11</span><span lang="nl">Project 11</span></span></nav>
+<h1 lang="en">Project 11: does dengue in Suriname rise after heavy rain?</h1>
+<h1 lang="nl">Project 11: neemt dengue in Suriname toe na zware regen?</h1>
+
+    <p lang="en" class="muted">One question, two public tables joined by week, and a notice for a Paramaribo neighbourhood group.</p>
+<p lang="nl" class="muted">Eén vraag, twee openbare tabellen per week gekoppeld, en een bericht voor een buurtcomité in Paramaribo.</p>
+
+
+    </div></section>
+<main><div class="container">
+<h2 lang="en">The question</h2>
+<h2 lang="nl">De vraag</h2>
+
+    <p lang="en" class="lead">Do more dengue cases follow the weeks after heavy rain in Suriname? If the record shows a link, is it stronger than chance alone would produce?</p>
+<p lang="nl" class="lead">Volgen er meer denguegevallen in de weken na zware regen in Suriname? Als de gegevens een verband laten zien, is dat verband dan sterker dan toeval alleen zou geven?</p>
+
+
+    <h2 lang="en">Who it is for</h2>
+<h2 lang="nl">Voor wie het is</h2>
+
+    <p lang="en">Each team writes for a neighbourhood community group in Paramaribo that organises clean-ups of standing water. The group gets a one-page notice in plain words. The notice says what the national record shows about rain and dengue, how often chance alone would produce that pattern, and what the record cannot tell them. It ends with the World Health Organization's advice for households.</p>
+<p lang="nl">Elk team schrijft voor een buurtcomité in Paramaribo dat schoonmaakacties tegen stilstaand water organiseert. Het comité krijgt een bericht van één pagina in eenvoudige woorden. Het bericht zegt wat de landelijke gegevens laten zien over regen en dengue, hoe vaak toeval alleen dat patroon zou geven, en wat de gegevens niet kunnen vertellen. Het eindigt met het advies van de Wereldgezondheidsorganisatie voor huishoudens.</p>
+
+
+    <h2 lang="en">Why rain might matter</h2>
+<h2 lang="nl">Waarom regen ertoe zou kunnen doen</h2>
+
+    <p lang="en">The <a href="https://www.who.int/news-room/fact-sheets/detail/dengue-and-severe-dengue">World Health Organization</a> lists high rainfall among the conditions behind the spread of dengue. It advises households to cover, empty and clean their water storage containers every week. The <a href="https://www.cdc.gov/mosquitoes/about/life-cycle-of-aedes-mosquitoes.html">US Centers for Disease Control and Prevention</a> say that mosquito eggs hatch when water from rain covers them. An egg needs 7 to 10 days to become an adult mosquito. The World Health Organization adds that symptoms begin 4 to 10 days after infection.</p>
+<p lang="nl">De <a href="https://www.who.int/news-room/fact-sheets/detail/dengue-and-severe-dengue">Wereldgezondheidsorganisatie</a> noemt veel regen als een van de omstandigheden achter de verspreiding van dengue. Ze raadt huishoudens aan hun wateropslag elke week af te dekken, te legen en schoon te maken. De <a href="https://www.cdc.gov/mosquitoes/about/life-cycle-of-aedes-mosquitoes.html">Amerikaanse Centers for Disease Control and Prevention</a> zeggen dat muggeneieren uitkomen als regenwater ze bedekt. Een ei heeft 7 tot 10 dagen nodig om een volwassen mug te worden. De Wereldgezondheidsorganisatie voegt eraan toe dat klachten 4 tot 10 dagen na de besmetting beginnen.</p>
+
+    <p lang="en">Any effect of rain should therefore show up weeks later. The project fixes its window before anyone looks at the results: the rain that fell 3 to 6 weeks before each week.</p>
+<p lang="nl">Een effect van regen zou dus pas weken later moeten blijken. Het project legt zijn venster vast voordat iemand naar de resultaten kijkt: de regen die 3 tot 6 weken vóór elke week viel.</p>
+
+
+    <h2 lang="en">The data</h2>
+<h2 lang="nl">De data</h2>
+
+    <p lang="en">The dengue counts come from the <a href="https://opendengue.github.io/master-repo/data.html">OpenDengue database</a>, version 1.3, which converts the weekly reports in PAHO's <a href="https://www3.paho.org/data/index.php/en/mnu-topics/indicadores-dengue-en/dengue-nacional-en/252-dengue-pais-ano-en.html">PLISA system</a> into weekly case counts. The counts cover all of Suriname and include suspected, probable and confirmed cases. OpenDengue warns that reported cases are only a small part of all infections. Weeks with no report carry a zero that the database filled in, marked "Zero filling".</p>
+<p lang="nl">De denguecijfers komen uit de <a href="https://opendengue.github.io/master-repo/data.html">OpenDengue-database</a>, versie 1.3, die de weekrapporten uit het <a href="https://www3.paho.org/data/index.php/en/mnu-topics/indicadores-dengue-en/dengue-nacional-en/252-dengue-pais-ano-en.html">PLISA-systeem</a> van PAHO omzet in wekelijkse aantallen. De cijfers gaan over heel Suriname en omvatten vermoedelijke, waarschijnlijke en bevestigde gevallen. OpenDengue waarschuwt dat gemelde gevallen maar een klein deel van alle besmettingen zijn. Weken zonder melding hebben een nul die de database invulde, gemarkeerd als "Zero filling".</p>
+
+    <p lang="en">The rain comes from the <a href="https://open-meteo.com/en/docs/historical-weather-api">Open-Meteo historical weather archive</a>, using the ERA5 reanalysis. A reanalysis is a weather model run over the past and corrected with the observations available at each time, on a grid of about 25 km. The rain is therefore the model's estimate for the grid cell nearest Paramaribo, not a rain gauge reading. Daily totals are summed into the same Sunday-to-Saturday weeks as the dengue reports.</p>
+<p lang="nl">De regen komt uit het <a href="https://open-meteo.com/en/docs/historical-weather-api">historische weerarchief van Open-Meteo</a>, met de ERA5-heranalyse. Een heranalyse is een weermodel dat over het verleden wordt gedraaid en gecorrigeerd met de waarnemingen die op elk moment beschikbaar waren, op een raster van ongeveer 25 km. De regen is dus de schatting van het model voor de rastercel die het dichtst bij Paramaribo ligt, geen meting van een regenmeter. De dagtotalen zijn opgeteld in dezelfde weken van zondag tot zaterdag als de dengue-meldingen.</p>
+
+    <p lang="en">The joined table holds 365 weeks, from 31 December 2017 to 22 December 2024. Both sources were downloaded on 6 November 2026. The rain data were generated using Copernicus Climate Change Service information.</p>
+<p lang="nl">De gekoppelde tabel bevat 365 weken, van 31 december 2017 tot 22 december 2024. Beide bronnen zijn gedownload op 6 november 2026. De regendata zijn gemaakt met informatie van de Copernicus Climate Change Service.</p>
+
+    <p><a class="button secondary" href="../data/week11-dengue-rain.csv" download><span lang="en">Download the table (CSV)</span><span lang="nl">Download de tabel (CSV)</span></a></p>
+
+
+    <h2 lang="en">Your team</h2>
+<h2 lang="nl">Je team</h2>
+
+    <p lang="en">Teams of four hold the four roles, which rotate every week. This week the data checker guards the order of the weeks.</p>
+<p lang="nl">Teams van vier verdelen de vier rollen, die elke week wisselen. Deze week bewaakt de datacontroleur de volgorde van de weken.</p>
+
+    <ul>
+<li><span lang="en"><b>The builder</b> writes and runs the notebook with the AI assistant.</span><span lang="nl"><b>De bouwer</b> schrijft en draait het notebook met de AI-assistent.</span></li>
+<li><span lang="en"><b>The data checker</b> checks that no week was dropped before the rain was lined up, and checks each number in the notice against the notebook.</span><span lang="nl"><b>De datacontroleur</b> controleert dat er geen week is weggelaten voordat de regen werd uitgelijnd, en controleert elk getal in het bericht tegen het notebook.</span></li>
+<li><span lang="en"><b>The AI checker</b> keeps the AI log, recording every claim the AI makes and whether the data support it.</span><span lang="nl"><b>De AI-controleur</b> houdt het AI-logboek bij, met elke bewering van de AI en of de data die steunen.</span></li>
+<li><span lang="en"><b>The presenter</b> presents on Friday, reads the notice aloud as a resident would hear it, and answers the room's questions.</span><span lang="nl"><b>De presentator</b> presenteert op vrijdag, leest het bericht voor zoals een bewoner het zou horen, en beantwoordt de vragen uit de zaal.</span></li>
+</ul>
+
+
+    <h2 lang="en">The tasks</h2>
+<h2 lang="nl">De opdrachten</h2>
+
+    <p lang="en">The starter notebook loads the data for you and holds nine tasks. Seven of them have a CHECK cell that tells you when the answer is right.</p>
+<p lang="nl">Het startnotebook laadt de data voor je en bevat negen opdrachten. Zeven ervan hebben een CHECK-cel die je vertelt wanneer het antwoord klopt.</p>
+
+    <ol>
+<li><span lang="en">Describe the table, and count the weeks the database filled with zero.</span><span lang="nl">Beschrijf de tabel en tel de weken die de database met een nul vulde.</span></li>
+<li><span lang="en">Add the rain of weeks 3 to 6 before each week, on the full table.</span><span lang="nl">Voeg de regen van week 3 tot en met 6 vóór elke week toe, op de volledige tabel.</span></li>
+<li><span lang="en">Keep the reported weeks that have a rain value.</span><span lang="nl">Houd de gemelde weken die een regenwaarde hebben.</span></li>
+<li><span lang="en">Chart cases and rain on the same time axis.</span><span lang="nl">Maak een grafiek van gevallen en regen op dezelfde tijdas.</span></li>
+<li><span lang="en">Compute the gap in mean cases between weeks that follow wet weeks and weeks that follow dry ones.</span><span lang="nl">Bereken het verschil in gemiddelde gevallen tussen weken na natte weken en weken na droge weken.</span></li>
+<li><span lang="en">Test the gap with an ordinary shuffle.</span><span lang="nl">Toets het verschil met gewoon schudden.</span></li>
+<li><span lang="en">Test the gap with a shift test, and explain why the two answers differ.</span><span lang="nl">Toets het verschil met een verschuivingstoets, en leg uit waarom de twee antwoorden verschillen.</span></li>
+<li><span lang="en">Test the AI's account of rain and dengue at every delay from 0 to 12 weeks.</span><span lang="nl">Toets het verhaal van de AI over regen en dengue bij elke vertraging van 0 tot 12 weken.</span></li>
+<li><span lang="en">Write the notice for the community group.</span><span lang="nl">Schrijf het bericht voor het buurtcomité.</span></li>
+</ol>
+
+    <p><a class="button" lang="en" href="https://colab.research.google.com/github/johnsanterre/bigi-data-notebooks/blob/main/notebooks/project-11-en.ipynb" target="_blank" rel="noopener">Open in Colab</a><a class="button" lang="nl" href="https://colab.research.google.com/github/johnsanterre/bigi-data-notebooks/blob/main/notebooks/project-11-nl.ipynb" target="_blank" rel="noopener">Openen in Colab</a><a class="button secondary" lang="en" href="../notebooks/project-11-en.ipynb" download>Download</a><a class="button secondary" lang="nl" href="../notebooks/project-11-nl.ipynb" download>Downloaden</a></p>
+
+
+    <h2 lang="en">The AI check this week</h2>
+<h2 lang="nl">De AI-controle van deze week</h2>
+
+    <div class="panel warn">
+    <p lang="en">Ask your AI assistant, without showing it the table, whether dengue cases in Suriname rise after heavy rain and how many weeks later. Write its answer and the delay it names in the AI log. Then test that delay against your lag table from task 8, with the shift test, before any of the AI's account goes into the notice.</p>
+<p lang="nl">Vraag je AI-assistent, zonder hem de tabel te laten zien, of denguegevallen in Suriname toenemen na zware regen en hoeveel weken later. Schrijf het antwoord en de vertraging die hij noemt in het AI-logboek. Toets die vertraging daarna tegen je tabel van opdracht 8, met de verschuivingstoets, voordat iets van het verhaal van de AI in het bericht komt.</p>
+
+    <p lang="en">Then give the assistant the table and ask it to find the delay at which rain best predicts dengue. Record whether it says how many delays it tried and whether it tests its winner against chance.</p>
+<p lang="nl">Geef de assistent daarna de tabel en vraag hem de vertraging te zoeken waarbij regen dengue het best voorspelt. Noteer of hij zegt hoeveel vertragingen hij probeerde en of hij zijn winnaar tegen toeval toetst.</p>
+
+    </div>
+
+    <h2 lang="en">What you hand in on Friday</h2>
+<h2 lang="nl">Wat je vrijdag inlevert</h2>
+
+    <ul>
+<li><span lang="en">The notebook, with every CHECK passing.</span><span lang="nl">Het notebook, met elke CHECK geslaagd.</span></li>
+<li><span lang="en">One chart of cases and rain, with both sources named.</span><span lang="nl">Eén grafiek van gevallen en regen, met beide bronnen vermeld.</span></li>
+<li><span lang="en">The one-page notice for the neighbourhood community group, about 250 words, in English and in Dutch.</span><span lang="nl">Het bericht van één pagina voor het buurtcomité, ongeveer 250 woorden, in het Engels en in het Nederlands.</span></li>
+<li><span lang="en">The AI log.</span><span lang="nl">Het AI-logboek.</span></li>
+<li><span lang="en">A presentation of five minutes, followed by five minutes of questions.</span><span lang="nl">Een presentatie van vijf minuten, gevolgd door vijf minuten vragen.</span></li>
+</ul>
+
+
+    <h2 lang="en">How the work is judged</h2>
+<h2 lang="nl">Hoe het werk wordt beoordeeld</h2>
+
+    <table>
+    <tr><th><span lang="en">Criterion</span><span lang="nl">Criterium</span></th><th><span lang="en">Meets the standard when</span><span lang="nl">Voldoet als</span></th></tr>
+    <tr><td><span lang="en">Numbers</span><span lang="nl">Getallen</span></td><td><span lang="en">Every CHECK passes, and every number in the notice matches the notebook.</span><span lang="nl">Elke CHECK slaagt, en elk getal in het bericht komt overeen met het notebook.</span></td></tr>
+    <tr><td><span lang="en">The test</span><span lang="nl">De toets</span></td><td><span lang="en">The team explains why the shift test fits these data better than the ordinary shuffle.</span><span lang="nl">Het team legt uit waarom de verschuivingstoets beter bij deze data past dan gewoon schudden.</span></td></tr>
+    <tr><td><span lang="en">Chart</span><span lang="nl">Grafiek</span></td><td><span lang="en">The chart has titles, labelled axes and both sources, and shows how it handled the zero-filled weeks.</span><span lang="nl">De grafiek heeft titels, benoemde assen en beide bronnen, en laat zien hoe ze de met nul gevulde weken behandelde.</span></td></tr>
+    <tr><td><span lang="en">AI log</span><span lang="nl">AI-logboek</span></td><td><span lang="en">The delay the AI named is tested against the data. The log says how many delays the team tried.</span><span lang="nl">De vertraging die de AI noemde, is aan de data getoetst. Het logboek zegt hoeveel vertragingen het team probeerde.</span></td></tr>
+    <tr><td><span lang="en">Notice</span><span lang="nl">Bericht</span></td><td><span lang="en">A resident could act on the notice. It claims no more than the test decided, names both sources, and states two things the data cannot tell.</span><span lang="nl">Een bewoner kan iets met het bericht. Het claimt niet meer dan de toets besliste, noemt beide bronnen, en zegt twee dingen die de data niet kunnen vertellen.</span></td></tr>
+    </table>
+    <footer><p><span lang="en"><a href="index.html">Back to week 11</a><span class="separator">|</span><a href="../materials.html">All materials</a></span><span lang="nl"><a href="index.html">Terug naar week 11</a><span class="separator">|</span><a href="../materials.html">Al het lesmateriaal</a></span></p></footer>
+</div></main>
+<div class="site-footer"><div class="container"><div><span lang="en">BiGi Data is a <a href="https://freefocus.org">Free Focus</a> program.</span><span lang="nl">BiGi Data is een programma van <a href="https://freefocus.org">Free Focus</a>.</span></div><div><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><span class="separator"> &middot; </span><a href="../credits.html"><span lang="en">Image credits</span><span lang="nl">Fotoverantwoording</span></a></div></div></div>
+<script data-goatcounter="https://johnsanterre.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

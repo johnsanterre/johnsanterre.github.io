@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Skills: Week 7 - BiGi Data">
+<meta name="robots" content="noindex, nofollow">
+<title data-en="Skills: Week 7 - BiGi Data" data-nl="Vaardigheden: Week 7 - BiGi Data">Skills: Week 7 - BiGi Data</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;650;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/lang.js"></script>
+</head>
+<body>
+<header class="nav-header"><div class="container">
+<a href="../index.html" class="site-title"><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><polygon fill="#ecc81d" points="50,4 61,38 97,38 68,59 79,94 50,73 21,94 32,59 3,38 39,38"/></svg>BiGi Data</a>
+<nav class="nav-links"><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a>
+<button id="lang-btn" class="lang-btn" type="button">Nederlands</button></nav>
+</div></header>
+<div class="stripes"></div>
+<section class="page-hero" style="background-image:url(../assets/img/forest.jpg)"><div class="container">
+<nav class="breadcrumb"><a href="../index.html"><span lang="en">Home</span><span lang="nl">Home</span></a><span class="separator">/</span><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a><span class="separator">/</span><a href="index.html"><span lang="en">Week 7</span><span lang="nl">Week 7</span></a><span class="separator">/</span><span><span lang="en">Skills</span><span lang="nl">Vaardigheden</span></span></nav>
+<h1 lang="en">Skills, week 7: joining two tables</h1>
+<h1 lang="nl">Vaardigheden, week 7: twee tabellen koppelen</h1>
+
+    <p lang="en" class="muted">About 10 hours across the week, at your own pace.</p>
+<p lang="nl" class="muted">Ongeveer 10 uur verspreid over de week, in je eigen tempo.</p>
+
+
+    </div></section>
+<main><div class="container">
+<h2 lang="en">What you will be able to do</h2>
+<h2 lang="nl">Wat je na deze week kunt</h2>
+
+    <ul>
+<li><span lang="en">Describe what one row of a table means, and test whether its key is unique.</span><span lang="nl">Beschrijven wat één rij van een tabel betekent, en testen of de sleutel uniek is.</span></li>
+<li><span lang="en">Join two tables in pandas with an inner, left or outer join, and choose the kind from the question.</span><span lang="nl">Twee tabellen koppelen in pandas met een inner, left of outer join, en de soort kiezen op basis van de vraag.</span></li>
+<li><span lang="en">Predict how many rows a join should return, and explain any difference from the count.</span><span lang="nl">Voorspellen hoeveel rijen een koppeling hoort te geven, en elk verschil met de telling verklaren.</span></li>
+<li><span lang="en">Find the rows a join dropped or repeated, using an indicator column and a validation check.</span><span lang="nl">De rijen vinden die een koppeling liet vallen of herhaalde, met een indicatorkolom en een validatiecontrole.</span></li>
+<li><span lang="en">Repair keys that fail to match because of their type, a stray space or capital letters.</span><span lang="nl">Sleutels herstellen die niet passen door hun type, een losse spatie of hoofdletters.</span></li>
+<li><span lang="en">Reshape a wide table into a long one before joining it.</span><span lang="nl">Een brede tabel omzetten naar een lange voordat je hem koppelt.</span></li>
+</ul>
+
+
+    <h2 lang="en">Why one table is rarely enough</h2>
+<h2 lang="nl">Waarom één tabel zelden genoeg is</h2>
+
+    <p lang="en">Organisations record different things in different tables. A list of shops changes rarely, sales arrive every month, and prices change when someone decides to change them. Each kind of record has its own table, so that nobody types the same fact many times.</p>
+<p lang="nl">Organisaties leggen verschillende dingen vast in verschillende tabellen. Een lijst met winkels verandert zelden, verkoopcijfers komen elke maand binnen, en prijzen veranderen als iemand besluit ze te veranderen. Elke soort gegevens heeft een eigen tabel, zodat niemand hetzelfde feit vaak hoeft te typen.</p>
+
+    <p lang="en">The price of that order is that most questions need two tables at once. Revenue needs sales and prices. Sales by district need sales and the list of shops. A join brings two tables together by matching the rows that share a key.</p>
+<p lang="nl">De prijs van die ordening is dat de meeste vragen twee tabellen tegelijk nodig hebben. Omzet vraagt om verkoop en prijzen. Verkoop per wijk vraagt om verkoop en de lijst met winkels. Een koppeling brengt twee tabellen samen door de rijen met dezelfde sleutel bij elkaar te zoeken.</p>
+
+
+    <h2 lang="en">What one row means</h2>
+<h2 lang="nl">Wat één rij betekent</h2>
+
+    <p lang="en">Before you join, say in words what one row of each table describes. This is the grain of the table. In a list of shops, one row is a shop. In monthly sales, one row is a shop in a month. The key is the column, or the set of columns, that names that thing.</p>
+<p lang="nl">Zeg vóór je koppelt in woorden wat één rij van elke tabel beschrijft. Dat is de granulariteit van de tabel. In een lijst met winkels is één rij een winkel. In de maandelijkse verkoop is één rij een winkel in een maand. De sleutel is de kolom, of de groep kolommen, die dat ding benoemt.</p>
+
+    <p lang="en">A table can look clean and still repeat a key, so test every key that should be unique. The notebook tests each key with <code>is_unique</code> and <code>duplicated</code> before the first join.</p>
+<p lang="nl">Een tabel kan er netjes uitzien en toch een sleutel herhalen, dus test elke sleutel die uniek hoort te zijn. Het notebook test elke sleutel met <code>is_unique</code> en <code>duplicated</code> vóór de eerste koppeling.</p>
+
+
+    <h2 lang="en">Four kinds of join</h2>
+<h2 lang="nl">Vier soorten koppelingen</h2>
+
+    <ul>
+<li><span lang="en"><b>An inner join keeps only the rows whose key is in both tables.</b> It is the kind pandas uses when you do not ask for another.</span><span lang="nl"><b>Een inner join houdt alleen de rijen waarvan de sleutel in beide tabellen staat.</b> Pandas gebruikt deze soort als je niet om een andere vraagt.</span></li>
+<li><span lang="en"><b>A left join keeps every row of the left table.</b> Where the right table has no match, the new columns stay blank.</span><span lang="nl"><b>Een left join houdt elke rij van de linkertabel.</b> Waar de rechtertabel geen match heeft, blijven de nieuwe kolommen leeg.</span></li>
+<li><span lang="en"><b>A right join keeps every row of the right table.</b> It is a left join with the tables swapped.</span><span lang="nl"><b>Een right join houdt elke rij van de rechtertabel.</b> Het is een left join met de tabellen omgewisseld.</span></li>
+<li><span lang="en"><b>An outer join keeps every row of both tables.</b> It shows at once what each table has that the other lacks.</span><span lang="nl"><b>Een outer join houdt elke rij van beide tabellen.</b> Die laat in één keer zien wat elke tabel heeft en de andere mist.</span></li>
+</ul>
+
+    <p lang="en">The question decides the kind. If every sale must count, the join must keep every sales row, which means a left join from the sales table. An inner join suits a question only when the rows without a partner should be dropped. Check which rows those are before you use one.</p>
+<p lang="nl">De vraag bepaalt de soort. Als elke verkoop moet meetellen, moet de koppeling elke verkooprij houden, en dat betekent een left join vanuit de verkooptabel. Een inner join past alleen bij een vraag als de rijen zonder partner weg moeten, en je hebt gecontroleerd welke rijen dat zijn.</p>
+
+
+    <h2 lang="en">Count the rows before and after</h2>
+<h2 lang="nl">Tel de rijen vóór en na</h2>
+
+    <p lang="en">A join can lose rows, keep them or multiply them. It does all three without a warning. The defence is a habit: predict the number of rows, run the join and compare. Three rules make the prediction easy.</p>
+<p lang="nl">Een koppeling kan rijen verliezen, houden of vermenigvuldigen, en doet alle drie zonder waarschuwing. De verdediging is een gewoonte: voorspel het aantal rijen, voer de koppeling uit en vergelijk. Drie regels maken de voorspelling makkelijk.</p>
+
+    <ul>
+<li><span lang="en">A left join on a key that appears once in the right table returns exactly as many rows as the left table.</span><span lang="nl">Een left join op een sleutel die één keer in de rechtertabel staat, geeft precies evenveel rijen als de linkertabel.</span></li>
+<li><span lang="en">Fewer rows than predicted means that some keys found no partner.</span><span lang="nl">Minder rijen dan voorspeld betekent dat sommige sleutels geen partner vonden.</span></li>
+<li><span lang="en">More rows than predicted means that a key appears more than once on the right.</span><span lang="nl">Meer rijen dan voorspeld betekent dat een sleutel rechts meer dan één keer voorkomt.</span></li>
+</ul>
+
+    <p lang="en">Two options in pandas support the habit. <code>indicator=True</code> labels every row by where it came from. <code>validate</code> stops the join when a key that should be unique turns out to repeat. In the notebook, a second June price turns 48 sales rows into 52, and <code>validate</code> catches it.</p>
+<p lang="nl">Twee opties in pandas ondersteunen de gewoonte. <code>indicator=True</code> geeft elke rij een label met de herkomst. <code>validate</code> stopt de koppeling als een sleutel die uniek hoort te zijn, toch herhaald wordt. In het notebook maakt een tweede prijs voor juni van 48 verkooprijen er 52, en <code>validate</code> vangt dat op.</p>
+
+
+    <h2 lang="en">Keys that look alike but do not match</h2>
+<h2 lang="nl">Sleutels die op elkaar lijken maar niet passen</h2>
+
+    <p lang="en">A join compares keys exactly, character by character. A code with a space at the end, a code in lower case and a number stored as text all look right to a person, and all of them fail to match. Clean the keys in the same way in both tables before the join.</p>
+<p lang="nl">Een koppeling vergelijkt sleutels exact, teken voor teken. Een code met een spatie aan het eind, een code in kleine letters en een getal dat als tekst is opgeslagen, zien er voor een mens goed uit, en geen van alle past. Maak de sleutels in beide tabellen op dezelfde manier schoon vóór de koppeling.</p>
+
+    <p lang="en">pandas refuses to join a text key to a number key, and its error message suggests <code>pd.concat</code>. That advice does harm here. <code>concat</code> places tables side by side by row position and never looks at the key, so a row can end up next to the values of another row. Convert the text to a number and join again.</p>
+<p lang="nl">pandas weigert een tekstsleutel aan een getalsleutel te koppelen, en de foutmelding stelt <code>pd.concat</code> voor. Dat advies doet hier schade. <code>concat</code> zet tabellen naast elkaar op rijpositie en kijkt nooit naar de sleutel, dus een rij kan naast de waarden van een andere rij belanden. Zet de tekst om naar een getal en koppel opnieuw.</p>
+
+
+    <h2 lang="en">Wide and long tables</h2>
+<h2 lang="nl">Brede en lange tabellen</h2>
+
+    <p lang="en">The same numbers can be laid out in two ways. The layout decides which jobs are cheap. A wide table has one row per thing and one column per month or year, which suits a person reading a page. A long table has one row per thing per month or year, which suits joining and computing.</p>
+<p lang="nl">Dezelfde getallen kun je op twee manieren ordenen, en de vorm bepaalt welke klussen goedkoop zijn. Een brede tabel heeft één rij per ding en één kolom per maand of jaar, en dat past bij een mens die een pagina leest. Een lange tabel heeft één rij per ding per maand of jaar, en dat past bij koppelen en rekenen.</p>
+
+    <p lang="en">Many downloads arrive wide. The method <code>melt</code> turns a wide table into a long one, and the old column names become values in a new column. Convert that new column before a join on a number key, because column names are text and so the new column is text too.</p>
+<p lang="nl">Veel downloads komen breed binnen. De methode <code>melt</code> maakt van een brede tabel een lange, en de oude kolomnamen worden waarden in een nieuwe kolom. Kolomnamen zijn tekst, dus die nieuwe kolom is ook tekst, en die moet je omzetten vóór een koppeling op een getalsleutel.</p>
+
+
+    <h2 lang="en">When the AI is wrong</h2>
+<h2 lang="nl">Wanneer de AI zich vergist</h2>
+
+    <div class="panel warn">
+    <p lang="en">In the notebook, an AI assistant was asked to join a bakery's sales to its prices and report the total revenue for the year. Its code ran without an error. It printed a total of 88,840.30.</p>
+<p lang="nl">In het notebook werd een AI-assistent gevraagd de verkoop van een bakkerij aan de prijzen te koppelen en de totale omzet over het jaar te geven. De code draaide zonder fout. Hij gaf een totaal van 88.840,30.</p>
+
+    <p lang="en">The sales table had 48 rows before the join. It had 44 rows after the join. The price table had no row for December, and the inner join that pandas uses by default dropped the four December rows without a warning. The total covers 11 months. It leaves out the 3,629 loaves sold in December.</p>
+<p lang="nl">De verkooptabel had 48 rijen vóór de koppeling. Na de koppeling had hij 44 rijen. De prijstabel had geen rij voor december, en de inner join die pandas standaard gebruikt, liet de vier decemberrijen zonder waarschuwing vallen. Het totaal beslaat 11 maanden. Het laat de 3.629 broden weg die in december zijn verkocht.</p>
+
+    <p lang="en">The error is quiet, because nothing crashes and the number looks reasonable. One check would have caught it: count the rows before and after the join. A left join with an indicator keeps every sales row and shows which ones found no price.</p>
+<p lang="nl">De fout is stil, want er loopt niets vast en het getal ziet er redelijk uit. Eén controle had hem gevonden: tel de rijen vóór en na de koppeling. Een left join met een indicator houdt elke verkooprij en laat zien welke rijen geen prijs vonden.</p>
+
+    </div>
+
+    <h2 lang="en">Practise in the notebook</h2>
+<h2 lang="nl">Oefen in het notebook</h2>
+
+    <p lang="en">The notebook works through every idea above with a made-up bakery. It ends with two tasks that you complete with your AI assistant, and a CHECK cell after each task tells you when your answer is right.</p>
+<p lang="nl">Het notebook werkt alle ideeën hierboven uit met een verzonnen bakkerij. Het eindigt met twee opdrachten die je samen met je AI-assistent maakt, en na elke opdracht vertelt een CHECK-cel je wanneer je antwoord klopt.</p>
+
+    <p><a class="button" lang="en" href="https://colab.research.google.com/github/johnsanterre/bigi-data-notebooks/blob/main/notebooks/skills-07-en.ipynb" target="_blank" rel="noopener">Open in Colab</a><a class="button" lang="nl" href="https://colab.research.google.com/github/johnsanterre/bigi-data-notebooks/blob/main/notebooks/skills-07-nl.ipynb" target="_blank" rel="noopener">Openen in Colab</a><a class="button secondary" lang="en" href="../notebooks/skills-07-en.ipynb" download>Download</a><a class="button secondary" lang="nl" href="../notebooks/skills-07-nl.ipynb" download>Downloaden</a></p>
+
+
+    <h2 lang="en">Check yourself</h2>
+<h2 lang="nl">Test jezelf</h2>
+
+    <h3><span lang="en">Question</span><span lang="nl">Vraag</span> 1</h3>
+<p lang="en">The bakery's sales table has 48 rows, one per shop per month. The price table has no row for December. How many rows does an inner join on the month return?</p>
+<p lang="nl">De verkooptabel van de bakkerij heeft 48 rijen, één per winkel per maand. De prijstabel heeft geen rij voor december. Hoeveel rijen geeft een inner join op de maand?</p>
+<ol class="options" type="a"><li><span lang="en">48</span><span lang="nl">48</span></li><li><span lang="en">44</span><span lang="nl">44</span></li><li><span lang="en">12</span><span lang="nl">12</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">44 is right. An inner join keeps only the rows whose month is in both tables, so the four December rows disappear without a warning.</p>
+<p lang="nl">44 klopt. Een inner join houdt alleen de rijen waarvan de maand in beide tabellen staat, dus de vier decemberrijen verdwijnen zonder waarschuwing.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 2</h3>
+<p lang="en">Which kind of join keeps every row of the left table and adds nothing else?</p>
+<p lang="nl">Welke soort koppeling houdt elke rij van de linkertabel en voegt verder niets toe?</p>
+<ol class="options" type="a"><li><span lang="en">An inner join.</span><span lang="nl">Een inner join.</span></li><li><span lang="en">A left join.</span><span lang="nl">Een left join.</span></li><li><span lang="en">An outer join.</span><span lang="nl">Een outer join.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The left join is right. It keeps every row of the left table and leaves blanks where the right table has no match. An outer join also keeps those rows. It adds the unmatched rows of the right table as well.</p>
+<p lang="nl">De left join klopt. Die houdt elke rij van de linkertabel en laat lege plekken waar de rechtertabel geen match heeft. Een outer join houdt die rijen ook, en voegt daarbij de rijen van de rechtertabel zonder match toe.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 3</h3>
+<p lang="en">A left join of the bakery's 48 sales rows to a price table returns 52 rows. What is the most likely cause?</p>
+<p lang="nl">Een left join van de 48 verkooprijen van de bakkerij aan een prijstabel geeft 52 rijen. Wat is de meest waarschijnlijke oorzaak?</p>
+<ol class="options" type="a"><li><span lang="en">A month appears more than once in the price table.</span><span lang="nl">Een maand staat meer dan één keer in de prijstabel.</span></li><li><span lang="en">The join dropped some rows.</span><span lang="nl">De koppeling liet rijen vallen.</span></li><li><span lang="en">The sales table has missing values.</span><span lang="nl">De verkooptabel heeft ontbrekende waarden.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The first answer is right. A left join on a key that appears once on the right cannot add rows, so extra rows mean a repeated key. In the notebook a second June price caused exactly this.</p>
+<p lang="nl">Het eerste antwoord klopt. Een left join op een sleutel die rechts één keer voorkomt, kan geen rijen toevoegen, dus extra rijen betekenen een herhaalde sleutel. In het notebook veroorzaakte een tweede prijs voor juni precies dit.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 4</h3>
+<p lang="en">pandas refuses a join because the year is a number in one table and text in the other, and its message suggests pd.concat. What should you do?</p>
+<p lang="nl">pandas weigert een koppeling omdat het jaar in de ene tabel een getal is en in de andere tekst, en de melding stelt pd.concat voor. Wat doe je?</p>
+<ol class="options" type="a"><li><span lang="en">Use pd.concat, as the message says.</span><span lang="nl">pd.concat gebruiken, zoals de melding zegt.</span></li><li><span lang="en">Convert the text year to a number, then join on the year.</span><span lang="nl">Het tekstjaar omzetten naar een getal en dan koppelen op het jaar.</span></li><li><span lang="en">Drop the year column and join the tables by row order.</span><span lang="nl">De jaarkolom weglaten en de tabellen koppelen op rijvolgorde.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The second answer is right. concat places rows side by side by position and never looks at the year, so values can end up next to the wrong year. Converting the type keeps the join on the key.</p>
+<p lang="nl">Het tweede antwoord klopt. concat zet rijen naast elkaar op positie en kijkt nooit naar het jaar, dus waarden kunnen naast het verkeerde jaar belanden. Door het type om te zetten blijft de koppeling op de sleutel.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 5</h3>
+<p lang="en">A downloaded table has one row and a column for each year. Why does it need melt before a join on the year?</p>
+<p lang="nl">Een gedownloade tabel heeft één rij en een kolom voor elk jaar. Waarom is melt nodig voordat je op het jaar koppelt?</p>
+<ol class="options" type="a"><li><span lang="en">A join needs the years as values in a column, and here they are column names.</span><span lang="nl">Een koppeling heeft de jaren nodig als waarden in een kolom, en hier zijn het kolomnamen.</span></li><li><span lang="en">Wide tables always contain errors.</span><span lang="nl">Brede tabellen bevatten altijd fouten.</span></li><li><span lang="en">melt removes the missing values.</span><span lang="nl">melt verwijdert de ontbrekende waarden.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The first answer is right. After melt the years are values in a column. They are still text, because column names are text, so convert them before the join.</p>
+<p lang="nl">Het eerste antwoord klopt. Na melt zijn de jaren waarden in een kolom, maar het is tekst, want kolomnamen zijn tekst. Zet ze om vóór de koppeling.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 6</h3>
+<p lang="en">What does validate="many_to_one" tell pandas?</p>
+<p lang="nl">Wat vertelt validate="many_to_one" aan pandas?</p>
+<ol class="options" type="a"><li><span lang="en">Many rows on the left may share a key, and each key appears at most once on the right.</span><span lang="nl">Veel rijen links mogen een sleutel delen, en elke sleutel komt rechts hoogstens één keer voor.</span></li><li><span lang="en">The join must return a single row.</span><span lang="nl">De koppeling moet één rij opleveren.</span></li><li><span lang="en">Missing values on the right become zero.</span><span lang="nl">Ontbrekende waarden rechts worden nul.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The first answer is right. When the right table breaks that promise, pandas stops with an error instead of multiplying rows.</p>
+<p lang="nl">Het eerste antwoord klopt. Als de rechtertabel die belofte breekt, stopt pandas met een foutmelding in plaats van rijen te vermenigvuldigen.</p>
+</details>
+
+    <footer><p><span lang="en"><a href="index.html">Back to week 7</a><span class="separator">|</span><a href="../materials.html">All materials</a></span><span lang="nl"><a href="index.html">Terug naar week 7</a><span class="separator">|</span><a href="../materials.html">Al het lesmateriaal</a></span></p></footer>
+</div></main>
+<div class="site-footer"><div class="container"><div><span lang="en">BiGi Data is a <a href="https://freefocus.org">Free Focus</a> program.</span><span lang="nl">BiGi Data is een programma van <a href="https://freefocus.org">Free Focus</a>.</span></div><div><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><span class="separator"> &middot; </span><a href="../credits.html"><span lang="en">Image credits</span><span lang="nl">Fotoverantwoording</span></a></div></div></div>
+<script data-goatcounter="https://johnsanterre.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

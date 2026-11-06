@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Project 8: Week 8 - BiGi Data">
+<meta name="robots" content="noindex, nofollow">
+<title data-en="Project 8: Week 8 - BiGi Data" data-nl="Project 8: Week 8 - BiGi Data">Project 8: Week 8 - BiGi Data</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;650;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/lang.js"></script>
+</head>
+<body>
+<header class="nav-header"><div class="container">
+<a href="../index.html" class="site-title"><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><polygon fill="#ecc81d" points="50,4 61,38 97,38 68,59 79,94 50,73 21,94 32,59 3,38 39,38"/></svg>BiGi Data</a>
+<nav class="nav-links"><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a>
+<button id="lang-btn" class="lang-btn" type="button">Nederlands</button></nav>
+</div></header>
+<div class="stripes"></div>
+<section class="page-hero" style="background-image:url(../assets/img/market.jpg)"><div class="container">
+<nav class="breadcrumb"><a href="../index.html"><span lang="en">Home</span><span lang="nl">Home</span></a><span class="separator">/</span><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a><span class="separator">/</span><a href="index.html"><span lang="en">Week 8</span><span lang="nl">Week 8</span></a><span class="separator">/</span><span><span lang="en">Project 8</span><span lang="nl">Project 8</span></span></nav>
+<h1 lang="en">Project 8: how fast did Suriname come online?</h1>
+<h1 lang="nl">Project 8: hoe snel kwam Suriname online?</h1>
+
+    <p lang="en" class="muted">Two World Bank series, one question, one week. This week the answer is published as a repository on GitHub.</p>
+<p lang="nl" class="muted">Twee reeksen van de Wereldbank, één vraag, één week. Deze week wordt het antwoord gepubliceerd als repository op GitHub.</p>
+
+
+    </div></section>
+<main><div class="container">
+<h2 lang="en">The question</h2>
+<h2 lang="nl">De vraag</h2>
+
+    <p lang="en" class="lead">How fast did people in Suriname start to use the internet and mobile phones between 1995 and 2024? In which year did more than half of the population first use the internet, and how fast did that share grow?</p>
+<p lang="nl" class="lead">Hoe snel begonnen mensen in Suriname tussen 1995 en 2024 internet en mobiele telefoons te gebruiken? In welk jaar gebruikte voor het eerst meer dan de helft van de bevolking internet, en hoe snel groeide dat aandeel?</p>
+
+
+    <h2 lang="en">Who it is for</h2>
+<h2 lang="nl">Voor wie het is</h2>
+
+    <p lang="en">The audience is an official at a ministry that plans to move a public service online, such as an application form or an appointment booking. The official gets a one-page note that says how many people could reach the service today, how fast that number has grown, and what the data cannot say, such as who is still offline. The team's repository lets the official's own analysts check every number in the note.</p>
+<p lang="nl">Het publiek is een ambtenaar van een ministerie dat een openbare dienst online wil brengen, zoals een aanvraagformulier of het maken van een afspraak. De ambtenaar krijgt een notitie van één pagina die zegt hoeveel mensen de dienst vandaag kunnen bereiken, hoe snel dat aantal is gegroeid, en wat de data niet kan zeggen, zoals wie nog offline is. Met de repository van het team kunnen de eigen analisten van de ambtenaar elk getal in de notitie controleren.</p>
+
+
+    <h2 lang="en">The data</h2>
+<h2 lang="nl">De data</h2>
+
+    <p lang="en">The World Bank publishes two series for Suriname, both collected by the International Telecommunication Union (ITU). <a href="https://data.worldbank.org/indicator/IT.NET.USER.ZS?locations=SR">Individuals using the internet</a> (indicator IT.NET.USER.ZS) counts the people who used the internet in the last three months, as a percentage of the population. <a href="https://data.worldbank.org/indicator/IT.CEL.SETS.P2?locations=SR">Mobile cellular subscriptions</a> (indicator IT.CEL.SETS.P2) counts postpaid subscriptions and prepaid accounts used in the last three months, per 100 people. The World Bank last updated both series on 8 October 2026.</p>
+<p lang="nl">De Wereldbank publiceert twee reeksen voor Suriname, allebei verzameld door de Internationale Telecommunicatie-unie (ITU). <a href="https://data.worldbank.org/indicator/IT.NET.USER.ZS?locations=SR">Personen die internet gebruiken</a> (indicator IT.NET.USER.ZS) telt de mensen die in de afgelopen drie maanden internet gebruikten, als percentage van de bevolking. <a href="https://data.worldbank.org/indicator/IT.CEL.SETS.P2?locations=SR">Mobiele abonnementen</a> (indicator IT.CEL.SETS.P2) telt abonnementen achteraf en prepaidaccounts die in de afgelopen drie maanden zijn gebruikt, per 100 inwoners. De Wereldbank heeft beide reeksen voor het laatst bijgewerkt op 8 oktober 2026.</p>
+
+    <p lang="en">The course table holds 60 rows. Each series has one row for each year from 1995 to 2024, and a year with no value keeps its row with an empty value. A subscription counts an account, and one person can hold several.</p>
+<p lang="nl">De cursustabel heeft 60 rijen. Elke reeks heeft één rij voor elk jaar van 1995 tot 2024, en een jaar zonder waarde houdt zijn rij met een lege waarde. Een abonnement telt een account, en één persoon kan er meerdere hebben.</p>
+
+    <p><a class="button secondary" href="../data/week08-online.csv" download><span lang="en">Download the table (CSV)</span><span lang="nl">Download de tabel (CSV)</span></a></p>
+
+
+    <h2 lang="en">Your team</h2>
+<h2 lang="nl">Je team</h2>
+
+    <p lang="en">Teams of four hold the four roles, which rotate every week. This week the history shows who did what, because every role also commits its own work to the team repository.</p>
+<p lang="nl">Teams van vier verdelen de vier rollen, die elke week wisselen. Deze week commit elke rol ook zijn eigen werk in de repository van het team, zodat de geschiedenis laat zien wie wat deed.</p>
+
+    <ul>
+<li><span lang="en"><b>The builder</b> sets up the repository, adds the other three as collaborators, and commits the notebook.</span><span lang="nl"><b>De bouwer</b> zet de repository op, voegt de andere drie toe als collaborators, en commit het notebook.</span></li>
+<li><span lang="en"><b>The data checker</b> checks each number in the README and the note against the notebook, and commits the data file.</span><span lang="nl"><b>De datacontroleur</b> controleert elk getal in de README en de notitie tegen het notebook, en commit het databestand.</span></li>
+<li><span lang="en"><b>The AI checker</b> keeps the AI log, tests every AI claim and every AI-suggested git command, and commits the log.</span><span lang="nl"><b>De AI-controleur</b> houdt het AI-logboek bij, toetst elke bewering van de AI en elke git-opdracht die de AI voorstelt, en commit het logboek.</span></li>
+<li><span lang="en"><b>The presenter</b> writes the README and the note with the team, commits them with the chart, and presents on Friday.</span><span lang="nl"><b>De presentator</b> schrijft de README en de notitie samen met het team, commit ze met de grafiek, en presenteert op vrijdag.</span></li>
+</ul>
+
+
+    <h2 lang="en">The tasks</h2>
+<h2 lang="nl">De opdrachten</h2>
+
+    <p lang="en">The starter notebook loads the data for you and holds ten tasks. Seven of them have a CHECK cell that tells you when the answer is right.</p>
+<p lang="nl">Het startnotebook laadt de data voor je en bevat tien opdrachten. Zeven ervan hebben een CHECK-cel die je vertelt wanneer het antwoord klopt.</p>
+
+    <ol>
+<li><span lang="en">Describe the table by its rows, its two series, its years and its missing values per series.</span><span lang="nl">Beschrijf de tabel aan de hand van de rijen, de twee reeksen, de jaren en de ontbrekende waarden per reeks.</span></li>
+<li><span lang="en">Reshape the table to one row per year, with one column for each series.</span><span lang="nl">Zet de tabel om naar één rij per jaar, met één kolom voor elke reeks.</span></li>
+<li><span lang="en">Chart both series by year, with the gaps left visible.</span><span lang="nl">Maak een grafiek van beide reeksen per jaar, met de gaten zichtbaar.</span></li>
+<li><span lang="en">Find the first year in which each series passed 50.</span><span lang="nl">Zoek het eerste jaar waarin elke reeks boven 50 kwam.</span></li>
+<li><span lang="en">Compute how fast the internet share grew, before and across the years with no value.</span><span lang="nl">Bereken hoe snel het aandeel internetgebruikers groeide, vóór en over de jaren zonder waarde.</span></li>
+<li><span lang="en">Find the largest one-year rise in internet use and the largest one-year fall in mobile subscriptions, comparing only neighbouring years.</span><span lang="nl">Zoek de grootste stijging van het internetgebruik in één jaar en de grootste daling van de mobiele abonnementen in één jaar, waarbij je alleen aangrenzende jaren vergelijkt.</span></li>
+<li><span lang="en">Test the AI's account of internet use against the table.</span><span lang="nl">Toets het verhaal van de AI over internetgebruik aan de tabel.</span></li>
+<li><span lang="en">Write the README.</span><span lang="nl">Schrijf de README.</span></li>
+<li><span lang="en">Write the one-page note for the ministry official.</span><span lang="nl">Schrijf de notitie van één pagina voor de ambtenaar van het ministerie.</span></li>
+<li><span lang="en">Put the work in the team repository, with commits from every member.</span><span lang="nl">Zet het werk in de repository van het team, met commits van elk lid.</span></li>
+</ol>
+
+    <p><a class="button" lang="en" href="https://colab.research.google.com/github/johnsanterre/bigi-data-notebooks/blob/main/notebooks/project-08-en.ipynb" target="_blank" rel="noopener">Open in Colab</a><a class="button" lang="nl" href="https://colab.research.google.com/github/johnsanterre/bigi-data-notebooks/blob/main/notebooks/project-08-nl.ipynb" target="_blank" rel="noopener">Openen in Colab</a><a class="button secondary" lang="en" href="../notebooks/project-08-en.ipynb" download>Download</a><a class="button secondary" lang="nl" href="../notebooks/project-08-nl.ipynb" download>Downloaden</a></p>
+
+
+    <h2 lang="en">The AI check this week</h2>
+<h2 lang="nl">De AI-controle van deze week</h2>
+
+    <div class="panel warn">
+    <p lang="en">Ask your AI assistant, without showing it the table, what share of people in Suriname used the internet in 2021, and in which year more than half of them first did. Write both answers in the AI log, and test them against tasks 4 and 7. If the assistant gives a number that the table does not hold, ask for its source, open the source, and record whether it says what the assistant claimed.</p>
+<p lang="nl">Vraag je AI-assistent, zonder hem de tabel te laten zien, welk deel van de mensen in Suriname in 2021 internet gebruikte, en in welk jaar voor het eerst meer dan de helft dat deed. Schrijf beide antwoorden in het AI-logboek en toets ze aan opdracht 4 en 7. Als de assistent een getal geeft dat niet in de tabel staat, vraag dan naar de bron, open die bron en noteer of daar staat wat de assistent beweerde.</p>
+
+    <p lang="en">Then ask the assistant for the commands that put your project folder on GitHub. Before anyone runs them, the AI checker compares each command with the skills lesson's list of commands to stop and read. A <code>git add .</code> with no <code>.gitignore</code>, a force push, or a token pasted into an address goes in the log as a finding.</p>
+<p lang="nl">Vraag de assistent daarna om de opdrachten die je projectmap op GitHub zetten. Voordat iemand ze uitvoert, vergelijkt de AI-controleur elke opdracht met de lijst uit de vaardighedenles van opdrachten waarbij je stopt en leest. Een <code>git add .</code> zonder <code>.gitignore</code>, een force push, of een token die in een adres is geplakt, komt als bevinding in het logboek.</p>
+
+    </div>
+
+    <h2 lang="en">What you hand in on Friday</h2>
+<h2 lang="nl">Wat je vrijdag inlevert</h2>
+
+    <ul>
+<li><span lang="en">The address of the team repository on GitHub.</span><span lang="nl">Het adres van de repository van het team op GitHub.</span></li>
+<li><span lang="en">The notebook in the repository, with every CHECK passing.</span><span lang="nl">Het notebook in de repository, met elke CHECK geslaagd.</span></li>
+<li><span lang="en">The data file and one chart, with the World Bank and the ITU named as the source.</span><span lang="nl">Het databestand en één grafiek, met de Wereldbank en de ITU als bron vermeld.</span></li>
+<li><span lang="en">The README, which another team will try to follow on Friday.</span><span lang="nl">De README, die een ander team op vrijdag zal proberen te volgen.</span></li>
+<li><span lang="en">The note for the ministry official, about 200 words, as <code>NOTE.md</code> in the repository.</span><span lang="nl">De notitie voor de ambtenaar van het ministerie, ongeveer 200 woorden, als <code>NOTE.md</code> in de repository.</span></li>
+<li><span lang="en">The AI log, as a file in the repository.</span><span lang="nl">Het AI-logboek, als bestand in de repository.</span></li>
+<li><span lang="en">A presentation of five minutes, followed by five minutes of questions.</span><span lang="nl">Een presentatie van vijf minuten, gevolgd door vijf minuten vragen.</span></li>
+</ul>
+
+
+    <h2 lang="en">How the work is judged</h2>
+<h2 lang="nl">Hoe het werk wordt beoordeeld</h2>
+
+    <table>
+    <tr><th><span lang="en">Criterion</span><span lang="nl">Criterium</span></th><th><span lang="en">Meets the standard when</span><span lang="nl">Voldoet als</span></th></tr>
+    <tr><td><span lang="en">Numbers</span><span lang="nl">Getallen</span></td><td><span lang="en">Every CHECK passes, and every number in the README and the note matches the notebook.</span><span lang="nl">Elke CHECK slaagt, en elk getal in de README en de notitie komt overeen met het notebook.</span></td></tr>
+    <tr><td><span lang="en">Chart</span><span lang="nl">Grafiek</span></td><td><span lang="en">Both series appear with their gaps, a title, labelled axes and a named source.</span><span lang="nl">Beide reeksen staan erin met hun gaten, een titel, benoemde assen en een vermelde bron.</span></td></tr>
+    <tr><td><span lang="en">Note</span><span lang="nl">Notitie</span></td><td><span lang="en">The ministry official could act on the note. It names the source, does not read subscriptions as people, and states one thing the data cannot tell them.</span><span lang="nl">De ambtenaar van het ministerie kan iets met de notitie. Ze noemt de bron, leest abonnementen niet als mensen, en zegt één ding dat de data niet kan vertellen.</span></td></tr>
+    <tr><td><span lang="en">README</span><span lang="nl">README</span></td><td><span lang="en">Another team ran the notebook and stated the findings from the README alone, without asking a question.</span><span lang="nl">Een ander team draaide het notebook en kon de bevindingen noemen met alleen de README, zonder een vraag te stellen.</span></td></tr>
+    <tr><td><span lang="en">History</span><span lang="nl">Geschiedenis</span></td><td><span lang="en">Every member made at least one commit, every subject says what changed, and no password, token or large file appears anywhere in the history.</span><span lang="nl">Elk lid maakte minstens één commit, elke onderwerpregel zegt wat er veranderde, en nergens in de geschiedenis staat een wachtwoord, token of groot bestand.</span></td></tr>
+    <tr><td><span lang="en">AI log</span><span lang="nl">AI-logboek</span></td><td><span lang="en">At least three AI claims are tested against the data, the claim about 2021 among them, and every AI-suggested git command is recorded with a verdict.</span><span lang="nl">Minstens drie beweringen van de AI zijn aan de data getoetst, waaronder de bewering over 2021, en elke git-opdracht die de AI voorstelde, staat met een oordeel in het logboek.</span></td></tr>
+    </table>
+    <footer><p><span lang="en"><a href="index.html">Back to week 8</a><span class="separator">|</span><a href="../materials.html">All materials</a></span><span lang="nl"><a href="index.html">Terug naar week 8</a><span class="separator">|</span><a href="../materials.html">Al het lesmateriaal</a></span></p></footer>
+</div></main>
+<div class="site-footer"><div class="container"><div><span lang="en">BiGi Data is a <a href="https://freefocus.org">Free Focus</a> program.</span><span lang="nl">BiGi Data is een programma van <a href="https://freefocus.org">Free Focus</a>.</span></div><div><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><span class="separator"> &middot; </span><a href="../credits.html"><span lang="en">Image credits</span><span lang="nl">Fotoverantwoording</span></a></div></div></div>
+<script data-goatcounter="https://johnsanterre.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

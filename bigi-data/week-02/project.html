@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Project 2: Week 2 - BiGi Data">
+<meta name="robots" content="noindex, nofollow">
+<title data-en="Project 2: Week 2 - BiGi Data" data-nl="Project 2: Week 2 - BiGi Data">Project 2: Week 2 - BiGi Data</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;650;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/lang.js"></script>
+</head>
+<body>
+<header class="nav-header"><div class="container">
+<a href="../index.html" class="site-title"><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><polygon fill="#ecc81d" points="50,4 61,38 97,38 68,59 79,94 50,73 21,94 32,59 3,38 39,38"/></svg>BiGi Data</a>
+<nav class="nav-links"><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a>
+<button id="lang-btn" class="lang-btn" type="button">Nederlands</button></nav>
+</div></header>
+<div class="stripes"></div>
+<section class="page-hero" style="background-image:url(../assets/img/market.jpg)"><div class="container">
+<nav class="breadcrumb"><a href="../index.html"><span lang="en">Home</span><span lang="nl">Home</span></a><span class="separator">/</span><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a><span class="separator">/</span><a href="index.html"><span lang="en">Week 2</span><span lang="nl">Week 2</span></a><span class="separator">/</span><span><span lang="en">Project 2</span><span lang="nl">Project 2</span></span></nav>
+<h1 lang="en">Project 2: what Suriname sells to the world</h1>
+<h1 lang="nl">Project 2: wat Suriname aan de wereld verkoopt</h1>
+
+    <p lang="en" class="muted">One dataset, one question, one week. The table is longer than last week's. It also holds rows at two levels.</p>
+<p lang="nl" class="muted">Eén dataset, één vraag, één week. De tabel is langer dan die van vorige week, en hij bevat rijen op twee niveaus.</p>
+
+
+    </div></section>
+<main><div class="container">
+<h2 lang="en">The question</h2>
+<h2 lang="nl">De vraag</h2>
+
+    <p lang="en" class="lead">What does Suriname sell to the world, and how much of it is gold? Which kinds of goods made up Suriname's exports from 2015 to 2025, and what share of the total came from chapter 71, the chapter that holds gold?</p>
+<p lang="nl" class="lead">Wat verkoopt Suriname aan de wereld, en hoeveel daarvan is goud? Uit welke soorten goederen bestond de export van Suriname van 2015 tot 2025, en welk deel van het totaal kwam uit hoofdstuk 71, het hoofdstuk waarin goud valt?</p>
+
+
+    <h2 lang="en">Who it is for</h2>
+<h2 lang="nl">Voor wie het is</h2>
+
+    <p lang="en">The work is for an official at a ministry who must judge how much Suriname's export earnings depend on one kind of good. A country that earns most of its foreign currency from one product feels every change in that product's price and output. By Friday, the team hands the official a brief of one page with two charts and numbers the team has checked: what Suriname sells, how large chapter 71 is, how its share has moved since 2015, and what the record cannot say.</p>
+<p lang="nl">Het werk is voor een ambtenaar van een ministerie die moet beoordelen hoe afhankelijk de exportinkomsten van Suriname zijn van één soort goederen. Een land dat het grootste deel van zijn buitenlandse valuta met één product verdient, voelt elke verandering in de prijs en de productie van dat product. Op vrijdag geeft het team de ambtenaar een notitie van één pagina met twee grafieken en getallen die het team heeft gecontroleerd: wat Suriname verkoopt, hoe groot hoofdstuk 71 is, hoe het aandeel ervan sinds 2015 is veranderd, en wat de registratie niet kan zeggen.</p>
+
+
+    <h2 lang="en">The data</h2>
+<h2 lang="nl">De data</h2>
+
+    <p lang="en">UN Comtrade, the trade database of the United Nations, publishes what each country reports it exported. The table holds Suriname's exports to the world in US dollars for each year from 2015 to 2025. It comes from the <a href="https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=740&period=2025&flowCode=X&partnerCode=0&cmdCode=TOTAL,AG2">UN Comtrade public preview</a> and was downloaded on 6 November 2026.</p>
+<p lang="nl">UN Comtrade, de handelsdatabank van de Verenigde Naties, publiceert wat elk land opgeeft te hebben uitgevoerd. De tabel bevat de export van Suriname naar de wereld in Amerikaanse dollars voor elk jaar van 2015 tot 2025. Hij komt uit de <a href="https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=740&period=2025&flowCode=X&partnerCode=0&cmdCode=TOTAL,AG2">openbare preview van UN Comtrade</a> en is gedownload op 6 november 2026.</p>
+
+    <p lang="en">The table groups goods by chapter of the Harmonized System, the code customs offices use to classify goods (<a href="https://comtradeapi.un.org/files/v1/app/reference/H3.json">the list of chapters</a>). Each year has one row for each chapter with exports, plus one row with the level <code>total</code> for all goods together.</p>
+<p lang="nl">De tabel deelt goederen in per hoofdstuk van het Geharmoniseerd Systeem, de code waarmee douanediensten goederen indelen (<a href="https://comtradeapi.un.org/files/v1/app/reference/H3.json">de lijst van hoofdstukken</a>). Elk jaar heeft één rij voor elk hoofdstuk met export, plus één rij met het niveau <code>total</code> voor alle goederen samen.</p>
+
+    <p lang="en">Gold sits in chapter 71, which also covers pearls, precious and semi-precious stones, other precious metals, jewellery and coins. The table cannot separate gold from the rest of the chapter, so every answer about gold in this project is an answer about chapter 71.</p>
+<p lang="nl">Goud valt in hoofdstuk 71, dat ook parels, edelstenen en halfedelstenen, andere edele metalen, sieraden en munten omvat. De tabel kan goud niet scheiden van de rest van het hoofdstuk, dus elk antwoord over goud in dit project is een antwoord over hoofdstuk 71.</p>
+
+    <p lang="en">The table starts in 2015. <a href="https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=740&period=2014&flowCode=X&partnerCode=0&cmdCode=TOTAL,AG2">For 2014</a> and the years before, the record puts most of Suriname's exports under chapter 99, goods not specified by kind. Those years therefore cannot show gold.</p>
+<p lang="nl">De tabel begint in 2015. <a href="https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=740&period=2014&flowCode=X&partnerCode=0&cmdCode=TOTAL,AG2">Voor 2014</a> en de jaren daarvoor zet de registratie het grootste deel van de export van Suriname onder hoofdstuk 99, goederen die niet naar soort zijn gespecificeerd, dus die jaren kunnen goud niet laten zien.</p>
+
+    <p><a class="button secondary" href="../data/week02-suriname-exports.csv" download><span lang="en">Download the table (CSV)</span><span lang="nl">Download de tabel (CSV)</span></a></p>
+
+
+    <h2 lang="en">Your team</h2>
+<h2 lang="nl">Je team</h2>
+
+    <p lang="en">Teams of four hold the four roles, which rotate every week. This week, the data checker has the most important job.</p>
+<p lang="nl">Teams van vier verdelen de vier rollen, die elke week wisselen. Deze week heeft de datacontroleur de belangrijkste taak.</p>
+
+    <ul>
+<li><span lang="en"><b>The builder</b> writes and runs the notebook with the AI assistant, and reads every line the AI returns before running it.</span><span lang="nl"><b>De bouwer</b> schrijft en draait het notebook met de AI-assistent, en leest elke regel die de AI teruggeeft voordat hij die uitvoert.</span></li>
+<li><span lang="en"><b>The data checker</b> confirms that every sum uses the right rows, and checks each number in the brief against the table.</span><span lang="nl"><b>De datacontroleur</b> controleert dat elke optelling de juiste rijen gebruikt, en controleert elk getal in de notitie tegen de tabel.</span></li>
+<li><span lang="en"><b>The AI checker</b> keeps the AI log, recording every claim and every piece of code the AI produces and whether the data supports it.</span><span lang="nl"><b>De AI-controleur</b> houdt het AI-logboek bij, met elke bewering en elk stuk code van de AI en of de data die steunt.</span></li>
+<li><span lang="en"><b>The presenter</b> presents the brief on Friday as the team would to the official, and answers the room's questions.</span><span lang="nl"><b>De presentator</b> presenteert de notitie op vrijdag zoals het team dat aan de ambtenaar zou doen, en beantwoordt de vragen uit de zaal.</span></li>
+</ul>
+
+
+    <h2 lang="en">The tasks</h2>
+<h2 lang="nl">De opdrachten</h2>
+
+    <p lang="en">The starter notebook loads the data for you and holds seven tasks. Five of them have a CHECK cell that tells you when the answer is right.</p>
+<p lang="nl">Het startnotebook laadt de data voor je en bevat zeven opdrachten. Vijf ervan hebben een CHECK-cel die je vertelt wanneer het antwoord klopt.</p>
+
+    <ol>
+<li><span lang="en">Describe the table by its rows, columns, years, levels and missing values.</span><span lang="nl">Beschrijf de tabel aan de hand van de rijen, kolommen, jaren, niveaus en ontbrekende waarden.</span></li>
+<li><span lang="en">Show that each year's chapters add up to that year's total row.</span><span lang="nl">Laat zien dat de hoofdstukken van elk jaar optellen tot de totaalrij van dat jaar.</span></li>
+<li><span lang="en">Chart total exports by year, in millions of US dollars.</span><span lang="nl">Maak een grafiek van de totale export per jaar, in miljoenen Amerikaanse dollars.</span></li>
+<li><span lang="en">Find the five chapters that sold the most in 2025, and the share of the total each one holds.</span><span lang="nl">Zoek de vijf hoofdstukken die in 2025 het meest verkochten, en het aandeel van elk in het totaal.</span></li>
+<li><span lang="en">Compute chapter 71's share of total exports in each year, chart it, and find the lowest and the highest year.</span><span lang="nl">Bereken het aandeel van hoofdstuk 71 in de totale export van elk jaar, maak er een grafiek van, en zoek het laagste en het hoogste jaar.</span></li>
+<li><span lang="en">Read the code an AI writes for task 5 before running it, and test what the AI claims about Suriname's exports against the table.</span><span lang="nl">Lees de code die een AI voor opdracht 5 schrijft voordat je hem uitvoert, en toets wat de AI beweert over de export van Suriname aan de tabel.</span></li>
+<li><span lang="en">Write the brief of about 200 words for the ministry official.</span><span lang="nl">Schrijf de notitie van ongeveer 200 woorden voor de ambtenaar.</span></li>
+</ol>
+
+    <p><a class="button" lang="en" href="https://colab.research.google.com/github/johnsanterre/bigi-data-notebooks/blob/main/notebooks/project-02-en.ipynb" target="_blank" rel="noopener">Open in Colab</a><a class="button" lang="nl" href="https://colab.research.google.com/github/johnsanterre/bigi-data-notebooks/blob/main/notebooks/project-02-nl.ipynb" target="_blank" rel="noopener">Openen in Colab</a><a class="button secondary" lang="en" href="../notebooks/project-02-en.ipynb" download>Download</a><a class="button secondary" lang="nl" href="../notebooks/project-02-nl.ipynb" download>Downloaden</a></p>
+
+
+    <h2 lang="en">Reading the AI's code</h2>
+<h2 lang="nl">De code van de AI lezen</h2>
+
+    <div class="panel warn">
+    <p lang="en">Show your AI assistant the column names and the first five rows of the table, and ask it for pandas code that prints chapter 71's share of Suriname's total exports for each year. Before anyone runs the code, the AI checker reads it aloud and writes three answers in the AI log: which rows it adds up to get each year's total, which column it divides by which, and what unit it prints. Then run it and compare its numbers with your answer to task 5.</p>
+<p lang="nl">Laat je AI-assistent de kolomnamen en de eerste vijf rijen van de tabel zien, en vraag om pandas-code die voor elk jaar het aandeel van hoofdstuk 71 in de totale export van Suriname afdrukt. Voordat iemand de code uitvoert, leest de AI-controleur hem hardop voor en schrijft drie antwoorden in het AI-logboek: welke rijen hij optelt om het totaal van elk jaar te krijgen, welke kolom hij door welke deelt, en in welke eenheid hij afdrukt. Voer hem daarna uit en vergelijk de getallen met je antwoord op opdracht 5.</p>
+
+    <p lang="en">Then ask it, without showing it the table, what Suriname's three largest exports were in 2025 and what share of its exports was gold. Test each part of the answer against tasks 4 and 5, and record which parts the table confirms, which parts it contradicts, and which parts it cannot check.</p>
+<p lang="nl">Vraag daarna, zonder de tabel te laten zien, wat de drie grootste exportproducten van Suriname in 2025 waren en welk deel van de export goud was. Toets elk onderdeel van het antwoord aan opdracht 4 en 5, en noteer welke delen de tabel bevestigt, welke delen hij tegenspreekt, en welke delen hij niet kan controleren.</p>
+
+    </div>
+
+    <h2 lang="en">What you hand in on Friday</h2>
+<h2 lang="nl">Wat je vrijdag inlevert</h2>
+
+    <ul>
+<li><span lang="en">The brief for the ministry official, about 200 words, which says what Suriname sells, how large chapter 71 is and one thing the record cannot say.</span><span lang="nl">De notitie voor de ambtenaar, ongeveer 200 woorden, die zegt wat Suriname verkoopt, hoe groot hoofdstuk 71 is en één ding dat de registratie niet kan zeggen.</span></li>
+<li><span lang="en">Two charts for the brief, total exports and chapter 71's share, each with UN Comtrade named as the source.</span><span lang="nl">Twee grafieken bij de notitie, de totale export en het aandeel van hoofdstuk 71, elk met UN Comtrade als bron vermeld.</span></li>
+<li><span lang="en">The notebook, with every CHECK passing.</span><span lang="nl">Het notebook, met elke CHECK geslaagd.</span></li>
+<li><span lang="en">The AI log, with the AI's code for task 5 and your three answers about it.</span><span lang="nl">Het AI-logboek, met de code van de AI voor opdracht 5 en jullie drie antwoorden daarover.</span></li>
+<li><span lang="en">A presentation of five minutes, given as the team would give it to the official, followed by five minutes of questions.</span><span lang="nl">Een presentatie van vijf minuten, zoals het team die aan de ambtenaar zou geven, gevolgd door vijf minuten vragen.</span></li>
+</ul>
+
+
+    <h2 lang="en">How the work is judged</h2>
+<h2 lang="nl">Hoe het werk wordt beoordeeld</h2>
+
+    <table>
+    <tr><th><span lang="en">Criterion</span><span lang="nl">Criterium</span></th><th><span lang="en">Meets the standard when</span><span lang="nl">Voldoet als</span></th></tr>
+    <tr><td><span lang="en">Brief</span><span lang="nl">Notitie</span></td><td><span lang="en">The official could act on the brief. It names the source, says that chapter 71 holds more than gold, and states one thing the data cannot tell.</span><span lang="nl">De ambtenaar kan iets met de notitie. Ze noemt de bron, zegt dat hoofdstuk 71 meer bevat dan goud, en noemt één ding dat de data niet kan vertellen.</span></td></tr>
+    <tr><td><span lang="en">Numbers</span><span lang="nl">Getallen</span></td><td><span lang="en">Every CHECK passes, and every number in the brief matches the notebook.</span><span lang="nl">Elke CHECK slaagt, en elk getal in de notitie komt overeen met het notebook.</span></td></tr>
+    <tr><td><span lang="en">Rows</span><span lang="nl">Rijen</span></td><td><span lang="en">Every sum uses either the chapter rows or the total row, and never both.</span><span lang="nl">Elke optelling gebruikt de hoofdstukrijen of de totaalrij, en nooit allebei.</span></td></tr>
+    <tr><td><span lang="en">Charts</span><span lang="nl">Grafieken</span></td><td><span lang="en">Each chart has a title, axes labelled with units, and a named source.</span><span lang="nl">Elke grafiek heeft een titel, assen met eenheden en een vermelde bron.</span></td></tr>
+    <tr><td><span lang="en">AI log</span><span lang="nl">AI-logboek</span></td><td><span lang="en">The AI's code for task 5 is in the log with the three answers, and at least three AI claims are tested against the data.</span><span lang="nl">De code van de AI voor opdracht 5 staat in het logboek met de drie antwoorden, en minstens drie beweringen van de AI zijn aan de data getoetst.</span></td></tr>
+    </table>
+    <footer><p><span lang="en"><a href="index.html">Back to week 2</a><span class="separator">|</span><a href="../materials.html">All materials</a></span><span lang="nl"><a href="index.html">Terug naar week 2</a><span class="separator">|</span><a href="../materials.html">Al het lesmateriaal</a></span></p></footer>
+</div></main>
+<div class="site-footer"><div class="container"><div><span lang="en">BiGi Data is a <a href="https://freefocus.org">Free Focus</a> program.</span><span lang="nl">BiGi Data is een programma van <a href="https://freefocus.org">Free Focus</a>.</span></div><div><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><span class="separator"> &middot; </span><a href="../credits.html"><span lang="en">Image credits</span><span lang="nl">Fotoverantwoording</span></a></div></div></div>
+<script data-goatcounter="https://johnsanterre.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

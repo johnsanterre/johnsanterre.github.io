@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Skills: Week 2 - BiGi Data">
+<meta name="robots" content="noindex, nofollow">
+<title data-en="Skills: Week 2 - BiGi Data" data-nl="Vaardigheden: Week 2 - BiGi Data">Skills: Week 2 - BiGi Data</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;650;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/lang.js"></script>
+</head>
+<body>
+<header class="nav-header"><div class="container">
+<a href="../index.html" class="site-title"><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><polygon fill="#ecc81d" points="50,4 61,38 97,38 68,59 79,94 50,73 21,94 32,59 3,38 39,38"/></svg>BiGi Data</a>
+<nav class="nav-links"><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a>
+<button id="lang-btn" class="lang-btn" type="button">Nederlands</button></nav>
+</div></header>
+<div class="stripes"></div>
+<section class="page-hero" style="background-image:url(../assets/img/forest.jpg)"><div class="container">
+<nav class="breadcrumb"><a href="../index.html"><span lang="en">Home</span><span lang="nl">Home</span></a><span class="separator">/</span><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a><span class="separator">/</span><a href="index.html"><span lang="en">Week 2</span><span lang="nl">Week 2</span></a><span class="separator">/</span><span><span lang="en">Skills</span><span lang="nl">Vaardigheden</span></span></nav>
+<h1 lang="en">Skills, week 2: reading code you did not write</h1>
+<h1 lang="nl">Vaardigheden, week 2: code lezen die je niet zelf schreef</h1>
+
+    <p lang="en" class="muted">About 10 hours across the week, at your own pace.</p>
+<p lang="nl" class="muted">Ongeveer 10 uur verspreid over de week, in je eigen tempo.</p>
+
+
+    </div></section>
+<main><div class="container">
+<h2 lang="en">What you will be able to do</h2>
+<h2 lang="nl">Wat je na deze week kunt</h2>
+
+    <ul>
+<li><span lang="en">Predict what a short program prints before you run it, and explain any difference between the prediction and the output.</span><span lang="nl">Voorspellen wat een kort programma afdrukt voordat je het uitvoert, en elk verschil tussen voorspelling en uitvoer verklaren.</span></li>
+<li><span lang="en">State the unit of every name in a calculation, and use the units to reject a formula that cannot be right.</span><span lang="nl">De eenheid van elke naam in een berekening noemen, en met die eenheden een formule afwijzen die niet kan kloppen.</span></li>
+<li><span lang="en">Sketch the shape of an unfamiliar program, meaning its inputs, its outputs and its main steps, without reading every line.</span><span lang="nl">De vorm schetsen van een onbekend programma, dus de invoer, de uitvoer en de hoofdstappen, zonder elke regel te lezen.</span></li>
+<li><span lang="en">Find a program's entry point and explain why a function does nothing until a line calls it.</span><span lang="nl">Het startpunt van een programma vinden en uitleggen waarom een functie niets doet totdat een regel hem aanroept.</span></li>
+<li><span lang="en">Trace one value from input to output through three functions, with printed values as evidence.</span><span lang="nl">Eén waarde van invoer tot uitvoer volgen door drie functies, met afgedrukte waarden als bewijs.</span></li>
+<li><span lang="en">Check an AI's shorter version of a loop against the long version on the same data.</span><span lang="nl">De kortere versie van een lus die een AI voorstelt, op dezelfde data controleren tegen de lange versie.</span></li>
+<li><span lang="en">Write a three-sentence note that the next reader of a program can start from.</span><span lang="nl">Een notitie van drie zinnen schrijven waarmee de volgende lezer van een programma kan beginnen.</span></li>
+</ul>
+
+
+    <h2 lang="en">Why reading comes before writing</h2>
+<h2 lang="nl">Waarom lezen vóór schrijven komt</h2>
+
+    <p lang="en">An AI assistant now writes most first drafts of code. The person at the keyboard no longer types every line from memory. That person must still read every line the assistant returns and say what it does, because last week showed that code can run and still give a wrong answer. Reading is how you tell working code from right code.</p>
+<p lang="nl">Een AI-assistent schrijft tegenwoordig de meeste eerste versies van code. Wie achter het toetsenbord zit, typt niet langer elke regel uit het hoofd. Die persoon moet nog steeds elke regel lezen die de assistent teruggeeft en kunnen zeggen wat hij doet, want vorige week bleek dat code kan draaien en toch een fout antwoord kan geven. Door te lezen onderscheid je code die werkt van code die klopt.</p>
+
+    <p lang="en">Reading code follows its own order. You read for the shape first, then you follow one value through the program, and then you check closely the few lines that carry the answer.</p>
+<p lang="nl">Code lezen volgt een eigen volgorde. Je leest eerst voor de vorm, dan volg je één waarde door het programma, en daarna controleer je nauwkeurig de paar regels die het antwoord dragen.</p>
+
+
+    <h2 lang="en">Predict, then run</h2>
+<h2 lang="nl">Eerst voorspellen, dan uitvoeren</h2>
+
+    <p lang="en">Before you run a cell, say what it will print. The prediction can be wrong, and it still does its work. A reader who predicted the output notices when the output is strange, while a reader who made no prediction accepts whatever appears. The notebook asks for a prediction before most cells, and one CHECK tests a prediction you write down.</p>
+<p lang="nl">Zeg wat een cel zal afdrukken voordat je hem uitvoert. De voorspelling mag fout zijn en doet toch haar werk. Een lezer die de uitvoer voorspelde, merkt het op wanneer de uitvoer vreemd is, terwijl een lezer zonder voorspelling alles accepteert wat verschijnt. Het notebook vraagt voor de meeste cellen om een voorspelling, en één CHECK toetst een voorspelling die je opschrijft.</p>
+
+
+    <h2 lang="en">Every name has a unit</h2>
+<h2 lang="nl">Elke naam heeft een eenheid</h2>
+
+    <p lang="en">A name in code, such as <code>kg</code> or <code>price_per_kg</code>, holds a number, and almost every number in real work has a unit. Write the unit next to each name as a comment, then multiply the units the way the code multiplies the values.</p>
+<p lang="nl">Een naam in code, zoals <code>kg</code> of <code>price_per_kg</code>, bevat een getal, en bijna elk getal in echt werk heeft een eenheid. Schrijf de eenheid als opmerking naast elke naam, en vermenigvuldig dan de eenheden zoals de code de waarden vermenigvuldigt.</p>
+
+    <ul>
+<li><span lang="en"><b>Kilograms per crate times dollars per kilogram gives dollars per crate.</b> The kilograms cancel and leave a unit with a clear meaning.</span><span lang="nl"><b>Kilo per krat maal dollar per kilo geeft dollar per krat.</b> De kilo's vallen weg, en het resultaat heeft een duidelijke betekenis.</span></li>
+<li><span lang="en"><b>Crates times dollars per kilogram gives a unit that means nothing.</b> A formula that produces it is wrong, however reasonable its output looks.</span><span lang="nl"><b>Kratten maal dollar per kilo geeft een eenheid die niets betekent.</b> Een formule die zo'n eenheid oplevert, is fout, hoe redelijk de uitkomst er ook uitziet.</span></li>
+</ul>
+
+
+    <h2 lang="en">Read for shape before detail</h2>
+<h2 lang="nl">Lees voor de vorm vóór de details</h2>
+
+    <p lang="en">A program can run to hundreds of lines, and line one is rarely the place to start. First answer three questions.</p>
+<p lang="nl">Een programma kan honderden regels lang zijn, en regel één is zelden de plek om te beginnen. Beantwoord eerst drie vragen.</p>
+
+    <ul>
+<li><span lang="en"><b>What goes in?</b> Find where the data comes from: a file, a web address, or numbers the program makes itself.</span><span lang="nl"><b>Wat gaat erin?</b> Zoek waar de data vandaan komt: een bestand, een webadres, of getallen die het programma zelf maakt.</span></li>
+<li><span lang="en"><b>What comes out?</b> Find what the program prints, saves or returns.</span><span lang="nl"><b>Wat komt eruit?</b> Zoek wat het programma afdrukt, opslaat of teruggeeft.</span></li>
+<li><span lang="en"><b>What are the main steps?</b> Find the functions, the named blocks that start with <code>def</code>. A well-named function states its purpose before you read its body.</span><span lang="nl"><b>Wat zijn de hoofdstappen?</b> Zoek de functies, de blokken met een naam die met <code>def</code> beginnen. Een functie met een goede naam zegt waarvoor hij dient voordat je de inhoud leest.</span></li>
+</ul>
+
+    <p lang="en">Then decide what you can leave unread. If your question is how many kilograms each farm delivered, the code that makes the practice data can wait, and the line that multiplies crates by kilograms per crate deserves a close look. A good reader chooses what to skip and can say why.</p>
+<p lang="nl">Beslis daarna wat je ongelezen kunt laten. Als je vraag is hoeveel kilo elke boerderij leverde, kan de code die de oefendata maakt wachten, en verdient de regel die kratten met kilo per krat vermenigvuldigt een nauwkeurige blik. Een goede lezer kiest wat hij overslaat en kan zeggen waarom.</p>
+
+
+    <h2 lang="en">Find where it starts</h2>
+<h2 lang="nl">Zoek waar het begint</h2>
+
+    <p lang="en">A <code>def</code> block defines a function and stops there. Python learns the steps and waits until a line calls the function by name. The entry point of a program is the first line that does real work, usually the first line outside every <code>def</code> block. In a notebook, the work happens in the order in which you run the cells.</p>
+<p lang="nl">Een <code>def</code>-blok definieert een functie en houdt daar op. Python leert de stappen en wacht tot een regel de functie bij naam aanroept. Het startpunt van een programma is de eerste regel die echt werk doet, meestal de eerste regel buiten elk <code>def</code>-blok. In een notebook gebeurt het werk in de volgorde waarin je de cellen uitvoert.</p>
+
+    <p lang="en">A nested call such as <code>add_weight(make_deliveries(seed=11))</code> reads from the inside out. The inner function runs first, and its result becomes the input of the outer one.</p>
+<p lang="nl">Een geneste aanroep zoals <code>add_weight(make_deliveries(seed=11))</code> lees je van binnen naar buiten. De binnenste functie draait eerst, en het resultaat wordt de invoer van de buitenste.</p>
+
+
+    <h2 lang="en">Follow one value</h2>
+<h2 lang="nl">Volg één waarde</h2>
+
+    <p lang="en">Reading for shape tells you what a program is meant to do. Following one value tells you what it does. Pick one row, such as one farm in one week, and print it after each step. In the notebook, one delivery of 22 crates becomes 264 kilograms after the second step, and the farm's total then matches the sum of its rows. A printed value at each step replaces a belief about the code with an observation.</p>
+<p lang="nl">Lezen voor de vorm vertelt je wat een programma hoort te doen. Eén waarde volgen vertelt je wat het doet. Kies één rij, zoals één boerderij in één week, en druk die na elke stap af. In het notebook wordt één levering van 22 kratten na de tweede stap 264 kilo, en daarna komt het totaal van de boerderij overeen met de som van haar rijen. Een afgedrukte waarde bij elke stap vervangt een vermoeden over de code door een waarneming.</p>
+
+
+    <h2 lang="en">Loops and running totals</h2>
+<h2 lang="nl">Lussen en lopende totalen</h2>
+
+    <p lang="en">A <code>for</code> loop repeats its indented lines once for each item in a list. A running total starts at zero and grows by one item on each turn. Loops show every step, which makes them easy to trace and slow to read. An AI assistant will often offer a shorter version in one line of pandas, and that version needs one check against the long one before you rely on it.</p>
+<p lang="nl">Een <code>for</code>-lus herhaalt de ingesprongen regels één keer voor elk item in een lijst. Een lopend totaal begint bij nul en groeit bij elke ronde met één item. Lussen tonen elke stap, waardoor ze makkelijk te volgen en traag te lezen zijn. Een AI-assistent biedt vaak een kortere versie aan in één regel pandas, en die versie heeft één controle tegen de lange versie nodig voordat je erop vertrouwt.</p>
+
+
+    <h2 lang="en">When the AI is wrong</h2>
+<h2 lang="nl">Wanneer de AI zich vergist</h2>
+
+    <div class="panel warn">
+    <p lang="en">In the notebook, an AI assistant was asked for each farm's revenue in dollars. Its code ran without an error and reported a total of 1,641.00 dollars. Revenue computed from kilograms comes to 21,241.80 dollars. The AI's answer was too small by a factor of 12.9.</p>
+<p lang="nl">In het notebook werd een AI-assistent gevraagd naar de omzet van elke boerderij in dollars. De code draaide zonder fout en gaf een totaal van 1.641,00 dollar. De omzet berekend uit kilo's komt uit op 21.241,80 dollar. Het antwoord van de AI was te klein met een factor 12,9.</p>
+
+    <p lang="en">The AI multiplied crates by the price per kilogram and named the result <code>revenue_usd</code>. Crates times dollars per kilogram leaves kilograms in the unit. The formula was wrong before it ran. The error also changed the ranking. The AI's code put farm D first, while farm C earned the most. Writing the unit of each column next to the formula catches this mistake without running anything.</p>
+<p lang="nl">De AI vermenigvuldigde kratten met de prijs per kilo en noemde het resultaat <code>revenue_usd</code>. Kratten maal dollar per kilo laat kilo's in de eenheid staan, dus de formule was al fout voordat hij draaide. De fout veranderde ook de rangorde. De code van de AI zette boerderij D bovenaan, terwijl boerderij C het meest verdiende. Wie de eenheid van elke kolom naast de formule schrijft, vindt deze fout zonder iets uit te voeren.</p>
+
+    </div>
+
+    <h2 lang="en">Write the note for the next reader</h2>
+<h2 lang="nl">Schrijf de notitie voor de volgende lezer</h2>
+
+    <p lang="en">Someone else will read every program you finish, and often that someone is you a month later. Three sentences get that reader started: what the program takes in, what it produces, and where it starts. A fourth sentence names any trap you found. The note takes a few minutes and spares the next reader the search you made.</p>
+<p lang="nl">Iemand anders leest elk programma dat je afmaakt, en vaak ben jij dat zelf een maand later. Drie zinnen helpen die lezer op weg: wat het programma binnenkrijgt, wat het oplevert, en waar het begint. Een vierde zin noemt elke valkuil die je vond. De notitie kost een paar minuten en bespaart de volgende lezer de zoektocht die jij maakte.</p>
+
+
+    <h2 lang="en">Practise in the notebook</h2>
+<h2 lang="nl">Oefen in het notebook</h2>
+
+    <p lang="en">The notebook works through every idea above with a made-up fruit cooperative. It holds four tasks you complete yourself, each ending in a CHECK cell, and they build on each other: a prediction, a trace, a unit calculation, and a check of the AI's shorter code. It closes with the note for the next reader.</p>
+<p lang="nl">Het notebook werkt elk idee hierboven uit met een verzonnen fruitcoöperatie. Het bevat vier opdrachten die je zelf maakt, elk met een CHECK-cel aan het eind, en ze bouwen op elkaar voort: een voorspelling, een spoor door het programma, een berekening met eenheden, en een controle van de kortere code van de AI. Het sluit af met de notitie voor de volgende lezer.</p>
+
+    <p><a class="button" lang="en" href="https://colab.research.google.com/github/johnsanterre/bigi-data-notebooks/blob/main/notebooks/skills-02-en.ipynb" target="_blank" rel="noopener">Open in Colab</a><a class="button" lang="nl" href="https://colab.research.google.com/github/johnsanterre/bigi-data-notebooks/blob/main/notebooks/skills-02-nl.ipynb" target="_blank" rel="noopener">Openen in Colab</a><a class="button secondary" lang="en" href="../notebooks/skills-02-en.ipynb" download>Download</a><a class="button secondary" lang="nl" href="../notebooks/skills-02-nl.ipynb" download>Downloaden</a></p>
+
+
+    <h2 lang="en">Check yourself</h2>
+<h2 lang="nl">Test jezelf</h2>
+
+    <h3><span lang="en">Question</span><span lang="nl">Vraag</span> 1</h3>
+<p lang="en">You run a cell that holds only a def block, and nothing is printed. What happened?</p>
+<p lang="nl">Je voert een cel uit met alleen een def-blok, en er wordt niets afgedrukt. Wat is er gebeurd?</p>
+<ol class="options" type="a"><li><span lang="en">The function ran but had nothing to print.</span><span lang="nl">De functie draaide maar had niets af te drukken.</span></li><li><span lang="en">Python learned the function, and nothing in it runs until a line calls it.</span><span lang="nl">Python leerde de functie, en niets erin draait totdat een regel hem aanroept.</span></li><li><span lang="en">The cell failed without an error message.</span><span lang="nl">De cel mislukte zonder foutmelding.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The second answer is right. A def block defines a function. The work happens only when a line calls the function by name, so the entry point of a program is the first line outside the definitions.</p>
+<p lang="nl">Het tweede antwoord klopt. Een def-blok definieert een functie. Het werk gebeurt pas als een regel de functie bij naam aanroept, dus het startpunt van een programma is de eerste regel buiten de definities.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 2</h3>
+<p lang="en">The name kg_per_crate is in kilograms per crate, and price_per_kg is in dollars per kilogram. Which expression gives dollars?</p>
+<p lang="nl">De naam kg_per_crate is in kilo per krat, en price_per_kg in dollar per kilo. Welke uitdrukking geeft dollars?</p>
+<ol class="options" type="a"><li><span lang="en">crates * price_per_kg</span><span lang="nl">crates * price_per_kg</span></li><li><span lang="en">crates * kg_per_crate * price_per_kg</span><span lang="nl">crates * kg_per_crate * price_per_kg</span></li><li><span lang="en">kg_per_crate / price_per_kg</span><span lang="nl">kg_per_crate / price_per_kg</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The second answer is right. Crates times kilograms per crate gives kilograms, and kilograms times dollars per kilogram gives dollars. The first expression is the AI's mistake from the notebook.</p>
+<p lang="nl">Het tweede antwoord klopt. Kratten maal kilo per krat geeft kilo, en kilo maal dollar per kilo geeft dollar. De eerste uitdrukking is de fout van de AI uit het notebook.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 3</h3>
+<p lang="en">A program sets total = 0, then runs total = total + n for each n in the list [4, 1, 6], then prints total. What does it print?</p>
+<p lang="nl">Een programma zet total = 0, voert dan total = total + n uit voor elke n in de lijst [4, 1, 6], en drukt daarna total af. Wat drukt het af?</p>
+<ol class="options" type="a"><li><span lang="en">6</span><span lang="nl">6</span></li><li><span lang="en">11</span><span lang="nl">11</span></li><li><span lang="en">[4, 1, 6]</span><span lang="nl">[4, 1, 6]</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">11 is right. The running total goes from 0 to 4, then 5, then 11. The answer 6 is what a reader gets who keeps only the last value.</p>
+<p lang="nl">11 klopt. Het lopende totaal gaat van 0 naar 4, dan 5, dan 11. Het antwoord 6 krijgt een lezer die alleen de laatste waarde onthoudt.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 4</h3>
+<p lang="en">You open a program of 300 lines to find out how it computes a total. What do you read first?</p>
+<p lang="nl">Je opent een programma van 300 regels om uit te zoeken hoe het een totaal berekent. Wat lees je eerst?</p>
+<ol class="options" type="a"><li><span lang="en">Line 1, then every line in order.</span><span lang="nl">Regel 1, en dan elke regel op volgorde.</span></li><li><span lang="en">Its inputs, its outputs and the names of its functions.</span><span lang="nl">De invoer, de uitvoer en de namen van de functies.</span></li><li><span lang="en">The longest function.</span><span lang="nl">De langste functie.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The second answer is right. The shape shows which few lines carry the total. Those lines deserve a close reading. Starting at line one spends attention on parts that do not bear on the question.</p>
+<p lang="nl">Het tweede antwoord klopt. De vorm laat zien welke paar regels het totaal dragen, en die regels verdienen een nauwkeurige lezing. Wie bij regel één begint, besteedt aandacht aan delen die niets met de vraag te maken hebben.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 5</h3>
+<p lang="en">An AI's code stores its result in a column called revenue_usd. What does the name tell you?</p>
+<p lang="nl">De code van een AI slaat het resultaat op in een kolom met de naam revenue_usd. Wat zegt die naam je?</p>
+<ol class="options" type="a"><li><span lang="en">The column holds revenue in US dollars.</span><span lang="nl">De kolom bevat omzet in Amerikaanse dollars.</span></li><li><span lang="en">What the AI meant to compute. Only the formula shows what the column holds.</span><span lang="nl">Wat de AI wilde berekenen. Alleen de formule laat zien wat er in de kolom staat.</span></li><li><span lang="en">The column was checked against the data.</span><span lang="nl">De kolom is gecontroleerd tegen de data.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The second answer is right. In the notebook, a column named revenue_usd held crates times dollars per kilogram, which is not revenue. Read the formula and its units, and treat the label as a statement of intent.</p>
+<p lang="nl">Het tweede antwoord klopt. In het notebook bevatte een kolom met de naam revenue_usd kratten maal dollar per kilo, en dat is geen omzet. Lees de formule en de eenheden, en zie het label als een voornemen.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 6</h3>
+<p lang="en">The AI offers a one-line replacement for your loop. When can you rely on it?</p>
+<p lang="nl">De AI biedt één regel aan ter vervanging van je lus. Wanneer kun je erop vertrouwen?</p>
+<ol class="options" type="a"><li><span lang="en">When it is shorter.</span><span lang="nl">Als hij korter is.</span></li><li><span lang="en">When it runs without an error.</span><span lang="nl">Als hij zonder foutmelding draait.</span></li><li><span lang="en">When it gives the same answer as the loop on the same data.</span><span lang="nl">Als hij op dezelfde data hetzelfde antwoord geeft als de lus.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The third answer is right. A shorter version is easier to read and no more likely to be right. Two methods that agree on the same data give you evidence.</p>
+<p lang="nl">Het derde antwoord klopt. Een kortere versie leest makkelijker en is niet vaker juist. Twee methoden die het op dezelfde data eens zijn, geven je bewijs.</p>
+</details>
+
+    <footer><p><span lang="en"><a href="index.html">Back to week 2</a><span class="separator">|</span><a href="../materials.html">All materials</a></span><span lang="nl"><a href="index.html">Terug naar week 2</a><span class="separator">|</span><a href="../materials.html">Al het lesmateriaal</a></span></p></footer>
+</div></main>
+<div class="site-footer"><div class="container"><div><span lang="en">BiGi Data is a <a href="https://freefocus.org">Free Focus</a> program.</span><span lang="nl">BiGi Data is een programma van <a href="https://freefocus.org">Free Focus</a>.</span></div><div><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><span class="separator"> &middot; </span><a href="../credits.html"><span lang="en">Image credits</span><span lang="nl">Fotoverantwoording</span></a></div></div></div>
+<script data-goatcounter="https://johnsanterre.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

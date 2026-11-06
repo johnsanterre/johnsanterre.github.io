@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Skills: Week 11 - BiGi Data">
+<meta name="robots" content="noindex, nofollow">
+<title data-en="Skills: Week 11 - BiGi Data" data-nl="Vaardigheden: Week 11 - BiGi Data">Skills: Week 11 - BiGi Data</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;650;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/lang.js"></script>
+</head>
+<body>
+<header class="nav-header"><div class="container">
+<a href="../index.html" class="site-title"><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><polygon fill="#ecc81d" points="50,4 61,38 97,38 68,59 79,94 50,73 21,94 32,59 3,38 39,38"/></svg>BiGi Data</a>
+<nav class="nav-links"><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a>
+<button id="lang-btn" class="lang-btn" type="button">Nederlands</button></nav>
+</div></header>
+<div class="stripes"></div>
+<section class="page-hero" style="background-image:url(../assets/img/forest.jpg)"><div class="container">
+<nav class="breadcrumb"><a href="../index.html"><span lang="en">Home</span><span lang="nl">Home</span></a><span class="separator">/</span><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a><span class="separator">/</span><a href="index.html"><span lang="en">Week 11</span><span lang="nl">Week 11</span></a><span class="separator">/</span><span><span lang="en">Skills</span><span lang="nl">Vaardigheden</span></span></nav>
+<h1 lang="en">Skills, week 11: pattern or chance</h1>
+<h1 lang="nl">Vaardigheden, week 11: patroon of toeval</h1>
+
+    <p lang="en" class="muted">About 10 hours across the week, at your own pace.</p>
+<p lang="nl" class="muted">Ongeveer 10 uur verspreid over de week, in je eigen tempo.</p>
+
+
+    </div></section>
+<main><div class="container">
+<h2 lang="en">What you will be able to do</h2>
+<h2 lang="nl">Wat je na deze week kunt</h2>
+
+    <ul>
+<li><span lang="en">Run a permutation test on the gap between two groups, and state in one sentence what its p-value says.</span><span lang="nl">Een permutatietoets uitvoeren op het verschil tussen twee groepen, en in één zin zeggen wat de p-waarde zegt.</span></li>
+<li><span lang="en">Correct the two common misreadings of a p-value, which treat it as the chance the claim is true or as the size of the effect.</span><span lang="nl">De twee gangbare misvattingen over een p-waarde corrigeren, die haar zien als de kans dat de bewering waar is of als de grootte van het effect.</span></li>
+<li><span lang="en">Report an effect size next to every p-value, and show with a large sample why a small p-value can come with a difference too small to matter.</span><span lang="nl">Naast elke p-waarde een effectgrootte melden, en met een grote steekproef laten zien waarom een kleine p-waarde kan samengaan met een verschil dat te klein is om ertoe te doen.</span></li>
+<li><span lang="en">Test a trend by shuffling the order of the values, and explain why a few years cannot establish one.</span><span lang="nl">Een trend toetsen door de volgorde van de waarden te schudden, en uitleggen waarom een paar jaar geen trend kan aantonen.</span></li>
+<li><span lang="en">Decide whether a shuffle fits the data, and use a shift test when the data run in time.</span><span lang="nl">Beslissen of schudden bij de data past, en een verschuivingstoets gebruiken als de data in de tijd lopen.</span></li>
+<li><span lang="en">Correct for many comparisons by repeating the whole search inside every shuffle.</span><span lang="nl">Corrigeren voor veel vergelijkingen door de hele zoektocht binnen elke schudbeurt te herhalen.</span></li>
+<li><span lang="en">Write a test result twice, for a specialist and for a reader with no statistics, without claiming more than the test decided.</span><span lang="nl">Een toetsresultaat twee keer opschrijven, voor een specialist en voor een lezer zonder statistiek, zonder meer te claimen dan de toets besliste.</span></li>
+</ul>
+
+
+    <h2 lang="en">Why a pattern needs a test</h2>
+<h2 lang="nl">Waarom een patroon een toets nodig heeft</h2>
+
+    <p lang="en">People find patterns in every table, including tables of pure noise. A busier month, a bigger crop or a rising line can come from a real cause or from the luck of the draw. A test does not tell you which. It tells you how often chance alone would produce what you see, and that number decides whether chance is a serious explanation.</p>
+<p lang="nl">Mensen vinden patronen in elke tabel, ook in tabellen met puur toeval. Een drukkere maand, een betere oogst of een stijgende lijn kan van een echte oorzaak komen of van het geluk van de trekking. Een toets zegt je niet welke van de twee. Hij zegt hoe vaak toeval alleen zou opleveren wat je ziet, en dat getal beslist of toeval een serieuze verklaring is.</p>
+
+
+    <h2 lang="en">The shuffle, step by step</h2>
+<h2 lang="nl">Schudden, stap voor stap</h2>
+
+    <p lang="en">The permutation test builds the world in which nothing is going on and compares your data with it. A farmer who tried a fertiliser on 12 of 24 plots would run it in five steps.</p>
+<p lang="nl">De permutatietoets bouwt de wereld waarin er niets aan de hand is en vergelijkt je data daarmee. Een boerin die een meststof op 12 van 24 percelen probeerde, zou hem in vijf stappen uitvoeren.</p>
+
+    <ol>
+<li><span lang="en">Compute the real gap, which is the mean yield of the fertilised plots minus the mean of the others.</span><span lang="nl">Bereken het echte verschil, de gemiddelde opbrengst van de bemeste percelen min het gemiddelde van de andere.</span></li>
+<li><span lang="en">Pool all 24 yields and forget which plot got the fertiliser.</span><span lang="nl">Gooi alle 24 opbrengsten op één hoop en vergeet welk perceel de meststof kreeg.</span></li>
+<li><span lang="en">Deal the 24 yields at random into two groups of 12 and compute the gap again.</span><span lang="nl">Deel de 24 opbrengsten willekeurig uit in twee groepen van 12 en bereken het verschil opnieuw.</span></li>
+<li><span lang="en">Repeat the deal thousands of times. The gaps you collect show what chance alone produces.</span><span lang="nl">Herhaal het uitdelen duizenden keren. De verschillen die je verzamelt, laten zien wat toeval alleen oplevert.</span></li>
+<li><span lang="en">Count the share of shuffled gaps at least as large as the real one, in either direction. That share is the p-value.</span><span lang="nl">Tel het aandeel geschudde verschillen dat minstens zo groot is als het echte, in beide richtingen. Dat aandeel is de p-waarde.</span></li>
+</ol>
+
+    <p lang="en">In the notebook the fertilised plots yielded 4.97 kg more on average. Out of 10,000 shuffles, 238 gave a gap at least that large. The p-value is therefore 0.0238.</p>
+<p lang="nl">In het notebook brachten de bemeste percelen gemiddeld 4,97 kg meer op. Van de 10.000 schudbeurten gaven er 238 een verschil dat minstens zo groot was. De p-waarde is dus 0,0238.</p>
+
+
+    <h2 lang="en">What the p-value says, and what it does not</h2>
+<h2 lang="nl">Wat de p-waarde zegt, en wat niet</h2>
+
+    <p lang="en">The p-value says one thing. If the fertiliser did nothing, a random split of the plots would give a gap this large about 2 times in 100. Two other readings are wrong, and both are common.</p>
+<p lang="nl">De p-waarde zegt één ding. Als de meststof niets deed, zou een willekeurige verdeling van de percelen ongeveer 2 keer op 100 een verschil van deze grootte geven. Twee andere lezingen zijn fout, en beide komen vaak voor.</p>
+
+    <ul>
+<li><span lang="en"><b>The p-value is not the chance that the fertiliser does nothing.</b> The test assumes that the fertiliser does nothing and asks how surprising the data would be.</span><span lang="nl"><b>De p-waarde is niet de kans dat de meststof niets doet.</b> De toets neemt aan dat de meststof niets doet en vraagt hoe verrassend de data dan zouden zijn.</span></li>
+<li><span lang="en"><b>The p-value is not the size of the effect.</b> The size is the gap itself, in kilograms.</span><span lang="nl"><b>De p-waarde is niet de grootte van het effect.</b> De grootte is het verschil zelf, in kilo's.</span></li>
+</ul>
+
+    <p lang="en">Many fields call a result statistically significant when the p-value falls below 0.05. The cut-off is a convention. A result at 0.049 and a result at 0.051 carry almost the same evidence. When no shuffle reaches the real gap, report the p-value as below one divided by the number of shuffles, because a p-value is never exactly zero.</p>
+<p lang="nl">Veel vakgebieden noemen een resultaat statistisch significant als de p-waarde onder 0,05 valt. Die grens is een afspraak. Een resultaat van 0,049 en een resultaat van 0,051 dragen bijna hetzelfde bewijs. Als geen enkele schudbeurt het echte verschil haalt, meld de p-waarde dan als kleiner dan één gedeeld door het aantal schudbeurten, want een p-waarde is nooit precies nul.</p>
+
+
+    <h2 lang="en">Significant is not the same as important</h2>
+<h2 lang="nl">Significant is niet hetzelfde als belangrijk</h2>
+
+    <p lang="en">A large sample can rule out chance for a gap nobody would notice. In the notebook, two seed varieties grown on 20,000 plots each differ by 0.243 kg. None of 1,000 shuffles reached that gap. The gap is still only 0.61 percent of the yield.</p>
+<p lang="nl">Een grote steekproef kan toeval uitsluiten voor een verschil dat niemand zou merken. In het notebook verschillen twee zaadrassen op elk 20.000 percelen 0,243 kg. Geen van de 1.000 schudbeurten haalde dat verschil. Het verschil is toch maar 0,61 procent van de opbrengst.</p>
+
+    <p lang="en">The number that answers the question "does it matter" is the effect size: the gap in its own units, as a share of the mean, or in standard deviations. Report it next to every p-value. The reverse also holds. With 10 plots per group, data made with a true effect of 2 kg gave a gap of -0.31 kg and a p-value of 0.8465. A large p-value from a small sample means that the sample cannot tell, not that the effect is absent.</p>
+<p lang="nl">Het getal dat de vraag "doet het ertoe" beantwoordt, is de effectgrootte: het verschil in de eigen eenheid, als aandeel van het gemiddelde, of in standaardafwijkingen. Zet hem naast elke p-waarde. Het omgekeerde geldt ook. Met 10 percelen per groep gaven data met een echt effect van 2 kg een verschil van -0,31 kg en een p-waarde van 0,8465. Een grote p-waarde uit een kleine steekproef betekent dat de steekproef het niet kan zeggen, niet dat het effect ontbreekt.</p>
+
+
+    <h2 lang="en">Trends are patterns in time</h2>
+<h2 lang="nl">Trends zijn patronen in de tijd</h2>
+
+    <p lang="en">A trend is the slope of a straight line through values over time. To test it, shuffle the order of the values and keep the years in place. If there is no trend, every order was as likely as the real one. A slope that few orders can match is a slope chance struggles to produce.</p>
+<p lang="nl">Een trend is de helling van een rechte lijn door waarden in de tijd. Om hem te toetsen, schud je de volgorde van de waarden en houd je de jaren op hun plek. Als er geen trend is, was elke volgorde even waarschijnlijk als de echte. Een helling die weinig volgordes evenaren, is een helling die toeval moeilijk maakt.</p>
+
+    <p lang="en">Short records fool people. Five values have only 120 possible orders, and a good share of them lean steeply by luck alone.</p>
+<p lang="nl">Korte reeksen misleiden mensen. Vijf waarden hebben maar 120 mogelijke volgordes, en een flink deel daarvan helt alleen door toeval steil.</p>
+
+
+    <h2 lang="en">When the shuffle is the wrong shuffle</h2>
+<h2 lang="nl">Wanneer schudden de verkeerde manier is</h2>
+
+    <p lang="en">A shuffle assumes that every order of the data was equally likely. Plots picked at random meet that assumption. Weekly data usually do not, because each week sits close to the week before. Prices, river levels and case counts all drift.</p>
+<p lang="nl">Schudden neemt aan dat elke volgorde van de data even waarschijnlijk was. Willekeurig gekozen percelen voldoen daaraan. Weekdata meestal niet, want elke week ligt dicht bij de week ervoor. Prijzen, rivierstanden en aantallen ziektegevallen drijven allemaal.</p>
+
+    <p lang="en">In the notebook, two made-up weekly series with no link between them show a correlation of 0.374. An ordinary shuffle destroys their drift. None of its 5,000 shuffles reached that correlation. A shift test keeps each series in its own order and slides one past the other. Under the shift test the p-value is 0.221, which makes a correlation this strong ordinary for two drifting series.</p>
+<p lang="nl">In het notebook laten twee verzonnen weekreeksen zonder verband een correlatie van 0,374 zien. Gewoon schudden vernietigt hun drijven. Geen van de 5.000 schudbeurten haalde die correlatie. Een verschuivingstoets houdt elke reeks in haar eigen volgorde en schuift de ene langs de andere. Bij de verschuivingstoets is de p-waarde 0,221, waarmee een correlatie van deze sterkte gewoon is voor twee drijvende reeksen.</p>
+
+
+    <h2 lang="en">Many tries, one winner</h2>
+<h2 lang="nl">Veel pogingen, één winnaar</h2>
+
+    <p lang="en">Test 20 things that do nothing at the 0.05 cut-off, and on average one of them will pass. In the notebook, the best of 20 useless habits reached a p-value of 0.0126 when tested alone. Once the test repeats the search for the best habit inside every shuffle, the p-value is 0.2746. Report every comparison you tried, and use the corrected p-value.</p>
+<p lang="nl">Toets 20 dingen die niets doen bij de grens van 0,05, en gemiddeld slaagt er één. In het notebook haalde de beste van 20 nutteloze gewoonten een p-waarde van 0,0126 als die alleen werd getoetst. Zodra de toets de zoektocht naar de beste gewoonte binnen elke schudbeurt herhaalt, is de p-waarde 0,2746. Meld elke vergelijking die je probeerde, en gebruik de gecorrigeerde p-waarde.</p>
+
+
+    <h2 lang="en">The formula comes second</h2>
+<h2 lang="nl">De formule komt daarna</h2>
+
+    <p lang="en">Formulas such as the t-test predict the shuffle result without running it. On the fertiliser data the t-test gives 0.0283, close to the shuffle's 0.0238. A formula carries the same assumption as the ordinary shuffle and is fooled by drifting series in the same way. Use it as a shortcut once you know what it assumes.</p>
+<p lang="nl">Formules zoals de t-toets voorspellen de uitkomst van het schudden zonder te schudden. Op de meststofdata geeft de t-toets 0,0283, dicht bij de 0,0238 van het schudden. Een formule draagt dezelfde aanname als gewoon schudden en laat zich op dezelfde manier misleiden door drijvende reeksen. Gebruik haar als kortere weg zodra je weet wat ze aanneemt.</p>
+
+
+    <h2 lang="en">Saying what the test decided</h2>
+<h2 lang="nl">Zeggen wat de toets besliste</h2>
+
+    <p lang="en">Every result reaches someone who asks whether it is true. A test decides one thing: whether chance alone is a likely explanation. It says nothing about the cause, nothing about whether the effect is large, and nothing about whether the data measure what you think they measure. Write every result twice.</p>
+<p lang="nl">Elk resultaat komt bij iemand die vraagt of het waar is. Een toets beslist één ding: of toeval alleen een waarschijnlijke verklaring is. Hij zegt niets over de oorzaak, niets over de grootte van het effect, en niets over de vraag of de data meten wat je denkt. Schrijf elk resultaat twee keer op.</p>
+
+    <ul>
+<li><span lang="en"><b>The specialist version</b> names the test, the number of shuffles, the p-value and the effect size.</span><span lang="nl"><b>De versie voor een specialist</b> noemt de toets, het aantal schudbeurten, de p-waarde en de effectgrootte.</span></li>
+<li><span lang="en"><b>The version for anyone</b> says how often chance would produce the result, in words such as "about 2 times in 100", and states the effect in its own units. It never uses the words p-value or significant.</span><span lang="nl"><b>De versie voor iedereen</b> zegt hoe vaak toeval het resultaat zou geven, in woorden zoals "ongeveer 2 keer op 100", en noemt het effect in de eigen eenheid. Ze gebruikt nooit de woorden p-waarde of significant.</span></li>
+</ul>
+
+
+    <h2 lang="en">When the AI is wrong</h2>
+<h2 lang="nl">Wanneer de AI zich vergist</h2>
+
+    <div class="panel warn">
+    <p lang="en">In the notebook, an AI assistant saw the last five years of visitors to a made-up park and reported a clear upward trend of 2.03 thousand visitors a year. Its arithmetic was right. Of the 120 orders of those five values, a share of 0.15 leaned at least as steeply, so luck explains the five-year rise easily.</p>
+<p lang="nl">In het notebook zag een AI-assistent de laatste vijf jaar bezoekers van een verzonnen park en meldde een duidelijke stijgende trend van 2,03 duizend bezoekers per jaar. De rekensom klopte. Van de 120 volgordes van die vijf waarden helde een aandeel van 0,15 minstens even steil, dus toeval verklaart de stijging over vijf jaar makkelijk.</p>
+
+    <p lang="en">The full 30 years give a slope of -0.001 thousand a year and a p-value of 0.988. The data were made with no trend at all. The assistant never asked how often chance alone would produce its pattern. One shuffle test would have shown it.</p>
+<p lang="nl">De volledige 30 jaar geven een helling van -0,001 duizend per jaar en een p-waarde van 0,988. De data zijn gemaakt zonder enige trend. De assistent vroeg nooit hoe vaak toeval alleen zijn patroon zou maken. Eén schudtoets had het laten zien.</p>
+
+    </div>
+
+    <h2 lang="en">Practise in the notebook</h2>
+<h2 lang="nl">Oefen in het notebook</h2>
+
+    <p lang="en">The notebook works through every idea above with made-up data and ends with two tasks you complete with your AI assistant. A CHECK cell tells you when each answer is right.</p>
+<p lang="nl">Het notebook werkt elk idee hierboven uit met verzonnen data en eindigt met twee opdrachten die je met je AI-assistent maakt. Een CHECK-cel vertelt je wanneer elk antwoord klopt.</p>
+
+    <p><a class="button" lang="en" href="https://colab.research.google.com/github/johnsanterre/bigi-data-notebooks/blob/main/notebooks/skills-11-en.ipynb" target="_blank" rel="noopener">Open in Colab</a><a class="button" lang="nl" href="https://colab.research.google.com/github/johnsanterre/bigi-data-notebooks/blob/main/notebooks/skills-11-nl.ipynb" target="_blank" rel="noopener">Openen in Colab</a><a class="button secondary" lang="en" href="../notebooks/skills-11-en.ipynb" download>Download</a><a class="button secondary" lang="nl" href="../notebooks/skills-11-nl.ipynb" download>Downloaden</a></p>
+
+
+    <h2 lang="en">Check yourself</h2>
+<h2 lang="nl">Test jezelf</h2>
+
+    <h3><span lang="en">Question</span><span lang="nl">Vraag</span> 1</h3>
+<p lang="en">A permutation test gives p = 0.03 for the gap between two groups. Which sentence is right?</p>
+<p lang="nl">Een permutatietoets geeft p = 0,03 voor het verschil tussen twee groepen. Welke zin klopt?</p>
+<ol class="options" type="a"><li><span lang="en">There is a 3 percent chance that the groups do not differ.</span><span lang="nl">Er is 3 procent kans dat de groepen niet verschillen.</span></li><li><span lang="en">If the groups did not differ, random relabelling would give a gap this large about 3 times in 100.</span><span lang="nl">Als de groepen niet verschilden, zou willekeurig herverdelen ongeveer 3 keer op 100 een verschil van deze grootte geven.</span></li><li><span lang="en">The second group is 3 percent larger.</span><span lang="nl">De tweede groep is 3 procent groter.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The second answer is right. The p-value assumes there is no difference and asks how often chance produces the gap. It is neither the chance that the claim is true nor the size of the effect.</p>
+<p lang="nl">Het tweede antwoord klopt. De p-waarde neemt aan dat er geen verschil is en vraagt hoe vaak toeval het verschil maakt. Ze is niet de kans dat de bewering waar is, en ook niet de grootte van het effect.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 2</h3>
+<p lang="en">In the notebook, two seed varieties on 20,000 plots each differ by 0.243 kg, and no shuffle reaches that gap. What should a report to farmers say?</p>
+<p lang="nl">In het notebook verschillen twee zaadrassen op elk 20.000 percelen 0,243 kg, en geen enkele schudbeurt haalt dat verschil. Wat moet een verslag aan boeren zeggen?</p>
+<ol class="options" type="a"><li><span lang="en">The gap is unlikely to be chance, and at 0.61 percent of the yield it is too small to matter to most farmers.</span><span lang="nl">Het verschil is waarschijnlijk geen toeval, en met 0,61 procent van de opbrengst is het te klein om voor de meeste boeren iets uit te maken.</span></li><li><span lang="en">The second variety is much better, because p is 0.</span><span lang="nl">Het tweede ras is veel beter, want p is 0.</span></li><li><span lang="en">The test failed, because a gap that small cannot be real.</span><span lang="nl">De toets is mislukt, want zo'n klein verschil kan niet echt zijn.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The first answer is right. A large sample can rule out chance for a tiny gap. The report therefore needs the effect size next to the test. The p-value is below 1 in 1,000, never 0.</p>
+<p lang="nl">Het eerste antwoord klopt. Een grote steekproef kan toeval uitsluiten voor een heel klein verschil. Het verslag heeft daarom de effectgrootte naast de toets nodig. De p-waarde ligt onder 1 op 1.000, nooit op 0.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 3</h3>
+<p lang="en">An AI assistant looks at five years of visitor numbers and reports a clear upward trend. What do you check first?</p>
+<p lang="nl">Een AI-assistent kijkt naar vijf jaar bezoekersaantallen en meldt een duidelijke stijgende trend. Wat controleer je eerst?</p>
+<ol class="options" type="a"><li><span lang="en">Whether its slope arithmetic is right.</span><span lang="nl">Of de rekensom voor de helling klopt.</span></li><li><span lang="en">Whether five years is enough to draw a chart.</span><span lang="nl">Of vijf jaar genoeg is voor een grafiek.</span></li><li><span lang="en">How often five values in random order lean as steeply.</span><span lang="nl">Hoe vaak vijf waarden in willekeurige volgorde even steil hellen.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The third answer is right. In the notebook the arithmetic was correct, and a share of 0.15 of the orders leaned at least as steeply. The full 30 years showed no trend.</p>
+<p lang="nl">Het derde antwoord klopt. In het notebook was de rekensom juist, en een aandeel van 0,15 van de volgordes helde minstens even steil. De volledige 30 jaar lieten geen trend zien.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 4</h3>
+<p lang="en">Two weekly series drift slowly up and down. Why can an ordinary shuffle mislead you about a correlation between them?</p>
+<p lang="nl">Twee weekreeksen drijven langzaam op en neer. Waarom kan gewoon schudden je misleiden over een correlatie tussen die twee?</p>
+<ol class="options" type="a"><li><span lang="en">It keeps the drift and makes the shuffled series match too well.</span><span lang="nl">Het bewaart het drijven en laat de geschudde reeksen te goed passen.</span></li><li><span lang="en">It destroys the week-to-week order, so shuffled copies line up less often than real unrelated series do.</span><span lang="nl">Het vernietigt de volgorde van week tot week, dus geschudde kopieën lopen minder vaak gelijk op dan echte reeksen zonder verband.</span></li><li><span lang="en">It needs at least a million shuffles.</span><span lang="nl">Het heeft minstens een miljoen schudbeurten nodig.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The second answer is right. Drifting series line up by accident more often than shuffled ones, so the ordinary shuffle makes chance look rare. A shift test keeps each series in order.</p>
+<p lang="nl">Het tweede antwoord klopt. Drijvende reeksen lopen vaker toevallig gelijk op dan geschudde, dus gewoon schudden laat toeval zeldzaam lijken. Een verschuivingstoets houdt elke reeks op volgorde.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 5</h3>
+<p lang="en">A team tests 20 habits against exam scores and reports the one with p = 0.01. What is missing?</p>
+<p lang="nl">Een team toetst 20 gewoonten tegen examencijfers en meldt de gewoonte met p = 0,01. Wat ontbreekt er?</p>
+<ol class="options" type="a"><li><span lang="en">Nothing, because 0.01 is below 0.05.</span><span lang="nl">Niets, want 0,01 ligt onder 0,05.</span></li><li><span lang="en">The number of tries, because the honest p-value asks how often the best of 20 useless habits looks this strong.</span><span lang="nl">Het aantal pogingen, want de eerlijke p-waarde vraagt hoe vaak de beste van 20 nutteloze gewoonten er zo sterk uitziet.</span></li><li><span lang="en">A larger cut-off of 0.1.</span><span lang="nl">Een ruimere grens van 0,1.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The second answer is right. With 20 tries, one small p-value is expected by chance. The honest test repeats the whole search inside every shuffle.</p>
+<p lang="nl">Het tweede antwoord klopt. Bij 20 pogingen verwacht je door toeval één kleine p-waarde. De eerlijke toets herhaalt de hele zoektocht binnen elke schudbeurt.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 6</h3>
+<p lang="en">A study of 10 plots per group finds p = 0.85. What does that mean?</p>
+<p lang="nl">Een onderzoek met 10 percelen per groep vindt p = 0,85. Wat betekent dat?</p>
+<ol class="options" type="a"><li><span lang="en">This sample cannot tell the effect from chance.</span><span lang="nl">Deze steekproef kan het effect niet van toeval onderscheiden.</span></li><li><span lang="en">The fertiliser has no effect.</span><span lang="nl">De meststof heeft geen effect.</span></li><li><span lang="en">The effect is 85 percent.</span><span lang="nl">Het effect is 85 procent.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The first answer is right. In the notebook the data held a true effect of 2 kg, and 10 plots per group still gave a gap below zero. A large p-value from a small sample means the sample is too small to tell.</p>
+<p lang="nl">Het eerste antwoord klopt. In het notebook zat in de data een echt effect van 2 kg, en 10 percelen per groep gaven toch een verschil onder nul. Een grote p-waarde uit een kleine steekproef betekent dat de steekproef te klein is om het te zeggen.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 7</h3>
+<p lang="en">A neighbour asks whether the test proved that rain causes dengue. Which answer claims no more than the test decided?</p>
+<p lang="nl">Een buurman vraagt of de toets bewees dat regen dengue veroorzaakt. Welk antwoord claimt niet meer dan de toets besliste?</p>
+<ol class="options" type="a"><li><span lang="en">Yes, the p-value proves it.</span><span lang="nl">Ja, de p-waarde bewijst het.</span></li><li><span lang="en">No test can say anything about rain.</span><span lang="nl">Geen enkele toets kan iets over regen zeggen.</span></li><li><span lang="en">The test says how often chance alone would line up rain and cases this way. It cannot say why they line up.</span><span lang="nl">De toets zegt hoe vaak toeval alleen regen en gevallen zo zou laten samenvallen. Hij kan niet zeggen waarom ze samenvallen.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The third answer is right. A test measures how surprising a pattern is under chance. A cause needs other evidence, such as how mosquitoes breed and where people store water.</p>
+<p lang="nl">Het derde antwoord klopt. Een toets meet hoe verrassend een patroon is als alleen toeval werkt. Een oorzaak vraagt ander bewijs, zoals hoe muggen zich voortplanten en waar mensen water opslaan.</p>
+</details>
+
+    <footer><p><span lang="en"><a href="index.html">Back to week 11</a><span class="separator">|</span><a href="../materials.html">All materials</a></span><span lang="nl"><a href="index.html">Terug naar week 11</a><span class="separator">|</span><a href="../materials.html">Al het lesmateriaal</a></span></p></footer>
+</div></main>
+<div class="site-footer"><div class="container"><div><span lang="en">BiGi Data is a <a href="https://freefocus.org">Free Focus</a> program.</span><span lang="nl">BiGi Data is een programma van <a href="https://freefocus.org">Free Focus</a>.</span></div><div><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><span class="separator"> &middot; </span><a href="../credits.html"><span lang="en">Image credits</span><span lang="nl">Fotoverantwoording</span></a></div></div></div>
+<script data-goatcounter="https://johnsanterre.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

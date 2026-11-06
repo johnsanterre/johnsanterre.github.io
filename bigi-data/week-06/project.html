@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Project 6: Week 6 - BiGi Data">
+<meta name="robots" content="noindex, nofollow">
+<title data-en="Project 6: Week 6 - BiGi Data" data-nl="Project 6: Week 6 - BiGi Data">Project 6: Week 6 - BiGi Data</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;650;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/lang.js"></script>
+</head>
+<body>
+<header class="nav-header"><div class="container">
+<a href="../index.html" class="site-title"><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><polygon fill="#ecc81d" points="50,4 61,38 97,38 68,59 79,94 50,73 21,94 32,59 3,38 39,38"/></svg>BiGi Data</a>
+<nav class="nav-links"><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a>
+<button id="lang-btn" class="lang-btn" type="button">Nederlands</button></nav>
+</div></header>
+<div class="stripes"></div>
+<section class="page-hero" style="background-image:url(../assets/img/market.jpg)"><div class="container">
+<nav class="breadcrumb"><a href="../index.html"><span lang="en">Home</span><span lang="nl">Home</span></a><span class="separator">/</span><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a><span class="separator">/</span><a href="index.html"><span lang="en">Week 6</span><span lang="nl">Week 6</span></a><span class="separator">/</span><span><span lang="en">Project 6</span><span lang="nl">Project 6</span></span></nav>
+<h1 lang="en">Project 6: electricity per person in Suriname and three neighbours</h1>
+<h1 lang="nl">Project 6: elektriciteit per persoon in Suriname en drie buurlanden</h1>
+
+    <p lang="en" class="muted">One dataset, four countries, one question. This week a ranking has to survive a division.</p>
+<p lang="nl" class="muted">Eén dataset, vier landen, één vraag. Deze week moet een ranglijst een deling overleven.</p>
+
+
+    </div></section>
+<main><div class="container">
+<h2 lang="en">The question</h2>
+<h2 lang="nl">De vraag</h2>
+
+    <p lang="en" class="lead">How does Suriname's electricity use per person compare with that of Guyana, Trinidad and Tobago and Jamaica? Does the ranking change when you divide each country's total by its population?</p>
+<p lang="nl" class="lead">Hoe verhoudt het elektriciteitsverbruik per persoon in Suriname zich tot dat van Guyana, Trinidad en Tobago en Jamaica? Verandert de volgorde als je het totaal van elk land deelt door zijn bevolking?</p>
+
+
+    <h2 lang="en">The data</h2>
+<h2 lang="nl">De data</h2>
+
+    <p lang="en">Our World in Data publishes an energy dataset with one row per country and year (<a href="https://github.com/owid/energy-data">owid/energy-data</a>, <a href="https://catalog.ourworldindata.org/energy/owid_energy/owid_energy.csv">CSV file</a>). Its electricity demand column comes from Ember's Yearly Electricity Data (2026), and its population column comes from Our World in Data's own population series. The file was last updated on 30 September 2026, and the course copy was downloaded on 6 November 2026.</p>
+<p lang="nl">Our World in Data publiceert een energiedataset met één rij per land en jaar (<a href="https://github.com/owid/energy-data">owid/energy-data</a>, <a href="https://catalog.ourworldindata.org/energy/owid_energy/owid_energy.csv">CSV-bestand</a>). De kolom voor de elektriciteitsvraag komt uit de Yearly Electricity Data van Ember (2026), en de kolom voor de bevolking komt uit de eigen bevolkingsreeks van Our World in Data. Het bestand is voor het laatst bijgewerkt op 30 september 2026, en de kopie voor de cursus is gedownload op 6 november 2026.</p>
+
+    <p lang="en">The course table keeps Suriname, Guyana, Trinidad and Tobago and Jamaica from 2000 onward. For all four countries, demand has a value for every year from 2000 to 2024. Demand is the dataset's name for all the electricity a country uses in a year, in terawatt-hours. It counts homes, businesses and industry together.</p>
+<p lang="nl">De tabel van de cursus houdt Suriname, Guyana, Trinidad en Tobago en Jamaica vanaf 2000. Voor alle vier landen heeft de vraag een waarde voor elk jaar van 2000 tot 2024. Vraag is de naam die de dataset geeft aan alle elektriciteit die een land in een jaar gebruikt, in terawattuur. Daarin tellen huishoudens, bedrijven en industrie samen.</p>
+
+    <p><a class="button secondary" href="../data/week06-electricity.csv" download><span lang="en">Download the table (CSV)</span><span lang="nl">Download de tabel (CSV)</span></a></p>
+
+
+    <h2 lang="en">Who the work is for</h2>
+<h2 lang="nl">Voor wie het werk is</h2>
+
+    <p lang="en">The audience this week is a ministry official who plans Suriname's electricity supply. The official gets a note of about 200 words and one chart. The note says where Suriname stands against its three neighbours in total and per person, how that changed since 2000, and one thing the data cannot tell. A planner can use it to set Suriname's demand against countries of a different size without being misled by their totals.</p>
+<p lang="nl">Het publiek van deze week is een ambtenaar van het ministerie die de elektriciteitsvoorziening van Suriname plant. De ambtenaar krijgt een notitie van ongeveer 200 woorden en één grafiek. De notitie zegt waar Suriname staat tegenover zijn drie buurlanden, in totaal en per persoon, hoe dat sinds 2000 veranderde, en één ding dat de data niet kan vertellen. Een planner kan er de vraag van Suriname mee naast landen van een andere grootte leggen zonder zich door hun totalen te laten misleiden.</p>
+
+
+    <h2 lang="en">Your team</h2>
+<h2 lang="nl">Je team</h2>
+
+    <p lang="en">Teams of four hold the four roles, which rotate every week. This week, the data checker has the most important job.</p>
+<p lang="nl">Teams van vier verdelen de vier rollen, die elke week wisselen. Deze week heeft de datacontroleur de belangrijkste taak.</p>
+
+    <ul>
+<li><span lang="en"><b>The builder</b> writes and runs the notebook with the AI assistant.</span><span lang="nl"><b>De bouwer</b> schrijft en draait het notebook met de AI-assistent.</span></li>
+<li><span lang="en"><b>The data checker</b> checks that every figure per person divides demand and population from the same year, and compares each one with the publisher's own column.</span><span lang="nl"><b>De datacontroleur</b> controleert dat elk cijfer per persoon vraag en bevolking uit hetzelfde jaar deelt, en vergelijkt elk cijfer met de eigen kolom van de uitgever.</span></li>
+<li><span lang="en"><b>The AI checker</b> keeps the AI log, recording every claim the AI makes and whether the data supports it.</span><span lang="nl"><b>De AI-controleur</b> houdt het AI-logboek bij, met elke bewering van de AI en of de data die steunt.</span></li>
+<li><span lang="en"><b>The presenter</b> presents on Friday and answers the room's questions.</span><span lang="nl"><b>De presentator</b> presenteert op vrijdag en beantwoordt de vragen uit de zaal.</span></li>
+</ul>
+
+
+    <h2 lang="en">The tasks</h2>
+<h2 lang="nl">De opdrachten</h2>
+
+    <p lang="en">The starter notebook loads the data for you and holds eight tasks. Six of them have a CHECK cell that tells you when the answer is right.</p>
+<p lang="nl">Het startnotebook laadt de data voor je en bevat acht opdrachten. Zes ervan hebben een CHECK-cel die je vertelt wanneer het antwoord klopt.</p>
+
+    <ol>
+<li><span lang="en">Describe the table, and find the last year in which all four countries have a value for demand.</span><span lang="nl">Beschrijf de tabel, en zoek het laatste jaar waarin alle vier landen een waarde voor de vraag hebben.</span></li>
+<li><span lang="en">Rank the four countries by total demand in that year.</span><span lang="nl">Rangschik de vier landen op totale vraag in dat jaar.</span></li>
+<li><span lang="en">Compute kilowatt-hours per person for every row, and compare your figures with the publisher's.</span><span lang="nl">Bereken het aantal kilowattuur per persoon voor elke rij, en vergelijk je cijfers met die van de uitgever.</span></li>
+<li><span lang="en">Rank the countries per person, name the countries that moved, and find the years in which the order per person was different.</span><span lang="nl">Rangschik de landen per persoon, noem de landen die van plaats wisselden, en zoek de jaren waarin de volgorde per persoon anders was.</span></li>
+<li><span lang="en">Draw one chart with two panels, total and per person, with the countries in the same order.</span><span lang="nl">Maak één grafiek met twee panelen, totaal en per persoon, met de landen in dezelfde volgorde.</span></li>
+<li><span lang="en">Compute how much Suriname's total demand and its demand per person grew since 2000, and explain the difference.</span><span lang="nl">Bereken hoeveel de totale vraag van Suriname en de vraag per persoon sinds 2000 groeiden, en leg het verschil uit.</span></li>
+<li><span lang="en">Write a function that tests a claimed figure per person against the table, then use it on the AI's answer.</span><span lang="nl">Schrijf een functie die een beweerd cijfer per persoon aan de tabel toetst, en gebruik die daarna op het antwoord van de AI.</span></li>
+<li><span lang="en">Write a note of about 200 words for a ministry official who plans Suriname's electricity supply.</span><span lang="nl">Schrijf een notitie van ongeveer 200 woorden voor een ambtenaar van het ministerie die de elektriciteitsvoorziening van Suriname plant.</span></li>
+</ol>
+
+    <p><a class="button" lang="en" href="https://colab.research.google.com/github/johnsanterre/bigi-data-notebooks/blob/main/notebooks/project-06-en.ipynb" target="_blank" rel="noopener">Open in Colab</a><a class="button" lang="nl" href="https://colab.research.google.com/github/johnsanterre/bigi-data-notebooks/blob/main/notebooks/project-06-nl.ipynb" target="_blank" rel="noopener">Openen in Colab</a><a class="button secondary" lang="en" href="../notebooks/project-06-en.ipynb" download>Download</a><a class="button secondary" lang="nl" href="../notebooks/project-06-nl.ipynb" download>Downloaden</a></p>
+
+
+    <h2 lang="en">Checking the AI, as part of the method</h2>
+<h2 lang="nl">De AI controleren, als deel van de methode</h2>
+
+    <div class="panel warn">
+    <p lang="en">Ask your AI assistant, without showing it the table, to rank the four countries by electricity use per person, and to give each figure, the year it is for and the population it divided by. Write its answer in the AI log. Then test it three ways: check each figure with your function from task 7, compare each population with the table's population for the year the AI named, and compare its order with your answers to task 4.</p>
+<p lang="nl">Vraag je AI-assistent, zonder hem de tabel te laten zien, de vier landen te rangschikken naar elektriciteitsverbruik per persoon, en daarbij elk cijfer, het jaar waarvoor het geldt en de bevolking waardoor hij deelde te geven. Schrijf het antwoord in het AI-logboek. Toets het daarna op drie manieren: controleer elk cijfer met je functie uit opdracht 7, vergelijk elke bevolking met de bevolking in de tabel voor het jaar dat de AI noemde, en vergelijk de volgorde met je antwoorden op opdracht 4.</p>
+
+    <p lang="en">Watch for two errors in particular. The AI may rank the countries by total use when you asked about use per person, and it may divide one year's electricity by another year's population. Both errors give numbers that look reasonable, and only a recomputation per person from the table catches them.</p>
+<p lang="nl">Let vooral op twee fouten. De AI kan de landen op totaal verbruik rangschikken terwijl je naar verbruik per persoon vroeg, en hij kan de elektriciteit van het ene jaar delen door de bevolking van een ander jaar. Beide fouten geven getallen die redelijk lijken, en alleen een herberekening per persoon uit de tabel vindt ze.</p>
+
+    </div>
+
+    <h2 lang="en">What you hand in on Friday</h2>
+<h2 lang="nl">Wat je vrijdag inlevert</h2>
+
+    <ul>
+<li><span lang="en">The notebook, with every CHECK passing.</span><span lang="nl">Het notebook, met elke CHECK geslaagd.</span></li>
+<li><span lang="en">One chart with two panels, with Our World in Data and Ember named as the source.</span><span lang="nl">Eén grafiek met twee panelen, met Our World in Data en Ember als bron vermeld.</span></li>
+<li><span lang="en">The note for the ministry official who plans the electricity supply, about 200 words, with the chart.</span><span lang="nl">De notitie voor de ambtenaar van het ministerie die de elektriciteitsvoorziening plant, ongeveer 200 woorden, met de grafiek.</span></li>
+<li><span lang="en">The AI log.</span><span lang="nl">Het AI-logboek.</span></li>
+<li><span lang="en">A presentation of five minutes, followed by five minutes of questions.</span><span lang="nl">Een presentatie van vijf minuten, gevolgd door vijf minuten vragen.</span></li>
+</ul>
+
+
+    <h2 lang="en">How the work is judged</h2>
+<h2 lang="nl">Hoe het werk wordt beoordeeld</h2>
+
+    <table>
+    <tr><th><span lang="en">Criterion</span><span lang="nl">Criterium</span></th><th><span lang="en">Meets the standard when</span><span lang="nl">Voldoet als</span></th></tr>
+    <tr><td><span lang="en">Numbers</span><span lang="nl">Getallen</span></td><td><span lang="en">Every CHECK passes, and every number in the note matches the notebook.</span><span lang="nl">Elke CHECK slaagt, en elk getal in de notitie komt overeen met het notebook.</span></td></tr>
+    <tr><td><span lang="en">Same year</span><span lang="nl">Hetzelfde jaar</span></td><td><span lang="en">Every figure per person divides demand and population from the same year. The team can show where each one comes from.</span><span lang="nl">Elk cijfer per persoon deelt vraag en bevolking uit hetzelfde jaar. Het team kan laten zien waar elk cijfer vandaan komt.</span></td></tr>
+    <tr><td><span lang="en">Chart</span><span lang="nl">Grafiek</span></td><td><span lang="en">Both panels keep one order of countries. Each panel has a title and a labelled axis. The chart names its source.</span><span lang="nl">Beide panelen houden één volgorde van landen aan. Elk paneel heeft een titel en een benoemde as. De grafiek vermeldt de bron.</span></td></tr>
+    <tr><td><span lang="en">AI log</span><span lang="nl">AI-logboek</span></td><td><span lang="en">At least three AI claims are tested against the data, and any claim the data contradicts is explained.</span><span lang="nl">Minstens drie beweringen van de AI zijn aan de data getoetst, en elke bewering die de data tegenspreekt, is uitgelegd.</span></td></tr>
+    <tr><td><span lang="en">Note</span><span lang="nl">Notitie</span></td><td><span lang="en">An official could act on the note. It compares totals with figures per person, names the source and states one thing the data cannot tell.</span><span lang="nl">Een ambtenaar kan iets met de notitie. Ze vergelijkt totalen met cijfers per persoon, noemt de bron en zegt één ding dat de data niet kan vertellen.</span></td></tr>
+    </table>
+    <footer><p><span lang="en"><a href="index.html">Back to week 6</a><span class="separator">|</span><a href="../materials.html">All materials</a></span><span lang="nl"><a href="index.html">Terug naar week 6</a><span class="separator">|</span><a href="../materials.html">Al het lesmateriaal</a></span></p></footer>
+</div></main>
+<div class="site-footer"><div class="container"><div><span lang="en">BiGi Data is a <a href="https://freefocus.org">Free Focus</a> program.</span><span lang="nl">BiGi Data is een programma van <a href="https://freefocus.org">Free Focus</a>.</span></div><div><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><span class="separator"> &middot; </span><a href="../credits.html"><span lang="en">Image credits</span><span lang="nl">Fotoverantwoording</span></a></div></div></div>
+<script data-goatcounter="https://johnsanterre.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

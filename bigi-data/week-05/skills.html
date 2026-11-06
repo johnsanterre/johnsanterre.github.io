@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Skills: Week 5 - BiGi Data">
+<meta name="robots" content="noindex, nofollow">
+<title data-en="Skills: Week 5 - BiGi Data" data-nl="Vaardigheden: Week 5 - BiGi Data">Skills: Week 5 - BiGi Data</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;650;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/lang.js"></script>
+</head>
+<body>
+<header class="nav-header"><div class="container">
+<a href="../index.html" class="site-title"><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><polygon fill="#ecc81d" points="50,4 61,38 97,38 68,59 79,94 50,73 21,94 32,59 3,38 39,38"/></svg>BiGi Data</a>
+<nav class="nav-links"><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a>
+<button id="lang-btn" class="lang-btn" type="button">Nederlands</button></nav>
+</div></header>
+<div class="stripes"></div>
+<section class="page-hero" style="background-image:url(../assets/img/forest.jpg)"><div class="container">
+<nav class="breadcrumb"><a href="../index.html"><span lang="en">Home</span><span lang="nl">Home</span></a><span class="separator">/</span><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a><span class="separator">/</span><a href="index.html"><span lang="en">Week 5</span><span lang="nl">Week 5</span></a><span class="separator">/</span><span><span lang="en">Skills</span><span lang="nl">Vaardigheden</span></span></nav>
+<h1 lang="en">Skills, week 5: averages, spread and the shape of data</h1>
+<h1 lang="nl">Vaardigheden, week 5: gemiddelden, spreiding en de vorm van data</h1>
+
+    <p lang="en" class="muted">About 10 hours across the week, at your own pace.</p>
+<p lang="nl" class="muted">Ongeveer 10 uur verspreid over de week, in je eigen tempo.</p>
+
+
+    </div></section>
+<main><div class="container">
+<h2 lang="en">What you will be able to do</h2>
+<h2 lang="nl">Wat je na deze week kunt</h2>
+
+    <ul>
+<li><span lang="en">Match a process to the shape of the distribution it produces, and give the reason.</span><span lang="nl">Een proces koppelen aan de vorm van de verdeling die het oplevert, en de reden geven.</span></li>
+<li><span lang="en">Read the tail of a histogram and state how often extreme values occur.</span><span lang="nl">De staart van een histogram lezen en zeggen hoe vaak extreme waarden voorkomen.</span></li>
+<li><span lang="en">Compute the mean and the median, and choose the one that describes a skewed set of numbers.</span><span lang="nl">Het gemiddelde en de mediaan berekenen, en kiezen welke van de twee een scheve reeks getallen beschrijft.</span></li>
+<li><span lang="en">Compute an expected value, and show a decision for which the expected value is the wrong summary.</span><span lang="nl">Een verwachtingswaarde berekenen, en een beslissing laten zien waarvoor de verwachtingswaarde de verkeerde samenvatting is.</span></li>
+<li><span lang="en">Compute the variance, the standard deviation and percentiles, and explain them as spread in outcomes rather than error in the average.</span><span lang="nl">De variantie, de standaardafwijking en percentielen berekenen, en ze uitleggen als spreiding in uitkomsten en niet als fout in het gemiddelde.</span></li>
+<li><span lang="en">Predict how the spread of an average shrinks as it includes more values.</span><span lang="nl">Voorspellen hoe de spreiding van een gemiddelde krimpt naarmate het meer waarden bevat.</span></li>
+<li><span lang="en">Show how a small shift in an average changes the share of values above a threshold.</span><span lang="nl">Laten zien hoe een kleine verschuiving van een gemiddelde het aandeel waarden boven een drempel verandert.</span></li>
+</ul>
+
+
+    <h2 lang="en">Why the shape comes first</h2>
+<h2 lang="nl">Waarom de vorm eerst komt</h2>
+
+    <p lang="en">A single average is the most common summary of data, and the most common way to mislead with it. Two sets of numbers can share an average and describe different lives. This week you learn to look at the whole shape first, then choose a summary that fits it, and then say what the summary leaves out. Every later week that compares two groups depends on this habit.</p>
+<p lang="nl">Eén gemiddelde is de meest gebruikte samenvatting van data, en de meest gebruikte manier om ermee te misleiden. Twee reeksen getallen kunnen hetzelfde gemiddelde hebben en heel verschillende levens beschrijven. Deze week leer je eerst naar de hele vorm te kijken, dan een samenvatting te kiezen die daarbij past, en daarna te zeggen wat de samenvatting weglaat. Elke latere week waarin je twee groepen vergelijkt, steunt op deze gewoonte.</p>
+
+
+    <h2 lang="en">A distribution is the signature of a process</h2>
+<h2 lang="nl">Een verdeling is de handtekening van een proces</h2>
+
+    <p lang="en">A distribution records how often each value occurs. A histogram draws it: the values run along the bottom, and the height of each bar shows how many values fall in that range. Different processes leave different shapes. The shape therefore tells you something about the process behind the numbers.</p>
+<p lang="nl">Een verdeling legt vast hoe vaak elke waarde voorkomt. Een histogram tekent haar: de waarden lopen langs de onderkant, en de hoogte van elke staaf laat zien hoeveel waarden in dat bereik vallen. Verschillende processen laten verschillende vormen achter, dus de vorm vertelt je iets over het proces achter de getallen.</p>
+
+    <ul>
+<li><span lang="en"><b>A flat shape comes from a process with no favourite value.</b> The minute past the hour at which a phone call arrives is as likely to be one minute as another.</span><span lang="nl"><b>Een vlakke vorm komt van een proces zonder voorkeurswaarde.</b> De minuut na het hele uur waarop een telefoontje binnenkomt, is de ene minuut even waarschijnlijk als de andere.</span></li>
+<li><span lang="en"><b>A bell comes from many small effects added together.</b> A machine that fills bags is off by a little in each direction, and large errors are rare.</span><span lang="nl"><b>Een klok komt van veel kleine effecten bij elkaar opgeteld.</b> Een machine die zakken vult, zit er steeds een beetje naast, naar boven of naar beneden, en grote fouten zijn zeldzaam.</span></li>
+<li><span lang="en"><b>A steady decay comes from waiting for an event that can happen at any moment.</b> Most gaps between buses are short, and a few last far longer.</span><span lang="nl"><b>Een gestage afname komt van wachten op iets dat op elk moment kan gebeuren.</b> De meeste tussenpozen tussen bussen zijn kort, en een paar zijn heel lang.</span></li>
+<li><span lang="en"><b>A long tail comes from growth that multiplies.</b> Most incomes sit near the middle, and a few are many times larger.</span><span lang="nl"><b>Een lange staart komt van groei die vermenigvuldigt.</b> De meeste inkomens liggen rond het midden, en een paar zijn vele malen groter.</span></li>
+</ul>
+
+    <h3 lang="en">Tails are where surprises live</h3>
+<h3 lang="nl">In de staart zitten de verrassingen</h3>
+
+    <p lang="en">The tail is the far end of a distribution, where the rare values sit. Surprises come from the tail. The tail therefore decides how often a plan fails. The notebook counts how often each process gives a value more than three standard deviations above its mean.</p>
+<p lang="nl">De staart is het uiterste einde van een verdeling, waar de zeldzame waarden zitten. Verrassingen komen uit de staart, dus de staart bepaalt hoe vaak een plan mislukt. Het notebook telt hoe vaak elk proces een waarde geeft die meer dan drie standaardafwijkingen boven het gemiddelde ligt.</p>
+
+    <ul>
+<li><span lang="en">The bag weights, a bell, do so for 0.10% of their values.</span><span lang="nl">De zakgewichten, een klok, doen dat bij 0,10% van hun waarden.</span></li>
+<li><span lang="en">The gaps between buses do so for 1.82% of their values.</span><span lang="nl">De tussenpozen tussen bussen doen dat bij 1,82% van hun waarden.</span></li>
+<li><span lang="en">The incomes do so for 1.73% of their values.</span><span lang="nl">De inkomens doen dat bij 1,73% van hun waarden.</span></li>
+</ul>
+
+    <p lang="en">The steady decay and the long tail produce such extreme values far more often than the bell does, often enough that a plan must allow for them.</p>
+<p lang="nl">De gestage afname en de lange staart geven zulke extreme waarden veel vaker dan de klok, vaak genoeg om er in een plan rekening mee te houden.</p>
+
+
+    <h2 lang="en">Sums make bells</h2>
+<h2 lang="nl">Sommen worden klokken</h2>
+
+    <p lang="en">The total of many independent small effects takes the shape of a bell, whatever the shape of each effect. One die gives a flat shape. The total of two dice gives a triangle, with 7 as the most common total. The total of ten dice gives a bell. The bell, called the normal distribution, appears often in measurement, because a measured value is often the sum of many small influences.</p>
+<p lang="nl">Tel veel onafhankelijke kleine effecten bij elkaar op, en het totaal krijgt de vorm van een klok, welke vorm elk effect ook heeft. Eén dobbelsteen geeft een vlakke vorm. Het totaal van twee dobbelstenen geeft een driehoek, met 7 als meest voorkomend totaal. Het totaal van tien dobbelstenen geeft een klok. Daarom komt de klok, de normale verdeling, zo vaak voor bij metingen: een gemeten waarde is vaak de som van veel kleine invloeden.</p>
+
+
+    <h2 lang="en">The mean and the median are two different centres</h2>
+<h2 lang="nl">Het gemiddelde en de mediaan zijn twee verschillende middens</h2>
+
+    <p lang="en">The mean adds every value and divides by how many there are. The median is the middle value once the values are sorted, so half the values lie below it and half above. On a bell the two agree. On a long tail they part, because a few large values pull the mean towards them and leave the median where it was.</p>
+<p lang="nl">Het gemiddelde telt alle waarden op en deelt door het aantal. De mediaan is de middelste waarde als je de waarden sorteert, zodat de helft eronder ligt en de helft erboven. Bij een klok zijn ze het eens. Bij een lange staart gaan ze uit elkaar, omdat een paar heel grote waarden het gemiddelde naar zich toe trekken en de mediaan op zijn plaats laten.</p>
+
+    <p lang="en">In the notebook, a small office pays six staff and one manager. The manager earns far more than the others.</p>
+<p lang="nl">In het notebook betaalt een klein kantoor zes medewerkers en één manager, en de manager verdient veel meer dan de anderen.</p>
+
+    <ul>
+<li><span lang="en">The mean monthly pay in the office is 4285.71.</span><span lang="nl">Het gemiddelde maandloon op het kantoor is 4285,71.</span></li>
+<li><span lang="en">The median monthly pay is 2700.</span><span lang="nl">Het mediane maandloon is 2700.</span></li>
+</ul>
+
+    <p lang="en">Neither number is wrong, and only the median describes what a typical person in that office earns. The same pull shows in the notebook's large set of made-up incomes. There, 65.7% of people earn less than the mean.</p>
+<p lang="nl">Geen van beide getallen is fout, en alleen de mediaan beschrijft wat een gewoon persoon op dat kantoor verdient. Dezelfde trek zie je in de grote reeks verzonnen inkomens in het notebook. Daar verdient 65,7% van de mensen minder dan het gemiddelde.</p>
+
+
+    <h2 lang="en">The long-run average</h2>
+<h2 lang="nl">Het gemiddelde op de lange duur</h2>
+
+    <p lang="en">The expected value of a random outcome is the average you would get if you could repeat it many times. You compute it by multiplying each possible outcome by its probability and adding the results. In the notebook, a game pays three times the roll of one die, and its expected prize is 10.5. A ticket priced at the expected prize is fair, because over many games the player neither gains nor loses on average.</p>
+<p lang="nl">De verwachtingswaarde van een toevallige uitkomst is het gemiddelde dat je zou krijgen als je het heel vaak kon herhalen. Je berekent haar door elke mogelijke uitkomst met de kans erop te vermenigvuldigen en de resultaten op te tellen. In het notebook betaalt een spel drie keer de worp van één dobbelsteen, en de verwachte prijs is 10,5. Een kaartje dat evenveel kost als de verwachte prijs is eerlijk, want over veel spellen wint of verliest de speler gemiddeld niets.</p>
+
+    <p lang="en">Playing the game shows how long the long run is.</p>
+<p lang="nl">Het spel spelen laat zien hoe lang de lange duur is.</p>
+
+    <ul>
+<li><span lang="en">After 10 games, the average prize was 9.30.</span><span lang="nl">Na 10 spellen was de gemiddelde prijs 9,30.</span></li>
+<li><span lang="en">After 5000 games, it was 10.50.</span><span lang="nl">Na 5000 spellen was die 10,50.</span></li>
+</ul>
+
+
+    <h2 lang="en">When the average is the wrong summary</h2>
+<h2 lang="nl">Wanneer het gemiddelde de verkeerde samenvatting is</h2>
+
+    <p lang="en">An expected value describes the long run, and a player who is ruined in the short run never reaches it. In the notebook, each player stakes everything on a coin toss in every round. Heads multiplies the money by 1.5, and tails multiplies it by 0.6. The expected change per round is a factor of 1.05, which makes the bet look favourable.</p>
+<p lang="nl">Een verwachtingswaarde beschrijft de lange duur, en een speler die op korte termijn geruïneerd raakt, bereikt die nooit. In het notebook zet elke speler in elke ronde alles in op het opgooien van een munt. Kop vermenigvuldigt het geld met 1,5, en munt vermenigvuldigt het met 0,6. De verwachte verandering per ronde is een factor 1,05, dus de weddenschap ziet er gunstig uit.</p>
+
+    <p lang="en">The notebook plays the bet for 10000 players. Each player plays 40 rounds and starts with 100.</p>
+<p lang="nl">Het notebook speelt de weddenschap met 10000 spelers. Elke speler speelt 40 rondes en begint met 100.</p>
+
+    <ul>
+<li><span lang="en">The mean final money is 603.0.</span><span lang="nl">Het gemiddelde eindgeld is 603,0.</span></li>
+<li><span lang="en">The median final money is 12.2.</span><span lang="nl">Het mediane eindgeld is 12,2.</span></li>
+<li><span lang="en">Of all players, 78.2% end with less than they started.</span><span lang="nl">Van alle spelers eindigt 78,2% met minder dan ze begonnen.</span></li>
+</ul>
+
+    <p lang="en">A few lucky players pull the mean up, while the typical player is ruined. Trust an expected value for a decision that is repeated many times by someone who can absorb the losses on the way. Distrust it when one bad run can end the game, as it can for a farm, a small business or a household budget.</p>
+<p lang="nl">Een paar spelers met veel geluk trekken het gemiddelde omhoog, terwijl de gewone speler geruïneerd raakt. Vertrouw een verwachtingswaarde bij een beslissing die vaak wordt herhaald door iemand die de verliezen onderweg kan opvangen. Wantrouw haar wanneer één slechte reeks het spel kan beëindigen, zoals bij een boerderij, een klein bedrijf of een huishoudbudget.</p>
+
+
+    <h2 lang="en">Spread: the same average, different worlds</h2>
+<h2 lang="nl">Spreiding: hetzelfde gemiddelde, andere werelden</h2>
+
+    <p lang="en">Spread measures how far values lie from their centre. Three measures cover most work.</p>
+<p lang="nl">Spreiding meet hoe ver waarden van hun midden liggen. Drie maten dekken het meeste werk.</p>
+
+    <ul>
+<li><span lang="en"><b>The variance is the average squared distance from the mean.</b> Squaring makes every distance positive and gives large distances more weight.</span><span lang="nl"><b>De variantie is de gemiddelde gekwadrateerde afstand tot het gemiddelde.</b> Door te kwadrateren wordt elke afstand positief en tellen grote afstanden zwaarder.</span></li>
+<li><span lang="en"><b>The standard deviation is the square root of the variance.</b> It is in the same unit as the data and reads as the typical distance from the mean.</span><span lang="nl"><b>De standaardafwijking is de wortel uit de variantie.</b> Ze heeft dezelfde eenheid als de data, dus je leest haar als de gewone afstand tot het gemiddelde.</span></li>
+<li><span lang="en"><b>Percentiles describe spread without assuming a shape.</b> The 90th percentile is the value that 90% of the values lie below, and the range from the 10th to the 90th percentile holds the middle 80% of the values.</span><span lang="nl"><b>Percentielen beschrijven spreiding zonder een vorm aan te nemen.</b> Het 90e percentiel is de waarde waar 90% van de waarden onder ligt, en het bereik van het 10e tot het 90e percentiel omvat de middelste 80% van de waarden.</span></li>
+</ul>
+
+    <p lang="en">The standard deviation describes how much single outcomes vary. It is not an error in the average. It does not shrink when you collect more data.</p>
+<p lang="nl">De standaardafwijking beschrijft hoeveel losse uitkomsten variëren. Ze is geen fout in het gemiddelde, en ze krimpt niet als je meer data verzamelt.</p>
+
+    <p lang="en">Software computes the variance in one of two ways. pandas divides the sum of squared distances by the number of values minus one, and numpy divides it by the number of values. For the notebook's five waiting times, the two ways disagree.</p>
+<p lang="nl">Software berekent de variantie op een van twee manieren. pandas deelt de som van de gekwadrateerde afstanden door het aantal waarden min één, en numpy deelt haar door het aantal waarden. Voor de vijf wachttijden in het notebook zijn de twee manieren het oneens.</p>
+
+    <ul>
+<li><span lang="en">Dividing by the number of values minus one gives a variance of 62.5.</span><span lang="nl">Delen door het aantal waarden min één geeft een variantie van 62,5.</span></li>
+<li><span lang="en">Dividing by the number of values gives a variance of 50.0.</span><span lang="nl">Delen door het aantal waarden geeft een variantie van 50,0.</span></li>
+</ul>
+
+    <p lang="en">With thousands of values the two ways agree closely. With a handful they do not, so a report says which one it used.</p>
+<p lang="nl">Met duizenden waarden komen de twee manieren dicht bij elkaar. Met een handvol niet, dus een verslag zegt welke het gebruikte.</p>
+
+
+    <h2 lang="en">The average of many is steadier than one</h2>
+<h2 lang="nl">Het gemiddelde van veel is stabieler dan één waarde</h2>
+
+    <p lang="en">Single waits at a clinic can spread widely, and an average of many waits spreads much less. The square-root rule says how much less: the spread of an average equals the spread of single values divided by the square root of how many values it averages. Four times as much data halves the spread of the average.</p>
+<p lang="nl">Losse wachttijden bij een kliniek kunnen sterk uiteenlopen, en een gemiddelde van veel wachttijden loopt veel minder uiteen. De wortelregel zegt hoeveel minder: de spreiding van een gemiddelde is gelijk aan de spreiding van losse waarden, gedeeld door de wortel uit het aantal waarden in dat gemiddelde. Vier keer zoveel data halveert de spreiding van het gemiddelde.</p>
+
+    <ul>
+<li><span lang="en">In the notebook, single waits have a standard deviation of 30.0 minutes.</span><span lang="nl">In het notebook hebben losse wachttijden een standaardafwijking van 30,0 minuten.</span></li>
+<li><span lang="en">Averages of 16 waits have a standard deviation of 7.52 minutes.</span><span lang="nl">Gemiddelden van 16 wachttijden hebben een standaardafwijking van 7,52 minuut.</span></li>
+<li><span lang="en">Averages of 256 waits have a standard deviation of 1.86 minutes.</span><span lang="nl">Gemiddelden van 256 wachttijden hebben een standaardafwijking van 1,86 minuut.</span></li>
+</ul>
+
+    <p lang="en">The rule is about the average, not about single values, so each patient still waits as unpredictably as before. The rule also assumes the values are independent of each other. Values that move together, such as one shop's sales on days in a row, shrink the spread of their average more slowly than the rule predicts.</p>
+<p lang="nl">De regel gaat over het gemiddelde, niet over losse waarden, dus elke patiënt wacht nog even onvoorspelbaar als eerst. De regel neemt ook aan dat de waarden onafhankelijk van elkaar zijn. Bij waarden die samen bewegen, zoals de verkoop van één winkel op opeenvolgende dagen, krimpt de spreiding van het gemiddelde langzamer dan de regel voorspelt.</p>
+
+
+    <h2 lang="en">A small shift in the average, a large change in the tail</h2>
+<h2 lang="nl">Een kleine verschuiving van het gemiddelde, een grote verandering in de staart</h2>
+
+    <p lang="en">In the notebook, a building's daily electricity use follows a bell, and a high-use day is one above the old 90th percentile. By that definition, one day in ten starts out as a high-use day. Then every day uses a little more.</p>
+<p lang="nl">In het notebook volgt het dagelijkse elektriciteitsverbruik van een gebouw een klok, en een hoge dag is een dag boven het oude 90e percentiel. Volgens die definitie is aan het begin één op de tien dagen een hoge dag. Daarna verbruikt elke dag iets meer.</p>
+
+    <ul>
+<li><span lang="en">The average rises by 6.0%.</span><span lang="nl">Het gemiddelde stijgt met 6,0%.</span></li>
+<li><span lang="en">Before the shift, 10.0% of days are high-use days.</span><span lang="nl">Vóór de verschuiving is 10,0% van de dagen een hoge dag.</span></li>
+<li><span lang="en">After the shift, 16.3% of days are high-use days.</span><span lang="nl">Na de verschuiving is 16,3% van de dagen een hoge dag.</span></li>
+<li><span lang="en">If the spread also widens, 20.7% of days are high-use days.</span><span lang="nl">Als de spreiding ook breder wordt, is 20,7% van de dagen een hoge dag.</span></li>
+</ul>
+
+    <p lang="en">Many days sat just below the threshold, and a small push moves them over it. A change that looks small in the average can therefore be large in the tail. When a question is about extremes, count the extremes directly.</p>
+<p lang="nl">Veel dagen lagen net onder de drempel, en een klein duwtje brengt ze erover. Een verandering die klein lijkt in het gemiddelde, kan daardoor groot zijn in de staart. Als een vraag over uitschieters gaat, tel de uitschieters dan zelf.</p>
+
+
+    <h2 lang="en">When the AI is wrong</h2>
+<h2 lang="nl">Wanneer de AI zich vergist</h2>
+
+    <div class="panel warn">
+    <p lang="en">In the notebook, an AI assistant was asked whether patients wait longer at clinic A or at clinic B. Its code compared the two average waits and found that they differ by 0.3 minutes. It concluded that patients wait about the same time at both clinics.</p>
+<p lang="nl">In het notebook werd een AI-assistent gevraagd of patiënten langer wachten bij kliniek A of bij kliniek B. De code vergeleek de twee gemiddelde wachttijden en vond dat ze 0,3 minuten verschillen. De assistent concludeerde dat patiënten bij beide klinieken ongeveer even lang wachten.</p>
+
+    <p lang="en">The averages hide almost everything a patient cares about.</p>
+<p lang="nl">De gemiddelden verbergen bijna alles waar een patiënt om geeft.</p>
+
+    <ul>
+<li><span lang="en">At clinic A, the median wait is 30.2 minutes.</span><span lang="nl">Bij kliniek A is de mediane wachttijd 30,2 minuten.</span></li>
+<li><span lang="en">At clinic B, the median wait is 21.1 minutes, so most of its patients are seen sooner.</span><span lang="nl">Bij kliniek B is de mediane wachttijd 21,1 minuten, dus de meeste patiënten daar zijn eerder aan de beurt.</span></li>
+<li><span lang="en">At clinic B, 14.6% of patients wait more than an hour.</span><span lang="nl">Bij kliniek B wacht 14,6% van de patiënten langer dan een uur.</span></li>
+<li><span lang="en">At clinic A, the longest wait is 46.3 minutes.</span><span lang="nl">Bij kliniek A is de langste wachttijd 46,3 minuten.</span></li>
+</ul>
+
+    <p lang="en">The assistant answered with one number per clinic and never looked at the shape. A histogram of each clinic, or the share of patients above a wait that matters to them, shows the difference at once. Before you accept any comparison of two averages, ask for the spread and the shape.</p>
+<p lang="nl">De assistent antwoordde met één getal per kliniek en keek nooit naar de vorm. Een histogram van elke kliniek, of het aandeel patiënten boven een wachttijd die voor hen telt, laat het verschil meteen zien. Vraag naar de spreiding en de vorm voordat je een vergelijking van twee gemiddelden accepteert.</p>
+
+    </div>
+
+    <h2 lang="en">Practise in the notebook</h2>
+<h2 lang="nl">Oefen in het notebook</h2>
+
+    <p lang="en">The notebook works through every idea above with made-up data. Three of its sections end with a task you complete with your AI assistant, and a CHECK cell tells you when your answer is right.</p>
+<p lang="nl">Het notebook loopt alle ideeën hierboven door met verzonnen data. Drie van de delen eindigen met een opdracht die je samen met je AI-assistent maakt, en een CHECK-cel vertelt je wanneer je antwoord klopt.</p>
+
+    <p><a class="button" lang="en" href="https://colab.research.google.com/github/johnsanterre/bigi-data-notebooks/blob/main/notebooks/skills-05-en.ipynb" target="_blank" rel="noopener">Open in Colab</a><a class="button" lang="nl" href="https://colab.research.google.com/github/johnsanterre/bigi-data-notebooks/blob/main/notebooks/skills-05-nl.ipynb" target="_blank" rel="noopener">Openen in Colab</a><a class="button secondary" lang="en" href="../notebooks/skills-05-en.ipynb" download>Download</a><a class="button secondary" lang="nl" href="../notebooks/skills-05-nl.ipynb" download>Downloaden</a></p>
+
+
+    <h2 lang="en">Check yourself</h2>
+<h2 lang="nl">Test jezelf</h2>
+
+    <h3><span lang="en">Question</span><span lang="nl">Vraag</span> 1</h3>
+<p lang="en">Two clinics report the same average wait. What can you conclude about long waits?</p>
+<p lang="nl">Twee klinieken melden dezelfde gemiddelde wachttijd. Wat kun je concluderen over lange wachttijden?</p>
+<ol class="options" type="a"><li><span lang="en">Long waits are equally common at both clinics.</span><span lang="nl">Lange wachttijden komen bij beide klinieken even vaak voor.</span></li><li><span lang="en">Nothing yet. You need the spread or the shape of each clinic's waits.</span><span lang="nl">Nog niets. Je hebt de spreiding of de vorm van de wachttijden van elke kliniek nodig.</span></li><li><span lang="en">The clinic with more patients has more long waits.</span><span lang="nl">De kliniek met meer patiënten heeft meer lange wachttijden.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The second answer is right. In the notebook, the two clinics' averages were 0.3 minutes apart. Only clinic B had patients who waited more than an hour.</p>
+<p lang="nl">Het tweede antwoord klopt. In het notebook lagen de gemiddelden van de twee klinieken 0,3 minuten uit elkaar. Alleen bij kliniek B wachtten patiënten langer dan een uur.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 2</h3>
+<p lang="en">A set of monthly incomes has a long tail to the right. Which centre describes a typical person better?</p>
+<p lang="nl">Een reeks maandinkomens heeft een lange staart naar rechts. Welk midden beschrijft een gewoon persoon beter?</p>
+<ol class="options" type="a"><li><span lang="en">The mean.</span><span lang="nl">Het gemiddelde.</span></li><li><span lang="en">The median.</span><span lang="nl">De mediaan.</span></li><li><span lang="en">The largest income.</span><span lang="nl">Het hoogste inkomen.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The median is right. A few large incomes pull the mean up and leave the median in place. In the notebook's office, the mean pay was higher than what six of the seven people earned.</p>
+<p lang="nl">De mediaan klopt. Een paar heel hoge inkomens trekken het gemiddelde omhoog en laten de mediaan op zijn plaats. Op het kantoor in het notebook lag het gemiddelde loon hoger dan wat zes van de zeven mensen verdienden.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 3</h3>
+<p lang="en">A bet has a favourable expected value. When can it still be a bad decision?</p>
+<p lang="nl">Een weddenschap heeft een gunstige verwachtingswaarde. Wanneer kan het toch een slechte beslissing zijn?</p>
+<ol class="options" type="a"><li><span lang="en">Never, because the expected value is favourable.</span><span lang="nl">Nooit, want de verwachtingswaarde is gunstig.</span></li><li><span lang="en">When one bad run can ruin the player before the long run arrives.</span><span lang="nl">Wanneer één slechte reeks de speler kan ruïneren voordat de lange duur aanbreekt.</span></li><li><span lang="en">Only when nobody knows the probabilities.</span><span lang="nl">Alleen wanneer niemand de kansen kent.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The second answer is right. In the notebook's coin bet, the expected change per round was a gain. Even so, 78.2% of the players ended with less than they started.</p>
+<p lang="nl">Het tweede antwoord klopt. Bij de muntweddenschap in het notebook was de verwachte verandering per ronde een winst. Toch eindigde 78,2% van de spelers met minder dan ze begonnen.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 4</h3>
+<p lang="en">Single waits have a standard deviation of 30 minutes. About how large is the standard deviation of averages of 16 waits?</p>
+<p lang="nl">Losse wachttijden hebben een standaardafwijking van 30 minuten. Hoe groot is ongeveer de standaardafwijking van gemiddelden van 16 wachttijden?</p>
+<ol class="options" type="a"><li><span lang="en">30 minutes.</span><span lang="nl">30 minuten.</span></li><li><span lang="en">7.5 minutes.</span><span lang="nl">7,5 minuut.</span></li><li><span lang="en">1.88 minutes.</span><span lang="nl">1,88 minuut.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">7.5 minutes is right. The rule divides 30 by the square root of 16, which is 4. The notebook measured 7.52 minutes. The third answer is the rule for averages of 256 waits.</p>
+<p lang="nl">7,5 minuut klopt. De wortel uit 16 is 4, en de regel deelt 30 door 4. Het notebook mat 7,52 minuut. Het derde antwoord is de regel voor gemiddelden van 256 wachttijden.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 5</h3>
+<p lang="en">Every value in a bell-shaped set rises by a small amount. What happens to the share of values above a high threshold?</p>
+<p lang="nl">Elke waarde in een klokvormige reeks stijgt een klein beetje. Wat gebeurt er met het aandeel waarden boven een hoge drempel?</p>
+<ol class="options" type="a"><li><span lang="en">It rises by the same small percentage as the average.</span><span lang="nl">Het stijgt met hetzelfde kleine percentage als het gemiddelde.</span></li><li><span lang="en">It can rise by a much larger percentage than the average.</span><span lang="nl">Het kan met een veel groter percentage stijgen dan het gemiddelde.</span></li><li><span lang="en">It stays the same, because the threshold did not move.</span><span lang="nl">Het blijft gelijk, want de drempel is niet verschoven.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The second answer is right. In the notebook, the average electricity use rose by 6.0%. Over the same shift, the share of high-use days rose from one day in ten to 16.3% of days.</p>
+<p lang="nl">Het tweede antwoord klopt. In het notebook steeg het gemiddelde elektriciteitsverbruik met 6,0%. Bij dezelfde verschuiving steeg het aandeel hoge dagen van één op de tien naar 16,3% van de dagen.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 6</h3>
+<p lang="en">pandas and numpy give different variances for the same five numbers. Why?</p>
+<p lang="nl">pandas en numpy geven verschillende varianties voor dezelfde vijf getallen. Waarom?</p>
+<ol class="options" type="a"><li><span lang="en">One of the two libraries has a bug.</span><span lang="nl">Een van de twee bibliotheken bevat een fout.</span></li><li><span lang="en">pandas divides by the number of values minus one, and numpy divides by the number of values.</span><span lang="nl">pandas deelt door het aantal waarden min één, en numpy deelt door het aantal waarden.</span></li><li><span lang="en">numpy rounds the numbers first.</span><span lang="nl">numpy rondt de getallen eerst af.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The second answer is right. Both are correct definitions. With five values the difference is large, and with thousands it nearly disappears, so a report says which one it used.</p>
+<p lang="nl">Het tweede antwoord klopt. Beide zijn juiste definities. Met vijf waarden is het verschil groot, en met duizenden verdwijnt het bijna, dus een verslag zegt welke het gebruikte.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 7</h3>
+<p lang="en">Which process is most likely to give a bell-shaped histogram?</p>
+<p lang="nl">Welk proces geeft het meest waarschijnlijk een klokvormig histogram?</p>
+<ol class="options" type="a"><li><span lang="en">The total of many small, independent effects.</span><span lang="nl">Het totaal van veel kleine, onafhankelijke effecten.</span></li><li><span lang="en">The time until an event that can happen at any moment.</span><span lang="nl">De tijd tot een gebeurtenis die op elk moment kan plaatsvinden.</span></li><li><span lang="en">The minute past the hour at which a call arrives.</span><span lang="nl">De minuut na het hele uur waarop een telefoontje binnenkomt.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The first answer is right. Sums of many independent effects form a bell, as the dice in the notebook showed. The second gives a steady decay. The third is flat.</p>
+<p lang="nl">Het eerste antwoord klopt. Sommen van veel onafhankelijke effecten vormen een klok, zoals de dobbelstenen in het notebook lieten zien. Het tweede geeft een gestage afname, en het derde is vlak.</p>
+</details>
+
+    <footer><p><span lang="en"><a href="index.html">Back to week 5</a><span class="separator">|</span><a href="../materials.html">All materials</a></span><span lang="nl"><a href="index.html">Terug naar week 5</a><span class="separator">|</span><a href="../materials.html">Al het lesmateriaal</a></span></p></footer>
+</div></main>
+<div class="site-footer"><div class="container"><div><span lang="en">BiGi Data is a <a href="https://freefocus.org">Free Focus</a> program.</span><span lang="nl">BiGi Data is een programma van <a href="https://freefocus.org">Free Focus</a>.</span></div><div><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><span class="separator"> &middot; </span><a href="../credits.html"><span lang="en">Image credits</span><span lang="nl">Fotoverantwoording</span></a></div></div></div>
+<script data-goatcounter="https://johnsanterre.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

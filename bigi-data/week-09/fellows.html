@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Fellows' guide: Week 9 - BiGi Data">
+<meta name="robots" content="noindex, nofollow">
+<title data-en="Fellows' guide: Week 9 - BiGi Data" data-nl="Lesgids fellows: Week 9 - BiGi Data">Fellows' guide: Week 9 - BiGi Data</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;650;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/lang.js"></script>
+</head>
+<body>
+<header class="nav-header"><div class="container">
+<a href="../index.html" class="site-title"><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><polygon fill="#ecc81d" points="50,4 61,38 97,38 68,59 79,94 50,73 21,94 32,59 3,38 39,38"/></svg>BiGi Data</a>
+<nav class="nav-links"><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a>
+<button id="lang-btn" class="lang-btn" type="button">Nederlands</button></nav>
+</div></header>
+<div class="stripes"></div>
+<section class="page-hero" style="background-image:url(../assets/img/waterkant.jpg)"><div class="container">
+<nav class="breadcrumb"><a href="../index.html"><span lang="en">Home</span><span lang="nl">Home</span></a><span class="separator">/</span><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a><span class="separator">/</span><a href="index.html"><span lang="en">Week 9</span><span lang="nl">Week 9</span></a><span class="separator">/</span><span><span lang="en">Fellows' guide</span><span lang="nl">Lesgids fellows</span></span></nav>
+<h1 lang="en">Fellows' session guide, week 9</h1>
+<h1 lang="nl">Lesgids voor fellows, week 9</h1>
+
+    <p lang="en" class="lead">This guide is for the teaching fellows. It sets the goal of the week, the plan for each workshop, what to look for in the studio, and how to run the Friday review.</p>
+<p lang="nl" class="lead">Deze gids is voor de fellows die lesgeven. Hij beschrijft het doel van de week, het plan voor elke workshop, waar je in de studio op let, en hoe je de vrijdagbespreking leidt.</p>
+
+
+    </div></section>
+<main><div class="container">
+<h2 lang="en">The goal of the week</h2>
+<h2 lang="nl">Het doel van de week</h2>
+
+    <p lang="en">By Friday, every team hands a small building firm in Paramaribo a rain calendar it can plan with. To build it, every student learns to compute a chance as a share of rows, to combine chances with the three rules, and to compute the chance of at least one event over several days. Every student also learns to say of any conditional probability what it is a chance of and given what. The habit to build is to ask that question of every chance, whether a person or an AI assistant states it.</p>
+<p lang="nl">Op vrijdag geeft elk team een klein bouwbedrijf in Paramaribo een regenkalender waarmee het kan plannen. Om die te maken leert elke student een kans te berekenen als aandeel van rijen, kansen te combineren met de drie regels, en de kans op minstens één gebeurtenis over meerdere dagen te berekenen. Elke student leert ook bij elke voorwaardelijke kans te zeggen waarop ze slaat en gegeven wat. De gewoonte die je opbouwt, is die vraag te stellen bij elke kans, of die nu van een mens of van een AI-assistent komt.</p>
+
+
+    <h2 lang="en">Before Monday</h2>
+<h2 lang="nl">Vóór maandag</h2>
+
+    <ul>
+<li><span lang="en">Bring 15 pairs of dice for Monday's workshop, one pair for every two students.</span><span lang="nl">Neem 15 paar dobbelstenen mee voor de workshop van maandag, één paar per twee studenten.</span></li>
+<li><span lang="en">Run both notebooks yourself from a fresh Colab session. Run the project notebook once without the CSV file beside it, so that the download from Open-Meteo is tested too.</span><span lang="nl">Draai beide notebooks zelf in een nieuwe Colab-sessie. Draai het projectnotebook één keer zonder het CSV-bestand ernaast, zodat ook de download bij Open-Meteo getest is.</span></li>
+<li><span lang="en">Read the solution notebook you received separately. Its task 7 cell holds the answers of an assistant that adds the chances and swaps the conditional, for comparison with the teams' AI logs.</span><span lang="nl">Lees het oplossingsnotebook dat je apart hebt ontvangen. De cel van opdracht 7 bevat de antwoorden van een assistent die de kansen optelt en de voorwaardelijke kans omdraait, om te vergelijken met de AI-logboeken van de teams.</span></li>
+<li><span lang="en">Put this week's three AI questions to the assistant the students use, so that you know before Monday whether it adds the chances.</span><span lang="nl">Stel de drie AI-vragen van deze week aan de assistent die de studenten gebruiken, zodat je voor maandag weet of hij de kansen optelt.</span></li>
+<li><span lang="en">Collect three short news items that state a chance, for Wednesday's workshop.</span><span lang="nl">Verzamel drie korte nieuwsberichten die een kans noemen, voor de workshop van woensdag.</span></li>
+</ul>
+
+
+    <h2 lang="en">The four workshops</h2>
+<h2 lang="nl">De vier workshops</h2>
+
+    <h3><span lang="en">Monday: chance as a long-run share (2 hours)</span><span lang="nl">Maandag: kans als aandeel op de lange duur (2 uur)</span></h3>
+    <ul>
+<li><span lang="en"><b>15 minutes.</b> Each student writes three chances on a card: rain tomorrow, their team finishing project 9 by Thursday, and a coin landing heads. Read a few cards aloud. A chance is a belief written as a number, and this week tests such beliefs against arithmetic.</span><span lang="nl"><b>15 minuten.</b> Elke student schrijft drie kansen op een kaartje: regen morgen, het team dat project 9 voor donderdag af heeft, en een munt die op kop valt. Lees een paar kaartjes hardop voor. Een kans is een overtuiging die als getal is opgeschreven, en deze week toetst zulke overtuigingen aan het rekenwerk.</span></li>
+<li><span lang="en"><b>25 minutes.</b> Pairs roll two dice 36 times and tally the totals. Pool the room's tallies on the board and compare them with the table of 36 outcomes from the skills notebook.</span><span lang="nl"><b>25 minuten.</b> Tweetallen gooien 36 keer met twee dobbelstenen en turven de totalen. Tel de tellingen van de zaal op het bord bij elkaar op en vergelijk ze met de tabel van 36 uitkomsten uit het vaardighedennotebook.</span></li>
+<li><span lang="en"><b>30 minutes.</b> Work the three rules on the board with the dice: the complement, the sum rule with its overlap, and the product rule with a pair of events that is not independent.</span><span lang="nl"><b>30 minuten.</b> Werk de drie regels uit op het bord met de dobbelstenen: het complement, de somregel met de overlap, en de productregel met een paar gebeurtenissen dat niet onafhankelijk is.</span></li>
+<li><span lang="en"><b>30 minutes.</b> Run the incoherence hunt. Each pair writes five chances about two events of its own choice and breaks one rule on purpose. Pairs swap sheets and find the broken rule with the notebook's check_beliefs function.</span><span lang="nl"><b>30 minuten.</b> Houd de jacht op incoherentie. Elk tweetal schrijft vijf kansen over twee zelfgekozen gebeurtenissen en breekt met opzet één regel. Tweetallen wisselen hun blad en zoeken de gebroken regel met de functie check_beliefs uit het notebook.</span></li>
+<li><span lang="en"><b>20 minutes.</b> Pairs report which rule was hardest to spot. Close on the notebook's planner 3, whose sum looks correct while the set still breaks a rule.</span><span lang="nl"><b>20 minuten.</b> Tweetallen melden welke regel het moeilijkst te zien was. Sluit af met planner 3 uit het notebook, wiens som er goed uitziet terwijl de set toch een regel breekt.</span></li>
+</ul>
+
+    <h3><span lang="en">Tuesday: at least one, and days that are not independent (2 hours)</span><span lang="nl">Dinsdag: minstens één, en dagen die niet onafhankelijk zijn (2 uur)</span></h3>
+    <ul>
+<li><span lang="en"><b>15 minutes.</b> Put the van question to a vote. The van breaks down on 20 percent of days. Each student estimates the chance of at least one breakdown in a week. Write the room's answers on the board.</span><span lang="nl"><b>15 minuten.</b> Leg de busvraag voor aan de zaal. De bus valt op 20 procent van de dagen uit. Elke student schat de kans op minstens één uitval in een week. Schrijf de antwoorden van de zaal op het bord.</span></li>
+<li><span lang="en"><b>25 minutes.</b> Ask an AI assistant the same question live and read its answer aloud. If it adds the chances, ask the room why an answer above 1 is impossible. If it uses the complement, ask it what it assumed about the days.</span><span lang="nl"><b>25 minuten.</b> Stel live dezelfde vraag aan een AI-assistent en lees het antwoord hardop voor. Als hij de kansen optelt, vraag de zaal waarom een antwoord boven 1 onmogelijk is. Als hij het complement gebruikt, vraag hem wat hij over de dagen aannam.</span></li>
+<li><span lang="en"><b>30 minutes.</b> Derive 1 - (1 - p) ** n with the room through the complement. Then run the notebook's simulation of 100,000 weeks and compare.</span><span lang="nl"><b>30 minuten.</b> Leid 1 - (1 - p) ** n samen met de zaal af via het complement. Draai daarna de simulatie van 100.000 weken uit het notebook en vergelijk.</span></li>
+<li><span lang="en"><b>30 minutes.</b> Run the van with spells. Pairs predict the share of weeks with a breakdown before the cell runs. Then the room lists events from their own fields that come in spells, such as sick days or late payments.</span><span lang="nl"><b>30 minuten.</b> Draai de bus met reeksen. Tweetallen voorspellen het aandeel weken met uitval voordat de cel draait. Daarna noemt de zaal gebeurtenissen uit hun eigen vakgebied die in reeksen komen, zoals ziektedagen of te late betalingen.</span></li>
+<li><span lang="en"><b>20 minutes.</b> Each pair writes two sentences for a manager on why the formula can overstate the chance of at least one, and on how to count the true share.</span><span lang="nl"><b>20 minuten.</b> Elk tweetal schrijft twee zinnen voor een manager over waarom de formule de kans op minstens één kan overschatten, en over hoe je het echte aandeel telt.</span></li>
+</ul>
+
+    <h3><span lang="en">Wednesday: two questions that sound alike (2 hours)</span><span lang="nl">Woensdag: twee vragen die op elkaar lijken (2 uur)</span></h3>
+    <ul>
+<li><span lang="en"><b>20 minutes.</b> Write two sentences on the board: "Most defective items come from the night shift" and "Most night-shift items are defective". The room votes on whether they say the same thing.</span><span lang="nl"><b>20 minuten.</b> Schrijf twee zinnen op het bord: "De meeste defecte producten komen uit de nachtploeg" en "De meeste producten uit de nachtploeg zijn defect". De zaal stemt over de vraag of ze hetzelfde zeggen.</span></li>
+<li><span lang="en"><b>30 minutes.</b> Build the factory's joint table on the board. Compute both conditionals, and point each time to the row total or column total you divide by.</span><span lang="nl"><b>30 minuten.</b> Zet de kruistabel van de fabriek op het bord. Bereken beide voorwaardelijke kansen, en wijs elke keer het rijtotaal of kolomtotaal aan waardoor je deelt.</span></li>
+<li><span lang="en"><b>30 minutes.</b> Stage the prosecutor's fallacy in natural frequencies with the notebook's city. Students restate the prosecutor's claim as a sentence with "given" in it and correct it.</span><span lang="nl"><b>30 minuten.</b> Speel de denkfout van de aanklager na in natuurlijke frequenties, met de stad uit het notebook. Studenten herschrijven de bewering van de aanklager als een zin met "gegeven" erin, en verbeteren die.</span></li>
+<li><span lang="en"><b>25 minutes.</b> Pairs take one of the three news items and mark each chance in it. For each chance they write what it is a chance of and given what, and whether the item could have swapped the two.</span><span lang="nl"><b>25 minuten.</b> Tweetallen nemen een van de drie nieuwsberichten en markeren elke kans erin. Bij elke kans schrijven ze waarop die slaat en gegeven wat, en of het bericht de twee kan hebben verwisseld.</span></li>
+<li><span lang="en"><b>15 minutes.</b> Pairs report back. Close with natural frequencies as the safe way to say a chance to someone else.</span><span lang="nl"><b>15 minuten.</b> Tweetallen brengen verslag uit. Sluit af met natuurlijke frequenties als de veilige manier om een kans aan iemand anders te vertellen.</span></li>
+</ul>
+
+    <h3><span lang="en">Thursday: saying a chance to someone who must decide (2 hours)</span><span lang="nl">Donderdag: een kans uitleggen aan iemand die moet beslissen (2 uur)</span></h3>
+    <ul>
+<li><span lang="en"><b>20 minutes.</b> Write the van's chance in three forms: 0.7903, a percentage, and "about 79 weeks out of 100". Ask the room which form a building firm would act on, and why.</span><span lang="nl"><b>20 minuten.</b> Schrijf de kans van de bus op drie manieren: 0,7903, een percentage, en "ongeveer 79 van de 100 weken". Vraag de zaal op welke vorm een bouwbedrijf zou handelen, en waarom.</span></li>
+<li><span lang="en"><b>30 minutes.</b> Teams draft the key sentences of their note in natural frequencies, and leave the numbers blank until their CHECKs pass.</span><span lang="nl"><b>30 minuten.</b> Teams schrijven de kernzinnen van hun notitie in natuurlijke frequenties, en laten de getallen open tot hun CHECKs slagen.</span></li>
+<li><span lang="en"><b>30 minutes.</b> Teams swap drafts. The other team marks every sentence that states a chance and writes beside it what the chance is of and which group it is computed in.</span><span lang="nl"><b>30 minuten.</b> Teams wisselen hun concepten. Het andere team markeert elke zin die een kans noemt en schrijft ernaast waarop de kans slaat en binnen welke groep ze is berekend.</span></li>
+<li><span lang="en"><b>25 minutes.</b> Discuss the limits of the data. A value for a grid cell about 25 km across says little about one building site, and 35 past years say only so much about next year.</span><span lang="nl"><b>25 minuten.</b> Bespreek de grenzen van de data. Een waarde voor een rastercel van ongeveer 25 km breed zegt weinig over één bouwplaats, en 35 voorbije jaren zeggen maar beperkt iets over volgend jaar.</span></li>
+<li><span lang="en"><b>15 minutes.</b> Each team writes down the two things the data cannot tell its building firm.</span><span lang="nl"><b>15 minuten.</b> Elk team schrijft de twee dingen op die de data zijn bouwbedrijf niet kan vertellen.</span></li>
+</ul>
+
+
+    <h2 lang="en">In the studio</h2>
+<h2 lang="nl">In de studio</h2>
+
+    <p lang="en">Visit every team twice a day. Ask the same three questions each time, so the teams learn to ask them of themselves.</p>
+<p lang="nl">Bezoek elk team twee keer per dag. Stel elke keer dezelfde drie vragen, zodat de teams leren die vragen aan zichzelf te stellen.</p>
+
+    <ul>
+<li><span lang="en">A chance of what, given what? Point to the row or column of your table it comes from.</span><span lang="nl">Een kans waarop, gegeven wat? Wijs de rij of kolom van je tabel aan waar ze vandaan komt.</span></li>
+<li><span lang="en">Did any of your code add chances? Show me the line.</span><span lang="nl">Telt je code ergens kansen op? Laat me de regel zien.</span></li>
+<li><span lang="en">Where do your formula and your record differ, and what does the difference tell the building firm?</span><span lang="nl">Waar verschillen je formule en je gegevens, en wat vertelt dat verschil het bouwbedrijf?</span></li>
+</ul>
+
+
+    <h2 lang="en">What to watch for this week</h2>
+<h2 lang="nl">Waar je deze week op let</h2>
+
+    <ul>
+<li><span lang="en">Teams that write &gt; 10 instead of &gt;= 10. The two give different counts, because the record holds 40 days with exactly 10 mm. CHECK 2 fails on the wrong one.</span><span lang="nl">Teams die &gt; 10 schrijven in plaats van &gt;= 10. De twee geven verschillende aantallen, omdat de gegevens 40 dagen met precies 10 mm bevatten. CHECK 2 faalt bij de verkeerde.</span></li>
+<li><span lang="en">Teams that accept the added column in a month where it stays below 1. The sum is wrong in every month. The error is hardest to see where the number looks possible.</span><span lang="nl">Teams die de kolom added accepteren in een maand waarin die onder 1 blijft. De som is in elke maand fout. De fout is het moeilijkst te zien waar het getal mogelijk lijkt.</span></li>
+<li><span lang="en">Teams that report the independent column as the answer. The question asks what the record shows. Ask them to find the months where the formula and the record differ most, and to explain the difference with what they learned about spells.</span><span lang="nl">Teams die de kolom independent als antwoord geven. De vraag gaat over wat de gegevens laten zien. Vraag ze de maanden te zoeken waarin formule en gegevens het meest verschillen, en dat verschil te verklaren met wat ze over reeksen leerden.</span></li>
+<li><span lang="en">Notes that swap the two conditionals of task 5. The share of heavy-rain days that fall in the wet months is a different number from the chance of heavy rain on a day in the wet months. Ask the team to read each such sentence aloud with "given" in it.</span><span lang="nl">Notities die de twee voorwaardelijke kansen van opdracht 5 verwisselen. Het aandeel van de dagen met zware regen dat in de natte maanden valt, is een ander getal dan de kans op zware regen op een dag in de natte maanden. Vraag het team elke zulke zin hardop te lezen met "gegeven" erin.</span></li>
+<li><span lang="en">Teams that treat ERA5 as a rain gauge. Each value is a model estimate for a grid cell about 25 km across. The model spreads a downpour over one neighbourhood across the whole cell. It also puts a little rain on most days. The note should say that the calendar describes the area around Paramaribo, not one building site.</span><span lang="nl">Teams die ERA5 behandelen als een regenmeter. Elke waarde is een schatting van het model voor een rastercel van ongeveer 25 km breed. Het model verdeelt een stortbui boven één wijk over de hele cel. Het geeft ook op de meeste dagen een beetje regen. De notitie moet zeggen dat de kalender het gebied rond Paramaribo beschrijft, niet één bouwplaats.</span></li>
+<li><span lang="en">Teams that treat 35 years as one steady climate. The solution notebook prints the average number of heavy-rain days per year for 1991 to 2000 and for 2016 to 2025, and the later decade has more. This table cannot say whether the change comes from the weather itself or from changes in the observations the model takes in, so students should report the change without claiming a cause.</span><span lang="nl">Teams die 35 jaar behandelen als één stabiel klimaat. Het oplossingsnotebook drukt het gemiddelde aantal dagen met zware regen per jaar af voor 1991 tot 2000 en voor 2016 tot 2025, en het latere decennium heeft er meer. Deze tabel kan niet zeggen of de verandering uit het weer zelf komt of uit veranderingen in de waarnemingen die het model gebruikt, dus studenten melden de verandering zonder een oorzaak te noemen.</span></li>
+<li><span lang="en">The weeks in task 6 leave out days 29 to 31, so each month has 140 weeks in the record. Teams that build weeks another way get a different record column, and CHECK 6 tells them so.</span><span lang="nl">De weken in opdracht 6 laten dag 29 tot 31 weg, dus elke maand heeft 140 weken in de gegevens. Teams die de weken anders indelen, krijgen een andere kolom record, en CHECK 6 meldt dat.</span></li>
+</ul>
+
+
+    <h2 lang="en">The Friday review</h2>
+<h2 lang="nl">De vrijdagbespreking</h2>
+
+    <ul>
+<li><span lang="en"><b>Before the review.</b> Students in the audience write one question for each team on a card while it presents.</span><span lang="nl"><b>Vóór de bespreking.</b> Studenten in het publiek schrijven tijdens elke presentatie één vraag voor dat team op een kaartje.</span></li>
+<li><span lang="en"><b>Each team.</b> Five minutes to present the calendar as if the building firm were in the room, then five minutes of questions from the cards. A fellow asks the last question, in the role of the firm's owner.</span><span lang="nl"><b>Elk team.</b> Vijf minuten om de kalender te presenteren alsof het bouwbedrijf in de zaal zit, daarna vijf minuten vragen van de kaartjes. Een fellow stelt de laatste vraag, in de rol van de eigenaar van het bedrijf.</span></li>
+<li><span lang="en"><b>After the presentations.</b> The room fills one table on the board with every team's AI answers for July and January, beside the three columns of task 6. Mark each answer as added, independent or matching the record.</span><span lang="nl"><b>Na de presentaties.</b> De zaal vult één tabel op het bord met de AI-antwoorden van elk team voor juli en januari, naast de drie kolommen van opdracht 6. Markeer elk antwoord als opgeteld, onafhankelijk of overeenkomend met de gegevens.</span></li>
+<li><span lang="en"><b>To close.</b> Choose the clearest calendar in the room and agree on what would make it ready to give to a real firm. Announce next week's roles.</span><span lang="nl"><b>Ter afsluiting.</b> Kies de duidelijkste kalender in de zaal en spreek af wat er nodig is om hem aan een echt bedrijf te geven. Maak de rollen voor volgende week bekend.</span></li>
+</ul>
+
+    <footer><p><span lang="en"><a href="index.html">Back to week 9</a><span class="separator">|</span><a href="../materials.html">All materials</a></span><span lang="nl"><a href="index.html">Terug naar week 9</a><span class="separator">|</span><a href="../materials.html">Al het lesmateriaal</a></span></p></footer>
+</div></main>
+<div class="site-footer"><div class="container"><div><span lang="en">BiGi Data is a <a href="https://freefocus.org">Free Focus</a> program.</span><span lang="nl">BiGi Data is een programma van <a href="https://freefocus.org">Free Focus</a>.</span></div><div><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><span class="separator"> &middot; </span><a href="../credits.html"><span lang="en">Image credits</span><span lang="nl">Fotoverantwoording</span></a></div></div></div>
+<script data-goatcounter="https://johnsanterre.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Project 10: Week 10 - BiGi Data">
+<meta name="robots" content="noindex, nofollow">
+<title data-en="Project 10: Week 10 - BiGi Data" data-nl="Project 10: Week 10 - BiGi Data">Project 10: Week 10 - BiGi Data</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;650;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/lang.js"></script>
+</head>
+<body>
+<header class="nav-header"><div class="container">
+<a href="../index.html" class="site-title"><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><polygon fill="#ecc81d" points="50,4 61,38 97,38 68,59 79,94 50,73 21,94 32,59 3,38 39,38"/></svg>BiGi Data</a>
+<nav class="nav-links"><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a>
+<button id="lang-btn" class="lang-btn" type="button">Nederlands</button></nav>
+</div></header>
+<div class="stripes"></div>
+<section class="page-hero" style="background-image:url(../assets/img/market.jpg)"><div class="container">
+<nav class="breadcrumb"><a href="../index.html"><span lang="en">Home</span><span lang="nl">Home</span></a><span class="separator">/</span><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a><span class="separator">/</span><a href="index.html"><span lang="en">Week 10</span><span lang="nl">Week 10</span></a><span class="separator">/</span><span><span lang="en">Project 10</span><span lang="nl">Project 10</span></span></nav>
+<h1 lang="en">Project 10: what share of Paramaribo's roads are paved?</h1>
+<h1 lang="nl">Project 10: welk deel van de wegen in Paramaribo is verhard?</h1>
+
+    <p lang="en" class="muted">One dataset, one question, one week. This week the question has a second half, which asks how far an answer from a sample can be trusted.</p>
+<p lang="nl" class="muted">Eén dataset, één vraag, één week. Deze week heeft de vraag een tweede helft, die vraagt hoeveel vertrouwen een antwoord uit een steekproef verdient.</p>
+
+
+    </div></section>
+<main><div class="container">
+<h2 lang="en">The question</h2>
+<h2 lang="nl">De vraag</h2>
+
+    <p lang="en" class="lead">What share of the road segments in the district of Paramaribo are paved? If a survey team checked only a random sample of segments, how close would its estimate be to the full count, and how wide should the interval it reports be?</p>
+<p lang="nl" class="lead">Welk deel van de wegsegmenten in het district Paramaribo is verhard? Als een onderzoeksteam alleen een willekeurige steekproef van segmenten controleerde, hoe dicht zou zijn schatting bij de volledige telling liggen, en hoe breed moet het interval zijn dat het rapporteert?</p>
+
+
+    <h2 lang="en">Who it is for</h2>
+<h2 lang="nl">Voor wie het is</h2>
+
+    <p lang="en">The work is for the road planners at the ministry responsible for public works. They cannot drive every street before they decide where to survey and what to pave first. By Friday, the team hands them a note of about 200 words. The note gives an estimate with its honest interval and the number of segments a survey team would need to visit for a tighter answer. It also names the road classes where the map is silent about the surface.</p>
+<p lang="nl">Het werk is voor de wegplanners van het ministerie dat over openbare werken gaat. Zij kunnen niet elke straat afrijden voordat ze beslissen waar ze onderzoek doen en wat ze het eerst verharden. Op vrijdag geeft het team hun een notitie van ongeveer 200 woorden. De notitie geeft een schatting met een eerlijk interval en het aantal segmenten dat een onderzoeksteam zou moeten bezoeken voor een scherper antwoord. Ze noemt ook de wegklassen waar de kaart zwijgt over het wegdek.</p>
+
+
+    <h2 lang="en">The data</h2>
+<h2 lang="nl">De data</h2>
+
+    <p lang="en"><a href="https://www.openstreetmap.org/">OpenStreetMap</a> is a map of the world that volunteers build and anyone can download. This project uses every road segment in the district of Paramaribo, downloaded through the <a href="https://overpass-api.de/">Overpass API</a> on 6 November 2026. A segment is a piece of road between two points where a mapper split it, so one long avenue can be several segments.</p>
+<p lang="nl"><a href="https://www.openstreetmap.org/">OpenStreetMap</a> is een kaart van de wereld die vrijwilligers bouwen en die iedereen kan downloaden. Dit project gebruikt elk wegsegment in het district Paramaribo, gedownload via de <a href="https://overpass-api.de/">Overpass API</a> op 6 november 2026. Een segment is een stuk weg tussen twee punten waar een kaartmaker de weg heeft opgeknipt, dus één lange laan kan uit meerdere segmenten bestaan.</p>
+
+    <p lang="en">The table keeps nine road classes, from primary roads down to residential and living streets. It leaves out service roads such as driveways and parking aisles, farm tracks, and paths for walking and cycling.</p>
+<p lang="nl">De tabel houdt negen wegklassen over, van hoofdwegen tot woonstraten en erven. Ze laat dienstwegen zoals opritten en parkeerbanen weg, en ook landbouwpaden en paden voor voetgangers en fietsers.</p>
+
+    <p lang="en"><b>OpenStreetMap's surface tags are incomplete.</b> A segment records its surface only when a mapper added the tag, and 2,888 of the 4,252 segments carry one. In this project, "paved share" therefore means the share among segments that carry a surface tag. One task asks which roads lack a tag and what that does to the answer.</p>
+<p lang="nl"><b>De surface-tags van OpenStreetMap zijn onvolledig.</b> Een segment legt het wegdek alleen vast als een kaartmaker de tag heeft toegevoegd, en 2.888 van de 4.252 segmenten hebben er een. In dit project betekent "aandeel verhard" daarom het aandeel onder de segmenten met een surface-tag. Eén opdracht vraagt welke wegen geen tag hebben en wat dat met het antwoord doet.</p>
+
+    <p lang="en">Paved and unpaved follow the groups on the OpenStreetMap wiki's <a href="https://wiki.openstreetmap.org/wiki/Key:surface">surface page</a>. Asphalt, concrete, paving stones, bricks and the plain tag "paved" count as paved. Sand, dirt, ground, gravel and the plain tag "unpaved" count as unpaved.</p>
+<p lang="nl">Verhard en onverhard volgen de groepen op de <a href="https://wiki.openstreetmap.org/wiki/Key:surface">surface-pagina</a> van de OpenStreetMap-wiki. Asfalt, beton, klinkers, bakstenen en de algemene tag "paved" tellen als verhard. Zand, aarde, grond, grind en de algemene tag "unpaved" tellen als onverhard.</p>
+
+    <p lang="en" class="muted">Map data © OpenStreetMap contributors, available under the <a href="https://www.openstreetmap.org/copyright">Open Database License</a>.</p>
+<p lang="nl" class="muted">Kaartdata © OpenStreetMap-bijdragers, beschikbaar onder de <a href="https://www.openstreetmap.org/copyright">Open Database License</a>.</p>
+
+    <p><a class="button secondary" href="../data/week10-paramaribo-roads.csv" download><span lang="en">Download the table (CSV)</span><span lang="nl">Download de tabel (CSV)</span></a></p>
+
+
+    <h2 lang="en">Your team</h2>
+<h2 lang="nl">Je team</h2>
+
+    <p lang="en">Teams of four hold the four roles, which rotate every week. This week, the data checker has the most important job, because the answer is only as good as the list of segments it describes.</p>
+<p lang="nl">Teams van vier verdelen de vier rollen, die elke week wisselen. Deze week heeft de datacontroleur de belangrijkste taak, omdat het antwoord maar zo goed is als de lijst van segmenten die het beschrijft.</p>
+
+    <ul>
+<li><span lang="en"><b>The builder</b> writes and runs the notebook with the AI assistant.</span><span lang="nl"><b>De bouwer</b> schrijft en draait het notebook met de AI-assistent.</span></li>
+<li><span lang="en"><b>The data checker</b> checks which segments each number describes, and checks each number in the note against the notebook.</span><span lang="nl"><b>De datacontroleur</b> controleert welke segmenten elk getal beschrijft, en controleert elk getal in de notitie tegen het notebook.</span></li>
+<li><span lang="en"><b>The AI checker</b> keeps the AI log, recording every claim the AI makes and whether the data supports it.</span><span lang="nl"><b>De AI-controleur</b> houdt het AI-logboek bij, met elke bewering van de AI en of de data die steunt.</span></li>
+<li><span lang="en"><b>The presenter</b> presents on Friday and answers the room's questions.</span><span lang="nl"><b>De presentator</b> presenteert op vrijdag en beantwoordt de vragen uit de zaal.</span></li>
+</ul>
+
+
+    <h2 lang="en">The tasks</h2>
+<h2 lang="nl">De opdrachten</h2>
+
+    <p lang="en">The starter notebook loads the data for you and holds nine tasks. Eight of them have a CHECK cell that tells you when the answer is right.</p>
+<p lang="nl">Het startnotebook laadt de data voor je en bevat negen opdrachten. Acht ervan hebben een CHECK-cel die je vertelt wanneer het antwoord klopt.</p>
+
+    <ol>
+    <li><span lang="en">Describe the table and count the segments that carry a surface tag.</span><span lang="nl">Beschrijf de tabel en tel de segmenten met een surface-tag.</span></li>
+    <li><span lang="en">Find which road classes are tagged least often, and say what that suggests about the untagged segments.</span><span lang="nl">Zoek welke wegklassen het minst vaak een tag hebben, en zeg wat dat suggereert over de segmenten zonder tag.</span></li>
+    <li><span lang="en">Compute the full count, which is the paved share among all tagged segments.</span><span lang="nl">Bereken de volledige telling, het aandeel verhard onder alle segmenten met een tag.</span></li>
+    <li><span lang="en">Draw one random sample of 100 segments and build a 95 percent bootstrap interval for its paved share.</span><span lang="nl">Trek één willekeurige steekproef van 100 segmenten en bouw een bootstrap-95%-interval voor het aandeel verhard daarin.</span></li>
+    <li><span lang="en">Repeat the survey at five sample sizes, and chart the estimates and intervals against the full count.</span><span lang="nl">Herhaal het onderzoek bij vijf steekproefgroottes, en zet de schattingen en intervallen in een grafiek tegen de volledige telling.</span></li>
+    <li><span lang="en">Repeat the survey of 100 segments 200 times, and count how often the interval holds the full count.</span><span lang="nl">Herhaal het onderzoek van 100 segmenten 200 keer, en tel hoe vaak het interval de volledige telling bevat.</span></li>
+    <li><span lang="en">Test the AI's answers against your intervals.</span><span lang="nl">Toets de antwoorden van de AI aan je intervallen.</span></li>
+    <li><span lang="en">Compare the paved share by segments with the paved share by length.</span><span lang="nl">Vergelijk het aandeel verhard naar segmenten met het aandeel verhard naar lengte.</span></li>
+    <li><span lang="en">Write the note of about 200 words for the road planners.</span><span lang="nl">Schrijf de notitie van ongeveer 200 woorden voor de wegplanners.</span></li>
+    </ol>
+    <p><a class="button" lang="en" href="https://colab.research.google.com/github/johnsanterre/bigi-data-notebooks/blob/main/notebooks/project-10-en.ipynb" target="_blank" rel="noopener">Open in Colab</a><a class="button" lang="nl" href="https://colab.research.google.com/github/johnsanterre/bigi-data-notebooks/blob/main/notebooks/project-10-nl.ipynb" target="_blank" rel="noopener">Openen in Colab</a><a class="button secondary" lang="en" href="../notebooks/project-10-en.ipynb" download>Download</a><a class="button secondary" lang="nl" href="../notebooks/project-10-nl.ipynb" download>Downloaden</a></p>
+
+
+    <h2 lang="en">The AI check this week</h2>
+<h2 lang="nl">De AI-controle van deze week</h2>
+
+    <div class="panel warn">
+    <p lang="en">First ask your AI assistant, without giving it any data, what share of the roads in Paramaribo are paved. Record whether it gives one precise number or a range, and whether it names a source and a date.</p>
+<p lang="nl">Vraag je AI-assistent eerst, zonder hem data te geven, welk deel van de wegen in Paramaribo verhard is. Noteer of hij één precies getal of een bereik geeft, en of hij een bron en een datum noemt.</p>
+
+    <p lang="en">Then give it the 100 paved and unpaved values from your sample and ask for a 95 percent interval. Compare its interval with your bootstrap interval and with the two intervals you build in task 7, one from the standard deviation and one from the standard error. An interval for a share that runs below 0 or above 1 is the sign of the standard deviation used where the standard error belongs. Show in your AI log how wide the honest interval is.</p>
+<p lang="nl">Geef hem daarna de 100 waarden verhard en onverhard uit je steekproef en vraag om een 95%-interval. Vergelijk zijn interval met je bootstrap-interval en met de twee intervallen die je in opdracht 7 bouwt, één met de standaardafwijking en één met de standaardfout. Een interval voor een aandeel dat onder 0 of boven 1 loopt, is het teken dat de standaardafwijking is gebruikt waar de standaardfout hoort. Laat in jullie AI-logboek zien hoe breed het eerlijke interval is.</p>
+
+    </div>
+
+    <h2 lang="en">What you hand in on Friday</h2>
+<h2 lang="nl">Wat je vrijdag inlevert</h2>
+
+    <ul>
+<li><span lang="en">The notebook, with every CHECK passing.</span><span lang="nl">Het notebook, met elke CHECK geslaagd.</span></li>
+<li><span lang="en">One chart of the estimates and intervals at five sample sizes, with OpenStreetMap named as the source.</span><span lang="nl">Eén grafiek van de schattingen en intervallen bij vijf steekproefgroottes, met OpenStreetMap als bron vermeld.</span></li>
+<li><span lang="en">The note for the road planners, about 200 words.</span><span lang="nl">De notitie voor de wegplanners, ongeveer 200 woorden.</span></li>
+<li><span lang="en">The AI log.</span><span lang="nl">Het AI-logboek.</span></li>
+<li><span lang="en">One extra interval from a sample of 100 segments drawn with your team number as the seed, for the room's chart on Friday.</span><span lang="nl">Eén extra interval uit een steekproef van 100 segmenten, getrokken met jullie teamnummer als seed, voor de grafiek van de zaal op vrijdag.</span></li>
+<li><span lang="en">A presentation of five minutes, followed by five minutes of questions.</span><span lang="nl">Een presentatie van vijf minuten, gevolgd door vijf minuten vragen.</span></li>
+</ul>
+
+
+    <h2 lang="en">How the work is judged</h2>
+<h2 lang="nl">Hoe het werk wordt beoordeeld</h2>
+
+    <table>
+    <tr><th><span lang="en">Criterion</span><span lang="nl">Criterium</span></th><th><span lang="en">Meets the standard when</span><span lang="nl">Voldoet als</span></th></tr>
+    <tr><td><span lang="en">Numbers</span><span lang="nl">Getallen</span></td><td><span lang="en">Every CHECK passes, and every number in the note matches the notebook.</span><span lang="nl">Elke CHECK slaagt, en elk getal in de notitie komt overeen met het notebook.</span></td></tr>
+    <tr><td><span lang="en">Interval</span><span lang="nl">Interval</span></td><td><span lang="en">Every estimate in the note has an interval, stated in one sentence that names the sample and the method.</span><span lang="nl">Elke schatting in de notitie heeft een interval, in één zin die de steekproef en de methode noemt.</span></td></tr>
+    <tr><td><span lang="en">Missing tags</span><span lang="nl">Ontbrekende tags</span></td><td><span lang="en">The note says how many segments carry no surface tag, which classes they come from, and which way they could move the answer.</span><span lang="nl">De notitie zegt hoeveel segmenten geen surface-tag hebben, uit welke klassen ze komen, en in welke richting ze het antwoord kunnen verschuiven.</span></td></tr>
+    <tr><td><span lang="en">Chart</span><span lang="nl">Grafiek</span></td><td><span lang="en">The chart has a title, labelled axes, the full count as a reference line and a named source.</span><span lang="nl">De grafiek heeft een titel, benoemde assen, de volledige telling als referentielijn en een vermelde bron.</span></td></tr>
+    <tr><td><span lang="en">AI log</span><span lang="nl">AI-logboek</span></td><td><span lang="en">The log compares the AI's interval with the team's own and names the spread the AI used.</span><span lang="nl">Het logboek vergelijkt het interval van de AI met dat van het team en noemt de spreiding die de AI gebruikte.</span></td></tr>
+    <tr><td><span lang="en">Note</span><span lang="nl">Notitie</span></td><td><span lang="en">A road planner could act on the note. It names the source and its date and states one thing the interval cannot tell them.</span><span lang="nl">Een wegplanner kan iets met de notitie. Ze noemt de bron en de datum en zegt één ding dat het interval niet kan vertellen.</span></td></tr>
+    </table>
+    <footer><p><span lang="en"><a href="index.html">Back to week 10</a><span class="separator">|</span><a href="../materials.html">All materials</a></span><span lang="nl"><a href="index.html">Terug naar week 10</a><span class="separator">|</span><a href="../materials.html">Al het lesmateriaal</a></span></p></footer>
+</div></main>
+<div class="site-footer"><div class="container"><div><span lang="en">BiGi Data is a <a href="https://freefocus.org">Free Focus</a> program.</span><span lang="nl">BiGi Data is een programma van <a href="https://freefocus.org">Free Focus</a>.</span></div><div><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><span class="separator"> &middot; </span><a href="../credits.html"><span lang="en">Image credits</span><span lang="nl">Fotoverantwoording</span></a></div></div></div>
+<script data-goatcounter="https://johnsanterre.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

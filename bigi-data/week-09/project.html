@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Project 9: Week 9 - BiGi Data">
+<meta name="robots" content="noindex, nofollow">
+<title data-en="Project 9: Week 9 - BiGi Data" data-nl="Project 9: Week 9 - BiGi Data">Project 9: Week 9 - BiGi Data</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;650;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/lang.js"></script>
+</head>
+<body>
+<header class="nav-header"><div class="container">
+<a href="../index.html" class="site-title"><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><polygon fill="#ecc81d" points="50,4 61,38 97,38 68,59 79,94 50,73 21,94 32,59 3,38 39,38"/></svg>BiGi Data</a>
+<nav class="nav-links"><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a>
+<button id="lang-btn" class="lang-btn" type="button">Nederlands</button></nav>
+</div></header>
+<div class="stripes"></div>
+<section class="page-hero" style="background-image:url(../assets/img/market.jpg)"><div class="container">
+<nav class="breadcrumb"><a href="../index.html"><span lang="en">Home</span><span lang="nl">Home</span></a><span class="separator">/</span><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a><span class="separator">/</span><a href="index.html"><span lang="en">Week 9</span><span lang="nl">Week 9</span></a><span class="separator">/</span><span><span lang="en">Project 9</span><span lang="nl">Project 9</span></span></nav>
+<h1 lang="en">Project 9: heavy rain in Paramaribo, month by month</h1>
+<h1 lang="nl">Project 9: zware regen in Paramaribo, maand voor maand</h1>
+
+    <p lang="en" class="muted">One dataset, one question, one week. This project asks for chances rather than averages, and two of its tasks turn on how a question is worded.</p>
+<p lang="nl" class="muted">Eén dataset, één vraag, één week. Dit project vraagt om kansen in plaats van gemiddelden, en twee van de opdrachten draaien om hoe een vraag is geformuleerd.</p>
+
+
+    </div></section>
+<main><div class="container">
+<h2 lang="en">The question</h2>
+<h2 lang="nl">De vraag</h2>
+
+    <p lang="en" class="lead">In which months is a heavy-rain day most likely in Paramaribo? In a given week of each month, what is the chance of at least one heavy-rain day?</p>
+<p lang="nl" class="lead">In welke maanden is een dag met zware regen in Paramaribo het waarschijnlijkst? Wat is in een willekeurige week van elke maand de kans op minstens één dag met zware regen?</p>
+
+
+    <h2 lang="en">Who it is for</h2>
+<h2 lang="nl">Voor wie</h2>
+
+    <p lang="en">This week's audience is a small building firm in Paramaribo that pours concrete and repairs roofs for families. The firm plans that work around the rain, because fresh concrete and an open roof are both at risk in a downpour.</p>
+<p lang="nl">Het publiek van deze week is een klein bouwbedrijf in Paramaribo dat beton stort en daken herstelt voor gezinnen. Het bedrijf plant dat werk rond de regen, omdat vers beton en een open dak allebei gevaar lopen bij een stortbui.</p>
+
+    <p lang="en">On Friday the firm gets a one-page rain calendar to pin on its wall. For each month, the calendar says how many weeks out of 10 had at least one heavy-rain day from 1991 to 2025. A note of about 200 words underneath says which months to plan around and how far to trust the calendar.</p>
+<p lang="nl">Op vrijdag krijgt het bedrijf een regenkalender van één pagina om aan de muur te hangen. Voor elke maand zegt de kalender in hoeveel van de 10 weken er van 1991 tot 2025 minstens één dag met zware regen was. Een notitie van ongeveer 200 woorden eronder zegt rond welke maanden het bedrijf moet plannen en hoeveel vertrouwen de kalender verdient.</p>
+
+
+    <h2 lang="en">The data</h2>
+<h2 lang="nl">De data</h2>
+
+    <p lang="en">The table holds the rain that fell on every day from 1 January 1991 to 31 December 2025, in millimetres, for the grid cell that covers Paramaribo (requested at 5.85 N, 55.20 W). It comes from the <a href="https://open-meteo.com/en/docs/historical-weather-api">Open-Meteo historical weather API</a>, which serves the ERA5 model. It was downloaded on 6 November 2026.</p>
+<p lang="nl">De tabel bevat de regen die op elke dag van 1 januari 1991 tot 31 december 2025 viel, in millimeters, voor de rastercel die Paramaribo bevat (opgevraagd op 5,85 N, 55,20 W). De data komt uit de <a href="https://open-meteo.com/en/docs/historical-weather-api">historische weer-API van Open-Meteo</a>, die het model ERA5 levert. Ze is gedownload op 6 november 2026.</p>
+
+    <p lang="en">ERA5 is a reanalysis. Open-Meteo describes its archive as based on reanalysis datasets that combine observations from weather stations, aircraft, buoys, radar and satellites with mathematical models that fill the gaps. ERA5's grid spacing is 0.25 degrees, about 25 km. Each value is the model's estimate for a whole grid cell, not a reading from one rain gauge.</p>
+<p lang="nl">ERA5 is een heranalyse. Open-Meteo beschrijft zijn archief als gebaseerd op heranalyses die waarnemingen van weerstations, vliegtuigen, boeien, radar en satellieten combineren met wiskundige modellen die de gaten opvullen. Het raster van ERA5 heeft een afstand van 0,25 graden, ongeveer 25 km. Elke waarde is de schatting van het model voor een hele rastercel, geen meting van één regenmeter.</p>
+
+    <p lang="en">Open-Meteo's default setting blends ERA5 with other models. Its documentation advises using ERA5 or ERA5-Land alone when studying change over decades, so this table asks for ERA5 alone.</p>
+<p lang="nl">De standaardinstelling van Open-Meteo mengt ERA5 met andere modellen. De documentatie raadt aan om alleen ERA5 of ERA5-Land te gebruiken als je verandering over tientallen jaren bestudeert, dus deze tabel vraagt alleen om ERA5.</p>
+
+    <p lang="en">In this project, a heavy-rain day is a day with at least 10 mm of rain. That is the threshold of R10mm, an index in the <a href="https://www.climdex.org/learn/indices/">Climdex list of climate indices</a>. Task 8 repeats the main result at 20 mm, the threshold of R20mm.</p>
+<p lang="nl">In dit project is een dag met zware regen een dag met minstens 10 mm regen. Dat is de drempel van R10mm, een index in de <a href="https://www.climdex.org/learn/indices/">lijst met klimaatindices van Climdex</a>. Opdracht 8 herhaalt het hoofdresultaat bij 20 mm, de drempel van R20mm.</p>
+
+    <p lang="en" class="muted">Weather data by <a href="https://open-meteo.com/">Open-Meteo.com</a>, from ERA5, generated using Copernicus Climate Change Service information.</p>
+<p lang="nl" class="muted">Weerdata van <a href="https://open-meteo.com/">Open-Meteo.com</a>, uit ERA5, gemaakt met informatie van de Copernicus Climate Change Service.</p>
+
+    <p><a class="button secondary" href="../data/week09-paramaribo-rain.csv" download><span lang="en">Download the table (CSV)</span><span lang="nl">Download de tabel (CSV)</span></a></p>
+
+
+    <h2 lang="en">Your team</h2>
+<h2 lang="nl">Je team</h2>
+
+    <p lang="en">Teams of four hold the four roles, which rotate every week. This week, the data checker has the hardest job.</p>
+<p lang="nl">Teams van vier verdelen de vier rollen, die elke week wisselen. Deze week heeft de datacontroleur de zwaarste taak.</p>
+
+    <ul>
+<li><span lang="en"><b>The builder</b> writes and runs the notebook with the AI assistant.</span><span lang="nl"><b>De bouwer</b> schrijft en draait het notebook met de AI-assistent.</span></li>
+<li><span lang="en"><b>The data checker</b> reads every chance in the calendar and the note, and asks of each one what it is a chance of and given what.</span><span lang="nl"><b>De datacontroleur</b> leest elke kans in de kalender en de notitie, en vraagt bij elke kans waarop ze slaat en gegeven wat.</span></li>
+<li><span lang="en"><b>The AI checker</b> asks the three questions in task 7 and keeps the AI log, with the notebook's numbers beside every answer.</span><span lang="nl"><b>De AI-controleur</b> stelt de drie vragen van opdracht 7 en houdt het AI-logboek bij, met de getallen van het notebook naast elk antwoord.</span></li>
+<li><span lang="en"><b>The presenter</b> presents the calendar on Friday as if to the firm, and answers the room's questions.</span><span lang="nl"><b>De presentator</b> presenteert de kalender op vrijdag alsof het bedrijf in de zaal zit, en beantwoordt de vragen uit de zaal.</span></li>
+</ul>
+
+
+    <h2 lang="en">The tasks</h2>
+<h2 lang="nl">De opdrachten</h2>
+
+    <p lang="en">The starter notebook loads the data for you and holds ten tasks. Eight of them have a CHECK cell that tells you when the answer is right.</p>
+<p lang="nl">Het startnotebook laadt de data voor je en bevat tien opdrachten. Acht ervan hebben een CHECK-cel die je vertelt wanneer het antwoord klopt.</p>
+
+    <ol>
+<li><span lang="en">Describe the table, and confirm that every day from 1991 to 2025 is present.</span><span lang="nl">Beschrijf de tabel, en bevestig dat elke dag van 1991 tot 2025 aanwezig is.</span></li>
+<li><span lang="en">Mark the heavy-rain days and compute the chance of one on any day of the year.</span><span lang="nl">Markeer de dagen met zware regen en bereken de kans op zo'n dag op een willekeurige dag van het jaar.</span></li>
+<li><span lang="en">Compute the chance of a heavy-rain day in each month, and find the month where it is highest.</span><span lang="nl">Bereken de kans op een dag met zware regen in elke maand, en zoek de maand waarin die het hoogst is.</span></li>
+<li><span lang="en">Chart the chance by month, with the all-year chance drawn as a line.</span><span lang="nl">Maak een grafiek van de kans per maand, met de kans over het hele jaar als lijn.</span></li>
+<li><span lang="en">Find the wet months. Then compute the chance of heavy rain on a day in those months, and the share of heavy-rain days that fall in them.</span><span lang="nl">Zoek de natte maanden. Bereken daarna de kans op zware regen op een dag in die maanden, en het aandeel van de dagen met zware regen dat erin valt.</span></li>
+<li><span lang="en">Compute the chance of at least one heavy-rain day in a week of each month in three ways, and decide which one answers the question.</span><span lang="nl">Bereken de kans op minstens één dag met zware regen in een week van elke maand op drie manieren, en beslis welke de vraag beantwoordt.</span></li>
+<li><span lang="en">Put three questions to your AI assistant and test its answers against tasks 5 and 6.</span><span lang="nl">Stel je AI-assistent drie vragen en toets de antwoorden aan opdracht 5 en 6.</span></li>
+<li><span lang="en">Repeat the main result with a threshold of 20 mm, and decide whether the answer depends on the threshold.</span><span lang="nl">Herhaal het hoofdresultaat met een drempel van 20 mm, en beslis of het antwoord van de drempel afhangt.</span></li>
+<li><span lang="en">Build the rain calendar for the building firm.</span><span lang="nl">Maak de regenkalender voor het bouwbedrijf.</span></li>
+<li><span lang="en">Write the note of about 200 words that goes under the calendar.</span><span lang="nl">Schrijf de notitie van ongeveer 200 woorden die onder de kalender komt.</span></li>
+</ol>
+
+    <p><a class="button" lang="en" href="https://colab.research.google.com/github/johnsanterre/bigi-data-notebooks/blob/main/notebooks/project-09-en.ipynb" target="_blank" rel="noopener">Open in Colab</a><a class="button" lang="nl" href="https://colab.research.google.com/github/johnsanterre/bigi-data-notebooks/blob/main/notebooks/project-09-nl.ipynb" target="_blank" rel="noopener">Openen in Colab</a><a class="button secondary" lang="en" href="../notebooks/project-09-en.ipynb" download>Download</a><a class="button secondary" lang="nl" href="../notebooks/project-09-nl.ipynb" download>Downloaden</a></p>
+
+
+    <h2 lang="en">The AI check this week</h2>
+<h2 lang="nl">De AI-controle van deze week</h2>
+
+    <div class="panel warn">
+    <p lang="en">Checking the AI is part of the method in task 7. Ask your AI assistant, without showing it the table, for the chance of at least one heavy-rain day in a week of July, and give it only the daily chance you computed for July. Ask the same for January. Record both answers in the AI log and set each one beside the three columns of task 6. An assistant that adds the seven daily chances can give an answer above 1, which is impossible. An assistant that uses the independence formula gives a number that looks right, so test it against the record as well.</p>
+<p lang="nl">De AI controleren is in opdracht 7 een deel van de methode. Vraag je AI-assistent, zonder hem de tabel te laten zien, naar de kans op minstens één dag met zware regen in een week van juli, en geef hem alleen de dagkans die je voor juli hebt berekend. Vraag hetzelfde voor januari. Schrijf beide antwoorden in het AI-logboek en zet elk antwoord naast de drie kolommen van opdracht 6. Een assistent die de zeven dagkansen optelt, kan een antwoord boven 1 geven, en dat is onmogelijk. Een assistent die de onafhankelijkheidsformule gebruikt, geeft een getal dat er goed uitziet, dus toets dat ook aan de gegevens.</p>
+
+    <p lang="en">Then give the assistant the share of heavy-rain days that fall in your wet months, and ask for the chance that a given day in those months is a heavy-rain day. That share cannot answer the question, because it is the chance of a wet month given heavy rain. Task 5 computes the chance the question asks for. Record whether the assistant noticed the swap and whether it said what it assumed.</p>
+<p lang="nl">Geef de assistent daarna het aandeel van de dagen met zware regen dat in jullie natte maanden valt, en vraag naar de kans dat een willekeurige dag in die maanden een dag met zware regen is. Dat aandeel kan de vraag niet beantwoorden, want het is de kans op een natte maand gegeven zware regen. Opdracht 5 berekent de kans waar de vraag om vraagt. Noteer of de assistent de verwisseling opmerkte en of hij zei wat hij aannam.</p>
+
+    </div>
+
+    <h2 lang="en">What you hand in on Friday</h2>
+<h2 lang="nl">Wat je vrijdag inlevert</h2>
+
+    <ul>
+<li><span lang="en">The rain calendar and its note, printed on one page for the building firm.</span><span lang="nl">De regenkalender met de notitie, op één pagina afgedrukt voor het bouwbedrijf.</span></li>
+<li><span lang="en">The notebook, with every CHECK passing.</span><span lang="nl">Het notebook, met elke CHECK geslaagd.</span></li>
+<li><span lang="en">The bar chart from task 4, with Open-Meteo and ERA5 named as the source.</span><span lang="nl">Het staafdiagram uit opdracht 4, met Open-Meteo en ERA5 als bron vermeld.</span></li>
+<li><span lang="en">The AI log, with the three answers from task 7 and the notebook's numbers beside them.</span><span lang="nl">Het AI-logboek, met de drie antwoorden uit opdracht 7 en de getallen van het notebook ernaast.</span></li>
+<li><span lang="en">A presentation of five minutes, given as if to the firm, followed by five minutes of questions.</span><span lang="nl">Een presentatie van vijf minuten, gegeven alsof het bedrijf in de zaal zit, gevolgd door vijf minuten vragen.</span></li>
+</ul>
+
+
+    <h2 lang="en">How the work is judged</h2>
+<h2 lang="nl">Hoe het werk wordt beoordeeld</h2>
+
+    <table>
+    <tr><th><span lang="en">Criterion</span><span lang="nl">Criterium</span></th><th><span lang="en">Meets the standard when</span><span lang="nl">Voldoet als</span></th></tr>
+    <tr><td><span lang="en">Calendar and note</span><span lang="nl">Kalender en notitie</span></td><td><span lang="en">The firm could plan its next year from the page. It names the source, gives every chance in natural frequencies and states two things the data cannot tell.</span><span lang="nl">Het bedrijf kan met de pagina zijn volgende jaar plannen. Ze noemt de bron, geeft elke kans in natuurlijke frequenties en zegt twee dingen die de data niet kan vertellen.</span></td></tr>
+    <tr><td><span lang="en">Numbers</span><span lang="nl">Getallen</span></td><td><span lang="en">Every CHECK passes, and every number on the calendar and in the note matches the notebook.</span><span lang="nl">Elke CHECK slaagt, en elk getal op de kalender en in de notitie komt overeen met het notebook.</span></td></tr>
+    <tr><td><span lang="en">Chances</span><span lang="nl">Kansen</span></td><td><span lang="en">Every chance says what it is a chance of and which group it is computed in, and none is above 1.</span><span lang="nl">Elke kans zegt waarop ze slaat en binnen welke groep ze is berekend, en geen enkele is groter dan 1.</span></td></tr>
+    <tr><td><span lang="en">Chart</span><span lang="nl">Grafiek</span></td><td><span lang="en">The chart has a title, labelled axes, the all-year line and a named source.</span><span lang="nl">De grafiek heeft een titel, benoemde assen, de lijn voor het hele jaar en een vermelde bron.</span></td></tr>
+    <tr><td><span lang="en">AI log</span><span lang="nl">AI-logboek</span></td><td><span lang="en">All three AI answers are tested against the data, and every wrong answer is explained by the rule it broke.</span><span lang="nl">Alle drie de antwoorden van de AI zijn aan de data getoetst, en elk fout antwoord is verklaard met de regel die het brak.</span></td></tr>
+    </table>
+    <footer><p><span lang="en"><a href="index.html">Back to week 9</a><span class="separator">|</span><a href="../materials.html">All materials</a></span><span lang="nl"><a href="index.html">Terug naar week 9</a><span class="separator">|</span><a href="../materials.html">Al het lesmateriaal</a></span></p></footer>
+</div></main>
+<div class="site-footer"><div class="container"><div><span lang="en">BiGi Data is a <a href="https://freefocus.org">Free Focus</a> program.</span><span lang="nl">BiGi Data is een programma van <a href="https://freefocus.org">Free Focus</a>.</span></div><div><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><span class="separator"> &middot; </span><a href="../credits.html"><span lang="en">Image credits</span><span lang="nl">Fotoverantwoording</span></a></div></div></div>
+<script data-goatcounter="https://johnsanterre.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

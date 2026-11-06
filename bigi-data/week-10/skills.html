@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Skills: Week 10 - BiGi Data">
+<meta name="robots" content="noindex, nofollow">
+<title data-en="Skills: Week 10 - BiGi Data" data-nl="Vaardigheden: Week 10 - BiGi Data">Skills: Week 10 - BiGi Data</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;650;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/lang.js"></script>
+</head>
+<body>
+<header class="nav-header"><div class="container">
+<a href="../index.html" class="site-title"><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><polygon fill="#ecc81d" points="50,4 61,38 97,38 68,59 79,94 50,73 21,94 32,59 3,38 39,38"/></svg>BiGi Data</a>
+<nav class="nav-links"><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a>
+<button id="lang-btn" class="lang-btn" type="button">Nederlands</button></nav>
+</div></header>
+<div class="stripes"></div>
+<section class="page-hero" style="background-image:url(../assets/img/forest.jpg)"><div class="container">
+<nav class="breadcrumb"><a href="../index.html"><span lang="en">Home</span><span lang="nl">Home</span></a><span class="separator">/</span><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a><span class="separator">/</span><a href="index.html"><span lang="en">Week 10</span><span lang="nl">Week 10</span></a><span class="separator">/</span><span><span lang="en">Skills</span><span lang="nl">Vaardigheden</span></span></nav>
+<h1 lang="en">Skills, week 10: samples and uncertainty intervals</h1>
+<h1 lang="nl">Vaardigheden, week 10: steekproeven en onzekerheidsintervallen</h1>
+
+    <p lang="en" class="muted">About 10 hours across the week, at your own pace.</p>
+<p lang="nl" class="muted">Ongeveer 10 uur verspreid over de week, in je eigen tempo.</p>
+
+
+    </div></section>
+<main><div class="container">
+<h2 lang="en">What you will be able to do</h2>
+<h2 lang="nl">Wat je na deze week kunt</h2>
+
+    <ul>
+<li><span lang="en">Name the population, the target, the sample, the estimator and the estimate in a real question.</span><span lang="nl">In een echte vraag de populatie, het doel, de steekproef, de schatter en de schatting benoemen.</span></li>
+<li><span lang="en">Test an estimator on simulated data, and say in plain words whether it is biased and how much it varies.</span><span lang="nl">Een schatter testen op gesimuleerde data, en in gewone woorden zeggen of die vertekend is en hoeveel die varieert.</span></li>
+<li><span lang="en">Tell the standard deviation, which describes the world, from the standard error, which describes your doubt about an estimate.</span><span lang="nl">De standaardafwijking, die de wereld beschrijft, onderscheiden van de standaardfout, die je twijfel over een schatting beschrijft.</span></li>
+<li><span lang="en">Build a 95 percent interval with the standard error and with the bootstrap, and compare the two.</span><span lang="nl">Een 95%-interval bouwen met de standaardfout en met de bootstrap, en de twee vergelijken.</span></li>
+<li><span lang="en">Measure how often an interval method holds the truth by repeating it on fresh samples.</span><span lang="nl">Meten hoe vaak een intervalmethode de waarheid bevat door haar te herhalen op nieuwe steekproeven.</span></li>
+<li><span lang="en">State what an interval is a claim about, and rewrite the common misreadings as correct sentences.</span><span lang="nl">Zeggen waarover een interval een bewering doet, en de veelgemaakte verkeerde lezingen herschrijven als juiste zinnen.</span></li>
+<li><span lang="en">Work out how large a sample must be for a chosen precision.</span><span lang="nl">Uitrekenen hoe groot een steekproef moet zijn voor een gekozen nauwkeurigheid.</span></li>
+</ul>
+
+
+    <h2 lang="en">Every number has a population behind it</h2>
+<h2 lang="nl">Achter elk getal zit een populatie</h2>
+
+    <p lang="en">A question about the weight of a typical parcel is about a <b>population</b>: every parcel the company handled. The number you want, such as the mean weight of all of them, is the <b>target</b>. In real work you almost never see the whole population, so you measure a <b>sample</b> and apply a rule to it. The rule is the <b>estimator</b>, and the number it gives on your sample is the <b>estimate</b>.</p>
+<p lang="nl">Een vraag over het gewicht van een gewoon pakket gaat over een <b>populatie</b>: elk pakket dat het bedrijf verwerkte. Het getal dat je zoekt, zoals het gemiddelde gewicht van al die pakketten, is het <b>doel</b>. In echt werk zie je bijna nooit de hele populatie, dus je meet een <b>steekproef</b> en past daar een regel op toe. Die regel is de <b>schatter</b>, en het getal dat hij op jouw steekproef geeft, is de <b>schatting</b>.</p>
+
+    <p lang="en">The notebook uses a made-up courier company whose whole population you can see. That turns every guess into something you can check, which is the best way to learn how guesses behave.</p>
+<p lang="nl">Het notebook gebruikt een verzonnen koeriersbedrijf waarvan je de hele populatie kunt zien. Zo wordt elke gok iets wat je kunt controleren, en dat is de beste manier om te leren hoe gokken zich gedragen.</p>
+
+
+    <h2 lang="en">Every estimate moves from sample to sample</h2>
+<h2 lang="nl">Elke schatting verschuift van steekproef tot steekproef</h2>
+
+    <p lang="en">Two random samples of 100 parcels give two different means, and neither is a mistake. To see the pattern, the notebook draws 2,000 samples of 100 and keeps each mean.</p>
+<p lang="nl">Twee willekeurige steekproeven van 100 pakketten geven twee verschillende gemiddelden, en geen van beide is een vergissing. Om het patroon te zien, trekt het notebook 2.000 steekproeven van 100 en bewaart het elk gemiddelde.</p>
+
+    <ul>
+<li><span lang="en">The population's mean weight is 3.49 kg.</span><span lang="nl">Het gemiddelde gewicht in de populatie is 3,49 kg.</span></li>
+<li><span lang="en">The estimator shows no visible bias, because the 2,000 sample means average 3.48 kg.</span><span lang="nl">De schatter heeft geen zichtbare vertekening, omdat de 2.000 steekproefgemiddelden gemiddeld uitkomen op 3,48 kg.</span></li>
+<li><span lang="en">The spread of the 2,000 means is 0.301 kg. That spread is the <b>standard error</b>: the typical distance between one sample's estimate and the truth.</span><span lang="nl">De spreiding van de 2.000 gemiddelden is 0,301 kg. Die spreiding is de <b>standaardfout</b>: de gebruikelijke afstand tussen de schatting van één steekproef en de waarheid.</span></li>
+</ul>
+
+
+    <h2 lang="en">A bigger sample does not cure bias</h2>
+<h2 lang="nl">Een grotere steekproef geneest geen vertekening</h2>
+
+    <p lang="en">A clerk who weighs the first parcels in the log, instead of a random sample, uses a different estimator. The log lists the city depot first, and its parcels are lighter.</p>
+<p lang="nl">Een medewerker die de eerste pakketten in het logboek weegt, in plaats van een willekeurige steekproef, gebruikt een andere schatter. Het logboek zet het stadsdepot vooraan, en de pakketten daar zijn lichter.</p>
+
+    <ul>
+<li><span lang="en">The first 1,600 rows of the log give a mean of 1.78 kg.</span><span lang="nl">De eerste 1.600 rijen van het logboek geven een gemiddelde van 1,78 kg.</span></li>
+<li><span lang="en">A random sample of 1,600 parcels gives 3.51 kg.</span><span lang="nl">Een willekeurige steekproef van 1.600 pakketten geeft 3,51 kg.</span></li>
+<li><span lang="en">The population's mean is 3.49 kg.</span><span lang="nl">Het gemiddelde van de populatie is 3,49 kg.</span></li>
+</ul>
+
+    <p lang="en">More rows from the same place only make the clerk more confident about the wrong answer. A larger sample shrinks the standard error and leaves bias where it was, so the first question about any sample is how it was drawn.</p>
+<p lang="nl">Meer rijen van dezelfde plek maken de medewerker alleen zekerder over het verkeerde antwoord. Een grotere steekproef verkleint de standaardfout en laat de vertekening staan waar ze was, dus de eerste vraag bij elke steekproef is hoe die is getrokken.</p>
+
+
+    <h2 lang="en">Two kinds of spread</h2>
+<h2 lang="nl">Twee soorten spreiding</h2>
+
+    <p lang="en">The <b>standard deviation</b> describes the world: how much single parcels differ from each other. The <b>standard error</b> describes your doubt: how far the sample mean would move with a new sample. The standard error equals the standard deviation divided by the square root of the sample size.</p>
+<p lang="nl">De <b>standaardafwijking</b> beschrijft de wereld: hoeveel losse pakketten van elkaar verschillen. De <b>standaardfout</b> beschrijft je twijfel: hoe ver het steekproefgemiddelde zou verschuiven bij een nieuwe steekproef. De standaardfout is de standaardafwijking gedeeld door de wortel van de steekproefgrootte.</p>
+
+    <p lang="en">The notebook draws 2,000 samples at each of three sizes and measures both.</p>
+<p lang="nl">Het notebook trekt 2.000 steekproeven van elk van drie groottes en meet beide.</p>
+
+    <ul>
+<li><span lang="en">At 25 parcels, the typical standard deviation is 2.90 kg and the standard error is 0.610 kg.</span><span lang="nl">Bij 25 pakketten is de gebruikelijke standaardafwijking 2,90 kg en de standaardfout 0,610 kg.</span></li>
+<li><span lang="en">At 400 parcels, the typical standard deviation is 3.03 kg and the standard error is 0.150 kg.</span><span lang="nl">Bij 400 pakketten is de gebruikelijke standaardafwijking 3,03 kg en de standaardfout 0,150 kg.</span></li>
+</ul>
+
+    <p lang="en">The standard deviation stays near 3 kg, because the parcels do not change. The standard error falls to a quarter, because the sample is sixteen times larger and the square root of 16 is 4. This square-root law is why twice the precision costs four times the work.</p>
+<p lang="nl">De standaardafwijking blijft rond 3 kg, omdat de pakketten niet veranderen. De standaardfout zakt naar een kwart, omdat de steekproef zestien keer groter is en de wortel van 16 gelijk is aan 4. Door deze wortelwet kost twee keer zoveel nauwkeurigheid vier keer zoveel werk.</p>
+
+
+    <h2 lang="en">The bootstrap</h2>
+<h2 lang="nl">De bootstrap</h2>
+
+    <p lang="en">A formula for the standard error exists for a mean or a share, but not for every estimate. The <b>bootstrap</b> gets an interval by computation instead. It draws a new sample of the same size from your own sample, with replacement, computes the estimate, repeats that a few thousand times, and keeps the middle 95 percent of the results.</p>
+<p lang="nl">Voor een gemiddelde of een aandeel bestaat een formule voor de standaardfout, maar niet voor elke schatting. De <b>bootstrap</b> vindt een interval in plaats daarvan door te rekenen. Hij trekt uit je eigen steekproef een nieuwe steekproef van dezelfde grootte, met teruglegging, berekent de schatting, herhaalt dat een paar duizend keer, en bewaart de middelste 95 procent van de uitkomsten.</p>
+
+    <p lang="en">On the notebook's sample of 100 parcels, the bootstrap gives an interval from 2.99 to 4.28 kg. The standard-error formula gives 2.96 to 4.22 kg. The two methods agree closely, which is what you should expect for a mean.</p>
+<p lang="nl">Op de steekproef van 100 pakketten in het notebook geeft de bootstrap een interval van 2,99 tot 4,28 kg. De formule met de standaardfout geeft 2,96 tot 4,22 kg. De twee methoden liggen dicht bij elkaar, en dat mag je bij een gemiddelde ook verwachten.</p>
+
+
+    <h2 lang="en">What 95 percent is a claim about</h2>
+<h2 lang="nl">Waarover 95 procent een bewering doet</h2>
+
+    <p lang="en">Once you have drawn your sample, the true mean is either inside your interval or not. The 95 percent describes the method: used again and again on fresh samples, it holds the truth about 95 times in 100. The notebook tests that promise by repeating the whole procedure 200 times, and 190 of the 200 bootstrap intervals hold the true mean.</p>
+<p lang="nl">Zodra je je steekproef hebt getrokken, ligt het echte gemiddelde binnen je interval of niet. De 95 procent beschrijft de methode: steeds opnieuw gebruikt op nieuwe steekproeven, bevat ze de waarheid ongeveer 95 keer op 100. Het notebook test die belofte door de hele werkwijze 200 keer te herhalen, en 190 van de 200 bootstrap-intervallen bevatten het echte gemiddelde.</p>
+
+    <p lang="en">Three misreadings come up again and again. The notebook asks you to repair each one.</p>
+<p lang="nl">Drie verkeerde lezingen komen steeds terug. Het notebook vraagt je elk ervan te herstellen.</p>
+
+    <ul>
+<li><span lang="en"><b>The interval is not a probability about the world.</b> "A 95 percent chance that the true mean is in here" treats the fixed truth as if it were random.</span><span lang="nl"><b>Het interval is geen kans over de wereld.</b> "95 procent kans dat het echte gemiddelde hierin ligt" behandelt de vaste waarheid alsof die toevallig is.</span></li>
+<li><span lang="en"><b>The interval is not a range for single units.</b> An interval for the mean says where the mean is, not where 95 percent of parcels fall.</span><span lang="nl"><b>Het interval is geen bereik voor losse eenheden.</b> Een interval voor het gemiddelde zegt waar het gemiddelde ligt, niet waar 95 procent van de pakketten valt.</span></li>
+<li><span lang="en"><b>The interval does not see bias.</b> It covers the luck of a random draw. A sample drawn the wrong way gets a narrow interval around the wrong answer.</span><span lang="nl"><b>Het interval ziet geen vertekening.</b> Het dekt het toeval van een willekeurige trekking. Een steekproef die verkeerd is getrokken, krijgt een smal interval rond het verkeerde antwoord.</span></li>
+</ul>
+
+    <p lang="en">An honest sentence names the sample, the estimate and the method: "We weighed a random sample of 100 parcels. Their mean weight was 3.59 kg, and a method that holds the true mean in about 95 of 100 samples gives an interval from 2.99 to 4.28 kg."</p>
+<p lang="nl">Een eerlijke zin noemt de steekproef, de schatting en de methode: "We wogen een willekeurige steekproef van 100 pakketten. Hun gemiddelde gewicht was 3,59 kg, en een methode die het echte gemiddelde in ongeveer 95 van de 100 steekproeven bevat, geeft een interval van 2,99 tot 4,28 kg."</p>
+
+
+    <h2 lang="en">When the AI is wrong</h2>
+<h2 lang="nl">Wanneer de AI zich vergist</h2>
+
+    <div class="panel warn">
+    <p lang="en">In the notebook, an AI assistant was given the sample of 100 parcel weights and asked for a 95 percent interval for the average weight. Its code ran without an error and reported an interval from -2.69 to 9.87 kg. No parcel weighs less than nothing, so the lower end alone shows that something is wrong.</p>
+<p lang="nl">In het notebook kreeg een AI-assistent de steekproef van 100 pakketgewichten en de vraag om een 95%-interval voor het gemiddelde gewicht. De code draaide zonder fout en gaf een interval van -2,69 tot 9,87 kg. Geen pakket weegt minder dan niets, dus het onderste uiteinde alleen laat al zien dat er iets mis is.</p>
+
+    <p lang="en">The assistant used the standard deviation where the standard error belongs. With the standard error, the interval runs from 2.96 to 4.22 kg. The assistant's interval is 10.0 times as wide. It describes single parcels rather than the mean, because it holds 0.958 of all single parcels.</p>
+<p lang="nl">De assistent gebruikte de standaardafwijking waar de standaardfout hoort. Met de standaardfout loopt het interval van 2,96 tot 4,22 kg. Het interval van de assistent is 10,0 keer zo breed. Het beschrijft losse pakketten en niet het gemiddelde, omdat het 0,958 van alle losse pakketten bevat.</p>
+
+    <p lang="en">Tested on 1,000 fresh samples, the assistant's interval held the true mean 1000 times, and the standard-error interval held it 942 times. An interval that never misses sounds safe. It is useless, because it claims ten times more doubt than the data carry. The check that catches the mistake is short: ask which spread the interval was built from, and whether its ends are possible values.</p>
+<p lang="nl">Getest op 1.000 nieuwe steekproeven bevatte het interval van de assistent het echte gemiddelde 1000 keer, en het interval met de standaardfout 942 keer. Een interval dat nooit mist, klinkt veilig. Het is nutteloos, omdat het tien keer meer twijfel claimt dan de data dragen. De controle die de fout vindt, is kort: vraag van welke spreiding het interval is gemaakt, en of de uiteinden mogelijke waarden zijn.</p>
+
+    </div>
+
+    <h2 lang="en">Practise in the notebook</h2>
+<h2 lang="nl">Oefen in het notebook</h2>
+
+    <p lang="en">The notebook works through every idea above with the made-up courier company, in thirteen sections. It ends with three tasks: a bootstrap interval for the late share, the sample size a manager needs for a tighter answer, and three misleading sentences to repair. CHECK cells tell you when your code is right.</p>
+<p lang="nl">Het notebook werkt alle ideeën hierboven uit met het verzonnen koeriersbedrijf, in dertien delen. Het eindigt met drie opdrachten: een bootstrap-interval voor het aandeel te laat, de steekproefgrootte die een manager nodig heeft voor een scherper antwoord, en drie misleidende zinnen om te herstellen. CHECK-cellen vertellen je wanneer je code klopt.</p>
+
+    <p><a class="button" lang="en" href="https://colab.research.google.com/github/johnsanterre/bigi-data-notebooks/blob/main/notebooks/skills-10-en.ipynb" target="_blank" rel="noopener">Open in Colab</a><a class="button" lang="nl" href="https://colab.research.google.com/github/johnsanterre/bigi-data-notebooks/blob/main/notebooks/skills-10-nl.ipynb" target="_blank" rel="noopener">Openen in Colab</a><a class="button secondary" lang="en" href="../notebooks/skills-10-en.ipynb" download>Download</a><a class="button secondary" lang="nl" href="../notebooks/skills-10-nl.ipynb" download>Downloaden</a></p>
+
+
+    <h2 lang="en">Check yourself</h2>
+<h2 lang="nl">Test jezelf</h2>
+
+    <h3><span lang="en">Question</span><span lang="nl">Vraag</span> 1</h3>
+<p lang="en">A random sample of 400 parcels has a standard deviation of weight s. What is the standard error of its mean weight?</p>
+<p lang="nl">Een willekeurige steekproef van 400 pakketten heeft een standaardafwijking van het gewicht s. Wat is de standaardfout van het gemiddelde gewicht?</p>
+<ol class="options" type="a"><li><span lang="en">s</span><span lang="nl">s</span></li><li><span lang="en">s divided by 20</span><span lang="nl">s gedeeld door 20</span></li><li><span lang="en">s divided by 400</span><span lang="nl">s gedeeld door 400</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">s divided by 20 is right. The standard error is the standard deviation divided by the square root of the sample size, and the square root of 400 is 20.</p>
+<p lang="nl">s gedeeld door 20 klopt. De standaardfout is de standaardafwijking gedeeld door de wortel van de steekproefgrootte, en de wortel van 400 is 20.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 2</h3>
+<p lang="en">A survey's interval is too wide to be useful. How much larger must the sample be to halve its width?</p>
+<p lang="nl">Het interval van een onderzoek is te breed om bruikbaar te zijn. Hoeveel groter moet de steekproef zijn om de breedte te halveren?</p>
+<ol class="options" type="a"><li><span lang="en">Twice as large.</span><span lang="nl">Twee keer zo groot.</span></li><li><span lang="en">Four times as large.</span><span lang="nl">Vier keer zo groot.</span></li><li><span lang="en">Ten times as large.</span><span lang="nl">Tien keer zo groot.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">Four times is right. The width follows the standard error, which shrinks with the square root of the sample size, and the square root of 4 is 2.</p>
+<p lang="nl">Vier keer klopt. De breedte volgt de standaardfout, die kleiner wordt met de wortel van de steekproefgrootte, en de wortel van 4 is 2.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 3</h3>
+<p lang="en">A team computes a 95 percent interval for a share from one random sample. Which sentence about it is correct?</p>
+<p lang="nl">Een team berekent een 95%-interval voor een aandeel uit één willekeurige steekproef. Welke zin daarover klopt?</p>
+<ol class="options" type="a"><li><span lang="en">There is a 95 percent chance that the true share lies inside this interval.</span><span lang="nl">Er is 95 procent kans dat het echte aandeel in dit interval ligt.</span></li><li><span lang="en">The method that made this interval holds the true share in about 95 of every 100 samples.</span><span lang="nl">De methode die dit interval maakte, bevat het echte aandeel in ongeveer 95 van elke 100 steekproeven.</span></li><li><span lang="en">95 percent of the units in the population fall inside the interval.</span><span lang="nl">95 procent van de eenheden in de populatie valt binnen het interval.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The second sentence is right. Once the sample is drawn, the true share is either inside the interval or not. The 95 percent describes how often the method succeeds over many samples.</p>
+<p lang="nl">De tweede zin klopt. Zodra de steekproef is getrokken, ligt het echte aandeel binnen het interval of niet. De 95 procent beschrijft hoe vaak de methode slaagt over veel steekproeven.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 4</h3>
+<p lang="en">A clerk weighs the first 1,600 parcels in a log sorted by depot instead of a random sample. What happens as he weighs more rows from the top of the log?</p>
+<p lang="nl">Een medewerker weegt de eerste 1.600 pakketten in een logboek dat per depot is gesorteerd, in plaats van een willekeurige steekproef. Wat gebeurt er als hij meer rijen van boven in het logboek weegt?</p>
+<ol class="options" type="a"><li><span lang="en">His estimate moves towards the true mean, because more data always helps.</span><span lang="nl">Zijn schatting schuift naar het echte gemiddelde, want meer data helpt altijd.</span></li><li><span lang="en">His interval narrows around the wrong value, because a larger sample does not remove bias.</span><span lang="nl">Zijn interval wordt smaller rond de verkeerde waarde, want een grotere steekproef haalt vertekening niet weg.</span></li><li><span lang="en">Nothing changes, because the interval already covers bias.</span><span lang="nl">Er verandert niets, want het interval dekt vertekening al.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The second answer is right. In the notebook, the first 1,600 rows still gave 1.78 kg against a population mean of 3.49 kg. More rows shrink the standard error and leave the bias in place.</p>
+<p lang="nl">Het tweede antwoord klopt. In het notebook gaven de eerste 1.600 rijen nog steeds 1,78 kg, tegen een gemiddelde in de populatie van 3,49 kg. Meer rijen verkleinen de standaardfout en laten de vertekening staan.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 5</h3>
+<p lang="en">Why does the bootstrap draw its resamples with replacement?</p>
+<p lang="nl">Waarom trekt de bootstrap zijn hersteekproeven met teruglegging?</p>
+<ol class="options" type="a"><li><span lang="en">So that the resamples are larger than the sample.</span><span lang="nl">Zodat de hersteekproeven groter zijn dan de steekproef.</span></li><li><span lang="en">So that each resample differs from the sample. Without replacement, every resample is the same sample in a new order.</span><span lang="nl">Zodat elke hersteekproef verschilt van de steekproef. Zonder teruglegging is elke hersteekproef dezelfde steekproef in een andere volgorde.</span></li><li><span lang="en">Because the population is too large to store.</span><span lang="nl">Omdat de populatie te groot is om op te slaan.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The second answer is right. Drawing with replacement lets some rows appear twice and others not at all, which imitates the change from one sample to the next.</p>
+<p lang="nl">Het tweede antwoord klopt. Door te trekken met teruglegging komen sommige rijen twee keer voor en andere helemaal niet, en dat bootst de verandering van de ene steekproef naar de volgende na.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 6</h3>
+<p lang="en">An AI reports a 95 percent interval for a share that runs from below 0 to above 1. What is the most likely mistake?</p>
+<p lang="nl">Een AI geeft een 95%-interval voor een aandeel dat loopt van onder 0 tot boven 1. Wat is de meest waarschijnlijke fout?</p>
+<ol class="options" type="a"><li><span lang="en">It used the standard deviation where the standard error belongs.</span><span lang="nl">De AI gebruikte de standaardafwijking waar de standaardfout hoort.</span></li><li><span lang="en">The sample was too large.</span><span lang="nl">De steekproef was te groot.</span></li><li><span lang="en">It drew too few bootstrap resamples.</span><span lang="nl">De AI trok te weinig bootstrap-hersteekproeven.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The first answer is right. An interval built on the standard deviation of 0s and 1s is about ten times too wide for a sample of 100. It spills past the limits a share can take.</p>
+<p lang="nl">Het eerste antwoord klopt. Een interval dat is gebouwd op de standaardafwijking van nullen en enen, is bij een steekproef van 100 ongeveer tien keer te breed. Het loopt voorbij de grenzen die een aandeel kan hebben.</p>
+</details>
+
+    <footer><p><span lang="en"><a href="index.html">Back to week 10</a><span class="separator">|</span><a href="../materials.html">All materials</a></span><span lang="nl"><a href="index.html">Terug naar week 10</a><span class="separator">|</span><a href="../materials.html">Al het lesmateriaal</a></span></p></footer>
+</div></main>
+<div class="site-footer"><div class="container"><div><span lang="en">BiGi Data is a <a href="https://freefocus.org">Free Focus</a> program.</span><span lang="nl">BiGi Data is een programma van <a href="https://freefocus.org">Free Focus</a>.</span></div><div><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><span class="separator"> &middot; </span><a href="../credits.html"><span lang="en">Image credits</span><span lang="nl">Fotoverantwoording</span></a></div></div></div>
+<script data-goatcounter="https://johnsanterre.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

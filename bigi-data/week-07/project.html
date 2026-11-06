@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Project 7: Week 7 - BiGi Data">
+<meta name="robots" content="noindex, nofollow">
+<title data-en="Project 7: Week 7 - BiGi Data" data-nl="Project 7: Week 7 - BiGi Data">Project 7: Week 7 - BiGi Data</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;650;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/lang.js"></script>
+</head>
+<body>
+<header class="nav-header"><div class="container">
+<a href="../index.html" class="site-title"><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><polygon fill="#ecc81d" points="50,4 61,38 97,38 68,59 79,94 50,73 21,94 32,59 3,38 39,38"/></svg>BiGi Data</a>
+<nav class="nav-links"><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a>
+<button id="lang-btn" class="lang-btn" type="button">Nederlands</button></nav>
+</div></header>
+<div class="stripes"></div>
+<section class="page-hero" style="background-image:url(../assets/img/market.jpg)"><div class="container">
+<nav class="breadcrumb"><a href="../index.html"><span lang="en">Home</span><span lang="nl">Home</span></a><span class="separator">/</span><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a><span class="separator">/</span><a href="index.html"><span lang="en">Week 7</span><span lang="nl">Week 7</span></a><span class="separator">/</span><span><span lang="en">Project 7</span><span lang="nl">Project 7</span></span></nav>
+<h1 lang="en">Project 7: richer since 2010, in which currency?</h1>
+<h1 lang="nl">Project 7: rijker sinds 2010, in welke valuta?</h1>
+
+    <p lang="en" class="muted">Two tables from one source, one question, one week.</p>
+<p lang="nl" class="muted">Twee tabellen uit één bron, één vraag, één week.</p>
+
+
+    </div></section>
+<main><div class="container">
+<h2 lang="en">The question</h2>
+<h2 lang="nl">De vraag</h2>
+
+    <p lang="en" class="lead">Has the average Surinamese person become richer since 2010, measured in US dollars and in Surinamese dollars?</p>
+<p lang="nl" class="lead">Is de gemiddelde Surinamer sinds 2010 rijker geworden, gemeten in Amerikaanse dollars en in Surinaamse dollars?</p>
+
+
+    <h2 lang="en">Who it is for</h2>
+<h2 lang="nl">Voor wie het is</h2>
+
+    <p lang="en">The audience this week is a family in Suriname that wants to know whether it is better off than in 2010. Families hear figures in US dollars and in Surinamese dollars, and the two often seem to tell opposite stories. Each team writes the family a note of about 150 words that answers the question in both currencies, explains why the two answers differ, and says what the figures cannot tell them about their own budget.</p>
+<p lang="nl">Het publiek van deze week is een gezin in Suriname dat wil weten of het er beter voor staat dan in 2010. Gezinnen horen cijfers in Amerikaanse dollars en in Surinaamse dollars, en die lijken vaak een tegengesteld verhaal te vertellen. Elk team schrijft het gezin een notitie van ongeveer 150 woorden die de vraag in beide valuta's beantwoordt, uitlegt waarom de twee antwoorden verschillen, en zegt wat de cijfers hun niet kunnen vertellen over hun eigen huishoudbudget.</p>
+
+    <p lang="en">Teams that know a family willing to read the note may give it to them and bring their reaction to the Friday review.</p>
+<p lang="nl">Teams die een gezin kennen dat de notitie wil lezen, mogen die aan hen geven en hun reactie meenemen naar de vrijdagbespreking.</p>
+
+
+    <h2 lang="en">The data</h2>
+<h2 lang="nl">De data</h2>
+
+    <p lang="en">The World Bank publishes Suriname's GDP per person, which is the total income earned from producing goods and services in a year divided by the population. It publishes the figure in two currencies, and this project uses both tables.</p>
+<p lang="nl">De Wereldbank publiceert het bbp per inwoner van Suriname: het totale inkomen dat in een jaar met het produceren van goederen en diensten is verdiend, gedeeld door de bevolking. Ze publiceert het cijfer in twee valuta's, en dit project gebruikt beide tabellen.</p>
+
+    <ul>
+<li><span lang="en"><b>GDP per person in current US dollars</b> (<a href="https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?locations=SR">indicator NY.GDP.PCAP.CD</a>) arrives as the World Bank's CSV download lays it out, with one row and a column for every year from 1960 to 2025.</span><span lang="nl"><b>Het bbp per inwoner in lopende Amerikaanse dollars</b> (<a href="https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?locations=SR">indicator NY.GDP.PCAP.CD</a>) komt binnen zoals de csv-download van de Wereldbank het ordent, met één rij en een kolom voor elk jaar van 1960 tot en met 2025.</span></li>
+<li><span lang="en"><b>GDP per person in current Surinamese dollars</b> (<a href="https://data.worldbank.org/indicator/NY.GDP.PCAP.CN?locations=SR">indicator NY.GDP.PCAP.CN</a>) comes from the World Bank's API, with one row for every year from 2010 to 2025.</span><span lang="nl"><b>Het bbp per inwoner in lopende Surinaamse dollars</b> (<a href="https://data.worldbank.org/indicator/NY.GDP.PCAP.CN?locations=SR">indicator NY.GDP.PCAP.CN</a>) komt uit de API van de Wereldbank, met één rij voor elk jaar van 2010 tot en met 2025.</span></li>
+</ul>
+
+    <p lang="en">Both tables are in current prices. The World Bank states that no adjustment has been made for price changes over time. It last updated both tables on 8 October 2026. The course copies were downloaded on 6 November 2026.</p>
+<p lang="nl">Beide tabellen zijn in lopende prijzen. De Wereldbank vermeldt dat er geen correctie is toegepast voor prijsveranderingen in de loop van de tijd. Ze heeft beide tabellen voor het laatst bijgewerkt op 8 oktober 2026, en de kopieën van de cursus zijn gedownload op 6 november 2026.</p>
+
+    <p><a class="button secondary" href="../data/week07-gdp-per-person-usd.csv" download><span lang="en">Download the US-dollar table (CSV)</span><span lang="nl">Download de dollartabel (CSV)</span></a></p>
+
+    <p><a class="button secondary" href="../data/week07-gdp-per-person-srd.csv" download><span lang="en">Download the SRD table (CSV)</span><span lang="nl">Download de SRD-tabel (CSV)</span></a></p>
+
+
+    <h2 lang="en">Your team</h2>
+<h2 lang="nl">Je team</h2>
+
+    <p lang="en">Teams of four hold the four roles, which rotate every week. This week, the data checker has the most important job.</p>
+<p lang="nl">Teams van vier verdelen de vier rollen, die elke week wisselen. Deze week heeft de datacontroleur de belangrijkste taak.</p>
+
+    <ul>
+<li><span lang="en"><b>The builder</b> writes and runs the notebook with the AI assistant.</span><span lang="nl"><b>De bouwer</b> schrijft en draait het notebook met de AI-assistent.</span></li>
+<li><span lang="en"><b>The data checker</b> counts the rows of every table before and after each join, and checks each number in the note against the notebook.</span><span lang="nl"><b>De datacontroleur</b> telt de rijen van elke tabel vóór en na elke koppeling, en controleert elk getal in de notitie tegen het notebook.</span></li>
+<li><span lang="en"><b>The AI checker</b> keeps the AI log, recording every join the AI writes, the rows it returned and whether the data supports each claim.</span><span lang="nl"><b>De AI-controleur</b> houdt het AI-logboek bij, met elke koppeling die de AI schrijft, de rijen die eruit kwamen en of de data elke bewering steunt.</span></li>
+<li><span lang="en"><b>The presenter</b> presents on Friday and answers the room's questions.</span><span lang="nl"><b>De presentator</b> presenteert op vrijdag en beantwoordt de vragen uit de zaal.</span></li>
+</ul>
+
+
+    <h2 lang="en">The tasks</h2>
+<h2 lang="nl">De opdrachten</h2>
+
+    <p lang="en">The starter notebook loads both tables for you and holds eight tasks. Five of them have a CHECK cell that tells you when the answer is right.</p>
+<p lang="nl">Het startnotebook laadt beide tabellen voor je en bevat acht opdrachten. Vijf ervan hebben een CHECK-cel die je vertelt wanneer het antwoord klopt.</p>
+
+    <ol>
+<li><span lang="en">Describe both tables by their rows, their columns, the years they cover and the type of the year in each.</span><span lang="nl">Beschrijf beide tabellen aan de hand van hun rijen, hun kolommen, de jaren die ze beslaan en het type van het jaar in elke tabel.</span></li>
+<li><span lang="en">Reshape the US-dollar table from wide to long, with one row per year.</span><span lang="nl">Zet de dollartabel om van breed naar lang, met één rij per jaar.</span></li>
+<li><span lang="en">Join the two tables on the year with your AI assistant, and test its code by counting the rows before and after.</span><span lang="nl">Koppel de twee tabellen op het jaar met je AI-assistent, en toets de code door de rijen vóór en na te tellen.</span></li>
+<li><span lang="en">Compute how many times larger GDP per person was in 2025 than in 2010, in each currency.</span><span lang="nl">Bereken hoeveel keer zo groot het bbp per inwoner in 2025 was als in 2010, in elke valuta.</span></li>
+<li><span lang="en">Compute how many Surinamese dollars the World Bank counted for one US dollar in each year, and how much that number grew.</span><span lang="nl">Bereken hoeveel Surinaamse dollars de Wereldbank in elk jaar voor één Amerikaanse dollar rekende, en hoeveel dat getal groeide.</span></li>
+<li><span lang="en">Find the years in which GDP per person fell from the year before, in each currency.</span><span lang="nl">Zoek de jaren waarin het bbp per inwoner daalde ten opzichte van het jaar ervoor, in elke valuta.</span></li>
+<li><span lang="en">Chart GDP per person by year in each currency, as two charts side by side.</span><span lang="nl">Maak grafieken van het bbp per inwoner per jaar in elke valuta, als twee grafieken naast elkaar.</span></li>
+<li><span lang="en">Write a note of about 150 words for a family that asks whether the average person is richer than in 2010.</span><span lang="nl">Schrijf een notitie van ongeveer 150 woorden voor een gezin dat vraagt of de gemiddelde inwoner rijker is dan in 2010.</span></li>
+</ol>
+
+    <p><a class="button" lang="en" href="https://colab.research.google.com/github/johnsanterre/bigi-data-notebooks/blob/main/notebooks/project-07-en.ipynb" target="_blank" rel="noopener">Open in Colab</a><a class="button" lang="nl" href="https://colab.research.google.com/github/johnsanterre/bigi-data-notebooks/blob/main/notebooks/project-07-nl.ipynb" target="_blank" rel="noopener">Openen in Colab</a><a class="button secondary" lang="en" href="../notebooks/project-07-en.ipynb" download>Download</a><a class="button secondary" lang="nl" href="../notebooks/project-07-nl.ipynb" download>Downloaden</a></p>
+
+
+    <h2 lang="en">The AI check this week</h2>
+<h2 lang="nl">De AI-controle van deze week</h2>
+
+    <div class="panel warn">
+    <p lang="en">Before you ask the AI anything, write in the AI log how many rows each table has and how many rows the joined table needs to answer the question. Then give your AI assistant the request in task 3, which describes both tables and asks for one row per year from 2010 to 2025.</p>
+<p lang="nl">Schrijf in het AI-logboek hoeveel rijen elke tabel heeft en hoeveel rijen de gekoppelde tabel nodig heeft om de vraag te beantwoorden, voordat je de AI iets vraagt. Geef je AI-assistent daarna de opdracht uit opdracht 3, die beide tabellen beschrijft en om één rij per jaar van 2010 tot en met 2025 vraagt.</p>
+
+    <p lang="en">Run its code and count the rows of the result. If pandas refuses the join, show the AI the error message and test its next answer in the same way. For every attempt, record the rows you expected, the rows you got and any year that was lost or repeated.</p>
+<p lang="nl">Voer de code uit en tel de rijen van het resultaat. Als pandas de koppeling weigert, laat de AI dan de foutmelding zien en toets het volgende antwoord op dezelfde manier. Noteer bij elke poging de rijen die je verwachtte, de rijen die je kreeg en elk jaar dat verloren ging of dubbel voorkwam.</p>
+
+    <p lang="en">Then ask the AI, without showing it the data, whether the average Surinamese person is richer today than in 2010. Record which parts of its answer your joined table confirms, which parts it contradicts and which parts it cannot test.</p>
+<p lang="nl">Vraag de AI daarna, zonder hem de data te laten zien, of de gemiddelde Surinamer nu rijker is dan in 2010. Noteer welke delen van het antwoord je gekoppelde tabel bevestigt, welke delen hij tegenspreekt en welke delen hij niet kan toetsen.</p>
+
+    </div>
+
+    <h2 lang="en">What you hand in on Friday</h2>
+<h2 lang="nl">Wat je vrijdag inlevert</h2>
+
+    <ul>
+<li><span lang="en">The notebook, with every CHECK passing.</span><span lang="nl">Het notebook, met elke CHECK geslaagd.</span></li>
+<li><span lang="en">The two charts, with the World Bank named as the source.</span><span lang="nl">De twee grafieken, met de Wereldbank als bron vermeld.</span></li>
+<li><span lang="en">The note for a family in Suriname, about 150 words, answering the question in both currencies.</span><span lang="nl">De notitie voor een gezin in Suriname, ongeveer 150 woorden, die de vraag in beide valuta's beantwoordt.</span></li>
+<li><span lang="en">The AI log, with the row counts of every join attempt.</span><span lang="nl">Het AI-logboek, met de aantallen rijen van elke koppelpoging.</span></li>
+<li><span lang="en">A presentation of five minutes, followed by five minutes of questions.</span><span lang="nl">Een presentatie van vijf minuten, gevolgd door vijf minuten vragen.</span></li>
+</ul>
+
+
+    <h2 lang="en">How the work is judged</h2>
+<h2 lang="nl">Hoe het werk wordt beoordeeld</h2>
+
+    <table>
+    <tr><th><span lang="en">Criterion</span><span lang="nl">Criterium</span></th><th><span lang="en">Meets the standard when</span><span lang="nl">Voldoet als</span></th></tr>
+    <tr><td><span lang="en">Numbers</span><span lang="nl">Getallen</span></td><td><span lang="en">Every CHECK passes, and every number in the note matches the notebook.</span><span lang="nl">Elke CHECK slaagt, en elk getal in de notitie komt overeen met het notebook.</span></td></tr>
+    <tr><td><span lang="en">Joins</span><span lang="nl">Koppelingen</span></td><td><span lang="en">The AI log records, for every join attempt, the rows of each table before the join, the rows expected and the rows after it.</span><span lang="nl">Het AI-logboek noteert bij elke koppelpoging de rijen van elke tabel vóór de koppeling, de verwachte rijen en de rijen erna.</span></td></tr>
+    <tr><td><span lang="en">Charts</span><span lang="nl">Grafieken</span></td><td><span lang="en">Both charts have a title, labelled axes, value axes that start at zero and a named source.</span><span lang="nl">Beide grafieken hebben een titel, benoemde assen, waarde-assen die bij nul beginnen en een vermelde bron.</span></td></tr>
+    <tr><td><span lang="en">Note</span><span lang="nl">Notitie</span></td><td><span lang="en">A family could act on the note. It answers the question in both currencies, explains why the answers differ, names the source and states one thing the data cannot tell.</span><span lang="nl">Een gezin kan iets met de notitie. Ze beantwoordt de vraag in beide valuta's, legt uit waarom de antwoorden verschillen, noemt de bron en zegt één ding dat de data niet kan vertellen.</span></td></tr>
+    </table>
+    <footer><p><span lang="en"><a href="index.html">Back to week 7</a><span class="separator">|</span><a href="../materials.html">All materials</a></span><span lang="nl"><a href="index.html">Terug naar week 7</a><span class="separator">|</span><a href="../materials.html">Al het lesmateriaal</a></span></p></footer>
+</div></main>
+<div class="site-footer"><div class="container"><div><span lang="en">BiGi Data is a <a href="https://freefocus.org">Free Focus</a> program.</span><span lang="nl">BiGi Data is een programma van <a href="https://freefocus.org">Free Focus</a>.</span></div><div><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><span class="separator"> &middot; </span><a href="../credits.html"><span lang="en">Image credits</span><span lang="nl">Fotoverantwoording</span></a></div></div></div>
+<script data-goatcounter="https://johnsanterre.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

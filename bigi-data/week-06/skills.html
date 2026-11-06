@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Skills: Week 6 - BiGi Data">
+<meta name="robots" content="noindex, nofollow">
+<title data-en="Skills: Week 6 - BiGi Data" data-nl="Vaardigheden: Week 6 - BiGi Data">Skills: Week 6 - BiGi Data</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;650;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/lang.js"></script>
+</head>
+<body>
+<header class="nav-header"><div class="container">
+<a href="../index.html" class="site-title"><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><polygon fill="#ecc81d" points="50,4 61,38 97,38 68,59 79,94 50,73 21,94 32,59 3,38 39,38"/></svg>BiGi Data</a>
+<nav class="nav-links"><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a>
+<button id="lang-btn" class="lang-btn" type="button">Nederlands</button></nav>
+</div></header>
+<div class="stripes"></div>
+<section class="page-hero" style="background-image:url(../assets/img/forest.jpg)"><div class="container">
+<nav class="breadcrumb"><a href="../index.html"><span lang="en">Home</span><span lang="nl">Home</span></a><span class="separator">/</span><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a><span class="separator">/</span><a href="index.html"><span lang="en">Week 6</span><span lang="nl">Week 6</span></a><span class="separator">/</span><span><span lang="en">Skills</span><span lang="nl">Vaardigheden</span></span></nav>
+<h1 lang="en">Skills, week 6: rates per person and base rates</h1>
+<h1 lang="nl">Vaardigheden, week 6: cijfers per persoon en basisfrequenties</h1>
+
+    <p lang="en" class="muted">About 10 hours across the week, at your own pace.</p>
+<p lang="nl" class="muted">Ongeveer 10 uur verspreid over de week, in je eigen tempo.</p>
+
+
+    </div></section>
+<main><div class="container">
+<h2 lang="en">What you will be able to do</h2>
+<h2 lang="nl">Wat je na deze week kunt</h2>
+
+    <ul>
+<li><span lang="en">Compute a rate per person, per 1,000 or per 10,000 from a count and a base from the same year and place.</span><span lang="nl">Een cijfer per persoon, per 1.000 of per 10.000 berekenen uit een aantal en een basis van hetzelfde jaar en dezelfde plaats.</span></li>
+<li><span lang="en">Convert units before you divide, and check one result by hand.</span><span lang="nl">Eenheden omrekenen voordat je deelt, en één uitkomst met de hand nacontroleren.</span></li>
+<li><span lang="en">Show how a ranking changes when counts become rates.</span><span lang="nl">Laten zien hoe een ranglijst verandert als aantallen cijfers worden.</span></li>
+<li><span lang="en">Catch AI-written code that divides by the wrong base, and correct it.</span><span lang="nl">Code van een AI betrappen die door de verkeerde basis deelt, en die code verbeteren.</span></li>
+<li><span lang="en">Explain why the smallest groups produce both the highest and the lowest rates.</span><span lang="nl">Uitleggen waarom de kleinste groepen zowel de hoogste als de laagste cijfers opleveren.</span></li>
+<li><span lang="en">Restate a doubled risk in absolute terms, as people out of 10,000.</span><span lang="nl">Een verdubbeld risico in absolute termen weergeven, als mensen op de 10.000.</span></li>
+<li><span lang="en">Recompute what a positive test means once you know the base rate, using natural frequencies.</span><span lang="nl">Met natuurlijke frequenties opnieuw uitrekenen wat een positieve test betekent zodra je de basisfrequentie kent.</span></li>
+</ul>
+
+
+    <h2 lang="en">A count needs a base</h2>
+<h2 lang="nl">Een aantal heeft een basis nodig</h2>
+
+    <p lang="en">A count tells you how many times something happened. It cannot tell you where a problem is worse, because a large place has more of everything. A rate divides the count by a base, the number of people who could have been counted, over one period. Every rate has three parts, and a reader needs all three.</p>
+<p lang="nl">Een aantal vertelt je hoe vaak iets gebeurde. Het kan je niet vertellen waar een probleem groter is, want een grote plaats heeft van alles meer. Een cijfer deelt het aantal door een basis, het aantal mensen dat geteld had kunnen worden, over één periode. Elk cijfer heeft drie delen, en een lezer heeft ze alle drie nodig.</p>
+
+    <ul>
+<li><span lang="en"><b>The count says what happened.</b> It might be flu cases reported by clinics, payments flagged as fraud, or litres of water delivered.</span><span lang="nl"><b>Het aantal zegt wat er gebeurde.</b> Dat kunnen griepgevallen zijn die klinieken meldden, betalingen die als fraude zijn gemarkeerd, of geleverde liters water.</span></li>
+<li><span lang="en"><b>The base says who could have been counted.</b> It is usually the population, and sometimes a narrower group, such as the children enrolled in school or the payments made.</span><span lang="nl"><b>De basis zegt wie er geteld had kunnen worden.</b> Meestal is dat de bevolking, en soms een kleinere groep, zoals de kinderen die op school staan ingeschreven of de betalingen die zijn gedaan.</span></li>
+<li><span lang="en"><b>The period says when.</b> A count for one year needs a base for the same year.</span><span lang="nl"><b>De periode zegt wanneer.</b> Een aantal voor één jaar heeft een basis voor hetzelfde jaar nodig.</span></li>
+</ul>
+
+    <p lang="en">Rates are often scaled per 1,000 or per 100,000 people to make them easier to read. Choose one scale and keep it for every place you compare.</p>
+<p lang="nl">Cijfers worden vaak geschaald per 1.000 of per 100.000 mensen, zodat ze makkelijker te lezen zijn. Kies één schaal en houd die aan voor elke plaats die je vergelijkt.</p>
+
+
+    <h2 lang="en">The base must match the count</h2>
+<h2 lang="nl">De basis moet bij het aantal passen</h2>
+
+    <p lang="en">The most common error with rates is a base that does not match the count. Four checks catch most of these errors.</p>
+<p lang="nl">De meest gemaakte fout met cijfers is een basis die niet bij het aantal past. Vier controles vangen de meeste van die fouten.</p>
+
+    <ul>
+<li><span lang="en"><b>The base comes from the same year as the count.</b> A census taken ten years earlier undercounts a town that grew and overcounts a town that shrank.</span><span lang="nl"><b>De basis komt uit hetzelfde jaar als het aantal.</b> Een volkstelling van tien jaar eerder telt te weinig mensen in een stad die groeide en te veel in een stad die kromp.</span></li>
+<li><span lang="en"><b>The base covers the same place.</b> Cases from a whole district divided by the population of its main town make the district look worse than it is.</span><span lang="nl"><b>De basis dekt dezelfde plaats.</b> Gevallen uit een heel district gedeeld door de bevolking van de hoofdplaats laten het district er slechter uitzien dan het is.</span></li>
+<li><span lang="en"><b>The base is the group that could have been counted.</b> A rate of school dropouts belongs over the children enrolled, not over the whole population.</span><span lang="nl"><b>De basis is de groep die geteld had kunnen worden.</b> Een cijfer voor schooluitval hoort bij de ingeschreven kinderen, niet bij de hele bevolking.</span></li>
+<li><span lang="en"><b>The units agree before you divide.</b> Convert cubic metres to litres and years to days first, and then check one result by hand.</span><span lang="nl"><b>De eenheden kloppen voordat je deelt.</b> Reken eerst kubieke meters om naar liters en jaren naar dagen, en controleer daarna één uitkomst met de hand.</span></li>
+</ul>
+
+
+    <h2 lang="en">When the AI is wrong</h2>
+<h2 lang="nl">Wanneer de AI zich vergist</h2>
+
+    <div class="panel warn">
+    <p lang="en">In the notebook, an AI assistant was asked to rank eight towns by their flu rate in 2025. Its code ran without an error and put town H first, at 27.75 cases per 1,000 people. The assistant had divided the cases of 2025 by the census of 2015. Town H grew by 63.3 percent between the census and 2025, so its old base was far too small.</p>
+<p lang="nl">In het notebook werd een AI-assistent gevraagd acht steden te rangschikken naar hun griepcijfer in 2025. De code draaide zonder fout en zette stad H bovenaan, met 27,75 gevallen per 1.000 inwoners. De assistent had de gevallen van 2025 gedeeld door de volkstelling van 2015. Stad H groeide tussen de volkstelling en 2025 met 63,3 procent, dus de oude basis was veel te klein.</p>
+
+    <p lang="en">Over its population of 2025, town H has a rate of 16.99 per 1,000, which puts it fifth of eight. Town F has the highest rate, at 24.27 per 1,000. One check would have caught the error: read which year each column comes from.</p>
+<p lang="nl">Gedeeld door de bevolking van 2025 heeft stad H een cijfer van 16,99 per 1.000, en dat is de vijfde plaats van acht. Stad F heeft het hoogste cijfer, met 24,27 per 1.000. Eén controle had de fout gevonden: lees uit welk jaar elke kolom komt.</p>
+
+    </div>
+
+    <h2 lang="en">Counts and rates rank differently</h2>
+<h2 lang="nl">Aantallen en cijfers geven een andere volgorde</h2>
+
+    <p lang="en">A ranking by count mostly ranks places by size. In the notebook, town C reported the most flu cases, 990. It is also the largest town, and its rate of 11.28 per 1,000 is the lowest of the eight. The ranking by count and the ranking by rate come out close to opposite. When you compare places of different sizes, rank them by rate and show the count beside it.</p>
+<p lang="nl">Een ranglijst op aantal rangschikt plaatsen vooral op grootte. In het notebook meldde stad C de meeste griepgevallen, 990. Het is ook de grootste stad, en haar cijfer van 11,28 per 1.000 is het laagste van de acht. De ranglijst op aantal en de ranglijst op cijfer komen bijna omgekeerd uit. Als je plaatsen van verschillende grootte vergelijkt, rangschik ze dan op cijfer en zet het aantal ernaast.</p>
+
+
+    <h2 lang="en">Small bases make extreme rates</h2>
+<h2 lang="nl">Een kleine basis geeft uitschieters</h2>
+
+    <p lang="en">Rates from small groups jump around. The notebook makes 300 villages that share the same true rate of 4 cases per 1,000 people, and lets chance decide each village's count.</p>
+<p lang="nl">Cijfers van kleine groepen springen op en neer. Het notebook maakt 300 dorpen met hetzelfde ware cijfer van 4 gevallen per 1.000 inwoners, en laat het toeval het aantal gevallen in elk dorp bepalen.</p>
+
+    <ul>
+<li><span lang="en">The 109 villages under 1,000 people show rates from 0 to 19.05 per 1,000.</span><span lang="nl">De 109 dorpen onder 1.000 inwoners laten cijfers zien van 0 tot 19,05 per 1.000.</span></li>
+<li><span lang="en">The 48 villages of 10,000 people or more stay between 2.88 and 5.21 per 1,000.</span><span lang="nl">De 48 dorpen van 10.000 inwoners of meer blijven tussen 2,88 en 5,21 per 1.000.</span></li>
+<li><span lang="en">Of the 10 highest rates, 9 belong to villages under 1,000 people.</span><span lang="nl">Van de 10 hoogste cijfers horen er 9 bij dorpen onder 1.000 inwoners.</span></li>
+</ul>
+
+    <p lang="en">The reason is arithmetic. One extra case adds 5.0 per 1,000 to the rate of a village of 200 people. In a village of 20,000 people, the same case adds 0.05 per 1,000. A table of rates therefore puts small places at the top and at the bottom by chance alone. Report the count and the base beside every rate, and distrust a ranking whose leaders are all small.</p>
+<p lang="nl">De reden is rekenkunde. Eén extra geval telt 5,0 per 1.000 op bij het cijfer van een dorp van 200 inwoners. In een dorp van 20.000 inwoners telt hetzelfde geval 0,05 per 1.000 op. Een tabel met cijfers zet kleine plaatsen dus alleen door toeval bovenaan en onderaan. Zet het aantal en de basis naast elk cijfer, en wantrouw een ranglijst waarvan de koplopers allemaal klein zijn.</p>
+
+
+    <h2 lang="en">A doubled risk, in people</h2>
+<h2 lang="nl">Een verdubbeld risico, in mensen</h2>
+
+    <p lang="en">A headline that says a habit doubles the risk of an illness gives a relative risk and hides the base. The notebook compares two illnesses whose risk doubles.</p>
+<p lang="nl">Een kop die zegt dat een gewoonte het risico op een ziekte verdubbelt, geeft een relatief risico en verbergt de basis. Het notebook vergelijkt twee ziekten waarvan het risico verdubbelt.</p>
+
+    <ul>
+<li><span lang="en">A rare risk that goes from 3 in 10,000 people to 6 in 10,000 adds 3 cases for every 10,000 people.</span><span lang="nl">Een zeldzaam risico dat van 3 op 10.000 mensen naar 6 op 10.000 gaat, voegt 3 gevallen toe op elke 10.000 mensen.</span></li>
+<li><span lang="en">A common risk that goes from 20 in 100 to 40 in 100 adds 2,000 cases for every 10,000 people.</span><span lang="nl">Een veelvoorkomend risico dat van 20 op 100 naar 40 op 100 gaat, voegt 2.000 gevallen toe op elke 10.000 mensen.</span></li>
+</ul>
+
+    <p lang="en">The relative risk is 2 in both cases. The honest version of the headline gives the count per 1,000 or per 10,000 people before and after. Counts of people in this form are called natural frequencies, and readers understand them far better than percentages.</p>
+<p lang="nl">Het relatieve risico is in beide gevallen 2. De eerlijke versie van de kop geeft het aantal per 1.000 of per 10.000 mensen ervoor en erna. Aantallen mensen in deze vorm heten natuurlijke frequenties, en lezers begrijpen ze veel beter dan percentages.</p>
+
+
+    <h2 lang="en">How common was it before you looked</h2>
+<h2 lang="nl">Hoe vaak kwam het voor voordat je keek</h2>
+
+    <p lang="en">A base rate is how common something is before you look at any evidence. It decides what a test result means. Take a test that catches 90% of the people who have an illness and wrongly flags 5% of the people who do not. Picture 10,000 people taking it when 1 person in 100 is ill.</p>
+<p lang="nl">Een basisfrequentie is hoe vaak iets voorkomt voordat je naar enig bewijs kijkt. Die bepaalt wat een testuitslag betekent. Neem een test die 90% van de mensen met een ziekte vindt en 5% van de mensen zonder de ziekte ten onrechte aanwijst. Stel je voor dat 10.000 mensen de test doen terwijl 1 op de 100 ziek is.</p>
+
+    <ul>
+<li><span lang="en">100 of the 10,000 people are ill. The test catches 90 of them.</span><span lang="nl">100 van de 10.000 mensen zijn ziek. De test vindt er 90 van.</span></li>
+<li><span lang="en">The rest are healthy, and the test wrongly flags 495 of them.</span><span lang="nl">De rest is gezond, en de test wijst er 495 van ten onrechte aan.</span></li>
+<li><span lang="en">Only 15.4% of the people who test positive are ill.</span><span lang="nl">Maar 15,4% van de mensen die positief testen, is ziek.</span></li>
+</ul>
+
+    <p lang="en">The test stays the same when the base rate rises. When 10 people in 100 are ill, 66.7% of the positive results are real. When 30 in 100 are ill, the share is 88.5%. A simulation of 100,000 people in the notebook gives 15.5% for the first case, close to the count.</p>
+<p lang="nl">De test blijft dezelfde als de basisfrequentie stijgt. Als 10 op de 100 mensen ziek zijn, is 66,7% van de positieve uitslagen echt. Als 30 op de 100 ziek zijn, is het aandeel 88,5%. Een simulatie van 100.000 mensen in het notebook geeft 15,5% voor het eerste geval, dicht bij de telling.</p>
+
+    <p lang="en">The same arithmetic applies wherever something rare is screened for. When the guilty are rare, a fraud alert, a security scanner and a hiring filter all flag many more innocent cases than guilty ones. The notebook asks you to put the fraud question to your AI assistant before you compute the answer yourself.</p>
+<p lang="nl">Dezelfde rekensom geldt overal waar naar iets zeldzaams wordt gezocht. Als de schuldigen zeldzaam zijn, markeren een fraudemelding, een beveiligingsscanner en een selectiefilter voor sollicitanten allemaal veel meer onschuldige dan schuldige gevallen. Het notebook vraagt je de fraudevraag aan je AI-assistent voor te leggen voordat je het antwoord zelf uitrekent.</p>
+
+
+    <h2 lang="en">Practise in the notebook</h2>
+<h2 lang="nl">Oefen in het notebook</h2>
+
+    <p lang="en">The notebook works through every idea above with made-up towns, villages, tests and payments. It holds two tasks that you complete with your AI assistant, each with a CHECK cell. It ends with a short letter you write for a reader.</p>
+<p lang="nl">Het notebook werkt alle ideeën hierboven uit met verzonnen steden, dorpen, tests en betalingen. Het bevat twee opdrachten die je samen met je AI-assistent maakt, elk met een CHECK-cel. Het eindigt met een korte brief die je voor een lezer schrijft.</p>
+
+    <p><a class="button" lang="en" href="https://colab.research.google.com/github/johnsanterre/bigi-data-notebooks/blob/main/notebooks/skills-06-en.ipynb" target="_blank" rel="noopener">Open in Colab</a><a class="button" lang="nl" href="https://colab.research.google.com/github/johnsanterre/bigi-data-notebooks/blob/main/notebooks/skills-06-nl.ipynb" target="_blank" rel="noopener">Openen in Colab</a><a class="button secondary" lang="en" href="../notebooks/skills-06-en.ipynb" download>Download</a><a class="button secondary" lang="nl" href="../notebooks/skills-06-nl.ipynb" download>Downloaden</a></p>
+
+
+    <h2 lang="en">Check yourself</h2>
+<h2 lang="nl">Test jezelf</h2>
+
+    <h3><span lang="en">Question</span><span lang="nl">Vraag</span> 1</h3>
+<p lang="en">Town C reported the most flu cases of the eight towns. What does that tell you about its flu rate?</p>
+<p lang="nl">Stad C meldde de meeste griepgevallen van de acht steden. Wat zegt dat over het griepcijfer van de stad?</p>
+<ol class="options" type="a"><li><span lang="en">Town C has the highest rate.</span><span lang="nl">Stad C heeft het hoogste cijfer.</span></li><li><span lang="en">Nothing yet. The rate needs the town's population from the same year.</span><span lang="nl">Nog niets. Voor het cijfer is de bevolking van de stad uit hetzelfde jaar nodig.</span></li><li><span lang="en">Town C has the lowest rate.</span><span lang="nl">Stad C heeft het laagste cijfer.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The second answer is right. In the notebook, town C reported the most cases, 990. It is also the largest town, and over its population of 2025 it had the lowest rate of the eight.</p>
+<p lang="nl">Het tweede antwoord klopt. In het notebook meldde stad C de meeste gevallen, 990. Het is ook de grootste stad, en gedeeld door de bevolking van 2025 had de stad het laagste cijfer van de acht.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 2</h3>
+<p lang="en">The cases were counted in 2025. Which population belongs in the base?</p>
+<p lang="nl">De gevallen zijn in 2025 geteld. Welke bevolking hoort in de basis?</p>
+<ol class="options" type="a"><li><span lang="en">The latest census, whatever its year.</span><span lang="nl">De laatste volkstelling, uit welk jaar ook.</span></li><li><span lang="en">The population of the same place in 2025.</span><span lang="nl">De bevolking van dezelfde plaats in 2025.</span></li><li><span lang="en">The largest population figure available.</span><span lang="nl">Het grootste bevolkingscijfer dat beschikbaar is.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The second answer is right. Over the census of 2015, town H's rate came out at 27.75 per 1,000. Over its population of 2025, the rate was 16.99 per 1,000.</p>
+<p lang="nl">Het tweede antwoord klopt. Gedeeld door de volkstelling van 2015 kwam het cijfer van stad H uit op 27,75 per 1.000. Gedeeld door de bevolking van 2025 was het cijfer 16,99 per 1.000.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 3</h3>
+<p lang="en">Every village in the simulation has the same true rate, and most of the ten highest rates come from small villages. Why?</p>
+<p lang="nl">Elk dorp in de simulatie heeft hetzelfde ware cijfer, en de meeste van de tien hoogste cijfers komen uit kleine dorpen. Waarom?</p>
+<ol class="options" type="a"><li><span lang="en">Small villages are less healthy.</span><span lang="nl">Kleine dorpen zijn minder gezond.</span></li><li><span lang="en">One case moves a small village's rate much further, so chance spreads the rates of small villages wider.</span><span lang="nl">Eén geval verschuift het cijfer van een klein dorp veel verder, dus het toeval spreidt de cijfers van kleine dorpen wijder.</span></li><li><span lang="en">The simulation has an error in it.</span><span lang="nl">De simulatie bevat een fout.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The second answer is right. One extra case adds 5.0 per 1,000 in a village of 200 people. In a village of 20,000 people, it adds 0.05 per 1,000.</p>
+<p lang="nl">Het tweede antwoord klopt. Eén extra geval telt 5,0 per 1.000 op in een dorp van 200 inwoners. In een dorp van 20.000 inwoners telt het 0,05 per 1.000 op.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 4</h3>
+<p lang="en">A risk doubles from 3 in 10,000 people to 6 in 10,000. How many extra people out of 10,000 get the illness?</p>
+<p lang="nl">Een risico verdubbelt van 3 op 10.000 mensen naar 6 op 10.000. Hoeveel extra mensen op de 10.000 krijgen de ziekte?</p>
+<ol class="options" type="a"><li><span lang="en">3</span><span lang="nl">3</span></li><li><span lang="en">10,000</span><span lang="nl">10.000</span></li><li><span lang="en">6</span><span lang="nl">6</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">3 is right. The relative risk is 2, and the absolute increase is 3 people in every 10,000.</p>
+<p lang="nl">3 klopt. Het relatieve risico is 2, en de absolute stijging is 3 mensen op elke 10.000.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 5</h3>
+<p lang="en">A test catches 90% of the ill and wrongly flags 5% of the healthy. One person in 100 is ill. Of the people who test positive, about how many are ill?</p>
+<p lang="nl">Een test vindt 90% van de zieken en wijst 5% van de gezonden ten onrechte aan. Eén op de 100 mensen is ziek. Hoeveel van de mensen die positief testen, zijn ongeveer ziek?</p>
+<ol class="options" type="a"><li><span lang="en">About 90 in 100.</span><span lang="nl">Ongeveer 90 op de 100.</span></li><li><span lang="en">About 15 in 100.</span><span lang="nl">Ongeveer 15 op de 100.</span></li><li><span lang="en">About 50 in 100.</span><span lang="nl">Ongeveer 50 op de 100.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">About 15 in 100 is right. Out of 10,000 people tested, 90 ill people test positive. Another 495 healthy people test positive by mistake. Only 15.4% of the positive results are real.</p>
+<p lang="nl">Ongeveer 15 op de 100 klopt. Van 10.000 geteste mensen testen 90 zieken positief. Daarnaast testen 495 gezonde mensen ten onrechte positief. Maar 15,4% van de positieve uitslagen is echt.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 6</h3>
+<p lang="en">The same test is used where 30 people in 100 are ill. What happens to the share of positive results that are real?</p>
+<p lang="nl">Dezelfde test wordt gebruikt waar 30 op de 100 mensen ziek zijn. Wat gebeurt er met het aandeel positieve uitslagen dat echt is?</p>
+<ol class="options" type="a"><li><span lang="en">It stays the same, because the test has not changed.</span><span lang="nl">Het blijft gelijk, want de test is niet veranderd.</span></li><li><span lang="en">It rises, because the base rate rose.</span><span lang="nl">Het stijgt, want de basisfrequentie is gestegen.</span></li><li><span lang="en">It falls.</span><span lang="nl">Het daalt.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The second answer is right. The share rises to 88.5%. The test is the same, and only the base rate changed.</p>
+<p lang="nl">Het tweede antwoord klopt. Het aandeel stijgt naar 88,5%. De test is dezelfde, en alleen de basisfrequentie veranderde.</p>
+</details>
+
+    <footer><p><span lang="en"><a href="index.html">Back to week 6</a><span class="separator">|</span><a href="../materials.html">All materials</a></span><span lang="nl"><a href="index.html">Terug naar week 6</a><span class="separator">|</span><a href="../materials.html">Al het lesmateriaal</a></span></p></footer>
+</div></main>
+<div class="site-footer"><div class="container"><div><span lang="en">BiGi Data is a <a href="https://freefocus.org">Free Focus</a> program.</span><span lang="nl">BiGi Data is een programma van <a href="https://freefocus.org">Free Focus</a>.</span></div><div><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><span class="separator"> &middot; </span><a href="../credits.html"><span lang="en">Image credits</span><span lang="nl">Fotoverantwoording</span></a></div></div></div>
+<script data-goatcounter="https://johnsanterre.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

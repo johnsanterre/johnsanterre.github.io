@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Fellows' guide: Week 11 - BiGi Data">
+<meta name="robots" content="noindex, nofollow">
+<title data-en="Fellows' guide: Week 11 - BiGi Data" data-nl="Lesgids fellows: Week 11 - BiGi Data">Fellows' guide: Week 11 - BiGi Data</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;650;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/lang.js"></script>
+</head>
+<body>
+<header class="nav-header"><div class="container">
+<a href="../index.html" class="site-title"><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><polygon fill="#ecc81d" points="50,4 61,38 97,38 68,59 79,94 50,73 21,94 32,59 3,38 39,38"/></svg>BiGi Data</a>
+<nav class="nav-links"><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a>
+<button id="lang-btn" class="lang-btn" type="button">Nederlands</button></nav>
+</div></header>
+<div class="stripes"></div>
+<section class="page-hero" style="background-image:url(../assets/img/waterkant.jpg)"><div class="container">
+<nav class="breadcrumb"><a href="../index.html"><span lang="en">Home</span><span lang="nl">Home</span></a><span class="separator">/</span><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a><span class="separator">/</span><a href="index.html"><span lang="en">Week 11</span><span lang="nl">Week 11</span></a><span class="separator">/</span><span><span lang="en">Fellows' guide</span><span lang="nl">Lesgids fellows</span></span></nav>
+<h1 lang="en">Fellows' session guide, week 11</h1>
+<h1 lang="nl">Lesgids voor fellows, week 11</h1>
+
+    <p lang="en" class="lead">This guide is for the teaching fellows. It sets the goal of the week, the plan for each workshop, what to look for in the studio, and how to run the Friday review.</p>
+<p lang="nl" class="lead">Deze gids is voor de fellows die lesgeven. Hij beschrijft het doel van de week, het plan voor elke workshop, waar je in de studio op let, en hoe je de vrijdagbespreking leidt.</p>
+
+
+    </div></section>
+<main><div class="container">
+<h2 lang="en">The goal of the week</h2>
+<h2 lang="nl">Het doel van de week</h2>
+
+    <p lang="en">By Friday, every student can build the world in which nothing is going on, compare real data with it, and tell a resident in plain words how often chance alone would produce a pattern. A second habit matters as much. Before shuffling, students ask whether the order of the data carries information.</p>
+<p lang="nl">Op vrijdag kan elke student de wereld bouwen waarin niets aan de hand is, echte data daarmee vergelijken, en een bewoner in eenvoudige woorden vertellen hoe vaak toeval alleen een patroon zou maken. Een tweede gewoonte telt even zwaar. Vóór het schudden vragen studenten zich af of de volgorde van de data informatie bevat.</p>
+
+
+    <h2 lang="en">Before Monday</h2>
+<h2 lang="nl">Vóór maandag</h2>
+
+    <ul>
+<li><span lang="en">Write the 24 fertiliser yields from section 1 of the skills notebook on 24 index cards, one set for each team.</span><span lang="nl">Schrijf de 24 meststofopbrengsten uit deel 1 van het vaardighedennotebook op 24 systeemkaartjes, één set per team.</span></li>
+<li><span lang="en">Run both notebooks yourself from a fresh Colab session, and read the solution notebook you received separately.</span><span lang="nl">Draai beide notebooks zelf in een nieuwe Colab-sessie, en lees het oplossingsnotebook dat je apart hebt ontvangen.</span></li>
+<li><span lang="en">Open the World Health Organization fact sheet on dengue and keep it on hand. Teams will quote its advice in their notice.</span><span lang="nl">Open het informatieblad over dengue van de Wereldgezondheidsorganisatie en houd het bij de hand. Teams citeren het advies in hun bericht.</span></li>
+<li><span lang="en">Publish this week's roles from the rotation.</span><span lang="nl">Maak de rollen van deze week bekend volgens het rooster.</span></li>
+</ul>
+
+
+    <h2 lang="en">The four workshops</h2>
+<h2 lang="nl">De vier workshops</h2>
+
+    <h3><span lang="en">Monday: shuffling by hand (2 hours)</span><span lang="nl">Maandag: schudden met de hand (2 uur)</span></h3>
+    <ul>
+<li><span lang="en"><b>20 minutes.</b> Put the fertiliser question on the board and ask the room whether a 5 kg gap proves the fertiliser works. Collect answers without judging them.</span><span lang="nl"><b>20 minuten.</b> Zet de meststofvraag op het bord en vraag de zaal of een verschil van 5 kg bewijst dat de meststof werkt. Verzamel antwoorden zonder te oordelen.</span></li>
+<li><span lang="en"><b>40 minutes.</b> Each team shuffles its 24 cards into two piles of 12, computes the gap, and puts a dot for it on a shared number line on the board. Repeat until the board holds about 100 dots.</span><span lang="nl"><b>40 minuten.</b> Elk team schudt zijn 24 kaartjes in twee stapels van 12, berekent het verschil en zet er een stip voor op een gedeelde getallenlijn op het bord. Herhaal tot het bord ongeveer 100 stippen heeft.</span></li>
+<li><span lang="en"><b>40 minutes.</b> Run the same test in Colab with 10,000 shuffles. Compare the histogram with the dots on the board.</span><span lang="nl"><b>40 minuten.</b> Voer dezelfde toets uit in Colab met 10.000 schudbeurten. Vergelijk het histogram met de stippen op het bord.</span></li>
+<li><span lang="en"><b>20 minutes.</b> Each student writes the one honest sentence for the p-value. Read five aloud and correct them together.</span><span lang="nl"><b>20 minuten.</b> Elke student schrijft de ene eerlijke zin voor de p-waarde. Lees er vijf voor en verbeter ze samen.</span></li>
+</ul>
+
+    <h3><span lang="en">Tuesday: what a p-value does not say (2 hours)</span><span lang="nl">Dinsdag: wat een p-waarde niet zegt (2 uur)</span></h3>
+    <p lang="en">Stage the two misreadings. Write "there is a 2 percent chance the fertiliser does nothing" on the board and ask one team to argue for it and a second team to argue against it. Run the seed varieties on 20,000 plots and ask the room whether a farmer should pay more for the second variety. Close with the three sample sizes, and ask why the same true effect gives three different p-values.</p>
+<p lang="nl">Speel de twee misvattingen na. Schrijf "er is 2 procent kans dat de meststof niets doet" op het bord en laat een team ervoor pleiten en een tweede team ertegen. Draai de zaadrassen op 20.000 percelen en vraag de zaal of een boer meer moet betalen voor het tweede ras. Sluit af met de drie steekproefgroottes, en vraag waarom hetzelfde echte effect drie verschillende p-waarden geeft.</p>
+
+    <h3><span lang="en">Wednesday: patterns in time (2 hours)</span><span lang="nl">Woensdag: patronen in de tijd (2 uur)</span></h3>
+    <p lang="en">Start from the AI's five-year park trend and have the room write out every order of a smaller case with four values on paper. Then show the two drifting series and run both tests live. Ask each team to say in one sentence why the project's dengue and rain data need the shift test instead of the ordinary shuffle.</p>
+<p lang="nl">Begin bij de vijfjarige parktrend van de AI en laat de zaal voor een kleiner geval met vier waarden elke volgorde op papier uitschrijven. Laat daarna de twee drijvende reeksen zien en voer beide toetsen live uit. Vraag elk team om in één zin te zeggen waarom de dengue- en regendata van het project de verschuivingstoets nodig hebben in plaats van gewoon schudden.</p>
+
+    <h3><span lang="en">Thursday: many tries, and saying it plainly (2 hours)</span><span lang="nl">Donderdag: veel pogingen, en het eenvoudig zeggen (2 uur)</span></h3>
+    <p lang="en">Spend the first hour on the 20 habits and the corrected p-value, then on the t-test as a shortcut. Spend the second hour on the drill the program cares about most. A fellow plays a resident from the neighbourhood group and asks each team whether rain causes dengue. The team answers in plain words, without claiming more than its test decided.</p>
+<p lang="nl">Besteed het eerste uur aan de 20 gewoonten en de gecorrigeerde p-waarde, en daarna aan de t-toets als kortere weg. Besteed het tweede uur aan de oefening waar het programma het meest om geeft. Een fellow speelt een bewoner uit het buurtcomité en vraagt elk team of regen dengue veroorzaakt. Het team antwoordt in eenvoudige woorden, zonder meer te claimen dan de toets besliste.</p>
+
+
+    <h2 lang="en">In the studio</h2>
+<h2 lang="nl">In de studio</h2>
+
+    <p lang="en">Visit every team twice a day. Ask the same three questions each time, so the teams learn to ask them of themselves.</p>
+<p lang="nl">Bezoek elk team twee keer per dag. Stel elke keer dezelfde drie vragen, zodat de teams leren die vragen aan zichzelf te stellen.</p>
+
+    <ul>
+<li><span lang="en">How did you build the world in which rain does nothing, and does it keep the order of the weeks?</span><span lang="nl">Hoe bouwden jullie de wereld waarin regen niets doet, en bewaart die de volgorde van de weken?</span></li>
+<li><span lang="en">How many windows and delays have you tried so far?</span><span lang="nl">Hoeveel vensters en vertragingen hebben jullie tot nu toe geprobeerd?</span></li>
+<li><span lang="en">Which weeks did you drop, and when did you drop them?</span><span lang="nl">Welke weken lieten jullie weg, en wanneer lieten jullie ze weg?</span></li>
+</ul>
+
+
+    <h2 lang="en">What to watch for this week</h2>
+<h2 lang="nl">Waar je deze week op let</h2>
+
+    <ul>
+<li><span lang="en">Teams that count the zero-filled weeks of 2024 as weeks without dengue. Nobody reported those weeks, which is the lesson of week 1 again.</span><span lang="nl">Teams die de met nul gevulde weken van 2024 tellen als weken zonder dengue. Niemand heeft die weken gemeld, wat opnieuw de les van week 1 is.</span></li>
+<li><span lang="en">Teams that drop weeks before they line up the rain. A shift by position then pairs some weeks with the wrong rain. CHECK 2 tests the column on the full table to catch this.</span><span lang="nl">Teams die weken weglaten voordat ze de regen uitlijnen. Een verschuiving op positie koppelt dan sommige weken aan de verkeerde regen. CHECK 2 toetst de kolom op de volledige tabel om dit te vangen.</span></li>
+<li><span lang="en">Teams that report the ordinary shuffle's p-value as the answer. The two tests disagree on these data, and task 7 exists to show why.</span><span lang="nl">Teams die de p-waarde van gewoon schudden als het antwoord melden. De twee toetsen zijn het op deze data oneens, en opdracht 7 is er om te laten zien waarom.</span></li>
+<li><span lang="en">Teams that pick the strongest delay from task 8 and present it as a finding. They tried 13 delays, and the winner of 13 needs the correction from the skills lesson.</span><span lang="nl">Teams die de sterkste vertraging uit opdracht 8 kiezen en als bevinding presenteren. Ze probeerden 13 vertragingen, en de winnaar uit 13 heeft de correctie uit de vaardighedenles nodig.</span></li>
+<li><span lang="en">Teams that write p = 0 when no shuffle reaches the real gap.</span><span lang="nl">Teams die p = 0 schrijven als geen enkele schudbeurt het echte verschil haalt.</span></li>
+<li><span lang="en">Teams that turn the result into a cause in either direction. The table shows how cases and rain line up in time. It cannot say whether rain, stored water, a new virus strain or a change in reporting drove an outbreak, and nothing in it explains why 2021 and 2022 have so few cases.</span><span lang="nl">Teams die het resultaat in een van beide richtingen tot een oorzaak maken. De tabel laat zien hoe gevallen en regen in de tijd samenvallen. Ze kan niet zeggen of regen, opgeslagen water, een nieuwe virusvariant of een andere manier van melden een uitbraak veroorzaakte, en niets erin verklaart waarom 2021 en 2022 zo weinig gevallen hebben.</span></li>
+<li><span lang="en">Notices that forget the limits. The cases are national, the rain is a model estimate for one grid cell near Paramaribo, and reported cases are only part of all infections.</span><span lang="nl">Berichten die de grenzen vergeten. De gevallen zijn landelijk, de regen is een modelschatting voor één rastercel bij Paramaribo, en gemelde gevallen zijn maar een deel van alle besmettingen.</span></li>
+<li><span lang="en">Teams that repeat the AI's general account of rain and dengue as a fact about Suriname without testing it against task 8.</span><span lang="nl">Teams die het algemene verhaal van de AI over regen en dengue herhalen als feit over Suriname, zonder het tegen opdracht 8 te toetsen.</span></li>
+</ul>
+
+
+    <h2 lang="en">The Friday review</h2>
+<h2 lang="nl">De vrijdagbespreking</h2>
+
+    <ul>
+<li><span lang="en"><b>Before the review.</b> Students in the audience write one question for each team on a card while it presents.</span><span lang="nl"><b>Vóór de bespreking.</b> Studenten in het publiek schrijven tijdens elke presentatie één vraag voor dat team op een kaartje.</span></li>
+<li><span lang="en"><b>Each team.</b> Five minutes to present, including the notice read aloud, then five minutes of questions from the cards. A fellow asks the last question as a resident would.</span><span lang="nl"><b>Elk team.</b> Vijf minuten presenteren, met het bericht hardop voorgelezen, daarna vijf minuten vragen van de kaartjes. Een fellow stelt de laatste vraag zoals een bewoner dat zou doen.</span></li>
+<li><span lang="en"><b>After the presentations.</b> The room compares the teams' p-values and lists every analysis choice that changed them.</span><span lang="nl"><b>Na de presentaties.</b> De zaal vergelijkt de p-waarden van de teams en maakt een lijst van elke analysekeuze die ze veranderde.</span></li>
+<li><span lang="en"><b>To close.</b> The room picks the clearest notice. The fellows ask its team whether the notice may be offered to a real neighbourhood group. Announce next week's roles.</span><span lang="nl"><b>Ter afsluiting.</b> De zaal kiest het duidelijkste bericht. De fellows vragen het team of het bericht aan een echt buurtcomité mag worden aangeboden. Maak de rollen voor volgende week bekend.</span></li>
+</ul>
+
+    <footer><p><span lang="en"><a href="index.html">Back to week 11</a><span class="separator">|</span><a href="../materials.html">All materials</a></span><span lang="nl"><a href="index.html">Terug naar week 11</a><span class="separator">|</span><a href="../materials.html">Al het lesmateriaal</a></span></p></footer>
+</div></main>
+<div class="site-footer"><div class="container"><div><span lang="en">BiGi Data is a <a href="https://freefocus.org">Free Focus</a> program.</span><span lang="nl">BiGi Data is een programma van <a href="https://freefocus.org">Free Focus</a>.</span></div><div><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><span class="separator"> &middot; </span><a href="../credits.html"><span lang="en">Image credits</span><span lang="nl">Fotoverantwoording</span></a></div></div></div>
+<script data-goatcounter="https://johnsanterre.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

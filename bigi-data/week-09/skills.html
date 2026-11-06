@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Skills: Week 9 - BiGi Data">
+<meta name="robots" content="noindex, nofollow">
+<title data-en="Skills: Week 9 - BiGi Data" data-nl="Vaardigheden: Week 9 - BiGi Data">Skills: Week 9 - BiGi Data</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;650;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/lang.js"></script>
+</head>
+<body>
+<header class="nav-header"><div class="container">
+<a href="../index.html" class="site-title"><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><polygon fill="#ecc81d" points="50,4 61,38 97,38 68,59 79,94 50,73 21,94 32,59 3,38 39,38"/></svg>BiGi Data</a>
+<nav class="nav-links"><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a>
+<button id="lang-btn" class="lang-btn" type="button">Nederlands</button></nav>
+</div></header>
+<div class="stripes"></div>
+<section class="page-hero" style="background-image:url(../assets/img/forest.jpg)"><div class="container">
+<nav class="breadcrumb"><a href="../index.html"><span lang="en">Home</span><span lang="nl">Home</span></a><span class="separator">/</span><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a><span class="separator">/</span><a href="index.html"><span lang="en">Week 9</span><span lang="nl">Week 9</span></a><span class="separator">/</span><span><span lang="en">Skills</span><span lang="nl">Vaardigheden</span></span></nav>
+<h1 lang="en">Skills, week 9: probability for people who will be wrong</h1>
+<h1 lang="nl">Vaardigheden, week 9: kansrekening voor mensen die zich zullen vergissen</h1>
+
+    <p lang="en" class="muted">About 10 hours across the week, at your own pace.</p>
+<p lang="nl" class="muted">Ongeveer 10 uur verspreid over de week, in je eigen tempo.</p>
+
+
+    </div></section>
+<main><div class="container">
+<h2 lang="en">What you will be able to do</h2>
+<h2 lang="nl">Wat je na deze week kunt</h2>
+
+    <ul>
+<li><span lang="en">Estimate a probability as a long-run share, from a table of outcomes or from a simulation.</span><span lang="nl">Een kans schatten als aandeel op de lange duur, uit een tabel met uitkomsten of uit een simulatie.</span></li>
+<li><span lang="en">Apply the complement, sum and product rules to events built from two simpler events.</span><span lang="nl">De complementregel, de somregel en de productregel toepassen op gebeurtenissen die uit twee eenvoudigere gebeurtenissen bestaan.</span></li>
+<li><span lang="en">Detect a set of stated probabilities that breaks the rules, and name the rule it breaks.</span><span lang="nl">Een set uitgesproken kansen herkennen die de regels breekt, en de regel noemen die wordt gebroken.</span></li>
+<li><span lang="en">Compute the chance of at least one event over several days, and explain why adding the daily chances is wrong.</span><span lang="nl">De kans op minstens één gebeurtenis over meerdere dagen berekenen, en uitleggen waarom het optellen van de dagkansen fout is.</span></li>
+<li><span lang="en">Show by counting when the independence formula overstates the chance of at least one event.</span><span lang="nl">Door te tellen laten zien wanneer de onafhankelijkheidsformule de kans op minstens één gebeurtenis overschat.</span></li>
+<li><span lang="en">Compute both conditional probabilities from a joint table, and state in words which question each one answers.</span><span lang="nl">Beide voorwaardelijke kansen uit een kruistabel berekenen, en in woorden zeggen welke vraag elk ervan beantwoordt.</span></li>
+<li><span lang="en">Restate a conditional probability as a natural frequency, out of 100 or 1,000.</span><span lang="nl">Een voorwaardelijke kans herschrijven als natuurlijke frequentie, uit 100 of 1.000.</span></li>
+</ul>
+
+
+    <h2 lang="en">Why a lesson about being wrong</h2>
+<h2 lang="nl">Waarom een les over je vergissen</h2>
+
+    <p lang="en">Every forecast, test result and risk report states a chance. Anyone who works with data will sometimes be wrong, and probability says in advance how often. This week covers the rules that every chance obeys and the two mistakes people make most often with them. The first mistake adds chances that should not be added. The second swaps a question for another one that sounds the same.</p>
+<p lang="nl">Elke voorspelling, testuitslag en risicorapport noemt een kans. Wie met data werkt, vergist zich soms, en kansrekening zegt van tevoren hoe vaak. Deze week behandelt de regels waaraan elke kans gehoorzaamt en de twee fouten die mensen er het vaakst mee maken. De eerste fout telt kansen op die niet opgeteld mogen worden. De tweede verwisselt een vraag met een andere vraag die hetzelfde klinkt.</p>
+
+
+    <h2 lang="en">A probability is a long-run share</h2>
+<h2 lang="nl">Een kans is een aandeel op de lange duur</h2>
+
+    <p lang="en">A probability is the share of the time an event happens in the long run. Because it is a share, it is always a number from 0 to 1. In the notebook, a simulated fair die shows a six in 0.2000 of its first 10 rolls. Over 100,000 rolls, the share settles at 0.1663. One in six is 0.1667.</p>
+<p lang="nl">Een kans is het aandeel van de keren dat een gebeurtenis op de lange duur voorkomt. Omdat het een aandeel is, is het altijd een getal van 0 tot 1. In het notebook toont een gesimuleerde eerlijke dobbelsteen een zes in 0,2000 van de eerste 10 worpen. Over 100.000 worpen komt het aandeel tot rust op 0,1663. Eén op zes is 0,1667.</p>
+
+    <p lang="en">When every outcome is equally likely, you can count instead of simulate. Two dice have 36 outcomes. The chance of an event is the share of those rows in which it happens.</p>
+<p lang="nl">Als elke uitkomst even waarschijnlijk is, kun je tellen in plaats van simuleren. Twee dobbelstenen hebben 36 uitkomsten. De kans op een gebeurtenis is het aandeel van die rijen waarin ze voorkomt.</p>
+
+
+    <h2 lang="en">Three rules every probability obeys</h2>
+<h2 lang="nl">Drie regels waaraan elke kans gehoorzaamt</h2>
+
+    <ul>
+<li><span lang="en"><b>The complement rule says that the chance of "not A" is 1 minus the chance of A.</b> It is often the easiest way into a hard question, as the section on "at least one" shows.</span><span lang="nl"><b>De complementregel zegt dat de kans op "niet A" gelijk is aan 1 min de kans op A.</b> Vaak is dat de makkelijkste weg naar een moeilijke vraag, zoals het deel over "minstens één" laat zien.</span></li>
+<li><span lang="en"><b>The sum rule says that, for events that cannot happen together, the chance of one or the other is the sum of their chances.</b> When they can happen together, you subtract the overlap. Adding the chance of a six on the first die to the chance of a six on the second gives 0.3333. Counting the rows gives 0.3056, because the sum counts the double six twice.</span><span lang="nl"><b>De somregel zegt dat voor gebeurtenissen die niet samen kunnen voorkomen, de kans op de ene of de andere de som van hun kansen is.</b> Als ze wel samen kunnen voorkomen, trek je de overlap af. Wie de kans op een zes met de eerste dobbelsteen optelt bij de kans op een zes met de tweede, krijgt 0,3333. Wie de rijen telt, krijgt 0,3056, want de som telt dubbel zes twee keer.</span></li>
+<li><span lang="en"><b>The product rule says that, for independent events, the chance that both happen is the product of their chances.</b> Two dice are independent, and the first die and the total are not. Over all rolls, the chance of a total of 10 or more is 0.1667. Once the first die shows a 6, that chance rises to 0.5.</span><span lang="nl"><b>De productregel zegt dat voor onafhankelijke gebeurtenissen de kans dat beide gebeuren het product van hun kansen is.</b> Twee dobbelstenen zijn onafhankelijk, en de eerste dobbelsteen en het totaal zijn dat niet. Over alle worpen is de kans op een totaal van 10 of meer 0,1667. Zodra de eerste dobbelsteen een 6 toont, stijgt die kans naar 0,5.</span></li>
+</ul>
+
+
+    <h2 lang="en">Beliefs that break the arithmetic</h2>
+<h2 lang="nl">Overtuigingen die de rekenregels breken</h2>
+
+    <p lang="en">A stated probability is a belief written as a number, and the rules apply to it as well. A set of beliefs that breaks a rule is called incoherent. Someone who holds incoherent beliefs can be offered bets that they call fair one by one and that lose money together, whatever happens.</p>
+<p lang="nl">Een uitgesproken kans is een overtuiging die als getal is opgeschreven, en de regels gelden ook daarvoor. Een set overtuigingen die een regel breekt, heet incoherent. Iemand met incoherente overtuigingen kun je weddenschappen aanbieden die hij een voor een eerlijk noemt en die samen geld verliezen, wat er ook gebeurt.</p>
+
+    <p lang="en">In the notebook, one planner gives a late shipment a chance of 0.3. The same planner gives "not late" a chance of 0.6. Those two chances must add to 1, so the planner's beliefs are incoherent. Another planner breaks a quieter rule, because two events cannot happen together more often than either one happens on its own.</p>
+<p lang="nl">In het notebook geeft een planner een te late zending een kans van 0,3. Dezelfde planner geeft "niet te laat" een kans van 0,6. Die twee kansen moeten samen 1 zijn, dus de overtuigingen van de planner zijn incoherent. Een andere planner breekt een minder opvallende regel, want twee gebeurtenissen kunnen niet vaker samen voorkomen dan elk van beide op zichzelf.</p>
+
+
+    <h2 lang="en">At least one</h2>
+<h2 lang="nl">Minstens één</h2>
+
+    <p lang="en">Many practical questions ask for the chance that something happens at least once: a breakdown in a week, a late payment in a year, a defect in a batch. The safe route goes through the complement. The event stays away for the whole period only if it stays away on every day. For independent days, the product rule multiplies those daily chances, and 1 minus that product is the chance of at least once.</p>
+<p lang="nl">Veel praktische vragen gaan over de kans dat iets minstens één keer gebeurt: uitval in een week, een te late betaling in een jaar, een defect in een partij. De veilige weg loopt via het complement. De gebeurtenis blijft de hele periode weg alleen als ze elke dag wegblijft. Voor onafhankelijke dagen vermenigvuldigt de productregel die dagkansen, en 1 min dat product is de kans op minstens één keer.</p>
+
+    <p lang="en">In the notebook, a van breaks down on 20 percent of days. The chance of at least one breakdown in seven days is 0.7903. A simulation of 100,000 weeks gives 0.7904. In natural frequencies, about 79 weeks out of 100 have a breakdown.</p>
+<p lang="nl">In het notebook valt een bus op 20 procent van de dagen uit. De kans op minstens één uitval in zeven dagen is 0,7903. Een simulatie van 100.000 weken geeft 0,7904. In natuurlijke frequenties valt de bus in ongeveer 79 van de 100 weken uit.</p>
+
+
+    <h2 lang="en">When the AI is wrong</h2>
+<h2 lang="nl">Wanneer de AI zich vergist</h2>
+
+    <div class="panel warn">
+    <p lang="en">In the notebook, an AI assistant was asked for the chance that the van breaks down at least once in a seven-day week. It added the seven daily chances and answered 1.4. The answer is impossible, because no chance can be larger than 1. The correct chance is 0.7903.</p>
+<p lang="nl">In het notebook werd een AI-assistent gevraagd naar de kans dat de bus in een week van zeven dagen minstens één keer uitvalt. De assistent telde de zeven dagkansen op en antwoordde 1,4. Het antwoord is onmogelijk, omdat geen kans groter kan zijn dan 1. De juiste kans is 0,7903.</p>
+
+    <p lang="en">The sum rule allows adding only for events that cannot happen together, and breakdowns on two different days can both happen. The same shortcut is harder to catch over fewer days. Over three days, adding gives 0.60. The correct chance over three days is 0.4880. The check has to be on the method the code used, not on the size of the number, because nothing in the wrong answer looks impossible.</p>
+<p lang="nl">De somregel staat optellen alleen toe voor gebeurtenissen die niet samen kunnen voorkomen, en uitval op twee verschillende dagen kan allebei gebeuren. Over minder dagen is dezelfde kortere weg moeilijker te betrappen. Over drie dagen geeft optellen 0,60. De juiste kans over drie dagen is 0,4880. De controle moet gaan over de methode die de code gebruikte, niet over de grootte van het getal, omdat niets aan het foute antwoord er onmogelijk uitziet.</p>
+
+    </div>
+
+    <h2 lang="en">Independence has fine print</h2>
+<h2 lang="nl">Onafhankelijkheid heeft kleine lettertjes</h2>
+
+    <p lang="en">The product rule needs independent days, and many real events come in spells. The notebook simulates a second van that breaks down on a share of 0.1996 of its days, about the same as the first. Its breakdowns come in spells, so they bunch into the same weeks.</p>
+<p lang="nl">De productregel vraagt om onafhankelijke dagen, en veel echte gebeurtenissen komen in reeksen. Het notebook simuleert een tweede bus die uitvalt op een aandeel van 0,1996 van zijn dagen, ongeveer gelijk aan de eerste. Zijn uitval komt in reeksen, dus ze hoopt zich op in dezelfde weken.</p>
+
+    <p lang="en">The second van has at least one breakdown in 0.6407 of its weeks. The independence formula, applied to the same daily share, gives 0.7895. When events cluster, the formula overstates the chance of at least one. Counting the weeks in the record gives the true share.</p>
+<p lang="nl">De tweede bus heeft minstens één uitval in 0,6407 van zijn weken. De onafhankelijkheidsformule, toegepast op hetzelfde dagaandeel, geeft 0,7895. Als gebeurtenissen samenklonteren, overschat de formule de kans op minstens één. Wie de weken in de gegevens telt, vindt het echte aandeel.</p>
+
+
+    <h2 lang="en">Two questions that sound alike</h2>
+<h2 lang="nl">Twee vragen die op elkaar lijken</h2>
+
+    <p lang="en">A conditional probability is a chance computed inside a group. You keep only the rows where one thing is true and take a share inside them. The direction matters, and the joint table shows why.</p>
+<p lang="nl">Een voorwaardelijke kans is een kans die binnen een groep wordt berekend. Je houdt alleen de rijen over waarin één ding waar is en neemt daarbinnen een aandeel. De richting doet ertoe, en de kruistabel laat zien waarom.</p>
+
+    <p lang="en">The notebook's made-up factory has 137 defective items from its night shift. Divided by all night-shift items, that count gives 0.091, the chance that a night-shift item is defective. Divided by all defective items, the same count gives 0.665, the share of defects that came from the night shift. The notebook also shows an AI assistant that was asked the first question and computed the second. A manager who read 0.665 as the chance that a night-shift item is defective would believe the night shift spoils most of its work.</p>
+<p lang="nl">De verzonnen fabriek in het notebook heeft 137 defecte producten uit de nachtploeg. Gedeeld door alle producten uit de nachtploeg geeft dat aantal 0,091, de kans dat een product uit de nachtploeg defect is. Gedeeld door alle defecte producten geeft hetzelfde aantal 0,665, het aandeel van de defecten dat uit de nachtploeg kwam. Het notebook laat ook een AI-assistent zien die de eerste vraag kreeg en de tweede berekende. Een manager die 0,665 las als de kans dat een product uit de nachtploeg defect is, zou denken dat de nachtploeg het meeste van zijn werk bederft.</p>
+
+    <p lang="en">This swap is called the transposed conditional. In a courtroom, it is called the prosecutor's fallacy.</p>
+<p lang="nl">Deze verwisseling heet de omgekeerde voorwaardelijke kans. In de rechtszaal heet ze de denkfout van de aanklager.</p>
+
+
+    <h2 lang="en">Natural frequencies</h2>
+<h2 lang="nl">Natuurlijke frequenties</h2>
+
+    <p lang="en">Shares of shares are hard to keep straight, and counts out of a round number are easier. Out of 1,000 night-shift items, about 91 are defective. Out of 1,000 defective items, about 665 come from the night shift. Said this way, the two questions no longer sound alike.</p>
+<p lang="nl">Aandelen van aandelen zijn moeilijk uit elkaar te houden, en aantallen uit een rond getal zijn makkelijker. Van 1.000 producten uit de nachtploeg zijn er ongeveer 91 defect. Van 1.000 defecte producten komen er ongeveer 665 uit de nachtploeg. Zo gezegd lijken de twee vragen niet meer op elkaar.</p>
+
+    <p lang="en">The same format exposes the prosecutor's fallacy. The notebook's city has 500,000 adults. A witness's description fits one innocent adult in 1,000, which is a chance of 0.001. A prosecutor says that the chance a matching suspect is innocent is therefore one in 1,000. Counting shows that about 500 innocent adults match, beside the one person who committed the crime. On the match alone, the chance that the suspect is innocent is 0.998.</p>
+<p lang="nl">Dezelfde vorm legt de denkfout van de aanklager bloot. De stad in het notebook heeft 500.000 volwassenen. De beschrijving van een getuige past bij één onschuldige volwassene op 1.000, een kans van 0,001. Een aanklager zegt dat de kans dat een verdachte die past onschuldig is, daarom één op 1.000 is. Tellen laat zien dat ongeveer 500 onschuldige volwassenen passen, naast de ene persoon die het misdrijf pleegde. Alleen op grond van de overeenkomst is de kans dat de verdachte onschuldig is 0,998.</p>
+
+
+    <h2 lang="en">Practise in the notebook</h2>
+<h2 lang="nl">Oefen in het notebook</h2>
+
+    <p lang="en">The notebook works through every idea above with dice, two vans, a factory and an online shop. It holds four tasks for you to complete, with your AI assistant if you like, and each task has a CHECK cell that tells you when your answer is right. The last task combines the function you write for "at least one" with a conditional probability you compute from a table.</p>
+<p lang="nl">Het notebook werkt elk idee hierboven uit met dobbelstenen, twee bussen, een fabriek en een webwinkel. Het bevat vier opdrachten die je maakt, met je AI-assistent als je wilt, en elke opdracht heeft een CHECK-cel die je vertelt wanneer je antwoord klopt. De laatste opdracht combineert de functie die je schrijft voor "minstens één" met een voorwaardelijke kans die je uit een tabel berekent.</p>
+
+    <p><a class="button" lang="en" href="https://colab.research.google.com/github/johnsanterre/bigi-data-notebooks/blob/main/notebooks/skills-09-en.ipynb" target="_blank" rel="noopener">Open in Colab</a><a class="button" lang="nl" href="https://colab.research.google.com/github/johnsanterre/bigi-data-notebooks/blob/main/notebooks/skills-09-nl.ipynb" target="_blank" rel="noopener">Openen in Colab</a><a class="button secondary" lang="en" href="../notebooks/skills-09-en.ipynb" download>Download</a><a class="button secondary" lang="nl" href="../notebooks/skills-09-nl.ipynb" download>Downloaden</a></p>
+
+
+    <h2 lang="en">Check yourself</h2>
+<h2 lang="nl">Test jezelf</h2>
+
+    <h3><span lang="en">Question</span><span lang="nl">Vraag</span> 1</h3>
+<p lang="en">A van breaks down on 20 percent of days. The days are independent. An assistant says the chance of at least one breakdown in seven days is 1.4. What went wrong?</p>
+<p lang="nl">Een bus valt op 20 procent van de dagen uit. De dagen zijn onafhankelijk. Een assistent zegt dat de kans op minstens één uitval in zeven dagen 1,4 is. Wat ging er mis?</p>
+<ol class="options" type="a"><li><span lang="en">Nothing went wrong. A chance above 1 means that a breakdown is certain.</span><span lang="nl">Er ging niets mis. Een kans boven 1 betekent dat uitval zeker is.</span></li><li><span lang="en">It added the chances of events that can happen together. The correct chance is 1 minus 0.8 to the power 7.</span><span lang="nl">De assistent telde kansen op van gebeurtenissen die samen kunnen voorkomen. De juiste kans is 1 min 0,8 tot de macht 7.</span></li><li><span lang="en">It should have multiplied 0.2 by itself seven times.</span><span lang="nl">De assistent had 0,2 zeven keer met zichzelf moeten vermenigvuldigen.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The second answer is right. The chance it gives is 0.7903. Multiplying 0.2 by itself seven times gives the chance of a breakdown on all seven days, which answers a different question.</p>
+<p lang="nl">Het tweede antwoord klopt. De kans die het geeft is 0,7903. Wie 0,2 zeven keer met zichzelf vermenigvuldigt, krijgt de kans op uitval op alle zeven dagen, en dat is een andere vraag.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 2</h3>
+<p lang="en">Two vans each break down on about one day in five. The second van's breakdowns come in spells. Which van has more weeks with at least one breakdown?</p>
+<p lang="nl">Twee bussen vallen elk op ongeveer één dag op vijf uit. De tweede bus valt uit in reeksen. Welke bus heeft meer weken met minstens één uitval?</p>
+<ol class="options" type="a"><li><span lang="en">The first van.</span><span lang="nl">De eerste bus.</span></li><li><span lang="en">The second van.</span><span lang="nl">De tweede bus.</span></li><li><span lang="en">Neither, because the daily share is the same.</span><span lang="nl">Geen van beide, want het dagaandeel is hetzelfde.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The first van is right. In the notebook, the van with spells has a breakdown in 0.6407 of its weeks. The van with independent days has one in 0.7904 of its weeks. Spells bunch the breakdowns into fewer weeks.</p>
+<p lang="nl">De eerste bus klopt. In het notebook heeft de bus met reeksen uitval in 0,6407 van zijn weken. De bus met onafhankelijke dagen heeft uitval in 0,7904 van zijn weken. Reeksen bundelen de uitval in minder weken.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 3</h3>
+<p lang="en">A planner gives a late shipment a chance of 0.3 and gives "not late" a chance of 0.6. What is wrong with these beliefs?</p>
+<p lang="nl">Een planner geeft een te late zending een kans van 0,3 en "niet te laat" een kans van 0,6. Wat is er mis met deze overtuigingen?</p>
+<ol class="options" type="a"><li><span lang="en">Nothing is wrong, because both chances lie between 0 and 1.</span><span lang="nl">Er is niets mis, want beide kansen liggen tussen 0 en 1.</span></li><li><span lang="en">The beliefs are incoherent, because the two chances must add to 1.</span><span lang="nl">De overtuigingen zijn incoherent, omdat de twee kansen samen 1 moeten zijn.</span></li><li><span lang="en">A chance of 0.3 is too low for a late shipment.</span><span lang="nl">Een kans van 0,3 is te laag voor een te late zending.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The second answer is right. "Late" and "not late" cover every outcome and cannot both happen, so the complement rule says their chances add to exactly 1.</p>
+<p lang="nl">Het tweede antwoord klopt. "Te laat" en "niet te laat" dekken elke uitkomst en kunnen niet allebei gebeuren, dus volgens de complementregel zijn hun kansen samen precies 1.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 4</h3>
+<p lang="en">In the factory table, which division answers this question: of the night-shift items, what share is defective?</p>
+<p lang="nl">Welke deling in de tabel van de fabriek beantwoordt deze vraag: welk aandeel van de producten uit de nachtploeg is defect?</p>
+<ol class="options" type="a"><li><span lang="en">Defective night-shift items divided by all defective items.</span><span lang="nl">Defecte producten uit de nachtploeg gedeeld door alle defecte producten.</span></li><li><span lang="en">Defective night-shift items divided by all night-shift items.</span><span lang="nl">Defecte producten uit de nachtploeg gedeeld door alle producten uit de nachtploeg.</span></li><li><span lang="en">All defective items divided by all items.</span><span lang="nl">Alle defecte producten gedeeld door alle producten.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The second answer is right. It gives 0.091. The first division gives 0.665, the share of defective items that came from the night shift. That number answers the reverse question.</p>
+<p lang="nl">Het tweede antwoord klopt. Het geeft 0,091. De eerste deling geeft 0,665, het aandeel van de defecte producten dat uit de nachtploeg kwam. Dat getal beantwoordt de omgekeerde vraag.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 5</h3>
+<p lang="en">Two dice are rolled. Why is 0.3333 the wrong chance of at least one six?</p>
+<p lang="nl">Er worden twee dobbelstenen gegooid. Waarom is 0,3333 de verkeerde kans op minstens één zes?</p>
+<ol class="options" type="a"><li><span lang="en">The two dice are not independent.</span><span lang="nl">De twee dobbelstenen zijn niet onafhankelijk.</span></li><li><span lang="en">Adding the two chances counts the double six twice.</span><span lang="nl">Wie de twee kansen optelt, telt dubbel zes twee keer.</span></li><li><span lang="en">The chance of a six on one die is not one in six.</span><span lang="nl">De kans op een zes met één dobbelsteen is niet één op zes.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The second answer is right. Counting the 36 rows gives 0.3056. That is the sum of the two chances minus the overlap, which is 0.0278.</p>
+<p lang="nl">Het tweede antwoord klopt. Wie de 36 rijen telt, krijgt 0,3056. Dat is de som van de twee kansen min de overlap, en die overlap is 0,0278.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 6</h3>
+<p lang="en">A description fits one innocent adult in 1,000, in a city of 500,000 adults. A suspect matches it. Which statement is right?</p>
+<p lang="nl">Een beschrijving past bij één onschuldige volwassene op 1.000, in een stad van 500.000 volwassenen. Een verdachte past erbij. Welke uitspraak klopt?</p>
+<ol class="options" type="a"><li><span lang="en">The suspect is innocent with a chance of one in 1,000.</span><span lang="nl">De verdachte is onschuldig met een kans van één op 1.000.</span></li><li><span lang="en">About 500 innocent adults also match, so the match alone leaves the suspect probably innocent.</span><span lang="nl">Ongeveer 500 onschuldige volwassenen passen ook, dus alleen op grond van de overeenkomst is de verdachte waarschijnlijk onschuldig.</span></li><li><span lang="en">The match proves that the suspect is guilty.</span><span lang="nl">De overeenkomst bewijst dat de verdachte schuldig is.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The second answer is right. The chance that a matching adult is innocent is 0.998. The first statement swaps the chance of a match given innocence for the chance of innocence given a match, which is the prosecutor's fallacy.</p>
+<p lang="nl">Het tweede antwoord klopt. De kans dat een volwassene die past onschuldig is, is 0,998. De eerste uitspraak verwisselt de kans op een overeenkomst gegeven onschuld met de kans op onschuld gegeven een overeenkomst, en dat is de denkfout van de aanklager.</p>
+</details>
+
+    <footer><p><span lang="en"><a href="index.html">Back to week 9</a><span class="separator">|</span><a href="../materials.html">All materials</a></span><span lang="nl"><a href="index.html">Terug naar week 9</a><span class="separator">|</span><a href="../materials.html">Al het lesmateriaal</a></span></p></footer>
+</div></main>
+<div class="site-footer"><div class="container"><div><span lang="en">BiGi Data is a <a href="https://freefocus.org">Free Focus</a> program.</span><span lang="nl">BiGi Data is een programma van <a href="https://freefocus.org">Free Focus</a>.</span></div><div><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><span class="separator"> &middot; </span><a href="../credits.html"><span lang="en">Image credits</span><span lang="nl">Fotoverantwoording</span></a></div></div></div>
+<script data-goatcounter="https://johnsanterre.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

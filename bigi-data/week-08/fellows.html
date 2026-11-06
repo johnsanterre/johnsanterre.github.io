@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Fellows' guide: Week 8 - BiGi Data">
+<meta name="robots" content="noindex, nofollow">
+<title data-en="Fellows' guide: Week 8 - BiGi Data" data-nl="Lesgids fellows: Week 8 - BiGi Data">Fellows' guide: Week 8 - BiGi Data</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;650;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/lang.js"></script>
+</head>
+<body>
+<header class="nav-header"><div class="container">
+<a href="../index.html" class="site-title"><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><polygon fill="#ecc81d" points="50,4 61,38 97,38 68,59 79,94 50,73 21,94 32,59 3,38 39,38"/></svg>BiGi Data</a>
+<nav class="nav-links"><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a>
+<button id="lang-btn" class="lang-btn" type="button">Nederlands</button></nav>
+</div></header>
+<div class="stripes"></div>
+<section class="page-hero" style="background-image:url(../assets/img/waterkant.jpg)"><div class="container">
+<nav class="breadcrumb"><a href="../index.html"><span lang="en">Home</span><span lang="nl">Home</span></a><span class="separator">/</span><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a><span class="separator">/</span><a href="index.html"><span lang="en">Week 8</span><span lang="nl">Week 8</span></a><span class="separator">/</span><span><span lang="en">Fellows' guide</span><span lang="nl">Lesgids fellows</span></span></nav>
+<h1 lang="en">Fellows' session guide, week 8</h1>
+<h1 lang="nl">Lesgids voor fellows, week 8</h1>
+
+    <p lang="en" class="lead">This guide is for the teaching fellows. It sets the goal of the week, the plan for each workshop, what to look for in the studio, and how to run the Friday review, which also closes month 2.</p>
+<p lang="nl" class="lead">Deze gids is voor de fellows die lesgeven. Hij beschrijft het doel van de week, het plan voor elke workshop, waar je in de studio op let, en hoe je de vrijdagbespreking leidt, die ook maand 2 afsluit.</p>
+
+
+    </div></section>
+<main><div class="container">
+<h2 lang="en">The goal of the week</h2>
+<h2 lang="nl">Het doel van de week</h2>
+
+    <p lang="en">By Friday, every student can keep a project in a repository, write commits a stranger can read, pull before pushing, resolve a conflict, and hold back a command until they know what it will erase. Each team leaves the week with a public repository that answers project 8, a README another team has tested, and a note a ministry official could use. A Surinamese organisation can then pick up the team's work and check it without the team in the room.</p>
+<p lang="nl">Op vrijdag kan elke student een project in een repository bijhouden, commits schrijven die een buitenstaander kan lezen, pullen voordat hij pusht, een conflict oplossen, en een opdracht tegenhouden totdat hij weet wat die zal wissen. Elk team sluit de week af met een openbare repository die project 8 beantwoordt, een README die een ander team heeft getest, en een notitie waar een ambtenaar van een ministerie iets mee kan. Een Surinaamse organisatie kan dan het werk van het team oppakken en controleren zonder dat het team erbij is.</p>
+
+
+    <h2 lang="en">Before Monday</h2>
+<h2 lang="nl">Vóór maandag</h2>
+
+    <ul>
+<li><span lang="en">Check that every student can create a GitHub account and complete two-factor authentication, and remind them to keep the recovery codes somewhere safe.</span><span lang="nl">Controleer dat elke student een GitHub-account kan maken en tweestapsverificatie kan afronden, en herinner ze eraan de herstelcodes op een veilige plek te bewaren.</span></li>
+<li><span lang="en">Decide where the team repositories live. The simplest setup has each team's builder own the repository and add the other three as collaborators. A student who prefers not to show their full name can use a GitHub username that does not contain it.</span><span lang="nl">Bepaal waar de repositories van de teams staan. De eenvoudigste opzet is dat de bouwer van elk team de repository bezit en de andere drie als collaborators toevoegt. Een student die liever niet zijn volledige naam laat zien, kan een GitHub-gebruikersnaam kiezen zonder die naam.</span></li>
+<li><span lang="en">Run both notebooks yourself from a fresh Colab session, confirm that git runs there, and read the solution notebook you received separately.</span><span lang="nl">Draai beide notebooks zelf in een nieuwe Colab-sessie, controleer dat git daar werkt, en lees het oplossingsnotebook dat je apart hebt ontvangen.</span></li>
+<li><span lang="en">Prepare a practice repository on GitHub with a README line that two people can edit on Wednesday.</span><span lang="nl">Bereid een oefenrepository op GitHub voor met een README-regel die twee mensen op woensdag kunnen aanpassen.</span></li>
+</ul>
+
+
+    <h2 lang="en">The four workshops</h2>
+<h2 lang="nl">De vier workshops</h2>
+
+    <h3><span lang="en">Monday: snapshots and the first repository (2 hours)</span><span lang="nl">Maandag: momentopnamen en de eerste repository (2 uur)</span></h3>
+    <ul>
+<li><span lang="en"><b>15 minutes.</b> Show a folder of copies (report, report_v2, report_final) and ask the room what changed between two of them and why. Nobody can answer from the files alone.</span><span lang="nl"><b>15 minuten.</b> Laat een map met kopieën zien (rapport, rapport_v2, rapport_definitief) en vraag de zaal wat er tussen twee ervan veranderde en waarom. Niemand kan dat uit de bestanden alleen halen.</span></li>
+<li><span lang="en"><b>25 minutes.</b> Every student signs in to GitHub, turns on two-factor authentication and sets the private noreply email address.</span><span lang="nl"><b>25 minuten.</b> Elke student logt in op GitHub, zet tweestapsverificatie aan en stelt het privé noreply-e-mailadres in.</span></li>
+<li><span lang="en"><b>40 minutes.</b> Every student makes a repository in the browser, writes a README, uploads one file and makes three commits with subjects that follow the rules.</span><span lang="nl"><b>40 minuten.</b> Elke student maakt een repository in de browser, schrijft een README, uploadt één bestand en maakt drie commits met onderwerpregels die de regels volgen.</span></li>
+<li><span lang="en"><b>40 minutes.</b> Open the history of a large public project, such as the Python language at github.com/python/cpython, and read it with the room: the newest commit, the oldest commit you can reach, and the history of one file.</span><span lang="nl"><b>40 minuten.</b> Open de geschiedenis van een groot openbaar project, zoals de taal Python op github.com/python/cpython, en lees die met de zaal: de nieuwste commit, de oudste commit die je kunt bereiken, en de geschiedenis van één bestand.</span></li>
+</ul>
+
+    <h3><span lang="en">Tuesday: the command line and messages that say why (2 hours)</span><span lang="nl">Dinsdag: de opdrachtregel en berichten die zeggen waarom (2 uur)</span></h3>
+    <ul>
+<li><span lang="en"><b>20 minutes.</b> Draw the four places on the board and walk one file through them.</span><span lang="nl"><b>20 minuten.</b> Teken de vier plekken op het bord en loop met één bestand langs alle vier.</span></li>
+<li><span lang="en"><b>40 minutes.</b> Run sections 2 to 6 of the skills notebook live. Before each cell, the room predicts what <code>git status</code> will say.</span><span lang="nl"><b>40 minuten.</b> Draai sectie 2 tot en met 6 van het vaardighedennotebook live. Vóór elke cel voorspelt de zaal wat <code>git status</code> zal zeggen.</span></li>
+<li><span lang="en"><b>40 minutes.</b> Put ten weak commit subjects on the screen. Pairs rewrite them. The room then votes on which rewrites a stranger would understand.</span><span lang="nl"><b>40 minuten.</b> Zet tien zwakke onderwerpregels op het scherm. Tweetallen herschrijven ze, en de zaal stemt over welke versies een buitenstaander zou begrijpen.</span></li>
+<li><span lang="en"><b>20 minutes.</b> Show three diffs, and have students translate each hunk header into plain words.</span><span lang="nl"><b>20 minuten.</b> Laat drie diffs zien, en laat studenten elke hunk-header in gewone woorden vertalen.</span></li>
+</ul>
+
+    <h3><span lang="en">Wednesday: working as a team (2 hours)</span><span lang="nl">Woensdag: werken als team (2 uur)</span></h3>
+    <ul>
+<li><span lang="en"><b>20 minutes.</b> Explain collaborators and forks. The builder of each team creates the project 8 repository and adds the other three.</span><span lang="nl"><b>20 minuten.</b> Leg collaborators en forks uit. De bouwer van elk team maakt de repository voor project 8 en voegt de andere drie toe.</span></li>
+<li><span lang="en"><b>40 minutes.</b> Cause a conflict on purpose. Pairs edit the same README line in the practice repository on two branches and open two pull requests. They merge one and resolve the other in the browser.</span><span lang="nl"><b>40 minuten.</b> Veroorzaak met opzet een conflict. Tweetallen passen dezelfde README-regel in de oefenrepository aan op twee branches en openen twee pull requests. Ze mergen er één en lossen de andere op in de browser.</span></li>
+<li><span lang="en"><b>40 minutes.</b> Each student makes one change on a branch, opens a pull request with a description of what changed and why, and reviews a teammate's pull request with a comment on one line.</span><span lang="nl"><b>40 minuten.</b> Elke student maakt één wijziging op een branch, opent een pull request met een beschrijving van wat er veranderde en waarom, en beoordeelt de pull request van een teamgenoot met een opmerking bij één regel.</span></li>
+<li><span lang="en"><b>20 minutes.</b> Each pair says what its conflict was and why its resolution is right.</span><span lang="nl"><b>20 minuten.</b> Elk tweetal zegt wat het conflict was en waarom de oplossing klopt.</span></li>
+</ul>
+
+    <h3><span lang="en">Thursday: what never goes in a repository (2 hours)</span><span lang="nl">Donderdag: wat nooit in een repository komt (2 uur)</span></h3>
+    <ul>
+<li><span lang="en"><b>20 minutes.</b> Go through the four kinds of file that never go in, and show the output of section 12 of the skills notebook, where a deleted password stays readable.</span><span lang="nl"><b>20 minuten.</b> Bespreek de vier soorten bestanden die er nooit in komen, en laat de uitvoer van sectie 12 van het vaardighedennotebook zien, waar een verwijderd wachtwoord leesbaar blijft.</span></li>
+<li><span lang="en"><b>30 minutes.</b> Paste a rejected-push error into an AI assistant and read its answer aloud. The room judges each suggested command against the list before anyone runs it. Repeat with the question of how to save all your work and share it.</span><span lang="nl"><b>30 minuten.</b> Plak een foutmelding van een geweigerde push in een AI-assistent en lees het antwoord hardop voor. De zaal beoordeelt elke voorgestelde opdracht aan de hand van de lijst voordat iemand hem uitvoert. Herhaal dat met de vraag hoe je al je werk opslaat en deelt.</span></li>
+<li><span lang="en"><b>40 minutes.</b> Each team hands its draft README to another team, which tries to follow it cold and notes every place it had to guess.</span><span lang="nl"><b>40 minuten.</b> Elk team geeft zijn concept-README aan een ander team, dat hem zonder uitleg probeert te volgen en elke plek noteert waar het moest gokken.</span></li>
+<li><span lang="en"><b>30 minutes.</b> Teams write their <code>.gitignore</code> and read their repository's history for anything that should not be there.</span><span lang="nl"><b>30 minuten.</b> Teams schrijven hun <code>.gitignore</code> en lezen de geschiedenis van hun repository na op alles wat er niet in hoort.</span></li>
+</ul>
+
+
+    <h2 lang="en">In the studio</h2>
+<h2 lang="nl">In de studio</h2>
+
+    <p lang="en">Visit every team twice a day. Ask the same three questions each time, so the teams learn to ask them of themselves.</p>
+<p lang="nl">Bezoek elk team twee keer per dag. Stel elke keer dezelfde drie vragen, zodat de teams leren die vragen aan zichzelf te stellen.</p>
+
+    <ul>
+<li><span lang="en">Show me your last three commit subjects. What does each one say changed?</span><span lang="nl">Laat me je laatste drie onderwerpregels zien. Wat zegt elke regel dat er veranderde?</span></li>
+<li><span lang="en">Who made the last commit, and did that person pull first?</span><span lang="nl">Wie maakte de laatste commit, en heeft die persoon eerst gepulld?</span></li>
+<li><span lang="en">What would the ministry official do differently after reading your note?</span><span lang="nl">Wat zou de ambtenaar van het ministerie anders doen na het lezen van jullie notitie?</span></li>
+</ul>
+
+
+    <h2 lang="en">What to watch for this week</h2>
+<h2 lang="nl">Waar je deze week op let</h2>
+
+    <ul>
+<li><span lang="en">Teams that drop the missing years before they compute one-year changes. A rise measured across a gap of several years then looks like the largest one-year rise, and task 6 exists to catch it.</span><span lang="nl">Teams die de ontbrekende jaren weglaten voordat ze veranderingen per jaar berekenen. Een stijging over een gat van meerdere jaren lijkt dan de grootste stijging in één jaar, en opdracht 6 is er om dat te vangen.</span></li>
+<li><span lang="en">Teams that fill the years with no value by drawing a line across them or by inventing values. The chart, the README and the note must show that the table has nothing there.</span><span lang="nl">Teams die de jaren zonder waarde opvullen door er een lijn overheen te trekken of door waarden te verzinnen. De grafiek, de README en de notitie moeten laten zien dat de tabel daar niets heeft.</span></li>
+<li><span lang="en">Teams that read mobile subscriptions per 100 people as the share of people with a phone. One person can hold several subscriptions, which lets the series pass 100.</span><span lang="nl">Teams die mobiele abonnementen per 100 inwoners lezen als het aandeel mensen met een telefoon. Eén persoon kan meerdere abonnementen hebben, dus de reeks kan boven 100 komen.</span></li>
+<li><span lang="en">Teams that explain the fast growth across the missing years, or the sharp fall in the mobile series, without a source. The table records the change and not its cause.</span><span lang="nl">Teams die de snelle groei over de ontbrekende jaren, of de sterke daling in de mobiele reeks, verklaren zonder bron. De tabel legt de verandering vast en niet de oorzaak.</span></li>
+<li><span lang="en">Teams that repeat the AI's number for a year the table does not cover, without a source they opened.</span><span lang="nl">Teams die het getal van de AI herhalen voor een jaar dat de tabel niet dekt, zonder een bron die ze zelf hebben geopend.</span></li>
+<li><span lang="en">AI-suggested commands that a builder runs before the AI checker has seen them. A force push in a team repository is the one to stop.</span><span lang="nl">Opdrachten van de AI die een bouwer uitvoert voordat de AI-controleur ze heeft gezien. Een force push in een teamrepository is degene die je tegenhoudt.</span></li>
+<li><span lang="en">Personal email addresses in public commits. Students should commit with GitHub's noreply address.</span><span lang="nl">Persoonlijke e-mailadressen in openbare commits. Studenten horen te committen met het noreply-adres van GitHub.</span></li>
+</ul>
+
+
+    <h2 lang="en">The Friday review</h2>
+<h2 lang="nl">De vrijdagbespreking</h2>
+
+    <ul>
+<li><span lang="en"><b>Before the review.</b> Each team receives another team's repository address and has 30 minutes to follow its README cold, running the notebook from the repository alone. They write down every place they had to guess.</span><span lang="nl"><b>Vóór de bespreking.</b> Elk team krijgt het repository-adres van een ander team en heeft 30 minuten om de README zonder uitleg te volgen en het notebook alleen vanuit de repository te draaien. Ze schrijven elke plek op waar ze moesten gokken.</span></li>
+<li><span lang="en"><b>Each team.</b> Five minutes to present the note as if to the ministry official, then five minutes of questions, starting with the guesses from the team that tested its README. A fellow asks the last question.</span><span lang="nl"><b>Elk team.</b> Vijf minuten om de notitie te presenteren alsof de ambtenaar van het ministerie in de zaal zit, daarna vijf minuten vragen, te beginnen met de gokplekken van het team dat de README testte. Een fellow stelt de laatste vraag.</span></li>
+<li><span lang="en"><b>After the presentations.</b> The room lists every AI claim and every AI-suggested command that was wrong this week, and how each one was caught.</span><span lang="nl"><b>Na de presentaties.</b> De zaal maakt een lijst van elke foute bewering en elke foute opdracht van de AI van deze week, en hoe die werd ontdekt.</span></li>
+<li><span lang="en"><b>The look back at month 2.</b> For 30 minutes, each student names one habit from the month they now use without thinking and one they still skip. Fellows note the skipped habits for month 3.</span><span lang="nl"><b>De terugblik op maand 2.</b> Gedurende 30 minuten noemt elke student één gewoonte uit de maand die hij nu vanzelf toepast en één die hij nog overslaat. Fellows noteren de overgeslagen gewoonten voor maand 3.</span></li>
+<li><span lang="en"><b>To close.</b> Announce next week's roles.</span><span lang="nl"><b>Ter afsluiting.</b> Maak de rollen voor volgende week bekend.</span></li>
+</ul>
+
+    <footer><p><span lang="en"><a href="index.html">Back to week 8</a><span class="separator">|</span><a href="../materials.html">All materials</a></span><span lang="nl"><a href="index.html">Terug naar week 8</a><span class="separator">|</span><a href="../materials.html">Al het lesmateriaal</a></span></p></footer>
+</div></main>
+<div class="site-footer"><div class="container"><div><span lang="en">BiGi Data is a <a href="https://freefocus.org">Free Focus</a> program.</span><span lang="nl">BiGi Data is een programma van <a href="https://freefocus.org">Free Focus</a>.</span></div><div><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><span class="separator"> &middot; </span><a href="../credits.html"><span lang="en">Image credits</span><span lang="nl">Fotoverantwoording</span></a></div></div></div>
+<script data-goatcounter="https://johnsanterre.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

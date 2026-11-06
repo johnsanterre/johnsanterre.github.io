@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Fellows' guide: Week 7 - BiGi Data">
+<meta name="robots" content="noindex, nofollow">
+<title data-en="Fellows' guide: Week 7 - BiGi Data" data-nl="Lesgids fellows: Week 7 - BiGi Data">Fellows' guide: Week 7 - BiGi Data</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;650;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/lang.js"></script>
+</head>
+<body>
+<header class="nav-header"><div class="container">
+<a href="../index.html" class="site-title"><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><polygon fill="#ecc81d" points="50,4 61,38 97,38 68,59 79,94 50,73 21,94 32,59 3,38 39,38"/></svg>BiGi Data</a>
+<nav class="nav-links"><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a>
+<button id="lang-btn" class="lang-btn" type="button">Nederlands</button></nav>
+</div></header>
+<div class="stripes"></div>
+<section class="page-hero" style="background-image:url(../assets/img/waterkant.jpg)"><div class="container">
+<nav class="breadcrumb"><a href="../index.html"><span lang="en">Home</span><span lang="nl">Home</span></a><span class="separator">/</span><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a><span class="separator">/</span><a href="index.html"><span lang="en">Week 7</span><span lang="nl">Week 7</span></a><span class="separator">/</span><span><span lang="en">Fellows' guide</span><span lang="nl">Lesgids fellows</span></span></nav>
+<h1 lang="en">Fellows' session guide, week 7</h1>
+<h1 lang="nl">Lesgids voor fellows, week 7</h1>
+
+    <p lang="en" class="lead">This guide is for the teaching fellows. It sets the goal of the week, the plan for each workshop, what to look for in the studio, and how to run the Friday review.</p>
+<p lang="nl" class="lead">Deze gids is voor de fellows die lesgeven. Hij beschrijft het doel van de week, het plan voor elke workshop, waar je in de studio op let, en hoe je de vrijdagbespreking leidt.</p>
+
+
+    </div></section>
+<main><div class="container">
+<h2 lang="en">The goal of the week</h2>
+<h2 lang="nl">Het doel van de week</h2>
+
+    <p lang="en">By Friday, every student can say what one row of a table means, join two tables on a key, predict how many rows the join should return, and refuse to compute anything until the count matches the prediction. The project adds a second lesson. The same economy can look poorer in one currency and richer in another, and neither figure on its own says whether people can buy more.</p>
+<p lang="nl">Op vrijdag kan elke student zeggen wat één rij van een tabel betekent, twee tabellen koppelen op een sleutel, voorspellen hoeveel rijen de koppeling hoort te geven, en weigeren iets te berekenen zolang de telling niet overeenkomt met de voorspelling. Het project voegt een tweede les toe. Dezelfde economie kan er in de ene valuta armer en in de andere rijker uitzien, en geen van beide cijfers zegt op zichzelf of mensen meer kunnen kopen.</p>
+
+
+    <h2 lang="en">Before Monday</h2>
+<h2 lang="nl">Vóór maandag</h2>
+
+    <ul>
+<li><span lang="en">Run both notebooks yourself from a fresh Colab session, and read the solution notebook you received separately.</span><span lang="nl">Draai beide notebooks zelf in een nieuwe Colab-sessie, en lees het oplossingsnotebook dat je apart hebt ontvangen.</span></li>
+<li><span lang="en">Check that the room's internet connection reaches api.worldbank.org, because in Colab the project notebook downloads both tables from the World Bank.</span><span lang="nl">Controleer of de internetverbinding in het lokaal api.worldbank.org bereikt, want in Colab downloadt het projectnotebook beide tabellen bij de Wereldbank.</span></li>
+<li><span lang="en">Prepare three pairs of small paper tables for Monday, each pair with a key that matches only in part.</span><span lang="nl">Maak voor maandag drie paren kleine papieren tabellen, elk paar met een sleutel die maar gedeeltelijk past.</span></li>
+<li><span lang="en">Publish this week's roles. This week the data checker counts the rows of every table before and after each join.</span><span lang="nl">Publiceer de rollen van deze week. Deze week telt de datacontroleur de rijen van elke tabel vóór en na elke koppeling.</span></li>
+</ul>
+
+
+    <h2 lang="en">The four workshops</h2>
+<h2 lang="nl">De vier workshops</h2>
+
+    <h3><span lang="en">Monday: what one row means (2 hours)</span><span lang="nl">Maandag: wat één rij betekent (2 uur)</span></h3>
+    <ul>
+<li><span lang="en"><b>The first 20 minutes</b> put the bakery's three tables on the screen. Ask the room what one row of each table means, and write the answers on the board.</span><span lang="nl"><b>De eerste 20 minuten</b> zet je de drie tabellen van de bakkerij op het scherm. Vraag de zaal wat één rij van elke tabel betekent, en schrijf de antwoorden op het bord.</span></li>
+<li><span lang="en"><b>The next 30 minutes</b> find the key of each table live. Test each key with is_unique and duplicated in front of the room.</span><span lang="nl"><b>De volgende 30 minuten</b> zoek je live de sleutel van elke tabel. Test elke sleutel met is_unique en duplicated waar de zaal bij is.</span></li>
+<li><span lang="en"><b>The next 40 minutes</b> give each pair of students two paper tables. They mark the keys and predict which rows will find a partner.</span><span lang="nl"><b>De volgende 40 minuten</b> krijgt elk tweetal twee papieren tabellen. Zij markeren de sleutels en voorspellen welke rijen een partner vinden.</span></li>
+<li><span lang="en"><b>The last 30 minutes</b> run the first left join live. Ask the room for the row count before anyone presses run.</span><span lang="nl"><b>De laatste 30 minuten</b> voer je live de eerste left join uit. Vraag de zaal om het aantal rijen voordat iemand op uitvoeren drukt.</span></li>
+</ul>
+
+    <h3><span lang="en">Tuesday: wide and long tables (2 hours)</span><span lang="nl">Dinsdag: brede en lange tabellen (2 uur)</span></h3>
+    <ul>
+<li><span lang="en"><b>The first 20 minutes</b> show a downloaded table with one column per year. Ask the room what one row means and where the years are.</span><span lang="nl"><b>De eerste 20 minuten</b> laat je een gedownloade tabel zien met één kolom per jaar. Vraag de zaal wat één rij betekent en waar de jaren staan.</span></li>
+<li><span lang="en"><b>The next 40 minutes</b> reshape the bakery's targets with melt live. Stop at the moment the month column turns out to be text, and let the room say why.</span><span lang="nl"><b>De volgende 40 minuten</b> zet je de verkoopdoelen van de bakkerij live om met melt. Stop op het moment dat de maandkolom tekst blijkt te zijn, en laat de zaal zeggen waarom.</span></li>
+<li><span lang="en"><b>The next 40 minutes</b> let each team reshape the US-dollar table of project 7. Each team checks that its long table has one row for each year column.</span><span lang="nl"><b>De volgende 40 minuten</b> zet elk team de dollartabel van project 7 om. Elk team controleert dat de lange tabel één rij heeft voor elke jaarkolom.</span></li>
+<li><span lang="en"><b>The last 20 minutes</b> join on two keys, shop and month, with the bakery example.</span><span lang="nl"><b>De laatste 20 minuten</b> koppel je op twee sleutels, winkel en maand, met het voorbeeld van de bakkerij.</span></li>
+</ul>
+
+    <h3><span lang="en">Wednesday: four kinds of join, counted (2 hours)</span><span lang="nl">Woensdag: vier soorten koppelingen, geteld (2 uur)</span></h3>
+    <p lang="en">Put the two small tables from the skills notebook on the screen, one with months 1 to 5 and one with months 3 to 7. For each kind of join, the room predicts the rows before anyone runs it, and then the indicator column shows where each row came from. Spend the second hour on three written questions, and let pairs choose and defend the kind of join each question needs.</p>
+<p lang="nl">Zet de twee kleine tabellen uit het vaardighedennotebook op het scherm, één met maand 1 tot en met 5 en één met maand 3 tot en met 7. Bij elke soort koppeling voorspelt de zaal de rijen voordat iemand hem uitvoert, en daarna laat de indicatorkolom zien waar elke rij vandaan komt. Besteed het tweede uur aan drie geschreven vragen, en laat tweetallen de soort koppeling kiezen en verdedigen die elke vraag nodig heeft.</p>
+
+    <h3><span lang="en">Thursday: joins that go wrong (2 hours)</span><span lang="nl">Donderdag: koppelingen die misgaan (2 uur)</span></h3>
+    <p lang="en">Replay the bakery case in which the AI reported a year's revenue from eleven months. Ask the room whether the answer is right before anyone counts the rows. Then show the repeated June price and how validate stops it, and the codes that fail to match because of a space or a capital. End with the text key: show pandas' error message, show what pd.concat does if a team follows its advice, and let the room find the repair.</p>
+<p lang="nl">Speel het geval van de bakkerij opnieuw af, waarin de AI de omzet van een jaar meldde op basis van elf maanden. Vraag de zaal of het antwoord klopt voordat iemand de rijen telt. Laat daarna de herhaalde prijs voor juni zien en hoe validate die tegenhoudt, en de codes die niet passen door een spatie of een hoofdletter. Sluit af met de tekstsleutel: laat de foutmelding van pandas zien, laat zien wat pd.concat doet als een team dat advies volgt, en laat de zaal het herstel vinden.</p>
+
+
+    <h2 lang="en">In the studio</h2>
+<h2 lang="nl">In de studio</h2>
+
+    <p lang="en">Visit every team twice a day. Ask the same three questions each time, so the teams learn to ask them of themselves.</p>
+<p lang="nl">Bezoek elk team twee keer per dag. Stel elke keer dezelfde drie vragen, zodat de teams leren die vragen aan zichzelf te stellen.</p>
+
+    <ul>
+<li><span lang="en">How many rows did each table have before the join, and how many after?</span><span lang="nl">Hoeveel rijen had elke tabel vóór de koppeling, en hoeveel erna?</span></li>
+<li><span lang="en">Which years are in one table and not in the other, and which join did you choose because of them?</span><span lang="nl">Welke jaren staan in de ene tabel en niet in de andere, en welke koppeling koos je daarom?</span></li>
+<li><span lang="en">What type is the year in each table, and how do you know?</span><span lang="nl">Welk type heeft het jaar in elke tabel, en hoe weet je dat?</span></li>
+</ul>
+
+    <p lang="en">A team that finishes early can compare its srd_per_usd column with the exchange-rate table from project 1. A gap in some years is real and worth presenting. The country note inside the World Bank's CSV download explains it: more than one exchange rate has been in use in Suriname, and the World Bank converts some years with an alternative conversion factor.</p>
+<p lang="nl">Een team dat vroeg klaar is, kan de kolom srd_per_usd vergelijken met de wisselkoerstabel uit project 1. Een verschil in sommige jaren is echt en het presenteren waard. De landennotitie in de csv-download van de Wereldbank verklaart het: in Suriname is meer dan één wisselkoers in gebruik geweest, en de Wereldbank rekent sommige jaren om met een alternatieve omrekenfactor.</p>
+
+
+    <h2 lang="en">What to watch for this week</h2>
+<h2 lang="nl">Waar je deze week op let</h2>
+
+    <ul>
+<li><span lang="en">Teams whose join stops with an error because the year is text in one table and a number in the other. pandas' message suggests pd.concat, and an AI assistant often repeats that advice. concat lines rows up by position. The result has too many rows, with values next to the wrong years. The row count shows which teams took that path.</span><span lang="nl">Teams van wie de koppeling stopt met een foutmelding omdat het jaar in de ene tabel tekst is en in de andere een getal. De melding van pandas stelt pd.concat voor, en een AI-assistent herhaalt dat advies vaak. concat zet rijen op positie naast elkaar, dus het resultaat heeft te veel rijen en zet waarden naast de verkeerde jaren. Het aantal rijen laat zien welke teams die weg namen.</span></li>
+<li><span lang="en">Teams that use an outer join, or a left join from the US-dollar table. Their table keeps the years before 2010 with blank SRD values, and any calculation that starts from the first row then starts in the wrong year.</span><span lang="nl">Teams die een outer join gebruiken, of een left join vanuit de dollartabel. Hun tabel houdt de jaren vóór 2010 met lege SRD-waarden, en elke berekening die bij de eerste rij begint, begint dan in het verkeerde jaar.</span></li>
+<li><span lang="en">Teams that download the data themselves through the World Bank API. The API serves its rows in pages and sends only the first page unless the request asks for more, so a long history can lose its earliest years without a warning. A request for both indicators at once returns two rows per year, and a join on the year then doubles every row.</span><span lang="nl">Teams die de data zelf via de API van de Wereldbank downloaden. De API levert de rijen in pagina's en stuurt alleen de eerste pagina als het verzoek niet om meer vraagt, dus een lange reeks kan zonder waarschuwing de vroegste jaren verliezen. Een verzoek om beide indicatoren tegelijk geeft twee rijen per jaar, en een koppeling op het jaar verdubbelt dan elke rij.</span></li>
+<li><span lang="en">Teams that report the growth in Surinamese dollars as people becoming that many times richer. Both tables are in current prices, and the <a href="https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?locations=SR">World Bank's note on the indicator</a> states that no adjustment has been made for price changes over time. The note for a family has to say so.</span><span lang="nl">Teams die de groei in Surinaamse dollars presenteren alsof mensen zoveel keer rijker zijn geworden. Beide tabellen zijn in lopende prijzen, en de <a href="https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?locations=SR">toelichting van de Wereldbank bij de indicator</a> vermeldt dat er geen correctie is toegepast voor prijsveranderingen in de loop van de tijd. De notitie voor een gezin moet dat zeggen.</span></li>
+<li><span lang="en">Teams that call GDP per person a family's income. It is the country's total income from production divided by everyone who lives there, children included.</span><span lang="nl">Teams die het bbp per inwoner het inkomen van een gezin noemen. Het is het totale inkomen uit productie van het land, gedeeld door iedereen die er woont, kinderen inbegrepen.</span></li>
+</ul>
+
+
+    <h2 lang="en">The Friday review</h2>
+<h2 lang="nl">De vrijdagbespreking</h2>
+
+    <ul>
+<li><span lang="en"><b>Before the review,</b> students in the audience write one question for each team on a card while it presents.</span><span lang="nl"><b>Vóór de bespreking</b> schrijven studenten in het publiek tijdens elke presentatie één vraag voor dat team op een kaartje.</span></li>
+<li><span lang="en"><b>Each team</b> has five minutes to present, then five minutes of questions from the cards. A fellow asks the last question, which is why the team's two answers differ.</span><span lang="nl"><b>Elk team</b> krijgt vijf minuten om te presenteren, daarna vijf minuten vragen van de kaartjes. Een fellow stelt de laatste vraag: waarom verschillen jullie twee antwoorden?</span></li>
+<li><span lang="en"><b>After the presentations,</b> the room lists every join that lost or repeated rows this week and the count that caught it.</span><span lang="nl"><b>Na de presentaties</b> maakt de zaal een lijst van elke koppeling die deze week rijen verloor of herhaalde, en de telling die het aan het licht bracht.</span></li>
+<li><span lang="en"><b>To close,</b> announce next week's roles.</span><span lang="nl"><b>Ter afsluiting</b> maak je de rollen voor volgende week bekend.</span></li>
+</ul>
+
+    <footer><p><span lang="en"><a href="index.html">Back to week 7</a><span class="separator">|</span><a href="../materials.html">All materials</a></span><span lang="nl"><a href="index.html">Terug naar week 7</a><span class="separator">|</span><a href="../materials.html">Al het lesmateriaal</a></span></p></footer>
+</div></main>
+<div class="site-footer"><div class="container"><div><span lang="en">BiGi Data is a <a href="https://freefocus.org">Free Focus</a> program.</span><span lang="nl">BiGi Data is een programma van <a href="https://freefocus.org">Free Focus</a>.</span></div><div><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><span class="separator"> &middot; </span><a href="../credits.html"><span lang="en">Image credits</span><span lang="nl">Fotoverantwoording</span></a></div></div></div>
+<script data-goatcounter="https://johnsanterre.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

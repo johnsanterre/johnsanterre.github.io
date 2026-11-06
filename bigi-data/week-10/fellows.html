@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Fellows' guide: Week 10 - BiGi Data">
+<meta name="robots" content="noindex, nofollow">
+<title data-en="Fellows' guide: Week 10 - BiGi Data" data-nl="Lesgids fellows: Week 10 - BiGi Data">Fellows' guide: Week 10 - BiGi Data</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;650;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/lang.js"></script>
+</head>
+<body>
+<header class="nav-header"><div class="container">
+<a href="../index.html" class="site-title"><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><polygon fill="#ecc81d" points="50,4 61,38 97,38 68,59 79,94 50,73 21,94 32,59 3,38 39,38"/></svg>BiGi Data</a>
+<nav class="nav-links"><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a>
+<button id="lang-btn" class="lang-btn" type="button">Nederlands</button></nav>
+</div></header>
+<div class="stripes"></div>
+<section class="page-hero" style="background-image:url(../assets/img/waterkant.jpg)"><div class="container">
+<nav class="breadcrumb"><a href="../index.html"><span lang="en">Home</span><span lang="nl">Home</span></a><span class="separator">/</span><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a><span class="separator">/</span><a href="index.html"><span lang="en">Week 10</span><span lang="nl">Week 10</span></a><span class="separator">/</span><span><span lang="en">Fellows' guide</span><span lang="nl">Lesgids fellows</span></span></nav>
+<h1 lang="en">Fellows' session guide, week 10</h1>
+<h1 lang="nl">Lesgids voor fellows, week 10</h1>
+
+    <p lang="en" class="lead">This guide is for the teaching fellows. It sets the goal of the week, the plan for each workshop, what to look for in the studio, and how to run the Friday review.</p>
+<p lang="nl" class="lead">Deze gids is voor de fellows die lesgeven. Hij beschrijft het doel van de week, het plan voor elke workshop, waar je in de studio op let, en hoe je de vrijdagbespreking leidt.</p>
+
+
+    </div></section>
+<main><div class="container">
+<h2 lang="en">The goal of the week</h2>
+<h2 lang="nl">Het doel van de week</h2>
+
+    <p lang="en">By Friday, every student can say how far an estimate from a sample is likely to sit from the truth, build that interval two ways, and state in one sentence what the interval covers and what it leaves out. The habit to build is attaching an interval to every estimate a Surinamese reader will act on, and naming the error the interval cannot see.</p>
+<p lang="nl">Op vrijdag kan elke student zeggen hoe ver een schatting uit een steekproef waarschijnlijk van de waarheid ligt, dat interval op twee manieren bouwen, en in één zin zeggen wat het interval dekt en wat het weglaat. De gewoonte die je opbouwt, is bij elke schatting waar een Surinaamse lezer op handelt een interval te geven, en de fout te noemen die het interval niet kan zien.</p>
+
+
+    <h2 lang="en">Before Monday</h2>
+<h2 lang="nl">Vóór maandag</h2>
+
+    <ul>
+<li><span lang="en">Run both notebooks yourself from a fresh Colab session, and read the solution notebook you received separately.</span><span lang="nl">Draai beide notebooks zelf in een nieuwe Colab-sessie, en lees het oplossingsnotebook dat je apart hebt ontvangen.</span></li>
+<li><span lang="en">Open the project table and study the surface tags by road class yourself before the teams ask about missing tags.</span><span lang="nl">Open de projecttabel en bestudeer zelf de surface-tags per wegklasse voordat de teams vragen stellen over ontbrekende tags.</span></li>
+<li><span lang="en">Bring blank cards, paper slips, a few cups and sticky notes for Monday and Wednesday.</span><span lang="nl">Neem lege kaartjes, papiertjes, een paar bekers en plakbriefjes mee voor maandag en woensdag.</span></li>
+<li><span lang="en">Check that every team has the course copy of the table. The public Overpass server is often busy. It also refuses requests that carry no User-Agent header. The given cell sets the header. A team that must download live should wait and retry rather than change the query.</span><span lang="nl">Controleer dat elk team de cursuskopie van de tabel heeft. De openbare Overpass-server is vaak druk. Hij weigert ook verzoeken zonder User-Agent-header. De gegeven cel zet die header. Een team dat live moet downloaden, wacht en probeert het opnieuw in plaats van de query te veranderen.</span></li>
+</ul>
+
+
+    <h2 lang="en">The four workshops</h2>
+<h2 lang="nl">De vier workshops</h2>
+
+    <h3><span lang="en">Monday: population, sample and estimate (2 hours)</span><span lang="nl">Maandag: populatie, steekproef en schatting (2 uur)</span></h3>
+    <ul>
+<li><span lang="en"><b>In the first 20 minutes</b>, every student writes on a card how many minutes the trip to class took that morning. The cards are the population. Copy the 30 numbers onto the board, work out the true mean and keep it hidden.</span><span lang="nl"><b>In de eerste 20 minuten</b> schrijft elke student op een kaartje hoeveel minuten de reis naar de les die ochtend duurde. De kaartjes zijn de populatie. Zet de 30 getallen op het bord, reken het echte gemiddelde uit en houd het verborgen.</span></li>
+<li><span lang="en"><b>For the next 40 minutes</b>, pairs use a random number generator on a phone or in Colab to pick five of the 30 numbers and compute their mean, three times each. Every pair marks its means as dots on a number line on the board. Then reveal the true mean, and ask the room where the dots centre and how far they spread.</span><span lang="nl"><b>In de volgende 40 minuten</b> gebruiken tweetallen een toevalsgenerator op een telefoon of in Colab om vijf van de 30 getallen te kiezen en het gemiddelde te berekenen, elk drie keer. Elk tweetal zet zijn gemiddelden als stippen op een getallenlijn op het bord. Maak daarna het echte gemiddelde bekend, en vraag de zaal waar de stippen omheen liggen en hoe ver ze uiteenlopen.</span></li>
+<li><span lang="en"><b>For the next 40 minutes</b>, run sections 1 to 5 of the skills notebook live. At the clerk's first rows, ask the room for a Surinamese case where the first rows would mislead, such as the first customers of the morning or the houses nearest the main road.</span><span lang="nl"><b>In de volgende 40 minuten</b> draai je de delen 1 tot en met 5 van het vaardighedennotebook live. Vraag bij de eerste rijen van de medewerker de zaal om een Surinaams voorbeeld waarin de eerste rijen zouden misleiden, zoals de eerste klanten van de ochtend of de huizen het dichtst bij de hoofdweg.</span></li>
+<li><span lang="en"><b>In the last 20 minutes</b>, each pair writes one sentence that separates how much travel times differ from how much a sample mean would move.</span><span lang="nl"><b>In de laatste 20 minuten</b> schrijft elk tweetal één zin die onderscheidt hoeveel reistijden van elkaar verschillen en hoeveel een steekproefgemiddelde zou verschuiven.</span></li>
+</ul>
+
+    <h3><span lang="en">Tuesday: two kinds of spread (2 hours)</span><span lang="nl">Dinsdag: twee soorten spreiding (2 uur)</span></h3>
+    <p lang="en">Start by drawing two rough histograms on the board from Monday's cards: single travel times, and the pairs' sample means. Ask which is wider and why. Then replay section 7 of the notebook, and ask the room to predict the AI's interval before you run it. Point at the lower end below zero. In the second hour, pairs give their own AI assistant ten of Monday's travel times and ask for a 95 percent interval for the mean. Each pair records whether the AI used the standard deviation, the standard error or no interval at all. The room then tallies the answers on the board. Do not predict the tally in advance, because it is the room's own evidence.</p>
+<p lang="nl">Begin met twee ruwe histogrammen op het bord uit de kaartjes van maandag: losse reistijden, en de steekproefgemiddelden van de tweetallen. Vraag welke breder is en waarom. Herhaal daarna deel 7 van het notebook, en laat de zaal het interval van de AI voorspellen voordat je de cel uitvoert. Wijs op het onderste uiteinde onder nul. In het tweede uur geven tweetallen hun eigen AI-assistent tien reistijden van maandag en vragen om een 95%-interval voor het gemiddelde. Elk tweetal noteert of de AI de standaardafwijking, de standaardfout of helemaal geen interval gebruikte. De zaal turft daarna de antwoorden op het bord. Voorspel de telling niet vooraf, omdat ze het eigen bewijs van de zaal is.</p>
+
+    <h3><span lang="en">Wednesday: the bootstrap by hand and in code (2 hours)</span><span lang="nl">Woensdag: de bootstrap met de hand en in code (2 uur)</span></h3>
+    <p lang="en">Take one pair's sample of five numbers from Monday, and copy the five numbers onto slips in a cup for each table. Each student draws five times from the table's cup, putting each slip back before the next draw, computes the mean and writes it on a sticky note. Line the notes up on the board in order, drop the lowest and the highest, and read the range that is left: that is a bootstrap interval made by hand. Then run section 8 of the notebook, and show what happens when the resamples are drawn without replacement. Spend the last 50 minutes with teams starting task 4 of the project.</p>
+<p lang="nl">Neem de steekproef van vijf getallen van één tweetal van maandag, en schrijf de vijf getallen op papiertjes in een beker voor elke tafel. Elke student trekt vijf keer uit de beker van de tafel, legt elk papiertje terug voor de volgende trekking, berekent het gemiddelde en schrijft het op een plakbriefje. Zet de briefjes op volgorde op het bord, haal het laagste en het hoogste weg, en lees het bereik dat overblijft: dat is een bootstrap-interval met de hand. Draai daarna deel 8 van het notebook, en laat zien wat er gebeurt als de hersteekproeven zonder teruglegging worden getrokken. Besteed de laatste 50 minuten aan teams die opdracht 4 van het project beginnen.</p>
+
+    <h3><span lang="en">Thursday: what 95 percent promises (2 hours)</span><span lang="nl">Donderdag: wat 95 procent belooft (2 uur)</span></h3>
+    <p lang="en">Put the chart of 200 intervals from section 9 on the screen and count the red lines with the room. Ask how many of Friday's team intervals the room expects to miss the full count, and write the guess down for Friday. Then work through the three sentences from section 13. Pairs rewrite each one. The room votes on the best rewrite of each sentence. In the second hour, each team drafts the interval sentence for its note to the road planners and swaps it with another team for critique. Close by asking each team for one sentence on what its interval cannot see in the project data.</p>
+<p lang="nl">Zet de grafiek met 200 intervallen uit deel 9 op het scherm en tel de rode lijnen met de zaal. Vraag hoeveel van de teamintervallen van vrijdag de volledige telling volgens de zaal zullen missen, en schrijf de gok op voor vrijdag. Werk daarna de drie zinnen uit deel 13 door. Tweetallen herschrijven elke zin. De zaal stemt over de beste herschrijving van elke zin. In het tweede uur schrijft elk team een eerste versie van de intervalzin voor de notitie aan de wegplanners, en ruilt die met een ander team voor kritiek. Sluit af door elk team één zin te vragen over wat het interval in de projectdata niet kan zien.</p>
+
+
+    <h2 lang="en">In the studio</h2>
+<h2 lang="nl">In de studio</h2>
+
+    <p lang="en">Visit every team twice a day. Ask the same three questions each time, so the teams learn to ask them of themselves.</p>
+<p lang="nl">Bezoek elk team twee keer per dag. Stel elke keer dezelfde drie vragen, zodat de teams leren die vragen aan zichzelf te stellen.</p>
+
+    <ul>
+<li><span lang="en">Which segments does your number describe, and which does it leave out?</span><span lang="nl">Welke segmenten beschrijft je getal, en welke laat het weg?</span></li>
+<li><span lang="en">Show me the standard deviation and the standard error in your notebook. Which one did the AI use?</span><span lang="nl">Laat me de standaardafwijking en de standaardfout in je notebook zien. Welke gebruikte de AI?</span></li>
+<li><span lang="en">If a survey team drew a new sample tomorrow, how far could its estimate move from yours?</span><span lang="nl">Als een onderzoeksteam morgen een nieuwe steekproef trok, hoe ver zou de schatting dan van de jouwe kunnen liggen?</span></li>
+</ul>
+
+
+    <h2 lang="en">What to watch for this week</h2>
+<h2 lang="nl">Waar je deze week op let</h2>
+
+    <ul>
+<li><span lang="en">Teams that write the tagged share as the paved share of all Paramaribo's roads. Many segments carry no tag, and task 2 shows that the gaps are not spread evenly across road classes. Push each team to say which way the untagged segments could move the answer, as a direction rather than a number.</span><span lang="nl">Teams die het aandeel onder de segmenten met een tag opschrijven als het aandeel verhard van alle wegen in Paramaribo. Veel segmenten hebben geen tag, en opdracht 2 laat zien dat de gaten niet gelijk over de wegklassen zijn verdeeld. Laat elk team zeggen in welke richting de segmenten zonder tag het antwoord kunnen verschuiven, als richting en niet als getal.</span></li>
+<li><span lang="en">Bootstraps drawn without replacement, which give an interval of zero width. CHECK 4 catches them. The fix is one argument.</span><span lang="nl">Bootstraps zonder teruglegging, die een interval met breedte nul geven. CHECK 4 vangt ze op. De oplossing is één argument.</span></li>
+<li><span lang="en">Teams that leave out the seeds the tasks name. Their CHECK cells fail, because the seed is part of the task and lets every team compare answers.</span><span lang="nl">Teams die de seeds weglaten die de opdrachten noemen. Hun CHECK-cellen falen, omdat de seed bij de opdracht hoort en elk team zo antwoorden kan vergelijken.</span></li>
+<li><span lang="en">The table in task 5. One of its five intervals misses the full count, and the smallest sample's interval is not the widest. Let teams find both and explain them before you do. One miss in five draws is within what a 95 percent method allows, and a bootstrap from a small sample whose share sits near 1 understates its own doubt.</span><span lang="nl">De tabel in opdracht 5. Eén van de vijf intervallen mist de volledige telling, en het interval van de kleinste steekproef is niet het breedste. Laat teams beide vinden en verklaren voordat jij dat doet. Eén misser in vijf trekkingen valt binnen wat een 95%-methode toestaat, en een bootstrap uit een kleine steekproef met een aandeel dicht bij 1 onderschat zijn eigen twijfel.</span></li>
+<li><span lang="en">AI intervals for a share that run below 0 or above 1, and teams that cut them off at 0 and 1 and keep them. Cutting the ends hides the mistake without fixing it.</span><span lang="nl">AI-intervallen voor een aandeel die onder 0 of boven 1 lopen, en teams die ze afkappen bij 0 en 1 en ze houden. Het afkappen van de uiteinden verbergt de fout zonder haar te herstellen.</span></li>
+<li><span lang="en">Notes that treat segments as if they were kilometres. Task 8 exists to make the difference visible.</span><span lang="nl">Notities die segmenten behandelen alsof het kilometers zijn. Opdracht 8 bestaat om het verschil zichtbaar te maken.</span></li>
+<li><span lang="en">Notes a road planner could not act on, such as an estimate with no interval or an interval with no sentence about what it leaves out.</span><span lang="nl">Notities waar een wegplanner niets mee kan, zoals een schatting zonder interval of een interval zonder zin over wat het weglaat.</span></li>
+</ul>
+
+
+    <h2 lang="en">The Friday review</h2>
+<h2 lang="nl">De vrijdagbespreking</h2>
+
+    <ul>
+<li><span lang="en"><b>Before the review,</b> draw the full count as a vertical line on a large sheet, without its value. Each team marks its extra interval from the sample drawn with its team number as the seed.</span><span lang="nl"><b>Vóór de bespreking</b> teken je de volledige telling als verticale lijn op een groot vel, zonder de waarde. Elk team zet er zijn extra interval op uit de steekproef met het teamnummer als seed.</span></li>
+<li><span lang="en"><b>Students in the audience</b> write one question for each team on a card while it presents.</span><span lang="nl"><b>Studenten in het publiek</b> schrijven tijdens elke presentatie één vraag voor dat team op een kaartje.</span></li>
+<li><span lang="en"><b>Each team</b> has five minutes to present and five minutes of questions from the cards. A fellow asks the last question, which is what the team's interval does not cover.</span><span lang="nl"><b>Elk team</b> heeft vijf minuten om te presenteren en vijf minuten vragen van de kaartjes. Een fellow stelt de laatste vraag, namelijk wat het interval van het team niet dekt.</span></li>
+<li><span lang="en"><b>After the presentations,</b> the room counts how many team intervals on the sheet miss the line, compares the count with Thursday's guess, and lists the AI answers the teams caught this week.</span><span lang="nl"><b>Na de presentaties</b> telt de zaal hoeveel teamintervallen op het vel de lijn missen, vergelijkt dat met de gok van donderdag, en maakt een lijst van de AI-antwoorden die de teams deze week hebben betrapt.</span></li>
+<li><span lang="en"><b>To close,</b> announce next week's roles.</span><span lang="nl"><b>Ter afsluiting</b> maak je de rollen voor volgende week bekend.</span></li>
+</ul>
+
+    <footer><p><span lang="en"><a href="index.html">Back to week 10</a><span class="separator">|</span><a href="../materials.html">All materials</a></span><span lang="nl"><a href="index.html">Terug naar week 10</a><span class="separator">|</span><a href="../materials.html">Al het lesmateriaal</a></span></p></footer>
+</div></main>
+<div class="site-footer"><div class="container"><div><span lang="en">BiGi Data is a <a href="https://freefocus.org">Free Focus</a> program.</span><span lang="nl">BiGi Data is een programma van <a href="https://freefocus.org">Free Focus</a>.</span></div><div><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><span class="separator"> &middot; </span><a href="../credits.html"><span lang="en">Image credits</span><span lang="nl">Fotoverantwoording</span></a></div></div></div>
+<script data-goatcounter="https://johnsanterre.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

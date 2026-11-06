@@ -1,0 +1,836 @@
+year,level,hs_code,description,export_usd
+2015,chapter,01,Live animals,920221.476
+2015,chapter,02,Meat and edible meat offal,6348530.133
+2015,chapter,03,"Fish and crustaceans, molluscs and other aquatic invertebrates",34064174.967
+2015,chapter,04,"Dairy produce; birds' eggs; natural honey; edible products of animal origin, not elsewhere specified or included",1739954.43
+2015,chapter,05,"Products of animal origin, not elsewhere specified or included",421586.749
+2015,chapter,06,"Live trees and other plants; bulbs, roots and the like; cut flowers and ornamental foliage",37578.073
+2015,chapter,07,Edible vegetables and certain roots and tubers,1068794.199
+2015,chapter,08,Edible fruit and nuts; peel of citrus fruit or melons,59795191.75
+2015,chapter,09,"Coffee, tea, maté and spices",38454.406
+2015,chapter,10,Cereals,10337968.478
+2015,chapter,11,Products of the milling industry; malt; starches; inulin; wheat gluten,1039573.788
+2015,chapter,12,"Oil seeds and oleaginous fruits; miscellaneous grains, seeds and fruits; industrial or medicinal plants; straw and fodder",440870.308
+2015,chapter,15,Animal or vegetable fats and oils and their cleavage products; prepared edible fats; animal or vegetable waxes,4729649.788
+2015,chapter,16,"Preparations of meat, of fish or of crustaceans, molluscs or other aquatic invertebrates",919152.329
+2015,chapter,17,Sugars and sugar confectionery,274356.17
+2015,chapter,18,Cocoa and cocoa preparations,360370.6
+2015,chapter,19,"Preparations of cereals, flour, starch or milk; pastrycooks' products",2229648.48
+2015,chapter,20,"Preparations of vegetables, fruit, nuts or other parts of plants",1675217.504
+2015,chapter,21,Miscellaneous edible preparations,8037359.905
+2015,chapter,22,"Beverages, spirits and vinegar",19980931.701
+2015,chapter,23,Residues and waste from the food industries; prepared animal fodder,60859.802
+2015,chapter,24,Tobacco and manufactured tobacco substitutes,12136029.719
+2015,chapter,25,"Salt; sulphur; earths and stone; plastering materials, lime and cement",5258159.949
+2015,chapter,26,"Ores, slag and ash",444326046.581
+2015,chapter,27,"Mineral fuels, mineral oils and products of their distillation; bituminous substances; mineral waxes",13769.681
+2015,chapter,29,Organic chemicals,118103.286
+2015,chapter,30,Pharmaceutical products,831134.701
+2015,chapter,32,"Tanning or dyeing extracts; tannins and their derivatives; dyes, pigments and other colouring matter; paints and varnishes; putty and other mastics; inks",21989.538
+2015,chapter,33,"Essential oils and resinoids; perfumery, cosmetic or toilet preparations",1451581.301
+2015,chapter,34,"Soap, organic surface-active agents, washing preparations, lubricating preparations, artificial waxes, prepared waxes, polishing or scouring preparations, candles and similar articles, modeling pastes, dental waxes and dental preparations with a basis of plaster",3719006.088
+2015,chapter,35,Albuminoidal substances; modified starches; glues; enzymes,366513.722
+2015,chapter,36,Explosives; pyrotechnic products; matches; pyrophoric alloys; certain combustible preparations,129724.919
+2015,chapter,38,Miscellaneous chemical products,1563038.406
+2015,chapter,39,Plastics and articles thereof,6366868.279
+2015,chapter,40,Rubber and articles thereof,277262.727
+2015,chapter,41,Raw hides and skins (other than fur skins) and leather,117157.0
+2015,chapter,42,"Articles of leather; saddlery and harness; travel goods, handbags and similar containers; articles of animal gut (other than silkworm gut)",19713.121
+2015,chapter,44,Wood and articles of wood; wood charcoal,30850647.979
+2015,chapter,46,"Manufactures of straw, of esparto or of other plaiting materials; basket ware and wickerwork",121016.029
+2015,chapter,48,"Paper and paperboard; articles of paper pulp, of paper or of paperboard",1265596.775
+2015,chapter,49,"Printed books, newspapers, pictures and other products of the printing industry; manuscripts, typescripts and plans",73527.478
+2015,chapter,53,Other vegetable textile fibers; paper yarn and woven fabric of paper yarn,2700.0
+2015,chapter,56,"Wadding, felt and non-wovens; special yarns, twine, cordage, ropes and cables and articles thereof",182262.676
+2015,chapter,57,Carpets and other textile floor coverings,4375.0
+2015,chapter,59,"Impregnated, coated, covered or laminated textile fabrics; textile articles of a kind suitable for industrial use",9710.03
+2015,chapter,61,"Articles of apparel and clothing accessories, knitted or crocheted",62929.777
+2015,chapter,62,"Articles of apparel and clothing accessories, not knitted or crocheted",454202.441
+2015,chapter,63,Other made up textile articles; sets; worn clothing and worn textile articles; rags,222321.442
+2015,chapter,64,"Footwear, gaiters and the like; parts of such articles",222580.495
+2015,chapter,65,Headgear and parts thereof,46177.595
+2015,chapter,69,Ceramic products,12311.615
+2015,chapter,70,Glass and glassware,50241.547
+2015,chapter,71,"Natural or cultured pearls, precious or semi-precious stones, precious metals, metals cladwith precious metal, and articles thereof; imitation jewellery; coin",1030328717.499
+2015,chapter,72,Iron and steel,1246987.97
+2015,chapter,73,Articles of iron or steel,1528702.334
+2015,chapter,74,Copper and articles thereof,1047284.474
+2015,chapter,76,Aluminum and articles thereof,1200763.249
+2015,chapter,81,Other base metals; cermets; articles thereof,79349.732
+2015,chapter,82,"Tools, implements, cutlery, spoons and forks, of base metal; parts thereof of base metal",196954.346
+2015,chapter,83,Miscellaneous articles of base metal,851381.51
+2015,chapter,84,"Nuclear reactors, boilers, machinery and mechanical appliances; parts thereof",35951059.351
+2015,chapter,85,"Electrical machinery and equipment and parts thereof; sound recorders and reproducers, television image and sound recorders and reproducers, and parts and accessories of such articles",6342074.52
+2015,chapter,86,"Railway or tramway locomotives, rolling-stock and parts thereof; railway or tramway track fixtures and fittings and parts thereof; mechanical (including electro-mechanical) traffic signalling equipment of all kinds",11927719.733
+2015,chapter,87,"Vehicles other than railway or tramway rolling stock, and parts and accessories thereof",240336.86
+2015,chapter,88,"Aircraft, spacecraft, and parts thereof",48564738.379
+2015,chapter,90,"Optical, photographic, cinematographic, measuring, checking, precision, medical or surgical instruments and apparatus; parts and accessories thereof",7886477.532
+2015,chapter,91,Clocks and watches and parts thereof,38329.955
+2015,chapter,93,Arms and ammunition; parts and accessories thereof,690036.934
+2015,chapter,94,"Furniture; bedding, mattresses, mattress supports, cushions and similar stuffed furnishings; lamps and lighting fittings, not elsewhere specified or included; illuminated signs, illuminated name-plates and the like; prefabricated buildings",164229.525
+2015,chapter,95,"Toys, games and sports requisites; parts and accessories thereof",200267.826
+2015,chapter,96,Miscellaneous manufactured articles,124286.75
+2015,chapter,97,"Works of art, collectors' pieces and antiques",11260.0
+2015,chapter,99,Commodities not specified according to kind,878568.328
+2015,total,TOTAL,All goods,1814316671.741
+2016,chapter,01,Live animals,1751986.714
+2016,chapter,02,Meat and edible meat offal,3550840.321
+2016,chapter,03,"Fish and crustaceans, molluscs and other aquatic invertebrates",29242747.521
+2016,chapter,04,"Dairy produce; birds' eggs; natural honey; edible products of animal origin, not elsewhere specified or included",888750.173
+2016,chapter,05,"Products of animal origin, not elsewhere specified or included",431277.101
+2016,chapter,06,"Live trees and other plants; bulbs, roots and the like; cut flowers and ornamental foliage",108352.15
+2016,chapter,07,Edible vegetables and certain roots and tubers,1157875.437
+2016,chapter,08,Edible fruit and nuts; peel of citrus fruit or melons,44301454.493
+2016,chapter,09,"Coffee, tea, maté and spices",72689.569
+2016,chapter,10,Cereals,16823930.055
+2016,chapter,11,Products of the milling industry; malt; starches; inulin; wheat gluten,1215334.093
+2016,chapter,15,Animal or vegetable fats and oils and their cleavage products; prepared edible fats; animal or vegetable waxes,1084958.811
+2016,chapter,16,"Preparations of meat, of fish or of crustaceans, molluscs or other aquatic invertebrates",175598.674
+2016,chapter,17,Sugars and sugar confectionery,168605.093
+2016,chapter,18,Cocoa and cocoa preparations,8826.463
+2016,chapter,19,"Preparations of cereals, flour, starch or milk; pastrycooks' products",354145.803
+2016,chapter,20,"Preparations of vegetables, fruit, nuts or other parts of plants",2126562.269
+2016,chapter,21,Miscellaneous edible preparations,1488310.645
+2016,chapter,22,"Beverages, spirits and vinegar",20099276.329
+2016,chapter,23,Residues and waste from the food industries; prepared animal fodder,4383054.456
+2016,chapter,25,"Salt; sulphur; earths and stone; plastering materials, lime and cement",5101.262
+2016,chapter,26,"Ores, slag and ash",113945929.996
+2016,chapter,28,"Inorganic chemicals; organic or inorganic compounds of precious metals, of rare-earth metals, of radioactive elements or of isotopes",185411.411
+2016,chapter,29,Organic chemicals,2343730.847
+2016,chapter,30,Pharmaceutical products,26579.06
+2016,chapter,31,Fertilisers,48987.931
+2016,chapter,32,"Tanning or dyeing extracts; tannins and their derivatives; dyes, pigments and other colouring matter; paints and varnishes; putty and other mastics; inks",1067316.271
+2016,chapter,33,"Essential oils and resinoids; perfumery, cosmetic or toilet preparations",45389.89
+2016,chapter,34,"Soap, organic surface-active agents, washing preparations, lubricating preparations, artificial waxes, prepared waxes, polishing or scouring preparations, candles and similar articles, modeling pastes, dental waxes and dental preparations with a basis of plaster",3316924.439
+2016,chapter,35,Albuminoidal substances; modified starches; glues; enzymes,357066.319
+2016,chapter,38,Miscellaneous chemical products,1286779.778
+2016,chapter,39,Plastics and articles thereof,4393447.966
+2016,chapter,40,Rubber and articles thereof,457769.939
+2016,chapter,41,Raw hides and skins (other than fur skins) and leather,342492.467
+2016,chapter,42,"Articles of leather; saddlery and harness; travel goods, handbags and similar containers; articles of animal gut (other than silkworm gut)",15199.671
+2016,chapter,44,Wood and articles of wood; wood charcoal,37570175.411
+2016,chapter,46,"Manufactures of straw, of esparto or of other plaiting materials; basket ware and wickerwork",1014633.219
+2016,chapter,48,"Paper and paperboard; articles of paper pulp, of paper or of paperboard",211367.358
+2016,chapter,49,"Printed books, newspapers, pictures and other products of the printing industry; manuscripts, typescripts and plans",115540.241
+2016,chapter,50,Silk,64594.542
+2016,chapter,55,Man-made staple fibers,1390.0
+2016,chapter,58,"Special woven fabrics; tufted textile fabrics; lace, tapestries; trimmings; embroidery",10601.0
+2016,chapter,61,"Articles of apparel and clothing accessories, knitted or crocheted",23735.909
+2016,chapter,62,"Articles of apparel and clothing accessories, not knitted or crocheted",247761.011
+2016,chapter,63,Other made up textile articles; sets; worn clothing and worn textile articles; rags,294602.531
+2016,chapter,64,"Footwear, gaiters and the like; parts of such articles",235157.752
+2016,chapter,65,Headgear and parts thereof,9147.501
+2016,chapter,66,"Umbrellas, sun umbrellas, walking sticks, seat sticks, whips, riding-crops and parts thereof",351261.778
+2016,chapter,69,Ceramic products,16281.804
+2016,chapter,70,Glass and glassware,11591.13
+2016,chapter,71,"Natural or cultured pearls, precious or semi-precious stones, precious metals, metals cladwith precious metal, and articles thereof; imitation jewellery; coin",883610935.27
+2016,chapter,73,Articles of iron or steel,2660079.622
+2016,chapter,74,Copper and articles thereof,1250045.438
+2016,chapter,76,Aluminum and articles thereof,1282742.966
+2016,chapter,78,Lead and articles thereof,20476094.554
+2016,chapter,82,"Tools, implements, cutlery, spoons and forks, of base metal; parts thereof of base metal",37244.411
+2016,chapter,84,"Nuclear reactors, boilers, machinery and mechanical appliances; parts thereof",2385911.739
+2016,chapter,85,"Electrical machinery and equipment and parts thereof; sound recorders and reproducers, television image and sound recorders and reproducers, and parts and accessories of such articles",3683988.144
+2016,chapter,86,"Railway or tramway locomotives, rolling-stock and parts thereof; railway or tramway track fixtures and fittings and parts thereof; mechanical (including electro-mechanical) traffic signalling equipment of all kinds",1621569.423
+2016,chapter,87,"Vehicles other than railway or tramway rolling stock, and parts and accessories thereof",2550776.237
+2016,chapter,88,"Aircraft, spacecraft, and parts thereof",350390.43
+2016,chapter,89,"Ships, boats and floating structures",286374.861
+2016,chapter,90,"Optical, photographic, cinematographic, measuring, checking, precision, medical or surgical instruments and apparatus; parts and accessories thereof",13871688.42
+2016,chapter,91,Clocks and watches and parts thereof,40533.45
+2016,chapter,92,Musical instruments; parts and accessories of such articles,1425906.761
+2016,chapter,94,"Furniture; bedding, mattresses, mattress supports, cushions and similar stuffed furnishings; lamps and lighting fittings, not elsewhere specified or included; illuminated signs, illuminated name-plates and the like; prefabricated buildings",14009.467
+2016,chapter,95,"Toys, games and sports requisites; parts and accessories thereof",745113.527
+2016,chapter,96,Miscellaneous manufactured articles,148945.629
+2016,chapter,97,"Works of art, collectors' pieces and antiques",1052604.754
+2016,chapter,99,Commodities not specified according to kind,337676.776
+2016,total,TOTAL,All goods,1235283176.483
+2017,chapter,01,Live animals,1067822.96
+2017,chapter,02,Meat and edible meat offal,3630732.821
+2017,chapter,04,"Dairy produce; birds' eggs; natural honey; edible products of animal origin, not elsewhere specified or included",669830.219
+2017,chapter,05,"Products of animal origin, not elsewhere specified or included",742344.518
+2017,chapter,06,"Live trees and other plants; bulbs, roots and the like; cut flowers and ornamental foliage",79715.925
+2017,chapter,07,Edible vegetables and certain roots and tubers,968566.678
+2017,chapter,09,"Coffee, tea, maté and spices",404354.295
+2017,chapter,10,Cereals,30363153.562
+2017,chapter,11,Products of the milling industry; malt; starches; inulin; wheat gluten,12828.569
+2017,chapter,12,"Oil seeds and oleaginous fruits; miscellaneous grains, seeds and fruits; industrial or medicinal plants; straw and fodder",193314.159
+2017,chapter,15,Animal or vegetable fats and oils and their cleavage products; prepared edible fats; animal or vegetable waxes,1186827.091
+2017,chapter,16,"Preparations of meat, of fish or of crustaceans, molluscs or other aquatic invertebrates",142598.158
+2017,chapter,17,Sugars and sugar confectionery,56552.33
+2017,chapter,18,Cocoa and cocoa preparations,305901.175
+2017,chapter,19,"Preparations of cereals, flour, starch or milk; pastrycooks' products",456052.297
+2017,chapter,20,"Preparations of vegetables, fruit, nuts or other parts of plants",2183424.605
+2017,chapter,21,Miscellaneous edible preparations,4121406.999
+2017,chapter,22,"Beverages, spirits and vinegar",26372325.966
+2017,chapter,23,Residues and waste from the food industries; prepared animal fodder,129923.244
+2017,chapter,24,Tobacco and manufactured tobacco substitutes,1413810.22
+2017,chapter,25,"Salt; sulphur; earths and stone; plastering materials, lime and cement",2028592.462
+2017,chapter,26,"Ores, slag and ash",54564.678
+2017,chapter,27,"Mineral fuels, mineral oils and products of their distillation; bituminous substances; mineral waxes",139601501.596
+2017,chapter,28,"Inorganic chemicals; organic or inorganic compounds of precious metals, of rare-earth metals, of radioactive elements or of isotopes",82438.231
+2017,chapter,29,Organic chemicals,430049.979
+2017,chapter,30,Pharmaceutical products,469824.409
+2017,chapter,31,Fertilisers,231175.0
+2017,chapter,32,"Tanning or dyeing extracts; tannins and their derivatives; dyes, pigments and other colouring matter; paints and varnishes; putty and other mastics; inks",305586.469
+2017,chapter,33,"Essential oils and resinoids; perfumery, cosmetic or toilet preparations",351400.403
+2017,chapter,34,"Soap, organic surface-active agents, washing preparations, lubricating preparations, artificial waxes, prepared waxes, polishing or scouring preparations, candles and similar articles, modeling pastes, dental waxes and dental preparations with a basis of plaster",2597655.749
+2017,chapter,36,Explosives; pyrotechnic products; matches; pyrophoric alloys; certain combustible preparations,221801.932
+2017,chapter,37,Photographic or cinematographic goods,5457.05
+2017,chapter,38,Miscellaneous chemical products,1325871.845
+2017,chapter,39,Plastics and articles thereof,3785596.207
+2017,chapter,40,Rubber and articles thereof,218315.365
+2017,chapter,41,Raw hides and skins (other than fur skins) and leather,107860.6
+2017,chapter,42,"Articles of leather; saddlery and harness; travel goods, handbags and similar containers; articles of animal gut (other than silkworm gut)",68843.411
+2017,chapter,44,Wood and articles of wood; wood charcoal,58001479.46
+2017,chapter,47,Pulp of wood or of other fibrous cellulose material; waste and scrap of paper or paperboard,90294.501
+2017,chapter,48,"Paper and paperboard; articles of paper pulp, of paper or of paperboard",1683344.525
+2017,chapter,49,"Printed books, newspapers, pictures and other products of the printing industry; manuscripts, typescripts and plans",85526.131
+2017,chapter,54,Man-made filaments,11798.801
+2017,chapter,55,Man-made staple fibers,3317.344
+2017,chapter,56,"Wadding, felt and non-wovens; special yarns, twine, cordage, ropes and cables and articles thereof",66621.657
+2017,chapter,59,"Impregnated, coated, covered or laminated textile fabrics; textile articles of a kind suitable for industrial use",18988.3
+2017,chapter,61,"Articles of apparel and clothing accessories, knitted or crocheted",19114.619
+2017,chapter,62,"Articles of apparel and clothing accessories, not knitted or crocheted",436894.807
+2017,chapter,63,Other made up textile articles; sets; worn clothing and worn textile articles; rags,177149.998
+2017,chapter,64,"Footwear, gaiters and the like; parts of such articles",207362.117
+2017,chapter,65,Headgear and parts thereof,38083.4
+2017,chapter,67,Prepared feathers and down and articles made of feathers or of down; artificial flowers; articles of human hair,2464.77
+2017,chapter,68,"Articles of stone, plaster, cement, asbestos, mica or similar materials",86773.281
+2017,chapter,70,Glass and glassware,14271.835
+2017,chapter,71,"Natural or cultured pearls, precious or semi-precious stones, precious metals, metals cladwith precious metal, and articles thereof; imitation jewellery; coin",1680942616.376
+2017,chapter,72,Iron and steel,3455691.35
+2017,chapter,73,Articles of iron or steel,1464956.6
+2017,chapter,74,Copper and articles thereof,490921.601
+2017,chapter,76,Aluminum and articles thereof,920175.186
+2017,chapter,79,Zinc and articles thereof,305334.936
+2017,chapter,82,"Tools, implements, cutlery, spoons and forks, of base metal; parts thereof of base metal",279315.305
+2017,chapter,83,Miscellaneous articles of base metal,38417.168
+2017,chapter,84,"Nuclear reactors, boilers, machinery and mechanical appliances; parts thereof",14397855.543
+2017,chapter,85,"Electrical machinery and equipment and parts thereof; sound recorders and reproducers, television image and sound recorders and reproducers, and parts and accessories of such articles",2981181.468
+2017,chapter,86,"Railway or tramway locomotives, rolling-stock and parts thereof; railway or tramway track fixtures and fittings and parts thereof; mechanical (including electro-mechanical) traffic signalling equipment of all kinds",1140631.762
+2017,chapter,87,"Vehicles other than railway or tramway rolling stock, and parts and accessories thereof",1186832.775
+2017,chapter,88,"Aircraft, spacecraft, and parts thereof",920232.952
+2017,chapter,89,"Ships, boats and floating structures",2125633.862
+2017,chapter,90,"Optical, photographic, cinematographic, measuring, checking, precision, medical or surgical instruments and apparatus; parts and accessories thereof",5802556.439
+2017,chapter,91,Clocks and watches and parts thereof,190532.165
+2017,chapter,93,Arms and ammunition; parts and accessories thereof,94811.77
+2017,chapter,94,"Furniture; bedding, mattresses, mattress supports, cushions and similar stuffed furnishings; lamps and lighting fittings, not elsewhere specified or included; illuminated signs, illuminated name-plates and the like; prefabricated buildings",1313797.459
+2017,chapter,95,"Toys, games and sports requisites; parts and accessories thereof",292763.421
+2017,chapter,96,Miscellaneous manufactured articles,98898.918
+2017,chapter,97,"Works of art, collectors' pieces and antiques",23790.211
+2017,chapter,99,Commodities not specified according to kind,61595272.725
+2017,total,TOTAL,All goods,2067393726.712
+2018,chapter,01,Live animals,1436419.164
+2018,chapter,02,Meat and edible meat offal,6159766.066
+2018,chapter,03,"Fish and crustaceans, molluscs and other aquatic invertebrates",41673383.515
+2018,chapter,04,"Dairy produce; birds' eggs; natural honey; edible products of animal origin, not elsewhere specified or included",751701.068
+2018,chapter,05,"Products of animal origin, not elsewhere specified or included",316827.779
+2018,chapter,06,"Live trees and other plants; bulbs, roots and the like; cut flowers and ornamental foliage",106446.699
+2018,chapter,07,Edible vegetables and certain roots and tubers,897266.379
+2018,chapter,08,Edible fruit and nuts; peel of citrus fruit or melons,35858245.865
+2018,chapter,10,Cereals,17158528.578
+2018,chapter,11,Products of the milling industry; malt; starches; inulin; wheat gluten,12234.964
+2018,chapter,12,"Oil seeds and oleaginous fruits; miscellaneous grains, seeds and fruits; industrial or medicinal plants; straw and fodder",1238994.676
+2018,chapter,15,Animal or vegetable fats and oils and their cleavage products; prepared edible fats; animal or vegetable waxes,57841.741
+2018,chapter,16,"Preparations of meat, of fish or of crustaceans, molluscs or other aquatic invertebrates",180282.644
+2018,chapter,17,Sugars and sugar confectionery,181588.552
+2018,chapter,18,Cocoa and cocoa preparations,8268.868
+2018,chapter,19,"Preparations of cereals, flour, starch or milk; pastrycooks' products",430214.558
+2018,chapter,20,"Preparations of vegetables, fruit, nuts or other parts of plants",537785.384
+2018,chapter,21,Miscellaneous edible preparations,44927121.796
+2018,chapter,22,"Beverages, spirits and vinegar",1401841.202
+2018,chapter,23,Residues and waste from the food industries; prepared animal fodder,342168.141
+2018,chapter,25,"Salt; sulphur; earths and stone; plastering materials, lime and cement",2265679.102
+2018,chapter,26,"Ores, slag and ash",140904832.524
+2018,chapter,27,"Mineral fuels, mineral oils and products of their distillation; bituminous substances; mineral waxes",266849.272
+2018,chapter,28,"Inorganic chemicals; organic or inorganic compounds of precious metals, of rare-earth metals, of radioactive elements or of isotopes",435939.94
+2018,chapter,29,Organic chemicals,21372.293
+2018,chapter,30,Pharmaceutical products,108751.398
+2018,chapter,31,Fertilisers,951537.561
+2018,chapter,33,"Essential oils and resinoids; perfumery, cosmetic or toilet preparations",562753.358
+2018,chapter,34,"Soap, organic surface-active agents, washing preparations, lubricating preparations, artificial waxes, prepared waxes, polishing or scouring preparations, candles and similar articles, modeling pastes, dental waxes and dental preparations with a basis of plaster",2908995.363
+2018,chapter,35,Albuminoidal substances; modified starches; glues; enzymes,15233.34
+2018,chapter,36,Explosives; pyrotechnic products; matches; pyrophoric alloys; certain combustible preparations,145230.808
+2018,chapter,38,Miscellaneous chemical products,2482696.208
+2018,chapter,39,Plastics and articles thereof,3047091.201
+2018,chapter,40,Rubber and articles thereof,135764.182
+2018,chapter,41,Raw hides and skins (other than fur skins) and leather,139969.903
+2018,chapter,42,"Articles of leather; saddlery and harness; travel goods, handbags and similar containers; articles of animal gut (other than silkworm gut)",37741.439
+2018,chapter,44,Wood and articles of wood; wood charcoal,68242589.903
+2018,chapter,46,"Manufactures of straw, of esparto or of other plaiting materials; basket ware and wickerwork",122197.872
+2018,chapter,48,"Paper and paperboard; articles of paper pulp, of paper or of paperboard",1630161.995
+2018,chapter,49,"Printed books, newspapers, pictures and other products of the printing industry; manuscripts, typescripts and plans",75396.726
+2018,chapter,52,Cotton,29815.476
+2018,chapter,57,Carpets and other textile floor coverings,20452.337
+2018,chapter,60,Knitted or crocheted fabrics,7298.191
+2018,chapter,61,"Articles of apparel and clothing accessories, knitted or crocheted",50119.81
+2018,chapter,62,"Articles of apparel and clothing accessories, not knitted or crocheted",629144.57
+2018,chapter,63,Other made up textile articles; sets; worn clothing and worn textile articles; rags,216257.316
+2018,chapter,64,"Footwear, gaiters and the like; parts of such articles",3554120.759
+2018,chapter,65,Headgear and parts thereof,29032.001
+2018,chapter,69,Ceramic products,24107.232
+2018,chapter,70,Glass and glassware,13757.438
+2018,chapter,71,"Natural or cultured pearls, precious or semi-precious stones, precious metals, metals cladwith precious metal, and articles thereof; imitation jewellery; coin",1679340259.646
+2018,chapter,72,Iron and steel,2993650.0
+2018,chapter,73,Articles of iron or steel,4492078.478
+2018,chapter,74,Copper and articles thereof,1161021.199
+2018,chapter,76,Aluminum and articles thereof,1093493.607
+2018,chapter,78,Lead and articles thereof,286536.834
+2018,chapter,82,"Tools, implements, cutlery, spoons and forks, of base metal; parts thereof of base metal",5103.477
+2018,chapter,83,Miscellaneous articles of base metal,79533329.451
+2018,chapter,84,"Nuclear reactors, boilers, machinery and mechanical appliances; parts thereof",1834498.972
+2018,chapter,85,"Electrical machinery and equipment and parts thereof; sound recorders and reproducers, television image and sound recorders and reproducers, and parts and accessories of such articles",2857379.262
+2018,chapter,86,"Railway or tramway locomotives, rolling-stock and parts thereof; railway or tramway track fixtures and fittings and parts thereof; mechanical (including electro-mechanical) traffic signalling equipment of all kinds",15332076.167
+2018,chapter,87,"Vehicles other than railway or tramway rolling stock, and parts and accessories thereof",463200.631
+2018,chapter,88,"Aircraft, spacecraft, and parts thereof",1650138.981
+2018,chapter,90,"Optical, photographic, cinematographic, measuring, checking, precision, medical or surgical instruments and apparatus; parts and accessories thereof",2871357.742
+2018,chapter,91,Clocks and watches and parts thereof,63131.608
+2018,chapter,92,Musical instruments; parts and accessories of such articles,38541.198
+2018,chapter,94,"Furniture; bedding, mattresses, mattress supports, cushions and similar stuffed furnishings; lamps and lighting fittings, not elsewhere specified or included; illuminated signs, illuminated name-plates and the like; prefabricated buildings",1662523.246
+2018,chapter,95,"Toys, games and sports requisites; parts and accessories thereof",412723.493
+2018,chapter,97,"Works of art, collectors' pieces and antiques",172142.913
+2018,chapter,99,Commodities not specified according to kind,935580.829
+2018,total,TOTAL,All goods,2179950584.89
+2019,chapter,01,Live animals,4867071.87
+2019,chapter,02,Meat and edible meat offal,315088.062
+2019,chapter,03,"Fish and crustaceans, molluscs and other aquatic invertebrates",38124460.021
+2019,chapter,04,"Dairy produce; birds' eggs; natural honey; edible products of animal origin, not elsewhere specified or included",621461.223
+2019,chapter,05,"Products of animal origin, not elsewhere specified or included",796512.277
+2019,chapter,06,"Live trees and other plants; bulbs, roots and the like; cut flowers and ornamental foliage",14985.69
+2019,chapter,07,Edible vegetables and certain roots and tubers,561015.67
+2019,chapter,08,Edible fruit and nuts; peel of citrus fruit or melons,22696305.519
+2019,chapter,09,"Coffee, tea, maté and spices",253114.451
+2019,chapter,10,Cereals,23035233.545
+2019,chapter,11,Products of the milling industry; malt; starches; inulin; wheat gluten,165408.739
+2019,chapter,12,"Oil seeds and oleaginous fruits; miscellaneous grains, seeds and fruits; industrial or medicinal plants; straw and fodder",3460.67
+2019,chapter,15,Animal or vegetable fats and oils and their cleavage products; prepared edible fats; animal or vegetable waxes,1229453.372
+2019,chapter,16,"Preparations of meat, of fish or of crustaceans, molluscs or other aquatic invertebrates",458255.215
+2019,chapter,17,Sugars and sugar confectionery,254926.569
+2019,chapter,18,Cocoa and cocoa preparations,55940.596
+2019,chapter,19,"Preparations of cereals, flour, starch or milk; pastrycooks' products",338578.922
+2019,chapter,20,"Preparations of vegetables, fruit, nuts or other parts of plants",571705.045
+2019,chapter,21,Miscellaneous edible preparations,7239928.739
+2019,chapter,22,"Beverages, spirits and vinegar",15760038.221
+2019,chapter,23,Residues and waste from the food industries; prepared animal fodder,198778.568
+2019,chapter,24,Tobacco and manufactured tobacco substitutes,41678218.507
+2019,chapter,25,"Salt; sulphur; earths and stone; plastering materials, lime and cement",9606.719
+2019,chapter,26,"Ores, slag and ash",98029993.076
+2019,chapter,27,"Mineral fuels, mineral oils and products of their distillation; bituminous substances; mineral waxes",31921.555
+2019,chapter,28,"Inorganic chemicals; organic or inorganic compounds of precious metals, of rare-earth metals, of radioactive elements or of isotopes",566581.569
+2019,chapter,29,Organic chemicals,4265.0
+2019,chapter,30,Pharmaceutical products,77954.886
+2019,chapter,31,Fertilisers,518308.013
+2019,chapter,33,"Essential oils and resinoids; perfumery, cosmetic or toilet preparations",826383.835
+2019,chapter,34,"Soap, organic surface-active agents, washing preparations, lubricating preparations, artificial waxes, prepared waxes, polishing or scouring preparations, candles and similar articles, modeling pastes, dental waxes and dental preparations with a basis of plaster",3054152.295
+2019,chapter,35,Albuminoidal substances; modified starches; glues; enzymes,30166.43
+2019,chapter,36,Explosives; pyrotechnic products; matches; pyrophoric alloys; certain combustible preparations,78690.633
+2019,chapter,38,Miscellaneous chemical products,1111454.213
+2019,chapter,39,Plastics and articles thereof,2813700.725
+2019,chapter,40,Rubber and articles thereof,112734.315
+2019,chapter,41,Raw hides and skins (other than fur skins) and leather,159209.206
+2019,chapter,42,"Articles of leather; saddlery and harness; travel goods, handbags and similar containers; articles of animal gut (other than silkworm gut)",73425.816
+2019,chapter,44,Wood and articles of wood; wood charcoal,70818219.512
+2019,chapter,46,"Manufactures of straw, of esparto or of other plaiting materials; basket ware and wickerwork",99512.573
+2019,chapter,48,"Paper and paperboard; articles of paper pulp, of paper or of paperboard",780172.686
+2019,chapter,49,"Printed books, newspapers, pictures and other products of the printing industry; manuscripts, typescripts and plans",36264.432
+2019,chapter,52,Cotton,27824.88
+2019,chapter,56,"Wadding, felt and non-wovens; special yarns, twine, cordage, ropes and cables and articles thereof",50923.414
+2019,chapter,60,Knitted or crocheted fabrics,4661.601
+2019,chapter,61,"Articles of apparel and clothing accessories, knitted or crocheted",13526.58
+2019,chapter,62,"Articles of apparel and clothing accessories, not knitted or crocheted",853987.301
+2019,chapter,63,Other made up textile articles; sets; worn clothing and worn textile articles; rags,209351.483
+2019,chapter,64,"Footwear, gaiters and the like; parts of such articles",584228.297
+2019,chapter,65,Headgear and parts thereof,36249.5
+2019,chapter,68,"Articles of stone, plaster, cement, asbestos, mica or similar materials",5670533.047
+2019,chapter,69,Ceramic products,18680.559
+2019,chapter,70,Glass and glassware,83321.818
+2019,chapter,71,"Natural or cultured pearls, precious or semi-precious stones, precious metals, metals cladwith precious metal, and articles thereof; imitation jewellery; coin",1752294097.042
+2019,chapter,72,Iron and steel,4372150.0
+2019,chapter,73,Articles of iron or steel,1216921.549
+2019,chapter,74,Copper and articles thereof,1284793.624
+2019,chapter,76,Aluminum and articles thereof,1221940.9
+2019,chapter,82,"Tools, implements, cutlery, spoons and forks, of base metal; parts thereof of base metal",454881.971
+2019,chapter,83,Miscellaneous articles of base metal,17186.862
+2019,chapter,84,"Nuclear reactors, boilers, machinery and mechanical appliances; parts thereof",15241652.657
+2019,chapter,85,"Electrical machinery and equipment and parts thereof; sound recorders and reproducers, television image and sound recorders and reproducers, and parts and accessories of such articles",4471046.313
+2019,chapter,86,"Railway or tramway locomotives, rolling-stock and parts thereof; railway or tramway track fixtures and fittings and parts thereof; mechanical (including electro-mechanical) traffic signalling equipment of all kinds",3176865.914
+2019,chapter,87,"Vehicles other than railway or tramway rolling stock, and parts and accessories thereof",1617886.568
+2019,chapter,88,"Aircraft, spacecraft, and parts thereof",18057678.097
+2019,chapter,89,"Ships, boats and floating structures",939974.032
+2019,chapter,90,"Optical, photographic, cinematographic, measuring, checking, precision, medical or surgical instruments and apparatus; parts and accessories thereof",2094658.258
+2019,chapter,91,Clocks and watches and parts thereof,99207.818
+2019,chapter,92,Musical instruments; parts and accessories of such articles,19610.883
+2019,chapter,93,Arms and ammunition; parts and accessories thereof,973741.169
+2019,chapter,94,"Furniture; bedding, mattresses, mattress supports, cushions and similar stuffed furnishings; lamps and lighting fittings, not elsewhere specified or included; illuminated signs, illuminated name-plates and the like; prefabricated buildings",47551.637
+2019,chapter,95,"Toys, games and sports requisites; parts and accessories thereof",292326.947
+2019,chapter,96,Miscellaneous manufactured articles,138000.145
+2019,chapter,97,"Works of art, collectors' pieces and antiques",146967.43
+2019,chapter,99,Commodities not specified according to kind,927469.295
+2019,total,TOTAL,All goods,2155132556.567
+2020,chapter,01,Live animals,936462.084
+2020,chapter,02,Meat and edible meat offal,2675326.114
+2020,chapter,03,"Fish and crustaceans, molluscs and other aquatic invertebrates",33730707.009
+2020,chapter,04,"Dairy produce; birds' eggs; natural honey; edible products of animal origin, not elsewhere specified or included",275328.28
+2020,chapter,05,"Products of animal origin, not elsewhere specified or included",489851.49
+2020,chapter,06,"Live trees and other plants; bulbs, roots and the like; cut flowers and ornamental foliage",32900.112
+2020,chapter,07,Edible vegetables and certain roots and tubers,570474.455
+2020,chapter,08,Edible fruit and nuts; peel of citrus fruit or melons,16181852.765
+2020,chapter,09,"Coffee, tea, maté and spices",241074.261
+2020,chapter,10,Cereals,27412359.092
+2020,chapter,11,Products of the milling industry; malt; starches; inulin; wheat gluten,80278.187
+2020,chapter,12,"Oil seeds and oleaginous fruits; miscellaneous grains, seeds and fruits; industrial or medicinal plants; straw and fodder",102324.428
+2020,chapter,15,Animal or vegetable fats and oils and their cleavage products; prepared edible fats; animal or vegetable waxes,1451755.703
+2020,chapter,16,"Preparations of meat, of fish or of crustaceans, molluscs or other aquatic invertebrates",146271.949
+2020,chapter,17,Sugars and sugar confectionery,44953.763
+2020,chapter,18,Cocoa and cocoa preparations,103513.31
+2020,chapter,19,"Preparations of cereals, flour, starch or milk; pastrycooks' products",335764.922
+2020,chapter,20,"Preparations of vegetables, fruit, nuts or other parts of plants",382773.539
+2020,chapter,21,Miscellaneous edible preparations,4699195.492
+2020,chapter,22,"Beverages, spirits and vinegar",16270752.441
+2020,chapter,23,Residues and waste from the food industries; prepared animal fodder,170950.623
+2020,chapter,24,Tobacco and manufactured tobacco substitutes,51338504.912
+2020,chapter,25,"Salt; sulphur; earths and stone; plastering materials, lime and cement",34897.194
+2020,chapter,26,"Ores, slag and ash",56393.163
+2020,chapter,27,"Mineral fuels, mineral oils and products of their distillation; bituminous substances; mineral waxes",14701781.117
+2020,chapter,28,"Inorganic chemicals; organic or inorganic compounds of precious metals, of rare-earth metals, of radioactive elements or of isotopes",428590.989
+2020,chapter,29,Organic chemicals,203875.444
+2020,chapter,31,Fertilisers,329310.26
+2020,chapter,33,"Essential oils and resinoids; perfumery, cosmetic or toilet preparations",601014.334
+2020,chapter,34,"Soap, organic surface-active agents, washing preparations, lubricating preparations, artificial waxes, prepared waxes, polishing or scouring preparations, candles and similar articles, modeling pastes, dental waxes and dental preparations with a basis of plaster",2526273.234
+2020,chapter,35,Albuminoidal substances; modified starches; glues; enzymes,148026.761
+2020,chapter,36,Explosives; pyrotechnic products; matches; pyrophoric alloys; certain combustible preparations,223299.827
+2020,chapter,38,Miscellaneous chemical products,6174004.796
+2020,chapter,39,Plastics and articles thereof,2830029.482
+2020,chapter,40,Rubber and articles thereof,439772.756
+2020,chapter,41,Raw hides and skins (other than fur skins) and leather,215654.308
+2020,chapter,42,"Articles of leather; saddlery and harness; travel goods, handbags and similar containers; articles of animal gut (other than silkworm gut)",31147.259
+2020,chapter,44,Wood and articles of wood; wood charcoal,88537615.805
+2020,chapter,45,Cork and articles of cork,220482.5
+2020,chapter,48,"Paper and paperboard; articles of paper pulp, of paper or of paperboard",676281.276
+2020,chapter,49,"Printed books, newspapers, pictures and other products of the printing industry; manuscripts, typescripts and plans",63873.299
+2020,chapter,52,Cotton,20750.16
+2020,chapter,56,"Wadding, felt and non-wovens; special yarns, twine, cordage, ropes and cables and articles thereof",67216.738
+2020,chapter,57,Carpets and other textile floor coverings,9039.89
+2020,chapter,59,"Impregnated, coated, covered or laminated textile fabrics; textile articles of a kind suitable for industrial use",12561.32
+2020,chapter,60,Knitted or crocheted fabrics,7919.15
+2020,chapter,61,"Articles of apparel and clothing accessories, knitted or crocheted",5223.319
+2020,chapter,62,"Articles of apparel and clothing accessories, not knitted or crocheted",394907.149
+2020,chapter,63,Other made up textile articles; sets; worn clothing and worn textile articles; rags,157141.303
+2020,chapter,64,"Footwear, gaiters and the like; parts of such articles",541497.206
+2020,chapter,65,Headgear and parts thereof,10299.3
+2020,chapter,68,"Articles of stone, plaster, cement, asbestos, mica or similar materials",1278515.39
+2020,chapter,69,Ceramic products,10143.63
+2020,chapter,70,Glass and glassware,29216.865
+2020,chapter,71,"Natural or cultured pearls, precious or semi-precious stones, precious metals, metals cladwith precious metal, and articles thereof; imitation jewellery; coin",1763569368.171
+2020,chapter,72,Iron and steel,3455384.801
+2020,chapter,73,Articles of iron or steel,931840.603
+2020,chapter,74,Copper and articles thereof,358357.92
+2020,chapter,76,Aluminum and articles thereof,1299531.524
+2020,chapter,82,"Tools, implements, cutlery, spoons and forks, of base metal; parts thereof of base metal",1321616.849
+2020,chapter,83,Miscellaneous articles of base metal,5525.661
+2020,chapter,84,"Nuclear reactors, boilers, machinery and mechanical appliances; parts thereof",115692750.046
+2020,chapter,85,"Electrical machinery and equipment and parts thereof; sound recorders and reproducers, television image and sound recorders and reproducers, and parts and accessories of such articles",4684115.4
+2020,chapter,86,"Railway or tramway locomotives, rolling-stock and parts thereof; railway or tramway track fixtures and fittings and parts thereof; mechanical (including electro-mechanical) traffic signalling equipment of all kinds",7211851.318
+2020,chapter,87,"Vehicles other than railway or tramway rolling stock, and parts and accessories thereof",5210776.234
+2020,chapter,88,"Aircraft, spacecraft, and parts thereof",6974943.176
+2020,chapter,90,"Optical, photographic, cinematographic, measuring, checking, precision, medical or surgical instruments and apparatus; parts and accessories thereof",1769610.934
+2020,chapter,91,Clocks and watches and parts thereof,60297.011
+2020,chapter,92,Musical instruments; parts and accessories of such articles,300684.894
+2020,chapter,93,Arms and ammunition; parts and accessories thereof,3460.0
+2020,chapter,94,"Furniture; bedding, mattresses, mattress supports, cushions and similar stuffed furnishings; lamps and lighting fittings, not elsewhere specified or included; illuminated signs, illuminated name-plates and the like; prefabricated buildings",65468.617
+2020,chapter,95,"Toys, games and sports requisites; parts and accessories thereof",414210.4
+2020,chapter,96,Miscellaneous manufactured articles,224971.499
+2020,chapter,97,"Works of art, collectors' pieces and antiques",77339.089
+2020,chapter,99,Commodities not specified according to kind,1056702.026
+2020,total,TOTAL,All goods,2193348936.33
+2021,chapter,01,Live animals,1225353.6
+2021,chapter,02,Meat and edible meat offal,2393836.31
+2021,chapter,03,"Fish and crustaceans, molluscs and other aquatic invertebrates",32597592.87
+2021,chapter,04,"Dairy produce; birds' eggs; natural honey; edible products of animal origin, not elsewhere specified or included",309753.63
+2021,chapter,05,"Products of animal origin, not elsewhere specified or included",293903.4
+2021,chapter,06,"Live trees and other plants; bulbs, roots and the like; cut flowers and ornamental foliage",93993.89
+2021,chapter,07,Edible vegetables and certain roots and tubers,889671.94
+2021,chapter,08,Edible fruit and nuts; peel of citrus fruit or melons,2168362.15
+2021,chapter,09,"Coffee, tea, maté and spices",436359.48
+2021,chapter,10,Cereals,32458557.14
+2021,chapter,11,Products of the milling industry; malt; starches; inulin; wheat gluten,121625.98
+2021,chapter,12,"Oil seeds and oleaginous fruits; miscellaneous grains, seeds and fruits; industrial or medicinal plants; straw and fodder",80634.46
+2021,chapter,13,"Lac; gums, resins and other vegetable saps and extracts",7901.03
+2021,chapter,14,Vegetable plaiting materials; vegetable products not elsewhere specified or included,2390.97
+2021,chapter,15,Animal or vegetable fats and oils and their cleavage products; prepared edible fats; animal or vegetable waxes,1908455.46
+2021,chapter,16,"Preparations of meat, of fish or of crustaceans, molluscs or other aquatic invertebrates",186051.79
+2021,chapter,17,Sugars and sugar confectionery,154849.23
+2021,chapter,18,Cocoa and cocoa preparations,290579.14
+2021,chapter,19,"Preparations of cereals, flour, starch or milk; pastrycooks' products",593205.71
+2021,chapter,20,"Preparations of vegetables, fruit, nuts or other parts of plants",417317.47
+2021,chapter,21,Miscellaneous edible preparations,3059347.98
+2021,chapter,22,"Beverages, spirits and vinegar",18775171.58
+2021,chapter,23,Residues and waste from the food industries; prepared animal fodder,183591.11
+2021,chapter,24,Tobacco and manufactured tobacco substitutes,54812517.83
+2021,chapter,25,"Salt; sulphur; earths and stone; plastering materials, lime and cement",6562176.41
+2021,chapter,26,"Ores, slag and ash",8645.0
+2021,chapter,27,"Mineral fuels, mineral oils and products of their distillation; bituminous substances; mineral waxes",73939605.79
+2021,chapter,28,"Inorganic chemicals; organic or inorganic compounds of precious metals, of rare-earth metals, of radioactive elements or of isotopes",1249174.68
+2021,chapter,29,Organic chemicals,85585.19
+2021,chapter,30,Pharmaceutical products,11434.2
+2021,chapter,32,"Tanning or dyeing extracts; tannins and their derivatives; dyes, pigments and other colouring matter; paints and varnishes; putty and other mastics; inks",544613.06
+2021,chapter,33,"Essential oils and resinoids; perfumery, cosmetic or toilet preparations",1034130.37
+2021,chapter,34,"Soap, organic surface-active agents, washing preparations, lubricating preparations, artificial waxes, prepared waxes, polishing or scouring preparations, candles and similar articles, modeling pastes, dental waxes and dental preparations with a basis of plaster",2969201.7
+2021,chapter,36,Explosives; pyrotechnic products; matches; pyrophoric alloys; certain combustible preparations,166908.04
+2021,chapter,38,Miscellaneous chemical products,2492531.28
+2021,chapter,39,Plastics and articles thereof,3182098.43
+2021,chapter,40,Rubber and articles thereof,139256.15
+2021,chapter,42,"Articles of leather; saddlery and harness; travel goods, handbags and similar containers; articles of animal gut (other than silkworm gut)",76518.61
+2021,chapter,44,Wood and articles of wood; wood charcoal,71512740.34
+2021,chapter,47,Pulp of wood or of other fibrous cellulose material; waste and scrap of paper or paperboard,74355.57
+2021,chapter,48,"Paper and paperboard; articles of paper pulp, of paper or of paperboard",888952.7
+2021,chapter,49,"Printed books, newspapers, pictures and other products of the printing industry; manuscripts, typescripts and plans",39635.6
+2021,chapter,52,Cotton,49830.23
+2021,chapter,56,"Wadding, felt and non-wovens; special yarns, twine, cordage, ropes and cables and articles thereof",55488.13
+2021,chapter,61,"Articles of apparel and clothing accessories, knitted or crocheted",24873.61
+2021,chapter,62,"Articles of apparel and clothing accessories, not knitted or crocheted",450837.28
+2021,chapter,63,Other made up textile articles; sets; worn clothing and worn textile articles; rags,96116.43
+2021,chapter,64,"Footwear, gaiters and the like; parts of such articles",429390.48
+2021,chapter,65,Headgear and parts thereof,4940.0
+2021,chapter,67,Prepared feathers and down and articles made of feathers or of down; artificial flowers; articles of human hair,2940.0
+2021,chapter,68,"Articles of stone, plaster, cement, asbestos, mica or similar materials",710608.46
+2021,chapter,70,Glass and glassware,271072.48
+2021,chapter,71,"Natural or cultured pearls, precious or semi-precious stones, precious metals, metals cladwith precious metal, and articles thereof; imitation jewellery; coin",1856488884.86
+2021,chapter,72,Iron and steel,7330516.77
+2021,chapter,73,Articles of iron or steel,5007054.54
+2021,chapter,74,Copper and articles thereof,919881.56
+2021,chapter,76,Aluminum and articles thereof,1902984.78
+2021,chapter,79,Zinc and articles thereof,60132.66
+2021,chapter,82,"Tools, implements, cutlery, spoons and forks, of base metal; parts thereof of base metal",293675.85
+2021,chapter,83,Miscellaneous articles of base metal,3484.0
+2021,chapter,84,"Nuclear reactors, boilers, machinery and mechanical appliances; parts thereof",67744177.62
+2021,chapter,85,"Electrical machinery and equipment and parts thereof; sound recorders and reproducers, television image and sound recorders and reproducers, and parts and accessories of such articles",3697408.12
+2021,chapter,86,"Railway or tramway locomotives, rolling-stock and parts thereof; railway or tramway track fixtures and fittings and parts thereof; mechanical (including electro-mechanical) traffic signalling equipment of all kinds",16763290.49
+2021,chapter,87,"Vehicles other than railway or tramway rolling stock, and parts and accessories thereof",2320191.81
+2021,chapter,88,"Aircraft, spacecraft, and parts thereof",1702631.66
+2021,chapter,89,"Ships, boats and floating structures",660121.8
+2021,chapter,90,"Optical, photographic, cinematographic, measuring, checking, precision, medical or surgical instruments and apparatus; parts and accessories thereof",3095795.48
+2021,chapter,91,Clocks and watches and parts thereof,360662.07
+2021,chapter,92,Musical instruments; parts and accessories of such articles,18700.0
+2021,chapter,93,Arms and ammunition; parts and accessories thereof,10000.0
+2021,chapter,94,"Furniture; bedding, mattresses, mattress supports, cushions and similar stuffed furnishings; lamps and lighting fittings, not elsewhere specified or included; illuminated signs, illuminated name-plates and the like; prefabricated buildings",297248.92
+2021,chapter,95,"Toys, games and sports requisites; parts and accessories thereof",403645.54
+2021,chapter,96,Miscellaneous manufactured articles,42668.99
+2021,chapter,97,"Works of art, collectors' pieces and antiques",33616.91
+2021,chapter,99,Commodities not specified according to kind,1634368.24
+2021,total,TOTAL,All goods,2291325827.04
+2022,chapter,01,Live animals,2188511.29
+2022,chapter,02,Meat and edible meat offal,2888261.37
+2022,chapter,03,"Fish and crustaceans, molluscs and other aquatic invertebrates",32560438.68
+2022,chapter,04,"Dairy produce; birds' eggs; natural honey; edible products of animal origin, not elsewhere specified or included",101703.72
+2022,chapter,05,"Products of animal origin, not elsewhere specified or included",204077.95
+2022,chapter,06,"Live trees and other plants; bulbs, roots and the like; cut flowers and ornamental foliage",44204.08
+2022,chapter,07,Edible vegetables and certain roots and tubers,624385.94
+2022,chapter,08,Edible fruit and nuts; peel of citrus fruit or melons,1144660.03
+2022,chapter,09,"Coffee, tea, maté and spices",422097.99
+2022,chapter,10,Cereals,25060846.43
+2022,chapter,11,Products of the milling industry; malt; starches; inulin; wheat gluten,334966.29
+2022,chapter,13,"Lac; gums, resins and other vegetable saps and extracts",79013.89
+2022,chapter,14,Vegetable plaiting materials; vegetable products not elsewhere specified or included,2086.77
+2022,chapter,15,Animal or vegetable fats and oils and their cleavage products; prepared edible fats; animal or vegetable waxes,3144477.07
+2022,chapter,16,"Preparations of meat, of fish or of crustaceans, molluscs or other aquatic invertebrates",248502.11
+2022,chapter,17,Sugars and sugar confectionery,383163.89
+2022,chapter,18,Cocoa and cocoa preparations,381869.38
+2022,chapter,19,"Preparations of cereals, flour, starch or milk; pastrycooks' products",632590.86
+2022,chapter,20,"Preparations of vegetables, fruit, nuts or other parts of plants",368757.26
+2022,chapter,21,Miscellaneous edible preparations,3460229.24
+2022,chapter,22,"Beverages, spirits and vinegar",25435484.99
+2022,chapter,23,Residues and waste from the food industries; prepared animal fodder,298578.83
+2022,chapter,24,Tobacco and manufactured tobacco substitutes,38812381.85
+2022,chapter,25,"Salt; sulphur; earths and stone; plastering materials, lime and cement",4297198.93
+2022,chapter,26,"Ores, slag and ash",5460.0
+2022,chapter,27,"Mineral fuels, mineral oils and products of their distillation; bituminous substances; mineral waxes",198641621.04
+2022,chapter,28,"Inorganic chemicals; organic or inorganic compounds of precious metals, of rare-earth metals, of radioactive elements or of isotopes",1614329.9
+2022,chapter,29,Organic chemicals,161775.23
+2022,chapter,30,Pharmaceutical products,10742.24
+2022,chapter,32,"Tanning or dyeing extracts; tannins and their derivatives; dyes, pigments and other colouring matter; paints and varnishes; putty and other mastics; inks",805703.81
+2022,chapter,33,"Essential oils and resinoids; perfumery, cosmetic or toilet preparations",1364582.98
+2022,chapter,34,"Soap, organic surface-active agents, washing preparations, lubricating preparations, artificial waxes, prepared waxes, polishing or scouring preparations, candles and similar articles, modeling pastes, dental waxes and dental preparations with a basis of plaster",3465257.81
+2022,chapter,35,Albuminoidal substances; modified starches; glues; enzymes,159197.9
+2022,chapter,36,Explosives; pyrotechnic products; matches; pyrophoric alloys; certain combustible preparations,79147.03
+2022,chapter,37,Photographic or cinematographic goods,3804.58
+2022,chapter,38,Miscellaneous chemical products,4988983.86
+2022,chapter,39,Plastics and articles thereof,3238516.13
+2022,chapter,40,Rubber and articles thereof,497948.36
+2022,chapter,41,Raw hides and skins (other than fur skins) and leather,37296.0
+2022,chapter,42,"Articles of leather; saddlery and harness; travel goods, handbags and similar containers; articles of animal gut (other than silkworm gut)",85415.71
+2022,chapter,44,Wood and articles of wood; wood charcoal,85767173.47
+2022,chapter,47,Pulp of wood or of other fibrous cellulose material; waste and scrap of paper or paperboard,40652.0
+2022,chapter,48,"Paper and paperboard; articles of paper pulp, of paper or of paperboard",167076.41
+2022,chapter,49,"Printed books, newspapers, pictures and other products of the printing industry; manuscripts, typescripts and plans",56541.58
+2022,chapter,53,Other vegetable textile fibers; paper yarn and woven fabric of paper yarn,5985.0
+2022,chapter,54,Man-made filaments,22892.22
+2022,chapter,56,"Wadding, felt and non-wovens; special yarns, twine, cordage, ropes and cables and articles thereof",39026.64
+2022,chapter,59,"Impregnated, coated, covered or laminated textile fabrics; textile articles of a kind suitable for industrial use",2571.2
+2022,chapter,61,"Articles of apparel and clothing accessories, knitted or crocheted",50771.43
+2022,chapter,62,"Articles of apparel and clothing accessories, not knitted or crocheted",381005.96
+2022,chapter,63,Other made up textile articles; sets; worn clothing and worn textile articles; rags,165012.68
+2022,chapter,64,"Footwear, gaiters and the like; parts of such articles",482011.89
+2022,chapter,65,Headgear and parts thereof,11871.75
+2022,chapter,66,"Umbrellas, sun umbrellas, walking sticks, seat sticks, whips, riding-crops and parts thereof",2650.0
+2022,chapter,67,Prepared feathers and down and articles made of feathers or of down; artificial flowers; articles of human hair,12328.73
+2022,chapter,68,"Articles of stone, plaster, cement, asbestos, mica or similar materials",118694.2
+2022,chapter,69,Ceramic products,117741.99
+2022,chapter,70,Glass and glassware,211014.24
+2022,chapter,71,"Natural or cultured pearls, precious or semi-precious stones, precious metals, metals cladwith precious metal, and articles thereof; imitation jewellery; coin",2137377499.59
+2022,chapter,72,Iron and steel,5673151.4
+2022,chapter,73,Articles of iron or steel,19661151.43
+2022,chapter,74,Copper and articles thereof,2630362.69
+2022,chapter,76,Aluminum and articles thereof,1686290.06
+2022,chapter,78,Lead and articles thereof,115440.0
+2022,chapter,82,"Tools, implements, cutlery, spoons and forks, of base metal; parts thereof of base metal",1603652.83
+2022,chapter,83,Miscellaneous articles of base metal,17053.43
+2022,chapter,84,"Nuclear reactors, boilers, machinery and mechanical appliances; parts thereof",145811730.49
+2022,chapter,85,"Electrical machinery and equipment and parts thereof; sound recorders and reproducers, television image and sound recorders and reproducers, and parts and accessories of such articles",8087105.91
+2022,chapter,86,"Railway or tramway locomotives, rolling-stock and parts thereof; railway or tramway track fixtures and fittings and parts thereof; mechanical (including electro-mechanical) traffic signalling equipment of all kinds",15697846.24
+2022,chapter,87,"Vehicles other than railway or tramway rolling stock, and parts and accessories thereof",13102025.91
+2022,chapter,88,"Aircraft, spacecraft, and parts thereof",5730330.0
+2022,chapter,89,"Ships, boats and floating structures",175328.0
+2022,chapter,90,"Optical, photographic, cinematographic, measuring, checking, precision, medical or surgical instruments and apparatus; parts and accessories thereof",26314225.94
+2022,chapter,91,Clocks and watches and parts thereof,146400.09
+2022,chapter,93,Arms and ammunition; parts and accessories thereof,9500.0
+2022,chapter,94,"Furniture; bedding, mattresses, mattress supports, cushions and similar stuffed furnishings; lamps and lighting fittings, not elsewhere specified or included; illuminated signs, illuminated name-plates and the like; prefabricated buildings",3958469.75
+2022,chapter,95,"Toys, games and sports requisites; parts and accessories thereof",551644.96
+2022,chapter,96,Miscellaneous manufactured articles,779614.66
+2022,chapter,97,"Works of art, collectors' pieces and antiques",20850.82
+2022,chapter,99,Commodities not specified according to kind,1199409.59
+2022,total,TOTAL,All goods,2836282376.6
+2023,chapter,01,Live animals,1026357.888
+2023,chapter,02,Meat and edible meat offal,4693525.751
+2023,chapter,03,"Fish and crustaceans, molluscs and other aquatic invertebrates",39294222.386
+2023,chapter,04,"Dairy produce; birds' eggs; natural honey; edible products of animal origin, not elsewhere specified or included",237790.79
+2023,chapter,05,"Products of animal origin, not elsewhere specified or included",2743272.955
+2023,chapter,07,Edible vegetables and certain roots and tubers,648361.176
+2023,chapter,08,Edible fruit and nuts; peel of citrus fruit or melons,2068294.612
+2023,chapter,09,"Coffee, tea, maté and spices",364513.213
+2023,chapter,10,Cereals,26856609.865
+2023,chapter,11,Products of the milling industry; malt; starches; inulin; wheat gluten,401732.477
+2023,chapter,15,Animal or vegetable fats and oils and their cleavage products; prepared edible fats; animal or vegetable waxes,6043835.879
+2023,chapter,16,"Preparations of meat, of fish or of crustaceans, molluscs or other aquatic invertebrates",287087.193
+2023,chapter,17,Sugars and sugar confectionery,123369.003
+2023,chapter,18,Cocoa and cocoa preparations,975440.204
+2023,chapter,19,"Preparations of cereals, flour, starch or milk; pastrycooks' products",500694.357
+2023,chapter,20,"Preparations of vegetables, fruit, nuts or other parts of plants",556603.94
+2023,chapter,21,Miscellaneous edible preparations,3224575.848
+2023,chapter,22,"Beverages, spirits and vinegar",32006323.48
+2023,chapter,23,Residues and waste from the food industries; prepared animal fodder,326324.45
+2023,chapter,24,Tobacco and manufactured tobacco substitutes,44165323.899
+2023,chapter,25,"Salt; sulphur; earths and stone; plastering materials, lime and cement",15542007.918
+2023,chapter,26,"Ores, slag and ash",133643296.934
+2023,chapter,27,"Mineral fuels, mineral oils and products of their distillation; bituminous substances; mineral waxes",539112.825
+2023,chapter,28,"Inorganic chemicals; organic or inorganic compounds of precious metals, of rare-earth metals, of radioactive elements or of isotopes",26149371.842
+2023,chapter,30,Pharmaceutical products,34627.635
+2023,chapter,31,Fertilisers,651546.541
+2023,chapter,33,"Essential oils and resinoids; perfumery, cosmetic or toilet preparations",1492977.739
+2023,chapter,34,"Soap, organic surface-active agents, washing preparations, lubricating preparations, artificial waxes, prepared waxes, polishing or scouring preparations, candles and similar articles, modeling pastes, dental waxes and dental preparations with a basis of plaster",3191141.488
+2023,chapter,35,Albuminoidal substances; modified starches; glues; enzymes,173822.118
+2023,chapter,37,Photographic or cinematographic goods,1702104.668
+2023,chapter,38,Miscellaneous chemical products,5950178.879
+2023,chapter,39,Plastics and articles thereof,3336741.319
+2023,chapter,40,Rubber and articles thereof,781379.144
+2023,chapter,41,Raw hides and skins (other than fur skins) and leather,61881.058
+2023,chapter,42,"Articles of leather; saddlery and harness; travel goods, handbags and similar containers; articles of animal gut (other than silkworm gut)",84124.763
+2023,chapter,44,Wood and articles of wood; wood charcoal,74589350.922
+2023,chapter,46,"Manufactures of straw, of esparto or of other plaiting materials; basket ware and wickerwork",118232.733
+2023,chapter,48,"Paper and paperboard; articles of paper pulp, of paper or of paperboard",318125.855
+2023,chapter,49,"Printed books, newspapers, pictures and other products of the printing industry; manuscripts, typescripts and plans",65822.634
+2023,chapter,57,Carpets and other textile floor coverings,12440.624
+2023,chapter,61,"Articles of apparel and clothing accessories, knitted or crocheted",216827.659
+2023,chapter,62,"Articles of apparel and clothing accessories, not knitted or crocheted",421111.029
+2023,chapter,63,Other made up textile articles; sets; worn clothing and worn textile articles; rags,166908.028
+2023,chapter,64,"Footwear, gaiters and the like; parts of such articles",443797.617
+2023,chapter,65,Headgear and parts thereof,12259.892
+2023,chapter,68,"Articles of stone, plaster, cement, asbestos, mica or similar materials",2356579.136
+2023,chapter,69,Ceramic products,11872.906
+2023,chapter,70,Glass and glassware,70409.232
+2023,chapter,71,"Natural or cultured pearls, precious or semi-precious stones, precious metals, metals cladwith precious metal, and articles thereof; imitation jewellery; coin",1710062963.641
+2023,chapter,72,Iron and steel,7062267.641
+2023,chapter,73,Articles of iron or steel,19057459.52
+2023,chapter,74,Copper and articles thereof,2753864.332
+2023,chapter,76,Aluminum and articles thereof,1280577.134
+2023,chapter,78,Lead and articles thereof,506157.237
+2023,chapter,82,"Tools, implements, cutlery, spoons and forks, of base metal; parts thereof of base metal",572414.831
+2023,chapter,83,Miscellaneous articles of base metal,21346.883
+2023,chapter,84,"Nuclear reactors, boilers, machinery and mechanical appliances; parts thereof",103117263.249
+2023,chapter,85,"Electrical machinery and equipment and parts thereof; sound recorders and reproducers, television image and sound recorders and reproducers, and parts and accessories of such articles",5781203.608
+2023,chapter,86,"Railway or tramway locomotives, rolling-stock and parts thereof; railway or tramway track fixtures and fittings and parts thereof; mechanical (including electro-mechanical) traffic signalling equipment of all kinds",4017576.774
+2023,chapter,87,"Vehicles other than railway or tramway rolling stock, and parts and accessories thereof",3540889.843
+2023,chapter,88,"Aircraft, spacecraft, and parts thereof",5455082.835
+2023,chapter,89,"Ships, boats and floating structures",621970.956
+2023,chapter,90,"Optical, photographic, cinematographic, measuring, checking, precision, medical or surgical instruments and apparatus; parts and accessories thereof",5012937.311
+2023,chapter,91,Clocks and watches and parts thereof,11642.5
+2023,chapter,92,Musical instruments; parts and accessories of such articles,130891.754
+2023,chapter,93,Arms and ammunition; parts and accessories thereof,25213.895
+2023,chapter,94,"Furniture; bedding, mattresses, mattress supports, cushions and similar stuffed furnishings; lamps and lighting fittings, not elsewhere specified or included; illuminated signs, illuminated name-plates and the like; prefabricated buildings",606006.5
+2023,chapter,95,"Toys, games and sports requisites; parts and accessories thereof",230653.912
+2023,chapter,96,Miscellaneous manufactured articles,649231.659
+2023,chapter,97,"Works of art, collectors' pieces and antiques",33097.675
+2023,chapter,99,Commodities not specified according to kind,1666771.8
+2023,total,TOTAL,All goods,2310899797.996
+2024,chapter,01,Live animals,1038344.806
+2024,chapter,02,Meat and edible meat offal,5303430.568
+2024,chapter,03,"Fish and crustaceans, molluscs and other aquatic invertebrates",40492147.953
+2024,chapter,04,"Dairy produce; birds' eggs; natural honey; edible products of animal origin, not elsewhere specified or included",78921.239
+2024,chapter,05,"Products of animal origin, not elsewhere specified or included",2638972.5
+2024,chapter,06,"Live trees and other plants; bulbs, roots and the like; cut flowers and ornamental foliage",95412.382
+2024,chapter,07,Edible vegetables and certain roots and tubers,933468.767
+2024,chapter,08,Edible fruit and nuts; peel of citrus fruit or melons,1530686.385
+2024,chapter,09,"Coffee, tea, maté and spices",552811.558
+2024,chapter,10,Cereals,30129428.718
+2024,chapter,11,Products of the milling industry; malt; starches; inulin; wheat gluten,242739.346
+2024,chapter,12,"Oil seeds and oleaginous fruits; miscellaneous grains, seeds and fruits; industrial or medicinal plants; straw and fodder",16400.0
+2024,chapter,13,"Lac; gums, resins and other vegetable saps and extracts",41250.903
+2024,chapter,15,Animal or vegetable fats and oils and their cleavage products; prepared edible fats; animal or vegetable waxes,5369504.268
+2024,chapter,16,"Preparations of meat, of fish or of crustaceans, molluscs or other aquatic invertebrates",248088.297
+2024,chapter,17,Sugars and sugar confectionery,82658.217
+2024,chapter,18,Cocoa and cocoa preparations,604711.818
+2024,chapter,19,"Preparations of cereals, flour, starch or milk; pastrycooks' products",636867.491
+2024,chapter,20,"Preparations of vegetables, fruit, nuts or other parts of plants",890070.531
+2024,chapter,21,Miscellaneous edible preparations,4635788.473
+2024,chapter,22,"Beverages, spirits and vinegar",31961238.728
+2024,chapter,23,Residues and waste from the food industries; prepared animal fodder,315533.851
+2024,chapter,24,Tobacco and manufactured tobacco substitutes,29065388.682
+2024,chapter,25,"Salt; sulphur; earths and stone; plastering materials, lime and cement",46527138.841
+2024,chapter,26,"Ores, slag and ash",30642.0
+2024,chapter,27,"Mineral fuels, mineral oils and products of their distillation; bituminous substances; mineral waxes",45164260.014
+2024,chapter,28,"Inorganic chemicals; organic or inorganic compounds of precious metals, of rare-earth metals, of radioactive elements or of isotopes",22041612.424
+2024,chapter,29,Organic chemicals,152598.576
+2024,chapter,30,Pharmaceutical products,59333.087
+2024,chapter,31,Fertilisers,37860.2
+2024,chapter,32,"Tanning or dyeing extracts; tannins and their derivatives; dyes, pigments and other colouring matter; paints and varnishes; putty and other mastics; inks",1049978.889
+2024,chapter,33,"Essential oils and resinoids; perfumery, cosmetic or toilet preparations",1907232.712
+2024,chapter,34,"Soap, organic surface-active agents, washing preparations, lubricating preparations, artificial waxes, prepared waxes, polishing or scouring preparations, candles and similar articles, modeling pastes, dental waxes and dental preparations with a basis of plaster",2630612.152
+2024,chapter,35,Albuminoidal substances; modified starches; glues; enzymes,2011.75
+2024,chapter,36,Explosives; pyrotechnic products; matches; pyrophoric alloys; certain combustible preparations,108831.989
+2024,chapter,37,Photographic or cinematographic goods,235673.956
+2024,chapter,38,Miscellaneous chemical products,5077217.87
+2024,chapter,39,Plastics and articles thereof,2366549.324
+2024,chapter,40,Rubber and articles thereof,769701.464
+2024,chapter,42,"Articles of leather; saddlery and harness; travel goods, handbags and similar containers; articles of animal gut (other than silkworm gut)",129604.093
+2024,chapter,44,Wood and articles of wood; wood charcoal,81255411.646
+2024,chapter,47,Pulp of wood or of other fibrous cellulose material; waste and scrap of paper or paperboard,55260.0
+2024,chapter,48,"Paper and paperboard; articles of paper pulp, of paper or of paperboard",282752.705
+2024,chapter,49,"Printed books, newspapers, pictures and other products of the printing industry; manuscripts, typescripts and plans",125603.676
+2024,chapter,56,"Wadding, felt and non-wovens; special yarns, twine, cordage, ropes and cables and articles thereof",88973.539
+2024,chapter,57,Carpets and other textile floor coverings,1013.74
+2024,chapter,59,"Impregnated, coated, covered or laminated textile fabrics; textile articles of a kind suitable for industrial use",1052.092
+2024,chapter,61,"Articles of apparel and clothing accessories, knitted or crocheted",306834.328
+2024,chapter,62,"Articles of apparel and clothing accessories, not knitted or crocheted",191644.255
+2024,chapter,63,Other made up textile articles; sets; worn clothing and worn textile articles; rags,243378.7
+2024,chapter,64,"Footwear, gaiters and the like; parts of such articles",376117.069
+2024,chapter,65,Headgear and parts thereof,65071.99
+2024,chapter,66,"Umbrellas, sun umbrellas, walking sticks, seat sticks, whips, riding-crops and parts thereof",1605.541
+2024,chapter,68,"Articles of stone, plaster, cement, asbestos, mica or similar materials",3799788.784
+2024,chapter,69,Ceramic products,207011.845
+2024,chapter,70,Glass and glassware,64084.127
+2024,chapter,71,"Natural or cultured pearls, precious or semi-precious stones, precious metals, metals cladwith precious metal, and articles thereof; imitation jewellery; coin",1006149027.616
+2024,chapter,72,Iron and steel,4680082.38
+2024,chapter,73,Articles of iron or steel,9674731.167
+2024,chapter,74,Copper and articles thereof,2423803.0
+2024,chapter,76,Aluminum and articles thereof,1400225.679
+2024,chapter,78,Lead and articles thereof,1050961.021
+2024,chapter,81,Other base metals; cermets; articles thereof,151899.11
+2024,chapter,82,"Tools, implements, cutlery, spoons and forks, of base metal; parts thereof of base metal",1403322.451
+2024,chapter,83,Miscellaneous articles of base metal,383684.482
+2024,chapter,84,"Nuclear reactors, boilers, machinery and mechanical appliances; parts thereof",50228030.947
+2024,chapter,85,"Electrical machinery and equipment and parts thereof; sound recorders and reproducers, television image and sound recorders and reproducers, and parts and accessories of such articles",6195807.13
+2024,chapter,86,"Railway or tramway locomotives, rolling-stock and parts thereof; railway or tramway track fixtures and fittings and parts thereof; mechanical (including electro-mechanical) traffic signalling equipment of all kinds",6305696.731
+2024,chapter,87,"Vehicles other than railway or tramway rolling stock, and parts and accessories thereof",4591184.891
+2024,chapter,88,"Aircraft, spacecraft, and parts thereof",1562367.648
+2024,chapter,89,"Ships, boats and floating structures",1037444.873
+2024,chapter,90,"Optical, photographic, cinematographic, measuring, checking, precision, medical or surgical instruments and apparatus; parts and accessories thereof",10740296.518
+2024,chapter,91,Clocks and watches and parts thereof,3024.0
+2024,chapter,92,Musical instruments; parts and accessories of such articles,12348.57
+2024,chapter,93,Arms and ammunition; parts and accessories thereof,2600.0
+2024,chapter,94,"Furniture; bedding, mattresses, mattress supports, cushions and similar stuffed furnishings; lamps and lighting fittings, not elsewhere specified or included; illuminated signs, illuminated name-plates and the like; prefabricated buildings",797582.484
+2024,chapter,95,"Toys, games and sports requisites; parts and accessories thereof",273499.181
+2024,chapter,96,Miscellaneous manufactured articles,485847.329
+2024,chapter,97,"Works of art, collectors' pieces and antiques",34545.191
+2024,chapter,99,Commodities not specified according to kind,2309846.708
+2024,total,TOTAL,All goods,1484158187.965
+2025,chapter,01,Live animals,485502.298
+2025,chapter,02,Meat and edible meat offal,1747664.903
+2025,chapter,03,"Fish and crustaceans, molluscs and other aquatic invertebrates",39809988.419
+2025,chapter,04,"Dairy produce; birds' eggs; natural honey; edible products of animal origin, not elsewhere specified or included",324715.221
+2025,chapter,05,"Products of animal origin, not elsewhere specified or included",4772716.88
+2025,chapter,06,"Live trees and other plants; bulbs, roots and the like; cut flowers and ornamental foliage",4690.571
+2025,chapter,07,Edible vegetables and certain roots and tubers,810413.126
+2025,chapter,08,Edible fruit and nuts; peel of citrus fruit or melons,1372457.75
+2025,chapter,09,"Coffee, tea, maté and spices",516180.238
+2025,chapter,10,Cereals,25026364.88
+2025,chapter,11,Products of the milling industry; malt; starches; inulin; wheat gluten,101396.927
+2025,chapter,12,"Oil seeds and oleaginous fruits; miscellaneous grains, seeds and fruits; industrial or medicinal plants; straw and fodder",1700.0
+2025,chapter,13,"Lac; gums, resins and other vegetable saps and extracts",5955195.652
+2025,chapter,15,Animal or vegetable fats and oils and their cleavage products; prepared edible fats; animal or vegetable waxes,161142.581
+2025,chapter,16,"Preparations of meat, of fish or of crustaceans, molluscs or other aquatic invertebrates",241464.676
+2025,chapter,17,Sugars and sugar confectionery,254332.904
+2025,chapter,18,Cocoa and cocoa preparations,463026.012
+2025,chapter,19,"Preparations of cereals, flour, starch or milk; pastrycooks' products",654552.302
+2025,chapter,20,"Preparations of vegetables, fruit, nuts or other parts of plants",497301.835
+2025,chapter,21,Miscellaneous edible preparations,5804243.426
+2025,chapter,22,"Beverages, spirits and vinegar",6822597.277
+2025,chapter,23,Residues and waste from the food industries; prepared animal fodder,332023.72
+2025,chapter,24,Tobacco and manufactured tobacco substitutes,4239106.249
+2025,chapter,25,"Salt; sulphur; earths and stone; plastering materials, lime and cement",13435108.85
+2025,chapter,26,"Ores, slag and ash",69183912.731
+2025,chapter,27,"Mineral fuels, mineral oils and products of their distillation; bituminous substances; mineral waxes",134816.365
+2025,chapter,28,"Inorganic chemicals; organic or inorganic compounds of precious metals, of rare-earth metals, of radioactive elements or of isotopes",684508.32
+2025,chapter,30,Pharmaceutical products,47249.211
+2025,chapter,31,Fertilisers,959430.99
+2025,chapter,33,"Essential oils and resinoids; perfumery, cosmetic or toilet preparations",981016.67
+2025,chapter,34,"Soap, organic surface-active agents, washing preparations, lubricating preparations, artificial waxes, prepared waxes, polishing or scouring preparations, candles and similar articles, modeling pastes, dental waxes and dental preparations with a basis of plaster",2043688.211
+2025,chapter,35,Albuminoidal substances; modified starches; glues; enzymes,13574.9
+2025,chapter,36,Explosives; pyrotechnic products; matches; pyrophoric alloys; certain combustible preparations,11715392.335
+2025,chapter,38,Miscellaneous chemical products,165615.188
+2025,chapter,39,Plastics and articles thereof,1848712.863
+2025,chapter,40,Rubber and articles thereof,242161.052
+2025,chapter,41,Raw hides and skins (other than fur skins) and leather,37513.11
+2025,chapter,42,"Articles of leather; saddlery and harness; travel goods, handbags and similar containers; articles of animal gut (other than silkworm gut)",13824.67
+2025,chapter,44,Wood and articles of wood; wood charcoal,54940939.681
+2025,chapter,45,Cork and articles of cork,70418.0
+2025,chapter,48,"Paper and paperboard; articles of paper pulp, of paper or of paperboard",293121.845
+2025,chapter,49,"Printed books, newspapers, pictures and other products of the printing industry; manuscripts, typescripts and plans",278531.491
+2025,chapter,51,"Wool, fine or coarse animal hair; horsehair yarn and woven fabric",11270.0
+2025,chapter,55,Man-made staple fibers,30829.138
+2025,chapter,56,"Wadding, felt and non-wovens; special yarns, twine, cordage, ropes and cables and articles thereof",17395.591
+2025,chapter,57,Carpets and other textile floor coverings,4602.0
+2025,chapter,58,"Special woven fabrics; tufted textile fabrics; lace, tapestries; trimmings; embroidery",9783.12
+2025,chapter,59,"Impregnated, coated, covered or laminated textile fabrics; textile articles of a kind suitable for industrial use",11456.3
+2025,chapter,61,"Articles of apparel and clothing accessories, knitted or crocheted",125147.47
+2025,chapter,62,"Articles of apparel and clothing accessories, not knitted or crocheted",114340.409
+2025,chapter,63,Other made up textile articles; sets; worn clothing and worn textile articles; rags,217343.639
+2025,chapter,64,"Footwear, gaiters and the like; parts of such articles",326754.522
+2025,chapter,65,Headgear and parts thereof,4647.5
+2025,chapter,66,"Umbrellas, sun umbrellas, walking sticks, seat sticks, whips, riding-crops and parts thereof",3005007.89
+2025,chapter,68,"Articles of stone, plaster, cement, asbestos, mica or similar materials",13523.658
+2025,chapter,69,Ceramic products,69716.43
+2025,chapter,70,Glass and glassware,26210.0
+2025,chapter,71,"Natural or cultured pearls, precious or semi-precious stones, precious metals, metals cladwith precious metal, and articles thereof; imitation jewellery; coin",2988978781.206
+2025,chapter,72,Iron and steel,4069835.604
+2025,chapter,73,Articles of iron or steel,7262028.321
+2025,chapter,74,Copper and articles thereof,2921648.765
+2025,chapter,75,Nickel and articles thereof,1006688.135
+2025,chapter,76,Aluminum and articles thereof,1439412.198
+2025,chapter,80,Tin and articles thereof,1837316.723
+2025,chapter,82,"Tools, implements, cutlery, spoons and forks, of base metal; parts thereof of base metal",448471.347
+2025,chapter,83,Miscellaneous articles of base metal,23944.178
+2025,chapter,84,"Nuclear reactors, boilers, machinery and mechanical appliances; parts thereof",50020011.337
+2025,chapter,85,"Electrical machinery and equipment and parts thereof; sound recorders and reproducers, television image and sound recorders and reproducers, and parts and accessories of such articles",5236484.249
+2025,chapter,86,"Railway or tramway locomotives, rolling-stock and parts thereof; railway or tramway track fixtures and fittings and parts thereof; mechanical (including electro-mechanical) traffic signalling equipment of all kinds",1833692.998
+2025,chapter,87,"Vehicles other than railway or tramway rolling stock, and parts and accessories thereof",2323426.792
+2025,chapter,88,"Aircraft, spacecraft, and parts thereof",851884.628
+2025,chapter,89,"Ships, boats and floating structures",84806.912
+2025,chapter,90,"Optical, photographic, cinematographic, measuring, checking, precision, medical or surgical instruments and apparatus; parts and accessories thereof",19641444.605
+2025,chapter,92,Musical instruments; parts and accessories of such articles,833945.798
+2025,chapter,93,Arms and ammunition; parts and accessories thereof,1600.0
+2025,chapter,94,"Furniture; bedding, mattresses, mattress supports, cushions and similar stuffed furnishings; lamps and lighting fittings, not elsewhere specified or included; illuminated signs, illuminated name-plates and the like; prefabricated buildings",517406.101
+2025,chapter,95,"Toys, games and sports requisites; parts and accessories thereof",256730.31
+2025,chapter,96,Miscellaneous manufactured articles,800541.844
+2025,chapter,97,"Works of art, collectors' pieces and antiques",78786.896
+2025,chapter,99,Commodities not specified according to kind,2527741.799
+2025,total,TOTAL,All goods,3354472972.738

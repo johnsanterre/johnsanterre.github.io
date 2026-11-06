@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Skills: Week 8 - BiGi Data">
+<meta name="robots" content="noindex, nofollow">
+<title data-en="Skills: Week 8 - BiGi Data" data-nl="Vaardigheden: Week 8 - BiGi Data">Skills: Week 8 - BiGi Data</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;650;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/lang.js"></script>
+</head>
+<body>
+<header class="nav-header"><div class="container">
+<a href="../index.html" class="site-title"><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><polygon fill="#ecc81d" points="50,4 61,38 97,38 68,59 79,94 50,73 21,94 32,59 3,38 39,38"/></svg>BiGi Data</a>
+<nav class="nav-links"><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a>
+<button id="lang-btn" class="lang-btn" type="button">Nederlands</button></nav>
+</div></header>
+<div class="stripes"></div>
+<section class="page-hero" style="background-image:url(../assets/img/forest.jpg)"><div class="container">
+<nav class="breadcrumb"><a href="../index.html"><span lang="en">Home</span><span lang="nl">Home</span></a><span class="separator">/</span><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a><span class="separator">/</span><a href="index.html"><span lang="en">Week 8</span><span lang="nl">Week 8</span></a><span class="separator">/</span><span><span lang="en">Skills</span><span lang="nl">Vaardigheden</span></span></nav>
+<h1 lang="en">Skills, week 8: version control and sharing work</h1>
+<h1 lang="nl">Vaardigheden, week 8: versiebeheer en werk delen</h1>
+
+    <p lang="en" class="muted">About 10 hours across the week, at your own pace.</p>
+<p lang="nl" class="muted">Ongeveer 10 uur verspreid over de week, in je eigen tempo.</p>
+
+
+    </div></section>
+<main><div class="container">
+<h2 lang="en">What you will be able to do</h2>
+<h2 lang="nl">Wat je na deze week kunt</h2>
+
+    <ul>
+<li><span lang="en">Explain what a commit records, and why a history of commits serves a team better than a folder of copies.</span><span lang="nl">Uitleggen wat een commit vastlegt, en waarom een geschiedenis van commits een team beter dient dan een map met kopieën.</span></li>
+<li><span lang="en">Start a repository, stage and commit files, and read <code>git status</code> to choose the next command.</span><span lang="nl">Een repository starten, bestanden klaarzetten en committen, en <code>git status</code> lezen om de volgende opdracht te kiezen.</span></li>
+<li><span lang="en">Read a diff, including its hunk header.</span><span lang="nl">Een diff lezen, inclusief de hunk-header.</span></li>
+<li><span lang="en">Write commit messages whose subject says what changed and whose body says why.</span><span lang="nl">Commitberichten schrijven waarvan de onderwerpregel zegt wat er veranderde en de toelichting waarom.</span></li>
+<li><span lang="en">Use the history to find the version of an analysis that produced a number in a report, and tag it.</span><span lang="nl">De geschiedenis gebruiken om de versie van een analyse te vinden die een getal in een rapport opleverde, en die een tag geven.</span></li>
+<li><span lang="en">Work on a branch, merge it, and share commits with a team through push and pull, resolving a conflict when two people change one line.</span><span lang="nl">Op een branch werken, die mergen, en commits met een team delen via push en pull, en een conflict oplossen als twee mensen één regel veranderen.</span></li>
+<li><span lang="en">Write a README that lets a stranger understand and run a project.</span><span lang="nl">Een README schrijven waarmee een buitenstaander een project begrijpt en kan uitvoeren.</span></li>
+<li><span lang="en">Recognise an AI-suggested command that would erase shared history or publish a secret, before anyone runs it.</span><span lang="nl">Een door een AI voorgestelde opdracht herkennen die gedeelde geschiedenis zou wissen of een geheim zou publiceren, voordat iemand hem uitvoert.</span></li>
+</ul>
+
+
+    <h2 lang="en">Why a history beats a folder of copies</h2>
+<h2 lang="nl">Waarom een geschiedenis beter is dan een map met kopieën</h2>
+
+    <p lang="en">Most people keep versions by copying files: report.docx, report_v2.docx, report_final.docx. The copies keep the old text. They lose the rest: which lines changed between two versions, why they changed, who changed them and when.</p>
+<p lang="nl">De meeste mensen bewaren versies door bestanden te kopiëren: rapport.docx, rapport_v2.docx, rapport_definitief.docx. De kopieën bewaren de oude tekst. De rest raken ze kwijt: welke regels tussen twee versies veranderden, waarom, wie ze veranderde en wanneer.</p>
+
+    <p lang="en">Git keeps a project's history as a chain of snapshots called commits. Each commit records the state of every file in the project, a message, the author and the time. Because each commit knows the one before it, git can show the exact difference between any two versions, bring back any earlier state, and say who last changed any line.</p>
+<p lang="nl">Git bewaart de geschiedenis van een project als een keten van momentopnamen die commits heten. Elke commit legt de toestand van elk bestand in het project vast, met een bericht, de auteur en het tijdstip. Omdat elke commit de vorige kent, kan git het precieze verschil tussen twee versies tonen, elke eerdere toestand terughalen, en zeggen wie een regel het laatst veranderde.</p>
+
+    <p lang="en">Git and GitHub are two different things. Git is the program that keeps the history on your own computer, with no internet needed. GitHub is a website that keeps a copy of the history online and adds the parts that involve other people: accounts, permissions, pull requests and pages anyone can read.</p>
+<p lang="nl">Git en GitHub zijn twee verschillende dingen. Git is het programma dat de geschiedenis op je eigen computer bijhoudt, en het heeft geen internet nodig. GitHub is een website die een kopie van de geschiedenis online bewaart en de onderdelen toevoegt waar andere mensen bij komen kijken: accounts, rechten, pull requests en pagina's die iedereen kan lezen.</p>
+
+
+    <h2 lang="en">Four places a change can be</h2>
+<h2 lang="nl">Vier plekken waar een wijziging kan zijn</h2>
+
+    <p lang="en">A change moves through four places, and each git command moves it one step.</p>
+<p lang="nl">Een wijziging gaat langs vier plekken, en elke git-opdracht brengt haar één stap verder.</p>
+
+    <ul>
+<li><span lang="en"><b>The working folder</b> holds the files as they are on disk right now.</span><span lang="nl"><b>De werkmap</b> bevat de bestanden zoals ze nu op de schijf staan.</span></li>
+<li><span lang="en"><b>The staging area</b> holds the changes you chose for the next commit, and <code>git add</code> puts a file there.</span><span lang="nl"><b>De staging area</b> bevat de wijzigingen die je voor de volgende commit hebt gekozen, en <code>git add</code> zet een bestand daar.</span></li>
+<li><span lang="en"><b>The repository</b> holds the history, and <code>git commit</code> turns everything staged into one snapshot.</span><span lang="nl"><b>De repository</b> bevat de geschiedenis, en <code>git commit</code> maakt van alles wat klaarstaat één momentopname.</span></li>
+<li><span lang="en"><b>The remote</b> is the shared copy, usually on GitHub and named <code>origin</code>. <code>git push</code> sends your new commits there, and <code>git pull</code> brings down commits that others pushed.</span><span lang="nl"><b>De remote</b> is de gedeelde kopie, meestal op GitHub en met de naam <code>origin</code>. <code>git push</code> stuurt je nieuwe commits daarheen, en <code>git pull</code> haalt commits op die anderen pushten.</span></li>
+</ul>
+
+    <p lang="en">Nothing is in a commit until you add it, and nothing reaches your team until you push. <code>git status</code> says where every file stands and, in its own words, which command comes next. Read it before every commit.</p>
+<p lang="nl">Niets zit in een commit voordat je het toevoegt, en niets bereikt je team voordat je pusht. <code>git status</code> zegt waar elk bestand staat en, in eigen woorden, welke opdracht daarna komt. Lees het vóór elke commit.</p>
+
+
+    <h2 lang="en">Reading a diff</h2>
+<h2 lang="nl">Een diff lezen</h2>
+
+    <p lang="en">A diff shows only the lines that differ between two versions of a file. A line that starts with a minus sign was removed, and a line that starts with a plus sign was added. An edited line shows up as one of each.</p>
+<p lang="nl">Een diff laat alleen de regels zien die tussen twee versies van een bestand verschillen. Een regel die begint met een minteken is verwijderd, en een regel die begint met een plusteken is toegevoegd. Een bewerkte regel verschijnt als één van elk.</p>
+
+    <p lang="en">Above each block of changes sits a hunk header such as <code>@@ -12,4 +12,5 @@</code>. The block starts at line 12 in both files. It runs for four lines in the old file and for five in the new one.</p>
+<p lang="nl">Boven elk blok wijzigingen staat een hunk-header zoals <code>@@ -12,4 +12,5 @@</code>. Het blok begint in beide bestanden op regel 12. In het oude bestand is het vier regels lang en in het nieuwe vijf.</p>
+
+
+    <h2 lang="en">Messages that say why</h2>
+<h2 lang="nl">Berichten die zeggen waarom</h2>
+
+    <p lang="en">Every commit needs a message, and the messages decide whether the history is worth reading. Six months later, you are the stranger reading them.</p>
+<p lang="nl">Elke commit heeft een bericht nodig, en de berichten bepalen of de geschiedenis het lezen waard is. Zes maanden later ben jij de buitenstaander die ze leest.</p>
+
+    <ul>
+<li><span lang="en"><b>The subject is short.</b> It has 50 characters or fewer and fits on one line of the log.</span><span lang="nl"><b>De onderwerpregel is kort.</b> Hij heeft 50 tekens of minder, zodat hij op één regel van het logboek past.</span></li>
+<li><span lang="en"><b>The subject is a command.</b> It completes the sentence <i>If applied, this commit will ...</i>, so <i>Skip days with no count</i> works and <i>Skipped days</i> does not.</span><span lang="nl"><b>De onderwerpregel is een opdracht.</b> Hij staat in de gebiedende wijs, dus <i>Sla dagen zonder telling over</i> werkt en <i>Dagen overgeslagen</i> niet.</span></li>
+<li><span lang="en"><b>The subject names the change.</b> <i>Update README.md</i> and <i>fix stuff</i> tell a reader nothing, so replace GitHub's default subject every time.</span><span lang="nl"><b>De onderwerpregel noemt de wijziging.</b> <i>Update README.md</i> en <i>dingen gefikst</i> zeggen een lezer niets, dus vervang de standaardregel van GitHub elke keer.</span></li>
+<li><span lang="en"><b>The body says why.</b> After a blank line, one or two sentences give the reason when the subject cannot.</span><span lang="nl"><b>De toelichting zegt waarom.</b> Na een lege regel geven één of twee zinnen de reden als de onderwerpregel dat niet kan.</span></li>
+<li><span lang="en"><b>One commit holds one change.</b> A subject that needs the word <i>and</i> describes two commits.</span><span lang="nl"><b>Eén commit bevat één wijziging.</b> Een onderwerpregel die het woord <i>en</i> nodig heeft, beschrijft twee commits.</span></li>
+</ul>
+
+
+    <h2 lang="en">History as evidence</h2>
+<h2 lang="nl">De geschiedenis als bewijs</h2>
+
+    <p lang="en">A result changes whenever the analysis changes. When a report quotes a number, a reader will ask which version of the analysis produced it. The history answers that question when the result file is committed together with the code that made it.</p>
+<p lang="nl">Een resultaat verandert telkens wanneer de analyse verandert. Als een rapport een getal noemt, vraagt een lezer welke versie van de analyse het opleverde. De geschiedenis beantwoordt die vraag als het resultaatbestand samen met de code die het maakte is gecommit.</p>
+
+    <p lang="en">Given a file name, <code>git log</code> lists every commit that changed that file. <code>git show</code> prints the file as it was in any one of them. A tag such as <code>report-1</code> names one commit and saves the next reader the search.</p>
+<p lang="nl">Met een bestandsnaam erbij toont <code>git log</code> elke commit die dat bestand veranderde. <code>git show</code> drukt het bestand af zoals het in een van die commits was. Een tag zoals <code>report-1</code> geeft één commit een naam en bespaart de volgende lezer het zoeken.</p>
+
+
+    <h2 lang="en">Branches</h2>
+<h2 lang="nl">Branches</h2>
+
+    <p lang="en">A branch is a name that points at a commit. When you commit on a branch, its name moves forward and <code>main</code> stays where it was, so a half-finished idea never reaches the version the team relies on. When the idea works, <code>git merge</code> brings its commits into <code>main</code>, and the branch name can be deleted.</p>
+<p lang="nl">Een branch is een naam die naar een commit wijst. Als je op een branch commit, schuift de naam mee en blijft <code>main</code> waar hij was, zodat een half af idee nooit de versie bereikt waarop het team vertrouwt. Als het idee werkt, haalt <code>git merge</code> de commits naar <code>main</code>, en kan de naam van de branch weg.</p>
+
+
+    <h2 lang="en">Working with a team</h2>
+<h2 lang="nl">Werken met een team</h2>
+
+    <p lang="en">On GitHub, the owner of a repository can add teammates as collaborators, who can then push to it. A pull request is a page that proposes the commits on a branch for <code>main</code>. It shows the diff, holds the review, and records the decision. For a small team, the habit that matters most is to pull before you push.</p>
+<p lang="nl">Op GitHub kan de eigenaar van een repository teamgenoten toevoegen als collaborators, die er daarna naar kunnen pushen. Een pull request is een pagina die de commits op een branch voorstelt voor <code>main</code>. Hij toont de diff, bevat de review en legt het besluit vast. Voor een klein team is de belangrijkste gewoonte: pull voordat je pusht.</p>
+
+    <p lang="en">Git stops and marks both versions in the file when two people change the same line, because it cannot know which text is right. Resolving the conflict means reading both versions, writing what the line should say, deleting the markers and committing. Keeping one side by reflex can throw away a fact the other person added.</p>
+<p lang="nl">Als twee mensen dezelfde regel veranderen, kan git niet weten welke tekst klopt, dus stopt het en markeert het beide versies in het bestand. Het conflict oplossen betekent: beide versies lezen, schrijven wat de regel moet zeggen, de markeringen wissen en committen. Wie uit gewoonte één kant houdt, kan een feit weggooien dat de ander toevoegde.</p>
+
+
+    <h2 lang="en">A README a stranger can follow</h2>
+<h2 lang="nl">Een README die een buitenstaander kan volgen</h2>
+
+    <p lang="en">GitHub shows the file <code>README.md</code> on a repository's front page, so every visitor reads it first. It is written in Markdown, where a line that starts with <code>#</code> becomes a heading. A README a stranger can follow answers five questions.</p>
+<p lang="nl">GitHub toont het bestand <code>README.md</code> op de voorpagina van een repository, dus elke bezoeker leest het als eerste. Het is geschreven in Markdown, waarin een regel die begint met <code>#</code> een kop wordt. Een README die een buitenstaander kan volgen, beantwoordt vijf vragen.</p>
+
+    <ul>
+<li><span lang="en">What is this project, and what question does it answer?</span><span lang="nl">Wat is dit project, en welke vraag beantwoordt het?</span></li>
+<li><span lang="en">Where did the data come from, with a link and the date it was downloaded?</span><span lang="nl">Waar komt de data vandaan, met een link en de datum van downloaden?</span></li>
+<li><span lang="en">How do I run it, step by step?</span><span lang="nl">Hoe voer ik het uit, stap voor stap?</span></li>
+<li><span lang="en">What is in the folder?</span><span lang="nl">Wat zit er in de map?</span></li>
+<li><span lang="en">What did the project find, and what is still unknown?</span><span lang="nl">Wat vond het project, en wat is nog onbekend?</span></li>
+</ul>
+
+    <p lang="en">The test is to hand the repository to someone who has never seen it. The README works when they can run the project and say what it found without asking you a question.</p>
+<p lang="nl">De test is de repository te geven aan iemand die hem nooit heeft gezien. De README werkt als die persoon het project kan uitvoeren en kan zeggen wat het vond, zonder jou iets te vragen.</p>
+
+
+    <h2 lang="en">What never goes in a repository</h2>
+<h2 lang="nl">Wat nooit in een repository komt</h2>
+
+    <p lang="en">A commit is permanent in practice. A file deleted in a later commit is still in the commits before it, and everyone who pulled holds a copy. On a public repository, anyone on the internet may hold one too. Four kinds of file stay out of every commit.</p>
+<p lang="nl">Een commit is in de praktijk blijvend. Een bestand dat in een latere commit is verwijderd, staat nog in de commits ervoor, en iedereen die pullde heeft een kopie. Bij een openbare repository kan iedereen op internet er ook een hebben. Vier soorten bestanden blijven uit elke commit.</p>
+
+    <ul>
+<li><span lang="en"><b>Passwords, tokens and keys never go in.</b> Keep them in a file such as <code>.env</code> that git is told to ignore.</span><span lang="nl"><b>Wachtwoorden, tokens en sleutels gaan er nooit in.</b> Bewaar ze in een bestand zoals <code>.env</code> dat git moet negeren.</span></li>
+<li><span lang="en"><b>Personal data stays out.</b> Names, addresses and records about people stay out of a repository unless the people agreed and the law allows it.</span><span lang="nl"><b>Persoonsgegevens blijven erbuiten.</b> Namen, adressen en gegevens over mensen blijven uit een repository, tenzij die mensen instemden en de wet het toestaat.</span></li>
+<li><span lang="en"><b>Large files stay out.</b> GitHub warns about any file larger than 50 MiB. It blocks files larger than 100 MiB (<a href="https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github">GitHub Docs</a>).</span><span lang="nl"><b>Grote bestanden blijven erbuiten.</b> GitHub waarschuwt bij elk bestand groter dan 50 MiB. Bestanden groter dan 100 MiB blokkeert het (<a href="https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github">GitHub Docs</a>).</span></li>
+<li><span lang="en"><b>Files a computer makes for itself stay out.</b> Examples are <code>.DS_Store</code>, <code>__pycache__</code> and <code>.ipynb_checkpoints</code>.</span><span lang="nl"><b>Bestanden die een computer voor zichzelf maakt, blijven erbuiten.</b> Voorbeelden zijn <code>.DS_Store</code>, <code>__pycache__</code> en <code>.ipynb_checkpoints</code>.</span></li>
+</ul>
+
+    <p lang="en">A file called <code>.gitignore</code> lists the patterns git should never stage, so even <code>git add .</code> skips them. Write it before the first commit. If a secret does reach a pushed commit, treat it as leaked and change it at once. GitHub's own guide names revoking or rotating the secret as the first step (<a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository">GitHub Docs</a>).</p>
+<p lang="nl">Een bestand met de naam <code>.gitignore</code> bevat de patronen die git nooit mag klaarzetten, zodat zelfs <code>git add .</code> ze overslaat. Schrijf het vóór de eerste commit. Als een geheim toch in een gepushte commit terechtkomt, behandel het dan als gelekt en verander het meteen. De eigen handleiding van GitHub noemt het intrekken of vervangen van het geheim als eerste stap (<a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository">GitHub Docs</a>).</p>
+
+
+    <h2 lang="en">Commands to stop and read before you run them</h2>
+<h2 lang="nl">Opdrachten waarbij je stopt en leest voordat je ze uitvoert</h2>
+
+    <p lang="en">An AI assistant gives you a command that answers the question you asked. It may not think about your teammates or your secrets. Before you run any of these commands, ask what it will change or erase.</p>
+<p lang="nl">Een AI-assistent geeft je een opdracht die de vraag beantwoordt die je stelde. Hij denkt daarbij misschien niet aan je teamgenoten of je geheimen. Vraag bij elk van deze opdrachten wat ze zullen veranderen of wissen voordat je ze uitvoert.</p>
+
+    <ul>
+<li><span lang="en"><code>git push --force</code> replaces the shared history with yours and erases commits that others pushed.</span><span lang="nl"><code>git push --force</code> vervangt de gedeelde geschiedenis door de jouwe en wist commits die anderen pushten.</span></li>
+<li><span lang="en"><code>git reset --hard</code> throws away every change you have not committed.</span><span lang="nl"><code>git reset --hard</code> gooit elke wijziging weg die je nog niet hebt gecommit.</span></li>
+<li><span lang="en"><code>git clean -fd</code> deletes every untracked file in the folder.</span><span lang="nl"><code>git clean -fd</code> wist elk bestand in de map dat git niet volgt.</span></li>
+<li><span lang="en"><code>git add .</code> stages everything git does not ignore, including a password file if no <code>.gitignore</code> lists it.</span><span lang="nl"><code>git add .</code> zet alles klaar wat git niet negeert, ook een wachtwoordbestand als geen <code>.gitignore</code> het noemt.</span></li>
+<li><span lang="en"><code>git rebase</code> on a branch that others use rewrites commits they already have.</span><span lang="nl"><code>git rebase</code> op een branch die anderen gebruiken, herschrijft commits die zij al hebben.</span></li>
+<li><span lang="en">A remote address with a token pasted into it saves the token in the folder's settings.</span><span lang="nl">Een remote-adres waarin een token is geplakt, bewaart die token in de instellingen van de map.</span></li>
+</ul>
+
+
+    <h2 lang="en">When the AI is wrong</h2>
+<h2 lang="nl">Wanneer de AI zich vergist</h2>
+
+    <div class="panel warn">
+    <p lang="en">In the notebook, Ana's push was rejected because Ben had pushed a commit she did not have. An AI assistant told her to run <code>git push --force</code>. The command ran without an error and erased 1 commit of Ben's from the shared history. Git's own refusal had named the safe path, which was to pull Ben's work first.</p>
+<p lang="nl">In het notebook werd de push van Ana geweigerd omdat Ben een commit had gepusht die zij niet had. Een AI-assistent zei dat ze <code>git push --force</code> moest uitvoeren. De opdracht draaide zonder foutmelding en wiste 1 commit van Ben uit de gedeelde geschiedenis. De weigering van git zelf had de veilige weg al genoemd: eerst het werk van Ben binnenhalen.</p>
+
+    <p lang="en">In a second case, Ana asked how to save all her work and share it. The assistant answered with <code>git add .</code>, a commit and a push. That sent a password file to the shared copy, together with a raw export of 2.1 MB. Ana then removed both files in a new commit. The password was still readable from the history. The stored history still measured 1.1 MB.</p>
+<p lang="nl">In een tweede geval vroeg Ana hoe ze al haar werk kon opslaan en delen. De assistent antwoordde met <code>git add .</code>, een commit en een push. Daarmee ging een wachtwoordbestand naar de gedeelde kopie, samen met een ruwe export van 2,1 MB. Ana verwijderde daarna beide bestanden in een nieuwe commit, en het wachtwoord was nog steeds leesbaar in de geschiedenis. De opgeslagen geschiedenis mat nog steeds 1,1 MB.</p>
+
+    <p lang="en">Both commands did what they were built to do. The assistant answered the question it was asked and never said what the commands would erase or publish. One habit catches both cases: read <code>git status</code>, and ask what a command will change before you run it.</p>
+<p lang="nl">Beide opdrachten deden waarvoor ze gemaakt zijn. De assistent beantwoordde de vraag die hij kreeg en zei nergens wat de opdrachten zouden wissen of publiceren. Eén gewoonte vangt beide gevallen: lees <code>git status</code>, en vraag wat een opdracht verandert voordat je hem uitvoert.</p>
+
+    </div>
+
+    <h2 lang="en">Practise on GitHub</h2>
+<h2 lang="nl">Oefen op GitHub</h2>
+
+    <p lang="en">The notebook runs git in a practice folder. Do these steps on GitHub itself as well, because the workshops and the studio rely on them.</p>
+<p lang="nl">Het notebook draait git in een oefenmap. Doe deze stappen ook op GitHub zelf, want de workshops en de studio bouwen erop.</p>
+
+    <ol>
+<li><span lang="en">Make a GitHub account with an email address you will keep, and turn on two-factor authentication.</span><span lang="nl">Maak een GitHub-account met een e-mailadres dat je houdt, en zet tweestapsverificatie aan.</span></li>
+<li><span lang="en">Under Settings, then Emails, keep your email address private and use the noreply address GitHub gives you for your commits.</span><span lang="nl">Houd onder Settings en dan Emails je e-mailadres privé, en gebruik het noreply-adres dat GitHub je geeft voor je commits.</span></li>
+<li><span lang="en">Make a repository for something of your own, with a README that answers the five questions above.</span><span lang="nl">Maak een repository voor iets van jezelf, met een README die de vijf vragen hierboven beantwoordt.</span></li>
+<li><span lang="en">Make three commits in the browser, each one change, each with a subject that follows the rules.</span><span lang="nl">Maak drie commits in de browser, elk met één wijziging en elk met een onderwerpregel die de regels volgt.</span></li>
+<li><span lang="en">Add a classmate as a collaborator, make a change on a branch, and open a pull request that says what changed and why.</span><span lang="nl">Voeg een medestudent toe als collaborator, maak een wijziging op een branch, en open een pull request die zegt wat er veranderde en waarom.</span></li>
+</ol>
+
+
+    <h2 lang="en">Practise in the notebook</h2>
+<h2 lang="nl">Oefen in het notebook</h2>
+
+    <p lang="en">The notebook follows a made-up team of two through every idea above, in a practice folder it creates and removes again. It holds three tasks, each with a CHECK cell: rewriting commit messages, finding the version that produced a number, and starting a repository that keeps its secrets out.</p>
+<p lang="nl">Het notebook volgt een verzonnen team van twee langs elk idee hierboven, in een oefenmap die het aanmaakt en weer opruimt. Het bevat drie opdrachten, elk met een CHECK-cel: commitberichten herschrijven, de versie vinden die een getal opleverde, en een repository starten die geheimen buiten houdt.</p>
+
+    <p><a class="button" lang="en" href="https://colab.research.google.com/github/johnsanterre/bigi-data-notebooks/blob/main/notebooks/skills-08-en.ipynb" target="_blank" rel="noopener">Open in Colab</a><a class="button" lang="nl" href="https://colab.research.google.com/github/johnsanterre/bigi-data-notebooks/blob/main/notebooks/skills-08-nl.ipynb" target="_blank" rel="noopener">Openen in Colab</a><a class="button secondary" lang="en" href="../notebooks/skills-08-en.ipynb" download>Download</a><a class="button secondary" lang="nl" href="../notebooks/skills-08-nl.ipynb" download>Downloaden</a></p>
+
+
+    <h2 lang="en">Check yourself</h2>
+<h2 lang="nl">Test jezelf</h2>
+
+    <h3><span lang="en">Question</span><span lang="nl">Vraag</span> 1</h3>
+<p lang="en">Ana commits a file that holds a password and pushes it. An hour later she deletes the file in a new commit and pushes again. What is true?</p>
+<p lang="nl">Ana commit een bestand met een wachtwoord en pusht het. Een uur later verwijdert ze het bestand in een nieuwe commit en pusht opnieuw. Wat klopt?</p>
+<ol class="options" type="a"><li><span lang="en">The password is gone, because the newest commit no longer has the file.</span><span lang="nl">Het wachtwoord is weg, omdat de nieuwste commit het bestand niet meer heeft.</span></li><li><span lang="en">The password is still in the earlier commit, so it must be treated as leaked and changed.</span><span lang="nl">Het wachtwoord staat nog in de eerdere commit, dus het moet als gelekt worden behandeld en veranderd.</span></li><li><span lang="en">The password is safe if the repository is private.</span><span lang="nl">Het wachtwoord is veilig als de repository privé is.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The second answer is right. In the notebook the password was still readable from the history after the file was removed, and Ben's copy held it too.</p>
+<p lang="nl">Het tweede antwoord klopt. In het notebook was het wachtwoord nog leesbaar in de geschiedenis nadat het bestand was verwijderd, en de kopie van Ben bevatte het ook.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 2</h3>
+<p lang="en">Your push is rejected because the shared repository holds a commit you do not have. An AI assistant says to run git push --force. What should you do?</p>
+<p lang="nl">Je push wordt geweigerd omdat de gedeelde repository een commit bevat die jij niet hebt. Een AI-assistent zegt dat je git push --force moet uitvoeren. Wat doe je?</p>
+<ol class="options" type="a"><li><span lang="en">Run it, because the assistant read the error message.</span><span lang="nl">Uitvoeren, omdat de assistent de foutmelding heeft gelezen.</span></li><li><span lang="en">Pull first, resolve any conflict, then push.</span><span lang="nl">Eerst pullen, een eventueel conflict oplossen en dan pushen.</span></li><li><span lang="en">Delete your folder and clone the repository again.</span><span lang="nl">Je map wissen en de repository opnieuw klonen.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The second answer is right. The force push in the notebook erased a teammate's commit from the shared history, and git's own hint had named the safe path.</p>
+<p lang="nl">Het tweede antwoord klopt. De force push in het notebook wiste de commit van een teamgenoot uit de gedeelde geschiedenis, en de hint van git zelf had de veilige weg al genoemd.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 3</h3>
+<p lang="en">Which commit subject follows the rules from the lesson?</p>
+<p lang="nl">Welke onderwerpregel volgt de regels uit de les?</p>
+<ol class="options" type="a"><li><span lang="en">Fixed stuff and updated the readme.</span><span lang="nl">Dingen gefikst en de readme bijgewerkt.</span></li><li><span lang="en">Update analysis.py</span><span lang="nl">Update analysis.py</span></li><li><span lang="en">Skip days with no count in the average</span><span lang="nl">Sla dagen zonder telling over in het gemiddelde</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The third answer is right. It is short, written as a command, and names the change. The first is in the past tense and holds two changes. The second names a file without saying what changed in it.</p>
+<p lang="nl">Het derde antwoord klopt. Het is kort, in de gebiedende wijs, en noemt de wijziging. Het eerste staat in de verleden tijd en bevat twee wijzigingen, en het tweede noemt een bestand zonder te zeggen wat daarin veranderde.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 4</h3>
+<p lang="en">A hunk header reads @@ -3,4 +3,6 @@. What does it say?</p>
+<p lang="nl">Een hunk-header luidt @@ -3,4 +3,6 @@. Wat zegt die?</p>
+<ol class="options" type="a"><li><span lang="en">The block starts at line 3 in both files, and it grew from four lines to six.</span><span lang="nl">Het blok begint in beide bestanden op regel 3, en het groeide van vier naar zes regels.</span></li><li><span lang="en">Lines 3 and 4 were removed, and lines 3 and 6 were added.</span><span lang="nl">Regels 3 en 4 zijn verwijderd, en regels 3 en 6 zijn toegevoegd.</span></li><li><span lang="en">The commit changed three files and six lines.</span><span lang="nl">De commit veranderde drie bestanden en zes regels.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The first answer is right. The minus side describes the block in the old file and the plus side describes it in the new one.</p>
+<p lang="nl">Het eerste antwoord klopt. De minkant beschrijft het blok in het oude bestand en de pluskant in het nieuwe.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 5</h3>
+<p lang="en">A report quotes a number. The analysis has changed twice since then. How do you find the version that produced the number?</p>
+<p lang="nl">Een rapport noemt een getal, en de analyse is sindsdien twee keer veranderd. Hoe vind je de versie die het getal opleverde?</p>
+<ol class="options" type="a"><li><span lang="en">Run the current analysis again and compare.</span><span lang="nl">De huidige analyse opnieuw draaien en vergelijken.</span></li><li><span lang="en">Look through the commits that changed the result file, and show the file as it was in each one.</span><span lang="nl">De commits doorlopen die het resultaatbestand veranderden, en het bestand tonen zoals het in elke commit was.</span></li><li><span lang="en">Ask the person who wrote the report to remember.</span><span lang="nl">De schrijver van het rapport vragen het zich te herinneren.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The second answer is right. Committing the result with the code that made it lets git log and git show find the version, and a tag saves the next reader the search.</p>
+<p lang="nl">Het tweede antwoord klopt. Als je het resultaat commit samen met de code die het maakte, vinden git log en git show de versie, en een tag bespaart de volgende lezer het zoeken.</p>
+</details>
+<h3><span lang="en">Question</span><span lang="nl">Vraag</span> 6</h3>
+<p lang="en">What is the difference between git and GitHub?</p>
+<p lang="nl">Wat is het verschil tussen git en GitHub?</p>
+<ol class="options" type="a"><li><span lang="en">Git keeps the history on your own computer, and GitHub keeps a shared copy online and adds collaborators, pull requests and pages.</span><span lang="nl">Git bewaart de geschiedenis op je eigen computer, en GitHub bewaart een gedeelde kopie online en voegt collaborators, pull requests en pagina's toe.</span></li><li><span lang="en">They are two names for the same website.</span><span lang="nl">Het zijn twee namen voor dezelfde website.</span></li><li><span lang="en">GitHub keeps the history, and git is the website.</span><span lang="nl">GitHub bewaart de geschiedenis, en git is de website.</span></li></ol>
+<details><summary><span lang="en">Show the answer</span><span lang="nl">Toon het antwoord</span></summary><p lang="en">The first answer is right. The notebook used git with no website at all, and a second folder played GitHub's part.</p>
+<p lang="nl">Het eerste antwoord klopt. Het notebook gebruikte git zonder enige website, en een tweede map speelde de rol van GitHub.</p>
+</details>
+
+    <footer><p><span lang="en"><a href="index.html">Back to week 8</a><span class="separator">|</span><a href="../materials.html">All materials</a></span><span lang="nl"><a href="index.html">Terug naar week 8</a><span class="separator">|</span><a href="../materials.html">Al het lesmateriaal</a></span></p></footer>
+</div></main>
+<div class="site-footer"><div class="container"><div><span lang="en">BiGi Data is a <a href="https://freefocus.org">Free Focus</a> program.</span><span lang="nl">BiGi Data is een programma van <a href="https://freefocus.org">Free Focus</a>.</span></div><div><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><span class="separator"> &middot; </span><a href="../credits.html"><span lang="en">Image credits</span><span lang="nl">Fotoverantwoording</span></a></div></div></div>
+<script data-goatcounter="https://johnsanterre.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

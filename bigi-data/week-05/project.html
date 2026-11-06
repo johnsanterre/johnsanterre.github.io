@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Project 5: Week 5 - BiGi Data">
+<meta name="robots" content="noindex, nofollow">
+<title data-en="Project 5: Week 5 - BiGi Data" data-nl="Project 5: Week 5 - BiGi Data">Project 5: Week 5 - BiGi Data</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;650;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/lang.js"></script>
+</head>
+<body>
+<header class="nav-header"><div class="container">
+<a href="../index.html" class="site-title"><svg class="star" viewBox="0 0 100 100" aria-hidden="true"><polygon fill="#ecc81d" points="50,4 61,38 97,38 68,59 79,94 50,73 21,94 32,59 3,38 39,38"/></svg>BiGi Data</a>
+<nav class="nav-links"><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a>
+<button id="lang-btn" class="lang-btn" type="button">Nederlands</button></nav>
+</div></header>
+<div class="stripes"></div>
+<section class="page-hero" style="background-image:url(../assets/img/market.jpg)"><div class="container">
+<nav class="breadcrumb"><a href="../index.html"><span lang="en">Home</span><span lang="nl">Home</span></a><span class="separator">/</span><a href="../materials.html"><span lang="en">Materials</span><span lang="nl">Lesmateriaal</span></a><span class="separator">/</span><a href="index.html"><span lang="en">Week 5</span><span lang="nl">Week 5</span></a><span class="separator">/</span><span><span lang="en">Project 5</span><span lang="nl">Project 5</span></span></nav>
+<h1 lang="en">Project 5: have Paramaribo's hot days become hotter?</h1>
+<h1 lang="nl">Project 5: zijn de hete dagen in Paramaribo heter geworden?</h1>
+
+    <p lang="en" class="muted">One dataset, one question, one week. This project compares two decades of daily readings, so one summary number will not answer it.</p>
+<p lang="nl" class="muted">Eén dataset, één vraag, één week. Dit project vergelijkt twee decennia aan dagwaarden, dus één samenvattend getal geeft geen antwoord.</p>
+
+
+    </div></section>
+<main><div class="container">
+<h2 lang="en">The question</h2>
+<h2 lang="nl">De vraag</h2>
+
+    <p lang="en" class="lead">Have Paramaribo's hot days become hotter? Compare the daily maximum temperature in 1991 to 2000 with 2016 to 2025: the averages, the spread, the shape, and the share of days above a hot-day threshold.</p>
+<p lang="nl" class="lead">Zijn de hete dagen in Paramaribo heter geworden? Vergelijk de dagelijkse maximumtemperatuur in 1991 tot en met 2000 met die in 2016 tot en met 2025: de gemiddelden, de spreiding, de vorm, en het aandeel dagen boven een drempel voor hete dagen.</p>
+
+
+    <h2 lang="en">Who this is for</h2>
+<h2 lang="nl">Voor wie dit is</h2>
+
+    <p lang="en">The team writes for the ministry officials who plan for heat in Paramaribo's schools and clinics: when to shorten outdoor lessons, when clinics should expect more heat-related visits, and which months need fans, shade and water. They get a one-page heat note of about 200 words. It says how much more often hot days now occur, which months have warmed most, how sure the record allows anyone to be, and what the data cannot tell them.</p>
+<p lang="nl">Het team schrijft voor de ambtenaren die plannen voor hitte in de scholen en klinieken van Paramaribo: wanneer buitenlessen korter moeten, wanneer klinieken meer bezoeken door hitte kunnen verwachten, en welke maanden ventilatoren, schaduw en water nodig hebben. Zij krijgen een hittenotitie van één pagina, ongeveer 200 woorden. Die zegt hoeveel vaker hete dagen nu voorkomen, welke maanden het meest zijn opgewarmd, hoe zeker de reeks iemand laat zijn, en wat de data hun niet kan vertellen.</p>
+
+
+    <h2 lang="en">The data</h2>
+<h2 lang="nl">De data</h2>
+
+    <p lang="en">Open-Meteo's <a href="https://open-meteo.com/en/docs/historical-weather-api">historical weather API</a> gives the daily maximum air temperature at 2 metres above the ground for any point on Earth. The table asks for the point 5.85 N, 55.20 W, in Paramaribo. It holds one row for every day from 1 January 1991 to 31 December 2025, which makes 12,784 rows. The table was downloaded on 6 November 2026 with <a href="https://archive-api.open-meteo.com/v1/archive?latitude=5.85&amp;longitude=-55.20&amp;start_date=1991-01-01&amp;end_date=2025-12-31&amp;daily=temperature_2m_max&amp;timezone=America%2FParamaribo&amp;models=era5">this request</a>.</p>
+<p lang="nl">De <a href="https://open-meteo.com/en/docs/historical-weather-api">historische weer-API</a> van Open-Meteo geeft de dagelijkse maximale luchttemperatuur op 2 meter boven de grond voor elk punt op aarde. De tabel vraagt om het punt 5,85 N, 55,20 W, in Paramaribo. Ze bevat één rij voor elke dag van 1 januari 1991 tot en met 31 december 2025, en dat zijn 12.784 rijen. De tabel is gedownload op 6 november 2026 met <a href="https://archive-api.open-meteo.com/v1/archive?latitude=5.85&amp;longitude=-55.20&amp;start_date=1991-01-01&amp;end_date=2025-12-31&amp;daily=temperature_2m_max&amp;timezone=America%2FParamaribo&amp;models=era5">dit verzoek</a>.</p>
+
+    <div class="panel">
+    <h3 lang="en">A model, not a thermometer</h3>
+<h3 lang="nl">Een model, geen thermometer</h3>
+
+    <p lang="en">The values come from ERA5, a reanalysis. A reanalysis combines observations from weather stations, aircraft, buoys, radar and satellites with a weather model, and estimates the weather on a regular grid, including places with no station nearby (<a href="https://open-meteo.com/en/docs/historical-weather-api">Open-Meteo documentation</a>). The ERA5 grid has a spacing of 0.25 degrees, about 25 km. Each value therefore describes a square of land and sea around the requested point, not one thermometer in the city. For this request, the API answered with the grid cell centred at 5.75 N, 55.25 W, as the latitude and longitude fields of its response show.</p>
+<p lang="nl">De waarden komen uit ERA5, een heranalyse. Een heranalyse combineert waarnemingen van weerstations, vliegtuigen, boeien, radar en satellieten met een weermodel, en schat het weer op een regelmatig raster, ook op plekken zonder station in de buurt (<a href="https://open-meteo.com/en/docs/historical-weather-api">documentatie van Open-Meteo</a>). Het raster van ERA5 heeft een maaswijdte van 0,25 graden, ongeveer 25 km. Elke waarde beschrijft dus een vierkant van land en zee rond het gevraagde punt, niet één thermometer in de stad. Voor dit verzoek antwoordde de API met de rastercel met als middelpunt 5,75 N, 55,25 W, zoals de velden latitude en longitude in het antwoord laten zien.</p>
+
+    <p lang="en">The request asks for ERA5 alone. Open-Meteo's default blends in a newer, finer model from 2017 onwards. Its documentation advises using ERA5 or ERA5-Land alone when studying climate change over decades, so that the data stays consistent. A change of model partway through the record could otherwise look like a change in the weather.</p>
+<p lang="nl">Het verzoek vraagt alleen om ERA5. De standaardinstelling van Open-Meteo mengt vanaf 2017 een nieuwer, fijner model erdoor. De documentatie raadt aan om alleen ERA5 of ERA5-Land te gebruiken als je klimaatverandering over decennia bestudeert, zodat de data consistent blijft. Anders zou een wisseling van model halverwege de reeks eruit kunnen zien als een verandering in het weer.</p>
+
+    </div>
+    <p><a class="button secondary" href="../data/week05-paramaribo-tmax-1991-2025.csv" download><span lang="en">Download the table (CSV)</span><span lang="nl">Download de tabel (CSV)</span></a></p>
+
+
+    <h2 lang="en">Your team</h2>
+<h2 lang="nl">Je team</h2>
+
+    <p lang="en">Teams of four hold the four roles, which rotate every week. This week, the data checker has the most important job, because every claim about hot days must rest on a count of days.</p>
+<p lang="nl">Teams van vier verdelen de vier rollen, die elke week wisselen. Deze week heeft de datacontroleur de belangrijkste taak, want elke bewering over hete dagen moet op een telling van dagen rusten.</p>
+
+    <ul>
+<li><span lang="en"><b>The builder</b> writes and runs the notebook with the AI assistant.</span><span lang="nl"><b>De bouwer</b> schrijft en draait het notebook met de AI-assistent.</span></li>
+<li><span lang="en"><b>The data checker</b> checks that both decades hold every day, and that every share in the note is a count of days divided by the right number of days.</span><span lang="nl"><b>De datacontroleur</b> controleert dat beide decennia elke dag bevatten, en dat elk aandeel in de notitie een aantal dagen is, gedeeld door het juiste aantal dagen.</span></li>
+<li><span lang="en"><b>The AI checker</b> keeps the AI log, recording every claim the AI makes about the temperatures and whether the data supports it.</span><span lang="nl"><b>De AI-controleur</b> houdt het AI-logboek bij, met elke bewering van de AI over de temperaturen en of de data die steunt.</span></li>
+<li><span lang="en"><b>The presenter</b> presents on Friday and explains to the room why one average does not answer the question.</span><span lang="nl"><b>De presentator</b> presenteert op vrijdag en legt de zaal uit waarom één gemiddelde de vraag niet beantwoordt.</span></li>
+</ul>
+
+
+    <h2 lang="en">The tasks</h2>
+<h2 lang="nl">De opdrachten</h2>
+
+    <p lang="en">The starter notebook loads the data for you and holds eight tasks. Five of them have a CHECK cell that tells you when the answer is right.</p>
+<p lang="nl">Het startnotebook laadt de data voor je en bevat acht opdrachten. Vijf ervan hebben een CHECK-cel die je vertelt wanneer het antwoord klopt.</p>
+
+    <ol>
+<li><span lang="en">Describe the table by its rows, its first and last date, its missing values and its extremes.</span><span lang="nl">Beschrijf de tabel aan de hand van de rijen, de eerste en laatste datum, de ontbrekende waarden en de uitersten.</span></li>
+<li><span lang="en">Split the record into the two decades, and compute the mean and the median of each.</span><span lang="nl">Splits de reeks in de twee decennia, en bereken het gemiddelde en de mediaan van elk.</span></li>
+<li><span lang="en">Measure the spread of each decade with the standard deviation and the 10th and 90th percentiles.</span><span lang="nl">Meet de spreiding van elk decennium met de standaardafwijking en het 10e en 90e percentiel.</span></li>
+<li><span lang="en">Draw both decades in one histogram, on the same bins, as shares of days.</span><span lang="nl">Teken beide decennia in één histogram, met dezelfde klassen, als aandelen van de dagen.</span></li>
+<li><span lang="en">Set a hot-day threshold from 1991 to 2000, and compute the share of hot days in each decade.</span><span lang="nl">Leg een drempel voor hete dagen vast op basis van 1991 tot en met 2000, en bereken het aandeel hete dagen in elk decennium.</span></li>
+<li><span lang="en">Test the AI's reading of the two averages against the share of hot days.</span><span lang="nl">Toets hoe de AI de twee gemiddelden leest aan het aandeel hete dagen.</span></li>
+<li><span lang="en">Compare the decades month by month, and find the month with the largest rise.</span><span lang="nl">Vergelijk de decennia maand voor maand, en zoek de maand met de grootste stijging.</span></li>
+<li><span lang="en">Write a note of about 200 words for a ministry that plans for heat in schools and clinics.</span><span lang="nl">Schrijf een notitie van ongeveer 200 woorden voor een ministerie dat plant voor hitte in scholen en klinieken.</span></li>
+</ol>
+
+    <p><a class="button" lang="en" href="https://colab.research.google.com/github/johnsanterre/bigi-data-notebooks/blob/main/notebooks/project-05-en.ipynb" target="_blank" rel="noopener">Open in Colab</a><a class="button" lang="nl" href="https://colab.research.google.com/github/johnsanterre/bigi-data-notebooks/blob/main/notebooks/project-05-nl.ipynb" target="_blank" rel="noopener">Openen in Colab</a><a class="button secondary" lang="en" href="../notebooks/project-05-en.ipynb" download>Download</a><a class="button secondary" lang="nl" href="../notebooks/project-05-nl.ipynb" download>Downloaden</a></p>
+
+
+    <h2 lang="en">The AI check this week</h2>
+<h2 lang="nl">De AI-controle van deze week</h2>
+
+    <div class="panel warn">
+    <p lang="en">Give your AI assistant only your two averages, and ask it whether the change is large or small and whether hot days have become more common. Write its answer in the AI log. Then test the answer against your share of hot days from task 5 and your histogram from task 4.</p>
+<p lang="nl">Geef je AI-assistent alleen je twee gemiddelden, en vraag of de verandering groot of klein is en of hete dagen vaker zijn gaan voorkomen. Schrijf het antwoord in het AI-logboek. Toets het antwoord daarna aan je aandeel hete dagen uit opdracht 5 en je histogram uit opdracht 4.</p>
+
+    <p lang="en">An assistant that sees only two averages cannot know how the shape changed, so note whether it says so or guesses. If it gives a figure for how much more common hot days are, check that figure against task 6. Finally, show it your shares of hot days and record whether it changes its answer.</p>
+<p lang="nl">Een assistent die alleen twee gemiddelden ziet, kan niet weten hoe de vorm veranderde, dus noteer of hij dat zegt of gokt. Noemt hij een getal voor hoeveel vaker hete dagen voorkomen, controleer dat getal dan met opdracht 6. Laat hem ten slotte je aandelen hete dagen zien en noteer of hij zijn antwoord verandert.</p>
+
+    </div>
+
+    <h2 lang="en">What you hand in on Friday</h2>
+<h2 lang="nl">Wat je vrijdag inlevert</h2>
+
+    <ul>
+<li><span lang="en">The notebook, with every CHECK passing.</span><span lang="nl">Het notebook, met elke CHECK geslaagd.</span></li>
+<li><span lang="en">Two charts, the histogram of both decades and the month-by-month change, each naming Open-Meteo and ERA5 as the source.</span><span lang="nl">Twee grafieken, het histogram van beide decennia en de verandering per maand, elk met Open-Meteo en ERA5 als bron vermeld.</span></li>
+<li><span lang="en">The heat note for the officials who plan Paramaribo's schools and clinics, about 200 words.</span><span lang="nl">De hittenotitie voor de ambtenaren die de scholen en klinieken van Paramaribo plannen, ongeveer 200 woorden.</span></li>
+<li><span lang="en">The AI log.</span><span lang="nl">Het AI-logboek.</span></li>
+<li><span lang="en">A presentation of five minutes, followed by five minutes of questions.</span><span lang="nl">Een presentatie van vijf minuten, gevolgd door vijf minuten vragen.</span></li>
+</ul>
+
+
+    <h2 lang="en">How the work is judged</h2>
+<h2 lang="nl">Hoe het werk wordt beoordeeld</h2>
+
+    <table>
+    <tr><th><span lang="en">Criterion</span><span lang="nl">Criterium</span></th><th><span lang="en">Meets the standard when</span><span lang="nl">Voldoet als</span></th></tr>
+    <tr><td><span lang="en">Numbers</span><span lang="nl">Getallen</span></td><td><span lang="en">Every CHECK passes, and every number in the note matches the notebook.</span><span lang="nl">Elke CHECK slaagt, en elk getal in de notitie komt overeen met het notebook.</span></td></tr>
+    <tr><td><span lang="en">Charts</span><span lang="nl">Grafieken</span></td><td><span lang="en">Both charts have a title, labelled axes and a named source. The histogram shows shares of days on the same bins.</span><span lang="nl">Beide grafieken hebben een titel, benoemde assen en een vermelde bron, en het histogram toont aandelen van de dagen met dezelfde klassen.</span></td></tr>
+    <tr><td><span lang="en">Beyond the average</span><span lang="nl">Verder dan het gemiddelde</span></td><td><span lang="en">The note reports at least one measure of spread and the share of hot days, not only the two averages.</span><span lang="nl">De notitie geeft minstens één maat voor spreiding en het aandeel hete dagen, niet alleen de twee gemiddelden.</span></td></tr>
+    <tr><td><span lang="en">AI log</span><span lang="nl">AI-logboek</span></td><td><span lang="en">At least three AI claims are tested against the data, including the assistant's reading of the two averages.</span><span lang="nl">Minstens drie beweringen van de AI zijn aan de data getoetst, waaronder hoe de assistent de twee gemiddelden las.</span></td></tr>
+    <tr><td><span lang="en">Note</span><span lang="nl">Notitie</span></td><td><span lang="en">An official could act on the note. It names the source, says that each value is a reanalysis grid cell rather than a station, and states one thing the data cannot tell.</span><span lang="nl">Een ambtenaar kan iets met de notitie. Ze noemt de bron, zegt dat elke waarde een rastercel uit een heranalyse is en geen station, en noemt één ding dat de data niet kan vertellen.</span></td></tr>
+    </table>
+    <footer><p><span lang="en"><a href="index.html">Back to week 5</a><span class="separator">|</span><a href="../materials.html">All materials</a></span><span lang="nl"><a href="index.html">Terug naar week 5</a><span class="separator">|</span><a href="../materials.html">Al het lesmateriaal</a></span></p></footer>
+</div></main>
+<div class="site-footer"><div class="container"><div><span lang="en">BiGi Data is a <a href="https://freefocus.org">Free Focus</a> program.</span><span lang="nl">BiGi Data is een programma van <a href="https://freefocus.org">Free Focus</a>.</span></div><div><a href="../program.html"><span lang="en">The year</span><span lang="nl">Het jaar</span></a><span class="separator"> &middot; </span><a href="../credits.html"><span lang="en">Image credits</span><span lang="nl">Fotoverantwoording</span></a></div></div></div>
+<script data-goatcounter="https://johnsanterre.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
