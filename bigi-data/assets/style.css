@@ -151,9 +151,10 @@ th, td { text-align: left; vertical-align: top; padding: 12px 14px; border-botto
 tr:last-child td { border-bottom: 0; }
 th { background: var(--forest); color: #fff; font-weight: 600; font-size: 14px; letter-spacing: 0.02em; }
 td.num, th.num { text-align: right; white-space: nowrap; }
-table.weeks { table-layout: fixed; }
-table.weeks th:nth-child(1) { width: 80px; }
-table.weeks th:nth-child(2) { width: 52%; }
+ul.weeks { list-style: none; padding: 0; margin: var(--space-md) 0 var(--space-lg); max-width: 760px; }
+ul.weeks li { padding: 12px 0; border-bottom: 1px solid var(--line); }
+ul.weeks li a { text-decoration: none; }
+ul.weeks li a:hover { text-decoration: underline; }
 tr:nth-child(even) td { background: #fbfaf6; }
 .panel { background: var(--card); border: 1px solid var(--line); border-left: 6px solid var(--green); border-radius: var(--radius); padding: var(--space-md) var(--space-lg); margin: var(--space-md) 0 var(--space-lg); box-shadow: var(--shadow); max-width: 860px; }
 .panel.warn { border-left-color: var(--red); background: #fffafa; }
