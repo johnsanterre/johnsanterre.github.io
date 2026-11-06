@@ -136,6 +136,7 @@ a.card .go { color: var(--green); font-weight: 650; margin-top: var(--space-sm);
 .weekbar .k-work { flex: 8; background: var(--forest-2); }
 .weekbar .k-studio { flex: 18; background: var(--gold-deep); }
 .weekbar .k-ai { flex: 1.5; background: var(--forest); font-size: 12px; }
+.weekbar .k-ind { flex: 1; background: var(--gold); color: var(--forest); font-size: 12px; }
 .weekbar .k-review { flex: 4; background: var(--red); }
 
 /* quote band */
