@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="579.6pt" height="293.256pt" viewBox="0 0 579.6 293.256" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 293.256 
+L 579.6 293.256 
+L 579.6 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 44.28 81.7632 
+L 125.19 81.7632 
+L 125.19 60.696 
+L 44.28 60.696 
+z
+" clip-path="url(#p58c626dc45)" style="fill: #0d3320; stroke: #ffffff; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 44.28 102.8304 
+L 125.19 102.8304 
+L 125.19 81.7632 
+L 44.28 81.7632 
+z
+" clip-path="url(#p58c626dc45)" style="fill: #ffffff; stroke: #e0dccf; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 44.28 144.9648 
+L 125.19 144.9648 
+L 125.19 123.8976 
+L 44.28 123.8976 
+z
+" clip-path="url(#p58c626dc45)" style="fill: #ffffff; stroke: #e0dccf; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 44.28 166.032 
+L 125.19 166.032 
+L 125.19 144.9648 
+L 44.28 144.9648 
+z
+" clip-path="url(#p58c626dc45)" style="fill: #ffffff; stroke: #e0dccf; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 228.42 81.7632 
+L 309.33 81.7632 
+L 309.33 60.696 
+L 228.42 60.696 
+z
+" clip-path="url(#p58c626dc45)" style="fill: #0d3320; stroke: #ffffff; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 228.42 102.8304 
+L 309.33 102.8304 
+L 309.33 81.7632 
+L 228.42 81.7632 
+z
+" clip-path="url(#p58c626dc45)" style="fill: #ffffff; stroke: #e0dccf; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 228.42 144.9648 
+L 309.33 144.9648 
+L 309.33 123.8976 
+L 228.42 123.8976 
+z
+" clip-path="url(#p58c626dc45)" style="fill: #ffffff; stroke: #e0dccf; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 228.42 166.032 
+L 309.33 166.032 
+L 309.33 144.9648 
+L 228.42 144.9648 
+z
+" clip-path="url(#p58c626dc45)" style="fill: #ffffff; stroke: #e0dccf; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 412.56 81.7632 
+L 493.47 81.7632 
+L 493.47 60.696 
+L 412.56 60.696 
+z
+" clip-path="url(#p58c626dc45)" style="fill: #0d3320; stroke: #ffffff; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 412.56 102.8304 
+L 493.47 102.8304 
+L 493.47 81.7632 
+L 412.56 81.7632 
+z
+" clip-path="url(#p58c626dc45)" style="fill: #ffffff; stroke: #e0dccf; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 412.56 144.9648 
+L 493.47 144.9648 
+L 493.47 123.8976 
+L 412.56 123.8976 
+z
+" clip-path="url(#p58c626dc45)" style="fill: #ffffff; stroke: #e0dccf; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 412.56 166.032 
+L 493.47 166.032 
+L 493.47 144.9648 
+L 412.56 144.9648 
+z
+" clip-path="url(#p58c626dc45)" style="fill: #ffffff; stroke: #e0dccf; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 13px; font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif; text-anchor: start; fill: #0d3320" x="30.33" y="30.792703" transform="rotate(-0 30.33 30.792703)">1. A blank</text>
+   </g>
+   <g id="text_2">
+    <text style="font-style: italic; font-size: 10px; font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif; text-anchor: start; fill: #1f6b3a" x="30.33" y="45.540356" transform="rotate(-0 30.33 45.540356)">the honest form</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 10.5px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: middle; fill: #ffffff" x="84.735" y="74.154834" transform="rotate(-0 84.735 74.154834)">units</text>
+   </g>
+   <g id="patch_14">
+    <path d="M 44.28 123.8976 
+L 125.19 123.8976 
+L 125.19 102.8304 
+L 44.28 102.8304 
+z
+" clip-path="url(#p58c626dc45)" style="fill: #fffafa; stroke: #1f6b3a; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 9.5px; font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif; text-anchor: start; fill: #5d665f" x="131.886" y="115.772398" transform="rotate(-0 131.886 115.772398)">dtype:</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: start; fill: #1f6b3a" x="131.886" y="137.328544" transform="rotate(-0 131.886 137.328544)">NaN</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 11px; font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif; fill: #15201a" transform="translate(30.33 209.922687)">pandas reads it as NaN.</text>
+    <text style="font-size: 11px; font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif; fill: #15201a" transform="translate(30.33 222.693859)">The average skips it: 20.0.</text>
+   </g>
+   <g id="text_7">
+    <text style="font-weight: 700; font-size: 13px; font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif; text-anchor: start; fill: #0d3320" x="214.47" y="30.792703" transform="rotate(-0 214.47 30.792703)">2. A word</text>
+   </g>
+   <g id="text_8">
+    <text style="font-style: italic; font-size: 10px; font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif; text-anchor: start; fill: #c99a0b" x="214.47" y="45.540356" transform="rotate(-0 214.47 45.540356)">the loud form</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 10.5px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: middle; fill: #ffffff" x="268.875" y="74.154834" transform="rotate(-0 268.875 74.154834)">units</text>
+   </g>
+   <g id="patch_15">
+    <path d="M 228.42 123.8976 
+L 309.33 123.8976 
+L 309.33 102.8304 
+L 228.42 102.8304 
+z
+" clip-path="url(#p58c626dc45)" style="fill: #fffafa; stroke: #c99a0b; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 9.5px; font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif; text-anchor: start; fill: #5d665f" x="316.026" y="115.772398" transform="rotate(-0 316.026 115.772398)">dtype:</text>
+   </g>
+   <g id="text_11">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: start; fill: #c99a0b" x="316.026" y="137.602528" transform="rotate(-0 316.026 137.602528)">object</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 11px; font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif; fill: #15201a" transform="translate(214.47 209.922687)">the whole column turns to text.</text>
+    <text style="font-size: 11px; font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif; fill: #15201a" transform="translate(214.47 222.812195)">The average refuses to run.</text>
+   </g>
+   <g id="text_13">
+    <text style="font-weight: 700; font-size: 13px; font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif; text-anchor: start; fill: #0d3320" x="398.61" y="30.792703" transform="rotate(-0 398.61 30.792703)">3. An impossible number</text>
+   </g>
+   <g id="text_14">
+    <text style="font-style: italic; font-size: 10px; font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif; text-anchor: start; fill: #b40a2d" x="398.61" y="45.5802" transform="rotate(-0 398.61 45.5802)">the quiet form</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 10.5px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: middle; fill: #ffffff" x="453.015" y="74.154834" transform="rotate(-0 453.015 74.154834)">units</text>
+   </g>
+   <g id="patch_16">
+    <path d="M 412.56 123.8976 
+L 493.47 123.8976 
+L 493.47 102.8304 
+L 412.56 102.8304 
+z
+" clip-path="url(#p58c626dc45)" style="fill: #fffafa; stroke: #b40a2d; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 9.5px; font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif; text-anchor: start; fill: #5d665f" x="500.166" y="115.772398" transform="rotate(-0 500.166 115.772398)">dtype:</text>
+   </g>
+   <g id="text_17">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: start; fill: #b40a2d" x="500.166" y="137.328544" transform="rotate(-0 500.166 137.328544)">float64</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 11px; font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif; fill: #15201a" transform="translate(398.61 209.922687)">pandas averages it as a sale:</text>
+    <text style="font-size: 11px; font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif; fill: #15201a" transform="translate(398.61 222.826203)">14.75 instead of 20.0.</text>
+   </g>
+   <g id="text_19">
+    <text style="font-style: italic; font-size: 10.5px; font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif; text-anchor: middle; fill: #5d665f" x="289.8" y="271.335844" transform="rotate(-0 289.8 271.335844)">Only the first disguise is seen for what it is. The other two need the type check and the smallest-value check.</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 10.5px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: middle; fill: #15201a" x="84.735" y="95.222034" transform="rotate(-0 84.735 95.222034)">20.0</text>
+   </g>
+   <g id="text_21">
+    <text style="font-style: italic; font-size: 9.5px; font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif; text-anchor: middle; fill: #5d665f" x="84.735" y="115.852555" transform="rotate(-0 84.735 115.852555)">(empty)</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 10.5px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: middle; fill: #15201a" x="84.735" y="137.356434" transform="rotate(-0 84.735 137.356434)">18.0</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 10.5px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: middle; fill: #15201a" x="84.735" y="158.423634" transform="rotate(-0 84.735 158.423634)">22.0</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 10.5px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: middle; fill: #15201a" x="268.875" y="95.222034" transform="rotate(-0 268.875 95.222034)">20</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 10.5px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: middle; fill: #15201a" x="268.875" y="116.289234" transform="rotate(-0 268.875 116.289234)">not counted</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 10.5px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: middle; fill: #15201a" x="268.875" y="137.356434" transform="rotate(-0 268.875 137.356434)">18</text>
+   </g>
+   <g id="text_27">
+    <text style="font-size: 10.5px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: middle; fill: #15201a" x="268.875" y="158.423634" transform="rotate(-0 268.875 158.423634)">22</text>
+   </g>
+   <g id="text_28">
+    <text style="font-size: 10.5px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: middle; fill: #15201a" x="453.015" y="95.222034" transform="rotate(-0 453.015 95.222034)">20.0</text>
+   </g>
+   <g id="text_29">
+    <text style="font-size: 10.5px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: middle; fill: #15201a" x="453.015" y="116.289234" transform="rotate(-0 453.015 116.289234)">-1.0</text>
+   </g>
+   <g id="text_30">
+    <text style="font-size: 10.5px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: middle; fill: #15201a" x="453.015" y="137.356434" transform="rotate(-0 453.015 137.356434)">18.0</text>
+   </g>
+   <g id="text_31">
+    <text style="font-size: 10.5px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: middle; fill: #15201a" x="453.015" y="158.423634" transform="rotate(-0 453.015 158.423634)">22.0</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p58c626dc45">
+   <rect x="10.8" y="10.8" width="558" height="271.656"/>
+  </clipPath>
+ </defs>
+</svg>

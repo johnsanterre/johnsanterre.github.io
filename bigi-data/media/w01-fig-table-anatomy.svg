@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="613.511312pt" height="276.624pt" viewBox="0 0 613.511312 276.624" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 276.624 
+L 613.511312 276.624 
+L 613.511312 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 127.98 69.012 
+L 225.63 69.012 
+L 225.63 45.7272 
+L 127.98 45.7272 
+z
+" clip-path="url(#p1d3bcf410a)" style="fill: #0d3320; stroke: #ffffff; stroke-width: 1.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 225.63 69.012 
+L 323.28 69.012 
+L 323.28 45.7272 
+L 225.63 45.7272 
+z
+" clip-path="url(#p1d3bcf410a)" style="fill: #0d3320; stroke: #ffffff; stroke-width: 1.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 323.28 69.012 
+L 420.93 69.012 
+L 420.93 45.7272 
+L 323.28 45.7272 
+z
+" clip-path="url(#p1d3bcf410a)" style="fill: #0d3320; stroke: #ffffff; stroke-width: 1.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 127.98 92.2968 
+L 225.63 92.2968 
+L 225.63 69.012 
+L 127.98 69.012 
+z
+" clip-path="url(#p1d3bcf410a)" style="fill: #ffffff; stroke: #e0dccf; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 225.63 92.2968 
+L 323.28 92.2968 
+L 323.28 69.012 
+L 225.63 69.012 
+z
+" clip-path="url(#p1d3bcf410a)" style="fill: #ffffff; stroke: #e0dccf; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 323.28 92.2968 
+L 420.93 92.2968 
+L 420.93 69.012 
+L 323.28 69.012 
+z
+" clip-path="url(#p1d3bcf410a)" style="fill: #ffffff; stroke: #e0dccf; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 127.98 115.5816 
+L 225.63 115.5816 
+L 225.63 92.2968 
+L 127.98 92.2968 
+z
+" clip-path="url(#p1d3bcf410a)" style="fill: #ece6d6; stroke: #e0dccf; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 225.63 115.5816 
+L 323.28 115.5816 
+L 323.28 92.2968 
+L 225.63 92.2968 
+z
+" clip-path="url(#p1d3bcf410a)" style="fill: #ece6d6; stroke: #e0dccf; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 323.28 115.5816 
+L 420.93 115.5816 
+L 420.93 92.2968 
+L 323.28 92.2968 
+z
+" clip-path="url(#p1d3bcf410a)" style="fill: #ece6d6; stroke: #e0dccf; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 127.98 138.8664 
+L 225.63 138.8664 
+L 225.63 115.5816 
+L 127.98 115.5816 
+z
+" clip-path="url(#p1d3bcf410a)" style="fill: #ffffff; stroke: #e0dccf; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 225.63 138.8664 
+L 323.28 138.8664 
+L 323.28 115.5816 
+L 225.63 115.5816 
+z
+" clip-path="url(#p1d3bcf410a)" style="fill: #ffffff; stroke: #e0dccf; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 323.28 138.8664 
+L 420.93 138.8664 
+L 420.93 115.5816 
+L 323.28 115.5816 
+z
+" clip-path="url(#p1d3bcf410a)" style="fill: #ffffff; stroke: #e0dccf; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 127.98 162.1512 
+L 225.63 162.1512 
+L 225.63 138.8664 
+L 127.98 138.8664 
+z
+" clip-path="url(#p1d3bcf410a)" style="fill: #fbfaf6; stroke: #e0dccf; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 225.63 162.1512 
+L 323.28 162.1512 
+L 323.28 138.8664 
+L 225.63 138.8664 
+z
+" clip-path="url(#p1d3bcf410a)" style="fill: #fbfaf6; stroke: #e0dccf; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 323.28 162.1512 
+L 420.93 162.1512 
+L 420.93 138.8664 
+L 323.28 138.8664 
+z
+" clip-path="url(#p1d3bcf410a)" style="fill: #fbfaf6; stroke: #e0dccf; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 127.98 185.436 
+L 225.63 185.436 
+L 225.63 162.1512 
+L 127.98 162.1512 
+z
+" clip-path="url(#p1d3bcf410a)" style="fill: #ffffff; stroke: #e0dccf; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 225.63 185.436 
+L 323.28 185.436 
+L 323.28 162.1512 
+L 225.63 162.1512 
+z
+" clip-path="url(#p1d3bcf410a)" style="fill: #ffffff; stroke: #e0dccf; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_19">
+    <path d="M 323.28 185.436 
+L 420.93 185.436 
+L 420.93 162.1512 
+L 323.28 162.1512 
+z
+" clip-path="url(#p1d3bcf410a)" style="fill: #ffffff; stroke: #e0dccf; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 11.5px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: middle; fill: #ffffff" x="176.805" y="60.573428" transform="rotate(-0 176.805 60.573428)">date</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 11.5px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: middle; fill: #ffffff" x="274.455" y="60.413506" transform="rotate(-0 274.455 60.413506)">units_sold</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 11.5px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: middle; fill: #ffffff" x="372.105" y="60.573428" transform="rotate(-0 372.105 60.573428)">price</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 11px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: middle; fill: #15201a" x="176.805" y="83.718931" transform="rotate(-0 176.805 83.718931)">2026-01-01</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 11px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: middle; fill: #15201a" x="274.455" y="83.718931" transform="rotate(-0 274.455 83.718931)">24.0</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 11px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: middle; fill: #15201a" x="372.105" y="83.718931" transform="rotate(-0 372.105 83.718931)">12.5</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 10.5px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: end; fill: #5d665f" x="119.61" y="83.579634" transform="rotate(-0 119.61 83.579634)">0</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 11px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: middle; fill: #15201a" x="176.805" y="107.003731" transform="rotate(-0 176.805 107.003731)">2026-01-02</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 11px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: middle; fill: #15201a" x="274.455" y="107.003731" transform="rotate(-0 274.455 107.003731)">17.0</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 11px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: middle; fill: #15201a" x="372.105" y="107.003731" transform="rotate(-0 372.105 107.003731)">12.5</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 10.5px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: end; fill: #5d665f" x="119.61" y="106.864434" transform="rotate(-0 119.61 106.864434)">1</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 11px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: middle; fill: #15201a" x="176.805" y="130.288531" transform="rotate(-0 176.805 130.288531)">2026-01-03</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 11px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: middle; fill: #15201a" x="274.455" y="130.288531" transform="rotate(-0 274.455 130.288531)">24.0</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 11px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: middle; fill: #15201a" x="372.105" y="130.288531" transform="rotate(-0 372.105 130.288531)">12.5</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 10.5px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: end; fill: #5d665f" x="119.61" y="130.149234" transform="rotate(-0 119.61 130.149234)">2</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 11px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: middle; fill: #15201a" x="176.805" y="153.573331" transform="rotate(-0 176.805 153.573331)">2026-01-04</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 11px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: middle; fill: #15201a" x="274.455" y="153.573331" transform="rotate(-0 274.455 153.573331)">17.0</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 11px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: middle; fill: #15201a" x="372.105" y="153.573331" transform="rotate(-0 372.105 153.573331)">12.5</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 10.5px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: end; fill: #5d665f" x="119.61" y="153.434034" transform="rotate(-0 119.61 153.434034)">3</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 11px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: middle; fill: #15201a" x="176.805" y="176.858131" transform="rotate(-0 176.805 176.858131)">2026-01-05</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 11px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: middle; fill: #15201a" x="274.455" y="176.858131" transform="rotate(-0 274.455 176.858131)">16.0</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 11px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: middle; fill: #15201a" x="372.105" y="176.858131" transform="rotate(-0 372.105 176.858131)">12.5</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 10.5px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: end; fill: #5d665f" x="119.61" y="176.718834" transform="rotate(-0 119.61 176.718834)">4</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 9.5px; font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif; text-anchor: end; fill: #5d665f" x="119.61" y="59.825498" transform="rotate(-0 119.61 59.825498)">row</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 10px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: middle; fill: #134a2e" x="176.805" y="220.807563" transform="rotate(-0 176.805 220.807563)">datetime64[ns]</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 10px; font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif; text-anchor: middle; fill: #5d665f" x="176.805" y="235.819825" transform="rotate(-0 176.805 235.819825)">a date</text>
+   </g>
+   <g id="text_27">
+    <text style="font-size: 10px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: middle; fill: #134a2e" x="274.455" y="220.807563" transform="rotate(-0 274.455 220.807563)">float64</text>
+   </g>
+   <g id="text_28">
+    <text style="font-size: 10px; font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif; text-anchor: middle; fill: #5d665f" x="274.455" y="235.819825" transform="rotate(-0 274.455 235.819825)">a number</text>
+   </g>
+   <g id="text_29">
+    <text style="font-size: 10px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: middle; fill: #134a2e" x="372.105" y="220.807563" transform="rotate(-0 372.105 220.807563)">float64</text>
+   </g>
+   <g id="text_30">
+    <text style="font-size: 10px; font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif; text-anchor: middle; fill: #5d665f" x="372.105" y="235.819825" transform="rotate(-0 372.105 235.819825)">a number</text>
+   </g>
+   <g id="text_31">
+    <text style="font-size: 9.5px; font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif; text-anchor: end; fill: #5d665f" x="119.61" y="219.844594" transform="rotate(-0 119.61 219.844594)">type</text>
+   </g>
+   <g id="patch_20">
+    <path d="M 429.3 94.294995 
+Q 429.3 103.939189 429.3 113.583382 
+" style="fill: none; stroke: #c99a0b; stroke-width: 2.2; stroke-linecap: round"/>
+   </g>
+   <g id="text_32">
+    <text style="font-size: 11px; font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif; fill: #15201a" transform="translate(435.996 100.483653)">one row is one day:</text>
+    <text style="font-size: 11px; font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif; fill: #15201a" transform="translate(435.996 112.972091)">2 January 2026, 17.0 units at 12.5</text>
+   </g>
+   <g id="text_33">
+    <text style="font-weight: 700; font-size: 11px; font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif; text-anchor: middle; fill: #1f6b3a" x="274.455" y="36.907056" transform="rotate(-0 274.455 36.907056)">one column is one measurement</text>
+   </g>
+   <g id="text_34">
+    <text style="font-style: italic; font-size: 10.5px; font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif; text-anchor: middle; fill: #5d665f" x="274.455" y="256.38345" transform="rotate(-0 274.455 256.38345)">60 rows in all; the first five are shown. Row positions count from 0.</text>
+   </g>
+   <g id="patch_21">
+    <path d="M 225.63 185.436 
+L 323.28 185.436 
+L 323.28 45.7272 
+L 225.63 45.7272 
+L 225.63 185.436 
+z
+" clip-path="url(#p1d3bcf410a)" style="fill: none; stroke: #1f6b3a; stroke-width: 2.2; stroke-linejoin: miter"/>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p1d3bcf410a">
+   <rect x="10.8" y="10.8" width="558" height="255.024"/>
+  </clipPath>
+ </defs>
+</svg>

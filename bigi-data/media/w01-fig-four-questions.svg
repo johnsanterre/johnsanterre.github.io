@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="668.88pt" height="254.448pt" viewBox="0 0 668.88 254.448" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 254.448 
+L 668.88 254.448 
+L 668.88 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 32.004 190.98 
+L 168.156 190.98 
+Q 172.62 190.98 172.62 186.5448 
+L 172.62 42.9552 
+Q 172.62 38.52 168.156 38.52 
+L 32.004 38.52 
+Q 27.54 38.52 27.54 42.9552 
+L 27.54 186.5448 
+Q 27.54 190.98 32.004 190.98 
+z
+" clip-path="url(#p733766b491)" style="fill: #ffffff; stroke: #e0dccf; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 35.352 146.628 
+L 164.808 146.628 
+" clip-path="url(#p733766b491)" style="fill: none; stroke: #e0dccf; stroke-linecap: square"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 193.824 190.98 
+L 329.976 190.98 
+Q 334.44 190.98 334.44 186.5448 
+L 334.44 42.9552 
+Q 334.44 38.52 329.976 38.52 
+L 193.824 38.52 
+Q 189.36 38.52 189.36 42.9552 
+L 189.36 186.5448 
+Q 189.36 190.98 193.824 190.98 
+z
+" clip-path="url(#p733766b491)" style="fill: #ffffff; stroke: #e0dccf; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 197.172 146.628 
+L 326.628 146.628 
+" clip-path="url(#p733766b491)" style="fill: none; stroke: #e0dccf; stroke-linecap: square"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 355.644 190.98 
+L 491.796 190.98 
+Q 496.26 190.98 496.26 186.5448 
+L 496.26 42.9552 
+Q 496.26 38.52 491.796 38.52 
+L 355.644 38.52 
+Q 351.18 38.52 351.18 42.9552 
+L 351.18 186.5448 
+Q 351.18 190.98 355.644 190.98 
+z
+" clip-path="url(#p733766b491)" style="fill: #ffffff; stroke: #e0dccf; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 358.992 146.628 
+L 488.448 146.628 
+" clip-path="url(#p733766b491)" style="fill: none; stroke: #e0dccf; stroke-linecap: square"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 517.464 190.98 
+L 653.616 190.98 
+Q 658.08 190.98 658.08 186.5448 
+L 658.08 42.9552 
+Q 658.08 38.52 653.616 38.52 
+L 517.464 38.52 
+Q 513 38.52 513 42.9552 
+L 513 186.5448 
+Q 513 190.98 517.464 190.98 
+z
+" clip-path="url(#p733766b491)" style="fill: #ffffff; stroke: #e0dccf; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_4">
+    <path d="M 520.812 146.628 
+L 650.268 146.628 
+" clip-path="url(#p733766b491)" style="fill: none; stroke: #e0dccf; stroke-linecap: square"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 27.54 63.468 
+L 172.62 63.468 
+L 172.62 38.52 
+L 27.54 38.52 
+z
+" clip-path="url(#p733766b491)" style="fill: #0d3320"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 9.5px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: start; fill: #134a2e" x="35.352" y="82.746641" transform="rotate(-0 35.352 82.746641)">sales.shape</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 11px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: start; fill: #15201a" x="35.352" y="116.428531" transform="rotate(-0 35.352 116.428531)">(60, 3)</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 10.5px; font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif; text-anchor: start; fill: #5d665f" x="35.352" y="165.921914" transform="rotate(-0 35.352 165.921914)">60 rows, one per day</text>
+   </g>
+   <g id="patch_7">
+    <path d="M 189.36 63.468 
+L 334.44 63.468 
+L 334.44 38.52 
+L 189.36 38.52 
+z
+" clip-path="url(#p733766b491)" style="fill: #0d3320"/>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 9.5px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: start; fill: #134a2e" x="197.172" y="82.746641" transform="rotate(-0 197.172 82.746641)">sales.columns</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 11px; font-family: SF Mono, Menlo, Consolas, monospace; fill: #15201a" transform="translate(197.172 109.660867)">date, units_sold,</text>
+    <text style="font-size: 11px; font-family: SF Mono, Menlo, Consolas, monospace; fill: #15201a" transform="translate(197.172 123.196195)">price</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 10.5px; font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif; text-anchor: start; fill: #5d665f" x="197.172" y="165.974414" transform="rotate(-0 197.172 165.974414)">3 columns</text>
+   </g>
+   <g id="patch_8">
+    <path d="M 351.18 63.468 
+L 496.26 63.468 
+L 496.26 38.52 
+L 351.18 38.52 
+z
+" clip-path="url(#p733766b491)" style="fill: #0d3320"/>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 9.5px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: start; fill: #134a2e" x="358.992" y="82.746641" transform="rotate(-0 358.992 82.746641)">sales.dtypes</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 11px; font-family: SF Mono, Menlo, Consolas, monospace; fill: #15201a" transform="translate(358.992 109.813836)">datetime64[ns]</text>
+    <text style="font-size: 11px; font-family: SF Mono, Menlo, Consolas, monospace; fill: #15201a" transform="translate(358.992 123.043227)">float64, float64</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 10.5px; font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif; text-anchor: start; fill: #5d665f" x="358.992" y="165.974414" transform="rotate(-0 358.992 165.974414)">a date and two numbers</text>
+   </g>
+   <g id="patch_9">
+    <path d="M 513 63.468 
+L 658.08 63.468 
+L 658.08 38.52 
+L 513 38.52 
+z
+" clip-path="url(#p733766b491)" style="fill: #0d3320"/>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 9.5px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: start; fill: #134a2e" x="520.812" y="82.746641" transform="rotate(-0 520.812 82.746641)">sales.isna().sum()</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 11px; font-family: SF Mono, Menlo, Consolas, monospace; text-anchor: start; fill: #15201a" x="520.812" y="116.428531" transform="rotate(-0 520.812 116.428531)">0, 5, 0</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 10.5px; font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif; text-anchor: start; fill: #5d665f" x="520.812" y="165.974414" transform="rotate(-0 520.812 165.974414)">5 in units_sold</text>
+   </g>
+   <g id="text_13">
+    <text style="font-weight: 700; font-size: 11.5px; font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif; text-anchor: middle; fill: #0d3320" x="334.44" y="218.88925" transform="rotate(-0 334.44 218.88925)">Write the four answers down in a text cell. Then, and only then, the first calculation.</text>
+   </g>
+   <g id="text_14">
+    <text style="font-weight: 700; font-size: 12px; font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif; text-anchor: start; fill: #f2c230" x="35.352" y="54.096187" transform="rotate(-0 35.352 54.096187)">1</text>
+   </g>
+   <g id="text_15">
+    <text style="font-weight: 700; font-size: 11px; font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif; text-anchor: start; fill: #ffffff" x="50.976" y="53.875484" transform="rotate(-0 50.976 53.875484)">How many rows?</text>
+   </g>
+   <g id="patch_10">
+    <path d="M 176.291684 116.136 
+Q 180.988779 116.136 183.89702 116.136 
+" clip-path="url(#p733766b491)" style="fill: none; stroke: #0d3320; stroke-width: 1.6; stroke-linecap: round"/>
+    <path d="M 178.29702 113.336 
+L 183.89702 116.136 
+L 178.29702 118.936 
+z
+" clip-path="url(#p733766b491)" style="fill: #0d3320; stroke: #0d3320; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="text_16">
+    <text style="font-weight: 700; font-size: 12px; font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif; text-anchor: start; fill: #f2c230" x="197.172" y="54.096187" transform="rotate(-0 197.172 54.096187)">2</text>
+   </g>
+   <g id="text_17">
+    <text style="font-weight: 700; font-size: 11px; font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif; text-anchor: start; fill: #ffffff" x="212.796" y="53.837672" transform="rotate(-0 212.796 53.837672)">Which columns?</text>
+   </g>
+   <g id="patch_11">
+    <path d="M 338.111684 116.136 
+Q 342.808779 116.136 345.71702 116.136 
+" clip-path="url(#p733766b491)" style="fill: none; stroke: #0d3320; stroke-width: 1.6; stroke-linecap: round"/>
+    <path d="M 340.11702 113.336 
+L 345.71702 116.136 
+L 340.11702 118.936 
+z
+" clip-path="url(#p733766b491)" style="fill: #0d3320; stroke: #0d3320; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="text_18">
+    <text style="font-weight: 700; font-size: 12px; font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif; text-anchor: start; fill: #f2c230" x="358.992" y="54.096187" transform="rotate(-0 358.992 54.096187)">3</text>
+   </g>
+   <g id="text_19">
+    <text style="font-weight: 700; font-size: 11px; font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif; text-anchor: start; fill: #ffffff" x="374.616" y="53.875484" transform="rotate(-0 374.616 53.875484)">What type?</text>
+   </g>
+   <g id="patch_12">
+    <path d="M 499.931684 116.136 
+Q 504.628779 116.136 507.53702 116.136 
+" clip-path="url(#p733766b491)" style="fill: none; stroke: #0d3320; stroke-width: 1.6; stroke-linecap: round"/>
+    <path d="M 501.93702 113.336 
+L 507.53702 116.136 
+L 501.93702 118.936 
+z
+" clip-path="url(#p733766b491)" style="fill: #0d3320; stroke: #0d3320; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="text_20">
+    <text style="font-weight: 700; font-size: 12px; font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif; text-anchor: start; fill: #f2c230" x="520.812" y="54.096187" transform="rotate(-0 520.812 54.096187)">4</text>
+   </g>
+   <g id="text_21">
+    <text style="font-weight: 700; font-size: 11px; font-family: Inter, Helvetica Neue, Helvetica, Arial, sans-serif; text-anchor: start; fill: #ffffff" x="536.436" y="53.864312" transform="rotate(-0 536.436 53.864312)">How many missing?</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p733766b491">
+   <rect x="10.8" y="10.8" width="647.28" height="232.848"/>
+  </clipPath>
+ </defs>
+</svg>
