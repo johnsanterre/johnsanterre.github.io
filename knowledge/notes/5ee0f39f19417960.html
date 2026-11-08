@@ -1,0 +1,29 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The Challenge of Using LLMs to Simulate Human Behavior: A Causal Inference Perspective</title><style>
+:root{--bg:#faf9f7;--ink:#1e232b;--muted:#6b7280;--accent:#0f6b5c;--card:#ffffff;--line:#e3e1dc;--code:#eef2f0}
+@media (prefers-color-scheme:dark){:root{--bg:#14181d;--ink:#e8eaed;--muted:#9aa3ad;--accent:#4fc3ad;--card:#1c2128;--line:#2c333b;--code:#232a31}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:2rem 1.2rem 4rem}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.25;margin:.4rem 0 1rem}h2{font-size:1.15rem;margin:1.6rem 0 .6rem}
+nav{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;padding:.2rem 0 1rem;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted)}nav a:hover{color:var(--accent)}
+ul{padding-left:1.2rem}li{margin:.25rem 0}
+.meta{color:var(--muted);font-size:.85rem;margin:.2rem 0 1rem}
+.tag{display:inline-block;background:var(--code);border-radius:999px;padding:.05rem .6rem;font-size:.78rem;margin:0 .25rem .25rem 0;color:var(--muted)}
+.src{margin-top:1.6rem;padding-top:.8rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted);overflow-wrap:anywhere}
+#q{width:100%;padding:.6rem .9rem;font-size:1rem;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+#hits{list-style:none;padding:0}#hits li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+.count{color:var(--muted);font-size:.85rem}
+.cols{columns:2;column-gap:2rem}@media(max-width:600px){.cols{columns:1}}
+</style><script data-goatcounter="https://johnsanterre.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></head><body><main><nav><a href="../index.html">News Bank</a><a href="../concepts/index.html">Concepts</a><a href="../entities/index.html">Entities</a><a href="../notes/index.html">Notes</a></nav><h1>The Challenge of Using LLMs to Simulate Human Behavior: A Causal Inference Perspective</h1><div><span class="tag">llm-simulation</span><span class="tag">causal-inference</span><span class="tag">experiment-design</span><span class="tag">confounding</span><span class="tag">marketing</span></div><p><strong>Abstraction:</strong> Gui &amp; Toubia (Columbia) show blinded LLM-subject experiments violate unconfoundedness by construction; the fix is unblinding</p>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>Human subjects exist independently of the experiment; LLM subjects are conjured by the prompt — leave context unspecified and the model fills it in conditioned on the treatment (price moves the customer&#x27;s last-paid price, competing price, even expiration days).</li>
+<li>Benchmark: 40 CPG products x 11 price points vs preregistered 1,000-person representative human survey. Humans: downward-sloping demand. Blinded LLM: inverted-U (price read as quality signal — the observational answer to a causal question).</li>
+<li>Controlling covariates backfires via focalism: fix competing price in the prompt and demand becomes a step function (buy iff below competitor). Sequential covariate addition (14→30) gives non-monotonic error: helps, then hurts. Unconfoundedness vs ecological validity trade off directly — unlike human experiments where controls enter at analysis, not generation.</li>
+<li>Theory: a prompting strategy is ambiguous when do(price) and observe(price) map to the same prompt; any model must then fail one. Survives model improvement.</li>
+<li>Fix = unblinding: state the randomization mechanism and support in the prompt. Improves MAE 1–60% across GPT-3.5→4.1 incl. o-series; unblinded fine-tuning beats best blinded by 15% and stays robust when biased observational (Amazon browsing) data is mixed into training.</li>
+</ul>
+<p><strong>Connections:</strong> <a href="../concepts/unconfoundedness.html">Unconfoundedness</a> · <a href="../concepts/do-operator.html">Do Operator</a> · <a href="../concepts/demand-estimation.html">Demand Estimation</a></p>
+<p class="src">Source: <a href="https://arxiv.org/abs/2312.15524" rel="noopener">https://arxiv.org/abs/2312.15524</a></p></main></body></html>
