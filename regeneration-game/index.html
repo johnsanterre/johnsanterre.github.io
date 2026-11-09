@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>The Regeneration Game</title>
+<meta name="description" content="A short role-play game for leaders: aligning incentives so that the people who carry a cost are paid to stop carrying it. A working vision prepared for The Regenerative Labs.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f4efe4;--ink:#2b2621;--mut:#6b6257;--rule:#cfc4b0;--card:#fbf8f1;--acc:#5a4a34}
+*{box-sizing:border-box} body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.65 "Source Serif 4",Georgia,serif}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+h1,h2,h3,h4{font-family:"Cormorant Garamond",Didot,Georgia,serif;font-weight:600;line-height:1.15;margin:0 0 .4em}
+h1{font-size:clamp(2.4rem,6vw,4rem);letter-spacing:.04em} h2{font-size:2rem;margin-top:0} h3{font-size:1.7rem} h4{font-size:1.25rem;margin-top:1.4em}
+.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;color:var(--mut);margin:0 0 .3em}
+header.hero{padding:56px 0 30px;text-align:center;border-bottom:1px solid var(--rule)}
+header.hero img{width:100%;max-width:880px;display:block;margin:26px auto 0;border-radius:2px}
+.lede{font-size:1.2rem;max-width:720px;margin:.6em auto 0;color:var(--acc)}
+nav.toc{display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:center;padding:14px 0;border-bottom:1px solid var(--rule);font-size:.95rem}
+nav.toc a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule)}
+section{padding:46px 0;border-bottom:1px solid var(--rule)} section p{max-width:760px}
+.steps{counter-reset:s;list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.steps li{background:var(--card);border:1px solid var(--rule);padding:14px 16px;counter-increment:s}
+.steps li::before{content:counter(s);font-family:"Cormorant Garamond",serif;font-size:1.8rem;font-weight:700;display:block;color:var(--acc)}
+.scenario{display:grid;grid-template-columns:minmax(0,1fr);gap:18px;padding:30px 0;border-top:1px solid var(--rule)}
+.scenario img{width:100%;max-width:760px;display:block}
+.tablewrap{overflow-x:auto} table{border-collapse:collapse;width:100%;font-size:.92rem;background:var(--card)}
+th,td{border:1px solid var(--rule);padding:7px 9px;vertical-align:top;text-align:left} thead th{background:#ece4d3}
+.opt{font-family:"Cormorant Garamond",serif;font-weight:700;color:var(--acc)}
+.people{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.people li{background:var(--card);border:1px solid var(--rule);padding:12px 14px;font-size:.94rem}
+.people p{margin:.25em 0} .pname{font-family:"Cormorant Garamond",serif;font-size:1.25rem;font-weight:700} .pname span{display:block;font-family:"Source Serif 4",serif;font-size:.85rem;font-weight:400;color:var(--mut)}
+.quote{font-style:italic} details summary{cursor:pointer;color:var(--mut)}
+.fig{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:18px 0}
+.fig div{background:var(--card);border:1px solid var(--rule);padding:14px} .fig b{display:block;font-family:"Cormorant Garamond",serif;font-size:2.2rem;line-height:1}
+footer{padding:30px 0 50px;color:var(--mut);font-size:.9rem;text-align:center}
+.scen-body{min-width:0}
+</style></head><body>
+<header class=hero><div class=wrap>
+<p class=eyebrow>A working vision prepared for The Regenerative Labs, Amsterdam</p>
+<h1>The Regeneration Game</h1>
+<p class=lede>A thirty-minute role-play for leaders. Six people sit down as stakeholders who have agreed to decide something together. A proposal arrives. Each of them must hold their own people's needs and still move the thing forward.</p>
+<img src="img/willow-polder.jpg" alt="Engraved scene of a Dutch polder beside a river">
+</div></header>
+<nav class=toc><a href="#idea">The idea</a><a href="#play">How it plays</a><a href="#scenarios">Four scenarios</a><a href="#design">What is designed underneath</a><a href="#learned">What testing showed</a><a href="#next">Next</a></nav>
+<main class=wrap>
+<section id=idea><h2>The idea</h2>
+<p>Most of the costs that damage a place are pushed onto someone who is not in the room. The usual answer is a law. This game practises the other answer: the people who carry a cost are paid, traded or compensated to stop carrying it, so that everyone's incentives point the same way.</p>
+<p>The table plays as one team against the problem, never against each other. Each player takes on a persona unlike their own: a banker plays a farmer, a regulator plays a developer. The persona has a constituency to answer to, a red line, a few things it can offer, and one thing it never says out loud. The richness is in the people. The rules fit on one sheet and take under five minutes to explain.</p>
+</section>
+<section id=play><h2>How it plays</h2>
+<p>Four to six players, about thirty minutes, then a ten-minute debrief.</p>
+<ol class=steps>
+<li><b>Become.</b> Each player introduces their persona in the first person: who they answer to and what their people want.</li>
+<li><b>Open.</b> Each player names the deal they would write if it were up to them. Their scores stay private. The table now sees where everyone stands.</li>
+<li><b>Shape.</b> Three rounds. Each player may propose one change, or a package of two, and name the versions they will block. A change goes through if nobody blocks it.</li>
+<li><b>Sign.</b> A player can sign only if the deal reaches their private minimum and avoids their red line. Everyone must sign, or the proposal fails.</li>
+<li><b>Report back.</b> "I go back to my people and tell them..." Each player defends the deal in character.</li>
+<li><b>Reveal.</b> Every card is turned face up, including the private lines, and the host shows the best deal the table could have reached.</li>
+</ol>
+<p>The debrief asks four questions. Who held out, and what did it cost the table? Was there a better deal one change away that nobody would give up? What did you never ask the person next to you? Where, in your own work, does holding out for your best version keep everyone below a better deal?</p>
+</section>
+<section id=scenarios><h2>Four scenarios</h2>
+<p>Each scenario is a place, a proposal, five terms with three versions each, and six stakeholders. The places are invented, so nobody plays their own organisation, but each is drawn from a real kind of fight: flood storage on farmland, a coal port's closure, a river in drought, wind on common land.</p>
+<article class=scenario id="s1">
+<img src="img/willow-polder.jpg" alt="Engraved scene: Room for the River at the Willow Polder" loading=lazy>
+<div class=scen-body>
+<p class=eyebrow>Scenario 1</p><h3>Room for the River at the Willow Polder</h3>
+<p>The Willow Polder is 300 hectares of low dairy land beside the river Velmar, with twelve family farms on it. Downstream, the tenants of Lowtown are flooded first and fixed last, and their insurer has stopped renewing. A developer holds options on the polder land, and a wetlands trust counts fewer godwits every spring.</p>
+<p><b>The proposal, from the province:</b> Turn the polder into flood storage that fills in a high river, about once in ten years. <b>If nothing passes:</b> The province raises the dyke at Lowtown instead. It holds for about twenty years, and the next flood comes higher.</p>
+<div class=tablewrap><table><thead><tr><th>Term</th><th>a, as proposed</th><th>b</th><th>c</th></tr></thead><tbody><tr><th>Who pays for the works</th><td><span class=opt>a</span> the province pays it all</td><td><span class=opt>b</span> the Water Board levy pays a third</td><td><span class=opt>c</span> a charge on new high-ground homes pays a third</td></tr><tr><th>The polder families&#x27; land</th><td><span class=opt>a</span> bought out at today&#x27;s farmland price</td><td><span class=opt>b</span> the families keep it and are paid each year to let it flood</td><td><span class=opt>c</span> bought out at replacement value</td></tr><tr><th>The basin</th><td><span class=opt>a</span> a dug storage basin, fenced</td><td><span class=opt>b</span> a shallow basin the families graze</td><td><span class=opt>c</span> a nature reserve run by the Wetlands Trust</td></tr><tr><th>The developer&#x27;s options on the polder</th><td><span class=opt>a</span> no new building anywhere</td><td><span class=opt>b</span> swapped for building rights on high ground</td><td><span class=opt>c</span> bought out in cash by the province</td></tr><tr><th>The families&#x27; homes</th><td><span class=opt>a</span> cash only; each family finds its own home</td><td><span class=opt>b</span> the families move together to plots side by side on high ground</td><td><span class=opt>c</span> each family is rehoused on its own across Velmond</td></tr></tbody></table></div>
+<h4>The six stakeholders</h4><ul class=people><li><p class=pname>Ruud van Dam <span>director of a housing developer</span></p>
+<p class=quote>&ldquo;I&#x27;m not against the river. I&#x27;m against being the only one who pays for it.&rdquo;</p>
+<p><b>Answers to</b> My shareholders. <b>Red line:</b> no new building anywhere.</p>
+<details><summary>Private line</summary><p>We hold purchase options on 120 hectares of the Willow Polder. If the polder becomes water with no swap, the options are worth nothing.</p></details></li><li><p class=pname>Marieke de Wit <span>regional lending director, Vantmoor Bank</span></p>
+<p class=quote>&ldquo;I can wait for a good deal. I can&#x27;t wait for a bad loan.&rdquo;</p>
+<p><b>Answers to</b> The bank&#x27;s credit committee. <b>Red line:</b> a nature reserve run by the Wetlands Trust.</p>
+<details><summary>Private line</summary><p>Three of the polder farm loans are already in arrears. Cash repays them at once; a nature reserve would leave them unpaid.</p></details></li><li><p class=pname>Samira El Idrissi <span>chair of the Lowtown tenants&#x27; union</span></p>
+<p class=quote>&ldquo;Lowtown floods first and gets fixed last. This time we&#x27;re in the room.&rdquo;</p>
+<p><b>Answers to</b> The tenants of Lowtown, who meet in the community centre every month. <b>Red line:</b> the Water Board levy pays a third.</p>
+<details><summary>Private line</summary><p>The insurer has told me privately that our blocks won&#x27;t be renewed unless real storage is built. A levy rise goes straight into my members&#x27; rents.</p></details></li><li><p class=pname>Dirk Hoekstra <span>chair of the Velmar Water Board</span></p>
+<p class=quote>&ldquo;I can raise any dyke you like. I can&#x27;t raise it forever.&rdquo;</p>
+<p><b>Answers to</b> The Water Board&#x27;s assembly, elected by landowners and residents. <b>Red line:</b> the Water Board levy pays a third.</p>
+<details><summary>Private line</summary><p>Half my assembly own polder land. If they lose it cheaply, I lose the chair.</p></details></li><li><p class=pname>Maaike Verhoef <span>ecologist, Velmar Wetlands Trust</span></p>
+<p class=quote>&ldquo;Every spring there are fewer godwits. They need wet meadows, not a concrete basin.&rdquo;</p>
+<p><b>Answers to</b> The trust&#x27;s members and its meadow-bird volunteers. <b>Red line:</b> a dug storage basin, fenced.</p>
+<details><summary>Private line</summary><p>The trust&#x27;s own reserve next door floods badly every winter. A reserve on the polder would fix that, and we&#x27;d be accused of a land grab.</p></details></li><li><p class=pname>Jannie Kok <span>dairy farmer on the Willow Polder</span></p>
+<p class=quote>&ldquo;My great-grandfather was born in that farmhouse. You want to flood it once every ten years and call that a plan.&rdquo;</p>
+<p><b>Answers to</b> The eleven other families on the polder, who chose me to speak for them. <b>Red line:</b> bought out at today&#x27;s farmland price.</p>
+<details><summary>Private line</summary><p>Three of the twelve families are behind on their loans. A good price would save them, and I can&#x27;t say that in front of the bank.</p></details></li></ul>
+</div></article><article class=scenario id="s2">
+<img src="img/kessel-pier.jpg" alt="Engraved scene: The Last Coal Pier at Kessel" loading=lazy>
+<div class=scen-body>
+<p class=eyebrow>Scenario 2</p><h3>The Last Coal Pier at Kessel</h3>
+<p>Kessel is a harbour town of 40,000 whose deep-water pier has unloaded coal for ninety years. The last power station it fed closes in 2029. A hundred and forty dockers still work the pier, most of them the sons and daughters of dockers. The pier sits beside the Kessel salt marsh, where the harbour&#x27;s fish nurseries are.</p>
+<p><b>The proposal, from the national government:</b> Close the coal pier by 2029 and rebuild it as a deep-water quay for offshore-wind components. <b>If nothing passes:</b> The pier closes anyway in 2029, with no plan.</p>
+<div class=tablewrap><table><thead><tr><th>Term</th><th>a, as proposed</th><th>b</th><th>c</th></tr></thead><tbody><tr><th>Who pays</th><td><span class=opt>a</span> the national transition fund pays it all</td><td><span class=opt>b</span> the Port Authority&#x27;s harbour dues pay a third</td><td><span class=opt>c</span> a levy on the offshore-wind operator pays a third</td></tr><tr><th>The dockers&#x27; jobs</th><td><span class=opt>a</span> severance at the legal minimum</td><td><span class=opt>b</span> kept on and paid to run the new quay</td><td><span class=opt>c</span> full wage guarantee to retirement</td></tr><tr><th>The pier</th><td><span class=opt>a</span> dredged and rebuilt in concrete, fenced</td><td><span class=opt>b</span> a working quay with a restored marsh edge</td><td><span class=opt>c</span> the whole pier returned to salt marsh, run by the Marsh Trust</td></tr><tr><th>The wind company&#x27;s concession</th><td><span class=opt>a</span> cancelled; no new terminal</td><td><span class=opt>b</span> moved to the outer harbour</td><td><span class=opt>c</span> bought out in cash</td></tr><tr><th>The dockers&#x27; crews</th><td><span class=opt>a</span> a cash payoff; each finds their own work</td><td><span class=opt>b</span> they move together as one crew company to the new quay</td><td><span class=opt>c</span> each is placed separately in other ports</td></tr></tbody></table></div>
+<h4>The six stakeholders</h4><ul class=people><li><p class=pname>Lars Brenning <span>director, Nordsee Windbau</span></p>
+<p class=quote>&ldquo;We&#x27;ll bring the work. We won&#x27;t bring it to a harbour that taxes us for coming.&rdquo;</p>
+<p><b>Answers to</b> his board in Hamburg. <b>Red line:</b> the concession cancelled.</p>
+<details><summary>Private line</summary><p>his company has already ordered cranes sized for this harbour.</p></details></li><li><p class=pname>Ingeborg Lund <span>head of infrastructure lending, Kessel Sparebank</span></p>
+<p class=quote>&ldquo;Bonds are paid by quays that work.&rdquo;</p>
+<p><b>Answers to</b> the bank&#x27;s risk committee. <b>Red line:</b> the pier returned to marsh.</p>
+<details><summary>Private line</summary><p>the pier&#x27;s old bonds are secured on the quay itself, and a marsh repays nothing.</p></details></li><li><p class=pname>Tomas Varga <span>chair, Kessel Harbour Residents</span></p>
+<p class=quote>&ldquo;Every fee this port raises ends up on the ferry ticket.&rdquo;</p>
+<p><b>Answers to</b> the residents&#x27; assembly in the town hall. <b>Red line:</b> harbour dues paying a share.</p>
+<details><summary>Private line</summary><p>the ferry company has told him fares rise 20 percent if dues go up.</p></details></li><li><p class=pname>Aino Salo <span>chief executive, Kessel Port Authority</span></p>
+<p class=quote>&ldquo;I can run a port. I can&#x27;t run one that&#x27;s broke.&rdquo;</p>
+<p><b>Answers to</b> the city council, which owns the port. <b>Red line:</b> harbour dues paying a share.</p>
+<details><summary>Private line</summary><p>two council members want her job.</p></details></li><li><p class=pname>Femi Okafor <span>marine biologist, Kessel Marsh Trust</span></p>
+<p class=quote>&ldquo;Half the plaice in this sea were born in that marsh.&rdquo;</p>
+<p><b>Answers to</b> the trust&#x27;s members and its volunteer counters. <b>Red line:</b> concrete and fences.</p>
+<details><summary>Private line</summary><p>the trust has a European grant waiting that only a restored marsh unlocks.</p></details></li><li><p class=pname>Rosa Hendriks <span>shop steward, Kessel Dockers&#x27; Union</span></p>
+<p class=quote>&ldquo;My grandfather unloaded the first ship here. Don&#x27;t hand me an envelope and a goodbye.&rdquo;</p>
+<p><b>Answers to</b> the 140 dockers, who vote at the union hall. <b>Red line:</b> severance at the legal minimum.</p>
+<details><summary>Private line</summary><p>thirty dockers are under forty and in debt on houses they bought at the top of the market.</p></details></li></ul>
+</div></article><article class=scenario id="s3">
+<img src="img/ostra-valley.jpg" alt="Engraved scene: Water for the Ostra Valley" loading=lazy>
+<div class=scen-body>
+<p class=eyebrow>Scenario 3</p><h3>Water for the Ostra Valley</h3>
+<p>The Ostra river feeds a valley of orchards and vegetable farms, a city of 200,000 at its mouth, and a new data centre on the valley floor. Three dry summers in five have left the river a trickle by August, and the city&#x27;s intakes have twice run salty.</p>
+<p><b>The proposal, from the regional government:</b> Cut irrigation by a third and keep a minimum flow in the river every summer. <b>If nothing passes:</b> The region rations water by emergency decree each August, starting with the farms.</p>
+<div class=tablewrap><table><thead><tr><th>Term</th><th>a, as proposed</th><th>b</th><th>c</th></tr></thead><tbody><tr><th>Who pays</th><td><span class=opt>a</span> the national drought fund pays it all</td><td><span class=opt>b</span> the irrigation district&#x27;s water fees pay a third</td><td><span class=opt>c</span> a charge on the data centre&#x27;s water pays a third</td></tr><tr><th>The farmers&#x27; water rights</th><td><span class=opt>a</span> bought back at today&#x27;s price</td><td><span class=opt>b</span> farmers keep them and are paid each dry year to leave water in the river</td><td><span class=opt>c</span> bought back at replacement value</td></tr><tr><th>The river</th><td><span class=opt>a</span> a concrete channel and a new reservoir</td><td><span class=opt>b</span> a floodplain the farmers keep farming, wet in wet years</td><td><span class=opt>c</span> a river reserve run by the Ostra River Trust</td></tr><tr><th>The data centre&#x27;s water rights</th><td><span class=opt>a</span> revoked; no new use</td><td><span class=opt>b</span> swapped for the city&#x27;s treated wastewater</td><td><span class=opt>c</span> bought out in cash</td></tr><tr><th>The farm families who give up land</th><td><span class=opt>a</span> cash only; each on their own</td><td><span class=opt>b</span> they move together to a new irrigated block on the valley terrace</td><td><span class=opt>c</span> each is resettled separately</td></tr></tbody></table></div>
+<h4>The six stakeholders</h4><ul class=people><li><p class=pname>Priya Raman <span>site director, Lumen Data</span></p>
+<p class=quote>&ldquo;We chose this valley because you invited us.&rdquo;</p>
+<p><b>Answers to</b> the company&#x27;s European board. <b>Red line:</b> water rights revoked.</p>
+<details><summary>Private line</summary><p>the company could move the cooling to treated wastewater for a cost it has already budgeted.</p></details></li><li><p class=pname>Mateo Ferrer <span>agricultural lending director, Caixa Rural de l&#x27;Ostra</span></p>
+<p class=quote>&ldquo;A farm that floods pays. A farm that&#x27;s gone doesn&#x27;t.&rdquo;</p>
+<p><b>Answers to</b> the cooperative bank&#x27;s credit committee. <b>Red line:</b> the river reserve.</p>
+<details><summary>Private line</summary><p>a fifth of the bank&#x27;s farm loans are on land the reserve would take.</p></details></li><li><p class=pname>Lucía Moreno <span>president, Ostra Delta Neighbours</span></p>
+<p class=quote>&ldquo;When the river fails, our taps taste of the sea.&rdquo;</p>
+<p><b>Answers to</b> the neighbourhood federation. <b>Red line:</b> the irrigation district&#x27;s fees paying a share.</p>
+<details><summary>Private line</summary><p>the district&#x27;s fees are billed on every household&#x27;s water bill too.</p></details></li><li><p class=pname>Joan Puig <span>chair, Ostra Irrigation District</span></p>
+<p class=quote>&ldquo;I share out water. I can&#x27;t share out water that isn&#x27;t there.&rdquo;</p>
+<p><b>Answers to</b> the district&#x27;s general assembly of irrigators. <b>Red line:</b> the district&#x27;s fees paying a share.</p>
+<details><summary>Private line</summary><p>his assembly is split, and a fee rise would split it for good.</p></details></li><li><p class=pname>Hana Kováčová <span>river ecologist, Ostra River Trust</span></p>
+<p class=quote>&ldquo;A river that only flows in winter isn&#x27;t a river.&rdquo;</p>
+<p><b>Answers to</b> the trust&#x27;s members and its school monitoring programme. <b>Red line:</b> the concrete channel.</p>
+<details><summary>Private line</summary><p>the trust&#x27;s monitoring grant ends next year unless the river is protected.</p></details></li><li><p class=pname>Bartolomé Vidal <span>chair, Ostra Smallholders&#x27; Cooperative</span></p>
+<p class=quote>&ldquo;My orchard was planted by my grandmother. You want to buy it like a used car.&rdquo;</p>
+<p><b>Answers to</b> the cooperative&#x27;s 300 member families. <b>Red line:</b> buyback at today&#x27;s price.</p>
+<details><summary>Private line</summary><p>forty member farms are already insolvent and need a buyback at any fair price to clear their debts.</p></details></li></ul>
+</div></article><article class=scenario id="s4">
+<img src="img/cairnmoor.jpg" alt="Engraved scene: Wind on Cairnmoor" loading=lazy>
+<div class=scen-body>
+<p class=eyebrow>Scenario 4</p><h3>Wind on Cairnmoor</h3>
+<p>Cairnmoor is 4,000 hectares of upland bog and common grazing above the market town of Dunlow. Shepherds have grazed it under common rights for six hundred years. The national grid wants a wind farm on it, because the wind is strong and the transmission line already crosses the moor. The moor&#x27;s peat holds more carbon than the county&#x27;s forests.</p>
+<p><b>The proposal, from the national grid:</b> Build 60 turbines on the moor, with roads and drainage, by 2030. <b>If nothing passes:</b> The grid builds a gas plant at Dunlow instead.</p>
+<div class=tablewrap><table><thead><tr><th>Term</th><th>a, as proposed</th><th>b</th><th>c</th></tr></thead><tbody><tr><th>Who pays for the grid connection and repairs</th><td><span class=opt>a</span> the national grid pays it all</td><td><span class=opt>b</span> the county council pays a third</td><td><span class=opt>c</span> a charge on the wind operator&#x27;s turbines pays a third</td></tr><tr><th>The commoners&#x27; grazing rights</th><td><span class=opt>a</span> extinguished at today&#x27;s price</td><td><span class=opt>b</span> the commoners keep them and are paid each year to graze around the turbines and rewet the bog</td><td><span class=opt>c</span> bought out at replacement value</td></tr><tr><th>The moor</th><td><span class=opt>a</span> drained and tracked for 60 turbines, fenced</td><td><span class=opt>b</span> 30 turbines on a rewetted, grazed moor</td><td><span class=opt>c</span> a peat reserve run by the Moorland Trust</td></tr><tr><th>The wind company&#x27;s lease option</th><td><span class=opt>a</span> cancelled; no wind farm</td><td><span class=opt>b</span> moved to the lower, drier edge of the moor</td><td><span class=opt>c</span> bought out in cash</td></tr><tr><th>The commoner families&#x27; share</th><td><span class=opt>a</span> a one-off cash payment to each household</td><td><span class=opt>b</span> a community-owned turbine the commoners run together</td><td><span class=opt>c</span> a separate discount on each household&#x27;s power bill</td></tr></tbody></table></div>
+<h4>The six stakeholders</h4><ul class=people><li><p class=pname>Fraser Coll <span>development director, Highwind Renewables</span></p>
+<p class=quote>&ldquo;Give me a site and a fair rate, and I&#x27;ll give you clean power for thirty years.&rdquo;</p>
+<p><b>Answers to</b> his investors. <b>Red line:</b> the lease option cancelled.</p>
+<details><summary>Private line</summary><p>the option expires next year, and the company has spent four years on surveys.</p></details></li><li><p class=pname>Morag Innes <span>rural lending manager, Dunlow &amp; District Bank</span></p>
+<p class=quote>&ldquo;I lend to farms that have a future.&rdquo;</p>
+<p><b>Answers to</b> the bank&#x27;s lending committee. <b>Red line:</b> the peat reserve.</p>
+<details><summary>Private line</summary><p>half the hill farms owe the bank money secured on their grazing rights.</p></details></li><li><p class=pname>Euan Baird <span>chair, Dunlow Community Council</span></p>
+<p class=quote>&ldquo;Dunlow pays the highest power bills in the country and sees none of the money.&rdquo;</p>
+<p><b>Answers to</b> the town&#x27;s residents at the monthly community council. <b>Red line:</b> the county council paying a share.</p>
+<details><summary>Private line</summary><p>a council-tax rise would cost him his seat at the next election.</p></details></li><li><p class=pname>Ailsa Grant <span>leader, Dunlow County Council</span></p>
+<p class=quote>&ldquo;The county has a budget, not a printing press.&rdquo;</p>
+<p><b>Answers to</b> the elected councillors. <b>Red line:</b> the county council paying a share.</p>
+<details><summary>Private line</summary><p>the county is one bad year from emergency spending controls.</p></details></li><li><p class=pname>Kenji Watanabe <span>peatland scientist, Moorland Trust</span></p>
+<p class=quote>&ldquo;Drain this bog and you release more carbon than the turbines will save in twenty years.&rdquo;</p>
+<p><b>Answers to</b> the trust&#x27;s members and its volunteer surveyors. <b>Red line:</b> a drained, tracked moor.</p>
+<details><summary>Private line</summary><p>the trust&#x27;s carbon-credit sale depends on the bog staying wet.</p></details></li><li><p class=pname>Iona MacLeod <span>clerk, Cairnmoor Grazings Committee</span></p>
+<p class=quote>&ldquo;My family has put sheep on this moor since before there were maps.&rdquo;</p>
+<p><b>Answers to</b> the 26 commoner families. <b>Red line:</b> rights extinguished at today&#x27;s price.</p>
+<details><summary>Private line</summary><p>six families are behind on their loans, and a fair price would save them.</p></details></li></ul>
+</div></article>
+</section>
+<section id=design><h2>What is designed underneath</h2>
+<p>The story sits on a designed solution space. Every version of every term carries private points for each persona, and the points are built so that the game has a shape: one best deal for the whole table, and lower deals where a single player's holding out traps everyone. The same space carries all four stories, so every table faces the same dynamics whichever scenario it plays.</p>
+<div class=fig><div><b>243</b>possible deals</div><div><b>5</b>deals everyone can sign</div><div><b>1</b>best deal for the whole table</div><div><b>2</b>traps, each one change from something better</div></div>
+<p>A computer model played the space with greedy and cooperative players before any person did. A fully cooperative table finds the best deal. A greedy table still gets a deal, but a worse one. Which deal it gets depends on who is greedy: when the lender holds out, the table loses most; when the nature voice holds out, it loses least. No player can tell from their own card which kind they are.</p>
+</section>
+<section id=learned><h2>What testing showed</h2>
+<p>Six AI players, each playing an invented workshop participant, played the Willow Polder. In the first round the table fell into the lender's trap: the bank blocked the one change that stood between the table and the best deal. In the second round the bank gave way, having promised to talk about homes once the basin was settled, and the table signed the best deal available. Every player argued in character, and every debrief answer came from their own working life.</p>
+<p>The players also said it was too easy. Their fixes are the next design pass: tighter minimums, a score for walking away, a limit on outside money, and one private question before the second round, so that a secret two players share can come out during play.</p>
+</section>
+<section id=next><h2>Next</h2>
+<p>The plan is to finish that design pass across all four scenarios, print cards and a board in the engraved style shown here, and run the game with people from the Labs' own community. The scenarios, the points, the cards and the host's notes are written to be handed over and run without us.</p>
+</section>
+</main>
+<footer><p>The Regeneration Game, a working vision. Prepared by John Santerre for The Regenerative Labs. Contact: john.santerre.ai@gmail.com</p></footer>
+<script data-goatcounter="https://johnsanterre.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body></html>
