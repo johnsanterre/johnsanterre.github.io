@@ -16,9 +16,9 @@ h1{font-size:clamp(2.6rem,7vw,4.6rem);letter-spacing:.03em} h2{font-size:2rem}
 header{text-align:center;padding:60px 0 20px} header p.lede{font-size:1.3rem;font-style:italic;font-family:"Cormorant Garamond",serif;max-width:640px;margin:0 auto}
 header img{width:100%;max-width:860px;margin:30px auto 0;display:block}
 section{padding:44px 0;border-top:1px solid var(--rule)} section p{max-width:680px}
-.beats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;margin-top:10px}
+.beats{display:grid;grid-template-columns:1fr 2fr 1fr 1fr;gap:18px;margin-top:10px;overflow-x:auto} @media (max-width:640px){.beats{grid-template-columns:repeat(4,minmax(150px,1fr))}}
 .beats div{border-left:2px solid var(--acc);padding:2px 0 2px 14px} .beats b{display:block;font-family:"Cormorant Garamond",serif;font-size:1.35rem}
-.scen{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px} .tags button{font:inherit;font-size:.95rem;padding:6px 14px;border:1px solid var(--rule);border-radius:999px;background:#fbf8f1;color:var(--ink);cursor:pointer} .tags button.on{background:var(--acc);border-color:var(--acc);color:#fff} .scen figure{max-width:760px}
 figure{margin:0} figure img{width:100%;display:block} figcaption{font-size:.95rem;color:var(--mut);margin-top:6px} figcaption b{display:block;color:var(--ink);font-family:"Cormorant Garamond",serif;font-size:1.25rem}
 footer{text-align:center;color:var(--mut);font-size:.9rem;padding:30px 0 50px;border-top:1px solid var(--rule)}
 </style></head><body>
@@ -26,7 +26,6 @@ footer{text-align:center;color:var(--mut);font-size:.9rem;padding:30px 0 50px;bo
 <p class=eyebrow>In development &middot; for The Regenerative Labs, Amsterdam</p>
 <h1>The Regeneration Game</h1>
 <p class=lede>Six leaders. One deal. A map of the system that nobody at the table can see whole.</p>
-<img src="img/willow-polder.jpg" alt="Engraved scene of a polder beside a river">
 </header>
 <main class=wrap>
 <section><h2>The idea</h2>
@@ -36,16 +35,22 @@ footer{text-align:center;color:var(--mut);font-size:.9rem;padding:30px 0 50px;bo
 <section><h2>How a session runs</h2>
 <div class=beats>
 <div><b>Become</b>Take on a persona and the people it answers to.</div>
-<div><b>Negotiate</b>Argue over the deal on the part of the map you can see.</div>
-<div><b>Choose an expert</b>Pick whom to hear. A new part of the map opens, and new stakeholders step in.</div>
-<div><b>Sign, then see it all</b>Agree, or not. Then the whole map is revealed.</div>
+<div><b>Three rounds</b>Negotiate on the part of the map you can see, then choose one expert from several. Each opens a new part of the map and brings in new stakeholders.</div>
+<div><b>Sign</b>Agree a deal everyone can live with, or it fails.</div>
+<div><b>See it all</b>The whole map is revealed, and the deal is judged on it.</div>
 </div>
 <p style="margin-top:1.4em">About thirty minutes of play and a short debrief. The rules fit on one page; the rest is people.</p>
 </section>
-<section><h2>Four places</h2>
-<div class=scen><figure><img src="img/willow-polder.jpg" alt="Engraved scene: Room for the River at the Willow Polder" loading=lazy><figcaption><b>Room for the River at the Willow Polder</b>A dairy polder, a town that floods first, and a river that needs somewhere to go.</figcaption></figure><figure><img src="img/kessel-pier.jpg" alt="Engraved scene: The Last Coal Pier at Kessel" loading=lazy><figcaption><b>The Last Coal Pier at Kessel</b>A coal pier closes. A hundred and forty dockers, a salt marsh, and a wind company waiting.</figcaption></figure><figure><img src="img/ostra-valley.jpg" alt="Engraved scene: Water for the Ostra Valley" loading=lazy><figcaption><b>Water for the Ostra Valley</b>Orchards, a city and a data centre share a river that runs dry in August.</figcaption></figure><figure><img src="img/cairnmoor.jpg" alt="Engraved scene: Wind on Cairnmoor" loading=lazy><figcaption><b>Wind on Cairnmoor</b>Six hundred years of common grazing, a bog full of carbon, and sixty turbines.</figcaption></figure></div>
+<section><h2>Four places, one game</h2>
+<div class=tags><button type=button data-k="0" class=on>Room for the River at the Willow Polder</button><button type=button data-k="1">The Last Coal Pier at Kessel</button><button type=button data-k="2">Water for the Ostra Valley</button><button type=button data-k="3">Wind on Cairnmoor</button></div><div class=scen><figure data-k="0"><img src="img/willow-polder.jpg" alt="Engraved scene: Room for the River at the Willow Polder" loading=lazy><figcaption><b>Room for the River at the Willow Polder</b>A dairy polder, a town that floods first, and a river that needs somewhere to go.</figcaption></figure><figure data-k="1" hidden><img src="img/kessel-pier.jpg" alt="Engraved scene: The Last Coal Pier at Kessel" loading=lazy><figcaption><b>The Last Coal Pier at Kessel</b>A coal pier closes. A hundred and forty dockers, a salt marsh, and a wind company waiting.</figcaption></figure><figure data-k="2" hidden><img src="img/ostra-valley.jpg" alt="Engraved scene: Water for the Ostra Valley" loading=lazy><figcaption><b>Water for the Ostra Valley</b>Orchards, a city and a data centre share a river that runs dry in August.</figcaption></figure><figure data-k="3" hidden><img src="img/cairnmoor.jpg" alt="Engraved scene: Wind on Cairnmoor" loading=lazy><figcaption><b>Wind on Cairnmoor</b>Six hundred years of common grazing, a bog full of carbon, and sixty turbines.</figcaption></figure></div>
 </section>
 </main>
 <footer>The Regeneration Game is a work in progress by John Santerre for The Regenerative Labs. Contact: john.santerre.ai@gmail.com</footer>
+<script>
+document.querySelectorAll('.tags button').forEach(function(b){b.addEventListener('click',function(){
+  document.querySelectorAll('.tags button').forEach(function(x){x.classList.toggle('on',x===b)});
+  document.querySelectorAll('.scen figure').forEach(function(f){f.hidden=f.dataset.k!==b.dataset.k});
+})});
+</script>
 <script data-goatcounter="https://johnsanterre.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body></html>
