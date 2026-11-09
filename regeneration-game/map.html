@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow"><title>The Willow Polder Map</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f4efe4;--ink:#2b2621;--mut:#6b6257;--rule:#cfc4b0;--acc:#7a3a1f;--new:#9a3b1b}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 "Source Serif 4",Georgia,serif}
+.wrap{max-width:1060px;margin:0 auto;padding:24px 16px 40px}
+h1{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:2.3rem;margin:.2em 0 .2em}
+.lede{color:var(--mut);max-width:720px;margin:0 0 14px}
+.experts{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.experts button{font:inherit;font-size:.95rem;padding:7px 14px;border:1px solid var(--rule);border-radius:999px;background:#fbf8f1;color:var(--ink);cursor:pointer}
+.experts button.on{background:var(--acc);border-color:var(--acc);color:#fff}
+.experts button:disabled{opacity:.45;cursor:default}
+.bar{display:flex;gap:14px;align-items:center;flex-wrap:wrap;font-size:.92rem;color:var(--mut)}
+.bar button{font:inherit;font-size:.9rem;padding:5px 12px;border:1px solid var(--rule);background:transparent;cursor:pointer;color:var(--ink)}
+#say{min-height:3em;font-style:italic;margin:8px 0 6px;max-width:820px}
+.mapbox{overflow-x:auto;border:1px solid var(--rule);background:#f1e9d8}
+svg{display:block;min-width:760px;width:100%;height:auto}
+.node rect{fill:#fbf6ea;stroke:var(--ink);stroke-width:1.3}
+.node.s rect{fill:#f3e4d3;stroke:var(--new);stroke-dasharray:4 3}
+.node text{font:13px "Source Serif 4",Georgia,serif;fill:var(--ink)}
+.node,.edge{transition:opacity .6s}
+.hidden{opacity:0;pointer-events:none}
+.edge{fill:none;stroke-width:1.6}
+.edge.fresh{stroke:var(--new);stroke-width:2.6}
+.legend{font-size:.85rem;color:var(--mut);margin-top:8px}
+</style></head><body><div class=wrap>
+<p style="font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);margin:0">The Regeneration Game &middot; Room for the River at the Willow Polder</p>
+<h1>Who do you ask?</h1>
+<p class=lede>The table starts with what everyone already knows. Each round it may bring in one expert. Each expert puts down a new part of the map: things nobody was watching, and people nobody had invited. A game allows three experts. Choose.</p>
+<div class=experts id=experts></div>
+<div class=bar><span id=count>Experts chosen: 0 of 3</span><button id=reset type=button>Start again</button><button id=all type=button>Reveal the whole map</button></div>
+<p id=say>Click an expert to hear them.</p>
+<div class=mapbox><svg id=map viewBox="0 0 1000 640" role="img" aria-label="Causal map of the Willow Polder">
+<defs><marker id=ah viewBox="0 0 10 10" refX=9 refY=5 markerWidth=7 markerHeight=7 orient=auto-start-reverse><path d="M0,0 L10,5 L0,10 z" fill="#2b2621"/></marker>
+<marker id=ahn viewBox="0 0 10 10" refX=9 refY=5 markerWidth=7 markerHeight=7 orient=auto-start-reverse><path d="M0,0 L10,5 L0,10 z" fill="#9a3b1b"/></marker></defs>
+<g id=edges></g><g id=nodes></g></svg></div>
+<p class=legend>Solid arrow: raises. Dashed arrow: lowers. Red-brown: just revealed. Dashed boxes are stakeholders who were not at the table.</p>
+<p class=legend><a href="./" style="color:var(--acc)">Back to The Regeneration Game</a></p>
+</div>
+<script>
+const D = {"nodes": {"risk": ["Flood risk in Lowtown", 500, 150, "core", "n"], "homes": ["Lowtown homes and insurance", 730, 150, "core", "n"], "bank": ["Vantmoor Bank's loan book", 880, 320, "core", "n"], "debt": ["Farm debt", 690, 340, "core", "n"], "income": ["Dairy income", 480, 340, "core", "n"], "families": ["Polder families kept together", 520, 500, "core", "n"], "levy": ["Water Board levy", 700, 250, "core", "n"], "highhomes": ["Homes on high ground", 900, 170, "core", "n"], "peat": ["Peat ground level", 200, 220, "soil", "n"], "pumping": ["Pumping and drainage", 260, 340, "soil", "n"], "soilwater": ["Water in the soil", 300, 470, "soil", "n"], "nextgen": ["The next generation of farmers", 90, 380, "soil", "s"], "storage": ["Flood storage on the polder", 320, 90, "hydro", "n"], "oudewaard": ["The village of Oudewaard, upstream", 110, 90, "hydro", "s"], "birds": ["Meadow birds", 130, 560, "eco", "n"], "visitors": ["Birdwatchers and the visitor economy", 330, 600, "eco", "s"], "budget": ["Province budget", 520, 40, "audit", "n"], "elsewhere": ["Schools and clinics elsewhere in the province", 790, 40, "audit", "s"], "young": ["Young people who might stay", 780, 560, "socio", "s"]}, "edges": [["risk", "homes", -1, "core"], ["debt", "bank", -1, "core"], ["risk", "bank", -1, "core"], ["debt", "families", -1, "core"], ["homes", "bank", 1, "core"], ["income", "debt", -1, "core"], ["levy", "homes", -1, "core"], ["highhomes", "homes", 1, "core"], ["pumping", "soilwater", -1, "soil"], ["soilwater", "peat", 1, "soil"], ["peat", "pumping", -1, "soil"], ["pumping", "income", 1, "soil"], ["peat", "risk", -1, "soil"], ["pumping", "levy", 1, "soil"], ["peat", "nextgen", 1, "soil"], ["storage", "risk", -1, "hydro"], ["storage", "income", -1, "hydro"], ["storage", "oudewaard", -1, "hydro"], ["storage", "peat", 1, "hydro"], ["soilwater", "birds", 1, "eco"], ["birds", "visitors", 1, "eco"], ["visitors", "families", 1, "eco"], ["pumping", "birds", -1, "eco"], ["risk", "budget", -1, "audit"], ["budget", "storage", 1, "audit"], ["budget", "elsewhere", 1, "audit"], ["levy", "debt", 1, "audit"], ["families", "income", 1, "socio"], ["highhomes", "families", 1, "socio"], ["families", "soilwater", 1, "socio"], ["families", "young", 1, "socio"], ["debt", "young", -1, "socio"]], "experts": [["soil", "Dr Anneke Vos", "Soil scientist", "Drained peat sinks. The deeper you pump, the lower the ground, and the lower the ground, the more you have to pump."], ["hydro", "Dr Pieter Brandsma", "Hydrologist", "Storage on the polder takes the peak off Lowtown's floods, but the water has to stand somewhere, and it costs grazing."], ["eco", "Maarten de Groot", "Ecologist", "Wet meadows bring the godwits back, and the birds bring visitors who spend money in the villages."], ["audit", "Ellen Vos", "Provincial auditor", "Every flood costs the province. Every euro spent here is a euro not spent on schools and clinics somewhere else."], ["socio", "Dr Koen de Ruiter", "Rural sociologist", "Families who stay together keep farming and keep the young people. Debt is what breaks them up."]]};
+const W=150,H=46, svg=document.getElementById('map'), gN=document.getElementById('nodes'), gE=document.getElementById('edges');
+const NS='http://www.w3.org/2000/svg'; let chosen=[], showAll=false, fresh=null;
+function wrap(t){const w=t.split(' '),L=[];let c='';w.forEach(x=>{if((c+' '+x).trim().length>20){L.push(c.trim());c=x}else c+=' '+x});L.push(c.trim());return L}
+for(const [id,[label,x,y,owner,kind]] of Object.entries(D.nodes)){
+  const g=document.createElementNS(NS,'g'); g.setAttribute('class','node '+kind); g.id='n-'+id;
+  const r=document.createElementNS(NS,'rect'); r.setAttribute('x',x-W/2); r.setAttribute('y',y-H/2); r.setAttribute('width',W); r.setAttribute('height',H); r.setAttribute('rx',14); g.appendChild(r);
+  const lines=wrap(label); lines.forEach((l,i)=>{const t=document.createElementNS(NS,'text'); t.setAttribute('x',x); t.setAttribute('y',y+(i-(lines.length-1)/2)*15+4); t.setAttribute('text-anchor','middle'); t.textContent=l; g.appendChild(t)});
+  gN.appendChild(g)}
+function clip(a,b){const dx=b[0]-a[0],dy=b[1]-a[1];const t=Math.min(dx?(W/2+4)/Math.abs(dx):1e9,dy?(H/2+4)/Math.abs(dy):1e9);return [a[0]+dx*t,a[1]+dy*t]}
+D.edges.forEach((e,i)=>{const [f,t,s,o]=e, A=D.nodes[f], B=D.nodes[t]; const p1=clip([A[1],A[2]],[B[1],B[2]]), p2=clip([B[1],B[2]],[A[1],A[2]]);
+  const mx=(p1[0]+p2[0])/2+(p2[1]-p1[1])*0.08, my=(p1[1]+p2[1])/2-(p2[0]-p1[0])*0.08;
+  const p=document.createElementNS(NS,'path'); p.setAttribute('d',`M${p1[0]},${p1[1]} Q${mx},${my} ${p2[0]},${p2[1]}`); p.setAttribute('class','edge'); p.id='e-'+i;
+  if(s<0) p.setAttribute('stroke-dasharray','6 4'); gE.appendChild(p)});
+function render(){
+  const vis=new Set(Object.entries(D.nodes).filter(([id,n])=>showAll||n[3]==='core'||chosen.includes(n[3])).map(([id])=>id));
+  for(const id in D.nodes) document.getElementById('n-'+id).classList.toggle('hidden',!vis.has(id));
+  D.edges.forEach((e,i)=>{const on=vis.has(e[0])&&vis.has(e[1])&&(showAll||e[3]==='core'||chosen.includes(e[3]));
+    const el=document.getElementById('e-'+i); el.classList.toggle('hidden',!on);
+    const isNew=on&&fresh&&(e[3]===fresh||D.nodes[e[0]][3]===fresh||D.nodes[e[1]][3]===fresh)&&e[3]!=='core';
+    el.classList.toggle('fresh',!!isNew); el.setAttribute('stroke',isNew?'#9a3b1b':'#2b2621'); el.setAttribute('marker-end',isNew?'url(#ahn)':'url(#ah)')});
+  document.getElementById('count').textContent=showAll?'The whole map':`Experts chosen: ${chosen.length} of 3`;
+  document.querySelectorAll('#experts button').forEach(b=>{b.classList.toggle('on',showAll||chosen.includes(b.dataset.id)); b.disabled=!showAll&&!chosen.includes(b.dataset.id)&&chosen.length>=3})}
+D.experts.forEach(([id,name,title,says])=>{const b=document.createElement('button'); b.type='button'; b.dataset.id=id; b.textContent=title;
+  b.onclick=()=>{if(showAll||chosen.includes(id))return; chosen.push(id); fresh=id; document.getElementById('say').textContent=`${name}, ${title.toLowerCase()}: "${says}"`; render()};
+  document.getElementById('experts').appendChild(b)});
+document.getElementById('reset').onclick=()=>{chosen=[];showAll=false;fresh=null;document.getElementById('say').textContent='Click an expert to hear them.';render()};
+document.getElementById('all').onclick=()=>{showAll=true;fresh=null;document.getElementById('say').textContent='The whole map, including the parts nobody at the table asked about.';render()};
+render();
+</script>
+<script data-goatcounter="https://johnsanterre.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body></html>
