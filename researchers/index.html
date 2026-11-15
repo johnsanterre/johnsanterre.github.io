@@ -38,6 +38,9 @@ main{display:grid;grid-template-columns:minmax(260px,340px) 1fr;height:calc(100v
 .life{color:var(--grey);font-size:20px;font-weight:400;margin-left:10px;font-variant-numeric:lining-nums}
 .hidebtn{float:right;margin-top:10px;background:none;border:1px solid var(--hair);color:var(--dim);border-radius:3px;font:inherit;font-size:13px;padding:2px 9px;cursor:pointer}
 .one{color:var(--dim);font-size:17px;margin:6px 0 4px}
+.top{display:flex;gap:22px;align-items:flex-start}.top .who{flex:1 1 auto;min-width:0}
+.photo{flex:0 0 124px;margin:6px 0 0}.photo img{width:124px;height:155px;object-fit:cover;display:block;filter:grayscale(1);background:var(--form)}   /* the files are 248 by 310, cropped by photos.py */
+.photo figcaption{font-size:11px;line-height:1.3;color:var(--dim);margin-top:5px;overflow-wrap:anywhere}.photo figcaption a{color:var(--dim)}
 .cats{font-variant:small-caps;letter-spacing:.04em;color:var(--dim);font-size:15px}
 .jnote{border-left:2px solid var(--ink);padding:2px 0 2px 12px;margin:14px 0;font-style:italic}
 .figs{display:flex;flex-wrap:wrap;gap:8px 30px;align-items:flex-end;margin:22px 0 6px;padding:14px 0;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
@@ -63,7 +66,7 @@ ul{margin:4px 0;padding-left:18px}li{margin:4px 0}
 .tag{font-size:12.5px;font-style:italic;color:var(--grey);margin-left:6px}
 .flag{display:inline-block;font-size:13px;border:1px solid var(--hair);border-radius:3px;padding:0 6px;margin:0 6px 6px 0;color:var(--dim)}
 @media (prefers-reduced-motion:reduce){summary::before{transition:none}}
-@media (max-width:760px){main{grid-template-columns:minmax(0,1fr);height:auto}#list{max-height:40vh;border-right:0;border-bottom:1px solid var(--hair)}#card{padding:18px 16px 60px;overflow-wrap:anywhere}.card h2{font-size:30px}dl.facts{grid-template-columns:1fr;gap:2px 0}dl.facts dd{margin-bottom:8px}select{max-width:100%;min-width:0}#q,#uni{flex:1 1 100%;width:100%}.figs svg{max-width:100%}}
+@media (max-width:760px){main{grid-template-columns:minmax(0,1fr);height:auto}#list{max-height:40vh;border-right:0;border-bottom:1px solid var(--hair)}#card{padding:18px 16px 60px;overflow-wrap:anywhere}.card h2{font-size:30px}.top{gap:14px}.photo{flex-basis:88px}.photo img{width:88px;height:110px}dl.facts{grid-template-columns:1fr;gap:2px 0}dl.facts dd{margin-bottom:8px}select{max-width:100%;min-width:0}#q,#uni{flex:1 1 100%;width:100%}.figs svg{max-width:100%}}
 </style>
 <script data-goatcounter="https://johnsanterre.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
@@ -184,11 +187,15 @@ function show(id) {
 
   // overview (the IEL model): who, one line, categories, John's note, figures, description, key facts
   let h = `<div class="card"><button class="hidebtn" data-hide="${esc(c.id)}">${hidden.has(c.id) ? "Unhide" : "Hide"}</button>
-    <h2>${starBtn(c.id)}${esc(c.name)}${lifeOf(c)}</h2><div class="one">${esc(c.one_line || "")}</div>`;
+    <div class="top"><div class="who"><h2>${starBtn(c.id)}${esc(c.name)}${lifeOf(c)}</h2><div class="one">${esc(c.one_line || "")}</div>`;
   const cl = (c.categories || []).map(x => esc(x).toLowerCase());
   if (c.stage) cl.push(`<span title="Career stage based on ${esc(c.stage_basis || "")}">${STAGE[c.stage]}</span>`);
   if (c.status === "emeritus" || c.status === "industry") cl.push(esc(c.status));
   if (cl.length) h += `<div class="cats">${cl.join(" · ")}</div>`;
+  h += `</div>`;
+  const ph = c.photo;   // a free-licence photo from Wikimedia Commons; the licences require the author, the licence and a link (2026-11-15)
+  if (ph) h += `<figure class="photo"><a href="${esc(ph.page)}" target="_blank" rel="noopener"><img src="${esc(ph.src)}" alt="${esc(c.name)}" loading="lazy"></a><figcaption title="Photo: ${esc(ph.artist || "author not named on Commons")}, ${esc(ph.license)}">Photo${ph.artist ? ": " + esc(ph.artist.length > 48 ? ph.artist.slice(0, 46) + "…" : ph.artist) : ""}, ${ph.license_url ? `<a href="${esc(ph.license_url)}" target="_blank" rel="noopener">${esc(ph.license)}</a>` : esc(ph.license)}, via <a href="${esc(ph.page)}" target="_blank" rel="noopener">Wikimedia Commons</a>; shown ${ph.cropped ? "cropped and " : ""}in greyscale</figcaption></figure>`;
+  h += `</div>`;
   if (showJohn() && c.john) h += `<div class="jnote">John's pick${c.john.note ? ". " + esc(c.john.note) : "."}</div>`;
 
   const figs = [];
