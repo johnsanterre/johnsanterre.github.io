@@ -216,7 +216,7 @@ function show(id) {
   else if (W.csrankings) facts.push(["Where", `${esc(W.csrankings.affiliation)}${src("https://csrankings.org", "CSRankings")}`]);
   const DA = T.doctorate_added;   // a doctorate checked against its own page, shown with that page (2026-11-15)
   if (T.education?.length) facts.push(["Trained", T.education.map(esc).join("; ") + src(T.source, /wikipedia\.org/.test(T.source || "") ? "Wikipedia" : null) + (DA ? `; ${esc(DA.text)}${src(DA.source)}` : "")]);
-  if (c.advisors?.length) facts.push(["Advisor", c.advisors.map(a => person(a.name) + src(a.source)).join("; ")]);
+  if (c.advisors?.length) facts.push(["Advisor", c.advisors.map(a => (a.nolink ? esc(a.name) : person(a.name)) + src(a.source)).join("; ")]);
   if (c.known_for_list) facts.push(["Known for", c.known_for_list.items.map(esc).join("; ") + src(c.known_for_list.source, "Wikipedia")]);
   if (R.length) facts.push(["Honors", R.slice(0, 3).map(a => `${esc(a.award)}${a.year ? ", " + esc(a.year) : ""}`).join("; ") + (R.length > 3 ? `; <span class="quiet">and ${R.length - 3} more below</span>` : "")]);
   const sig = P.length ? P.slice(0, 3).map(p => `${p.link ? `<a href="${esc(p.link)}" target="_blank" rel="noopener">${esc(p.title)}</a>` : esc(p.title)} <span class="quiet">(${esc(p.venue || "")} ${esc(p.year || "")})</span>`)
@@ -241,7 +241,7 @@ function show(id) {
   if (T.thesis) tl += `<p>Thesis: <i>${esc(T.thesis)}</i>${T.thesis_year ? " (" + esc(T.thesis_year) + ")" : ""}</p>`;
   if (tl) tl += src(T.source, /wikipedia\.org/.test(T.source || "") ? "Wikipedia" : null);
   if (DA) tl += `<p>${esc(DA.text)}${DA.thesis ? `, thesis <i>${esc(DA.thesis)}</i>` : ""}${src(DA.source)}</p>`;
-  if (c.advisors?.length) tl += `<p>Doctoral advisor: ${c.advisors.map(a => person(a.name) + src(a.source)).join("; ")}</p>`;
+  if (c.advisors?.length) tl += `<p>Doctoral advisor: ${c.advisors.map(a => (a.nolink ? esc(a.name) : person(a.name)) + src(a.source)).join("; ")}</p>`;
   if (c.students?.length) tl += `<p>Doctoral students on record (${c.students.length}):</p><ul>${c.students.slice(0, 40).map(s => `<li>${person(s.name)}${src(s.source)}</li>`).join("")}</ul>${c.students.length > 40 ? `<p class="gap">and ${c.students.length - 40} more</p>` : ""}`;
   h += det("Training and lineage", c.students?.length || "", tl);
 
