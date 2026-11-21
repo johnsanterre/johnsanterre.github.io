@@ -75,7 +75,7 @@
       <label>min h</label><input id="hmin" type="range" min="0" max="150" value="0" style="width:90px" /><span id="hminv">0</span></div>
     <div class="row"><label>Edges</label><select id="emode"><option value="hover">on hover</option><option value="strong">shared ≥ 2 works</option><option value="all">all co-authorship</option><option value="none">none</option></select>
       <label><input id="lin" type="checkbox" checked /> advisor edges</label>
-      <label><input id="verif" type="checkbox" /> verified only</label></div>
+      <label><input id="verif" type="checkbox" /> with crawl sources</label></div>
     <div id="legend"></div>
   </div>
 </div>
@@ -93,7 +93,7 @@ for (const p of PEOPLE) { const c = p.n.replace(/(\s[A-Z])+$/, ""); if (c.split(
 // records shared by several people with one name, and business and marketing statistics, are left off (John, 2026-11-03)
 const CARDS_URL = "./";
 const IGNORE = new Set(window.MAP_IGNORE || []);
-for (const p of PEOPLE) { if (IGNORE.has(p.id)) p.ignored = true; const k = (window.OA_CARD || {})[p.id]; if (k) { p.card = k[0]; if (k[1]) { p.cu = k[1]; p.u = k[1]; } } }
+for (const p of PEOPLE) { if (IGNORE.has(p.id)) p.ignored = true; const k = (window.OA_CARD || {})[p.id]; if (k) { p.card = k[0]; if (k[2]) p.n = k[2]; if (k[1]) { p.cu = k[1]; p.u = k[1]; } } }
 // every card with no OpenAlex record is placed by category (John chose this, 2026-11-03): inside its topic's territory, near
 // the edge, or in a new territory for applied mathematics, scientific computing, complex systems and other fields
 (() => {
@@ -114,13 +114,20 @@ for (const p of PEOPLE) { if (IGNORE.has(p.id)) p.ignored = true; const k = (win
     list.sort((a, b) => b[3] - a[3]).forEach((e, j) => {
       const ang = j * 2.39996;
       const d = NEW[k] ? 26 * Math.sqrt(j + 0.5) : t.r * (0.88 + 0.16 * ((j * 0.618) % 1));
-      PEOPLE.push({ id: "card:" + e[0], n: e[1], d: k, h: e[3] || 0, u: e[4] || null, a: e[4] || "", x: t.x + d * Math.cos(ang), y: t.y + d * Math.sin(ang), card: e[0], cu: e[4] || null, extra: true, c: null, w: null });
+      PEOPLE.push({ id: "card:" + e[0], n: e[1], d: k, h: e[3] ?? 0, h_known: e[3] != null, u: e[4] || null, a: e[4] || "", x: t.x + d * Math.cos(ang), y: t.y + d * Math.sin(ang), card: e[0], cu: e[4] || null, extra: true, c: null, w: null });
     });
   }
 })();
 const N = PEOPLE.length;
 PEOPLE.forEach((p, i) => { p.i = i; p.r = 2.5 + 0.075 * p.h; });
+function hLabel(p) { return p.h_known === false ? "–" : p.h; }
 const byId = Object.fromEntries(PEOPLE.map(p => [p.id, p]));
+if (window.MAP_RELATIONSHIPS) {
+  EDGES.length = 0;
+  for (const [a, b, weight, kind] of window.MAP_RELATIONSHIPS) {
+    if (byId[a] && byId[b]) EDGES.push([byId[a].i, byId[b].i, weight, kind]);
+  }
+}
 const shown = PEOPLE.filter(p => !p.ignored), nCard = shown.filter(p => p.card).length;
 const okEdge = e => !PEOPLE[e[0]].ignored && !PEOPLE[e[1]].ignored;
 document.getElementById("sub").textContent =
@@ -271,7 +278,7 @@ function paint() {
   cx.textAlign = "center";
   for (const { p, x, y, r, hot } of cands) {
     cx.font = `${hot ? 800 : 600} ${fs}px -apple-system, sans-serif`;
-    const sub = (detail || hot) ? (p.u || p.a || "") + " · h " + p.h : "";
+    const sub = (detail || hot) ? (p.u || p.a || "") + " · h " + hLabel(p) : "";
     const w = Math.max(cx.measureText(p.n).width, sub ? cx.measureText(sub).width * 0.85 : 0) + 6;
     const hgt = (sub ? 2 : 1) * fs + 4;
     const below = [x - w / 2, y + r + 2, w, hgt], above = [x - w / 2, y - r - 2 - hgt, w, hgt];   // below the dot, or above it when below is taken
@@ -312,7 +319,7 @@ addEventListener("keydown", e => {
 
 // ---- search ----
 const searchEl = document.getElementById("search"), resEl = document.getElementById("results");
-const norm = s => s.normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase();
+const norm = s => s.normalize("NFKD").replace(/\p{M}/gu, "").toLowerCase().replace(/ı/g, "i");
 const names = PEOPLE.map(p => norm(p.n));
 let selIdx = -1, hits = [];
 searchEl.addEventListener("input", () => {
@@ -320,7 +327,7 @@ searchEl.addEventListener("input", () => {
   if (q.length >= 2) {
     for (let i = 0; i < N && hits.length < 14; i++) if (!PEOPLE[i].ignored && names[i].includes(q)) hits.push(PEOPLE[i]);
   }
-  resEl.innerHTML = hits.map((p, k) => `<div data-k="${k}"><span>${p.n}</span><span class="m">${p.u || p.a || ""} · h ${p.h}</span></div>`).join("");
+  resEl.innerHTML = hits.map((p, k) => `<div data-k="${k}"><span>${esc(p.n)}</span><span class="m">${esc(p.u || p.a || "")} · h ${hLabel(p)}</span></div>`).join("");
   resEl.style.display = hits.length ? "block" : "none";
   for (const el of resEl.children) el.onclick = () => go(hits[+el.dataset.k]);
 });
@@ -339,6 +346,7 @@ function go(p) {
 const PROFILES = {}; const loaded = {}; const waiting = {};
 window.__profiles = (d, obj) => { Object.assign(PROFILES, obj); loaded[d] = true; (waiting[d] || []).forEach(fn => fn()); waiting[d] = []; };
 function withProfile(p, fn) {
+  if (p.extra) return fn(null);
   if (PROFILES[p.id]) return fn(PROFILES[p.id]);
   if (loaded[p.d]) return fn(null);
   (waiting[p.d] ||= []).push(() => fn(PROFILES[p.id] || null));
@@ -362,14 +370,25 @@ function renderProfile(p, pr) {
   const home = pr && pr.home ? pr.home : { name: p.a };
   const scholar = `https://scholar.google.com/scholar?q=${encodeURIComponent('author:"' + p.n + '"')}`;
   let html = `<div class="name">${esc(p.n)}</div>${cardLink(p)}
-    <div class="affil">${p.cu ? `${esc(p.cu)} <span class="meta">(from the researcher card; OpenAlex lists ${esc(home.name || "none")})</span>` : esc(home.name || "affiliation unknown")}${home.years && home.years.length ? ` <span class="meta">(${home.years[0]}–${home.years[home.years.length - 1]})</span>` : ""}${pr && pr.curated && pr.curated.dept ? `<br>${esc(pr.curated.title || "")} ${esc(pr.curated.dept)}` : ""}</div>
-    <div class="dom" style="color:${t.color};border-color:${t.color}">${esc(t.label)}</div>${p.v ? `<span class="dom" style="color:#fff;border-color:#fff">verified layer</span>` : ""}
-    <div class="nums"><div><b>${fmt(p.h)}</b>h-index</div><div><b>${fmt(p.c)}</b>citations</div><div><b>${fmt(p.w)}</b>works</div>${pr && pr.i10 != null ? `<div><b>${fmt(pr.i10)}</b>i10</div>` : ""}</div>`;
-  if (!pr) { if (!p.extra) html += `<div class="meta">No OpenAlex profile loaded for this person.</div>`; }
+    <div class="affil">${p.cu ? `${esc(p.cu)}${p.extra ? "" : ` <span class="meta">(from the researcher card; OpenAlex lists ${esc(home.name || "none")})</span>`}` : esc(home.name || "affiliation unknown")}${home.years && home.years.length ? ` <span class="meta">(${home.years[0]}–${home.years[home.years.length - 1]})</span>` : ""}${pr && pr.curated && pr.curated.dept ? `<br>${esc(pr.curated.title || "")} ${esc(pr.curated.dept)}` : ""}</div>
+    <div class="dom" style="color:${t.color};border-color:${t.color}">${esc(t.label)}</div>${p.v ? `<span class="dom" style="color:#fff;border-color:#fff">crawl sources</span>` : ""}
+    <div class="nums"><div><b>${fmt(p.h_known === false ? null : p.h)}</b>h-index</div><div><b>${fmt(p.c)}</b>citations</div><div><b>${fmt(p.w)}</b>works</div>${pr && pr.i10 != null ? `<div><b>${fmt(pr.i10)}</b>i10</div>` : ""}</div>`;
+  if (!pr) {
+    if (!p.extra) html += `<div class="meta">No OpenAlex profile loaded for this person.</div>`;
+    const neighbors = (adj[p.i] || []).filter(okEdge);
+    const refs = (kind, outgoing) => neighbors.filter(e => e[3] === kind && (kind === 0 || (e[0] === p.i) === outgoing))
+      .map(e => ({id: PEOPLE[e[0] === p.i ? e[1] : e[0]].id, name: PEOPLE[e[0] === p.i ? e[1] : e[0]].n, w: e[2]}));
+    const advisors = refs(1, true), students = refs(1, false), coauthors = refs(0).sort((a,b) => b.w - a.w || a.name.localeCompare(b.name));
+    if (advisors.length || students.length) html += `<h4>Lineage</h4>`;
+    if (advisors.length) html += `<div class="why">Doctoral advisor: ${advisors.map(jump).join(", ")}</div>`;
+    if (students.length) html += `<div class="why">Students on the map: ${students.map(jump).join(" · ")}</div>`;
+    if (coauthors.length) html += `<h4>Co-authors on the map</h4><div class="why">${coauthors.slice(0,15).map(q => `${jump(q)} <span class="meta">(${q.w})</span>`).join(" · ")}</div>`;
+    if (neighbors.length) html += `<div class="meta">Open the full card for papers and relationship sources.</div>`;
+  }
   else {
     if (pr.curated && pr.curated.why && pr.curated.why.length) html += `<div class="why">${pr.curated.why.map(esc).join("<br><br>")}</div>`;
     if (pr.topics && pr.topics.length) html += `<h4>Topics (OpenAlex, works per topic)</h4><div>${pr.topics.map(x => `<span class="tag">${esc(x.name)} · ${x.count}</span>`).join("")}</div>`;
-    if (pr.curated && pr.curated.topics && pr.curated.topics.length) html += `<div class="meta" style="margin-top:4px">Verified-layer tags: ${pr.curated.topics.map(esc).join(", ")}</div>`;
+    if (pr.curated && pr.curated.topics && pr.curated.topics.length) html += `<div class="meta" style="margin-top:4px">Crawl topic tags: ${pr.curated.topics.map(esc).join(", ")}</div>`;
     if ((pr.advisors && pr.advisors.length) || (pr.students && pr.students.length)) {
       html += `<h4>Lineage</h4>`;
       if (pr.advisors.length) html += `<div class="why">Doctoral advisor: ${pr.advisors.map(jump).join(", ")}</div>`;
@@ -377,7 +396,7 @@ function renderProfile(p, pr) {
     }
     if (pr.coauthors && pr.coauthors.length) html += `<h4>Co-authors on the map</h4><div class="why">${pr.coauthors.map(q => `${jump(q)} <span class="meta">(${q.w})</span>`).join(" · ")}</div>`;
     if (pr.curated_papers && pr.curated_papers.length) {
-      html += `<h4>Landmark papers (hand-verified)</h4>` + pr.curated_papers.map(w => `<div class="paper">${w.link ? `<a href="${esc(w.link)}" target="_blank" rel="noopener">${esc(w.title)}</a>` : esc(w.title)}
+      html += `<h4>Landmark papers (source-linked)</h4>` + pr.curated_papers.map(w => `<div class="paper">${w.link ? `<a href="${esc(w.link)}" target="_blank" rel="noopener">${esc(w.title)}</a>` : esc(w.title)}
         <div class="meta">${esc(w.venue || "")} ${w.year || ""}${w.note ? " — " + esc(w.note) : ""}</div></div>`).join("");
     }
     if (pr.works && pr.works.length) {
@@ -386,7 +405,7 @@ function renderProfile(p, pr) {
     }
     if (pr.affiliations && pr.affiliations.length > 1) html += `<h4>Affiliation history (OpenAlex)</h4><div class="meta">${pr.affiliations.map(a => `${esc(a.name)} (${a.years.length ? a.years[0] + "–" + a.years[a.years.length - 1] : "?"})`).join(" · ")}</div>`;
     html += `<h4>Links</h4><div class="meta"><a href="${pr.links.openalex}" target="_blank" rel="noopener">OpenAlex</a>${pr.links.orcid ? ` · <a href="${esc(pr.links.orcid)}" target="_blank" rel="noopener">ORCID</a>` : ""}${pr.curated && pr.curated.homepage ? ` · <a href="${esc(pr.curated.homepage)}" target="_blank" rel="noopener">homepage</a>` : ""} · <a href="${scholar}" target="_blank" rel="noopener">Google Scholar search</a></div>`;
-    html += `<div class="prov">Provenance: h-index, citations, topics, affiliations and the most-cited works come from OpenAlex (fetched ${esc(pr.fetched)}); the home affiliation is the one with the most recent years in that record and can lag a move.${pr.curated ? ` The description, verified tags and landmark papers come from the ${esc((pr.curated.sources || []).length)} page(s) a crawl agent opened on 2026-11-01${pr.curated.sources && pr.curated.sources.length ? ": " + pr.curated.sources.slice(0, 4).map(s => `<a href="${esc(s)}" target="_blank" rel="noopener">${esc(s.replace(/^https?:\/\//, "").slice(0, 48))}</a>`).join(", ") : ""}.` : " No hand-verified layer yet."}${pr.domain_scores ? ` Domain scores: ${Object.entries(pr.domain_scores).map(([k, v]) => k + " " + v).join(", ")} (mapped share ${pr.mapped_share}).` : ""}</div>`;
+    html += `<div class="prov">Provenance: h-index, citations, topics, affiliations and the most-cited works come from OpenAlex (fetched ${esc(pr.fetched)}); the home affiliation is the one with the most recent years in that record and can lag a move.${pr.curated ? ` Descriptions, roles and landmark works are source-linked on the researcher card; open it for field-specific sources and check dates.${pr.curated.sources && pr.curated.sources.length ? " Curated sources: " + pr.curated.sources.slice(0, 4).map(s => `<a href="${esc(s)}" target="_blank" rel="noopener">${esc(s.replace(/^https?:\/\//, "").slice(0, 48))}</a>`).join(", ") + "." : ""}` : " No curated sources yet."}${pr.domain_scores ? ` Domain scores: ${Object.entries(pr.domain_scores).map(([k, v]) => k + " " + v).join(", ")} (mapped share ${pr.mapped_share}).` : ""}</div>`;
   }
   document.getElementById("pbody").innerHTML = html;
 }
@@ -394,7 +413,13 @@ function jumpTo(id) { const p = byId[id]; if (p) go(p); }
 function closePanel() { selected = null; highlight = null; document.getElementById("panel").classList.remove("open"); if (location.hash) history.replaceState(null, "", location.pathname); draw(); }
 
 resize(); fit(); draw();
-const m = location.hash.match(/id=(A\d+)/); if (m && byId[m[1]]) go(byId[m[1]]);
+function openHash() {
+  const requested = new URLSearchParams(location.hash.slice(1)).get("id");
+  const id = (window.MAP_REDIRECTS || {})[requested] || requested;
+  if (byId[id] && !byId[id].ignored && selected?.id !== id) go(byId[id]);
+}
+openHash();
+addEventListener("hashchange", openHash);
 </script>
 </body>
 </html>
